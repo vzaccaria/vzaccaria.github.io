@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head lang="en">
+    <title>Matrici</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+    <script type="text/javascript" src="/v2/js/client.js"></script>
+  </head>
+  <body ng-app="application">
+    <div class="site_wrapper">
+      <div class="sidebar"> <img class="sidebar__picture">
+        <div class="sidebar__name">Vittorio Zaccaria</div>
+        <div class="sidebar__address">Politecnico di Milano</div>
+        <ul class="sidebar__link_list">
+          <li onclick="location.href=&apos;/v2&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-home"></i></span>
+            <div class="sidebar__link_item__name">Home</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/research.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-flask"></i></span>
+            <div class="sidebar__link_item__name">Research</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/blog.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-quote-left"></i></span>
+            <div class="sidebar__link_item__name">Blog</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/projects.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-floppy-o"></i></span>
+            <div class="sidebar__link_item__name">Projects</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/teaching.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-graduation-cap"></i></span>
+            <div class="sidebar__link_item__name">Teaching</div>
+          </li>
+          <li onclick="location.href=&apos;http://www.vittoriozaccaria.net/deposit/cv.pdf&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-user"></i></span>
+            <div class="sidebar__link_item__name">CV</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/videos.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-youtube-play"></i></span>
+            <div class="sidebar__link_item__name">Videos</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/address.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-map-marker"></i></span>
+            <div class="sidebar__link_item__name">Address</div>
+          </li>
+        </ul>
+        <div class="sidebar__bottom"> 
+          <div onclick="location.href=&apos;http://www.linkedin.com/in/vzaccaria&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-linkedin-square"></i></div>
+          <div onclick="location.href=&apos;http://twitter.com/_vzaccaria_&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-twitter-square"></i></div>
+          <div onclick="location.href=&apos;https://plus.google.com/116322227495215922957/about&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-google-plus-square"></i></div>
+        </div>
+      </div>
+      <div class="site_container">
+        <div class="post_container">
+          <div class="post_container__post__title">Matrici</div>
+          <div class="post_container__post__subtitle"> 
+            <div class="post_container__post__date"> <i class="fa fa-calendar-o"> </i>
+              <div class="post_container__post__date_value">Friday, October 31st 2014</div>
+            </div>
+            <div class="post_container__post__category"> <i class="fa fa-flag-o"> </i>
+              <div class="post_container__post__category_value">infob</div>
+            </div>
+            <div class="post_container__post__tags"> <i class="fa fa-tags"></i>
+              <div class="post_container__post__tag">lezione</div>
+              <div class="post_container__post__tag">esercizi</div>
+              <div class="post_container__post__tag">matrici</div>
+              <div class="post_container__post__tag">fibonacci</div>
+            </div>
+            <div class="share_buttons"> 
+              <div class="share_buttons__message">Share: </div>
+              <div style="cursor: pointer" class="share_buttons__share_reddit"><i class="fa fa-reddit"> </i></div>
+              <div style="cursor: pointer" class="share_buttons__share_twitter"><i class="fa fa-twitter"></i></div>
+            </div>
+          </div>
+          <div class="post_text"><h1 id="matrici">Matrici</h1>
+<p>Oggi abbiamo visto un esempio completo di dichiarazione di matrice (array bidimensionale) consistente in:</p>
+<ul>
+<li>riempimento di una matrice <code>m</code> di valori richiesti da tastiera</li>
+<li>calcolo della trasposta <code>ris</code> </li>
+<li>stampa a video del risultato</li>
+</ul>
+<p>ecco il codice:</p>
+<script src="http://ideone.com/e.js/C5xBvl" type="text/javascript"></script>
+
+<p>Abbiamo poi visto la soluzione della prova in itinere del 13 Novembre 2012:</p>
+<p>Si consideri il seguente programma, che richiede in ingresso l’inserimento di <strong>una matrice 3x3</strong>:</p>
+<pre><code class="lang-c">#include &lt;stdio.h&gt;
+#define DIM 3
+int main()
+{
+  int i,j, M[DIM][DIM];
+
+  int s[3]={0,0,0};
+
+  for (i=0; i&lt;DIM; i++)
+      for (j=0; j&lt;DIM; j++)
+          scanf(&quot;%d&quot;,&amp;M[i][j]);
+
+  for (i=0;i&lt;DIM;i++)
+  {
+      s[0] += M[0][i];
+      s[1] += M[1][i];
+      s[2] += M[2][i];
+  }
+  printf(&quot;%d %d %d\n&quot;, s[0],s[1],s[2]);
+  return 0;
+}
+</code></pre>
+<p>Rispondere alle seguenti domande:</p>
+<ul>
+<li>Descrivere in maniera sintetica cosa fa il  programma data una generica matrice in ingresso:</li>
+</ul>
+<blockquote>
+<p>Risposta: <strong>Stampa la somma degli elementi su ciascuna delle tre righe della matrice M</strong></p>
+</blockquote>
+<ul>
+<li>Descrivere cosa stampa a video il programma nel caso l’utente inserisca da tastiera il seguente input: <code>1 1 1 2 2 2 3 3 3</code></li>
+</ul>
+<blockquote>
+<p>Risposta: <strong>Stampa a video “3 6 9”</strong></p>
+</blockquote>
+<ul>
+<li>Scrivere un programma che si comporti come il precedente ma lavori su <strong>una matrice NxN</strong> (con <code>N&lt;=30</code> letto da tastiera). </li>
+</ul>
+<p>Soluzione su IdeOne: </p>
+<script src="http://ideone.com/e.js/KJp1Kp" type="text/javascript"></script>
+
+<h1 id="calcolo-della-serie-di-fibonacci">Calcolo della serie di Fibonacci</h1>
+<p>Scrivere un programma per generazione dei primi n numero della serie di fibonacci (inserito dall&#39;utente):</p>
+<p>Matematicamente, il calcolo del numero di <em>fibonacci</em> e&#39; definibile come:</p>
+<div>
+\[
+f(n) = 
+\begin{cases} 
+f(n-1) + f(n-2) , ~n \geq 2 \\
+1 , ~n \in \{ 1, 2 \} \\
+\end{cases}
+\]
+</div>
+
+<p>ecco la soluzione su IdeOne:</p>
+<script src="http://ideone.com/e.js/FFEitV" type="text/javascript"></script>
+
+<h1 id="compiti-per-casa">Compiti per casa</h1>
+<p>Per la prossima volta, risolvete questo problema:</p>
+<blockquote>
+<p>Data una stringa (richiesta all&#39;utente) verificare se è palindroma (cioè se letta da <strong>sinistra a destra</strong> è uguale ad essere letta da <strong>destra a sinistra</strong>).</p>
+</blockquote>
+</div>
+          <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG"></script>
+          <div id="disqus_thread" class="post_container__comments"> 
+            <script>(function() {
+  var disqus_shortname, dsq;
+
+  disqus_shortname = 'vittoriozaccaria';
+
+  dsq = document.createElement('script');
+
+  dsq.type = 'text/javascript';
+
+  dsq.async = true;
+
+  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+}).call(this);
+
+            </script><a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head lang="en">
+    <title>Esercitazioni del 17 Ottobre 2013</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+    <script type="text/javascript" src="/v2/js/client.js"></script>
+  </head>
+  <body ng-app="application">
+    <div class="site_wrapper">
+      <div class="sidebar"> <img class="sidebar__picture">
+        <div class="sidebar__name">Vittorio Zaccaria</div>
+        <div class="sidebar__address">Politecnico di Milano</div>
+        <ul class="sidebar__link_list">
+          <li onclick="location.href=&apos;/v2&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-home"></i></span>
+            <div class="sidebar__link_item__name">Home</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/research.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-flask"></i></span>
+            <div class="sidebar__link_item__name">Research</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/blog.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-quote-left"></i></span>
+            <div class="sidebar__link_item__name">Blog</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/projects.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-floppy-o"></i></span>
+            <div class="sidebar__link_item__name">Projects</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/teaching.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-graduation-cap"></i></span>
+            <div class="sidebar__link_item__name">Teaching</div>
+          </li>
+          <li onclick="location.href=&apos;http://www.vittoriozaccaria.net/deposit/cv.pdf&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-user"></i></span>
+            <div class="sidebar__link_item__name">CV</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/videos.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-youtube-play"></i></span>
+            <div class="sidebar__link_item__name">Videos</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/address.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-map-marker"></i></span>
+            <div class="sidebar__link_item__name">Address</div>
+          </li>
+        </ul>
+        <div class="sidebar__bottom"> 
+          <div onclick="location.href=&apos;http://www.linkedin.com/in/vzaccaria&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-linkedin-square"></i></div>
+          <div onclick="location.href=&apos;http://twitter.com/_vzaccaria_&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-twitter-square"></i></div>
+          <div onclick="location.href=&apos;https://plus.google.com/116322227495215922957/about&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-google-plus-square"></i></div>
+        </div>
+      </div>
+      <div class="site_container">
+        <div class="post_container">
+          <div class="post_container__post__title">Esercitazioni del 17 Ottobre 2013</div>
+          <div class="post_container__post__subtitle"> 
+            <div class="post_container__post__date"> <i class="fa fa-calendar-o"> </i>
+              <div class="post_container__post__date_value">Friday, October 18th 2013</div>
+            </div>
+            <div class="post_container__post__category"> <i class="fa fa-flag-o"> </i>
+              <div class="post_container__post__category_value">infob</div>
+            </div>
+            <div class="post_container__post__tags"> <i class="fa fa-tags"></i>
+              <div class="post_container__post__tag">esercizio</div>
+              <div class="post_container__post__tag">fattoriale in C</div>
+            </div>
+            <div class="share_buttons"> 
+              <div class="share_buttons__message">Share: </div>
+              <div style="cursor: pointer" class="share_buttons__share_reddit"><i class="fa fa-reddit"> </i></div>
+              <div style="cursor: pointer" class="share_buttons__share_twitter"><i class="fa fa-twitter"></i></div>
+            </div>
+          </div>
+          <div class="post_text"><p>Ecco gli esercizi presentati da Luigi Malagò ieri a esercitazione.</p>
+<h1 id="esercizio-su-array">Esercizio su array</h1>
+<p>Data una sequenza di numeri inseriti dall&#39;utente, terminata da -1,
+ inserirli in un array e visualizzare successivamente solamente i numeri pari in esso contenuti.</p>
+<p><strong>Soluzione:</strong></p>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    // dichiarazione variabili
+    int n = 0;    // numero di elementi dell&#39;array
+    int el[100];  // array di elementi
+
+    int c;        // valore corrente inserito dall&#39;utente
+    int indice;   // contatore del ciclo for
+
+    // inserimento dei dati da parte dell&#39;utente
+    printf(&quot;Dato un elenco di interi separati da un invio, fino all&#39;inserimento di -1,\n&quot;);
+
+    printf(&quot;stampo a video gli elementi pari\n&quot;);    
+
+    do {
+        printf(&quot;Inserisci il %d numero &quot;,n+1);
+        scanf(&quot;%d&quot;,&amp;c);
+
+        // se c==-1 non inseriamo il numero nell&#39;array
+
+        if (c!=-1) {
+            // inserimento nell&#39;array
+            el[n] = c;
+            n++;
+        }
+    } while(c!=-1);
+
+    // verifica dei numeri pari all&#39;interno dell&#39;array
+
+    printf(&quot;Gli elementi pari sono: &quot;);
+
+    for (indice = 0; indice&lt;n; indice++) {
+        // test se il numero in posizione indice dell&#39;array è pari
+        // l&#39;operatore % mi da il resto della divisione intera
+        if (el[indice]%2==0) {
+            printf(&quot;%d &quot;,el[indice]);
+        }
+    }
+    return 0;
+}
+</code></pre><h1 id="fattoriale">Fattoriale</h1>
+<p>Scrivere una funzione per il calcolo del fattoriale[^1] di un numero intero positivo mediante successive moltiplicazioni. Il numero deve essere richiesto da tastiera ed il risultato deve essere stampato a video.</p>
+<p><strong>Soluzione:</strong></p>
+<pre><code>#include &lt;stdio.h&gt;
+int main() {
+    // dichiarazione delle variabili
+    int n = 0;  // numero di cui vogliamo calcolare il fattoriale
+    int f = 1;  // fattoriale di n
+    int i;      // indice del ciclo for
+
+    printf(&quot;dato un intero, calcolo il suo fattoriale\n&quot;);
+    printf(&quot;inserisci n: &quot;);
+
+    // inserimento del valore intero da parte dell&#39;utente
+    scanf(&quot;%d&quot;,&amp;n); // NB: la scanf richiede l&#39;indirizzo di memoria della variabile in cui
+                    // inserire il valore che l&#39;utente ha indicato, e quindi serve indicare la 
+                    // e commerciale &amp;
+
+
+    for (i=n;i&gt;=1;i--) {
+         f=f*i;
+    }
+
+    // visualizzazione del risultato
+    printf(&quot;Il fattoriale di %d è %d&quot;,n,f);
+    return 0;
+}
+</code></pre><h1 id="verifica-di-un-numero-primo">Verifica di un numero primo</h1>
+<p>Scrivere un programma per determinare se un numero è primo[^2] o meno. Il numero deve essere richiesto da tastiera ed il risultato deve essere stampato a video.</p>
+<p><strong>Soluzione:</strong></p>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    // dichiarazione variabili
+    int n = 0;   // numero inserito dall&#39;utente
+    int i;       // variabile indice
+    int primo = 1;  // variabile per indicare se il numero è primo
+
+    printf(&quot;dato un numero mi calcola se è primo o meno\n&quot;);
+    printf(&quot;comunica un numero: &quot;);
+
+    // leggo il valore da tastiera
+
+    scanf(&quot;%d&quot;,&amp;n); 
+
+    // calcolo se il numero è primo
+
+    for (i=2;i&lt;n;i++) {
+        if (n%i==0) {
+            // il numero non è primo
+            primo = 0;
+        }
+    }
+
+    if (primo==1) { 
+        printf(&quot;il numero è primo&quot;);
+    } else { 
+        printf(&quot;il numero non è primo&quot;);
+    }
+
+    return 0;
+}
+</code></pre><h1 id="esercizio-per-casa">Esercizio per casa</h1>
+<p>Scrivere un programma che stampi la scomposizione in fattori primi di un numero <code>n</code> richiesto da tastiera </p>
+<p>Ad esempio:</p>
+<ul>
+<li>10 è scomponibile in 5 × 2</li>
+<li>9  è scomponibile in 3 × 3</li>
+</ul>
+<p> [^1]:Il fattoriale di <code>n</code> e&#39; definito come segue:</p>
+<pre><code>    n! = n × (n-1) × (n-2) × ... × 1
+
+ Ad esempio,
+
+    5! = 5 × 4 × 3 × 2 × 1 = 120 
+</code></pre><p> [^2]: Un numero è definito primo se è divisibile solo per 1 e per se stesso. </p>
+</div>
+          <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG"></script>
+          <div id="disqus_thread" class="post_container__comments"> 
+            <script>(function() {
+  var disqus_shortname, dsq;
+
+  disqus_shortname = 'vittoriozaccaria';
+
+  dsq = document.createElement('script');
+
+  dsq.type = 'text/javascript';
+
+  dsq.async = true;
+
+  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+}).call(this);
+
+            </script><a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

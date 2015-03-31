@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head lang="en">
+    <title>Taming asynchronous programming with Harmony</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+    <script type="text/javascript" src="/v2/js/client.js"></script>
+  </head>
+  <body ng-app="application">
+    <div class="site_wrapper">
+      <div class="sidebar"> <img class="sidebar__picture">
+        <div class="sidebar__name">Vittorio Zaccaria</div>
+        <div class="sidebar__address">Politecnico di Milano</div>
+        <ul class="sidebar__link_list">
+          <li onclick="location.href=&apos;/v2&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-home"></i></span>
+            <div class="sidebar__link_item__name">Home</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/research.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-flask"></i></span>
+            <div class="sidebar__link_item__name">Research</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/blog.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-quote-left"></i></span>
+            <div class="sidebar__link_item__name">Blog</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/projects.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-floppy-o"></i></span>
+            <div class="sidebar__link_item__name">Projects</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/teaching.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-graduation-cap"></i></span>
+            <div class="sidebar__link_item__name">Teaching</div>
+          </li>
+          <li onclick="location.href=&apos;http://www.vittoriozaccaria.net/deposit/cv.pdf&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-user"></i></span>
+            <div class="sidebar__link_item__name">CV</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/videos.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-youtube-play"></i></span>
+            <div class="sidebar__link_item__name">Videos</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/address.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-map-marker"></i></span>
+            <div class="sidebar__link_item__name">Address</div>
+          </li>
+        </ul>
+        <div class="sidebar__bottom"> 
+          <div onclick="location.href=&apos;http://www.linkedin.com/in/vzaccaria&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-linkedin-square"></i></div>
+          <div onclick="location.href=&apos;http://twitter.com/_vzaccaria_&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-twitter-square"></i></div>
+          <div onclick="location.href=&apos;https://plus.google.com/116322227495215922957/about&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-google-plus-square"></i></div>
+        </div>
+      </div>
+      <div class="site_container">
+        <div class="post_container">
+          <div class="post_container__post__title">Taming asynchronous programming with Harmony</div>
+          <div class="post_container__post__subtitle"> 
+            <div class="post_container__post__date"> <i class="fa fa-calendar-o"> </i>
+              <div class="post_container__post__date_value">Tuesday, November 5th 2013</div>
+            </div>
+            <div class="post_container__post__category"> <i class="fa fa-flag-o"> </i>
+              <div class="post_container__post__category_value">blog</div>
+            </div>
+            <div class="post_container__post__tags"> <i class="fa fa-tags"></i>
+              <div class="post_container__post__tag">promises</div>
+              <div class="post_container__post__tag">asynchronous</div>
+              <div class="post_container__post__tag">Harmony</div>
+            </div>
+            <div class="share_buttons"> 
+              <div class="share_buttons__message">Share: </div>
+              <div style="cursor: pointer" class="share_buttons__share_reddit"><i class="fa fa-reddit"> </i></div>
+              <div style="cursor: pointer" class="share_buttons__share_twitter"><i class="fa fa-twitter"></i></div>
+            </div>
+          </div>
+          <div class="post_text"><p><a href="http://www.vittoriozaccaria.net/chained/"> 
+    <img class="center" src="http://www.vittoriozaccaria.net/deposit/background.jpg">
+</a></p>
+<h3 id="what-is-chained">What is Chained</h3>
+<p><strong>Chained</strong> (<a href="http://www.vittoriozaccaria.net/chained/">home</a>) is an experiment and a prototype library for Javascript I developed in the past weeks. It is meant to show a concept and to provide some limited but useful functionality. All the examples below are written in Coffeescript (and I guess that this makes me a hippie, right?).</p>
+<p><strong>Chained</strong> allows to chain functions explicitly — both those that return promises and those who don&#39;t — without using <code>then</code>-based constructs.</p>
+<p>For example, here&#39;s how you could create a chained computation that:</p>
+<ul>
+<li>downloads with jQuery&#39;s <code>get</code> a user&#39;s <code>npm</code> page </li>
+<li>filters the links to his projects with underscore </li>
+<li><p>prints the links.   </p>
+<pre><code>  jQuery       = require(&#39;jQuery&#39;)
+  underscore   = require(&#39;underscore&#39;)
+  string       = require(&#39;underscore.string&#39;)
+  linklib      = require(&#39;linklib&#39;)
+  { using, _ } = require(&#39;./chain&#39;).chain.init()
+
+  using(jQuery)
+  using(underscore)
+  using(string)
+  using(console)
+  using(linklib)
+
+  getUser = (user) -&gt;
+        _(&quot;https://npmjs.org/~#{user}&quot;)
+          .get()
+          .extractLinks()
+          .filter( -&gt; /package/.test(arguments[0]) )
+          .map( -&gt; &quot;https://npmjs.org#{arguments[0]}&quot; )
+          .log()
+
+  getUser(&quot;vzaccaria&quot;)
+</code></pre></li>
+</ul>
+<p>Here, we have chained together promise-based functions (like <code>get</code> from <code>jQuery</code>) and normal functions with additional parameters (like <code>map</code> and <code>filter</code> from <code>underscore</code>). All  function invocations receive an implicit argument that is the value computed by the previous link in the chain.</p>
+<p>The function defined in <code>getUser</code> implements a processing pipeline (à la <em>streaming</em>). It starts with the link to be retrieved by specifying it with <code>_()</code>:</p>
+<pre><code>_(&quot;https://npmjs.org/~#{user}&quot;)
+</code></pre><p>this value is then passed to <code>get()</code> of <code>jQuery</code>. <strong>Chained</strong> knows that <code>jQuery</code> has a <code>get</code> method since we introduced its scope with</p>
+<pre><code>using(jQuery) 
+</code></pre><p>at the beginning[^1].</p>
+<p>The result of <code>get()</code> — i.e. the webpage — is sent to <code>extractLinks</code> (from <code>linklib</code>) when the associated promise is resolved.
+The rest of the computation proceeds as you can intuitively imagine.</p>
+<p>If an exception is thrown in any of the links of the processing chain then the following links are not executed, just as you would expect from promises.</p>
+<p>We can add additional arguments (besides the implicit one) to method invocations; for example the <code>filter</code> function (from <code>underscore</code>) is invoked as:</p>
+<pre><code>…
+.filter( -&gt; /package/.test(arguments[0]) )
+…
+</code></pre><p>where the <em>lambda</em> function is passed effectively as the second parameter to <code>underscore.filter</code> (the first being the implicit parameter).</p>
+<p>So we nailed a few things here:</p>
+<ul>
+<li>We can chain promise-based functions and normal functions without distinction using the natural syntax of Javascript.</li>
+<li>We can use directly their names instead of using <code>then</code>.</li>
+<li>We can chain <strong>any method</strong> from an arbitrary number of modules, provided that the module is bound to <strong>Chained</strong> with the <code>using</code> clause.</li>
+<li>We don&#39;t modify dynamically the module that are imported. We don&#39;t change any prototype.</li>
+<li>The chain stops executing when one of the links throws an exception or a promise is rejected.</li>
+<li>We are not using any coffee-script mambo-jumbo for chaining; we can write with the same expressiveness in pure Javascript.</li>
+</ul>
+<h3 id="where-s-the-catch-">Where&#39;s the catch?</h3>
+<p>We are exploiting ECMA6/harmony implementation of <strong>introspection</strong>. 
+You need an ECMA6/harmony implementation, either in node (<code>node --harmony</code>) or in your browser (Firefox is ok at the moment) to make it work. </p>
+<h3 id="does-it-work-in-the-browser-">Does it work in the browser?</h3>
+<p>Yes, check out this example <a href="http://www.vittoriozaccaria.net/chained/demo.html">Domain Specific Language for form validation</a> directly built with Chained. <strong>Warning: it needs a recent build of Firefox. In principle also a harmony-enabled Chrome should work, but I did not try it</strong>.</p>
+<h3 id="how-to-install-it-">How to install it?</h3>
+<p>On node: </p>
+<pre><code>npm install chained
+</code></pre><p>In the browser, download it from Github and include these files:</p>
+<ul>
+<li><code>reflect.js</code></li>
+<li><code>dsl.js</code>, </li>
+<li><code>chain.js</code></li>
+</ul>
+<p>You should be good to go.</p>
+<h3 id="implementation">Implementation</h3>
+<p>The idea for <strong>Chained</strong> came while tinkering with <strong>domain specific languages</strong>. DSLs provide the developer with the vocabulary of a problem domain to express a programmatic solution that could be understood by a <em>problem domain expert</em>[^2].</p>
+<p>I will not cover all the general concepts of DSLs here. For an in depth overview, I&#39;d suggest to look at these resources:  </p>
+<ul>
+<li><a href="http://www.amazon.com/DSLs-Action-Debasish-Ghosh/dp/1935182455">Debasish Ghosh, &quot;DSLs in Action&quot;</a> — Manning Publications Co.</li>
+<li><a href="http://martinfowler.com/books/dsl.html">Martin Fowler Website</a> (and <a href="http://www.amazon.com/gp/product/0321712943?ie=UTF8&amp;tag=martinfowlerc-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0321712943">book</a>) </li>
+<li><a href="http://docs.codehaus.org/display/GROOVY/Writing+Domain-Specific+Languages">Writing Domain Specific Languages</a> — Groovy website. </li>
+<li><a href="http://www.cas.mcmaster.ca/~carette/publications/FedorenkoThesis.pdf">Validation DSL for Client-Server Applications</a> — Vitalii Fedorenko Master Thesis</li>
+<li><a href="http://webdsl.org/home">WebDSL</a> </li>
+</ul>
+<p><strong>Internal DSLs</strong> are built using the syntactic and semantic features of another language; they are used in the context of a broader application for which they address a narrow but important problem.</p>
+<p>My quest was to find a way to implement a DSL in Javascript. Let&#39;s see what features are needed by a general purpose language like Javascript to support the definition of internal DSLs:</p>
+<ul>
+<li><p>Support for named arguments (or hashes) in function invocation (aka <em>Smart API</em>), e.g.:</p>
+<pre><code>  move(the: pen, on: theTable)
+</code></pre></li>
+<li><p>Support for a <em>property/method missing exception</em> to implement method chaining:</p>
+<pre><code>  take(&#39;spaghetti&#39;).and().cookIt(at: 100C)
+</code></pre><p>  here <code>and</code> is a non existing method of the return value <code>V</code> of <code>take(&#39;spaghetti&#39;)</code>. The missing exception handler will return the same value <code>V</code> so that <code>cookIt</code> could be called on it.</p>
+</li>
+<li><p>(optional, but highly desirable) </p>
+<ul>
+<li><p>Reduced boilerplate code. </p>
+</li>
+<li><p>Synthetic expression of closures (w/ implicit arguments).</p>
+</li>
+<li><p>Limited presence of parenthesis <code>{}</code> and <code>()</code>:</p>
+<pre><code>  withObject chair, -&gt;
+      move it, in: theLivingRoom
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<p>At some point, it became clear to me that DSLs&#39; <em>method chaining</em> can be used to implicitly structure promise based chains. In fact, you could build a promise-chain by handling a sequence of method missing exceptions.</p>
+<p>As a byproduct, it is straightforward to use the same technique to chain normal functions, without any exogenous construct like <code>then</code>.</p>
+<h4 id="the-roadblocks">The roadblocks</h4>
+<p>Javascript and its relatives (such as Coffee and LiveScript) have almost all the characteristics to build a sophisticated DSL. The only problem is that they lack of a <strong>method missing exception</strong>; at least until Harmony came out.</p>
+<p><a href="http://unobfuscated.blogspot.it/2012/06/creating-catchall-method-for-javascript.html">Dylan Barrell already demonstrated</a> that with the new <strong>reflection</strong> API, it is possible to manage missing methods. His technique exploits the concept of <strong>Proxies</strong>. Think about a Proxy like a wrapper around your original object that is able to intercept calls to methods that are not defined. <strong>Chained</strong> is based on Dylan&#39;s work.</p>
+<h4 id="the-basic-idea">The basic idea</h4>
+<p>The basic idea goes as follows:</p>
+<ol>
+<li><p>We create an object that can handle missing methods <a href="http://unobfuscated.blogspot.it/2012/06/creating-catchall-method-for-javascript.html">through an appropriate mechanism</a>. Let&#39;s call it <code>o</code>.</p>
+</li>
+<li><p><code>o</code> contains a <code>promise</code> property. Whenever a method missing is invoked on <code>o</code>:</p>
+<pre><code> o.m()
+</code></pre><p> we catch it and handle it with the following handler: </p>
+<pre><code> handleMethodMissing = (m) -&gt; 
+     this.promise = this.promise.then( (it) -&gt; scope[m](it) )
+     return this
+</code></pre><p> now, note that:</p>
+<ul>
+<li>we need a scope in which to look for <code>m</code>. In <strong>Chained</strong>, we use <code>using(module)</code> to specify/extend this scope.</li>
+<li><code>m</code> is called with the final value of the previous promise. </li>
+<li>even if <code>m</code> returns a new promise, this is perfectly fine since the <code>then</code> method is going to resolve the original <code>o.promise</code> accordingly.</li>
+<li>we return <code>o</code>, so that we can repeat the same process by seemingly chaining methods that are effectively missing.</li>
+</ul>
+</li>
+<li><p>We need a way to fire the very first promise off. In <strong>Chained</strong>, we use the function <code>_()</code> both for creating <code>o</code> and to resolve the first promise of the chain with the value passed to it:</p>
+<pre><code> _(v) = -&gt; 
+      o = new methodMissingObject()
+      o.deferred = defer()
+      o.promise = o.deferred.promise
+      o.deferred.resolve(v)
+      return o
+</code></pre></li>
+</ol>
+<h3 id="api">API</h3>
+<p>The API is pretty simple at the moment; however, I think it offers a good level of flexibility to be leveraged.</p>
+<p><code>chain.using(module)</code>
+: Extends the scope within which all missing methods are searched for. You can include multiple modules:</p>
+<pre><code>using(jQuery)
+using(underscore)
+</code></pre><p><code>o = chain._(value)</code> 
+: returns a deferred object whose <code>promise</code> property will eventually be resolved to <code>value</code>. The object handles missing methods by chaining them using <code>Q</code>.</p>
+<h4 id="deferred-object-methods-and-properties">Deferred object methods and properties</h4>
+<p>Given the deferred object <code>o</code>, the following methods apply; remember that they return again a deferred object:</p>
+<p><code>o.foo(...)</code> 
+: if <code>o</code> eventually resolves to <code>v</code>, this is essentially equivalent to building a <em>deferred</em> <code>foo(v, ...)</code>.   </p>
+<p><code>o._(foo)</code>
+: specify a one shot function <code>foo</code> to be chained with the rest, without extending the scope with <code>using</code>.   </p>
+<p><code>o._forEach(bar)</code>
+: if <code>o</code> will eventually resolve to an array, apply <code>bar</code> to each element; the combined promise is created with <code>Q.all</code>.</p>
+<p><code>o.promise</code>
+: this is a Q promise corresponding to the deferred <code>o</code>. </p>
+<h3 id="license">License</h3>
+<p>MIT</p>
+<p>[^1]: The <code>using</code> clause extends the scope within which <strong>Chained</strong> looks for functions to be chained.</p>
+<p>[^2]: Make, SQL, CSS are all famous examples of DSLs widely used by developers. </p>
+</div>
+          <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG"></script>
+          <div id="disqus_thread" class="post_container__comments"> 
+            <script>(function() {
+  var disqus_shortname, dsq;
+
+  disqus_shortname = 'vittoriozaccaria';
+
+  dsq = document.createElement('script');
+
+  dsq.type = 'text/javascript';
+
+  dsq.async = true;
+
+  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+}).call(this);
+
+            </script><a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

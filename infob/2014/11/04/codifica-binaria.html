@@ -1,0 +1,337 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head lang="en">
+    <title>Codifica binaria</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+    <script type="text/javascript" src="/v2/js/client.js"></script>
+  </head>
+  <body ng-app="application">
+    <div class="site_wrapper">
+      <div class="sidebar"> <img class="sidebar__picture">
+        <div class="sidebar__name">Vittorio Zaccaria</div>
+        <div class="sidebar__address">Politecnico di Milano</div>
+        <ul class="sidebar__link_list">
+          <li onclick="location.href=&apos;/v2&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-home"></i></span>
+            <div class="sidebar__link_item__name">Home</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/research.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-flask"></i></span>
+            <div class="sidebar__link_item__name">Research</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/blog.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-quote-left"></i></span>
+            <div class="sidebar__link_item__name">Blog</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/projects.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-floppy-o"></i></span>
+            <div class="sidebar__link_item__name">Projects</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/teaching.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-graduation-cap"></i></span>
+            <div class="sidebar__link_item__name">Teaching</div>
+          </li>
+          <li onclick="location.href=&apos;http://www.vittoriozaccaria.net/deposit/cv.pdf&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-user"></i></span>
+            <div class="sidebar__link_item__name">CV</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/videos.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-youtube-play"></i></span>
+            <div class="sidebar__link_item__name">Videos</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/address.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-map-marker"></i></span>
+            <div class="sidebar__link_item__name">Address</div>
+          </li>
+        </ul>
+        <div class="sidebar__bottom"> 
+          <div onclick="location.href=&apos;http://www.linkedin.com/in/vzaccaria&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-linkedin-square"></i></div>
+          <div onclick="location.href=&apos;http://twitter.com/_vzaccaria_&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-twitter-square"></i></div>
+          <div onclick="location.href=&apos;https://plus.google.com/116322227495215922957/about&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-google-plus-square"></i></div>
+        </div>
+      </div>
+      <div class="site_container">
+        <div class="post_container">
+          <div class="post_container__post__title">Codifica binaria</div>
+          <div class="post_container__post__subtitle"> 
+            <div class="post_container__post__date"> <i class="fa fa-calendar-o"> </i>
+              <div class="post_container__post__date_value">Tuesday, November 4th 2014</div>
+            </div>
+            <div class="post_container__post__category"> <i class="fa fa-flag-o"> </i>
+              <div class="post_container__post__category_value">infob</div>
+            </div>
+            <div class="post_container__post__tags"> <i class="fa fa-tags"></i>
+              <div class="post_container__post__tag">lezione</div>
+              <div class="post_container__post__tag">codifica binaria</div>
+            </div>
+            <div class="share_buttons"> 
+              <div class="share_buttons__message">Share: </div>
+              <div style="cursor: pointer" class="share_buttons__share_reddit"><i class="fa fa-reddit"> </i></div>
+              <div style="cursor: pointer" class="share_buttons__share_twitter"><i class="fa fa-twitter"></i></div>
+            </div>
+          </div>
+          <div class="post_text"><h1 id="stringa-palindroma">Stringa palindroma</h1>
+<p>Ecco l&#39;esercizio sul riconoscimento di una stringa palindroma che abbiamo visto all&#39;inizio della lezione:</p>
+<script src="http://ideone.com/e.js/Da06fw" type="text/javascript"></script>
+
+<h1 id="codifica-binaria">Codifica binaria</h1>
+<p>Il materiale sulla teoria della codifica binaria <a href="https://dl.dropboxusercontent.com/u/5867765/slides-informatica-b/codifica_binaria.pdf">può essere trovato a questo indirizzo</a>.</p>
+<h2 id="esercizio-su-complemento-a-due">Esercizio su complemento a due</h2>
+<p>Si definisca il minimo numero di bit necessari per rappresentare in complemento a 2 tutti i seguenti valori interi:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">numero</th>
+<th style="text-align:center">bit minimi</th>
+<th style="text-align:right">codifica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">149</td>
+<td style="text-align:center">9 in C2</td>
+<td style="text-align:right">010010101</td>
+</tr>
+<tr>
+<td style="text-align:center">108</td>
+<td style="text-align:center">8 in C2</td>
+<td style="text-align:right">01101100</td>
+</tr>
+<tr>
+<td style="text-align:center">12</td>
+<td style="text-align:center">5 in C2</td>
+<td style="text-align:right">01100</td>
+</tr>
+<tr>
+<td style="text-align:center">42</td>
+<td style="text-align:center">7 in C2</td>
+<td style="text-align:right">0101010</td>
+</tr>
+<tr>
+<td style="text-align:center">92</td>
+<td style="text-align:center">8 in C2</td>
+<td style="text-align:right">01011100</td>
+</tr>
+</tbody>
+</table>
+<p>Si eseguano quindi le seguenti operazioni riportando eventuali riporti perduti o overflow:</p>
+<ul>
+<li><p>Calcolo di (<code>- 149 – 108</code>)</p>
+<ul>
+<li><p>ricavo <code>-149</code>:</p>
+<pre><code>  010010101 -&gt; nego
+  101101010 -&gt; aggiungo 1
+  ---------
+  101101011 (-149 su 9 bit)
+</code></pre></li>
+<li><p>ricavo <code>-108</code>:</p>
+<pre><code>   01101100 -&gt; nego
+   10010011 -&gt; aggiungo 1
+  ---------
+  110010100 (-108 su 9 bit)
+</code></pre></li>
+<li><p>faccio la somma <code>-149 + (-108)</code>; in realta&#39; so gia che e&#39; overflow poiche&#39;
+su 9 bit posso rappresentare al minimo -256, mentre il risultato e&#39; -257:</p>
+<pre><code>  101101011
+  110010100
+  ---------
+ 1011111111 -&gt; riporto perduto e overflow!
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>Calcolo di (<code>108 + 12</code>)</p>
+<pre><code>  01101100
+  00001100
+  --------
+  01111000 -&gt; no riporto perduto e no overflow.
+</code></pre></li>
+</ul>
+<h2 id="esercizio-su-virgola-fissa">Esercizio su Virgola fissa</h2>
+<p>Si definisca il numero minimo di bit per rappresentare in virgola fissa C2 i seguenti numeri e si ricavi la codifica equivalente:</p>
+<ul>
+<li>2 </li>
+<li>0.25</li>
+<li>-2</li>
+<li>-2.25</li>
+</ul>
+<p><strong>Soluzione</strong>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Numero (decimale)</th>
+<th>bit minimi</th>
+<th style="text-align:right">Codifica binaria del numero</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">2</td>
+<td>3 (3 per parte intera, 0 per parte frazionaria)</td>
+<td style="text-align:right">010</td>
+</tr>
+<tr>
+<td style="text-align:center">0.25</td>
+<td>3 (1 per parte intera, 2 per parte frazionaria)</td>
+<td style="text-align:right">0.01</td>
+</tr>
+<tr>
+<td style="text-align:center">-2</td>
+<td>2 (2 per parte intera, 0 per parte frazionaria)</td>
+<td style="text-align:right">10</td>
+</tr>
+<tr>
+<td style="text-align:center">-2.25</td>
+<td>5 (3 per parte intera, 2 per parte frazionaria)</td>
+<td style="text-align:right">101.11</td>
+</tr>
+</tbody>
+</table>
+<p>Nota che: </p>
+<ul>
+<li>il punto nella codifica serve a separare la rappresentazione in parte intera e frazionaria</li>
+<li>per numeri puramente frazionari (e.g. 0.25) utilizziamo comunque 1 bit per la parte intera.</li>
+</ul>
+<h2 id="esercizio-su-virgola-fissa-n-2">Esercizio su Virgola fissa n. 2</h2>
+<p>Si rappresenti il numero 0.2 e si stabilisca se tale rappresentazione è esatta e, nel caso non lo fosse spiegare il perchè:</p>
+<p><strong>Spazio soluzione:</strong></p>
+<p>Se calcoliamo la codifica manualmente:</p>
+<pre><code>0.2 ⨉ 2 = 0.4
+0.4 ⨉ 2 = 0.8
+0.8 ⨉ 2 = 1.6 
+0.6 ⨉ 2 = 1.2 
+0.2 ⨉ 2 = 0.4 &lt;- uguale alla prima moltiplicazione
+</code></pre><p>Notiamo che non arriveremo mai ad una rappresentazione esatta del numero. Esso sara&#39; infatti rappresentato da una sequenza infinita di </p>
+<pre><code>001100110011001100110011..
+</code></pre><h2 id="esercizio-su-virgola-fissa-n-3">Esercizio su Virgola fissa n. 3</h2>
+<p>Di seguito, viene convertito il numero -123.21 in virgola fissa complemento a due, con due metodi:</p>
+<ul>
+<li>Metodo tradizionale (visto a lezione).</li>
+<li>Metodo del fattore di scala.</li>
+</ul>
+<p>La conversione verra&#39; effettuata usando 8 bit come parte intera (in complemento a 2) e
+6 bit come parte decimale.
+<!-- more start --></p>
+<h3 id="metodo-tradizionale-">Metodo tradizionale:</h3>
+<p>Conversione tradizionale di -123.21 in virgola fissa con 8 bit parte intera e 6 decimale:</p>
+<ul>
+<li><p>Converto -123 (valore assoluto e poi opposto in C2):</p>
+<pre><code>  123:2 (resto) 1
+   61:2 (resto) 1
+   30:2 (resto) 0
+   15:2 (resto) 1
+    7:2 (resto) 1
+    3:2 (resto) 1
+    1:2 (resto) 1
+    0
+</code></pre><ul>
+<li>123 =  1111011 (binario naturale)</li>
+<li>+123 = 01111011 (complemento a 2 positivo)</li>
+<li>-123 = <strong>10000101</strong> (risultato dell&#39;inversione di 01111011 e della somma di 1)</li>
+</ul>
+</li>
+<li><p>Converto -0.21 (valore assoluto e poi opposto in C2):</p>
+<pre><code>   0,21 x 2 = 0,42
+   0,42 x 2 = 0,84
+   0,84 x 2 = 1,68
+   0,68 x 2 = 1,36
+   0,36 x 2 = 0,72
+   0,72 x 2 = 1,44
+   0,44 x 2 = 0,88
+   0,88 x 2 = 1,76
+   0,76 x 2 = 1,52
+   0,52 x 2 = 1,04
+   0,04 x 2 = 0,08
+   0,08 x 2 = 0,16
+   ......
+</code></pre><ul>
+<li><p>0,21 = ,001101 (valore frazionario approssimato su 6 bit, approssimato)</p>
+</li>
+<li><p>prima di calcolare il valore negativo bisogna estendere il segno di ,001101 (indicato con le parentesi):</p>
+</li>
+<li><p>(0),001101 = 0.21 su 7 bit in C2 (il primo bit e&#39; il peso di -2^0 e rappresenta, di fatto, il suo segno)</p>
+</li>
+<li><p>e calcolare l&#39;opposto come se fosse un numero C2 tradizionale:</p>
+</li>
+<li><p>(1),110010 + (0),000001 = <strong>(1),110011</strong> (valore di -0,21 su 7 bit, approssimato)</p>
+</li>
+</ul>
+</li>
+<li><p>Per fare la somma di -0.21 e -123 bisogna estendere il segno di -0.21 (su 14 bit): (11111111),110011</p>
+</li>
+<li><p>La somma finale di -0.21 e -123 (su 14 bit):</p>
+</li>
+</ul>
+<pre><code>-0.21 = (11111111), 110011
+-123  =  10000101 , 000000
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+10000100 , 110011
+</code></pre><ul>
+<li>Risultato: <strong>10000100,110011</strong></li>
+</ul>
+<h3 id="metodo-del-fattore-di-scala">Metodo del fattore di scala</h3>
+<p>Conversione di -123.21 in virgola fissa con 8 bit parte intera e 6 decimale:</p>
+<ul>
+<li><p>-123.21 x 64 = - 7885,44</p>
+</li>
+<li><p>Converto prima il valore assoluto 7885 in binario e poi lo nego:</p>
+<pre><code>  7885:2 (resto) 1
+  3942:2 (resto) 0
+  1971:2 (resto) 1
+  985 :2 (resto) 1
+  492 :2 (resto) 0
+  246 :2 (resto) 0
+  123 :2 (resto) 1
+  61  :2 (resto) 1
+  30  :2 (resto) 0
+  15  :2 (resto) 1
+  7   :2 (resto) 1
+  3   :2 (resto) 1
+  1   :2 (resto) 1
+  0
+</code></pre><ul>
+<li>7885 = 01111011001101</li>
+<li>-7885 = 10000100110010 + 1 = <strong>10000100110011</strong></li>
+</ul>
+</li>
+<li><p><strong>Conclusione</strong>: approssimazione migliore possibile su 14 bit di -123,21:</p>
+<p><strong>10000100,110011</strong></p>
+</li>
+<li><p><strong>Controllo</strong>, quanto vale 10000100,110011:</p>
+<ul>
+<li>-128+4 = -124</li>
+<li>1/2+1/4+1/32+1/64 = 0,796875</li>
+<li>-124+0,796875 = <strong>-123.203125</strong></li>
+<li>Errore di approssimazione: 0.007</li>
+</ul>
+</li>
+<li><p>Il risultato e&#39; <strong>identico</strong> a quello trovato col metodo tradizionale.</p>
+<!-- more end -->
+
+
+
+</li>
+</ul>
+</div>
+          <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG"></script>
+          <div id="disqus_thread" class="post_container__comments"> 
+            <script>(function() {
+  var disqus_shortname, dsq;
+
+  disqus_shortname = 'vittoriozaccaria';
+
+  dsq = document.createElement('script');
+
+  dsq.type = 'text/javascript';
+
+  dsq.async = true;
+
+  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+}).call(this);
+
+            </script><a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head lang="en">
+    <title>Tutorial on Template Haskell</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+    <script type="text/javascript" src="/v2/js/client.js"></script>
+  </head>
+  <body ng-app="application">
+    <div class="site_wrapper">
+      <div class="sidebar"> <img class="sidebar__picture">
+        <div class="sidebar__name">Vittorio Zaccaria</div>
+        <div class="sidebar__address">Politecnico di Milano</div>
+        <ul class="sidebar__link_list">
+          <li onclick="location.href=&apos;/v2&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-home"></i></span>
+            <div class="sidebar__link_item__name">Home</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/research.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-flask"></i></span>
+            <div class="sidebar__link_item__name">Research</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/blog.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-quote-left"></i></span>
+            <div class="sidebar__link_item__name">Blog</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/projects.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-floppy-o"></i></span>
+            <div class="sidebar__link_item__name">Projects</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/teaching.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-graduation-cap"></i></span>
+            <div class="sidebar__link_item__name">Teaching</div>
+          </li>
+          <li onclick="location.href=&apos;http://www.vittoriozaccaria.net/deposit/cv.pdf&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-user"></i></span>
+            <div class="sidebar__link_item__name">CV</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/videos.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-youtube-play"></i></span>
+            <div class="sidebar__link_item__name">Videos</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/address.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-map-marker"></i></span>
+            <div class="sidebar__link_item__name">Address</div>
+          </li>
+        </ul>
+        <div class="sidebar__bottom"> 
+          <div onclick="location.href=&apos;http://www.linkedin.com/in/vzaccaria&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-linkedin-square"></i></div>
+          <div onclick="location.href=&apos;http://twitter.com/_vzaccaria_&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-twitter-square"></i></div>
+          <div onclick="location.href=&apos;https://plus.google.com/116322227495215922957/about&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-google-plus-square"></i></div>
+        </div>
+      </div>
+      <div class="site_container">
+        <div class="post_container">
+          <div class="post_container__post__title">Tutorial on Template Haskell</div>
+          <div class="post_container__post__subtitle"> 
+            <div class="post_container__post__date"> <i class="fa fa-calendar-o"> </i>
+              <div class="post_container__post__date_value">Monday, February 24th 2014</div>
+            </div>
+            <div class="post_container__post__category"> <i class="fa fa-flag-o"> </i>
+              <div class="post_container__post__category_value">blog</div>
+            </div>
+            <div class="post_container__post__tags"> <i class="fa fa-tags"></i>
+              <div class="post_container__post__tag">haskell</div>
+              <div class="post_container__post__tag">digital signal processing</div>
+            </div>
+            <div class="share_buttons"> 
+              <div class="share_buttons__message">Share: </div>
+              <div style="cursor: pointer" class="share_buttons__share_reddit"><i class="fa fa-reddit"> </i></div>
+              <div style="cursor: pointer" class="share_buttons__share_twitter"><i class="fa fa-twitter"></i></div>
+            </div>
+          </div>
+          <div class="post_text"><p><em>Note: This is part 1 of small tutorial on Template Haskell I wrote on my blog; the tutorial is composed of <a href="http://www.vittoriozaccaria.net/blog/2014/02/24/towards-template-programming-with-haskell.html">part1</a>, <a href="http://www.vittoriozaccaria.net/blog/2014/03/12/implementing-a-simple-dsp-filter-library-with-template-haskell.html">part 2</a> and <a href="http://www.vittoriozaccaria.net/blog/2014/03/21/symbolically-optimize-dsp-filters-with-template-haskell.html">part 3</a></em>.</p>
+<p>Template Haskell promises to be the next &quot;big thing&quot; for parallel code
+generation. It allows to algorithmically generate and manipulate Haskell programs, much like LISP macros. With <em>quasi-quotation</em>, it even allows to define other languages whose syntax can be manipulated.</p>
+<p>In this short blog post, I&#39;ll guide you through some very simple examples showing the power of Template Haskell.
+Originally I struggled a lot in putting up a working example, so I hope this could be of help to anyone of you starting out on this. </p>
+<h1 id="pre-requirements">Pre-requirements</h1>
+<p>Before we start, you should have GHC (Haskell&#39;s compiler) and Cabal (Haskell&#39;s package manager) installed. This usually depends on your OS.</p>
+<p>Then you should install <code>template-haskell</code> with Cabal:</p>
+<pre><code>cabal install template-haskell
+</code></pre><h1 id="initial-example">Initial example</h1>
+<p>Let&#39;s define a module with a function that computes the symbolic power of an expression whose <strong>value is known only when the program is run</strong>. The power exponent is, instead, known at compile-time [^1].</p>
+<p>[^1]: Taken from DSL &#39;Implementation in MetaOCaml, Template Haskell, and C++&#39;, (Czarnecki1 et al., 2003).</p>
+<p>Let&#39;s call our module <code>A</code>. This module will import Template Haskell and not much else: </p>
+<pre><code>module A where
+
+import Language.Haskell.TH
+import Language.Haskell.TH.Syntax
+</code></pre><p>Our function <code>expand_power</code> receives an <code>int</code>, a <strong>staged expression</strong> <code>Q Exp</code> and returns another staged expression <code>Q Exp</code>.</p>
+<pre><code>expand_power :: Int -&gt; Q Exp -&gt; Q Exp
+</code></pre><p>A staged expression is just a representation of a portion of code. It is like an <em>abstract syntax tree</em>
+that represents a computation to be performed at run-time. The above type means that the function
+receives a representation of a symbol and returns an expression of that symbol, without evaluating it.</p>
+<p>The function itself receives  two parameters (the exponent and the expression to be exponentiated):</p>
+<pre><code>expand_power n x =
+</code></pre><p>When <code>n</code> is 0, the function returns the AST for the literal <code>1</code>, by using Template Haskell quoting:</p>
+<pre><code>if n==0
+    then [| 1 |]
+</code></pre><p>The above should be interpreted as: <em>if <code>n</code> is 0, then return an AST that when evaluated at run-time 
+is 1.</em> If <code>n</code> is not 0, then we must build, with a (compile-time) recursion, the expression tree:</p>
+<pre><code>    else [| $x * $(expand_power (n-1) x ) |]
+</code></pre><p>First of all, we are building an AST for a multiplication so the value returned is a quoted value. The dollar sign 
+is the <em>splice</em> operator; <code>$x</code> allows to take the AST passed as parameter <code>x</code> and splice it into the bigger AST as the first operand 
+of operator <code>*</code>. Splicing allows to evaluate at compile time expressions that will return an AST, so we can invoke
+recursively <code>expand_power</code> to provide the representation of the sub-expression.</p>
+<p>We can also define a function that returns a representation of an Haskell lambda:</p>
+<pre><code>mk_power :: Int -&gt; Q Exp
+mk_power n = [| \x -&gt; $(expand_power n [| x |]) |]
+</code></pre><p>The second quoted value <code>[| x |]</code> means that the AST to be passed to the <code>expand_power</code> function
+should be the formal parameter <code>x</code> of the closure we are building. Scoping works just as we expect.</p>
+<h1 id="using-the-function-generator">Using the function generator</h1>
+<p>To use <code>mk_power</code> and generate a program at <em>compile-time</em>, we have to 
+write another module (due to the &#39;limitations&#39; of the current implementation of template Haskell). This will be our <code>main.hs</code> program. It will use <code>mk_power</code> to instantiate a specialized power function:</p>
+<pre><code>module Main where
+
+import Language.Haskell.TH.Syntax
+import Language.Haskell.TH.Ppr
+import Language.Haskell.TH
+import A
+</code></pre><p>Then, we need a function to print the generated code (instead of executing it)[^2]:</p>
+<pre><code>printCode :: Q Exp -&gt; IO ()
+printCode ast = runQ ast &gt;&gt;= putStrLn . pprint
+</code></pre><p>[^2]: Taken from <a href="https://www.cs.kent.ac.uk/people/rpg/cmb21/PTH.pdf">https://www.cs.kent.ac.uk/people/rpg/cmb21/PTH.pdf</a></p>
+<p>So that we can print the generated code:</p>
+<pre><code>main = printCode(mk_power 3)
+</code></pre><p>Most importantly, you can also execute that code in the same program. In fact, we can render <code>mk_power</code> with the <code>$</code> operator:</p>
+<pre><code>power3 = $(mk_power 3)  
+</code></pre><p>and use it as a normal power function. </p>
+<h1 id="building-and-running-the-program">Building and running the program</h1>
+<p>If you build the program: </p>
+<pre><code>ghc --make -XTemplateHaskell main.hs -o main
+</code></pre><p>And run it:</p>
+<pre><code>./main
+</code></pre><p>You get: </p>
+<pre><code>\x_0 -&gt; x_0 GHC.Num.* (x_0 GHC.Num.* (x_0 GHC.Num.* 1))
+</code></pre><p>which is the Haskell code for the generated function.</p>
+<h1 id="conclusions">Conclusions</h1>
+<p>Template Haskell opens a whole new world for the creation of embedded DSLs. In this example, we could have optimized <code>(x_0 GHC.Num.* 1)</code> to <code>x_0</code> programmatically but much more complex DSLs could apply domain specific optimizations to enhance or adapt the code at run-time. </p>
+</div>
+          <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG"></script>
+          <div id="disqus_thread" class="post_container__comments"> 
+            <script>(function() {
+  var disqus_shortname, dsq;
+
+  disqus_shortname = 'vittoriozaccaria';
+
+  dsq = document.createElement('script');
+
+  dsq.type = 'text/javascript';
+
+  dsq.async = true;
+
+  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+}).call(this);
+
+            </script><a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

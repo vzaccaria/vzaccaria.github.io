@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head lang="en">
+    <title>Efficient DSP filters with Template Haskell</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+    <script type="text/javascript" src="/v2/js/client.js"></script>
+  </head>
+  <body ng-app="application">
+    <div class="site_wrapper">
+      <div class="sidebar"> <img class="sidebar__picture">
+        <div class="sidebar__name">Vittorio Zaccaria</div>
+        <div class="sidebar__address">Politecnico di Milano</div>
+        <ul class="sidebar__link_list">
+          <li onclick="location.href=&apos;/v2&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-home"></i></span>
+            <div class="sidebar__link_item__name">Home</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/research.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-flask"></i></span>
+            <div class="sidebar__link_item__name">Research</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/blog.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-quote-left"></i></span>
+            <div class="sidebar__link_item__name">Blog</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/projects.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-floppy-o"></i></span>
+            <div class="sidebar__link_item__name">Projects</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/teaching.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-graduation-cap"></i></span>
+            <div class="sidebar__link_item__name">Teaching</div>
+          </li>
+          <li onclick="location.href=&apos;http://www.vittoriozaccaria.net/deposit/cv.pdf&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-user"></i></span>
+            <div class="sidebar__link_item__name">CV</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/videos.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-youtube-play"></i></span>
+            <div class="sidebar__link_item__name">Videos</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/address.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-map-marker"></i></span>
+            <div class="sidebar__link_item__name">Address</div>
+          </li>
+        </ul>
+        <div class="sidebar__bottom"> 
+          <div onclick="location.href=&apos;http://www.linkedin.com/in/vzaccaria&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-linkedin-square"></i></div>
+          <div onclick="location.href=&apos;http://twitter.com/_vzaccaria_&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-twitter-square"></i></div>
+          <div onclick="location.href=&apos;https://plus.google.com/116322227495215922957/about&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-google-plus-square"></i></div>
+        </div>
+      </div>
+      <div class="site_container">
+        <div class="post_container">
+          <div class="post_container__post__title">Efficient DSP filters with Template Haskell</div>
+          <div class="post_container__post__subtitle"> 
+            <div class="post_container__post__date"> <i class="fa fa-calendar-o"> </i>
+              <div class="post_container__post__date_value">Friday, March 21st 2014</div>
+            </div>
+            <div class="post_container__post__category"> <i class="fa fa-flag-o"> </i>
+              <div class="post_container__post__category_value">blog</div>
+            </div>
+            <div class="post_container__post__tags"> <i class="fa fa-tags"></i>
+              <div class="post_container__post__tag">haskell</div>
+              <div class="post_container__post__tag">digital signal processing</div>
+            </div>
+            <div class="share_buttons"> 
+              <div class="share_buttons__message">Share: </div>
+              <div style="cursor: pointer" class="share_buttons__share_reddit"><i class="fa fa-reddit"> </i></div>
+              <div style="cursor: pointer" class="share_buttons__share_twitter"><i class="fa fa-twitter"></i></div>
+            </div>
+          </div>
+          <div class="post_text"><p><em>Note: This is part 3 of small tutorial on Template Haskell I wrote on my blog; the tutorial is composed of <a href="http://www.vittoriozaccaria.net/blog/2014/02/24/towards-template-programming-with-haskell.html">part1</a>, <a href="http://www.vittoriozaccaria.net/blog/2014/03/12/implementing-a-simple-dsp-filter-library-with-template-haskell.html">part 2</a> and <a href="http://www.vittoriozaccaria.net/blog/2014/03/21/symbolically-optimize-dsp-filters-with-template-haskell.html">part 3</a></em>.</p>
+<p>In the previous part of this tutorial, we introduced an FIR filter generator  in Template Haskell. The filter generator produces a syntactic representation of FIR Filters in the Haskell Language. An example application is the following:</p>
+<pre><code class="lang-haskell">myfilter = [| \x -&gt; $(Filt.flt0 [0, 1] [| x |]) |]
+</code></pre>
+<p>which produces the following Haskell AST:</p>
+<pre><code class="lang-haskell">\x_0 -&gt; ((0 % 1) GHC.Num.* (x_0 GHC.List.!! 0)) GHC.Num.+ ((1 % 1) GHC.Num.* (x_0 GHC.List.!! 1))
+</code></pre>
+<p>which corresponds to the following mathematical filter:</p>
+<div>
+\begin{equation}
+f(x) = 0 \times x[0] + 1 \times x[1]
+\end{equation}
+</div>
+
+<p>Now this is all cool but we&#39;d really like to optimize the above as:</p>
+<div>
+\begin{equation}
+f(x) = x[1]
+\end{equation}
+</div>
+
+<p>Besides, we want to be able to make more advanced optimizations. In fact,
+wouldn&#39;t it be even more cool if we could optimize the concatenation of more filters? For example:</p>
+<pre><code class="lang-haskell">Filt.flt0 [0, 1] $ Filt.flt0 [0, 1] [| x |]
+</code></pre>
+<p>produces the concatenation of two trivial 2-tap filters; the resulting Haskell program, without optimization, is[^1]:</p>
+<pre><code class="lang-haskell">\x -&gt; 0 * 0 * x !! 0 + 1 * x !! 1 !! 0 + 1 * (0 * x !! 0 + 1 * x !! 1) !! 1
+</code></pre>
+<p>However, one can easily see that the two filters above produce simply <code>x</code> delayed by two:</p>
+<div>
+\begin{equation}
+f(x) = x[2]
+\end{equation}
+</div>
+
+<p>because each of the two filters delays the input by one.</p>
+<p>How can we achieve this by manipulating the symbolic representation of the filter in Haskell? Let&#39;s see.</p>
+<h1 id="constant-propagation">Constant propagation</h1>
+<p>First of all, we need to propagate away trivial constants such as multiplication by 0 and 1 and additions with 0.</p>
+<p>To do this, we need to parse the AST looking for the above patterns. We thus write a recursive function that munches the final expression to produce an optimized one:</p>
+<pre><code class="lang-haskell">constProp :: Exp -&gt; Exp
+</code></pre>
+<p>The function is defined as:</p>
+<pre><code class="lang-haskell">constProp (InfixE (Just e1) op (Just e2)) 
+    | (justZero e1) &amp;&amp; (isPlus op)                     = e2
+    | (justZero e2) &amp;&amp; (isPlus op)                     = e1
+    | ((justZero e1) || (justZero e2)) &amp;&amp; (isTimes op) = zero
+    | ((justOne e1)) &amp;&amp; (isTimes op)                   = e2
+    | ((justOne e2)) &amp;&amp; (isTimes op)                   = e1
+    | otherwise                      = (InfixE (Just (constProp e1)) op (Just (constProp e2)))
+constProp e = e
+</code></pre>
+<p>where <code>(InfixE (Just e1) op (Just e2))</code> matches an infix operator <code>op</code> and two expressions <code>e1</code> and <code>e2</code>.</p>
+<p>By pattern matching we evaluate all the optimizable cases; we use some helper functions such as <code>justZero</code>:</p>
+<pre><code class="lang-haskell">justZero :: Exp -&gt; Bool
+justZero ((LitE (RationalL (0)))) = True 
+justZero ((LitE (IntegerL (0)))) = True
+justZero _ = False
+</code></pre>
+<p>and <code>justOne</code>:</p>
+<pre><code class="lang-haskell">justOne :: Exp -&gt; Bool
+justOne ((LitE (RationalL (1)))) = True 
+justOne ((LitE (IntegerL (1)))) = True
+justOne _ = False
+</code></pre>
+<p>to make the match against literals 0 and 1 more readable. Similarly, we use <code>isPlus</code>:</p>
+<pre><code class="lang-haskell">isPlus :: Exp -&gt; Bool 
+isPlus op 
+    | op == (VarE &#39;(N.+)) = True 
+    | otherwise           = False
+</code></pre>
+<p>and <code>isTimes</code> to match against plus and times operators:</p>
+<pre><code class="lang-haskell">    isTimes:: Exp -&gt; Bool 
+    isTimes op 
+        | op == (VarE &#39;(N.*)) = True 
+        | otherwise           = False
+</code></pre>
+<p>The pattern matches in constProp are easily defined with the above helpers; for example: </p>
+<pre><code class="lang-haskell">| ((justZero e1) || (justZero e2)) &amp;&amp; (isTimes op) = zero
+</code></pre>
+<p>tells that if either <code>e1</code> and <code>e2</code> are 0 and the operator is <code>*</code>, the expression can be optimized to literal <code>0</code>:</p>
+<pre><code class="lang-haskell">zero :: Exp
+zero = (LitE (RationalL (0)))
+</code></pre>
+<p>Obviously, each time we change the AST, we have to check whether new opportunities for optimization arise. Thus we have to iterate until we reach a fixed point with <code>until</code>:</p>
+<pre><code class="lang-haskell">iterateConstProp:: Exp -&gt; Exp
+iterateConstProp = until (\x -&gt; constProp x == x) constProp
+</code></pre>
+<p>To apply <code>iterateConstProp</code> within the <code>Q</code> monad, we need to bind the input expression and return the result within the monad:</p>
+<pre><code class="lang-haskell">simplify :: ExpQ -&gt; ExpQ
+simplify eq = do
+    e &lt;- eq 
+    return (iterateConstProp e)
+</code></pre>
+<p>Now let&#39;s see how the concatenation of the two filters presented above is optimized:</p>
+<pre><code class="lang-haskell">pipe = [| \x -&gt; $(simplify $ Filt.flt0 [0, 1] $ Filt.flt0 [0, 1] [| x |]) |]
+main = printCode $ wrappedPipe
+</code></pre>
+<p>Which gives as result:</p>
+<pre><code>\x_0 -&gt; (x_0 GHC.List.!! 1) GHC.List.!! 1
+</code></pre><p><a href=""> 
+    <img class="center" src="http://www.vittoriozaccaria.net/deposit/not-bad.jpg">
+</a></p>
+<h1 id="domain-specific-optimization">Domain specific optimization</h1>
+<p>To simplify further, we have to apply a domain specific optimization; in particular, we are going to look for a concatenation of delay operators <code>!!</code>, so that:</p>
+<pre><code>(exp !! a) !! b =&gt; exp !! (a + b)
+</code></pre><p>where <code>a+b</code> is evaluated at compile time. To achieve this, we define:</p>
+<pre><code class="lang-haskell">delayOpt :: Exp -&gt; Exp 
+delayOpt (InfixE (Just e1) op (Just e2)) 
+   | isDelay(op) &amp;&amp; isDelayedSignal(e1) &amp;&amp; isNum(e2)   = fuseDelays e1 op e2
+   | otherwise = (InfixE (Just (delayOpt e1)) op (Just (delayOpt e2)))
+</code></pre>
+<p>This function needs to be iteratively applied together with <code>iterateConstProp</code>. The nature of this function is very similar to <code>iterateConstProp</code> in that it visits the AST tree looking for opportunities to simplify delay expressions.</p>
+<p>As usual, we use some helper predicates; <code>isDelay</code> checks whether the top operator is a delay operator (<code>!!</code>):</p>
+<pre><code class="lang-haskell">isDelay :: Exp -&gt; Bool 
+isDelay op 
+    | op == (VarE &#39;(L.!!)) = True 
+    | otherwise           = False
+</code></pre>
+<p><code>isDelayedSignal</code> checks whether we have a nested delay:</p>
+<pre><code class="lang-haskell">isDelayedSignal:: Exp -&gt; Bool
+isDelayedSignal (InfixE (Just e1) op (Just e2))
+    | isDelay(op) &amp;&amp; isNum(e2) = True
+    | otherwise = False
+isDelayedSignal e = False
+</code></pre>
+<p>Finally, we can apply this optimization only to literal values of the coefficients so we need to define:</p>
+<pre><code class="lang-haskell">isNum :: Exp -&gt; Bool
+isNum ((LitE (RationalL (a)))) = True 
+isNum ((LitE (IntegerL (a)))) = True
+isNum _ = False
+</code></pre>
+<p><code>fuseDelays</code> constructs a new infix AST node by collapsing the delays as described above:</p>
+<pre><code class="lang-haskell">fuseDelays:: Exp -&gt; Exp -&gt; Exp -&gt; Exp 
+fuseDelays e1 op e2 = 
+  let d = getDelayValue e1
+    s = getDelayedSignal e1
+    c = getNum e2
+    in (InfixE (Just s) op (Just (LitE (RationalL (d + c)))))
+</code></pre>
+<p>where <code>getDelayedSignal</code>, <code>getDelayValue</code> and <code>getNum</code> are some helper accessors.</p>
+<p>To use <code>delayOpt</code> we need create a <code>simplifyPass</code> that consists of the concatenation of both <code>iterateConstProp</code> and <code>delayOpt</code>:</p>
+<pre><code class="lang-haskell">simplifyPass:: Exp -&gt; Exp 
+simplifyPass eq = do
+    delayOpt $ iterateConstProp eq
+</code></pre>
+<p>finally, we need to iterate <code>simplifyPass</code> until we reach a fixed point :</p>
+<pre><code class="lang-haskell">simplifyAll = until (\x -&gt; simplifyPass x == x) simplifyPass
+</code></pre>
+<p>and modify <code>simplify</code> as follows:</p>
+<pre><code class="lang-haskell">simplify :: ExpQ -&gt; ExpQ
+simplify eq = do
+  e &lt;- eq 
+  return (simplifyAll e)
+</code></pre>
+<p>If we optimize again our pipeline:</p>
+<pre><code class="lang-haskell">pipe = [| \x -&gt; $(simplify $ Filt.flt0 [0, 1] $ Filt.flt0 [0, 1] [| x |]) |]
+
+main = printCode $ wrappedPipe
+</code></pre>
+<p>Which gives as result:</p>
+<pre><code class="lang-haskell">    \x_0 -&gt; x_0 GHC.List.!! (2 % 1)
+</code></pre>
+<p>I.e., the input signal delayed by two.</p>
+<p><a href=""> 
+    <img class="center" src="http://www.vittoriozaccaria.net/deposit/yeah.jpg">
+</a></p>
+<p>[^1]: with some sugar to make it more digestible. </p>
+</div>
+          <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG"></script>
+          <div id="disqus_thread" class="post_container__comments"> 
+            <script>(function() {
+  var disqus_shortname, dsq;
+
+  disqus_shortname = 'vittoriozaccaria';
+
+  dsq = document.createElement('script');
+
+  dsq.type = 'text/javascript';
+
+  dsq.async = true;
+
+  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+}).call(this);
+
+            </script><a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

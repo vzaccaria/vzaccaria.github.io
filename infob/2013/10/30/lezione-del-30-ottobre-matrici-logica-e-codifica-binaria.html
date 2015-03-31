@@ -1,0 +1,291 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head lang="en">
+    <title>Lezione del 30 ottobre, matrici, logica e codifica binaria</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+    <script type="text/javascript" src="/v2/js/client.js"></script>
+  </head>
+  <body ng-app="application">
+    <div class="site_wrapper">
+      <div class="sidebar"> <img class="sidebar__picture">
+        <div class="sidebar__name">Vittorio Zaccaria</div>
+        <div class="sidebar__address">Politecnico di Milano</div>
+        <ul class="sidebar__link_list">
+          <li onclick="location.href=&apos;/v2&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-home"></i></span>
+            <div class="sidebar__link_item__name">Home</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/research.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-flask"></i></span>
+            <div class="sidebar__link_item__name">Research</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/blog.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-quote-left"></i></span>
+            <div class="sidebar__link_item__name">Blog</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/projects.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-floppy-o"></i></span>
+            <div class="sidebar__link_item__name">Projects</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/teaching.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-graduation-cap"></i></span>
+            <div class="sidebar__link_item__name">Teaching</div>
+          </li>
+          <li onclick="location.href=&apos;http://www.vittoriozaccaria.net/deposit/cv.pdf&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-user"></i></span>
+            <div class="sidebar__link_item__name">CV</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/videos.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-youtube-play"></i></span>
+            <div class="sidebar__link_item__name">Videos</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/address.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-map-marker"></i></span>
+            <div class="sidebar__link_item__name">Address</div>
+          </li>
+        </ul>
+        <div class="sidebar__bottom"> 
+          <div onclick="location.href=&apos;http://www.linkedin.com/in/vzaccaria&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-linkedin-square"></i></div>
+          <div onclick="location.href=&apos;http://twitter.com/_vzaccaria_&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-twitter-square"></i></div>
+          <div onclick="location.href=&apos;https://plus.google.com/116322227495215922957/about&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-google-plus-square"></i></div>
+        </div>
+      </div>
+      <div class="site_container">
+        <div class="post_container">
+          <div class="post_container__post__title">Lezione del 30 ottobre, matrici, logica e codifica binaria</div>
+          <div class="post_container__post__subtitle"> 
+            <div class="post_container__post__date"> <i class="fa fa-calendar-o"> </i>
+              <div class="post_container__post__date_value">Wednesday, October 30th 2013</div>
+            </div>
+            <div class="post_container__post__category"> <i class="fa fa-flag-o"> </i>
+              <div class="post_container__post__category_value">infob</div>
+            </div>
+            <div class="post_container__post__tags"> <i class="fa fa-tags"></i>
+              <div class="post_container__post__tag">lezione</div>
+            </div>
+            <div class="share_buttons"> 
+              <div class="share_buttons__message">Share: </div>
+              <div style="cursor: pointer" class="share_buttons__share_reddit"><i class="fa fa-reddit"> </i></div>
+              <div style="cursor: pointer" class="share_buttons__share_twitter"><i class="fa fa-twitter"></i></div>
+            </div>
+          </div>
+          <div class="post_text"><h1 id="matrici">Matrici</h1>
+<p>Oggi abbiamo visto un esempio completo di dichiarazione di matrice (array bidimensionale) consistente in:</p>
+<ul>
+<li>riempimento di una matrice <code>m</code> di valori richiesti da tastiera</li>
+<li>calcolo della trasposta <code>r</code> </li>
+<li>stampa a video del risultato</li>
+</ul>
+<p>ecco il codice:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+#define RIGHE   3
+#define COLONNE 3
+
+typedef float matrice[RIGHE][COLONNE];
+
+
+int main()
+{
+    matrice m;
+    matrice r;
+    int x,y;
+
+    for(x=0; x&lt;RIGHE; x++)
+    {
+        for(y=0; y&lt;COLONNE; y++)
+        {
+            printf(&quot;Inserisci elemento in riga (%d) e colonna (%d): &quot;, x, y);
+            scanf(&quot;%f&quot;, &amp; m[x][y] );
+        }
+    }
+
+    for(x=0; x&lt;RIGHE; x++)
+    {
+        for(y=0; y&lt;COLONNE; y++)
+        {
+            r[y][x] = m[x][y];
+        }
+    }
+
+    printf(&quot;Risultato: \n&quot;);
+    for(x=0; x&lt;RIGHE; x++)
+    {
+        for(y=0; y&lt;COLONNE; y++)
+        {
+            printf(&quot; %f &quot;, r[x][y]);
+        }
+        printf(&quot;\n&quot;);
+    }
+
+    printf(&quot;Matrice originaria: \n&quot;);
+    for(x=0; x&lt;RIGHE; x++)
+    {
+        for(y=0; y&lt;COLONNE; y++)
+        {
+            printf(&quot; %f &quot;, m[x][y]);
+        }
+        printf(&quot;\n&quot;);
+    }
+    return 0;
+}
+</code></pre><h1 id="algebra-booleana">Algebra booleana</h1>
+<p>Successivamente abbiamo riassunto gli operatori logici visti fino ad ora: ‖</p>
+<table>
+<thead>
+<tr>
+<th>Operatore logico</th>
+<th>simbolo</th>
+<th>esempio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AND</td>
+<td>&amp;&amp;</td>
+<td>a &amp;&amp; b</td>
+</tr>
+<tr>
+<td>OR</td>
+<td>‖</td>
+<td>a ‖ b</td>
+</tr>
+<tr>
+<td>NOT</td>
+<td>!</td>
+<td>!a</td>
+</tr>
+</tbody>
+</table>
+<p>con la loro semantica:</p>
+<table>
+<thead>
+<tr>
+<th>a</th>
+<th>b</th>
+<th>a &amp;&amp; b</th>
+<th>a ‖ b</th>
+<th>!a</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>Le proprietà che caratterizzano gli operatori visti sono le seguenti:</p>
+<ul>
+<li><p><strong>Proprietà associativa</strong> (OR — vale anche per AND):</p>
+<pre><code>  f(a,b,c) =   a ‖ (b  ‖ c)  = 
+              (a ‖  b) ‖ c  
+</code></pre></li>
+<li><p><strong>Proprietà commutativa</strong> (OR — vale anche per AND):</p>
+<pre><code>  f(a,b) = a ‖ b = b ‖ a
+</code></pre></li>
+<li><p><strong>Proprietà distributiva</strong>: </p>
+<pre><code>  f(a,b,c) = a &amp;&amp; (b ‖ c)  = a &amp;&amp; b ‖ a &amp;&amp; c
+</code></pre><p>  analogo a ciò che succede nell&#39;algebra numerica:</p>
+<pre><code>             a ⨉ (b + c)   = a ⨉ b + a ⨉ c 
+</code></pre></li>
+<li><p><strong>Legge dell&#39;elemento 1</strong>:</p>
+<pre><code>  !a ‖ a = 1
+</code></pre></li>
+<li><p><strong>Proprietà (o leggi) di De Morgan</strong>: </p>
+<pre><code>  ! ( a &amp;&amp; b )   =    !a ‖  !b
+  ! ( a ‖  b )    =   !a &amp;&amp; !b
+</code></pre></li>
+<li><p><strong>Proprietà dell&#39;assorbimento</strong>:</p>
+<pre><code>  a ‖ b &amp;&amp; a = a
+</code></pre></li>
+</ul>
+<p>La proprietà dell&#39;assorbimento può essere dimostrata con la seguente tabella della verità:</p>
+<table>
+<thead>
+<tr>
+<th>a</th>
+<th>b</th>
+<th>a ‖ b &amp;&amp; a</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="codifica-binaria">Codifica binaria</h2>
+<p>Il materiale relativo alla codifica binaria <a href="http://www.vittoriozaccaria.net/deposit/codifica_binaria.pdf">può essere trovato a questo indirizzo</a>.</p>
+<h2 id="questionario">Questionario</h2>
+<p>Anonimo:</p>
+<div class="iframe-wrapper"> 
+    <iframe id="fs-survey-iframe" class="iframe-content" src="http://fluidsurveys.com/surveys/vittorio-HFF/lezione-del-30-ottobre/" scrolling="no" frameborder="0">.
+    </iframe>
+</div>
+
+
+
+</div>
+          <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG"></script>
+          <div id="disqus_thread" class="post_container__comments"> 
+            <script>(function() {
+  var disqus_shortname, dsq;
+
+  disqus_shortname = 'vittoriozaccaria';
+
+  dsq = document.createElement('script');
+
+  dsq.type = 'text/javascript';
+
+  dsq.async = true;
+
+  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+}).call(this);
+
+            </script><a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

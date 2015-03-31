@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head lang="en">
+    <title>Strutture dati in C</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+    <script type="text/javascript" src="/v2/js/client.js"></script>
+  </head>
+  <body ng-app="application">
+    <div class="site_wrapper">
+      <div class="sidebar"> <img class="sidebar__picture">
+        <div class="sidebar__name">Vittorio Zaccaria</div>
+        <div class="sidebar__address">Politecnico di Milano</div>
+        <ul class="sidebar__link_list">
+          <li onclick="location.href=&apos;/v2&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-home"></i></span>
+            <div class="sidebar__link_item__name">Home</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/research.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-flask"></i></span>
+            <div class="sidebar__link_item__name">Research</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/blog.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-quote-left"></i></span>
+            <div class="sidebar__link_item__name">Blog</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/projects.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-floppy-o"></i></span>
+            <div class="sidebar__link_item__name">Projects</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/teaching.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-graduation-cap"></i></span>
+            <div class="sidebar__link_item__name">Teaching</div>
+          </li>
+          <li onclick="location.href=&apos;http://www.vittoriozaccaria.net/deposit/cv.pdf&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-user"></i></span>
+            <div class="sidebar__link_item__name">CV</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/videos.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-youtube-play"></i></span>
+            <div class="sidebar__link_item__name">Videos</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/address.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-map-marker"></i></span>
+            <div class="sidebar__link_item__name">Address</div>
+          </li>
+        </ul>
+        <div class="sidebar__bottom"> 
+          <div onclick="location.href=&apos;http://www.linkedin.com/in/vzaccaria&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-linkedin-square"></i></div>
+          <div onclick="location.href=&apos;http://twitter.com/_vzaccaria_&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-twitter-square"></i></div>
+          <div onclick="location.href=&apos;https://plus.google.com/116322227495215922957/about&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-google-plus-square"></i></div>
+        </div>
+      </div>
+      <div class="site_container">
+        <div class="post_container">
+          <div class="post_container__post__title">Strutture dati in C</div>
+          <div class="post_container__post__subtitle"> 
+            <div class="post_container__post__date"> <i class="fa fa-calendar-o"> </i>
+              <div class="post_container__post__date_value">Tuesday, October 28th 2014</div>
+            </div>
+            <div class="post_container__post__category"> <i class="fa fa-flag-o"> </i>
+              <div class="post_container__post__category_value">infob</div>
+            </div>
+            <div class="post_container__post__tags"> <i class="fa fa-tags"></i>
+              <div class="post_container__post__tag">esercizi</div>
+              <div class="post_container__post__tag">strutture dati in C</div>
+            </div>
+            <div class="share_buttons"> 
+              <div class="share_buttons__message">Share: </div>
+              <div style="cursor: pointer" class="share_buttons__share_reddit"><i class="fa fa-reddit"> </i></div>
+              <div style="cursor: pointer" class="share_buttons__share_twitter"><i class="fa fa-twitter"></i></div>
+            </div>
+          </div>
+          <div class="post_text"><p>Partiamo con il laboratorio. Il testo e la soluzione dell&#39;esercizio <a href="https://dl.dropboxusercontent.com/u/5867765/slides-informatica-b/laboratorio_28ottobre_soluzioni.pdf">li trovate in questo pdf</a>. Complimenti ai vincitori di oggi:</p>
+<ul>
+<li>Alex Longa (1)</li>
+<li>Roberto Lisciandra (1)</li>
+<li>Roberto Longoni (1)</li>
+</ul>
+<h1 id="tipi-enumerativi">Tipi enumerativi</h1>
+<p>Ecco il programma visto oggi per la definizione di un tipo enumerativo (<code>giorno_settimana</code>):</p>
+<pre><code class="lang-c">#include &lt;stdio.h&gt;
+
+typedef enum { lun, mar, merc, gio, ven, sab, dom } giorno_settimana;
+
+int main()
+{
+    giorno_settimana g;
+    for(g=lun; g&lt;=dom; g++)
+    {
+        printf(&quot; %d &quot;, g);
+    }
+}
+</code></pre>
+<p>Ricordate che <code>lun</code> … <code>dom</code> sono etichette alle quali viene assegnato un valore numerico (<code>lun</code>=0 … <code>dom</code>=6). <code>giorno_settimana</code> è di fatto un intero con un insieme molto limitato di valori. Possiamo quindi utilizzare il segnaposto <code>%d</code> per stampare il suo valore.</p>
+<h1 id="strutture-dati">Strutture dati</h1>
+<p>Per una descrizione approfondita delle strutture dati, <a href="https://www.dropbox.com/s/wcp3d1tpt4a8ppb/07_Struct.pdf">è possibile consultare queste slide</a>.</p>
+<p>Oggi, abbiamo visto come sia possibile creare una struttura dati che mantenga le informazioni relative ad uno studente. Abbiamo innanzitutto definito un nuovo tipo <code>studente</code>, caratterizzato da una <strong>collezione di campi</strong>, ciascuno con il suo tipo, e abbiamo poi visto come sia possibile assegnare un valore a tali campi. Ecco l&#39;esempio il link all&#39;esempio di oggi:</p>
+<script src="http://ideone.com/e.js/ohmFAW" type="text/javascript"></script>
+
+<p>Ricapitolando, se <code>giorno_di_nascita</code> è un campo di <code>studente</code>, ed <code>s</code> è una variabile di tipo <code>studente</code>:</p>
+<pre><code class="lang-c">    studente s;
+</code></pre>
+<p>allora posso impostare il giorno di nascita in <code>s</code> utilizzando la notazione puntata:</p>
+<pre><code class="lang-c">    s.giorno_di_nascita = 10;
+</code></pre>
+<p>La stessa notazione serve quando vogliamo stampare il valore di un determinato campo di <code>s</code>:</p>
+<pre><code class="lang-c">printf(&quot;Nome: %s, Cognome: %s - %d/%d/%d&quot;, s.nome, 
+        s.cognome, (s.giorno_di_nascita + 1), 
+        (s.mese_di_nascita+1), (s.anno_di_nascita+1));
+</code></pre>
+<h1 id="esercizio-di-algoritmica">Esercizio di algoritmica</h1>
+<p>La soluzione dell&#39;esercizio sul calcolo del minimo numero di ipad venduti durante l&#39;anno è la seguente:</p>
+<script src="http://ideone.com/e.js/Zl0RUv" type="text/javascript"></script>
+
+<p>Da notare che:</p>
+<ul>
+<li><p>le vendite sono memorizzate in un array <code>vendite_2012</code> di 12 elementi; ogni elemento corrisponde ad un particolare mese.</p>
+</li>
+<li><p>Partiamo prendendo come punto di riferimento il mese di gennaio (riga 22):</p>
+</li>
+</ul>
+<pre><code class="lang-c">    minimo = vendite_2012[0];
+    mese_minimo = 0;
+</code></pre>
+<ul>
+<li>e aggiorniamo il valore del minimo ed il mese in cui abbiamo trovato il minimo all&#39;interno del <code>for</code>:</li>
+</ul>
+<pre><code class="lang-c">    for(m=1; m&lt;12; m++) {
+        if( vendite_2012[m] &lt; minimo ) {
+            minimo = vendite_2012[m];
+            mese_minimo = m;
+        }   
+    }
+</code></pre>
+<h1 id="esercizio-sui-numeri-primi">Esercizio sui numeri primi</h1>
+<p>Obiettivo: scrivere un programma per determinare se un numero è primo[^1] o meno. Il numero deve essere richiesto in ingresso ed il risultato deve essere stampato a video.</p>
+<pre><code class="lang-c">#include &lt;stdio.h&gt;
+
+int main() {
+    // dichiarazione variabili
+    int n = 0;   // numero inserito dall&#39;utente
+    int i;       // variabile indice
+    int primo = 1;  // variabile per indicare se il numero è primo
+
+    // leggo il valore dall&#39;ingresso
+
+    scanf(&quot;%d&quot;,&amp;n); 
+
+    // calcolo se il numero è primo
+
+    for (i=2;i&lt;n;i++) {
+        if (n%i==0) {
+            // il numero non è primo
+            primo = 0;
+        }
+    }
+
+    if (primo==1) { 
+        printf(&quot;il numero è primo&quot;);
+    } else { 
+        printf(&quot;il numero non è primo&quot;);
+    }
+
+    return 0;
+}
+</code></pre>
+<p>[^1]: Un numero è definito primo se è divisibile solo per 1 e per se stesso. </p>
+<h1 id="esercizio-sulle-strutture-dati-esame-del-febbraio-2013">Esercizio sulle strutture dati - Esame del febbraio 2013</h1>
+<p>Una fattoria gestisce una stalla con 10 mucche, ciascuna identificata da un codice alfanumerico di 8 caratteri. Il gestore della fattoria vuole realizzare un programma in linguaggio C che consenta la contabilizzazione del latte prodotto ogni mese e voi siete stati incaricati di scriverlo in quanto esperti di C. </p>
+<p>Definite in C il tipo <code>ProduzioneMensile</code> che rappresenti in modo comprensivo la quantità di latte prodotta ogni giorno del mese da ognuna delle 10 mucche della stalla. Ricordate che la quantità di latte prodotta è espressa in <strong>litri</strong> e che la produzione giornaliera deve essere associata al codice identificativo della mucca. Inoltre potete definire altri tipi per semplificare la definizione di <code>ProduzioneMensile</code>.</p>
+<pre><code class="lang-c">/* numero di prelevamenti di latte (10 mucche per 30 giorni) */
+
+
+typedef char codiceIdentificativo[8];
+
+typedef struct { 
+    codiceIdentificativo codice_mucca; 
+    float   litri_di_latte; 
+    int     giorno_del_mese;
+} ProduzionePerMuccaPerGiorno;
+
+typedef ProduzionePerMuccaPerGiorno ProduzioneMensile[300];
+</code></pre>
+<p>Data la seguente dichiarazione di variabile:</p>
+<pre><code>ProduzioneMensile produzione;
+</code></pre><p>Si scriva il frammento di programma C che stampi a video la quantità complessiva di latte prodotta nella stalla il 7 Gennaio, assumendo che la variabile produzione sia stata opportunamente inizializzata con le produzioni del mese di Gennaio.</p>
+<pre><code class="lang-c">float tot = 0;
+for (i  = 0; i &lt; N; i++)
+{
+    if (produzione[i].giorno_del_mese == 7)
+      tot += produzione[i].litri_di_latte;
+}
+
+printf(“\n\tProduzione totale %f”, tot);
+</code></pre>
+<p>Inserite pure dei commenti in fondo a questa pagina se avete dei dubbi o avete bisogno di chiarimenti. </p>
+</div>
+          <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG"></script>
+          <div id="disqus_thread" class="post_container__comments"> 
+            <script>(function() {
+  var disqus_shortname, dsq;
+
+  disqus_shortname = 'vittoriozaccaria';
+
+  dsq = document.createElement('script');
+
+  dsq.type = 'text/javascript';
+
+  dsq.async = true;
+
+  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+}).call(this);
+
+            </script><a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

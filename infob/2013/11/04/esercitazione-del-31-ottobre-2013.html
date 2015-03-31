@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head lang="en">
+    <title>Esercitazione del 31 Ottobre 2013</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+    <script type="text/javascript" src="/v2/js/client.js"></script>
+  </head>
+  <body ng-app="application">
+    <div class="site_wrapper">
+      <div class="sidebar"> <img class="sidebar__picture">
+        <div class="sidebar__name">Vittorio Zaccaria</div>
+        <div class="sidebar__address">Politecnico di Milano</div>
+        <ul class="sidebar__link_list">
+          <li onclick="location.href=&apos;/v2&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-home"></i></span>
+            <div class="sidebar__link_item__name">Home</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/research.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-flask"></i></span>
+            <div class="sidebar__link_item__name">Research</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/blog.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-quote-left"></i></span>
+            <div class="sidebar__link_item__name">Blog</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/projects.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-floppy-o"></i></span>
+            <div class="sidebar__link_item__name">Projects</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/teaching.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-graduation-cap"></i></span>
+            <div class="sidebar__link_item__name">Teaching</div>
+          </li>
+          <li onclick="location.href=&apos;http://www.vittoriozaccaria.net/deposit/cv.pdf&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-user"></i></span>
+            <div class="sidebar__link_item__name">CV</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/videos.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-youtube-play"></i></span>
+            <div class="sidebar__link_item__name">Videos</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/address.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-map-marker"></i></span>
+            <div class="sidebar__link_item__name">Address</div>
+          </li>
+        </ul>
+        <div class="sidebar__bottom"> 
+          <div onclick="location.href=&apos;http://www.linkedin.com/in/vzaccaria&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-linkedin-square"></i></div>
+          <div onclick="location.href=&apos;http://twitter.com/_vzaccaria_&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-twitter-square"></i></div>
+          <div onclick="location.href=&apos;https://plus.google.com/116322227495215922957/about&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-google-plus-square"></i></div>
+        </div>
+      </div>
+      <div class="site_container">
+        <div class="post_container">
+          <div class="post_container__post__title">Esercitazione del 31 Ottobre 2013</div>
+          <div class="post_container__post__subtitle"> 
+            <div class="post_container__post__date"> <i class="fa fa-calendar-o"> </i>
+              <div class="post_container__post__date_value">Monday, November 4th 2013</div>
+            </div>
+            <div class="post_container__post__category"> <i class="fa fa-flag-o"> </i>
+              <div class="post_container__post__category_value">infob</div>
+            </div>
+            <div class="post_container__post__tags"> <i class="fa fa-tags"></i>
+              <div class="post_container__post__tag">esercizio</div>
+              <div class="post_container__post__tag">media in C</div>
+              <div class="post_container__post__tag">stringhe in C</div>
+              <div class="post_container__post__tag">matrici in C</div>
+            </div>
+            <div class="share_buttons"> 
+              <div class="share_buttons__message">Share: </div>
+              <div style="cursor: pointer" class="share_buttons__share_reddit"><i class="fa fa-reddit"> </i></div>
+              <div style="cursor: pointer" class="share_buttons__share_twitter"><i class="fa fa-twitter"></i></div>
+            </div>
+          </div>
+          <div class="post_text"><h2 id="calcolo-della-media-di-un-insieme-di-float">Calcolo della media di un insieme di float</h2>
+<p>Dato un array di float comunicati dall&#39;utente, letto da tastiera fino a quando il valore inserito è -1, stampare i valori dell&#39;array che sono maggiori della media</p>
+<pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#define MAXEL 30 //costante per il numero massimo di elementi
+
+int main() {
+    float array[MAXEL];
+    int n=0;              //numero di elementi del&#39;array
+    float corrente;       //valore inserito attualmente
+    float somma = 0;      //somma dei valori inseriti
+    float media = 0;      //media dei valori
+    int i = 0;
+
+    do {
+        printf(&quot;Inserisci il prossimo valore dall&#39;array: &quot;);
+        scanf(&quot;%f&quot;,&amp;corrente);
+        if (corrente!=-1) {
+            array[n] = corrente;
+            somma = somma + corrente;
+            n++;
+        }
+    } while (corrente!=-1 &amp;&amp; n&lt;MAXEL);
+
+    if (n&gt;0) {
+        media = somma / n;
+        for (i=0;i&lt;n;i++) {
+            if (array[i]&gt;media) {
+                printf(&quot;%.1f &quot;,array[i]);
+            }
+        }
+    } else {
+        printf(&quot;devi inserire almeno un valore&quot;);
+    }
+}
+</code></pre><h2 id="verifica-dell-ordine-in-un-array">Verifica dell&#39;ordine in un array</h2>
+<p>Dato un array di float comunicati dall&#39;utente, letto da tastiera fino a quando il valore inserito è -1, verificare se l&#39;array e&#39; ordinato e, in caso contrario, ordinarlo. </p>
+<pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#define MAXEL 30 //costante per il numero massimo di elementi
+
+int main() {
+    float array[MAXEL];
+    int n=0;              //numero di elementi del&#39;array
+    float corrente;       //valore inserito attualmente
+    int ordinato = 1;     //ipotesi che sia ordinato     
+    int i;                //indice dell&#39;array
+    int j;                //indice dell&#39;array    
+    float parcheggio;
+
+    do {
+        printf(&quot;Inserisci il prossimo valore dall&#39;array: &quot;);
+        scanf(&quot;%f&quot;,&amp;corrente);
+        if (corrente!=-1) {
+            array[n] = corrente;
+            n++;
+        }
+    } while (corrente!=-1 &amp;&amp; n&lt;MAXEL);
+
+    for (i=0;i&lt;n-1 &amp;&amp; ordinato==1;i++) {
+        if (array[i]&gt;array[i+1]) {
+            ordinato = 0;
+        }
+    }
+
+    if (ordinato==1)
+        printf(&quot;array ordinato\n&quot;);
+    else {
+        printf(&quot;array non ordinato\n&quot;);
+
+        for (i=0;i&lt;n-1;i++) {
+            for (j=i+1;j&lt;n;j++) {
+                if (array[i]&gt;array[j]) {
+                    // scambio array[i] e array[j]
+                    parcheggio = array[i];
+                    array[i] = array[j];                
+                    array[j] = parcheggio;                
+                }
+            }
+        }
+
+        ordinato = 1;
+        for (i=0;i&lt;n-1 &amp;&amp; ordinato==1;i++) {
+            if (array[i]&gt;array[i+1]) {
+                ordinato = 0;
+            }
+        }
+
+        if (ordinato==1)
+            printf(&quot;array ordinato\n&quot;);
+        else
+            printf(&quot;array non ordinato\n&quot;);
+
+    }
+}
+</code></pre><h2 id="ricerca-di-una-sottostringa-in-una-stringa">Ricerca di una sottostringa in una stringa</h2>
+<p>Questa soluzione funziona anche nel caso in cui la parola ricercata abbia delle ripetizioni tali per cui 
+la soluzione &quot;semplice&quot; vista a lezione non funzionava[^1]. La modifica consiste nel ripristinare il contatore 
+della parola ricercata alla occorrenza sucessiva alla prima lettera uguale.</p>
+<pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main() {
+
+    char sorgente[20], ricercata[20];
+    int trovata = 0;
+    int i,j;
+
+    printf(&quot;comunicami la stringa di partenza\n&quot;);
+    scanf(&quot;%s&quot;,sorgente);
+    printf(&quot;comunicami la stringa da cercare\n&quot;);
+    scanf(&quot;%s&quot;,ricercata);
+
+    j=0;  
+    for (i=0;i&lt;=strlen(sorgente) &amp;&amp; trovata==0; i++) {
+
+        if (j&lt;strlen(ricercata) &amp;&amp; sorgente[i]==ricercata[j]) {
+            j++;
+        } else if (j==strlen(ricercata) &amp;&amp; ricercata[j]==&#39;\0&#39;) { 
+            trovata = 1;
+        } else {
+            i=i-j;  // NB: resetto il contatore al carattere successivo a quello dove le stringa sorgente e ricercata avevano iniziato ad essere uguali 
+            j=0;
+        }
+    }
+
+    if (trovata==1)
+        printf(&quot;stringa trovata\n&quot;);
+    else
+        printf(&quot;stringa non trovata\n&quot;);
+
+    return 0;
+}
+</code></pre><h2 id="verifica-della-simmetria-di-una-matrice">Verifica della simmetria di una matrice</h2>
+<p>Inserire i valori di una matrice di dimensioni <code>r</code> ⨉ <code>c</code>, stamparla e verificare se è
+   simmetrica (in caso sia quadrata).</p>
+<pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+#define MAXEL 30
+
+int main() {
+    float matrice[MAXEL][MAXEL];
+    int r,c;     //numero righe e colonne
+    int i,j;     //contatori
+    int simmetrica = 1;
+
+
+    printf(&quot;quante righe? &quot;);
+    scanf(&quot;%d&quot;,&amp;r);
+    printf(&quot;quante colonne? &quot;);
+    scanf(&quot;%d&quot;,&amp;c);
+
+    for (i=0;i&lt;r;i++) {
+        for (j=0;j&lt;c;j++) {
+            printf(&quot;comunicami elemento A(%d,%d): &quot;,i+1,j+1);
+            scanf(&quot;%f&quot;,&amp;matrice[i][j]);
+        }
+    }
+
+    for (i=0;i&lt;r;i++) {
+        for (j=0;j&lt;c;j++) {        
+            printf(&quot;%.2f &quot;,matrice[i][j]);
+        }
+        printf(&quot;\n&quot;);
+    }
+
+    if (r==c) {
+        for (i=0;i&lt;r-1;i++) {
+            for (j=i+1;j&lt;c;j++) {        
+                if (matrice[i][j]!=matrice[j][i]) {
+                    simmetrica = 0;
+                }
+            }
+        }
+        if (simmetrica==1) 
+            printf(&quot;matrice simmetrica&quot;);
+        else 
+            printf(&quot;matrice non simmetrica&quot;);
+
+    } else {
+        printf(&quot;La matrice non è quadrata\n&quot;);
+    }
+
+
+}
+</code></pre><p> [^1]: ad esempio quando sorgente = <code>pippo</code>, e ricercata = <code>po</code></p>
+</div>
+          <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG"></script>
+          <div id="disqus_thread" class="post_container__comments"> 
+            <script>(function() {
+  var disqus_shortname, dsq;
+
+  disqus_shortname = 'vittoriozaccaria';
+
+  dsq = document.createElement('script');
+
+  dsq.type = 'text/javascript';
+
+  dsq.async = true;
+
+  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+}).call(this);
+
+            </script><a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

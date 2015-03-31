@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head lang="en">
+    <title>Caratteri e vettori</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+    <script type="text/javascript" src="/v2/js/client.js"></script>
+  </head>
+  <body ng-app="application">
+    <div class="site_wrapper">
+      <div class="sidebar"> <img class="sidebar__picture">
+        <div class="sidebar__name">Vittorio Zaccaria</div>
+        <div class="sidebar__address">Politecnico di Milano</div>
+        <ul class="sidebar__link_list">
+          <li onclick="location.href=&apos;/v2&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-home"></i></span>
+            <div class="sidebar__link_item__name">Home</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/research.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-flask"></i></span>
+            <div class="sidebar__link_item__name">Research</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/blog.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-quote-left"></i></span>
+            <div class="sidebar__link_item__name">Blog</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/projects.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-floppy-o"></i></span>
+            <div class="sidebar__link_item__name">Projects</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/teaching.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-graduation-cap"></i></span>
+            <div class="sidebar__link_item__name">Teaching</div>
+          </li>
+          <li onclick="location.href=&apos;http://www.vittoriozaccaria.net/deposit/cv.pdf&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-user"></i></span>
+            <div class="sidebar__link_item__name">CV</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/videos.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-youtube-play"></i></span>
+            <div class="sidebar__link_item__name">Videos</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/address.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-map-marker"></i></span>
+            <div class="sidebar__link_item__name">Address</div>
+          </li>
+        </ul>
+        <div class="sidebar__bottom"> 
+          <div onclick="location.href=&apos;http://www.linkedin.com/in/vzaccaria&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-linkedin-square"></i></div>
+          <div onclick="location.href=&apos;http://twitter.com/_vzaccaria_&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-twitter-square"></i></div>
+          <div onclick="location.href=&apos;https://plus.google.com/116322227495215922957/about&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-google-plus-square"></i></div>
+        </div>
+      </div>
+      <div class="site_container">
+        <div class="post_container">
+          <div class="post_container__post__title">Caratteri e vettori</div>
+          <div class="post_container__post__subtitle"> 
+            <div class="post_container__post__date"> <i class="fa fa-calendar-o"> </i>
+              <div class="post_container__post__date_value">Friday, October 17th 2014</div>
+            </div>
+            <div class="post_container__post__category"> <i class="fa fa-flag-o"> </i>
+              <div class="post_container__post__category_value">infob</div>
+            </div>
+            <div class="post_container__post__tags"> <i class="fa fa-tags"></i>
+              <div class="post_container__post__tag">caratteri</div>
+              <div class="post_container__post__tag">vettori</div>
+              <div class="post_container__post__tag">strutture dati</div>
+            </div>
+            <div class="share_buttons"> 
+              <div class="share_buttons__message">Share: </div>
+              <div style="cursor: pointer" class="share_buttons__share_reddit"><i class="fa fa-reddit"> </i></div>
+              <div style="cursor: pointer" class="share_buttons__share_twitter"><i class="fa fa-twitter"></i></div>
+            </div>
+          </div>
+          <div class="post_text"><p>Nella prima parte della lezione, abbiamo visto come comporre condizioni logiche complesse a partire dagli operatori relazionali; il primo esempio significativo che abbiamo visto è una modifica del calcolo dell&#39;esito dell&#39;esame di uno studente — notate come abbiamo ridotto il numero di <code>if</code> innestati; ora ne utilizziamo solo uno:</p>
+<script src="http://ideone.com/e.js/OHZ3r7" type="text/javascript"></script>
+
+<p>Grazie alle leggi di De Morgan (che specificano l&#39;uguaglianza tra espressioni logiche), abbiamo riscritto il programma di sopra cosi&#39;:</p>
+<script src="http://ideone.com/e.js/ws7q05" type="text/javascript"></script>
+
+<p>Da notare che l&#39;esecuzione del programma è uguale a quella di quello precedente, nonostante siano scritti in maniera differente. Questo non è casuale, ma è proprio dovuto alle leggi di De Morgan, che comunque vedremo in dettaglio più avanti.</p>
+<h2 id="caratteri">Caratteri</h2>
+<p>Grazie alla codifica dei caratteri secondo la tabella internazionale ASCII, possiamo trattare i caratteri stessi come numeri; nell&#39;esempio visto a lezione, abbiamo scritto un programma che converte i caratteri in maiuscoli:</p>
+<script src="http://ideone.com/e.js/3cdMsq" type="text/javascript"></script>
+
+<h2 id="vettori">Vettori</h2>
+<p>È possibile creare nuovi tipo in aggiunta a quelli forniti dal linguaggio C (<code>int</code>, <code>float</code>, <code>char</code> etc..), attraverso la parola chiave <code>typedef</code>. </p>
+<p>Per farvi ripassare un pò di inglese, <a href="http://en.wikipedia.org/wiki/Typedef">date un&#39;occhiata alla descrizione di typedef su wikipedia</a> (guardate solo la parte relativa al linguaggio C).</p>
+<p>Un vettore (anche definito <strong>array</strong>) è una <strong>struttura dati</strong> particolare in cui i campi sono accessibili attraverso un indice specificato fra parentesi quadre <code>[]</code>:</p>
+<script src="http://ideone.com/e.js/2pdtrE" type="text/javascript"></script>
+
+<p>Notare che:</p>
+<ul>
+<li><code>ricavi_mensili</code> è il nome di un tipo <strong>vettore</strong>.</li>
+<li><code>ricavi_2013</code> è una variabile di tipo <code>ricavi_mensili</code> (ovvero è una <strong>istanza di vettore</strong>) e viene inizializzata con 12 valori (corrispondenti ai mesi dell&#39;anno).</li>
+<li><code>ricavi_2013[i]</code> è l&#39;elemento <code>i</code>-esimo del vettore <code>ricavi_2013</code>. Puo&#39; essere letto o scritto come una variabile intera — valgono infatti le stesse regole.</li>
+</ul>
+<h2 id="materiale-aggiuntivo">Materiale aggiuntivo</h2>
+<p>Ecco alcune slides sugli argomenti visti fino ad oggi ed altro che vedremo successivamente; </p>
+<ul>
+<li><p><a href="https://dl.dropboxusercontent.com/u/5867765/slides-informatica-b/04_tipi_di_dato.pdf">Slides sui tipi di dato</a></p>
+</li>
+<li><p><a href="https://dl.dropboxusercontent.com/u/5867765/slides-informatica-b/05_strutture_di_controllo.pdf">Slides sulle strutture di controllo</a>, con materiale inedito</p>
+</li>
+<li><p><a href="https://dl.dropboxusercontent.com/u/5867765/slides-informatica-b/06_array_e_matrici.pdf">Slides sugli array</a></p>
+</li>
+</ul>
+</div>
+          <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG"></script>
+          <div id="disqus_thread" class="post_container__comments"> 
+            <script>(function() {
+  var disqus_shortname, dsq;
+
+  disqus_shortname = 'vittoriozaccaria';
+
+  dsq = document.createElement('script');
+
+  dsq.type = 'text/javascript';
+
+  dsq.async = true;
+
+  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+}).call(this);
+
+            </script><a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

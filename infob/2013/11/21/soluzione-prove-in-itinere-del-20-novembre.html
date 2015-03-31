@@ -1,0 +1,467 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head lang="en">
+    <title>Soluzione prove in itinere del 20 Novembre</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+    <script type="text/javascript" src="/v2/js/client.js"></script>
+  </head>
+  <body ng-app="application">
+    <div class="site_wrapper">
+      <div class="sidebar"> <img class="sidebar__picture">
+        <div class="sidebar__name">Vittorio Zaccaria</div>
+        <div class="sidebar__address">Politecnico di Milano</div>
+        <ul class="sidebar__link_list">
+          <li onclick="location.href=&apos;/v2&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-home"></i></span>
+            <div class="sidebar__link_item__name">Home</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/research.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-flask"></i></span>
+            <div class="sidebar__link_item__name">Research</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/blog.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-quote-left"></i></span>
+            <div class="sidebar__link_item__name">Blog</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/projects.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-floppy-o"></i></span>
+            <div class="sidebar__link_item__name">Projects</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/teaching.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-graduation-cap"></i></span>
+            <div class="sidebar__link_item__name">Teaching</div>
+          </li>
+          <li onclick="location.href=&apos;http://www.vittoriozaccaria.net/deposit/cv.pdf&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-user"></i></span>
+            <div class="sidebar__link_item__name">CV</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/videos.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-youtube-play"></i></span>
+            <div class="sidebar__link_item__name">Videos</div>
+          </li>
+          <li onclick="location.href=&apos;/v2/address.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-map-marker"></i></span>
+            <div class="sidebar__link_item__name">Address</div>
+          </li>
+        </ul>
+        <div class="sidebar__bottom"> 
+          <div onclick="location.href=&apos;http://www.linkedin.com/in/vzaccaria&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-linkedin-square"></i></div>
+          <div onclick="location.href=&apos;http://twitter.com/_vzaccaria_&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-twitter-square"></i></div>
+          <div onclick="location.href=&apos;https://plus.google.com/116322227495215922957/about&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-google-plus-square"></i></div>
+        </div>
+      </div>
+      <div class="site_container">
+        <div class="post_container">
+          <div class="post_container__post__title">Soluzione prove in itinere del 20 Novembre</div>
+          <div class="post_container__post__subtitle"> 
+            <div class="post_container__post__date"> <i class="fa fa-calendar-o"> </i>
+              <div class="post_container__post__date_value">Thursday, November 21st 2013</div>
+            </div>
+            <div class="post_container__post__category"> <i class="fa fa-flag-o"> </i>
+              <div class="post_container__post__category_value">infob</div>
+            </div>
+            <div class="post_container__post__tags"> <i class="fa fa-tags"></i>
+              <div class="post_container__post__tag">esame</div>
+              <div class="post_container__post__tag">strutture in C</div>
+              <div class="post_container__post__tag">algoritmi in C</div>
+            </div>
+            <div class="share_buttons"> 
+              <div class="share_buttons__message">Share: </div>
+              <div style="cursor: pointer" class="share_buttons__share_reddit"><i class="fa fa-reddit"> </i></div>
+              <div style="cursor: pointer" class="share_buttons__share_twitter"><i class="fa fa-twitter"></i></div>
+            </div>
+          </div>
+          <div class="post_text"><p>Ecco le tanto agognate soluzioni del primo tema d&#39;esame:</p>
+<h2 id="esercizio-1">Esercizio 1</h2>
+<p>Sia data la definizione di stringa:</p>
+<pre><code>typedef char stringa[30];
+</code></pre><p>e la definizione di un messaggio tweet di 140 caratteri, contenente al massimo 4 hashtags (quelle stringhe nei tweet che cominciano con <code>&#39;#&#39;</code>, ad esempio, <code>&quot;#poli&quot;</code>):</p>
+<pre><code>typedef struct {
+    char contenuto[140];
+    int  numero_hashtags;
+    stringa hashtags[4];
+} tweet;
+</code></pre><p>Sia data la seguente struttura di utente twitter:</p>
+<pre><code>typedef struct {
+    stringa nome;
+    int     data_iscrizione; /* anno di iscrizione a twitter */
+    int     numero_messaggi; /* numero effettivo messaggi */
+    tweet   messaggi[100];
+} utente;
+</code></pre><p>e di database di utenti:</p>
+<pre><code>typedef struct {
+    int numero_utenti;
+    utente dati_utente[100];
+} database;
+
+database twitterdb;
+</code></pre><p>Si chiede di scrivere un programma che stampi a video tutti gli utenti iscritti dal 2012 che hanno usato l&#39;hashtag &quot;#poli&quot; in almeno uno dei propri messaggi. Se, ad esempio, vi sono solo tre utenti nel database:</p>
+<ul>
+<li><p>@vzaccaria, iscritto dal 2012, messaggi: </p>
+<ul>
+<li>&quot;E&#39; finito il primo emisemestre! #poli&quot;</li>
+<li>&quot;E&#39; ora del primo compitino! #poli&quot;</li>
+</ul>
+</li>
+<li><p>@obama, iscritto dal 2009, messaggi: </p>
+<ul>
+<li>&quot;Politecnico is cool! #poli&quot;</li>
+</ul>
+</li>
+<li><p>@merkel, iscritta dal 2012, messaggi:</p>
+<ul>
+<li>&quot;Come to germany!&quot;</li>
+</ul>
+</li>
+</ul>
+<p>Il programma deve stampare: <code>Utente @vzaccaria ha usato #poli !!</code></p>
+<pre><code>int main()
+{
+    int u;
+    int t;
+    int h;
+    for(u=0; u&lt;twitterdb.numero_utenti; u++)
+    {
+        int trovato = 0;
+        if(twitterdb.dati_utente[u].data_iscrizione &gt; 2010)
+        {
+            for( t=0; t&lt; twitterdb.dati_utente[u].numero_messaggi; t++ )
+            {
+                for( h=0; h&lt; twitterdb.dati_utente[u].messaggi[t].numero_hashtags; h++)
+                {
+                    if(strcmp(twitterdb.dati_utente[u].messaggi[t].hashtags[h], &quot;#poli&quot;) == 0)
+                        trovato = 1;
+                }
+            }
+        }
+        if(trovato)
+        {
+            printf(&quot;Utente %s ha usato #poli !!\n&quot;, twitterdb.dati_utente[u].nome);
+        }
+    }
+}
+</code></pre><h2 id="esercizio-2">Esercizio 2</h2>
+<p>Si scriva un programma in linguaggio C per individuare le posizioni dei massimi locali all’interno di in un vettore <code>v</code> (contenente numeri in virgola mobile) — un elemento dell’array è un massimo locale <strong>se è maggiore dell’elemento precedente e seguente</strong>.[^1] </p>
+<p>Le posizioni dei massimi locali devono essere salvate in un secondo vettore <code>pos</code>. In particolare il programma dovrà:</p>
+<ol>
+<li>Richiedere all’utente quanti numeri intende inserire (massimo 100).</li>
+<li>Richiedere  all&#39;utente tali numeri e salvarli nel vettore <code>v</code></li>
+<li>Scandire <code>v</code> e salvare in <code>pos</code>, senza lasciare buchi, gli indici dei massimi locali. Le posizioni dei massimi locali sono date dagli indici dell’array corrispondenti ai massimi locali. </li>
+</ol>
+<h3 id="esempio-">Esempio:</h3>
+<p>Si assuma che il vettore v contenga 12 elementi:</p>
+<pre><code>v = 1, 4, 3, 5, 5, 7, 3, 12, 12, 4, 1, 100
+</code></pre><p>i massimi locali sono:</p>
+<ul>
+<li>all&#39;indice numero 1 (poiche&#39; 4 è maggiore sia di 1 che di 3)</li>
+<li>all&#39;indice numero 5 (poiche&#39; 7 è maggiore sia di 5 che di 3).</li>
+</ul>
+<p><strong>Soluzione</strong>:</p>
+<pre><code>#include &lt;stdio.h&gt;
+#define N 100
+void main()
+{
+    float v[N];
+    int pos[N];
+    int i, j, n;
+    float temp;
+
+    do
+    {
+        printf(&quot;\ninserire n: &quot;);
+        scanf(&quot;%d&quot;, &amp;n);
+    } while(n&lt;0 || n &gt; N);
+
+    for(i = 0; i &lt; n; i++)
+    {
+        printf(&quot;\n v[%d] = &quot;, i);
+        scanf(&quot;%f&quot;, &amp;v[i]);
+    }
+
+    n = i;
+    j = 0;
+    for(i = 1; i &lt; n - 1; i++)
+    {
+        if(v[i] &gt; v[i - 1] &amp;&amp; v[i] &gt; v[i + 1])
+            {
+                pos[j] = i;
+                j++;
+            }
+    }
+
+printf(&quot;\n&quot;);
+for(i = 0; i &lt; j; i++)
+    printf(&quot; %d &quot;, pos[i]);
+}
+</code></pre><p> </p>
+<h2 id="esercizio-3">Esercizio 3</h2>
+<p>Si definisca il numero minimo di bit per rappresentare in virgola fissa C2 i seguenti numeri e si ricavi la codifica equivalente:</p>
+<ul>
+<li>2</li>
+<li>.25</li>
+<li>-2</li>
+<li>-2.25</li>
+</ul>
+<p><strong>Soluzione</strong>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Numero (decimale)</th>
+<th>bit minimi</th>
+<th style="text-align:right">Codifica binaria del numero</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">2</td>
+<td><strong>3</strong> (3 per parte intera, 0 per parte frazionaria)</td>
+<td style="text-align:right">010</td>
+</tr>
+<tr>
+<td style="text-align:center">0.25</td>
+<td><strong>3</strong> (1 per parte intera, 2 per parte frazionaria)</td>
+<td style="text-align:right">0.01</td>
+</tr>
+<tr>
+<td style="text-align:center">-2</td>
+<td><strong>2</strong> (2 per parte intera, 0 per parte frazionaria)</td>
+<td style="text-align:right">10</td>
+</tr>
+<tr>
+<td style="text-align:center">-2.25</td>
+<td><strong>5</strong> (3 per parte intera, 2 per parte frazionaria)</td>
+<td style="text-align:right">101.11</td>
+</tr>
+</tbody>
+</table>
+<p><em>Nota: il punto nella codifica serve a separare la rappresentazione in parte intera e frazionaria</em></p>
+<p><strong>Seconda parte</strong>
+Si rappresenti il numero 0.2 e si stabilisca se tale rappresentazione è esatta e, nel caso non lo fosse spiegare il perchè:</p>
+<p>Se calcoliamo la codifica manualmente:</p>
+<pre><code>0.2 ⨉ 2 = 0.4
+0.4 ⨉ 2 = 0.8
+0.8 ⨉ 2 = 1.6 
+0.6 ⨉ 2 = 1.2 
+0.2 ⨉ 2 = 0.4 &lt;- uguale alla prima moltiplicazione
+</code></pre><p>Notiamo che non arriveremo mai ad una rappresentazione esatta del numero. Esso sara&#39; infatti rappresentato da una sequenza infinita di </p>
+<pre><code>001100110011001100110011..
+</code></pre><p>Ecco le ancora più agognate soluzioni del secondo tema d&#39;esame:</p>
+<h2 id="esercizio-1">Esercizio 1</h2>
+<p>Sia data la definizione di stringa,</p>
+<pre><code>typedef char stringa[30];
+</code></pre><p>la seguente struttura di utente <strong>twitter</strong>:</p>
+<pre><code>typedef struct {
+    stringa nome;
+    int     data_iscrizione; /* anno di iscrizione a twitter */
+    int     numero_messaggi; /* numero effettivo messaggi */
+    tweet   messaggi[100];
+} utente;
+</code></pre><p>e la definizione di un messaggio tweet di 140 caratteri, contenente al massimo 4 utenti menzionati:</p>
+<pre><code>typedef struct {
+    char contenuto[140];
+    int  numero_menzionati;
+    utente menzionati[4]; /* Licenza poetica, 
+                             qui sarebbe dovuto essere: 
+                             ...
+                             utente *menzionati; 
+                             ...
+                             e&#39; lo stesso ai fini del tema d&#39;esame */
+} tweet;
+</code></pre><p>Si consideri infine, il seguente database di utenti:</p>
+<pre><code>typedef struct {
+    int numero_utenti;
+    utente dati_utente[100];
+} database;
+
+database twitterdb;
+</code></pre><p>Si chiede di scrivere un programma che stampi a video tutti gli utenti iscritti dal 2008 che hanno menzionato &#39;@obama&#39; in almeno uno dei propri messaggi. Se, ad esempio, vi sono solo tre utenti nel database:</p>
+<ul>
+<li><p><code>@vzaccaria</code>, iscritto dal 2012, messaggi: </p>
+<ul>
+<li>&quot;@obama for president!&quot;</li>
+<li>&quot;@obama elected!&quot;</li>
+</ul>
+</li>
+<li><p><code>@merkel</code>, iscritta dal 2012, messaggi:</p>
+<ul>
+<li>&quot;Come to germany!&quot;</li>
+</ul>
+</li>
+</ul>
+<p>Il programma deve stampare: <code>Utente @vzaccaria ha menzionato @obama !!</code></p>
+<p><em>Soluzione</em></p>
+<pre><code>int main()
+{
+    int u;
+    int t;
+    int h;
+    for(u=0; u&lt;twitterdb.numero_utenti; u++)
+    {
+        int trovato = 0;
+        if(twitterdb.dati_utente[u].data_iscrizione &gt; 2008)
+        {
+            for( t=0; t&lt; twitterdb.dati_utente[u].numero_messaggi; t++ )
+            {
+                for( h=0; h&lt; twitterdb.dati_utente[u].messaggi[t].numero_menzionati; h++)
+                {
+                    if(strcmp(twitterdb.dati_utente[u].messaggi[t].menzionati[h].nome, &quot;@obama&quot;) == 0)
+                        trovato = 1;
+                }
+            }
+        }
+        if(trovato)
+        {
+            printf(&quot;Utente %s ha menzionato @obama !!\n&quot;, twitterdb.dati_utente[u].nome);
+        }
+    }
+}
+</code></pre><h2 id="esercizio-2">Esercizio 2</h2>
+<p>Si scriva un programma in linguaggio C per individuare le posizioni di segmenti costanti all’interno di in un vettore <code>v</code> (contenente numeri in virgola mobile). </p>
+<p>Un elemento appartiene ad un segmento costante <strong>se è uguale all’elemento precedente o all’elemento seguente</strong>. </p>
+<p>Le posizioni dei segmenti costanti devono essere salvate in un secondo vettore <code>pos</code>.</p>
+<p>In particolare il programma dovrà:</p>
+<ol>
+<li>Richiedere all’utente quanti numeri intende inserire (massimo 100),</li>
+<li>Richiedere tali numeri e riempire il vettore <code>v</code></li>
+<li>Scandire <code>v</code> e salvare in <code>pos</code>, senza lasciare buchi, le posizioni dei segmenti costanti. Le posizioni dei segmenti costanti sono date da tutti gli indici degli elementi appartenenti a segmenti costanti.</li>
+</ol>
+<h3 id="esempio">Esempio</h3>
+<p>Si assuma che il vettore v contenga 12 elementi</p>
+<pre><code>v = 1, 4, 3, 5, 5, 7, 3, 12, 12, 4, 1, 100
+</code></pre><p>il vettore <code>pos</code> dovra&#39; essere uguale a:</p>
+<pre><code>pos = 3, 4, 7, 8 
+</code></pre><p>ovvero:</p>
+<ul>
+<li>le posizioni 3 e 4 poiche&#39; vi e&#39; una sequenza di due elementi uguali a 5</li>
+<li>le posizioni 7 e 8 poiche&#39; vi e&#39; una sequenza di due elementi uguali a 12</li>
+</ul>
+<p><em>Soluzione</em></p>
+<pre><code>#include &lt;stdio.h&gt;
+#define N 100
+
+void main()
+{
+    float v[N];
+    int pos[N];
+    int i, j, n;
+    float temp;
+
+    do
+    {
+        printf(&quot;\ninserire n: &quot;);
+        scanf(&quot;%d&quot;, &amp;n);
+    } while(n&lt;0 || n &gt; N);
+
+    for(i = 0; i &lt; n; i++)
+    {
+        printf(&quot;\n v[%d] = &quot;, i);
+        scanf(&quot;%f&quot;, &amp;v[i]);
+    }
+
+    j = 0;
+    for(i = 1; i &lt; n - 1; i++)
+    {
+        if(v[i] == v[i - 1] || v[i] == v[i + 1])
+            {
+                pos[j] = i;
+                j++;
+            }
+    }
+    printf(&quot;\n le aree costanti appaiono nella posizione: &quot;);
+    for(i = 0; i &lt; j; i++)
+        printf(&quot; %d &quot;, pos[i]);
+}
+</code></pre><h3 id="esercizio-3">Esercizio 3</h3>
+<p>Si definisca il minimo numero di bit necessari per rappresentare in complemento a 2 tutti i seguenti valori interi:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">numero</th>
+<th style="text-align:center">bit minimi</th>
+<th style="text-align:right">codifica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">149</td>
+<td style="text-align:center">9 in C2</td>
+<td style="text-align:right"><code>010010101</code></td>
+</tr>
+<tr>
+<td style="text-align:center">108</td>
+<td style="text-align:center">8 in C2</td>
+<td style="text-align:right"><code>01101100</code></td>
+</tr>
+<tr>
+<td style="text-align:center">12</td>
+<td style="text-align:center">5 in C2</td>
+<td style="text-align:right"><code>01100</code></td>
+</tr>
+<tr>
+<td style="text-align:center">42</td>
+<td style="text-align:center">7 in C2</td>
+<td style="text-align:right"><code>0101010</code></td>
+</tr>
+<tr>
+<td style="text-align:center">92</td>
+<td style="text-align:center">8 in C2</td>
+<td style="text-align:right"><code>01011100</code></td>
+</tr>
+</tbody>
+</table>
+<p>Si eseguano quindi le seguenti operazioni riportando eventuali riporti perduti o overflow:</p>
+<ul>
+<li><p>Calcolo di (<code>- 149 – 108</code>)</p>
+<ul>
+<li><p>ricavo <code>-149</code>:</p>
+<pre><code>  010010101 -&gt; nego
+  101101010 -&gt; aggiungo 1
+  ---------
+  101101011 (-149 su 9 bit)
+</code></pre></li>
+<li><p>ricavo <code>-108</code>:</p>
+<pre><code>   01101100 -&gt; nego
+   10010011 -&gt; aggiungo 1
+  ---------
+  110010100 (-108 su 9 bit)
+</code></pre></li>
+<li><p>faccio la somma <code>-149 + (-108)</code>; in realta&#39; so gia che e&#39; overflow poiche&#39;
+su 9 bit posso rappresentare al minimo -256, mentre il risultato e&#39; -257:</p>
+<pre><code>  101101011
+  110010100
+  ---------
+ 1011111111 -&gt; riporto perduto e overflow!
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>Calcolo di (<code>108 + 12</code>)</p>
+<pre><code>  01101100
+  00001100
+  --------
+  01111000 -&gt; no riporto perduto e no overflow.
+</code></pre></li>
+</ul>
+</div>
+          <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG"></script>
+          <div id="disqus_thread" class="post_container__comments"> 
+            <script>(function() {
+  var disqus_shortname, dsq;
+
+  disqus_shortname = 'vittoriozaccaria';
+
+  dsq = document.createElement('script');
+
+  dsq.type = 'text/javascript';
+
+  dsq.async = true;
+
+  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+}).call(this);
+
+            </script><a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
