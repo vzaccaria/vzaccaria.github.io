@@ -1,0 +1,311 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Usage &mdash; Diy 1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Diy 1.0 documentation" href="index.html"/>
+        <link rel="next" title="API" href="api.html"/>
+        <link rel="prev" title="Introduction" href="introduction.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="fa fa-home"> Diy</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#previous-attempts">Previous attempts</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#customization">Customization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#serving-and-livereloading">Serving and livereloading</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#build-primitives">Build primitives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#built-in-utility-functions">Built in utility functions</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Diy</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Usage</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/usage.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>All the examples are in Javascript ES6; they use template strings,
+arrow functions and rest and spread parameters.</p>
+<p>All nested blocks are represented by arrow functions that receive
+a context parameter (represented as <tt class="docutils literal"><span class="pre">_</span></tt>). The context contains all the methods
+to build the final makefile:</p>
+<div class="highlight-coffeescript"><div class="highlight"><pre><span class="nx">_</span> <span class="nf">=&gt;</span> <span class="p">{</span>
+  <span class="nx">_</span><span class="p">.</span><span class="nx">collect</span><span class="p">(</span><span class="s">&quot;all&quot;</span><span class="p">,</span> <span class="p">..)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">this</span></tt> is bound to the context as well, so in Coffeescript you could write:</p>
+<div class="highlight-coffeescript"><div class="highlight"><pre><span class="nf">() =&gt;</span> <span class="p">{</span>
+  <span class="nx">@collect</span><span class="p">(</span><span class="s">&quot;all&quot;</span><span class="p">,</span> <span class="p">..)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p class="last">You can customize the context to include your own methods or modules. (see <a class="reference internal" href="api.html#addPack" title="addPack"><tt class="xref js js-func docutils literal"><span class="pre">addPack()</span></tt></a>)</p>
+</div>
+<p>To start, we will create a makefile to concatenate and minify javascript files.
+Assume you have two files (<tt class="docutils literal"><span class="pre">src/file1.js</span></tt> and <tt class="docutils literal"><span class="pre">src/file2.js</span></tt>) that you want to
+concatenate and minify into a single <tt class="docutils literal"><span class="pre">_site/client.js</span></tt> file. Here&#8217;s how you&#8217;d
+write a Diy program for this task:</p>
+<div class="highlight-coffeescript"><div class="highlight"><pre><span class="o">/*</span> <span class="nx">configure</span><span class="p">.</span><span class="nx">js</span> <span class="o">*/</span>
+
+<span class="nx">var</span> <span class="p">{</span>
+  <span class="nx">generateProject</span>
+<span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s">&quot;diy&quot;</span><span class="p">);</span>
+
+<span class="nx">generateProject</span><span class="p">(</span><span class="nx">_</span> <span class="nf">=&gt;</span> <span class="p">{</span>
+  <span class="nx">_</span><span class="p">.</span><span class="nx">collect</span><span class="p">(</span><span class="s">&quot;all&quot;</span><span class="p">,</span> <span class="nx">_</span> <span class="nf">=&gt;</span> <span class="p">{</span>
+    <span class="nx">_</span><span class="p">.</span><span class="nx">toFile</span><span class="p">(</span> <span class="s">&quot;_site/client.js&quot;</span><span class="p">,</span> <span class="nx">_</span> <span class="nf">=&gt;</span> <span class="p">{</span>
+      <span class="nx">_</span><span class="p">.</span><span class="nx">minify</span><span class="p">(</span> <span class="nx">_</span> <span class="nf">=&gt;</span> <span class="p">{</span>
+        <span class="nx">_</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span> <span class="nx">_</span> <span class="nf">=&gt;</span> <span class="p">{</span>
+          <span class="nx">_</span><span class="p">.</span><span class="nx">copy</span><span class="p">(</span><span class="s">&quot;src/*.js&quot;</span><span class="p">)</span>
+        <span class="p">})</span>
+      <span class="p">})</span>
+    <span class="p">})</span>
+  <span class="p">})</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Everything starts with the <a class="reference internal" href="api.html#generateProject" title="generateProject"><tt class="xref js js-func docutils literal"><span class="pre">generateProject()</span></tt></a> library function. You invoke it with
+a closure that describes the final makefile targets (using <a class="reference internal" href="api.html#collect" title="collect"><tt class="xref js js-func docutils literal"><span class="pre">collect()</span></tt></a>). A target is just a name
+you give to a set of products you want to build.</p>
+<p><a class="reference internal" href="api.html#toFile" title="toFile"><tt class="xref js js-func docutils literal"><span class="pre">toFile()</span></tt></a> creates a named file whose contents are created as described by the closure passed as second parameter.
+The closure (as it can be intuitively understood) minifies the concatenation of a copy of javascript files in <tt class="docutils literal"><span class="pre">src/*.js</span></tt>.</p>
+<p>Minification is done through a built-in utility function (<a class="reference internal" href="api.html#minify" title="minify"><tt class="xref js js-func docutils literal"><span class="pre">minify()</span></tt></a>). You can specify other processing strategies
+through <a class="reference internal" href="api.html#processFiles" title="processFiles"><tt class="xref js js-func docutils literal"><span class="pre">processFiles()</span></tt></a>.</p>
+<p>Concatenation is done through another utility function named <a class="reference internal" href="api.html#concat" title="concat"><tt class="xref js js-func docutils literal"><span class="pre">concat()</span></tt></a>.
+You can specify other reduction strategies through <a class="reference internal" href="api.html#reduceFiles" title="reduceFiles"><tt class="xref js js-func docutils literal"><span class="pre">reduceFiles()</span></tt></a>.</p>
+<p>To generate the makefile we use babel to get ES5 and run it with Node:</p>
+<div class="highlight-bash"><div class="highlight"><pre>&gt;  babel configure.js <span class="p">|</span> node
+</pre></div>
+</div>
+<p>And here&#8217;s the generated makefile:</p>
+<p>The makefile comes with two default targets (<cite>prepare</cite> and <cite>clean</cite>) plus all the targets defined with <cite>collect</cite>:</p>
+<div class="highlight-bash"><div class="highlight"><pre>&gt; make prepare      <span class="c"># Creates destination directories</span>
+&gt; make clean        <span class="c"># Removes all products</span>
+&gt; make all          <span class="c"># Execute commands associated with `all`</span>
+</pre></div>
+</div>
+<p>Make provides a way to specify the maximum parallelism to be used for building targets:</p>
+<div class="highlight-bash"><div class="highlight"><pre>&gt; make all -j <span class="m">8</span>     <span class="c"># Build all, execute up to 8 concurrent commands.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="customization">
+<h2>Customization<a class="headerlink" href="#customization" title="Permalink to this headline">¶</a></h2>
+<p>What about your favorite css/js preprocessor and other minifiers?</p>
+<p>Here&#8217;s how you would define a new processing step to compile javascript with a
+bunch of browserify plugins:</p>
+<div class="highlight-coffeescript"><div class="highlight"><pre><span class="nv">_.browserify = </span><span class="nf">(src, ...deps) =&gt;</span> <span class="p">{</span>
+  <span class="nx">var</span> <span class="nv">command = </span><span class="nf">(_) =&gt;</span> <span class="o">`</span><span class="p">.</span><span class="o">/</span><span class="nx">node_modules</span><span class="o">/</span><span class="p">.</span><span class="nx">bin</span><span class="o">/</span><span class="nx">browserify</span> <span class="o">-</span><span class="nx">t</span> <span class="nx">liveify</span> <span class="o">-</span><span class="nx">t</span> <span class="nx">node</span><span class="o">-</span><span class="nx">lessify</span>  <span class="nx">$</span><span class="p">{</span><span class="nx">_</span><span class="p">.</span><span class="nx">source</span><span class="p">}</span> <span class="o">-</span><span class="nx">o</span> <span class="nx">$</span><span class="p">{</span><span class="nx">_</span><span class="p">.</span><span class="nx">product</span><span class="p">}</span><span class="o">`</span>
+  <span class="nx">var</span> <span class="nv">product = </span><span class="nf">(_) =&gt;</span> <span class="o">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">_</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\..*/</span><span class="p">,</span> <span class="s">&#39;.bfd.js&#39;</span><span class="p">)}</span><span class="o">`</span>
+  <span class="nx">_</span><span class="p">.</span><span class="nx">compileFiles</span><span class="p">(...([</span> <span class="nx">command</span><span class="p">,</span> <span class="nx">product</span><span class="p">,</span> <span class="nx">src</span> <span class="p">].</span><span class="nx">concat</span><span class="p">(</span><span class="nx">deps</span><span class="p">)))</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="api.html#compileFiles" title="compileFiles"><tt class="xref js js-func docutils literal"><span class="pre">compileFiles()</span></tt></a> is a built in function to easily construct new processing steps. Its first
+two parameters are two templates:</p>
+<ol class="arabic simple">
+<li>a function to build the command line</li>
+<li>a function to build the product name</li>
+</ol>
+<p>The remaining parameters are <tt class="docutils literal"><span class="pre">src</span></tt> (glob for the source files) and the source dependencies.</p>
+<div class="highlight-coffeescript"><div class="highlight"><pre><span class="nx">generateProject</span><span class="p">(</span><span class="nx">_</span> <span class="nf">=&gt;</span> <span class="p">{</span>
+
+  <span class="nv">_.browserify = </span><span class="nf">(dir, ...deps) =&gt;</span> <span class="p">{</span>
+    <span class="nx">var</span> <span class="nv">command = </span><span class="nf">(_) =&gt;</span> <span class="o">`</span><span class="p">.</span><span class="o">/</span><span class="nx">node_modules</span><span class="o">/</span><span class="p">.</span><span class="nx">bin</span><span class="o">/</span><span class="nx">browserify</span> <span class="o">-</span><span class="nx">t</span> <span class="nx">liveify</span> <span class="o">-</span><span class="nx">t</span> <span class="nx">node</span><span class="o">-</span><span class="nx">lessify</span>  <span class="nx">$</span><span class="p">{</span><span class="nx">_</span><span class="p">.</span><span class="nx">source</span><span class="p">}</span> <span class="o">-</span><span class="nx">o</span> <span class="nx">$</span><span class="p">{</span><span class="nx">_</span><span class="p">.</span><span class="nx">product</span><span class="p">}</span><span class="o">`</span>
+    <span class="nx">var</span> <span class="nv">product = </span><span class="nf">(_) =&gt;</span> <span class="o">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">_</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\..*/</span><span class="p">,</span> <span class="s">&#39;.bfd.js&#39;</span><span class="p">)}</span><span class="o">`</span>
+    <span class="nx">_</span><span class="p">.</span><span class="nx">compileFiles</span><span class="p">(...([</span> <span class="nx">command</span><span class="p">,</span> <span class="nx">product</span><span class="p">,</span> <span class="nx">dir</span> <span class="p">].</span><span class="nx">concat</span><span class="p">(</span><span class="nx">deps</span><span class="p">)))</span>
+  <span class="p">}</span>
+
+  <span class="nx">_</span><span class="p">.</span><span class="nx">collect</span><span class="p">(</span><span class="s">&quot;all&quot;</span><span class="p">,</span> <span class="nx">_</span> <span class="nf">=&gt;</span> <span class="p">{</span>
+    <span class="nx">_</span><span class="p">.</span><span class="nx">toFile</span><span class="p">(</span> <span class="s">&quot;_site/client.js&quot;</span><span class="p">,</span> <span class="nx">_</span> <span class="nf">=&gt;</span> <span class="p">{</span>
+        <span class="nx">_</span><span class="p">.</span><span class="nx">browserify</span><span class="p">(</span><span class="s">&quot;src/index.ls&quot;</span><span class="p">,</span> <span class="s">&quot;src/**/*.less&quot;</span><span class="p">,</span> <span class="s">&quot;src/**/*.ls&quot;</span><span class="p">)</span>
+    <span class="p">})</span>
+  <span class="p">})</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="serving-and-livereloading">
+<h2>Serving and livereloading<a class="headerlink" href="#serving-and-livereloading" title="Permalink to this headline">¶</a></h2>
+<p>Serving static files from a directory and live-reloading upon a change of a product is supported through <tt class="docutils literal"><span class="pre">pm2</span></tt> and <tt class="docutils literal"><span class="pre">tiny-lr</span></tt>. We can
+create two make targets (<tt class="docutils literal"><span class="pre">start</span></tt> and <tt class="docutils literal"><span class="pre">stop</span></tt>) that take care of starting and stopping both services:</p>
+<div class="highlight-coffeescript"><div class="highlight"><pre><span class="nx">generateProject</span><span class="p">(</span><span class="nx">_</span> <span class="nf">=&gt;</span> <span class="p">{</span>
+
+    <span class="sr">/* ... */</span>
+
+  <span class="nx">_</span><span class="p">.</span><span class="nx">collect</span><span class="p">(</span><span class="s">&quot;start&quot;</span><span class="p">,</span> <span class="nx">_</span> <span class="nf">=&gt;</span> <span class="p">{</span>
+    <span class="nx">_</span><span class="p">.</span><span class="nx">startWatch</span><span class="p">(</span><span class="s">&quot;_site/**/*&quot;</span><span class="p">)</span>
+    <span class="nx">_</span><span class="p">.</span><span class="nx">startServe</span><span class="p">(</span><span class="s">&quot;_site&quot;</span><span class="p">)</span>
+  <span class="p">})</span>
+
+  <span class="nx">_</span><span class="p">.</span><span class="nx">collect</span><span class="p">(</span><span class="s">&quot;stop&quot;</span><span class="p">,</span> <span class="nx">_</span> <span class="nf">=&gt;</span> <span class="p">{</span>
+    <span class="nx">_</span><span class="p">.</span><span class="nx">stopWatch</span><span class="p">()</span>
+    <span class="nx">_</span><span class="p">.</span><span class="nx">stopServe</span><span class="p">()</span>
+  <span class="p">})</span>
+
+    <span class="o">/*</span> <span class="p">...</span> <span class="o">*/</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="api.html#startWatch" title="startWatch"><tt class="xref js js-func docutils literal"><span class="pre">startWatch()</span></tt></a> is a built-in step that launches a tiny-lr instance that triggers a reload upon change on files matching the glob.
+<a class="reference internal" href="api.html#startServe" title="startServe"><tt class="xref js js-func docutils literal"><span class="pre">startServe()</span></tt></a> serves files from the specified root and port.</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="api.html" class="btn btn-neutral float-right" title="API"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="introduction.html" class="btn btn-neutral" title="Introduction"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Vittorio Zaccaria.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

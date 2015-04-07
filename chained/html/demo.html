@@ -1,0 +1,86 @@
+
+<html lang="en" class="no-js"></html>
+<head>
+  <meta charset="utf-8"/>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:700,500,300" rel="stylesheet" type="text/css"/>
+  <link href="css/client.css" rel="stylesheet"/>
+</head>
+<body class="simply-striped-background-box">
+  <div class="set-full-size set-centered a-bit-vertically-down">
+    <div class="ui grid">
+      <div class="one wide column"></div>
+      <div class="fourteen wide column">
+        <div class="ui segment raised">
+          <h1 class="ui header aligned center small-caps">Your Awesome Social Network</h1>
+          <div class="sub-title">(Needs Harmony, tested only on Firefox at the moment)</div>
+          <div class="ui divider"></div>
+          <form id="the-form" class="ui form"> 
+            <div class="ui header aligned small-caps">Register</div>
+            <div class="two fields">
+              <div class="field"> 
+                <div class="label small-caps">Nickname (triggers ajax, try with zack)</div>
+                <input id="uname" placeholder="Nickname" name="uname" type="text" class="input"/>
+              </div>
+              <div class="field"> </div>
+            </div>
+            <div class="two fields">
+              <div class="field"> 
+                <div class="label small-caps">First Name</div>
+                <input id="fname" placeholder="First Name" name="fname" type="text" class="input"/>
+              </div>
+              <div class="field"> 
+                <div class="label small-caps">Last Name</div>
+                <input id="lname" placeholder="Last Name" name="lname" type="text" class="input"/>
+              </div>
+            </div>
+            <div class="one field">
+              <div class="field"> 
+                <div class="label small-caps">E-mail </div>
+                <input id="email" placeholder="E-mail" name="email" type="text" class="input"/>
+              </div>
+            </div>
+            <div class="one field">
+              <div class="field">
+                <div class="label small-caps">Password </div>
+                <input id="password1" placeholder="Confirm password" name="password1" type="text" class="input"/>
+              </div>
+            </div>
+            <div class="one field">
+              <div class="field">
+                <div class="label small-caps">Re-type password, just for science </div>
+                <input id="password2" placeholder="Password" name="password2" type="text" class="input"/>
+              </div>
+            </div>
+            <div class="ui button blue">Sign Up</div>
+          </form>
+        </div>
+        <div class="ui segment raised"><h3>Chained Browser Demo</h3>
+
+<p>This demo shows a <strong>form validation DSL</strong> implemented with <strong>Chained</strong> in Coffeescript: </p>
+
+<pre><code>form &#39;#form&#39;, ( check ) -&gt;
+
+    field &#39;#fname&#39;, (f) -&gt; 
+        check(f.value).isNotNull().isLengthAtLeast(of: 2).show(f)
+
+    field &#39;#lname&#39;, (f) -&gt; 
+        check(f.value).isNotNull().isLengthAtLeast(of: 2).show(f)
+
+    field &#39;#uname&#39;, (f) -&gt; check(f.value).isNotNull().userNameShouldNotExist(msg: &#39;User already exists&#39;).show(f)
+
+    field &#39;#password1&#39;, (f) -&gt;
+        check(f.value).isNotNull().isLengthAtLeast(of: 4).show(f)
+
+    field &#39;#password2&#39;, (f) -&gt;
+        check(f.value).isNotNull().shouldMatchElement(element: &#39;#password1&#39;, msg: &quot;passwords should match&quot;).show(f)</code></pre>
+
+<ul><li><p><code>form</code> and <code>field</code> functions setup <code>focusout</code> callbacks. <code>check</code> is an alias for <code>chained._</code>.</p></li><li><p>The method <code>show</code> renders popup error messages whenever one of the  promise associated with a predicate-chain fails. </p></li><li><p>The method <code>userNameShouldNotExist</code> is based on an Ajax <code>get</code> and, as such, is promise based. Chained allows to use the result in the next predicate as if it were synchronous. The users file at the moment contains only the user <code>zack</code>.</p></li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js" type="text/javascript"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.js" type="text/javascript"></script>
+<script src="js/vendor.js"></script>
+<script src="js/client.js"></script>

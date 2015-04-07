@@ -1,0 +1,33 @@
+<h3 id='chained_browser_demo'>Chained Browser Demo</h3>
+
+<p>This demo shows a <strong>form validation DSL</strong> implemented with <strong>Chained</strong> in Coffeescript:</p>
+
+<pre><code>form &#39;#form&#39;, ( check ) -&gt;
+
+    field &#39;#fname&#39;, (f) -&gt; 
+        check(f.value).isNotNull().isLengthAtLeast(of: 2).show(f)
+
+    field &#39;#lname&#39;, (f) -&gt; 
+        check(f.value).isNotNull().isLengthAtLeast(of: 2).show(f)
+
+    field &#39;#uname&#39;, (f) -&gt; check(f.value).isNotNull().userNameShouldNotExist(msg: &#39;User already exists&#39;).show(f)
+
+    field &#39;#password1&#39;, (f) -&gt;
+        check(f.value).isNotNull().isLengthAtLeast(of: 4).show(f)
+
+    field &#39;#password2&#39;, (f) -&gt;
+        check(f.value).isNotNull().shouldMatchElement(element: &#39;#password1&#39;, msg: &quot;passwords should match&quot;).show(f)</code></pre>
+
+<ul>
+<li>
+<p><code>form</code> and <code>field</code> functions setup <code>focusout</code> callbacks with chained, deferred objects. <code>check</code> is an alias for <code>chained._</code>.</p>
+</li>
+
+<li>
+<p>The method <code>show</code> renders popup error messages whenever one of the promise associated with a predicate-chain fails.</p>
+</li>
+
+<li>
+<p>The method <code>userNameShouldNotExist</code> is based on an Ajax <code>get</code> and, as such, is promise based. Chained allows to use the result in the next predicate as if it were synchronous. The users file at the moment contains only the user <code>zack</code>.</p>
+</li>
+</ul>

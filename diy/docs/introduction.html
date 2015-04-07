@@ -1,0 +1,206 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Introduction &mdash; Diy 1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Diy 1.0 documentation" href="index.html"/>
+        <link rel="next" title="Usage" href="usage.html"/>
+        <link rel="prev" title="Welcome to Diy’s documentation!" href="index.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="fa fa-home"> Diy</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#previous-attempts">Previous attempts</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#customization">Customization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#serving-and-livereloading">Serving and livereloading</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#build-primitives">Build primitives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#built-in-utility-functions">Built in utility functions</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Diy</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Introduction</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/introduction.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>Diy is a build language embedded in Javascript. It allows to compose build systems by using a set of simple yet powerful primitives. The generated build system is in the form of a Makefile.</p>
+<p>The idea for Diy came while tinkering with <strong>domain specific languages</strong> for build systems.
+DSLs provide the developer with the vocabulary of a problem domain to express a programmatic solution that could be understood by a <em>problem domain expert</em>.</p>
+<div class="section" id="previous-attempts">
+<h2>Previous attempts<a class="headerlink" href="#previous-attempts" title="Permalink to this headline">¶</a></h2>
+<p>An initial attempt I made was with <a class="reference external" href="http://www.vittoriozaccaria.net/wmake/">Webmake</a>, which was not really a DSL but just a
+configuration based tool to generate makefiles.</p>
+<p>Another attempt closer to Diy was <a class="reference external" href="https://github.com/vzaccaria/newmake">Newmake</a>, which, however, was meant to be a private-ish project
+to test DSL to create makefiles.</p>
+<p>Now I think I&#8217;ve nailed a very useful DSL that hopefully you will enjoy as well.</p>
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<dl class="last docutils">
+<dt>Debasish Ghosh, &#8220;DSLs in Action&#8221;</dt>
+<dd><a class="reference external" href="http://www.amazon.com/DSLs-Action-Debasish-Ghosh/dp/1935182455">http://www.amazon.com/DSLs-Action-Debasish-Ghosh/dp/1935182455</a></dd>
+<dt>Martin Fowler Website</dt>
+<dd><a class="reference external" href="http://martinfowler.com/books/dsl.html">http://martinfowler.com/books/dsl.html</a></dd>
+<dt>Writing Domain Specific Languages</dt>
+<dd><a class="reference external" href="http://docs.codehaus.org/display/GROOVY/Writing+Domain-Specific+Languages">http://docs.codehaus.org/display/GROOVY/Writing+Domain-Specific+Languages</a></dd>
+<dt>Validation DSL for Client-Server Applications</dt>
+<dd><a class="reference external" href="http://www.cas.mcmaster.ca/~carette/publications/FedorenkoThesis.pdf">http://www.cas.mcmaster.ca/~carette/publications/FedorenkoThesis.pdf</a></dd>
+<dt>WebDSL</dt>
+<dd><a class="reference external" href="http://webdsl.org/home">http://webdsl.org/home</a></dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="usage.html" class="btn btn-neutral float-right" title="Usage"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Welcome to Diy’s documentation!"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Vittorio Zaccaria.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

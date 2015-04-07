@@ -1,0 +1,113 @@
+<!DOCTYPE html><html><head lang="en"><title>DIY — Javascript that compiles to a Makefile</title><meta http-equiv="content-type" content="text/html, charset=UTF-8"><meta name="description" content=""><meta name="keywords" content=""><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><script type="text/javascript" src="client.js"></script></head><body><a href="https://github.com/vzaccaria/diy" class="github"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png" class="github__img"></a><div class="page"><div class="intro"><img src="images/drill.png" class="intro__logo"><div class="intro__title">DIY</div><div class="intro__subtitle">Javascript that compiles to a Makefile</div><a href="docs/index.html" class="intro__docslink">read the docs</a></div><div class="content"><div class="hr"></div><div class="content__title content__title_role_feature-list-title">features</div><div class="feature"><div class="feature__content"><span class="glyphicon glyphicon-pencil feature__icon"></span><div class="feature__title">build systems dsl</div><div class="feature__text">DIY is a build language embedded in Javascript. It allows to generate Make files for your web site or web app.</div></div></div><div class="feature"><div class="feature__content"><span class="glyphicon glyphicon-flash feature__icon"></span><div class="feature__title">tailored for web</div><div class="feature__text">All classic transforms are supported such as reductions (e.g., concatenation), post-processing (e.g., minification) and so on..</div></div></div><div class="feature"><div class="feature__content"><span class="glyphicon glyphicon-tasks feature__icon"></span><div class="feature__title">parallel builds</div><div class="feature__text">Enables Make to exploit available parallelism.</div></div></div><div class="feature"><div class="feature__content"><span class="glyphicon glyphicon-forward feature__icon"></span><div class="feature__title">incremental builds</div><div class="feature__text">Compile only what has changed.</div></div></div><div class="feature"><div class="feature__content"><span class="glyphicon glyphicon-wrench feature__icon"></span><div class="feature__title">&quot;do it yourself&quot; customization</div><div class="feature__text">Specify directly how build tools should be invoked on the command line.</div></div></div><div class="feature"><div class="feature__content"><span class="glyphicon glyphicon-briefcase feature__icon"></span><div class="feature__title">library of transforms</div><div class="feature__text">DIY comes with a library of transforms already baked in.</div></div></div></div><div class="content"><div class="hr"></div><div class="paragraph paragraph_width_large"><p><h1 id="install">install</h1>
+<pre class="shell"><code>npm install diy-build</code></pre>
+<h1 id="example">example</h1>
+<h2 id="concatenate-and-minify-javascript-files">concatenate and minify javascript files</h2>
+<p>Assume you have two files (<code>src/file1.js</code> and <code>src/file2.js</code>) that you want to concatenate and minify into a single <code>_site/client.js</code> file. Here's how you'd write a DIY (ES6) program for the task at hand:</p>
+<h2 id="diy-source-file">diy source file</h2>
+<pre class="js"><code>/* configure.js */
+
+var {
+  generateProject
+} = require(&quot;diy-build&quot;);
+
+generateProject(_ =&gt; {
+  _.collect(&quot;all&quot;, _ =&gt; {
+    _.toFile( &quot;_site/client.js&quot;, _ =&gt; {
+      _.minify( _ =&gt; {
+        _.concat( _ =&gt; {
+          _.glob(&quot;src/*.js&quot;)
+        })
+      })
+    })
+  })
+})</code></pre>
+<h2 id="description">description</h2>
+<p>DIY uses a <strong>top-down</strong> approach in which you decompose the construction of each product/target into simpler steps.</p>
+<p>Everything begins with the <code>generateProject</code> library function. This function generates the makefile by following the steps indicated in the closure passed as a parameter.</p>
+<pre class="js"><code>generateProject(_ =&gt; {
+  _.collect(&quot;all&quot;,
+    ...</code></pre>
+<p>This will declare a new Make target (<code>all</code>) associated with the construction of a set of products specified in the closure passed to <code>collect</code> (think of it as a Grunt task).</p>
+<p>You could even have a sequence of <code>_.collect</code> to declare multiple targets or even multiple targets nested inside another (to specify nested dependencies):</p>
+<pre class="js"><code>generateProject(_ =&gt; {
+  _.collectSeq(&quot;all&quot;, _ =&gt; {
+    _.collect(&quot;build&quot;, _ =&gt; {
+      /* specify how to build files */
+    })
+    _.collect(&quot;deploy&quot;, _ =&gt; {
+      /* specify how to deploy files */
+    }
+  })
+})</code></pre>
+<p>Let's go back to our example. The <code>_.collect</code> operation specifies the files that must be built:</p>
+<pre class="js"><code>_.collect(&quot;all&quot;, _ =&gt; {
+  _.toFile( &quot;_site/client.js&quot;, _ =&gt; {
+    ...</code></pre>
+<p>Here, we are specifying that the <code>all</code> target corresponds to the construction of the file <code>_site/client.js</code>. In this case, <code>_.toFile</code> receives a closure that constructs the minified concatenation of all <code>src/*.js</code>:</p>
+<pre class="js"><code>_.toFile( &quot;_site/client.js&quot;, _ =&gt; {
+  _.minify( _ =&gt; {
+    _.concat( _ =&gt; {
+      _.glob(&quot;src/*.js&quot;)
+      ...</code></pre>
+<p><strong>Check out the <a href="docs/index.html">docs for additional ways to process files</a></strong></p>
+<h2 id="makefile-generation">makefile generation</h2>
+<p>To generate the makefile we use <code>babel</code> to get ES5:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">babel</span> configure.js <span class="kw">|</span> <span class="kw">node</span></code></pre>
+<p>And here's the <a href="demo/makefile">generated makefile</a>.</p>
+<p>The makefile comes with two default targets (<code>prepare</code> and <code>clean</code>) and all the targets defined with <code>collect</code>:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">&gt;</span> <span class="kw">make</span> prepare      <span class="co"># Creates destination directories</span>
+<span class="kw">&gt;</span> <span class="kw">make</span> clean        <span class="co"># Removes all products</span>
+<span class="kw">&gt;</span> <span class="kw">make</span> all          <span class="co"># Execute commands associated with `all`</span></code></pre>
+<p>Make provides a way to specify the maximum parallelism to be used for building targets:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">&gt;</span> <span class="kw">make</span> all -j 8     <span class="co"># Build all, execute up to 8 concurrent commands.</span></code></pre>
+<h1 id="customization">customization</h1>
+<p>What about your favorite CSS/JS preprocessor and other minifiers?</p>
+<p>Here's how you would define a new processing step to compile Javascript with a bunch of Browserify plugins:</p>
+<pre class="js"><code>_.browserify = (src, ...deps) =&gt; {
+  var command = (_) =&gt; `./node_modules/.bin/browserify -t liveify -t node-lessify  ${_.source} -o ${_.product}`
+  var product = (_) =&gt; `${_.source.replace(/\..*/, &#39;.bfd.js&#39;)}`
+  _.compileFiles(...([ command, product, src ].concat(deps)))
+}</code></pre>
+<p><code>_.compileFiles</code> is a built-in function that allows you to easily construct new processing steps. Its first two parameters are two templates:</p>
+<ol style="list-style-type: decimal">
+<li>A function to build the command line; and</li>
+<li>A function to build the product name.</li>
+</ol>
+<p>The remaining parameters are <code>src</code> (glob for the source files) and the source dependencies.</p>
+<pre class="js"><code>generateProject(_ =&gt; {
+
+  _.browserify = (dir, ...deps) =&gt; {
+    var command = (_) =&gt; `./node_modules/.bin/browserify -t liveify -t node-lessify  ${_.source} -o ${_.product}`
+    var product = (_) =&gt; `${_.source.replace(/\..*/, &#39;.bfd.js&#39;)}`
+    _.compileFiles(...([ command, product, dir ].concat(deps)))
+  }
+
+  _.collect(&quot;all&quot;, _ =&gt; {
+    _.toFile( &quot;_site/client.js&quot;, _ =&gt; {
+        _.browserify(&quot;src/index.ls&quot;, &quot;src/**/*.less&quot;, &quot;src/**/*.ls&quot;)
+    })
+  })
+}</code></pre>
+<h1 id="serving-and-livereloading">serving and livereloading</h1>
+<p>Serving static files from a directory and livereloading upon a change of a product are supported through <code>pm2</code> and <code>tiny-lr</code>. We can create two make targets (<code>start</code> and <code>stop</code>) that start and stop both services:</p>
+<pre class="js"><code>generateProject(_ =&gt; {
+
+    /* ... */
+
+  _.collect(&quot;start&quot;, _ =&gt; {
+    _.startWatch(&quot;_site/**/*&quot;)
+    _.startServe(&quot;_site&quot;)
+  })
+
+  _.collect(&quot;stop&quot;, _ =&gt; {
+    _.stopWatch()
+    _.stopServe()
+  })
+
+    /* ... */
+})</code></pre>
+<p><code>_.startWatch(glob)</code> is a built-in step that launches a tiny-lr instance to trigger a reload upon a change in files matching the glob. <code>_.startServe(root,port)</code> serves files from the specified root and port.</p>
+</p>
+</div></div></div><footer class="footer"><div class="content content_position_footer"> <div class="paragraph paragraph_position_footer"><h2 id="-vittorio-zaccaria-2015-http-www-vittoriozaccaria-net-v2-"><a href="http://www.vittoriozaccaria.net/v2/">© vittorio zaccaria, 2015</a></h2>
+</div><div class="paragraph paragraph_role_share"><div id="indiesocial-init" data-indiesocialservices="all" data-addfontelloicon="true" data-url="https://github.com/vzaccaria/diy" data-title="DIY &#x2014; Javascript that compiles to a Makefile"></div></div></div></footer></body></html>
+

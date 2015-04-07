@@ -1,0 +1,248 @@
+@import url(http://fonts.googleapis.com/css?family=Inconsolata:400,700);
+@import url(http://fonts.googleapis.com/css?family=Francois+One);
+.thumbnail > img,
+.thumbnail a > img,
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.btn-group-lg > .btn {
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 6px;
+}
+.btn-group-sm > .btn {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+.btn-group-xs > .btn {
+  padding: 1px 5px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+.dl-horizontal dd:before,
+.dl-horizontal dd:after,
+.container:before,
+.container:after,
+.container-fluid:before,
+.container-fluid:after,
+.row:before,
+.row:after,
+.form-horizontal .form-group:before,
+.form-horizontal .form-group:after,
+.btn-toolbar:before,
+.btn-toolbar:after,
+.btn-group-vertical > .btn-group:before,
+.btn-group-vertical > .btn-group:after,
+.nav:before,
+.nav:after,
+.navbar:before,
+.navbar:after,
+.navbar-header:before,
+.navbar-header:after,
+.navbar-collapse:before,
+.navbar-collapse:after,
+.pager:before,
+.pager:after,
+.panel-body:before,
+.panel-body:after,
+.modal-footer:before,
+.modal-footer:after,
+.page-content:before,
+.page-content:after {
+  content: " ";
+  display: table;
+}
+.dl-horizontal dd:after,
+.container:after,
+.container-fluid:after,
+.row:after,
+.form-horizontal .form-group:after,
+.btn-toolbar:after,
+.btn-group-vertical > .btn-group:after,
+.nav:after,
+.navbar:after,
+.navbar-header:after,
+.navbar-collapse:after,
+.pager:after,
+.panel-body:after,
+.modal-footer:after,
+.page-content:after {
+  clear: both;
+}
+.z-depth-z1 {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26), 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+}
+.z-depth-z1-top {
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+}
+.z-depth-z1-bottom {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+.z-depth-z2 {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.z-depth-z2-top {
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.z-depth-z2-bottom {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+}
+.z-depth-z3 {
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+.z-depth-z3-top {
+  box-shadow: 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+.z-depth-z3-bottom {
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+}
+.z-depth-z4 {
+  box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
+}
+.z-depth-z4-top {
+  box-shadow: 0 25px 55px 0 rgba(0, 0, 0, 0.21);
+}
+.z-depth-z4-bottom {
+  box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22);
+}
+.z-depth-z5 {
+  box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22);
+}
+.z-depth-z5-top {
+  box-shadow: 0 40px 77px 0 rgba(0, 0, 0, 0.22);
+}
+.z-depth-z5-bottom {
+  box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2);
+}
+.z-depth-animation:hover .z-depth-z1,
+.z-depth-animation:hover .z-depth-z2,
+.z-depth-animation:hover .z-depth-z3,
+.z-depth-animation:hover .z-depth-z4,
+.z-depth-animation:hover .z-depth-z5 {
+  transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+body {
+  background: #eaeaea;
+  line-height: 1.5em;
+  font-size: 1.1rem;
+  font-family: 'Inconsolata';
+  margin: 0px;
+}
+code,
+pre {
+  line-height: 1.3em;
+  font-size: 1.1rem;
+  font-family: 'Inconsolata';
+  color: #c0392b;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Francois One';
+  margin-top: 2rem;
+  font-variant: small-caps;
+  font-weight: 500;
+  text-transform: lowercase;
+  color: #000000;
+  line-height: 1.3em;
+}
+svg {
+  display: block;
+  margin: auto;
+}
+svg > g > polygon {
+  fill: #eaeaea;
+}
+.content img {
+  display: block;
+  margin: auto;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+}
+.page-content {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 50rem;
+}
+.page-content > .navbar-header,
+.page-content > .navbar-collapse {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+@media (min-width: 768px) {
+  .page-content > .navbar-header,
+  .page-content > .navbar-collapse {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+.page-header {
+  background: #555;
+}
+.page-header__content {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  border-bottom: 1px white solid;
+  -webkit-box-shadow: inset 0px -12px 54px -20px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: inset 0px -12px 54px -20px rgba(0, 0, 0, 0.75);
+  box-shadow: inset 0px -12px 54px -20px rgba(0, 0, 0, 0.75);
+}
+.page-header__title {
+  color: #e6e6e6;
+  text-align: center;
+  font-family: 'Francois One';
+  font-size: 5rem;
+  line-height: 1.5em;
+  text-shadow: 0 -6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 -1px 3px rgba(0, 0, 0, 0.3), 0 -3px 5px rgba(0, 0, 0, 0.2), 0 -5px 10px rgba(0, 0, 0, 0.25), 0 -10px 10px rgba(0, 0, 0, 0.2), 0 -20px 20px rgba(0, 0, 0, 0.15);
+}
+.page-header__subtitle {
+  font-variant: small-caps;
+  font-weight: 500;
+  text-transform: lowercase;
+  color: #e6e6e6;
+  text-align: center;
+  font-family: 'Francois One';
+  font-size: 1.5rem;
+  line-height: 1.5em;
+  letter-spacing: 2px;
+  text-shadow: 0 -6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 -1px 3px rgba(0, 0, 0, 0.3), 0 -3px 5px rgba(0, 0, 0, 0.2), 0 -5px 10px rgba(0, 0, 0, 0.25), 0 -10px 10px rgba(0, 0, 0, 0.2), 0 -20px 20px rgba(0, 0, 0, 0.15);
+}
+.page-footer {
+  background: #555;
+  margin-top: 5%;
+}
+.page-footer__content {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  border-bottom: 1px white solid;
+  -webkit-box-shadow: inset 0px -12px 54px -20px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: inset 0px -12px 54px -20px rgba(0, 0, 0, 0.75);
+  box-shadow: inset 0px -12px 54px -20px rgba(0, 0, 0, 0.75);
+}
+.page-footer__author {
+  color: #e6e6e6;
+  text-align: center;
+  font-family: 'Francois One';
+  font-size: 1rem;
+  line-height: 1.5em;
+}
+.page-footer__share {
+  padding-top: 2rem;
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+.page-footer__share_reddit,
+.page-footer__share_twitter {
+  display: inline;
+}
