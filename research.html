@@ -1,3 +1,4 @@
+Transformers.markdown is deprecated, you must replace the :markdown jade filter, with :marked and install jstransformer-marked before you update to jade@2.0.0.
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head lang="en">
@@ -14,35 +15,35 @@
         <div class="sidebar__name">Vittorio Zaccaria</div>
         <div class="sidebar__address">Politecnico di Milano</div>
         <ul class="sidebar__link_list">
-          <li onclick="location.href=&apos;/&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-home"></i></span>
+          <li class="sidebar__link_item" onclick="location.href='/'" style="cursor: pointer"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-home"></i></span>
             <div class="sidebar__link_item__name">Home</div>
           </li>
-          <li onclick="location.href=&apos;/research.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-flask"></i></span>
+          <li class="sidebar__link_item" onclick="location.href='/research.html'" style="cursor: pointer"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-flask"></i></span>
             <div class="sidebar__link_item__name">Research</div>
           </li>
-          <li onclick="location.href=&apos;/blog.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-quote-left"></i></span>
+          <li class="sidebar__link_item" onclick="location.href='/blog.html'" style="cursor: pointer"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-quote-left"></i></span>
             <div class="sidebar__link_item__name">Blog</div>
           </li>
-          <li onclick="location.href=&apos;/projects.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-floppy-o"></i></span>
+          <li class="sidebar__link_item" onclick="location.href='/projects.html'" style="cursor: pointer"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-floppy-o"></i></span>
             <div class="sidebar__link_item__name">Projects</div>
           </li>
-          <li onclick="location.href=&apos;/teaching.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-graduation-cap"></i></span>
+          <li class="sidebar__link_item" onclick="location.href='/teaching.html'" style="cursor: pointer"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-graduation-cap"></i></span>
             <div class="sidebar__link_item__name">Teaching</div>
           </li>
-          <li onclick="location.href=&apos;/deposit/cv.pdf&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-user"></i></span>
+          <li class="sidebar__link_item" onclick="location.href='/deposit/cv.pdf'" style="cursor: pointer"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-user"></i></span>
             <div class="sidebar__link_item__name">CV</div>
           </li>
-          <li onclick="location.href=&apos;/videos.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-youtube-play"></i></span>
+          <li class="sidebar__link_item" onclick="location.href='/videos.html'" style="cursor: pointer"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-youtube-play"></i></span>
             <div class="sidebar__link_item__name">Videos</div>
           </li>
-          <li onclick="location.href=&apos;/address.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-map-marker"></i></span>
+          <li class="sidebar__link_item" onclick="location.href='/address.html'" style="cursor: pointer"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-map-marker"></i></span>
             <div class="sidebar__link_item__name">Address</div>
           </li>
         </ul>
         <div class="sidebar__bottom"> 
-          <div onclick="location.href=&apos;http://www.linkedin.com/in/vzaccaria&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-linkedin-square"></i></div>
-          <div onclick="location.href=&apos;http://twitter.com/_vzaccaria_&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-twitter-square"></i></div>
-          <div onclick="location.href=&apos;https://plus.google.com/116322227495215922957/about&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-google-plus-square"></i></div>
+          <div class="sidebar__bottom__button" onclick="location.href='http://www.linkedin.com/in/vzaccaria'" style="cursor: pointer"><i class="fa fa-linkedin-square"></i></div>
+          <div class="sidebar__bottom__button" onclick="location.href='http://twitter.com/_vzaccaria_'" style="cursor: pointer"><i class="fa fa-twitter-square"></i></div>
+          <div class="sidebar__bottom__button" onclick="location.href='https://plus.google.com/116322227495215922957/about'" style="cursor: pointer"><i class="fa fa-google-plus-square"></i></div>
         </div>
       </div>
       <div class="site_container">
@@ -108,7 +109,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 26 to 33</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1109/SAMOS.2014.6893191&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1109/SAMOS.2014.6893191'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -133,7 +134,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 127 to 133</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1109/ISPA.2014.25&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1109/ISPA.2014.25'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -152,7 +153,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 161 to 168</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1109/ASAP.2014.6868651&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1109/ASAP.2014.6868651'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -175,7 +176,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 345 to 352</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1007/978-3-319-05960-0_39&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1007/978-3-319-05960-0_39'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -193,7 +194,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 1 to 4</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;mailto:vittorio.zaccaria@polimi.it&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='mailto:vittorio.zaccaria@polimi.it'" style="cursor: pointer"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -214,7 +215,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 1 to 8</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dl.acm.org/citation.cfm?id=2485450&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dl.acm.org/citation.cfm?id=2485450'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -233,7 +234,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 124 to 129</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dl.acm.org/citation.cfm?id=2485450&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dl.acm.org/citation.cfm?id=2485450'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -251,7 +252,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 504 to 519</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1016/j.parco.2013.04.002&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1016/j.parco.2013.04.002'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -272,7 +273,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 671 to 676</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dl.acm.org/citation.cfm?id=2485452&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dl.acm.org/citation.cfm?id=2485452'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -290,7 +291,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 659</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dl.acm.org/citation.cfm?id=2485450&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dl.acm.org/citation.cfm?id=2485450'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -308,7 +309,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 20:1 to 20:27</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1145/2520000.2514647&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1145/2520000.2514647'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -348,7 +349,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 39 to 42</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1109/ReCoSoC.2011.5981522&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1109/ReCoSoC.2011.5981522'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -369,7 +370,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 503 to 512</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1145/2380445.2380523&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1145/2380445.2380523'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -387,7 +388,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 363 to 374</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=6222214&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=6222214'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -406,7 +407,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 233 to 241</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1258/jrsm.2012.110296&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1258/jrsm.2012.110296'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -423,7 +424,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 29:1 to 29:28</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1145/2220336.2220341&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1145/2220336.2220341'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -443,7 +444,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 1379 to 1384</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=6176578&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=6176578'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -461,7 +462,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 740 to 753</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1109/TCAD.2011.2177457&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1109/TCAD.2011.2177457'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -501,7 +502,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 1 to 7</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1109/ReCoSoC.2011.5981522&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1109/ReCoSoC.2011.5981522'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -522,7 +523,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 31 to 36</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1145/2076501.2076508&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1145/2076501.2076508'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -563,7 +564,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 835 to 840</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1109/INDIN.2011.6035001&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1109/INDIN.2011.6035001'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -600,7 +601,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 47 to 63</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;mailto:vittorio.zaccaria@polimi.it&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='mailto:vittorio.zaccaria@polimi.it'" style="cursor: pointer"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -644,7 +645,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 65 to 79</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;mailto:vittorio.zaccaria@polimi.it&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='mailto:vittorio.zaccaria@polimi.it'" style="cursor: pointer"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -665,7 +666,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 189 to 204</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;mailto:vittorio.zaccaria@polimi.it&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='mailto:vittorio.zaccaria@polimi.it'" style="cursor: pointer"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -692,7 +693,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 171 to 187</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;mailto:vittorio.zaccaria@polimi.it&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='mailto:vittorio.zaccaria@polimi.it'" style="cursor: pointer"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -713,7 +714,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 93 to 107</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;mailto:vittorio.zaccaria@polimi.it&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='mailto:vittorio.zaccaria@polimi.it'" style="cursor: pointer"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -734,7 +735,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 75 to 91</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;mailto:vittorio.zaccaria@polimi.it&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='mailto:vittorio.zaccaria@polimi.it'" style="cursor: pointer"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -755,7 +756,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 51 to 73</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;mailto:vittorio.zaccaria@polimi.it&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='mailto:vittorio.zaccaria@polimi.it'" style="cursor: pointer"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -791,7 +792,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 3 to 17</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;mailto:vittorio.zaccaria@polimi.it&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='mailto:vittorio.zaccaria@polimi.it'" style="cursor: pointer"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -809,7 +810,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 86 to 93</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1109/SASP.2011.5941085&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1109/SASP.2011.5941085'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -829,7 +830,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 123 to 135</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1049/iet-cdt.2010.0030&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1049/iet-cdt.2010.0030'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -866,7 +867,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 488 to 493</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1109/ISVLSI.2010.67&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1109/ISVLSI.2010.67'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -908,7 +909,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 494 to 499</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org//10.1109/ISVLSI.2010.93&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org//10.1109/ISVLSI.2010.93'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -928,7 +929,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 120 to 125</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1145/1837274.1837307&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1145/1837274.1837307'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -947,7 +948,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 325 to 331</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=5759023&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=5759023'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -967,7 +968,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 271 to 274</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://delivery.acm.org/10.1145/1880000/1870992/p271-gellert.pdf&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://delivery.acm.org/10.1145/1880000/1870992/p271-gellert.pdf'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -988,7 +989,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 196 to 201</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://delivery.acm.org/10.1145/1880000/1870973/p196-mariani.pdf&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://delivery.acm.org/10.1145/1880000/1870973/p196-mariani.pdf'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1006,7 +1007,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 37 to 42</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1145/1645213.1645223&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1145/1645213.1645223'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1023,7 +1024,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 1816 to 1829</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1109/TCAD.2009.2028681&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1109/TCAD.2009.2028681'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1041,7 +1042,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 21 to 28</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1109/SASP.2009.5226331&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1109/SASP.2009.5226331'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1059,7 +1060,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 383 to 389</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1109/DSD.2009.154&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1109/DSD.2009.154'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1077,7 +1078,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 118 to 124</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1109/ICSAMOS.2009.5289222&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1109/ICSAMOS.2009.5289222'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1094,7 +1095,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages —</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;mailto:vittorio.zaccaria@polimi.it&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='mailto:vittorio.zaccaria@polimi.it'" style="cursor: pointer"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1111,7 +1112,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 323 to 328</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1109/ASPDAC.2009.4796501&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1109/ASPDAC.2009.4796501'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1126,7 +1127,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages —</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;mailto:vittorio.zaccaria@polimi.it&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='mailto:vittorio.zaccaria@polimi.it'" style="cursor: pointer"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1143,7 +1144,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 7 to 12</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1109/ESTMED.2008.4696986&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1109/ESTMED.2008.4696986'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1161,7 +1162,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 213 to 218</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;mailto:vittorio.zaccaria@polimi.it&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='mailto:vittorio.zaccaria@polimi.it'" style="cursor: pointer"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1178,7 +1179,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 641 to 644</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1109/DSD.2008.21&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1109/DSD.2008.21'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1195,7 +1196,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 150 to 157</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1109/ICSAMOS.2008.4664858&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1109/ICSAMOS.2008.4664858'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1212,7 +1213,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 75 to 82</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1109/SASP.2008.4570789&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1109/SASP.2008.4570789'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1231,7 +1232,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages —</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://www.patentlens.net/patentlens/patent/US_7243213/en/&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://www.patentlens.net/patentlens/patent/US_7243213/en/'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1251,7 +1252,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 49 to 67</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1007/s10617-006-9045-5&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1007/s10617-006-9045-5'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1270,7 +1271,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 37 to 52</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;mailto:vittorio.zaccaria@polimi.it&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='mailto:vittorio.zaccaria@polimi.it'" style="cursor: pointer"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1290,7 +1291,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages —</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://www.patentlens.net/patentlens/patent/US_6889317/en/&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://www.patentlens.net/patentlens/patent/US_6889317/en/'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1309,7 +1310,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 586 to 591</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1109/ITCC.2005.62&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1109/ITCC.2005.62'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1326,7 +1327,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 305 to 316</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;mailto:vittorio.zaccaria@polimi.it&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='mailto:vittorio.zaccaria@polimi.it'" style="cursor: pointer"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1346,7 +1347,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 515 to 524</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1016/j.vlsi.2004.07.012&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1016/j.vlsi.2004.07.012'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1365,7 +1366,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages —</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://www.patentlens.net/patentlens/patent/US_2004_0225869_A1/en/&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://www.patentlens.net/patentlens/patent/US_2004_0225869_A1/en/'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1382,7 +1383,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 318 to 323</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1109/DATE.2004.1269258&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1109/DATE.2004.1269258'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1402,7 +1403,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 440 to 443</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1145/988952.989058&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1145/988952.989058'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1419,7 +1420,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 233 to 254</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;mailto:vittorio.zaccaria@polimi.it&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='mailto:vittorio.zaccaria@polimi.it'" style="cursor: pointer"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1436,7 +1437,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 541 to 552</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1007/978-3-540-30205-6_56&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1007/978-3-540-30205-6_56'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1453,7 +1454,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 20182</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1109/DATE.2003.10236&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1109/DATE.2003.10236'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1470,7 +1471,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 249 to 258</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1007/978-3-540-39762-5_31&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1007/978-3-540-39762-5_31'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1490,7 +1491,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 145 to 148</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1109/ISCAS.2003.1206212&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1109/ISCAS.2003.1206212'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1508,7 +1509,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 92 to 95</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1145/764808.764833&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1145/764808.764833'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1526,7 +1527,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 225 to 228</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1145/764808.764866&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1145/764808.764866'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1544,7 +1545,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 203</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;mailto:vittorio.zaccaria@polimi.it&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='mailto:vittorio.zaccaria@polimi.it'" style="cursor: pointer"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1564,7 +1565,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 672 to 678</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1145/952532.952664&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1145/952532.952664'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1584,7 +1585,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages —</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://www.patentlens.net/patentlens/patent/US_2002_0124155_A1/en/&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://www.patentlens.net/patentlens/patent/US_2002_0124155_A1/en/'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1602,7 +1603,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 998 to 1010</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1109/TCAD.2002.801105&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1109/TCAD.2002.801105'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1622,7 +1623,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 886 to 891</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1145/513918.514137&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1145/513918.514137'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1642,7 +1643,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 183 to 203</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1023/A:1019722105713&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1023/A:1019722105713'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1660,7 +1661,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 7 to 33</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1023/A:1019791213967&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1023/A:1019791213967'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1679,7 +1680,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 614 to 622</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1109/TVLSI.2002.801617&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1109/TVLSI.2002.801617'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1699,7 +1700,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 1128 to 1128</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1109/DATE.2002.998484&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1109/DATE.2002.998484'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1714,7 +1715,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages —</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;mailto:vittorio.zaccaria@polimi.it&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='mailto:vittorio.zaccaria@polimi.it'" style="cursor: pointer"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1729,7 +1730,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages —</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;mailto:vittorio.zaccaria@polimi.it&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='mailto:vittorio.zaccaria@polimi.it'" style="cursor: pointer"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1749,7 +1750,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages —</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;mailto:vittorio.zaccaria@polimi.it&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='mailto:vittorio.zaccaria@polimi.it'" style="cursor: pointer"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1767,7 +1768,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 260 to 265</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1145/371636.371752&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1145/371636.371752'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1787,7 +1788,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages —</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;mailto:vittorio.zaccaria@polimi.it&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='mailto:vittorio.zaccaria@polimi.it'" style="cursor: pointer"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1805,7 +1806,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 153 to 162</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1007/3-540-44651-6_15&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1007/3-540-44651-6_15'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1823,7 +1824,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 502 to 505</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1109/ISCAS.2001.922284&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1109/ISCAS.2001.922284'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1842,7 +1843,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 252 to 257</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1109/DATE.2001.915034&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1109/DATE.2001.915034'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1860,7 +1861,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 34 to 38</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://doi.acm.org/10.1145/334012.334019&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://doi.acm.org/10.1145/334012.334019'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1878,7 +1879,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages 498 to 503</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;http://dx.doi.org/10.1109/ICCAD.2000.896522&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='http://dx.doi.org/10.1109/ICCAD.2000.896522'" style="cursor: pointer"><i class="publication__href__doi__icon-dl fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1893,7 +1894,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages —</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;mailto:vittorio.zaccaria@polimi.it&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='mailto:vittorio.zaccaria@polimi.it'" style="cursor: pointer"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1908,7 +1909,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages —</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;mailto:vittorio.zaccaria@polimi.it&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='mailto:vittorio.zaccaria@polimi.it'" style="cursor: pointer"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1923,7 +1924,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages —</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;mailto:vittorio.zaccaria@polimi.it&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='mailto:vittorio.zaccaria@polimi.it'" style="cursor: pointer"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
               </div>
             </div>
             <div class="publication">
@@ -1941,7 +1942,7 @@ Here are just a few of the directions that I am investigating in this area:</p>
                 <div class="publication__pages">pages —</div>
               </div>
               <div class="publication__href">
-                <div onclick="location.href=&apos;mailto:vittorio.zaccaria@polimi.it&apos;" style="cursor: pointer" class="publication__href__doi"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
+                <div class="publication__href__doi" onclick="location.href='mailto:vittorio.zaccaria@polimi.it'" style="cursor: pointer"><i class="publication__href__doi__icon fa fa-external-link"></i></div>
               </div>
             </div>
           </div>
