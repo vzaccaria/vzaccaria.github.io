@@ -12,6 +12,7 @@
 <url> <loc>http://www.vittoriozaccaria.net/blog/2014/03/21/efficient-dsp-filters-with-template-haskell.html</loc> <changefreq>daily</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://www.vittoriozaccaria.net/blog/2014/05/19/building-a-neat-landing-page-with-dyncss.html</loc> <changefreq>daily</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://www.vittoriozaccaria.net/blog/2014/09/18/introduction-to-the-bem-methodology-slides.html</loc> <changefreq>daily</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://www.vittoriozaccaria.net/cf2016/index.html</loc> <changefreq>daily</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://www.vittoriozaccaria.net/chained/demo.html</loc> <changefreq>daily</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://www.vittoriozaccaria.net/chained/html/Readme-demo.html</loc> <changefreq>daily</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://www.vittoriozaccaria.net/chained/html/Readme.html</loc> <changefreq>daily</changefreq> <priority>0.5</priority> </url>
@@ -107,6 +108,7 @@
 <url> <loc>http://www.vittoriozaccaria.net/infob/2015/06/30/soluzioni-prova-scritta-del-29-giugno.html</loc> <changefreq>daily</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://www.vittoriozaccaria.net/infob/2015/10/06/panorama-e-contenuti-storici.html</loc> <changefreq>daily</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://www.vittoriozaccaria.net/infob/2015/10/09/introduzione-a-matlab.html</loc> <changefreq>daily</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://www.vittoriozaccaria.net/infob/2015/10/16/esercizi-e-costrutti-di-controllo.html</loc> <changefreq>daily</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://www.vittoriozaccaria.net/projects.html</loc> <changefreq>daily</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://www.vittoriozaccaria.net/research.html</loc> <changefreq>daily</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://www.vittoriozaccaria.net/sweet-angle/index.html</loc> <changefreq>daily</changefreq> <priority>0.5</priority> </url>

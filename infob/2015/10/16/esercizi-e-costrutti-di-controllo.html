@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head lang="en">
+    <title>Esercizi e costrutti di controllo</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+    <script type="text/javascript" src="/js/client.js"></script>
+    <link rel="icon" type="image/png" href="/img/favicon.png">
+  </head>
+  <body ng-app="application">
+    <div class="site_wrapper">
+      <div class="sidebar"> <img class="sidebar__picture">
+        <div class="sidebar__name">Vittorio Zaccaria</div>
+        <div class="sidebar__address">Politecnico di Milano</div>
+        <ul class="sidebar__link_list">
+          <li onclick="location.href=&apos;/&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-home"></i></span>
+            <div class="sidebar__link_item__name">Home</div>
+          </li>
+          <li onclick="location.href=&apos;/research.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-flask"></i></span>
+            <div class="sidebar__link_item__name">Research</div>
+          </li>
+          <li onclick="location.href=&apos;/blog.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-quote-left"></i></span>
+            <div class="sidebar__link_item__name">Blog</div>
+          </li>
+          <li onclick="location.href=&apos;/projects.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-floppy-o"></i></span>
+            <div class="sidebar__link_item__name">Projects</div>
+          </li>
+          <li onclick="location.href=&apos;/teaching.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-graduation-cap"></i></span>
+            <div class="sidebar__link_item__name">Teaching</div>
+          </li>
+          <li onclick="location.href=&apos;/deposit/cv.pdf&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-user"></i></span>
+            <div class="sidebar__link_item__name">CV</div>
+          </li>
+          <li onclick="location.href=&apos;/videos.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-youtube-play"></i></span>
+            <div class="sidebar__link_item__name">Videos</div>
+          </li>
+          <li onclick="location.href=&apos;/address.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-map-marker"></i></span>
+            <div class="sidebar__link_item__name">Address</div>
+          </li>
+        </ul>
+        <div class="sidebar__bottom"> 
+          <div onclick="location.href=&apos;http://www.linkedin.com/in/vzaccaria&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-linkedin-square"></i></div>
+          <div onclick="location.href=&apos;http://twitter.com/_vzaccaria_&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-twitter-square"></i></div>
+          <div onclick="location.href=&apos;https://plus.google.com/116322227495215922957/about&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-google-plus-square"></i></div>
+        </div>
+      </div>
+      <div class="site_container">
+        <div class="post_container">
+          <div class="post_container__post__title">Esercizi e costrutti di controllo</div>
+          <div class="post_container__post__subtitle"> 
+            <div class="post_container__post__date"> <i class="fa fa-calendar-o"> </i>
+              <div class="post_container__post__date_value">Friday, October 16th 2015</div>
+            </div>
+            <div class="post_container__post__category"> <i class="fa fa-flag-o"> </i>
+              <div class="post_container__post__category_value">infob</div>
+            </div>
+            <div class="post_container__post__tags"> <i class="fa fa-tags"></i>
+              <div class="post_container__post__tag">esercizi su algoritmi</div>
+            </div>
+            <div class="share_buttons"> 
+              <div class="share_buttons__message">Share: </div>
+              <div style="cursor: pointer" class="share_buttons__share_reddit"><i class="fa fa-reddit"> </i></div>
+              <div style="cursor: pointer" class="share_buttons__share_twitter"><i class="fa fa-twitter"></i></div>
+            </div>
+          </div>
+          <div class="post_text"><p>Ecco di seguito le slides presentate oggi oggi; vi ricordo pero&#39; che il
+materiale che sarà oggetto delle prove scritte e orali di questo corso è
+indicato nel <a href="http://www.vittoriozaccaria.net/deposit/programmaInfoB.pdf">programma dettagliato</a>;
+<strong>quindi non è sufficiente studiare solo le slides o gli appunti della
+lezione</strong>.</p>
+<ul>
+<li>Slides su <code>find</code> e operatori logici: <a href="https://dl.dropboxusercontent.com/u/5867765/1516-published-infob/le_matlab_1.pdf">(pdf)</a></li>
+</ul>
+<p>Ecco gli esercizi che abbiamo visto oggi, con i relativi diagrammi:</p>
+<h1 id="calcolo-sconto-a-id-sec-1-name-sec-1-a-">Calcolo sconto:<a id="sec-1" name="sec-1"></a></h1>
+<p>Scrivere un programma che riceve in ingresso un prezzo ed uno sconto da
+applicare e restituisce il prezzo scontato e il risparmio ottenuto.</p>
+<p><strong>Diagramma di flusso</strong>:</p>
+<p><img src="https://dl.dropboxusercontent.com/u/5867765/1516-published-infob/post-images/df_calcolo_sconto.png" alt="img"></p>
+<p><strong>Script</strong>:</p>
+<pre><code class="lang-octave">prezzo = 1000;
+sconto = 2;
+risparmio = prezzo * (sconto/100);
+finale = prezzo - risparmio;
+fprintf(&#39;Prezzo: %g, scontato: %g&#39;, prezzo, finale)
+</code></pre>
+<p><strong>Risultato esecuzione</strong>:</p>
+<pre><code>Prezzo: 1000, scontato: 980
+</code></pre><h1 id="conversione-tempo-a-id-sec-2-name-sec-2-a-">Conversione tempo<a id="sec-2" name="sec-2"></a></h1>
+<p>Convertire in ore, minuti e secondi una data quantita&#39; espressa in secondi.</p>
+<p><strong>Diagramma di flusso</strong>:</p>
+<p><img src="https://dl.dropboxusercontent.com/u/5867765/1516-published-infob/post-images/df_conversione_tempo.png" alt="img"></p>
+<p><strong>Script</strong>:</p>
+<pre><code class="lang-octave">sec = 2391
+h = floor(sec/3600);
+min = floor((sec - h*3600)/60);
+sec = sec - h*3600 - min*60;
+
+fprintf(&#39;Equivalgono a %g ore, %g minuti e %g secondi\n&#39;, h, min, sec);
+</code></pre>
+<p><strong>Risultato esecuzione</strong>:</p>
+<pre><code>sec =  2391
+Equivalgono a 0 ore, 39 minuti e 51 secondi
+</code></pre><h1 id="resto-divisione-a-id-sec-3-name-sec-3-a-">Resto divisione<a id="sec-3" name="sec-3"></a></h1>
+<ol>
+<li><p>Analisi del problema:</p>
+<ul>
+<li><p>INPUT (variabili e tipo)?</p>
+<ul>
+<li>Dividendo &#39;D&#39;: intero</li>
+<li>Divisore &#39;d&#39;: intero</li>
+</ul>
+</li>
+<li><p>OUTPUT?</p>
+<ul>
+<li>Resto &#39;r&#39;: intero</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Progettazione dell&#39;algoritmo con diagramma di flusso:</p>
+</li>
+</ol>
+<p><img src="https://dl.dropboxusercontent.com/u/5867765/1516-published-infob/post-images/df_resto_divisione.png" alt="img"></p>
+<ol>
+<li>Programmazione<ol>
+<li>Scelta variabili di cui si ha bisogno</li>
+<li>Traduzione dallo pseudocodice al codice Matlab</li>
+</ol>
+</li>
+</ol>
+<p><strong>Script</strong>:</p>
+<pre><code class="lang-octave">dividendo = 13
+divisore = 2
+quoziente = floor(dividendo/divisore)
+resto = dividendo - quoziente * divisore
+</code></pre>
+<p><strong>Risultato esecuzione</strong>:</p>
+<pre><code>dividendo =  13
+divisore =  2
+quoziente =  6
+resto =  1
+</code></pre><h1 id="conversione-implicita-a-id-sec-4-name-sec-4-a-">Conversione implicita<a id="sec-4" name="sec-4"></a></h1>
+<p><strong>Script</strong>:</p>
+<pre><code class="lang-octave">i1 = 3;
+i2 = 4;
+f1 = 15.45;
+f2 = 3.1415;
+c1 = &#39;a&#39;;
+c2 = &#39;b&#39;;
+
+i2 = i1 + 5
+f1 = i1 + 1.1
+f2 = f2 * f2
+i1=f2+8
+i2 = i2 + c1
+c2 = c2 + 3
+fprintf(&#39;c2 = %c (corrisponde al codice ASCII %g)\n&#39;, c2, c2);
+</code></pre>
+<p><strong>Risultato esecuzione</strong>:</p>
+<pre><code>i2 =  8
+f1 =  4.1000
+f2 =  9.8690
+i1 =  17.869
+i2 =  105
+c2 =  101
+c2 = e (corrisponde al codice ASCII 101)
+</code></pre><h1 id="uso-di-find-per-l-analisi-dei-pazienti">Uso di <code>find</code> per l&#39;analisi dei pazienti</h1>
+<p>Carica pazienti:</p>
+<pre><code>load(&#39;patients&#39;)
+</code></pre><p>Trova pazienti che fumano con eta&#39; maggiore dei 40:</p>
+<pre><code class="lang-octave">&gt;&gt; Smoker(find(Age &gt;= 40))
+
+ans =
+
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     1
+     ...
+</code></pre>
+<p>Trova la percentuale dei pazienti piu&#39; vecchi di 40 anni che fumano:</p>
+<pre><code class="lang-octave">&gt;&gt; fum40 = Smoker(find(Age &gt;= 40))
+&gt;&gt; sum(fum40)/size(fum40,1)
+
+ans =
+
+    0.3636
+</code></pre>
+<p>Trova i cognomi dei pazienti che fumano e hanno piu&#39; di 40 anni:</p>
+<pre><code class="lang-octave">&gt;&gt; LastName(find(Age&gt;=40 &amp; Smoker))
+
+
+ans =
+
+    &#39;Martin&#39;
+    &#39;Lee&#39;
+    &#39;Wright&#39;
+    &#39;Baker&#39;
+    &#39;Roberts&#39;
+    &#39;Collins&#39;
+    &#39;Stewart&#39;
+    &#39;Sanchez&#39;
+    &#39;Morris&#39;
+    &#39;Reed&#39;
+    &#39;Bell&#39;
+    &#39;Ramirez&#39;
+    &#39;Watson&#39;
+    &#39;Hughes&#39;
+    &#39;Russell&#39;
+    &#39;Diaz&#39;
+</code></pre>
+</div>
+          <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG"></script>
+          <div id="disqus_thread" class="post_container__comments"> 
+            <script>(function() {
+  var disqus_shortname, dsq;
+
+  disqus_shortname = 'vittoriozaccaria';
+
+  dsq = document.createElement('script');
+
+  dsq.type = 'text/javascript';
+
+  dsq.async = true;
+
+  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+}).call(this);
+
+            </script><a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
