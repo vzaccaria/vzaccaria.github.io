@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head lang="en">
+    <title>Costrutti di controllo</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+    <script type="text/javascript" src="/js/client.js"></script>
+    <link rel="icon" type="image/png" href="/img/favicon.png">
+  </head>
+  <body ng-app="application">
+    <div class="site_wrapper">
+      <div class="sidebar"> <img class="sidebar__picture">
+        <div class="sidebar__name">Vittorio Zaccaria</div>
+        <div class="sidebar__address">Politecnico di Milano</div>
+        <ul class="sidebar__link_list">
+          <li onclick="location.href=&apos;/&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-home"></i></span>
+            <div class="sidebar__link_item__name">Home</div>
+          </li>
+          <li onclick="location.href=&apos;/research.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-flask"></i></span>
+            <div class="sidebar__link_item__name">Research</div>
+          </li>
+          <li onclick="location.href=&apos;/blog.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-quote-left"></i></span>
+            <div class="sidebar__link_item__name">Blog</div>
+          </li>
+          <li onclick="location.href=&apos;/projects.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-floppy-o"></i></span>
+            <div class="sidebar__link_item__name">Projects</div>
+          </li>
+          <li onclick="location.href=&apos;/teaching.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-graduation-cap"></i></span>
+            <div class="sidebar__link_item__name">Teaching</div>
+          </li>
+          <li onclick="location.href=&apos;/deposit/cv.pdf&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-user"></i></span>
+            <div class="sidebar__link_item__name">CV</div>
+          </li>
+          <li onclick="location.href=&apos;/videos.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-youtube-play"></i></span>
+            <div class="sidebar__link_item__name">Videos</div>
+          </li>
+          <li onclick="location.href=&apos;/address.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-map-marker"></i></span>
+            <div class="sidebar__link_item__name">Address</div>
+          </li>
+        </ul>
+        <div class="sidebar__bottom"> 
+          <div onclick="location.href=&apos;http://www.linkedin.com/in/vzaccaria&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-linkedin-square"></i></div>
+          <div onclick="location.href=&apos;http://twitter.com/_vzaccaria_&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-twitter-square"></i></div>
+          <div onclick="location.href=&apos;https://plus.google.com/116322227495215922957/about&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-google-plus-square"></i></div>
+        </div>
+      </div>
+      <div class="site_container">
+        <div class="post_container">
+          <div class="post_container__post__title">Costrutti di controllo</div>
+          <div class="post_container__post__subtitle"> 
+            <div class="post_container__post__date"> <i class="fa fa-calendar-o"> </i>
+              <div class="post_container__post__date_value">Tuesday, October 20th 2015</div>
+            </div>
+            <div class="post_container__post__category"> <i class="fa fa-flag-o"> </i>
+              <div class="post_container__post__category_value">infob</div>
+            </div>
+            <div class="post_container__post__tags"> <i class="fa fa-tags"></i>
+              <div class="post_container__post__tag"></div>
+            </div>
+            <div class="share_buttons"> 
+              <div class="share_buttons__message">Share: </div>
+              <div style="cursor: pointer" class="share_buttons__share_reddit"><i class="fa fa-reddit"> </i></div>
+              <div style="cursor: pointer" class="share_buttons__share_twitter"><i class="fa fa-twitter"></i></div>
+            </div>
+          </div>
+          <div class="post_text"><p>Ecco di seguito le slides presentate oggi oggi; vi ricordo pero&#39; che il
+materiale che sarà oggetto delle prove scritte e orali di questo corso è
+indicato nel <a href="http://www.vittoriozaccaria.net/deposit/programmaInfoB.pdf">programma dettagliato</a>;
+<strong>quindi non è sufficiente studiare solo le slides o gli appunti della
+lezione</strong>.</p>
+<ul>
+<li><a href="https://dl.dropboxusercontent.com/u/5867765/1516-published-infob/le_matlab_2.pdf">Costrutti di controllo</a></li>
+</ul>
+<h1 id="terna-pitagorica-a-id-sec-1-name-sec-1-a-">Terna pitagorica<a id="sec-1" name="sec-1"></a></h1>
+<p>Progettazione dell&#39;algoritmo con diagramma di flusso:</p>
+<p><img src="https://dl.dropboxusercontent.com/u/5867765/1516-published-infob/post-images/df_terna_pitagorica.png" alt="img"></p>
+<p>Programmazione</p>
+<pre><code class="lang-octave">cat1=1
+cat2=1
+ip = 2
+
+if(cat1*cat1 + cat2*cat2 == ip*ip)
+  disp(&#39;terna pitagorica&#39;);
+else
+  disp(&#39;terna non pitagorica&#39;);
+endif
+</code></pre>
+<pre><code>cat1 =  1
+cat2 =  1
+ip =  2
+terna non pitagorica
+</code></pre><h1 id="tabella-dei-caratteri-ascii-a-id-sec-2-name-sec-2-a-">Tabella dei caratteri ASCII<a id="sec-2" name="sec-2"></a></h1>
+<p>Stampare a schermo l&#39;elenco di tutti i caratteri alfabetici minuscoli
+accompagnati dal corrispondente valore nella tabella dei caratteri ASCII.</p>
+<pre><code class="lang-octave">for M = &#39;a&#39;:&#39;d&#39;
+  fprintf(&quot;%c, codifica ascii %g\n&quot;, M, M )
+end
+</code></pre>
+<p>Esecuzione:</p>
+<pre><code>a, codifica ascii 97
+b, codifica ascii 98
+c, codifica ascii 99
+d, codifica ascii 100
+</code></pre><h1 id="numero-di-giorni-in-un-mese-a-id-sec-3-name-sec-3-a-">Numero di giorni in un mese<a id="sec-3" name="sec-3"></a></h1>
+<p>Dato un mese, il programma deve restituire il numero di giorni che lo compongono.
+Nel caso di &quot;febbraio&quot;, chiedendo l&#39;anno, gestire i bisestili.</p>
+<p>La regola del calendario gregoriano è la seguente:</p>
+<p>Un anno è bisestile se il suo numero è divisibile per 4,
+con l&#39;eccezione degli anni secolari (quelli divisibili per 100)
+che non sono divisibili per 400.</p>
+<p>Cominciamo col diagramma di flusso:</p>
+<p><img src="https://dl.dropboxusercontent.com/u/5867765/1516-published-infob/post-images/df_bisesto.png" alt="img"></p>
+<p>il programma quindi e&#39; il seguente:</p>
+<pre><code class="lang-octave">mese = &#39;febbraio&#39;
+anno = 2000
+
+annosecolare  = (mod(anno, 100) == 0)
+divisibile400 = mod(anno, 400) == 0
+
+switch mese
+    case { &#39;gennaio&#39;, &#39;marzo&#39;, &#39;maggio&#39;, &#39;luglio&#39;, &#39;agosto&#39;, &#39;ottobre&#39;, &#39;dicembre&#39; }
+    giorni = 31
+    case { &#39;aprile&#39;, &#39;giugno&#39;, &#39;settembre&#39;, &#39;novembre&#39; }
+    giorni = 30
+    case &#39;febbraio&#39;
+    if mod(anno, 4) == 0 &amp;&amp; ~(annosecolare &amp;&amp; ~divisibile400)
+      giorni = 29 % anno bisestile
+    else
+      giorni = 28
+    endif
+    otherwise
+    disp(&#39;mese invalido&#39;)
+end
+</code></pre>
+<p>Esecuzione:</p>
+<pre><code>mese = febbraio
+anno =  2000
+annosecolare =  1
+divisibile400 =  1
+giorni =  29
+</code></pre><h1 id="numeri-di-fibonacci-a-id-sec-4-name-sec-4-a-">Numeri di Fibonacci<a id="sec-4" name="sec-4"></a></h1>
+<p>Scrivere un programma Matlab che stampa i primi 100 numeri di Fibonacci.</p>
+<p><img src="https://dl.dropboxusercontent.com/u/5867765/1516-published-infob/post-images/df_fibonacci.png" alt="img"></p>
+<pre><code class="lang-octave">fib(1) = 1;
+fib(2) = 1;
+for i= 3:10
+  fib(i) = fib(i-1) + fib(i-2);
+endfor
+fib
+</code></pre>
+<p>Esecuzione:</p>
+<pre><code>fib =
+
+    1    1    2    3    5    8   13   21   34   55
+</code></pre><h1 id="divisori-di-un-numero-a-id-sec-5-name-sec-5-a-">Divisori di un numero<a id="sec-5" name="sec-5"></a></h1>
+<p>Calcolare i divisori di un numero. Si ricordi che uno
+dei modi in cui è possibile verificare se un numero (positivo)
+è divisibile per un altro e
+verificare se il resto della divisione tra il primo e
+il secondo numero è nullo; ovvero, `n` è divisibile per `i` se `(n % i) == 0`.</p>
+<p><img src="https://dl.dropboxusercontent.com/u/5867765/1516-published-infob/post-images/df_divisori.png" alt="img"></p>
+<pre><code class="lang-octave">numero = 290
+
+i = 1
+while(i &lt; numero)
+  if (mod(numero,i) == 0)
+     fprintf(&#39;%g divisore di %g\n&#39;, i, numero)
+  endif
+  i = i + 1;
+endwhile
+fprintf(&#39;passi eseguiti %g&#39;, i)
+</code></pre>
+<p>Esecuzione:</p>
+<pre><code>numero =  290
+i =  1
+1 divisore di 290
+2 divisore di 290
+5 divisore di 290
+10 divisore di 290
+29 divisore di 290
+58 divisore di 290
+145 divisore di 290
+passi eseguiti 290
+</code></pre><h2 id="divisori-non-ovvi-a-id-sec-5-1-name-sec-5-1-a-">Divisori non ovvi<a id="sec-5-1" name="sec-5-1"></a></h2>
+<p>10 e&#39; divisore poiche&#39; sia 2 che 5 lo sono. E&#39; possibile scartarlo a priori? si:</p>
+<p><img src="https://dl.dropboxusercontent.com/u/5867765/1516-published-infob/post-images/df_divisori_non_ovvi.png" alt="img"></p>
+<pre><code class="lang-octave">numero = 2
+i = 1;
+d = 1;
+while(numero ~= 1)
+  if (mod(numero,i) == 0)
+     divisori(d) = i;
+     numero = numero / i;
+     d = d + 1;
+  endif
+  i = i + 1;
+endwhile
+fprintf(&#39;passi eseguiti %g\n&#39;, i)
+divisori
+</code></pre>
+<p>Esecuzione:</p>
+<pre><code>numero =  2
+passi eseguiti 3
+divisori =
+
+   1   2
+</code></pre></div>
+          <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG"></script>
+          <div id="disqus_thread" class="post_container__comments"> 
+            <script>(function() {
+  var disqus_shortname, dsq;
+
+  disqus_shortname = 'vittoriozaccaria';
+
+  dsq = document.createElement('script');
+
+  dsq.type = 'text/javascript';
+
+  dsq.async = true;
+
+  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+}).call(this);
+
+            </script><a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
