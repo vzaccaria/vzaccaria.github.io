@@ -1,5 +1,36 @@
 [
     {
+        "title": "Using a cheap STM32 Nucleo to teach remote sensor monitoring.",
+        "date": "2015-10-21T13:55:44.000Z",
+        "layout": "post",
+        "category": "blog",
+        "tags": [
+            "stm32",
+            "embedded systems"
+        ],
+        "formattedDate": "Wednesday, October 21st 2015",
+        "smallDate": "10/21",
+        "smallDescription": "",
+        "dirName": "blog/2015/10/21",
+        "fileName": "using-a-cheap-stm32-nucleo-to-teach-remote-sensor-monitoring",
+        "link": "blog/2015/10/21/using-a-cheap-stm32-nucleo-to-teach-remote-sensor-monitoring.html"
+    },
+    {
+        "title": "using a cheap stm32 to teach remote sensor monitoring",
+        "date": "2015-10-21T13:55:44.000Z",
+        "layout": "post",
+        "category": "blog",
+        "tags": [
+            ""
+        ],
+        "formattedDate": "Wednesday, October 21st 2015",
+        "smallDate": "10/21",
+        "smallDescription": "",
+        "dirName": "blog/2015/10/21",
+        "fileName": "using-a-cheap-stm32-to-teach-remote-sensor-monitoring",
+        "link": "blog/2015/10/21/using-a-cheap-stm32-to-teach-remote-sensor-monitoring.html"
+    },
+    {
         "title": "Costrutti di controllo",
         "date": "2015-10-20T16:09:45.000Z",
         "layout": "post",
