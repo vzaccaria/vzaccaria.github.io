@@ -1,6 +1,6 @@
 [
     {
-        "title": "Using a cheap STM32 Nucleo to teach remote sensor monitoring.",
+        "title": "Using a cheap STM32 Nucleo to teach remote sensor monitoring",
         "date": "2015-10-21T13:55:44.000Z",
         "layout": "post",
         "category": "blog",
@@ -8,7 +8,7 @@
             "stm32",
             "embedded systems"
         ],
-        "description": "One of the major struggles as a University professor is to create compelling examples for introductory courses to computer science. In this small post, I'll sum up how I've built an embedded system for temperature monitoring that sends data to an online plotting service.",
+        "description": "One of the major struggles as a University professor is to create compelling examples for introductory courses to computer science. In this small post, I'll sum up how I've built a small embedded system for teaching remote temperature monitoring.",
         "formattedDate": "Wednesday, October 21st 2015",
         "smallDate": "10/21",
         "smallDescription": "One of the major struggles as a University professor is to create..",
