@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head lang="en">
+    <title>esercizi su strutture di controllo</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+    <script type="text/javascript" src="/js/client.js"></script>
+    <link rel="icon" type="image/png" href="/img/favicon.png">
+  </head>
+  <body ng-app="application">
+    <div class="site_wrapper">
+      <div class="sidebar"> <img class="sidebar__picture">
+        <div class="sidebar__name">Vittorio Zaccaria</div>
+        <div class="sidebar__address">Politecnico di Milano</div>
+        <ul class="sidebar__link_list">
+          <li onclick="location.href=&apos;/&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-home"></i></span>
+            <div class="sidebar__link_item__name">Home</div>
+          </li>
+          <li onclick="location.href=&apos;/research.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-flask"></i></span>
+            <div class="sidebar__link_item__name">Research</div>
+          </li>
+          <li onclick="location.href=&apos;/blog.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-quote-left"></i></span>
+            <div class="sidebar__link_item__name">Blog</div>
+          </li>
+          <li onclick="location.href=&apos;/projects.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-floppy-o"></i></span>
+            <div class="sidebar__link_item__name">Projects</div>
+          </li>
+          <li onclick="location.href=&apos;/teaching.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-graduation-cap"></i></span>
+            <div class="sidebar__link_item__name">Teaching</div>
+          </li>
+          <li onclick="location.href=&apos;/deposit/cv.pdf&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-user"></i></span>
+            <div class="sidebar__link_item__name">CV</div>
+          </li>
+          <li onclick="location.href=&apos;/videos.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-youtube-play"></i></span>
+            <div class="sidebar__link_item__name">Videos</div>
+          </li>
+          <li onclick="location.href=&apos;/address.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-map-marker"></i></span>
+            <div class="sidebar__link_item__name">Address</div>
+          </li>
+        </ul>
+        <div class="sidebar__bottom"> 
+          <div onclick="location.href=&apos;http://www.linkedin.com/in/vzaccaria&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-linkedin-square"></i></div>
+          <div onclick="location.href=&apos;http://twitter.com/_vzaccaria_&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-twitter-square"></i></div>
+          <div onclick="location.href=&apos;https://plus.google.com/116322227495215922957/about&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-google-plus-square"></i></div>
+        </div>
+      </div>
+      <div class="site_container">
+        <div class="post_container">
+          <div class="post_container__post__title">esercizi su strutture di controllo</div>
+          <div class="post_container__post__subtitle"> 
+            <div class="post_container__post__date"> <i class="fa fa-calendar-o"> </i>
+              <div class="post_container__post__date_value">Wednesday, October 28th 2015</div>
+            </div>
+            <div class="post_container__post__category"> <i class="fa fa-flag-o"> </i>
+              <div class="post_container__post__category_value">infob</div>
+            </div>
+            <div class="post_container__post__tags"> <i class="fa fa-tags"></i>
+              <div class="post_container__post__tag"></div>
+            </div>
+            <div class="share_buttons"> 
+              <div class="share_buttons__message">Share: </div>
+              <div style="cursor: pointer" class="share_buttons__share_reddit"><i class="fa fa-reddit"> </i></div>
+              <div style="cursor: pointer" class="share_buttons__share_twitter"><i class="fa fa-twitter"></i></div>
+            </div>
+          </div>
+          <div class="post_text"><p>Ecco di seguito gli esercizi fatti oggi ed alcuni lasciati per casa (con soluzioni); vi ricordo che il
+materiale che sarà oggetto delle prove scritte e orali di questo corso è
+indicato nel <a href="http://www.vittoriozaccaria.net/deposit/programmaInfoB.pdf">programma dettagliato</a>;
+<strong>quindi non è sufficiente studiare solo le slides o gli appunti della
+lezione</strong>.</p>
+<h1 id="il-numero-e-primo-">Il numero e&#39; primo?</h1>
+<p>In questo esercizio dobbiamo verificare se un numero e&#39; primo, ovvero se gli unici divisori
+interi sono 1 ed il numero stesso.</p>
+<p>La filosofia di questo esercizio e&#39; la seguente; scandiremo tutti i numeri <code>i</code> a partire da 1 e
+verificheremo se dividono il numero dato. Alla fine, raccoglieremo gli eventuali divisori nell&#39;array <code>divisori</code>
+e verificheremo se questo contiene 1 ed il numero originario.</p>
+<p><strong>Diagrammo di flusso</strong></p>
+<p><img src="https://dl.dropboxusercontent.com/u/5867765/1516-published-infob/post-images/df_divisori_numero_primo.png" alt="img"></p>
+<p><strong>Programma</strong></p>
+<pre><code class="lang-octave">numero_original = 37
+numero = numero_original
+i = 1;
+d = 1;
+while(numero ~= 1)
+  if (mod(numero,i) == 0)
+     divisori(d) = i;
+     numero = numero / i;
+     d = d + 1;
+  end
+  i = i + 1;
+end
+
+fprintf(&#39;passi eseguiti %g\n&#39;, i)
+divisori
+
+if all((divisori == numero_original) | (divisori == 1))
+   disp(&#39;numero primo!&#39;)
+else
+   disp(&#39;numero non primo!&#39;)
+end
+</code></pre>
+<p><strong>Esecuzione</strong>:</p>
+<pre><code>numero_original =  37
+numero =  37
+passi eseguiti 38
+divisori =
+
+    1   37
+
+numero primo!
+</code></pre><h1 id="tabella-caratteri-ascii-a-id-sec-2-name-sec-2-a-">Tabella caratteri ASCII<a id="sec-2" name="sec-2"></a></h1>
+<p>Stampare a schermo l&#39;elenco di tutti i caratteri alfabetici maiuscoli accompagnati dal corrispondente valore nella tabella dei caratteri ASCII.</p>
+<p><strong>Diagramma di flusso</strong>
+<img src="https://dl.dropboxusercontent.com/u/5867765/1516-published-infob/post-images/df_ascii_table.png" alt="img"></p>
+<p><strong> Programma</strong></p>
+<pre><code class="lang-octave">for c = &#39;A&#39;:&#39;E&#39;
+    fprintf(&quot;%c rappresenta %d\n&quot;, c, c);
+end
+</code></pre>
+<p><strong>Esecuzione</strong></p>
+<pre><code>A rappresenta 65
+B rappresenta 66
+C rappresenta 67
+D rappresenta 68
+E rappresenta 69
+</code></pre><h1 id="convertire-un-stringa-in-caratteri-maiuscoli-a-id-sec-3-name-sec-3-a-">Convertire un stringa in caratteri maiuscoli<a id="sec-3" name="sec-3"></a></h1>
+<pre><code class="lang-octave">stringa = &#39;mi chiamo Pippo&#39;
+
+for c = stringa
+  if (c &gt;= &#39;a&#39; &amp;&amp; c &lt;= &#39;z&#39;)
+      c = c - (&#39;a&#39; - &#39;A&#39;);
+  end
+  fprintf(&quot;%c&quot;, c)
+end
+</code></pre>
+<p><strong>Esecuzione</strong>:</p>
+<pre><code>stringa = mi chiamo Pippo
+MI CHIAMO PIPPO
+</code></pre><h1 id="cicli-innestati-a-id-sec-5-name-sec-5-a-">Cicli innestati<a id="sec-5" name="sec-5"></a></h1>
+<p>Si vuole stampare un triangolo rettangolo isoscele fatto di asterischi (cioè di caratteri <code>*</code>), la cui lunghezza di un lato sia pari ad un valore inserito dall&#39;utente.</p>
+<p>Es. di output con lato uguale a 4:</p>
+<pre><code>*
+**
+***
+****
+</code></pre><p><strong>Diagramma di flusso</strong></p>
+<p><img src="https://dl.dropboxusercontent.com/u/5867765/1516-published-infob/post-images/df_triangolo_asterischi.png" alt="img"></p>
+<p><strong>Programma</strong></p>
+<pre><code class="lang-octave">n = 10
+
+for x = 1:10
+  for y = 1:x
+  fprintf(&quot;*&quot;)
+  end
+  fprintf(&quot;\n&quot;)
+end
+</code></pre>
+<p><strong>Esecuzione</strong>:</p>
+<pre><code>n =  10
+*
+**
+***
+****
+*****
+******
+*******
+********
+*********
+**********
+</code></pre><h1 id="radice-quadrata-iterativa-a-id-sec-6-name-sec-6-a-">Radice quadrata iterativa<a id="sec-6" name="sec-6"></a></h1>
+<p>Calcolare l&#39;intero piu&#39; vicino alla radice quadrata di un numero <code>n</code>.</p>
+<p><strong>Diagramma di flusso</strong></p>
+<p><img src="https://dl.dropboxusercontent.com/u/5867765/1516-published-infob/post-images/df_radice_approssimata.png" alt="img"></p>
+<p><strong>Programma</strong></p>
+<pre><code class="lang-octave">n = 29819
+
+for x = 1:n
+   if(x*x &lt;= n)
+     rad = x;
+   end
+end
+rad
+rad*rad
+</code></pre>
+<p><strong>Esecuzione</strong>:</p>
+<pre><code>n =  29819
+rad =  172
+ans =  29584
+</code></pre><h1 id="stringhe-palindrome-a-id-sec-7-name-sec-7-a-">Stringhe palindrome<a id="sec-7" name="sec-7"></a></h1>
+<p>Il programma seguente verifica se una parola è palindroma o no,
+ovvero se può essere letta nella stessa maniera da sinistra verso
+destra e viceversa: “otto” e “anilina” sono parole palindrome, “ciao” e “arnia” non lo sono.</p>
+<p><strong>Diagramma di flusso</strong></p>
+<p><img src="https://dl.dropboxusercontent.com/u/5867765/1516-published-infob/post-images/df_stringhe_palindrome.png" alt="img"></p>
+<p><strong>Programma</strong></p>
+<pre><code class="lang-octave">parola = &#39;otto&#39;;
+palindroma = 1;
+len = size(parola,2);
+for i = 1:len/2
+   if parola(i) != parola(len-i+1)
+      palindroma = 0;
+      break
+   end
+end
+palindroma
+</code></pre>
+<p><strong>Esecuzione</strong>:</p>
+<pre><code>palindroma =  1
+</code></pre><h1 id="bubble-sort-a-id-sec-8-name-sec-8-a-">Bubble sort<a id="sec-8" name="sec-8"></a></h1>
+<p>Questo esercizio l&#39;abbiamo interrotto a meta&#39; poiche&#39; era finita l&#39;ora. Ecco la soluzione completa:</p>
+<p><strong>Diagramma di flusso</strong></p>
+<p><img src="https://dl.dropboxusercontent.com/u/5867765/1516-published-infob/post-images/df_bubble_sort.png" alt="img"></p>
+<p><strong>Programma</strong></p>
+<pre><code class="lang-octave">x = [ 9 2 1 0 7 3 ]
+
+for i=1:size(x,2)
+  ordinato = 1;
+  for j=1:size(x,2)-1
+    if x(j) &gt; x(j+1)
+       t = x(j+1);
+       x(j+1) = x(j);
+       x(j) = t;
+       ordinato = false;
+    end
+    if ordinato
+       break;
+    end
+  end
+end
+
+x
+</code></pre>
+<p><strong>Esecuzione</strong>:</p>
+<pre><code>x =
+
+   9   2   1   0   7   3
+
+x =
+
+   0   1   2   3   7   9
+</code></pre></div>
+          <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG"></script>
+          <div id="disqus_thread" class="post_container__comments"> 
+            <script>(function() {
+  var disqus_shortname, dsq;
+
+  disqus_shortname = 'vittoriozaccaria';
+
+  dsq = document.createElement('script');
+
+  dsq.type = 'text/javascript';
+
+  dsq.async = true;
+
+  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+}).call(this);
+
+            </script><a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
