@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head lang="en">
+    <title>Funzioni ed altri esercizi</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+    <script type="text/javascript" src="/js/client.js"></script>
+    <link rel="icon" type="image/png" href="/img/favicon.png">
+  </head>
+  <body ng-app="application">
+    <div class="site_wrapper">
+      <div class="sidebar"> <img class="sidebar__picture">
+        <div class="sidebar__name">Vittorio Zaccaria</div>
+        <div class="sidebar__address">Politecnico di Milano</div>
+        <ul class="sidebar__link_list">
+          <li onclick="location.href=&apos;/&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-home"></i></span>
+            <div class="sidebar__link_item__name">Home</div>
+          </li>
+          <li onclick="location.href=&apos;/research.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-flask"></i></span>
+            <div class="sidebar__link_item__name">Research</div>
+          </li>
+          <li onclick="location.href=&apos;/blog.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-quote-left"></i></span>
+            <div class="sidebar__link_item__name">Blog</div>
+          </li>
+          <li onclick="location.href=&apos;/projects.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-floppy-o"></i></span>
+            <div class="sidebar__link_item__name">Projects</div>
+          </li>
+          <li onclick="location.href=&apos;/teaching.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-graduation-cap"></i></span>
+            <div class="sidebar__link_item__name">Teaching</div>
+          </li>
+          <li onclick="location.href=&apos;/deposit/cv.pdf&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-user"></i></span>
+            <div class="sidebar__link_item__name">CV</div>
+          </li>
+          <li onclick="location.href=&apos;/videos.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-youtube-play"></i></span>
+            <div class="sidebar__link_item__name">Videos</div>
+          </li>
+          <li onclick="location.href=&apos;/address.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-map-marker"></i></span>
+            <div class="sidebar__link_item__name">Address</div>
+          </li>
+        </ul>
+        <div class="sidebar__bottom"> 
+          <div onclick="location.href=&apos;http://www.linkedin.com/in/vzaccaria&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-linkedin-square"></i></div>
+          <div onclick="location.href=&apos;http://twitter.com/_vzaccaria_&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-twitter-square"></i></div>
+          <div onclick="location.href=&apos;https://plus.google.com/116322227495215922957/about&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-google-plus-square"></i></div>
+        </div>
+      </div>
+      <div class="site_container">
+        <div class="post_container">
+          <div class="post_container__post__title">Funzioni ed altri esercizi</div>
+          <div class="post_container__post__subtitle"> 
+            <div class="post_container__post__date"> <i class="fa fa-calendar-o"> </i>
+              <div class="post_container__post__date_value">Friday, October 30th 2015</div>
+            </div>
+            <div class="post_container__post__category"> <i class="fa fa-flag-o"> </i>
+              <div class="post_container__post__category_value">infob</div>
+            </div>
+            <div class="post_container__post__tags"> <i class="fa fa-tags"></i>
+              <div class="post_container__post__tag">funzioni</div>
+            </div>
+            <div class="share_buttons"> 
+              <div class="share_buttons__message">Share: </div>
+              <div style="cursor: pointer" class="share_buttons__share_reddit"><i class="fa fa-reddit"> </i></div>
+              <div style="cursor: pointer" class="share_buttons__share_twitter"><i class="fa fa-twitter"></i></div>
+            </div>
+          </div>
+          <div class="post_text"><p>Ecco di seguito le slides presentate oggi oggi; vi ricordo pero&#39; che il
+materiale che sarà oggetto delle prove scritte e orali di questo corso è
+indicato nel <a href="http://www.vittoriozaccaria.net/deposit/programmaInfoB.pdf">programma
+dettagliato</a>;
+<strong>quindi non è sufficiente studiare solo le slides o gli appunti della
+lezione</strong>.</p>
+<ul>
+<li><a href="https://dl.dropboxusercontent.com/u/5867765/1516-published-infob/le_matlab_4.pdf">Introduzione alle funzioni in Matlab</a></li>
+</ul>
+<h1 id="tracing-a-id-sec-1-name-sec-1-a-">Tracing<a id="sec-1" name="sec-1"></a></h1>
+<p>Si determini l&#39;output del seguente programma e il valore delle variabili interne ad ogni passo:</p>
+<pre><code class="lang-octave">s = 0;
+for i=1:10
+  j = i * 2;
+  fprintf(&quot;i=%d, j=%d\n&quot;,i,j)
+  while j&gt;0
+    s = s + 1;
+    j = j - 1;
+  end
+  if(mod(s,2)==0)
+    fprintf(&quot;s=%d\n&quot;, s);
+  end
+end
+</code></pre>
+<p><strong>Esecuzione</strong></p>
+<pre><code>i=1, j=2
+s=2
+i=2, j=4
+s=6
+i=3, j=6
+s=12
+i=4, j=8
+s=20
+i=5, j=10
+s=30
+i=6, j=12
+s=42
+i=7, j=14
+s=56
+i=8, j=16
+s=72
+i=9, j=18
+s=90
+i=10, j=20
+s=110
+</code></pre><h1 id="segnale-audio-a-id-sec-2-name-sec-2-a-">Segnale audio<a id="sec-2" name="sec-2"></a></h1>
+<p>Un segnale audio puo&#39; essere visto come una sequenza finita di numeri reali;
+immaginate di avere un segnale memorizzato in un vettore <code>sig</code>
+di lunghezza <code>LEN</code> pari a 1024 con valori reali compresi tra 0 e 10 (inclusi):</p>
+<p><code>sig = 0.42, 0.91, 5.24, 3.07, 1.11, ..., 9.50, 1.50</code></p>
+<p>Si vuole realizzare un cosiddetto <em>filtro a media mobile a finestra 3</em> per analizzare
+il segnale; il filtro e&#39; un programma che si comporta come segue:</p>
+<blockquote>
+<p>Ogni valore del segnale <code>sig</code> viene sostituito con la media aritmetica
+degli <code>N</code> valori precedenti (quindi il valore stesso non deve essere considerato).
+Il filtro lascia immutati i primi <code>N</code> valori del segnale.</p>
+</blockquote>
+<p>Se volessimo rappresentare il valore originale del segnale e quello sovrascritto, avremmo:</p>
+<table>
+<thead>
+<tr>
+<th><code>sig</code></th>
+<th style="text-align:center"><code>sig</code> sovrascritto</th>
+<th>nota</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.42</td>
+<td style="text-align:center">0.42</td>
+<td>immutato</td>
+</tr>
+<tr>
+<td>0.91</td>
+<td style="text-align:center">0.91</td>
+<td>immutato</td>
+</tr>
+<tr>
+<td>5.24</td>
+<td style="text-align:center">5.24</td>
+<td>immutato</td>
+</tr>
+<tr>
+<td>3.07</td>
+<td style="text-align:center">2.19</td>
+<td>(0.42 + 0.91 + 5.24) / 3 = 2.19</td>
+</tr>
+<tr>
+<td>1.11</td>
+<td style="text-align:center">2.78</td>
+<td>(0.91 + 5.24 + 2.19) / 3 = 2.78</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Programma</strong></p>
+<pre><code class="lang-octave">s = [ 0.42 0.91 5.24 3.07 1.11 ]
+
+for i=4:size(s,2)
+   s(i) = mean(s(i-3:i-1));
+end
+s
+</code></pre>
+<p><strong>Esecuzione</strong></p>
+<pre><code>s =
+
+   0.42000   0.91000   5.24000   3.07000   1.11000
+
+s =
+
+   0.42000   0.91000   5.24000   2.19000   2.78000
+</code></pre><h1 id="calcolo-precipitazioni-a-id-sec-3-name-sec-3-a-">Calcolo precipitazioni<a id="sec-3" name="sec-3"></a></h1>
+<p>Sia dato un array definito in Matlab e contenente le informazioni riguardanti le precipitazioni registrate da una stazione meteorologica. Ogni elemento dell&#39;array <code>dati</code> è una <code>struct</code> che contiene un campo numerico <code>giorno</code>, un campo numerico <code>mese</code>, un campo numerico <code>anno</code>, e un campo numerico <code>mm</code> che rappresenta la quantità di pioggia (in mm) caduta nella data specificata dai precedenti campi.</p>
+<p>Supponiamo che l&#39;array <code>dati</code> sia stato popolato come segue:</p>
+<pre><code class="lang-octave">dati(1) = struct(&quot;giorno&quot;, floor(rand*30), &quot;mese&quot;, floor(rand*12), &quot;anno&quot;, 2013, &quot;mm&quot;, rand*20);
+dati(2) = struct(&quot;giorno&quot;, floor(rand*30), &quot;mese&quot;, floor(rand*12), &quot;anno&quot;, 2013, &quot;mm&quot;, rand*20);
+dati(3) = struct(&quot;giorno&quot;, floor(rand*30), &quot;mese&quot;, floor(rand*12), &quot;anno&quot;, 2013, &quot;mm&quot;, rand*20);
+dati(4) = struct(&quot;giorno&quot;, floor(rand*30), &quot;mese&quot;, floor(rand*12), &quot;anno&quot;, 2013, &quot;mm&quot;, rand*20);
+dati(5) = struct(&quot;giorno&quot;, floor(rand*30), &quot;mese&quot;, floor(rand*12), &quot;anno&quot;, 2013, &quot;mm&quot;, rand*20);
+dati(6) = struct(&quot;giorno&quot;, floor(rand*30), &quot;mese&quot;, floor(rand*12), &quot;anno&quot;, 2013, &quot;mm&quot;, rand*20);
+dati(7) = struct(&quot;giorno&quot;, floor(rand*30), &quot;mese&quot;, floor(rand*12), &quot;anno&quot;, 2013, &quot;mm&quot;, rand*20);
+dati(2)
+</code></pre>
+<p>e quindi il diagramma della struttura dati corrispondente e&#39;:</p>
+<p><img src="https://dl.dropboxusercontent.com/u/5867765/1516-published-infob/post-images/sd_pioggia.png" alt="img"></p>
+<p>Dovete a questo punto scrivere uno script Matlab che dato l&#39;array <code>dati</code> e un <code>anno</code> specifico (ad. es. 2013)
+deve calcolare un array <code>stat</code> di 12 elementi che fornisca il valore medio dei mm di pioggia in ciascun mese dell&#39;anno solare <code>anno</code>.</p>
+<p><strong>Programma</strong></p>
+<pre><code class="lang-octave">for i = 1:100
+   dati(i) = struct(&quot;giorno&quot;, floor(rand*30), &quot;mese&quot;, floor(rand*12)+1, &quot;anno&quot;, 2013, &quot;mm&quot;, rand*20);
+end
+
+anno = 2013
+
+for i = 1:12
+  idx = [dati.anno] == anno &amp; [dati.mese] == i;
+  stat(i) = mean([dati(idx).mm]);
+end
+stat
+</code></pre>
+<p><strong>Esecuzione</strong></p>
+<pre><code>anno =  2013
+stat =
+
+ Columns 1 through 8:
+
+    8.5274   12.9783    8.5189   12.1428    8.1414    8.2710   11.6435    9.5565
+
+ Columns 9 through 12:
+
+   10.7811    8.3439   11.6579   12.3771
+</code></pre></div>
+          <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG"></script>
+          <div id="disqus_thread" class="post_container__comments"> 
+            <script>(function() {
+  var disqus_shortname, dsq;
+
+  disqus_shortname = 'vittoriozaccaria';
+
+  dsq = document.createElement('script');
+
+  dsq.type = 'text/javascript';
+
+  dsq.async = true;
+
+  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+}).call(this);
+
+            </script><a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
