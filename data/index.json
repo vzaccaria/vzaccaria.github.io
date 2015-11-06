@@ -1,5 +1,21 @@
 [
     {
+        "category": "infob",
+        "date": "2015-11-06 08:18:05",
+        "layout": "post",
+        "tags": [
+            "funzioni",
+            "esercizi"
+        ],
+        "title": "Ricorsione ed esercizi",
+        "formattedDate": "Friday, November 6th 2015",
+        "smallDate": "11/6",
+        "smallDescription": "",
+        "dirName": "infob/2015/11/06",
+        "fileName": "ricorsione-ed-esercizi",
+        "link": "infob/2015/11/06/ricorsione-ed-esercizi.html"
+    },
+    {
         "title": "Funzioni e scontrini",
         "date": "2015-11-03T08:18:05.000Z",
         "layout": "post",

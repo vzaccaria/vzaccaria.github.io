@@ -1,0 +1,447 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head lang="en">
+    <title>Ricorsione ed esercizi</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+    <script type="text/javascript" src="/js/client.js"></script>
+    <link rel="icon" type="image/png" href="/img/favicon.png">
+  </head>
+  <body ng-app="application">
+    <div class="site_wrapper">
+      <div class="sidebar"> <img class="sidebar__picture">
+        <div class="sidebar__name">Vittorio Zaccaria</div>
+        <div class="sidebar__address">Politecnico di Milano</div>
+        <ul class="sidebar__link_list">
+          <li onclick="location.href=&apos;/&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-home"></i></span>
+            <div class="sidebar__link_item__name">Home</div>
+          </li>
+          <li onclick="location.href=&apos;/research.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-flask"></i></span>
+            <div class="sidebar__link_item__name">Research</div>
+          </li>
+          <li onclick="location.href=&apos;/blog.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-quote-left"></i></span>
+            <div class="sidebar__link_item__name">Blog</div>
+          </li>
+          <li onclick="location.href=&apos;/projects.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-floppy-o"></i></span>
+            <div class="sidebar__link_item__name">Projects</div>
+          </li>
+          <li onclick="location.href=&apos;/teaching.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-graduation-cap"></i></span>
+            <div class="sidebar__link_item__name">Teaching</div>
+          </li>
+          <li onclick="location.href=&apos;/deposit/cv.pdf&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-user"></i></span>
+            <div class="sidebar__link_item__name">CV</div>
+          </li>
+          <li onclick="location.href=&apos;/videos.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-youtube-play"></i></span>
+            <div class="sidebar__link_item__name">Videos</div>
+          </li>
+          <li onclick="location.href=&apos;/address.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-map-marker"></i></span>
+            <div class="sidebar__link_item__name">Address</div>
+          </li>
+        </ul>
+        <div class="sidebar__bottom"> 
+          <div onclick="location.href=&apos;http://www.linkedin.com/in/vzaccaria&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-linkedin-square"></i></div>
+          <div onclick="location.href=&apos;http://twitter.com/_vzaccaria_&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-twitter-square"></i></div>
+          <div onclick="location.href=&apos;https://plus.google.com/116322227495215922957/about&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-google-plus-square"></i></div>
+        </div>
+      </div>
+      <div class="site_container">
+        <div class="post_container">
+          <div class="post_container__post__title">Ricorsione ed esercizi</div>
+          <div class="post_container__post__subtitle"> 
+            <div class="post_container__post__date"> <i class="fa fa-calendar-o"> </i>
+              <div class="post_container__post__date_value">Friday, November 6th 2015</div>
+            </div>
+            <div class="post_container__post__category"> <i class="fa fa-flag-o"> </i>
+              <div class="post_container__post__category_value">infob</div>
+            </div>
+            <div class="post_container__post__tags"> <i class="fa fa-tags"></i>
+              <div class="post_container__post__tag">funzioni</div>
+              <div class="post_container__post__tag">esercizi</div>
+            </div>
+            <div class="share_buttons"> 
+              <div class="share_buttons__message">Share: </div>
+              <div style="cursor: pointer" class="share_buttons__share_reddit"><i class="fa fa-reddit"> </i></div>
+              <div style="cursor: pointer" class="share_buttons__share_twitter"><i class="fa fa-twitter"></i></div>
+            </div>
+          </div>
+          <div class="post_text"><p>Ecco di seguito le slides presentate oggi oggi; vi ricordo pero&#39; che il
+materiale che sarà oggetto delle prove scritte e orali di questo corso è
+indicato nel <a href="http://www.vittoriozaccaria.net/deposit/programmaInfoB.pdf">programma
+dettagliato</a>;
+<strong>quindi non è sufficiente studiare solo le slides o gli appunti della
+lezione</strong>.</p>
+<ul>
+<li><a href="https://dl.dropboxusercontent.com/u/5867765/1516-published-infob/le_matlab_6.pdf">Funzioni
+ricorsive</a></li>
+</ul>
+<p>Alcuni degli esercizi seguenti non sono stati fatti oggi a
+esercitazione.</p>
+<h1 id="profilo-argine">Profilo argine</h1>
+<p>La seguente figura mostra l’andamento del profilo dell’argine di un
+fiume <code>p(m)</code> in funzione della distanza dalla foce <code>m</code>:</p>
+<pre><code>  p(m)
+    |                                         /
+    |        o_________o                     /
+    |       /           \                   /
+    |  o___o             \                 /
+    |                     \               /
+    |                      \             /
+    |                       o___________o
+    |
+    |
+    |____________________________________________________
+                                                        m
+</code></pre><p>Come si nota, l’argine presenta altezze diverse nei vari punti del
+fiume. Si supponga che il fiume scorra in piano lungo tutto il suo
+percorso (non ci sono quindi salti di livello).</p>
+<p>Si chiede di sviluppare in Matlab/Octave una funzione <code>calcolaRischio</code>
+che sia in grado di identificare e restituire al chiamante i punti
+dell’argine a rischio di esondazione in giornata, in base a:</p>
+<ol>
+<li><p>profilo dell’argine <code>p(m)</code>: vettore contenente l&#39;altezza dell&#39;argine
+in metri rispetto al fondo del letto del fiume a distanza <code>m</code> dalla
+foce (nella precedente figura i dati contenuti in
+<code>p(m)</code>sono cerchiati)</p>
+</li>
+<li><p>l’altezza attuale <code>a</code> del fiume (in metri) rispetto al fondo del
+letto del fiume (sempre considerando la distanza dalla foce <code>m</code>).</p>
+</li>
+<li><p>quanti millimetri <code>mil</code> di pioggia fara&#39; durante la giornata
+(al massimo).</p>
+</li>
+</ol>
+<p>Ovviamente i punti dell’argine a rischio di esondazione in giornata sono
+quelli in cui l’altezza dell’argine è minore dell’altezza massima che
+può raggiungere il fiume.</p>
+<ol>
+<li><p>Si scriva il codice della funzione <code>calcolaRischio</code>:</p>
+<pre><code class="lang-octave">function pr = calcolaRischio(p, a, mil)
+    pr = find(p &lt;= a + (mil / 1000));
+end
+</code></pre>
+</li>
+<li><p>Si costruisca uno script che:</p>
+<ul>
+<li><p>carica da un file ascii <code>profiloArgine.txt</code> (contenente un
+numero per ogni riga) i dati relativi alle altezze dell’argine
+del fiume nei vari punti (ovvero <code>p(m)</code>).</p>
+</li>
+<li><p>chiede all’utente l’altezza attuale del fiume <code>a</code> e la
+previsione di incremento giornaliero totale di altezza del fiume
+in base alla pioggia prevista <code>mil</code>.</p>
+</li>
+<li><p>genera una tabella <code>tab</code> contenente, per ciascun punto in cui
+puo&#39; avvenire una esondazione, il minuto in cui questa
+potra&#39; avvenire.</p>
+<pre><code class="lang-octave">load(&#39;profiloArgine.txt&#39;);
+a      = input(&#39;Altezza attuale: &#39;);
+mil    = input(&#39;Incremento totale previsto millimetri: &#39;);
+
+pr     = calcolaRischio(p, a, mil) ;
+
+minuti = 1000 * 24 * 60 * (p - a) / mil;
+tab    = [ p’ minuti’ ];
+tab    = tabella(punti, :)
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="andamento-capitale">Andamento capitale</h1>
+<p>Il Sig. Rossi ha predisposto investimenti in svariati strumenti
+finanziari (azioni, obbligazioni, titoli di stato, etc..) e ha annotato:</p>
+<ul>
+<li><p>Il <strong>capitale iniziale</strong> di ogni investimento (a gennaio 2012).</p>
+</li>
+<li><p>Il <strong>valore corrente</strong> di ogni investimento (a gennaio 2013).</p>
+</li>
+</ul>
+<p>Il Sig. Rossi a gennaio 2012 ha preventivato di ottenere una rendita
+minima dai suoi investimenti. La rendita minima è uguale per tutti gli
+investimenti ed è espressa come una percentuale; è quindi numero
+nell&#39;intervallo tra 0 e 1 (ad esempio +3% = 0.03).</p>
+<p>Si assuma che il capitale iniziale e il valore corrente degli
+investimenti vengano ordinatamente salvati in due vettori di uguale
+lunghezza chiamati, rispettivamente, <code>ci</code> e <code>vc</code>, e che quindi l’indice
+di questi vettori identifichi univocamente lo strumento finanziario nel
+quale il Sig. Rossi ha investito.</p>
+<p>Sviluppare una funzione Matlab/Octave chiamata <code>controllaRendita</code> che
+restituisce, in un vettore <code>tb</code> gli indici degli investimenti che sono
+cresciuti, a gennaio 2013, di una percentuale maggiore o uguale alla
+rendita minima <code>rm</code> che il Sig. Rossi sperava di ottenere quando ha
+investito:</p>
+<p><strong>Spazio soluzione:</strong></p>
+<pre><code class="lang-octave">function tb = controllaRendita(ci, vc, rm)
+         tb = find(vc ./ ci &gt;= 1 + rm)
+end
+</code></pre>
+<p>Si costruisca uno script che:</p>
+<ul>
+<li><p>carica dal file ascii <code>capitaleIniziale.txt</code> gli importi degli
+investimenti a gennaio 2012 e dal file ascii <code>valoreCorrente.txt</code> i
+valori correnti degli investimenti (ogni file contiene un numero per
+ogni riga).</p>
+</li>
+<li><p>Richieda all&#39;utente di inserire una rendita minima percentuale <code>rm</code>.</p>
+</li>
+<li><p>Genera una tabella <code>tab</code> contenente il capitale iniziale e finale
+dei soli titoli buoni e la sua rendita calcolata come:</p>
+<pre><code>r(ii) = (vc(ii) / ci(ii)) - 1
+</code></pre></li>
+</ul>
+<p><strong>Spazio soluzione:</strong></p>
+<pre><code class="lang-octave">ci      = load(&#39;ci.txt&#39;);
+vc      = load(&#39;vc.txt&#39;);
+rm      = input(&#39;Inserire il valore della rendita minima (in intervallo [0,1]): &#39;);
+
+tb      = controllaRendita(ci, vc, rm);
+
+rendita = vc ./ ci - 1;
+tab     = [ci&#39; vc&#39; rendita&#39;]
+tab     = tab(tb)
+</code></pre>
+<h1 id="codice-isbn">Codice ISBN</h1>
+<p>Il codice ISBN è una sequenza numerica di 13 cifre usata
+internazionalmente per la classificazione dei libri. L&#39;ultima cifra del
+codice ISBN svolge una funzione di controllo e viene calcolata con il
+seguente algoritmo:</p>
+<ul>
+<li><p>si moltiplica ognuna delle prime 12 cifre per un peso definito in
+base alla posizione della cifra stessa nella sequenza: la prima
+cifra si moltiplica per 1, la seconda per 3, la terza per 1, la
+quarta per 3 e così via</p>
+</li>
+<li><p>si sommano i risultati delle 12 moltiplicazioni</p>
+</li>
+<li><p>si divide la somma per 10 e si prende il resto della divisione</p>
+</li>
+<li><p>si sottrae il resto della divisione da 10: la cifra che si ottiene è
+la cifra di controllo, ovvero la 13-esima cifra del codice ISBN.</p>
+</li>
+</ul>
+<p>Si risponda ai seguenti quesiti:</p>
+<ol>
+<li><p>Implementare in linguaggio Matlab una funzione <code>controllo</code> che
+riceve in ingresso un vettore numerico contenente le prime 12 cifre
+di un codice ISBN e ritorna la corrispondente 13-esima cifra
+di controllo.</p>
+<p>Esempio:</p>
+<pre><code>controllo([9 7 8 8 8 4 3 0 2 5 3 4])
+</code></pre><p>ritorna 3 poichè:</p>
+<pre><code>9*1 + 7*3 + 8*1 + 8*3 + 8*1 + 4*3 + 3*1 + 0*3 + 2*1 + 5*3 + 3*1 + 4*3 = 117
+117 mod 10 = 7
+10 - 7 = 3
+</code></pre><p><strong>Spazio soluzione:</strong></p>
+<pre><code>function c = controllo(a)
+     s = sum(a(1:2:12)) + sum(3 * a(2:2:12));
+     c = 10 - mod(s,10);
+end
+</code></pre></li>
+<li><p>Implementare in linguaggio Matlab una funzione <code>verifica</code> che riceve
+in ingresso un vettore numerico contenente le 13 cifre di un codice
+ISBN e ritorna <code>true</code> se la cifra di controllo è corretta,
+<code>false</code> altrimenti.</p>
+<p>Esempio:</p>
+<pre><code>verifica([9 7 8 8 8 4 3 0 2 5 3 4 3])
+</code></pre><p>ritorna <code>true</code> dato che, come visto sopra, la cifra di controllo
+corretta per l’input considerato è 3.</p>
+<p><strong>Spazio soluzione:</strong></p>
+<pre><code>function r = verifica(a)
+    r = a(13) == controllo(a(1:12));
+end
+</code></pre></li>
+</ol>
+<h1 id="assegnamento-di-matrici">Assegnamento di Matrici</h1>
+<p>Si implementi in MATLAB una funzione che svolga le seguenti operazioni:</p>
+<ul>
+<li>Riceve in ingresso due matrici <code>A</code> e <code>B</code> di <code>M</code>x<code>N</code> elementi.</li>
+<li>Produce una terza matrice <code>C</code> ottenuta da <code>A</code> e <code>B</code> secondo la
+seguente regola:</li>
+</ul>
+<p>$$
+C(r,c) =
+\left\{
+\begin{array}{ll}
+ A(r,c), &amp; \textrm{se } B(r,c) &lt; \textrm{minimo valore di tutta la matrice A} \\
+ B(r,c), &amp; \textrm{altrimenti} \\
+\end{array}
+\right.
+$$</p>
+<p>Ove \(r,c\) sono, rispettivamente, la riga e la colonna dell&#39;elemento
+considerato.</p>
+<p>Ad esempio, se:</p>
+<p>$$
+A =
+\left[
+\begin{array}{ll}
+ 9 &amp; 2 \\
+ 3 &amp; 4 \\
+\end{array}
+\right],
+B =
+\left[
+\begin{array}{ll}
+ 10 &amp; 8 \\
+ 1 &amp; 7 \\
+\end{array}
+\right]
+$$</p>
+<p>allora:</p>
+<p>$$
+C =
+\left[
+\begin{array}{ll}
+ 10 &amp; 8 \\
+ 3 &amp; 7 \\
+\end{array}
+\right]
+$$</p>
+<p>Poiché solo \(B(2,1)\) è minore del minimo di \(A\) che è 2.</p>
+<p>Si tenga presente che, nel risolvere l&#39;esercizio, <strong>non è possibile
+usare cicli <code>for</code></strong>.</p>
+<p><strong>Spazio soluzione:</strong></p>
+<pre><code class="lang-pascal">function C = funz(A, B)
+    C = B;
+    C(min(min(A)) &gt; B)=A(min(min(A)) &gt; B)
+end
+</code></pre>
+<h1 id="estrazione-cifra">Estrazione cifra</h1>
+<p>L&#39;esercizio e&#39; composto da due punti; nelle soluzioni non è consentito
+l’uso della funzione <code>num2str</code> di Matlab/Octave:</p>
+<ol>
+<li><p>Scrivere la funzione ricorsiva <code>cifra()</code> che riceve come parametri
+due numeri interi <code>num</code> e <code>k</code> (si supponga che entrambi i numeri
+siano sempre strettamente positivi). La funzione <code>cifra</code> restituisce
+la <code>k</code>-esima cifra del numero <code>num</code> a partire da destra.</p>
+<p>Esempi:</p>
+<ul>
+<li><code>cifra(1456, 1)</code> deve restituire 6</li>
+<li><code>cifra(5136, 4)</code> deve restituire 5</li>
+<li><code>cifra(512, 2)</code> deve restituire 1</li>
+</ul>
+<!-- -->
+<pre><code class="lang-octave">function ris = cifra(num, k)
+    if k == 1
+            ris = mod(num, 10);
+    else
+            ris = cifra(floor(num/10), k-1);
+    end
+end
+</code></pre>
+</li>
+<li><p>Riscrivere la funzione ricorsiva del punto precedente in modo tale
+che nel caso in cui <code>k</code> sia maggiore del numero effettivo di cifre
+che compongono <code>num</code> la funzione restituisca -1.</p>
+<pre><code class="lang-octave">function ris = cifraConControllo(num, k)
+    if (k &gt; 1 &amp;&amp; num &lt; 10)
+        ris = -1
+    else
+        if k == 1
+            ris = mod(num, 10);
+        else
+            ris = cifraConControllo(floor(num/10), k-1);
+        end
+    end
+end
+</code></pre>
+</li>
+</ol>
+<h1 id="conta-cifre">Conta cifre</h1>
+<p>L&#39;esercizio e&#39; composto da due punti; nelle soluzioni non è consentito
+l’uso della funzione <code>num2str</code> di Matlab/Octave:</p>
+<ol>
+<li><p>Scrivere una funzione ricorsiva <code>contaCifre()</code> che riceve come
+parametri un numero intero <code>num</code> (strettamente positivo) e
+restituisce il numero di cifre che compongono <code>num</code>.</p>
+<p>Ad esempio:</p>
+<ul>
+<li><code>contaCifre(1456)</code> deve restituire 4</li>
+<li><code>contaCifre(5)</code> deve restituire 1</li>
+</ul>
+<p>Nota: Non è consentito l’uso della funzione <code>num2str</code>
+di Matlab/Octave.</p>
+<p><strong>Spazio soluzione:</strong></p>
+<pre><code class="lang-octave">function ris = contaCifre(num)
+               if (num &lt;= 9)
+                    ris = 1;
+               else
+                    ris = 1+ contaCifre(floor(num/10));
+               end
+</code></pre>
+</li>
+<li><p>Scrivere la funzione ricorsiva <code>contaNonMultipli()</code> che prende in
+ingresso due interi <code>num</code> e <code>n</code> (entrambi strettamente positivi) e
+conta quante cifre è necessario rimuovere in coda a <code>num</code> (ossia
+nella parte destra di <code>num</code>) prima di ottenere un multiplo di <code>n</code>.</p>
+<p>Ad esempio:</p>
+<ul>
+<li><code>contaNonMultipli(12333, 2)</code> restituisce 3 (perché 12333, 1233,
+123 non sono multipli di 2, mentre 12 lo è).</li>
+<li><code>contaNonMultipli(12300, 2)</code> restituisce 0 (perché 12300 è
+multiplo di 2).</li>
+</ul>
+<p><strong>Spazio soluzione:</strong></p>
+<pre><code class="lang-octave">function ris = contaNonMultipli(num , n)
+               if  (num == 0)
+                    ris = 0;
+               elseif (mod(num , n) == 0)
+                    ris = 0;
+                    disp([num2str(num) &#39; è divisibile per &#39;, num2str(n)]);
+               else
+                    ris = 1 + contaNonMultipli(floor(num/10), n);
+               end
+end
+</code></pre>
+</li>
+</ol>
+<h1 id="grigliopoli">Grigliopoli</h1>
+<p>Le strade della città di <strong>Grigliopoli</strong> sono organizzate come una griglia (alcune strade attraversano la città da est a ovest e altre da nord a sud).</p>
+<p>Dati due incroci che distano <code>X</code> isolati lungo l&#39;asse est-ovest della città e <code>Y</code> isolati lungo l&#39;asse nord-sud, siete stati incaricati di calcolare il numero di percorsi a distanza minima che collegano i due incroci.</p>
+<p>Nell’esempio qui sotto, vengono mostrati i 3 percorsi a distanza minima che collegano due incroci <code>A</code> e <code>B</code> caratterizzati da una distanza lungo l&#39;asse <code>X</code> di 2 e lungo l&#39;asse <code>Y</code> di 1:</p>
+<pre><code>          X
+    *   *   *   *               *   *   *   *               *   *   *   *
+      A-------+                   A---+                       A
+Y   *   *   * | *               *   * | *   *               * | *   *   *
+              B                       +---B                   +-------B
+    *   *   *   *               *   *   *   *               *   *   *   *
+         (1)                         (2)                         (3)
+</code></pre><p>Il vostro obiettivo e&#39; di implementare <strong>una funzione ricorsiva</strong> <code>calcola</code> in Matlab/Octave che ricevuti <code>X</code> e <code>Y</code> in ingresso restituisce il numero totale di percorsi corrispondenti. Ovvero, nell&#39;esempio di sopra <code>calcola(2,1)</code> deve ritornare 3.</p>
+<blockquote>
+<p><strong>Suggerimento</strong>: Quando <code>X</code> = 0 o <code>Y</code> = 0, c’è soltanto un cammino a distanza minima che collega i due incroci. Altrimenti, esiste più di un cammino minimo dal momento che è possibile sia avvicinarsi alla destinazione lungo l’asse est-ovest (riducendo quindi la distanza <code>X</code>) oppure avvicinarsi lungo l’asse nord-sud (riducendo la distanza <code>Y</code>)</p>
+</blockquote>
+<pre><code>function [ p ] = calcola(x,y)
+    if (x == 0 || y == 0)
+        p = 1;
+    else
+        p = calcola(x-1,y) + calcola(x,y-1);
+    end
+end
+</code></pre></div>
+          <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG"></script>
+          <div id="disqus_thread" class="post_container__comments"> 
+            <script>(function() {
+  var disqus_shortname, dsq;
+
+  disqus_shortname = 'vittoriozaccaria';
+
+  dsq = document.createElement('script');
+
+  dsq.type = 'text/javascript';
+
+  dsq.async = true;
+
+  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+}).call(this);
+
+            </script><a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
