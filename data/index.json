@@ -1,6 +1,22 @@
 [
     {
         "category": "infob",
+        "date": "2015-11-10 08:18:05",
+        "layout": "post",
+        "tags": [
+            "funzioni",
+            "esercizi"
+        ],
+        "title": "Esercizi sulla ricorsione e codifica binaria",
+        "formattedDate": "Tuesday, November 10th 2015",
+        "smallDate": "11/10",
+        "smallDescription": "",
+        "dirName": "infob/2015/11/10",
+        "fileName": "esercizi-sulla-ricorsione-e-codifica-binaria",
+        "link": "infob/2015/11/10/esercizi-sulla-ricorsione-e-codifica-binaria.html"
+    },
+    {
+        "category": "infob",
         "date": "2015-11-06 08:18:05",
         "layout": "post",
         "tags": [

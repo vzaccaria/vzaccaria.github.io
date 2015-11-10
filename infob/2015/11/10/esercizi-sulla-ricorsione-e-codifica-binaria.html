@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head lang="en">
+    <title>Esercizi sulla ricorsione e codifica binaria</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+    <script type="text/javascript" src="/js/client.js"></script>
+    <link rel="icon" type="image/png" href="/img/favicon.png">
+  </head>
+  <body ng-app="application">
+    <div class="site_wrapper">
+      <div class="sidebar"> <img class="sidebar__picture">
+        <div class="sidebar__name">Vittorio Zaccaria</div>
+        <div class="sidebar__address">Politecnico di Milano</div>
+        <ul class="sidebar__link_list">
+          <li onclick="location.href=&apos;/&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-home"></i></span>
+            <div class="sidebar__link_item__name">Home</div>
+          </li>
+          <li onclick="location.href=&apos;/research.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-flask"></i></span>
+            <div class="sidebar__link_item__name">Research</div>
+          </li>
+          <li onclick="location.href=&apos;/blog.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-quote-left"></i></span>
+            <div class="sidebar__link_item__name">Blog</div>
+          </li>
+          <li onclick="location.href=&apos;/projects.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-floppy-o"></i></span>
+            <div class="sidebar__link_item__name">Projects</div>
+          </li>
+          <li onclick="location.href=&apos;/teaching.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-graduation-cap"></i></span>
+            <div class="sidebar__link_item__name">Teaching</div>
+          </li>
+          <li onclick="location.href=&apos;/deposit/cv.pdf&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-user"></i></span>
+            <div class="sidebar__link_item__name">CV</div>
+          </li>
+          <li onclick="location.href=&apos;/videos.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-youtube-play"></i></span>
+            <div class="sidebar__link_item__name">Videos</div>
+          </li>
+          <li onclick="location.href=&apos;/address.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-map-marker"></i></span>
+            <div class="sidebar__link_item__name">Address</div>
+          </li>
+        </ul>
+        <div class="sidebar__bottom"> 
+          <div onclick="location.href=&apos;http://www.linkedin.com/in/vzaccaria&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-linkedin-square"></i></div>
+          <div onclick="location.href=&apos;http://twitter.com/_vzaccaria_&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-twitter-square"></i></div>
+          <div onclick="location.href=&apos;https://plus.google.com/116322227495215922957/about&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-google-plus-square"></i></div>
+        </div>
+      </div>
+      <div class="site_container">
+        <div class="post_container">
+          <div class="post_container__post__title">Esercizi sulla ricorsione e codifica binaria</div>
+          <div class="post_container__post__subtitle"> 
+            <div class="post_container__post__date"> <i class="fa fa-calendar-o"> </i>
+              <div class="post_container__post__date_value">Tuesday, November 10th 2015</div>
+            </div>
+            <div class="post_container__post__category"> <i class="fa fa-flag-o"> </i>
+              <div class="post_container__post__category_value">infob</div>
+            </div>
+            <div class="post_container__post__tags"> <i class="fa fa-tags"></i>
+              <div class="post_container__post__tag">funzioni</div>
+              <div class="post_container__post__tag">esercizi</div>
+            </div>
+            <div class="share_buttons"> 
+              <div class="share_buttons__message">Share: </div>
+              <div style="cursor: pointer" class="share_buttons__share_reddit"><i class="fa fa-reddit"> </i></div>
+              <div style="cursor: pointer" class="share_buttons__share_twitter"><i class="fa fa-twitter"></i></div>
+            </div>
+          </div>
+          <div class="post_text"><p>Ecco di seguito le slides presentate oggi oggi; vi ricordo pero&#39; che il
+materiale che sarà oggetto delle prove scritte e orali di questo corso è
+indicato nel <a href="http://www.vittoriozaccaria.net/deposit/programmaInfoB.pdf">programma
+dettagliato</a>;
+<strong>quindi non è sufficiente studiare solo le slides o gli appunti della
+lezione</strong>.</p>
+<ul>
+<li><p><a href="https://dl.dropboxusercontent.com/u/5867765/1516-published-infob/le_matlab_6.pdf">Funzioni
+di ordine superiore</a></p>
+</li>
+<li><p><a href="https://dl.dropboxusercontent.com/u/5867765/1516-published-infob/le_codifica_0.pdf">Codifica binaria</a></p>
+</li>
+</ul>
+<p>Alcuni degli esercizi seguenti non sono stati fatti oggi a
+esercitazione.</p>
+<h1 id="matrice-con-frazioni">Matrice con frazioni</h1>
+<p>Si assuma di avere una matrice di 2 righe ed un numero arbitrario di colonne, ad esempio:</p>
+<div> \begin{equation} M = \left[\begin{array}{ccc} 1 &amp; 3 &amp; 1  \\ 2 &amp; 4 &amp; 3  \\ \end{array} \right] \end{equation} </div>
+
+<p>Ogni colonna della matrice rappresenta una frazione (ad esempio, per <code>M</code>):</p>
+<div> \begin{equation} \frac{1}{2}, \frac{3}{4}, \frac{1}{3} \end{equation} </div>
+
+<p>Si scriva una funzione <strong>ricorsiva</strong> <code>frac</code> che, ricevuta una qualsiasi matrice <code>M</code> in ingresso, ritorni il numeratore <code>n</code> ed il denominatore <code>d</code> della frazione risultante dalla somma delle frazioni contenute in <code>M</code>.</p>
+<p>Ad esempio:</p>
+<pre><code>[n d] = frac([1 3 1; 2 4 3])
+</code></pre><p>ritorna</p>
+<pre><code>n = 19
+d = 12
+</code></pre><p>poichè:</p>
+<div> \begin{equation} \frac{1}{2} + \frac{3}{4} + \frac{1}{3} = \frac{12 \times 1 + 6 \times 3 + 2 \times 4}{2 \times 4 \times 3} = \frac{19}{12} \end{equation} </div>
+
+
+<p>La frazione deve essere minimizzata, ovvero non vi devono essere divisori comuni tra <code>n</code> e <code>d</code>. Nel progettare <code>frac</code>, si può utilizzare la funzione <code>gcd(a,b)</code> che ritorna il massimo comun divisore tra <code>a</code> e <code>b</code>.</p>
+<h2 id="soluzione">Soluzione</h2>
+<pre><code class="lang-octave">function [n, d] = frac(M)
+    if size(M,2) == 1
+        n = M(1,1);
+        d = M(2,1);
+    else
+        [c d] = frac(M(:,2:end));
+        a = M(1,1);
+        b = M(2,1);
+
+        k = a*d + c*b;
+        l = b * d;
+
+        n = k/gcd(k,l);
+        d = l/gcd(k,l);
+    end
+end
+</code></pre>
+<h1 id="quadrati-concentrici">Quadrati concentrici</h1>
+<p>Si considerino i seguenti esempi di matrici costruite da &quot;quadrati concentrici&quot;:</p>
+<pre><code class="lang-matlab">matr1 =
+     2     2     2     2     2     2
+     2     3     3     3     3     2
+     2     3     4     4     3     2
+     2     3     4     4     3     2
+     2     3     3     3     3     2
+     2     2     2     2     2     2
+</code></pre>
+<pre><code class="lang-matlab">matr2 =
+     2     2     2     2     2
+     2     5     5     5     2
+     2     5     1     5     2
+     2     5     5     5     2
+     2     2     2     2     2
+</code></pre>
+<p>Come si vede dagli esempi, si tratta di matrici quadrate in cui i valori che si trovano sulla n-esima riga, n-esima colonna, e sulle righe e colonne simmetriche a queste sono uguali tra loro.</p>
+<h2 id="domanda-1">Domanda 1</h2>
+<p>Si sviluppi in Matlab una funzione ricorsiva <code>quadratiConcentrici</code> che, data una generica matrice, restituisca 1 se la matrice è costituita da quadrati concentrici, 0 altrimenti.</p>
+<p>Per sviluppare questa funzione si assuma di avere a disposizione la funzione <code>valoriDiCorniceUguali</code> che, data una matrice quadrata, restituisce 1 se tutti i valori disposti sulla sua cornice esterna (costituita dalla prima e dall’ultima riga e dalla prima e dall’ultima colonna) sono uguali tra loro, 0 altrimenti. Per esempio: <code>valoriDiCorniceUguali(matr1)</code> restituisce 1.</p>
+<p>NB: non si chiede di sviluppare <code>valoriDiCorniceUguali</code>. Ci si focalizzi solo sulla funzione ricorsiva.</p>
+<h3 id="soluzione-">Soluzione:</h3>
+<pre><code class="lang-matlab">function [ris] = quadratiConcentrici(m)
+    [r, c] = size(m);
+    if r ~= c
+        ris = false;
+    else
+        if r == 1 || r == 0
+            ris = true;
+        elseif valoriDiCorniceUguali(m)
+            ris = quadratiConcentrici(m(2:end-1, 2:end-1));
+        else
+              ris = false;
+        end
+    end
+end
+</code></pre>
+</div>
+          <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG"></script>
+          <div id="disqus_thread" class="post_container__comments"> 
+            <script>(function() {
+  var disqus_shortname, dsq;
+
+  disqus_shortname = 'vittoriozaccaria';
+
+  dsq = document.createElement('script');
+
+  dsq.type = 'text/javascript';
+
+  dsq.async = true;
+
+  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+}).call(this);
+
+            </script><a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
