@@ -1,0 +1,517 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head lang="en">
+    <title>Esercizi di ricapitolazione</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+    <script type="text/javascript" src="/js/client.js"></script>
+    <link rel="icon" type="image/png" href="/img/favicon.png">
+  </head>
+  <body ng-app="application">
+    <div class="site_wrapper">
+      <div class="sidebar"> <img class="sidebar__picture">
+        <div class="sidebar__name">Vittorio Zaccaria</div>
+        <div class="sidebar__address">Politecnico di Milano</div>
+        <ul class="sidebar__link_list">
+          <li onclick="location.href=&apos;/&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-home"></i></span>
+            <div class="sidebar__link_item__name">Home</div>
+          </li>
+          <li onclick="location.href=&apos;/research.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-flask"></i></span>
+            <div class="sidebar__link_item__name">Research</div>
+          </li>
+          <li onclick="location.href=&apos;/blog.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-quote-left"></i></span>
+            <div class="sidebar__link_item__name">Blog</div>
+          </li>
+          <li onclick="location.href=&apos;/projects.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-floppy-o"></i></span>
+            <div class="sidebar__link_item__name">Projects</div>
+          </li>
+          <li onclick="location.href=&apos;/teaching.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-graduation-cap"></i></span>
+            <div class="sidebar__link_item__name">Teaching</div>
+          </li>
+          <li onclick="location.href=&apos;/deposit/cv.pdf&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-user"></i></span>
+            <div class="sidebar__link_item__name">CV</div>
+          </li>
+          <li onclick="location.href=&apos;/videos.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-youtube-play"></i></span>
+            <div class="sidebar__link_item__name">Videos</div>
+          </li>
+          <li onclick="location.href=&apos;/address.html&apos;" style="cursor: pointer" class="sidebar__link_item"><span class="sidebar__link_item__icon fa-stack"><i class="fa fa-stack-2x fa-circle"></i><i class="sidebar__link_item__icon__inner fa fa-stack-1x fa-inverse fa-map-marker"></i></span>
+            <div class="sidebar__link_item__name">Address</div>
+          </li>
+        </ul>
+        <div class="sidebar__bottom"> 
+          <div onclick="location.href=&apos;http://www.linkedin.com/in/vzaccaria&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-linkedin-square"></i></div>
+          <div onclick="location.href=&apos;http://twitter.com/_vzaccaria_&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-twitter-square"></i></div>
+          <div onclick="location.href=&apos;https://plus.google.com/116322227495215922957/about&apos;" style="cursor: pointer" class="sidebar__bottom__button"><i class="fa fa-google-plus-square"></i></div>
+        </div>
+      </div>
+      <div class="site_container">
+        <div class="post_container">
+          <div class="post_container__post__title">Esercizi di ricapitolazione</div>
+          <div class="post_container__post__subtitle"> 
+            <div class="post_container__post__date"> <i class="fa fa-calendar-o"> </i>
+              <div class="post_container__post__date_value">Tuesday, November 17th 2015</div>
+            </div>
+            <div class="post_container__post__category"> <i class="fa fa-flag-o"> </i>
+              <div class="post_container__post__category_value">infob</div>
+            </div>
+            <div class="post_container__post__tags"> <i class="fa fa-tags"></i>
+              <div class="post_container__post__tag">funzioni</div>
+              <div class="post_container__post__tag">esercizi</div>
+            </div>
+            <div class="share_buttons"> 
+              <div class="share_buttons__message">Share: </div>
+              <div style="cursor: pointer" class="share_buttons__share_reddit"><i class="fa fa-reddit"> </i></div>
+              <div style="cursor: pointer" class="share_buttons__share_twitter"><i class="fa fa-twitter"></i></div>
+            </div>
+          </div>
+          <div class="post_text"><h1 id="mele-al-mercato">Mele al mercato</h1>
+<p>Una signora al mercato compra un sacchetto di mele, che purtroppo le
+cade durante il tragitto verso casa. Il commerciante si offre di darle
+un altro sacchetto contenente lo stesso numero di mele del precedente e
+le chiede quindi quale fosse questo numero. La signora, abilissima negli
+indovinelli matematici, risponde così:</p>
+<ul>
+<li>Organizzandole in file da 5 mele, ne rimangono fuori 2</li>
+<li>Organizzandole in file da 7 mele, ne rimangono fuori 3</li>
+</ul>
+<p>Quanto indicato dalla signora è rappresentabile dalle seguenti
+equazioni, dove \(m\) è il numero di mele che vogliamo trovare:</p>
+<p>$$
+\left\{
+\begin{array}{ccc}
+\textrm{mod}(m,5) &amp; = &amp; 2 \\
+\textrm{mod}(m,7) &amp; = &amp; 3 \\
+\end{array}
+\right.
+$$</p>
+<p>Le equazioni di sopra sono un&#39;esempio di <em>equazione alle congruenze</em>:</p>
+<p>$$
+\left\{
+\begin{array}{ccc}
+\textrm{mod}(m,a) &amp; = &amp; w_1 \\
+\textrm{mod}(m,b) &amp; = &amp; w_2 \\
+\end{array}
+\right.
+$$ Che ci porta finalmente ad una delle soluzioni:</p>
+<p>$$
+m = b \times w_1 \times y + a \times w_2 \times x
+$$</p>
+<p>Dove \(x\) e \(y\) sono calcolati con l&#39;<strong>algoritmo esteso di
+euclide</strong> (nota bene: la funzione è ricorsiva e calcola
+contemporaneamente una coppia di valori):</p>
+<p>$$
+(x, y) = \textrm{calcolaCoeff}(a, b) = \left\{
+\begin{array}{cc}
+(1, 0)     &amp; \textrm{quando}~(b=0) \\
+(r_x, r_y) &amp; \textrm{negli altri casi} \\
+\end{array}
+\right.
+$$</p>
+<p>dove:</p>
+<p>$$
+\begin{array}{rcl}
+r_x        &amp; =  &amp; t_y \\
+r_y        &amp; =  &amp; t_x - t_y * (a ~ \textrm{div} ~ b) \\
+(t_x, t_y) &amp; =  &amp; \textrm{calcolaCoeff}(b, a ~ \textrm{mod} ~ b) \\
+\end{array}
+$$</p>
+<p>Si noti che \(a ~ \textrm{div} ~ b\) rappresenta la divisione
+intera tra due numeri \(a\) e \(b\), e \(a ~ \textrm{mod} ~ b\)
+rappresenta il calcolo del resto della divisione intera del valore di
+\(a\) per il valore di \(b\).</p>
+<h2 id="domanda-1">Domanda 1</h2>
+<p>Implementare la funzione <code>calcolaCoeff</code> in Matlab/Octave (si usi
+<code>fix(a/b)</code> per la divisione intera):</p>
+<p><strong>Soluzione</strong></p>
+<pre><code class="lang-octave">function [x, y] = calcolaCoeff(a, b)
+    if b == 0
+        x = 1;
+        y = 0;
+    else
+        [x1, y1] = calcolaCoeff(b, mod(a,b))
+        x = y1;
+        y = x1 - y1 * (fix(a/b));
+    end
+end
+</code></pre>
+<h2 id="domanda-2">Domanda 2</h2>
+<p>Si chiede di scrivere una funzione matlab che riceve i valori \(a\),
+\(b\), \(w_1\) e \(w_2\) e calcoli il valore risultante delle
+mele \(m\) utilizzando la funzione di cui sopra:</p>
+<p><strong>Soluzione</strong></p>
+<pre><code class="lang-octave">function [m] = numero_di_mele(a,b,w_1,w_2)
+    [ x, y ] = calcolaCoeff(a, b)
+    c1 = b*w_1*y
+    c2 = a*w_2*x
+    m = (c1 + c2)
+end
+</code></pre>
+<h2 id="domanda-3">Domanda 3</h2>
+<p>Come invochereste la funzione <code>numero_di_mele</code> per risolvere il problema
+iniziale della signora del mercato? Quante mele verrebbero calcolate?</p>
+<p><strong>Soluzione</strong></p>
+<pre><code class="lang-octave">&gt; numero_di_mele(5, 7, 2, 3)
+ans = 17
+</code></pre>
+<h1 id="calcolo-disposizioni">Calcolo disposizioni</h1>
+<p>Si sviluppino in Matlab le seguenti funzioni:</p>
+<h2 id="funzione-n-1">Funzione n. 1</h2>
+<p>Si definisca la funzione <code>rimuovi(A,v)</code> tale che, dato un vettore <code>A</code> ed
+un valore <code>v</code> in ingresso, ritorni il vettore <code>A</code> privato di <code>v</code> (se
+contenuto in esso), altrimenti restituisce <code>A</code>.</p>
+<p>Esempio:</p>
+<ul>
+<li><code>rimuovi([ 5, 6, 7 ], 5)</code> ritorna <code>[6, 7]</code></li>
+<li><code>rimuovi([ 5, 6, 7 ], 9)</code> ritorna <code>[5, 6, 7]</code></li>
+</ul>
+<p>Spazio soluzione:</p>
+<pre><code class="lang-octave">function B = rimuovi(A, v)
+  B = A(find(A~=v));
+end
+</code></pre>
+<h2 id="funzione-n-2">Funzione n. 2</h2>
+<p>Si definisca la funzione <code>aggiungi(Q,v)</code> che prende in ingresso una
+matrice <code>Q</code> ed un valore <code>v</code>, e restituisce una matrice corrispondente a
+<code>Q</code> a cui è stato aggiunto <code>v</code> come primo elemento di ogni riga.</p>
+<p>Esempio:</p>
+<ul>
+<li><code>aggiungi([ 5, 4; 6, 8; 7, 9 ], 3)</code> ritorna
+<code>[ 3, 5, 4; 3, 6, 8; 3, 7, 9 ]</code></li>
+</ul>
+<p>Spazio soluzione:</p>
+<pre><code class="lang-octave">function T = aggiungi(Q, e)
+    T = [(ones(rows(Q), 1) .* e) Q];
+end
+</code></pre>
+<h2 id="funzione-n-3">Funzione n. 3</h2>
+<p>Si supponga di avere un array <code>S</code> di <code>n</code> numeri distinti:</p>
+<pre><code>S = [5,8,1]
+</code></pre><p>Una <strong>disposizione semplice</strong> di lunghezza <code>k</code> di tale insieme (con <code>k</code>
+≤ <code>n</code>), è rappresentabile da una matrice di k colonne che contiene, in
+ogni riga, un sottoinsieme ordinato di k elementi di S.</p>
+<p>Le righe della matrice sono tutte distinte e all’interno di ogni riga
+non si possono trovare ripetizioni di uno stesso elemento. Due righe
+possono contenere gli stessi elementi purché in ordine differente.</p>
+<p>Ad esempio, una disposizione semplice di <code>S</code> con <code>k=2</code> è la matrice
+seguente:</p>
+<pre><code>[ 5, 8;  5, 1;  8, 5;  8, 1;  1, 5;  1, 8 ]
+</code></pre><p>Il vostro compito e quello di scrivere in Matlab una funzione
+<strong>ricorsiva</strong> <code>disposizioni(S,k)</code> che implementa il calcolo delle
+disposizioni semplici <code>k</code> di un insieme <code>S</code>, ad esempio:</p>
+<pre><code class="lang-octave">octave&gt; disposizioni([5,8,1],2)
+
+ans =
+
+    5   8
+    5   1
+    8   5
+    8   1
+    1   5
+    1   8
+</code></pre>
+<h2 id="osservazioni-utili-per-l-implementazione">Osservazioni utili per l&#39;implementazione</h2>
+<p>Per <code>k=1</code>, l&#39;elenco delle disposizioni semplici di <code>S</code> corrisponde ad
+<code>S</code> <em>trasposto</em>; nel nostro esempio:</p>
+<pre><code class="lang-octave">octave&gt; disposizioni([5,8,1],1)
+
+    5
+    8
+    1
+</code></pre>
+<p>Quando <code>k&gt;1,</code> le disposizioni si possono calcolare sfruttando le
+funzioni n. 1 e 2 definite ai punti precedenti nel modo seguente:</p>
+<ol>
+<li>si rimuove un elemento <code>v</code> di <code>S</code>,</li>
+<li>si aggiunge <code>v</code> a tutte le disposizioni di <code>k-1</code> elementi di <code>S - v</code>
+(ovvero il vettore <code>S</code> a cui è stato rimosso v).</li>
+</ol>
+<p>la procedura sopra deve essere ripetuta per tutti gli elementi <code>v</code> di
+<code>S</code></p>
+<p>Nel nostro esempio, per k = 2:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>S</strong></th>
+<th style="text-align:center"><strong>v</strong></th>
+<th style="text-align:center"><strong>S - v</strong></th>
+<th style="text-align:center"><strong>disposizioni(S-v,1)</strong></th>
+<th style="text-align:center"><strong>Disposizioni risultanti</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">[5,8,1]</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">[8, 1]</td>
+<td style="text-align:center">[8; 1]</td>
+<td style="text-align:center">[ 5, 8; 5, 1 ]</td>
+</tr>
+<tr>
+<td style="text-align:center">[5,8,1]</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">[5, 1]</td>
+<td style="text-align:center">[5; 1]</td>
+<td style="text-align:center">[ 8, 5; 8, 1 ]</td>
+</tr>
+<tr>
+<td style="text-align:center">[5,8,1]</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">[5, 8]</td>
+<td style="text-align:center">[5; 8]</td>
+<td style="text-align:center">[ 1, 5; 1, 8 ]</td>
+</tr>
+</tbody>
+</table>
+<p>Il risultato finale e&#39; la fusione delle <strong>disposizioni risultanti</strong> in
+un&#39;unica matrice:</p>
+<pre><code class="lang-octave">[ [5, 8]; [5, 1] ; [8, 5]; [8, 1]; [1, 5]; [1, 8] ]
+</code></pre>
+<p>Spazio soluzione:</p>
+<pre><code class="lang-octave">function P = disposizioni(s,k)
+  n = length(s);
+    if k == 1
+      P = s&#39;;
+    else
+        P = [];
+        for x = 1:n
+            e = s(x);
+            t = rimuovi(s, e);
+            Q = disposizioni(t, k-1);
+            T = aggiungi(Q, e);
+            P = [P; T];
+        end
+    end
+end
+</code></pre>
+<h1 id="funzione-di-ordine-superiore">Funzione di ordine superiore</h1>
+<p>Si consideri la seguente funzione di ordine superiore:</p>
+<pre><code class="lang-matlab">function r = fun(v,f)
+  r = v(1);
+  for i = 2:length(v)
+      r = f(r,v(i));
+  end
+</code></pre>
+<h2 id="domanda-1">Domanda 1</h2>
+<p>Qual è il valore ritornato dalla chiamata:</p>
+<pre><code class="lang-matlab">fun([8 9 10 9 6 0], @max)
+</code></pre>
+<p>Risposta:</p>
+<pre><code class="lang-matlab">fun([8 9 10 9 6 0], @max) = 10;
+</code></pre>
+<h2 id="domanda-2">Domanda 2</h2>
+<p>Cosa fa la funzione <code>fun</code> quando l’argomento <code>v</code> è un vettore numerico
+(di lunghezza pari almeno ad 1) ed <code>f</code> è <code>@max</code>? (segnare con una croce
+la risposta giusta)</p>
+<pre><code>[X] Ritorna il massimo di v
+[ ] Ritorna il massimo di tutti i valori di v tranne il primo
+[ ] Va in un ciclo infinito
+[ ] Altro: _____________________________________________________
+</code></pre><h2 id="domanda-3">Domanda 3</h2>
+<p>Implementare una versione ricorsiva della funzione <code>fun</code> che non
+richieda di utilizzare cicli (<code>for</code> o <code>while</code>). L’intestazione della
+funzione <code>function r = fun(v,f)</code> deve rimanere invariata!</p>
+<pre><code class="lang-matlab">function r = fun(v,f)
+  n = length(v);
+  if n == 1
+      r = v(1);
+  else
+      l = fun(v(1:end-1),f)
+      r = f(l, v(end))
+  end
+</code></pre>
+<h1 id="calcolo-costi-caldaia">Calcolo costi caldaia</h1>
+<p>In un cinema di Milano la temperatura nella sala è regolata in modo
+automatico. Un sensore monitora la temperatura rilevando un valore ogni
+minuto mentre la caldaia si accende solo quando la temperatura rilevata
+è inferiore a una certa soglia e si spegne non appena viene raggiunta
+tale soglia.</p>
+<p>I valori letti vengono troncati a due cifre decimali, inseriti in un
+array <code>temp</code> e salvati in un file dati di Matlab chiamato <code>log.mat</code>.</p>
+<p>Un esempio di valori contenuti nel file <code>log.mat</code> è il seguente:</p>
+<pre><code>22.00
+22.50
+23.20
+21.45
+22.00
+22.35
+23.00
+23.40
+</code></pre><h2 id="domanda-1">Domanda 1</h2>
+<p>Scrivere in Matlab una funzione calcolaCosto che:</p>
+<ul>
+<li><p>riceve in ingresso un vettore di temperature <code>temperature</code>, un
+valore soglia <code>soglia</code> e un parametro <code>costoAlMinuto</code> che indica il
+costo al minuto del gas consumato dalla caldaia;</p>
+</li>
+<li><p>restituisca il costo totale <code>costoTotale</code> del gas consumato e un
+vettore <code>minutiAccesa</code> con i minuti nei quali la caldaia è
+rimasta accesa. Per il costo totale, tenere anche presente che se il
+totale dei minuti nei quali la caldaia ha funzionato supera i 30
+minuti, allora il costo del gas consumato dalla caldaia va diminuito
+del 20%.</p>
+</li>
+</ul>
+<p>Ad esempio, nel caso la funzione <code>calcolaCosto</code> riceva in ingresso il
+valori di temperatura contenuti nel file <code>log.mat</code>, una soglia di
+temperatura pari a 23.00 e un valore di <code>costoAlMinuto</code> pari a 100,
+ritornerà un costo totale di 500 e <code>minutiAccesa = [1 2 4 5 6]</code>.</p>
+<h3 id="soluzione-">Soluzione:</h3>
+<pre><code class="lang-matlab">function [costoTotale,minutiAccesa] = calcolaCosto(temp, soglia, costoAlMinuto)
+    minutiAccesa = find(temp &lt; soglia);
+    if (length(minutiAccesa) &gt; 30)
+        costoTotale = length(minutiAccesa) * costoAlMinuto * 0.80;
+    else
+        costoTotale = length(minutiAccesa) * costoAlMinuto;
+    end
+end
+</code></pre>
+<h2 id="domanda-2">Domanda 2</h2>
+<p>Scrivere poi uno script che:</p>
+<ul>
+<li>definisca il valore soglia di temperatura <code>soglia</code>;</li>
+<li>legga dal file <code>log.mat</code> i valori di temperatura contenuti
+nell’array <code>temp</code>;</li>
+<li>definisca il valore del parametro <code>costoAlMinuto</code>;</li>
+<li>crei una opportuna variabile <code>x</code> che indica i minuti;</li>
+<li><p>disegni il grafico (con titolo del grafico e dei due assi) della
+temperatura al variare del tempo, evidenziando sul grafico stesso:</p>
+<ul>
+<li>la temperatura soglia con una retta orizzontale nera a doppio
+spessore;</li>
+<li>i minuti nei quali la caldaia ha funzionato, marcandoli con il
+simbolo &#39;X&#39; rosso (senza congiungerli).</li>
+</ul>
+</li>
+<li>stampi a video il costo totale del gas consumato e i minuti nei
+quali la caldaia è rimasta accesa.</li>
+</ul>
+<h3 id="soluzione-">Soluzione:</h3>
+<pre><code class="lang-matlab">load log.mat temp;
+soglia = 25;
+costoAlMinuto = 10;
+x = 1:size(temp, 2);
+figure
+hold on
+ylabel(&#39;temperatura&#39;);
+xlabel(&#39;minuto&#39;);
+title(&#39;Temperatura sala&#39;);
+plot(x, temp);
+y = soglia * ones(size(x));
+plot(x, y, &#39;k&#39;, &#39;LineWidth&#39;, 2);
+indici = find(temp &lt; soglia);
+temp1 = temp(indici);
+x1 = x(indici);
+plot(x1, temp1, &#39;Xr&#39;);
+
+[costoTotale, minutiAcceso] = calcolaCosto(temp, soglia, costoAlMinuto);
+
+disp([&#39;Costo totale del gas consumato: &#39;, num2str(costoTotale), &#39; Euro.&#39;]);
+disp(&#39;La caldaia ha funzionato nei seguenti minuti: &#39;);
+disp(minutiAcceso);
+</code></pre>
+<h1 id="comprensione-funzione">Comprensione funzione</h1>
+<p>Si consideri la seguente funzione in codice Matlab:</p>
+<pre><code>function r = f(a)
+
+    if a == 0
+      r = [];
+    else
+      r = [f(floor(a/2)) mod(a,2)];
+    end
+</code></pre><ol>
+<li><p>Qual è il valore ritornato dalla chiamata <code>f(5)</code>?</p>
+<p><strong>Spazio soluzione:</strong></p>
+<p>Valore risultante: <code>[1 0 1]</code></p>
+</li>
+<li><p>Qual è il valore ritornato dalla chiamata <code>f(10)</code>?</p>
+<p><strong>Spazio soluzione:</strong></p>
+<p>Valore risultante: <code>[1 0 1 0]</code></p>
+</li>
+<li><p>Ipotizzando che la funzione <code>f(a)</code> venga chiamata con un argomento a
+intero e positivo, descrivere sinteticamente cosa calcola la
+funzione</p>
+<p><strong>Spazio soluzione:</strong></p>
+<p>La funzione <code>f(a)</code> calcola le cifre della codifica binaria del
+numero <code>a</code>.</p>
+</li>
+</ol>
+<h1 id="comprensione-funzione-2-">Comprensione funzione (2)</h1>
+<p>Siano date le seguenti due definizioni di funzioni:</p>
+<pre><code class="lang-matlab">function [qua] = paperone(a, b)
+    if b==1 || b==0
+        qua = false;
+    else
+        if (mod(a, b) == 0) &amp;&amp; a~=b
+            qua = true;
+        else
+            qua = paperone(a, b-1);
+        end
+    end
+end
+</code></pre>
+<pre><code class="lang-matlab">function [x] = paperino(aaargh)
+    x = true;
+    if paperone(aaargh,aaargh) ~= 1;
+        x=false;
+        return
+    end
+end
+</code></pre>
+<ol>
+<li><p>A cosa corrisponde la funzione ricorsiva <code>paperone</code>?</p>
+<p><code>paperone(a, b)</code> controlla se:</p>
+<ul>
+<li>c&#39;è un divisore di <code>a</code></li>
+<li>ed è minore di <code>b</code></li>
+<li>ed è diverso da <code>a</code> e <code>1</code></li>
+</ul>
+</li>
+<li><p>Si dica a cosa corrisponde il caso in cui <code>paperino(k)</code> (per
+<code>k</code> intero) ritorna <code>true</code>:</p>
+<p>Indica se il numero <code>k</code> è un numero non primo.</p>
+</li>
+<li><p>Si indichi l&#39;output del seguente codice:</p>
+</li>
+</ol>
+<!-- -->
+<pre><code class="lang-matlab">for d = 1:3:20
+    printf(&#39;%d - %d\n&#39;, d, paperino(d))
+end
+</code></pre>
+<p>Output:</p>
+<pre><code>    1 - 0
+    4 - 1
+    7 - 0
+    10 - 1
+    13 - 0
+    16 - 1
+    19 - 0
+</code></pre></div>
+          <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG"></script>
+          <div id="disqus_thread" class="post_container__comments"> 
+            <script>(function() {
+  var disqus_shortname, dsq;
+
+  disqus_shortname = 'vittoriozaccaria';
+
+  dsq = document.createElement('script');
+
+  dsq.type = 'text/javascript';
+
+  dsq.async = true;
+
+  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+}).call(this);
+
+            </script><a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

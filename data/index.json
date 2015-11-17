@@ -1,6 +1,22 @@
 [
     {
         "category": "infob",
+        "date": "2015-11-17 08:18:05",
+        "layout": "post",
+        "tags": [
+            "funzioni",
+            "esercizi"
+        ],
+        "title": "Esercizi di ricapitolazione",
+        "formattedDate": "Tuesday, November 17th 2015",
+        "smallDate": "11/17",
+        "smallDescription": "",
+        "dirName": "infob/2015/11/17",
+        "fileName": "esercizi-di-ricapitolazione",
+        "link": "infob/2015/11/17/esercizi-di-ricapitolazione.html"
+    },
+    {
+        "category": "infob",
         "date": "2015-11-10 08:18:05",
         "layout": "post",
         "tags": [
