@@ -1,6 +1,21 @@
 [
     {
         "category": "infob",
+        "date": "2015-12-01 08:18:05",
+        "layout": "post",
+        "tags": [
+            "linguaggio c"
+        ],
+        "title": "introduzione al linguaggio C",
+        "formattedDate": "Tuesday, December 1st 2015",
+        "smallDate": "12/1",
+        "smallDescription": "",
+        "dirName": "infob/2015/12/01",
+        "fileName": "introduzione-al-linguaggio-c",
+        "link": "infob/2015/12/01/introduzione-al-linguaggio-c.html"
+    },
+    {
+        "category": "infob",
         "date": "2015-11-17 08:18:05",
         "layout": "post",
         "tags": [
