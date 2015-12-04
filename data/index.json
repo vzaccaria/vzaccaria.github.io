@@ -1,6 +1,21 @@
 [
     {
         "category": "infob",
+        "date": "2015-12-05 08:18:05",
+        "layout": "post",
+        "tags": [
+            "voti"
+        ],
+        "title": "Voti prova in itinere del 25 Novembre 2015",
+        "formattedDate": "Saturday, December 5th 2015",
+        "smallDate": "12/5",
+        "smallDescription": "",
+        "dirName": "infob/2015/12/05",
+        "fileName": "voti-prova-in-itinere-del-25-novembre-2015",
+        "link": "infob/2015/12/05/voti-prova-in-itinere-del-25-novembre-2015.html"
+    },
+    {
+        "category": "infob",
         "date": "2015-12-04 08:18:05",
         "layout": "post",
         "tags": [
