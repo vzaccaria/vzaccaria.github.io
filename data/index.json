@@ -1,6 +1,21 @@
 [
     {
         "category": "infob",
+        "date": "2015-12-04 08:18:05",
+        "layout": "post",
+        "tags": [
+            "linguaggio c"
+        ],
+        "title": "Linguaggio C, tipi e ambiente di sviluppo",
+        "formattedDate": "Friday, December 4th 2015",
+        "smallDate": "12/4",
+        "smallDescription": "",
+        "dirName": "infob/2015/12/04",
+        "fileName": "linguaggio-c-tipi-e-ambiente-di-sviluppo",
+        "link": "infob/2015/12/04/linguaggio-c-tipi-e-ambiente-di-sviluppo.html"
+    },
+    {
+        "category": "infob",
         "date": "2015-12-01 08:18:05",
         "layout": "post",
         "tags": [
