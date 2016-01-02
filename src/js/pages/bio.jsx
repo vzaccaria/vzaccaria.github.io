@@ -143,7 +143,7 @@ let bioPage = React.createClass({
             <div className="bio-container">
                 <div className="bio">
                     <div className="bio__title"> Bio </div>
-                    <img className="bio__picture" src={require("file?name=/assets/[name].[ext]!../../img/profile_pic_1_res.jpg")}/>
+                    <img className="bio__picture" src={require("file?name=assets/[name].[ext]!../../img/profile_pic_1_res.jpg")}/>
                     <div className="bio-text bio-text--size-medium">
                         <div className="bio-text__title"> Vittorio Zaccaria </div>
                         <div className="bio-text__position"> Assistant Professor </div>
