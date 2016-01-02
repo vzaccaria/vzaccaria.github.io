@@ -1,0 +1,7 @@
+{
+    "baseurl":  "http://www.vittoriozaccaria.net/website-light",
+    "indexurl": "http://www.vittoriozaccaria.net/website-light/data/index.json",
+    "imageurl": "http://www.vittoriozaccaria.net/img",
+    "sourceurl": "https://github.com/vzaccaria/website-light/tree/gh-pages/_posts",
+    "dropbox": "https://dl.dropboxusercontent.com/u/5867765"
+}

@@ -1,0 +1,153 @@
+
+
+
+
+
+.sidebar__name {
+	font-family : @font-family;
+	color       : lighten(@cloud, 10%);
+	font-size   : 1.48em;
+	font-weight : 300;
+	line-height : 1.5em;
+
+	.on-mobile({
+		text-align: center;
+		padding-left: 0%;
+		});
+
+	.on-desktop({
+		text-align: center;
+		padding-left: 0%;
+		});
+
+	&:extend(.cf);
+}
+
+.sidebar__address {
+	font-family : @font-family;
+	color       : @silver;
+	font-size   : 1.15em;
+	font-weight : 300;
+	line-height : 1.5em;
+	text-align: center;
+	.smallcaps(@silver, 300);
+	letter-spacing: 1px;
+	&:extend(.cf);
+}
+
+
+@picture-resize: 8em;
+@picture-margins: 1.3em;
+
+.sidebar__picture {
+	.show-desktop-block();
+	.avatar-nourl(@picture-resize, @picture-margins);
+	.border-box();
+	&:extend(.cf);
+}
+
+
+@link_item_padding: 0.45em;
+@link_item_width: 40px;
+
+.sidebar__link_list {
+	.border-box();
+	.on-desktop({
+	    margin-top: 3em;
+		padding-left: 0;
+		});
+
+	.on-mobile({
+	    margin-top: 1em;
+		padding-left: 0;
+		text-align: center;
+		});
+	list-style-type: none;
+}
+
+
+@effect: 3%;
+@effect-color: lighten(@blue, @effect);
+
+.sidebar__link_item {
+
+	.on-desktop({
+		display: block;
+		padding-left: 5%;
+		width: 95%;
+		});
+
+	.on-mobile({
+		display: inline-block;
+		width: @link_item_width*0.9;
+		});
+
+	color            : @cloud;
+	background-color : @blue;
+	padding-bottom   : @link_item_padding;
+	padding-top      : @link_item_padding;
+	background-color : @blue;
+}
+
+@icon-size: 1.2em;
+
+.sidebar__link_item:hover {
+	color: lighten(@cloud, @effect);
+	background-color: lighten(@blue, @effect*2);
+}
+
+.sidebar__link_item__icon__inner {
+	color: @blue !important;
+}
+
+.sidebar__link_item__icon {
+	display        : inline-block;
+	.var-font-size(@icon-size*0.9, @icon-size);
+	min-width      : 1.2em;
+	padding-right  : 5%;
+	vertical-align : middle;
+	text-align     : center;
+	.border-box();
+}
+
+.sidebar__link_item__name {
+	.show-desktop-inline-block();
+	font-family    : @font-family;
+	margin-left    : 5%;
+	font-size      : .9em;
+	vertical-align : middle;
+
+	.border-box();
+}
+
+.sidebar__bottom {
+	.on-desktop({
+		display: block;
+		});
+
+	.on-mobile({
+		display: none;
+		});
+	bottom   : 1em;
+	position : absolute;
+	width    : 100%;
+}
+
+.sidebar__bottom__button {
+	display    : inline-block;
+	color      : darken(@cloud,30%);
+	width      : 32%;
+	text-align : center;
+	font-size  : @icon-size;
+
+	&:hover {
+		color: white;
+	}
+}
+
+
+
+
+
+
+

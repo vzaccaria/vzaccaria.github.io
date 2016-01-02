@@ -1,0 +1,56 @@
+avvisi:
+  - title: Lezione del 18/12/2015
+    text: La lezione prevista per il 18 Dicembre 2015 è sospesa
+
+  - title: Soluzioni prova 25/11/2015
+    text: Link alle soluzioni
+    link: <%= dropbox %>/1516-published-infob/esami/1511_it.sol.pdf
+
+contacts:
+  - key: Docente
+    value: Vittorio Zaccaria
+  - key: Ricevimento
+    value: Martedì dopo la lezione (su appuntamento)
+  - key: Ufficio
+    value: Piazza Leonardo da Vinci 32 - 20133 Milano
+  - key: Orario lezioni
+    value: Oario delle lezioni e aule
+    link: https://www.google.com/calendar/embed?src=5tadrjuo9mo4l3fs9hpb6ut4as%40group.calendar.google.com&ctz=Europe/Rome
+  - key: Sezione
+    value: Cognomi F- Ma (soggetto a cambiamenti)
+  - key: Programma
+    value: Formato pdf
+    link: <%= dropbox %>/1516-published-infob/programmaInfoB.pdf
+
+temi:
+    - key: Raccolta temi esame A.A. 2008/2009
+      value: http://home.dei.polimi.it/loiacono/uploads/Teaching/InfoB/AA0809.zip
+
+    - key: Raccolta temi esame A.A. 2009/2010
+      value: http://home.dei.polimi.it/loiacono/uploads/Teaching/InfoB/AA0910.zip
+
+    - key: Raccolta temi esame A.A. 2010/2011
+      value: http://home.dei.polimi.it/loiacono/uploads/Teaching/InfoB/AA1011.zip
+
+    - key: Raccolta temi esame A.A. 2011/2012
+      value: http://home.dei.polimi.it/loiacono/uploads/Teaching/InfoB/AA1112.zip
+
+    - key: Raccolta temi esame A.A. 2012/2013
+      value: http://home.dei.polimi.it/loiacono/uploads/Teaching/InfoB/AA1213.zip
+
+    - key: Raccolta temi esame A.A. 2013/2014
+      value: http://home.dei.polimi.it/loiacono/uploads/Teaching/InfoB/AA1314.zip
+
+    - key: Raccolta temi esame A.A. 2013/2014
+      value: http://home.dei.polimi.it/loiacono/uploads/Teaching/InfoB/AA1415.zip
+
+    - key: Raccolta temi esame passati
+      value: http://home.dei.polimi.it/loiacono/uploads/Teaching/InfoB/tde.zip
+
+address:
+  - { key: "Name"     , value: "Vittorio Zaccaria" }
+  - { key: "Ufficio"  , value: "Dept. of Electronics, Information and Bioeng. Politecnico di Milano" }
+  - { key: "Street"   , value: "Via Ponzio 34/5" }
+  - { key: "City"     , value: "Milano, 20133 (IT)" }
+  - { key: "Telephone", value: "+39 02 2399 3642" }
+  - { key: "Email"    , value: "vittorio.zaccaria@polimi.it" }

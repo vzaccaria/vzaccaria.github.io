@@ -1,0 +1,73 @@
+
+@cell_size: 30px;
+@cell_margin: 2px;
+
+.calendar {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.calendar__day {
+	.border-box();
+	width: @cell_size;
+	height: @cell_size;
+	display: inline-block;
+	background-color: @cloud;
+	margin-right: @cell_margin;
+	.smallcapfont(@font-family,  @font-weight:300);
+	text-align: center;
+	font-size: .7em;
+	line-height: 3em;
+	margin-top: 2px;
+}
+
+.calendar__day_not_working {
+	background-color: darken(@cloud, 20%);
+}
+
+.calendar__day_not_in_month {
+	opacity: 0;
+}
+
+.calendar__month {
+	width: (@cell_size + @cell_margin) * 7;
+	.on-mobile({display: block});
+	.on-desktop({display: inline-block;});
+	vertical-align: top;
+	.var-margin-right(auto, 2%);
+	margin-left: auto;
+
+
+}
+
+.calendar__month_name {
+	.smallcapfont(@display-family);
+	text-align: center;
+}
+
+.calendar__category_infob {
+	background-color: lighten(@pumpkin,30%);
+}
+
+.calendar__category_blog {
+	background-color: lighten(@belize, 30%);
+}
+
+.calendar__day_is_today {
+	font-weight: 700;
+	color: @turquoise;
+}
+
+.calendar__tooltip {
+	position: absolute;
+	color: white;
+	background-color: @pumpkin;
+	border-radius: 5px;
+	display: block;
+	padding: 1em;
+	padding-top: .3em;
+	padding-bottom: .3em;
+	font-size: 1.3em;
+	margin-right: .5em;
+}

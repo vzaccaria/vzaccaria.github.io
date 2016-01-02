@@ -1,0 +1,257 @@
+---
+category: infob
+date: '2015-12-05 08:18:05'
+layout: post
+tags:
+    - voti
+title: Voti prova in itinere del 25 Novembre 2015
+---
+
+La tabella seguente riporta i voti (tra 8 e 17) della prima prova in itinere, ordinati per matricola. Vi ricordo che le condizioni per passare l'esame sono:
+
+ * almeno **18 punti totali** (prima + seconda prova).
+
+ * **almeno 8** punti in ciascuna prova.
+
+Vi ricordo che:
+
+* Non rispondo via mail a qualsiasi domanda sul compito. Se avete domande e volete vedere gli errori che avete fatto, chiedete un appuntamento e vi riceverò nel mio ufficio.
+
+* Coloro che sono risultati insufficienti non possono presentarsi alla seconda prova in itinere.
+
+* Coloro i quali siano risultati sufficienti ma hanno degli obblighi formativi (OFA), devono assicurarsi di averli risolti entro il primo appello formale del corso (Febbraio), altrimenti perdono il voto delle prove in itinere.
+
+* I voti non possono essere congelati da un anno all'altro o da un appello all'altro.
+
+| num | Matricola | Risultato     |
+| --- | --------- | ------------- |
+| 1   | 759510    | Assente       |
+| 2   | 774625    | Insufficiente |
+| 3   | 779608    | Assente       |
+| 4   | 788210    | 9             |
+| 5   | 788235    | 16            |
+| 6   | 788632    | Assente       |
+| 7   | 789399    | Insufficiente |
+| 8   | 789977    | 17            |
+| 9   | 790729    | Insufficiente |
+| 10  | 790838    | 8             |
+| 11  | 791568    | Assente       |
+| 12  | 792043    | 12            |
+| 13  | 806327    | 9             |
+| 14  | 806905    | 10            |
+| 15  | 807164    | 8             |
+| 16  | 807192    | 15            |
+| 17  | 807482    | 12            |
+| 18  | 807839    | Insufficiente |
+| 19  | 808484    | 16            |
+| 20  | 808490    | Assente       |
+| 21  | 808744    | Assente       |
+| 22  | 808904    | 13            |
+| 23  | 808989    | 12            |
+| 24  | 809373    | Insufficiente |
+| 25  | 812267    | Assente       |
+| 26  | 812576    | Assente       |
+| 27  | 825800    | Assente       |
+| 28  | 825902    | 8             |
+| 29  | 825932    | Insufficiente |
+| 30  | 825936    | 12            |
+| 31  | 826057    | Insufficiente |
+| 32  | 826169    | 15            |
+| 33  | 826684    | Insufficiente |
+| 34  | 826697    | 13            |
+| 35  | 826918    | 14            |
+| 36  | 826971    | 11            |
+| 37  | 827141    | Insufficiente |
+| 38  | 827259    | 8             |
+| 39  | 827583    | Insufficiente |
+| 40  | 827651    | Insufficiente |
+| 41  | 827782    | 9             |
+| 42  | 828034    | 12            |
+| 43  | 828056    | Assente       |
+| 44  | 828082    | Insufficiente |
+| 45  | 828146    | 13            |
+| 46  | 828259    | 10            |
+| 47  | 828437    | 16            |
+| 48  | 828517    | Assente       |
+| 49  | 828562    | 8             |
+| 50  | 828757    | 8             |
+| 51  | 828814    | Insufficiente |
+| 52  | 828847    | 9             |
+| 53  | 828912    | 13            |
+| 54  | 829456    | 17            |
+| 55  | 829489    | 12            |
+| 56  | 829637    | 10            |
+| 57  | 829650    | Assente       |
+| 58  | 829685    | 13            |
+| 59  | 829733    | Insufficiente |
+| 60  | 829850    | Insufficiente |
+| 61  | 829938    | 14            |
+| 62  | 829939    | Assente       |
+| 63  | 829950    | 12            |
+| 64  | 830326    | Insufficiente |
+| 65  | 831722    | Assente       |
+| 66  | 831816    | Insufficiente |
+| 67  | 831834    | Insufficiente |
+| 68  | 831865    | 9             |
+| 69  | 831889    | Insufficiente |
+| 70  | 831894    | 9             |
+| 71  | 832040    | Insufficiente |
+| 72  | 832164    | 10            |
+| 73  | 833096    | 9             |
+| 74  | 833463    | Assente       |
+| 75  | 834789    | 13            |
+| 76  | 835388    | Insufficiente |
+| 77  | 835459    | Insufficiente |
+| 78  | 840075    | Insufficiente |
+| 79  | 843311    | Insufficiente |
+| 80  | 843334    | Insufficiente |
+| 81  | 843346    | 15            |
+| 82  | 843360    | 16            |
+| 83  | 843388    | 12            |
+| 84  | 843390    | 9             |
+| 85  | 843412    | 8             |
+| 86  | 843440    | 14            |
+| 87  | 843443    | 11            |
+| 88  | 843529    | 17            |
+| 89  | 843535    | 16            |
+| 90  | 843546    | Insufficiente |
+| 91  | 843581    | 10            |
+| 92  | 843657    | 9             |
+| 93  | 843717    | 13            |
+| 94  | 843742    | 9             |
+| 95  | 843799    | 17            |
+| 96  | 843800    | Assente       |
+| 97  | 843834    | Assente       |
+| 98  | 843868    | Insufficiente |
+| 99  | 843916    | Insufficiente |
+| 100 | 843929    | Insufficiente |
+| 101 | 844043    | Assente       |
+| 102 | 844085    | Insufficiente |
+| 103 | 844204    | 12            |
+| 104 | 844213    | Assente       |
+| 105 | 844222    | Assente       |
+| 106 | 844267    | Assente       |
+| 107 | 844356    | 16            |
+| 108 | 844446    | Insufficiente |
+| 109 | 844459    | 8             |
+| 110 | 844490    | Insufficiente |
+| 111 | 844505    | Insufficiente |
+| 112 | 844573    | Assente       |
+| 113 | 844602    | 17            |
+| 114 | 844603    | Insufficiente |
+| 115 | 844613    | Assente       |
+| 116 | 844627    | Insufficiente |
+| 117 | 844636    | 17            |
+| 118 | 844663    | 9             |
+| 119 | 844690    | Assente       |
+| 120 | 844693    | Insufficiente |
+| 121 | 844763    | 15            |
+| 122 | 844767    | 14            |
+| 123 | 844774    | Assente       |
+| 124 | 844805    | Insufficiente |
+| 125 | 844811    | Assente       |
+| 126 | 844826    | 11            |
+| 127 | 844834    | 12            |
+| 128 | 844836    | Insufficiente |
+| 129 | 844875    | Insufficiente |
+| 130 | 844901    | 17            |
+| 131 | 844905    | Assente       |
+| 132 | 844919    | Insufficiente |
+| 133 | 844934    | 17            |
+| 134 | 845084    | Insufficiente |
+| 135 | 845270    | Assente       |
+| 136 | 845279    | 10            |
+| 137 | 845310    | 9             |
+| 138 | 845343    | Assente       |
+| 139 | 845364    | Insufficiente |
+| 140 | 845379    | Assente       |
+| 141 | 845448    | 17            |
+| 142 | 845449    | 10            |
+| 143 | 845452    | Insufficiente |
+| 144 | 845466    | 8             |
+| 145 | 845479    | 9             |
+| 146 | 845529    | Insufficiente |
+| 147 | 845541    | 17            |
+| 148 | 845565    | 9             |
+| 149 | 845566    | 17            |
+| 150 | 845571    | 12            |
+| 151 | 845588    | 17            |
+| 152 | 845601    | Insufficiente |
+| 153 | 845612    | Insufficiente |
+| 154 | 845644    | Insufficiente |
+| 155 | 845658    | Insufficiente |
+| 156 | 845715    | 12            |
+| 157 | 845827    | 17            |
+| 158 | 845834    | Insufficiente |
+| 159 | 845846    | 17            |
+| 160 | 845914    | Assente       |
+| 161 | 846033    | 17            |
+| 162 | 846172    | 15            |
+| 163 | 846186    | Assente       |
+| 164 | 846188    | 13            |
+| 165 | 846193    | 16            |
+| 166 | 846355    | 8             |
+| 167 | 846360    | 9             |
+| 168 | 846364    | 15            |
+| 169 | 846383    | 16            |
+| 170 | 846398    | 13            |
+| 171 | 846445    | 9             |
+| 172 | 846475    | Assente       |
+| 173 | 846492    | 9             |
+| 174 | 846493    | 15            |
+| 175 | 846565    | Insufficiente |
+| 176 | 846600    | 16            |
+| 177 | 846681    | 14            |
+| 178 | 846689    | 9             |
+| 179 | 846761    | Insufficiente |
+| 180 | 846772    | Assente       |
+| 181 | 846775    | 10            |
+| 182 | 846807    | 8             |
+| 183 | 846824    | 9             |
+| 184 | 846844    | Insufficiente |
+| 185 | 846861    | 17            |
+| 186 | 847001    | 16            |
+| 187 | 847020    | 12            |
+| 188 | 847032    | Insufficiente |
+| 189 | 847080    | 17            |
+| 190 | 847085    | 14            |
+| 191 | 847131    | 16            |
+| 192 | 847162    | 12            |
+| 193 | 847215    | Assente       |
+| 194 | 847290    | 15            |
+| 195 | 847338    | Insufficiente |
+| 196 | 847369    | Insufficiente |
+| 197 | 847373    | 8             |
+| 198 | 847459    | Assente       |
+| 199 | 847533    | Assente       |
+| 200 | 847562    | 11            |
+| 201 | 847565    | Insufficiente |
+| 202 | 847629    | 9             |
+| 203 | 847661    | Insufficiente |
+| 204 | 847734    | Assente       |
+| 205 | 847811    | Assente       |
+| 206 | 847868    | Insufficiente |
+| 207 | 847955    | Assente       |
+| 208 | 848034    | Insufficiente |
+| 209 | 848104    | 17            |
+| 210 | 848113    | Assente       |
+| 211 | 848260    | 16            |
+| 212 | 848825    | Assente       |
+| 213 | 848972    | 16            |
+| 214 | 848999    | 9             |
+| 215 | 849016    | 11            |
+| 216 | 849053    | 17            |
+| 217 | 849057    | Assente       |
+| 218 | 849058    | 15            |
+| 219 | 849076    | Insufficiente |
+| 220 | 849109    | Insufficiente |
+| 221 | 849127    | Assente       |
+| 222 | 849147    | 13            |
+| 223 | 849195    | 8             |
+| 224 | 849222    | 11            |
+| 225 | 849295    | 10            |
+| 226 | 850206    | Assente       |
+| 227 | 850210    | 15            |
+| 228 | 850437    | Insufficiente |
+| 229 | 854086    | 8             |
+| 230 | 859255    | 9             |

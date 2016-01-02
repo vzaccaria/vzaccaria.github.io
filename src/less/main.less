@@ -1,0 +1,87 @@
+@import url(http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+
+// http  : //flatuicolors.com/
+@blue    : darken(#7f8c8d, 40%);
+@cloud   : #ecf0f1;
+@silver  : #bdc3c7;
+@pumpkin : #d35400;
+@belize  : #2980b9;
+@silver  : #bdc3c7;
+@turquoise: #1abc9c;
+@pomegrenade: #c0392b;
+
+@font-family          : 'Lato', 'Helvetica';
+@display-family       : 'Francois One';
+@code-font-family     : 'Ubuntu Mono';
+
+@display-font: @display-family;
+@normal-font: @font-family;
+@code-font: @code-font-family;
+
+/* Absolute measures */
+@sidebar-width: 250px;
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.site_wrapper {
+  min-height: 100%;
+}
+
+
+.site_container {
+  .border-box();
+
+  .on-desktop({
+    padding-left: @sidebar-width;
+    });
+  .on-mobile({
+    });
+
+  background-color : white;
+
+}
+
+.sticky() {
+  position         : fixed;
+  top              : 0px;
+  margin           : 0px 0px;
+}
+
+.sidebar {
+    .border-box();
+  background-color : @blue;
+  height: 100%;
+
+  .on-desktop({
+      width: @sidebar-width;
+    .sticky();
+    });
+
+  .on-mobile({
+    width: 100%;
+    });
+
+  &:extend(.cf);
+}
+
+.well {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+
+@import 'reset.less';
+@import 'mixin.less';
+@import 'sidebar.less';
+@import 'posts.less';
+@import 'post.less';
+@import 'publications.less';
+@import 'research.less';
+@import 'bio.less';
+@import 'calendar.less';
+@import 'teaching.less';
+@import 'projects.less';
+@import 'videos.less';

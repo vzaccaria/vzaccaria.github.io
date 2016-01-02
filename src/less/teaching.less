@@ -1,0 +1,180 @@
+
+.teaching-page {
+	.center-within-container();
+	font-family: @font-family;
+}
+
+.teaching-page__title {
+	.smallcapfont(@display-family);
+	font-size: 3em;
+	line-height: .9em;
+	padding-top: .5em;
+}
+
+.teaching-page__year {
+	.smallcapfont(@font-family,  @font-weight:300);
+	letter-spacing: .04em;
+}
+
+@k: 25%;
+@v: 74%;
+
+.contacts {
+	margin-top: 1em;
+	margin-bottom: 1em;
+	font-family: @font-family;
+	font-size: .9em;
+	line-height: 1.5em;
+
+	&__detail {
+		.border-box();
+		display: block;
+	}
+
+	&__key {
+		.border-box();
+		font-size: .9em;
+		width: @k;
+		display: inline-block;
+		color: lighten(black, 60%);
+		vertical-align: top;
+	}
+
+	&__value {
+		.border-box();
+		width: @v;
+		font-size: .9em;
+		display: inline-block;
+		color: black;
+		vertical-align: top;
+	}
+
+}
+
+.lecture-material {
+
+	&__title {
+		.nice-section-title();
+	}
+
+	&__calendar {
+		margin-top: 1em;
+		margin-bottom: 2em;
+	}
+
+	&__description {
+		margin-top: 1em;
+		font-size: .9em;
+	}
+
+	&.only-desktop {
+		.show-desktop-block(); 
+	}
+
+}
+
+
+.lecture-messages {
+
+	&__title {
+		.nice-section-title();
+	}
+
+	&__messages {
+
+	}
+
+	&__message {
+		margin-top: 1.5em;
+		vertical-align: top;
+	}
+
+	&__date {
+		font-size: .8em;
+		line-height: 1.1111em;
+ 		display: block;
+		color: @pomegrenade;
+		margin-right: 1%;
+		vertical-align: top;
+		&:extend(.cf all);
+	}
+
+	&__text {
+		font-size: .9em;
+		line-height: 1.4em;
+		display: block;
+		vertical-align: top;
+		&:extend(.cf all);
+		margin-top: .2rem;
+		& p {
+			margin-top: 0px;
+		}
+	}
+
+}
+
+
+
+@import 'table.less';
+@import 'segment.less';
+
+.table {
+	& thead tr th div {
+		text-align: center;
+		.smallcapfont(@display-font);
+		font-size: 1.2rem;
+		font-weight: 300;
+	}
+	&__row {
+		height: 1.9rem
+	}
+	&__cell_title {
+		max-width: 400px;
+	}
+	&__cell_date {
+		max-width: 100px;
+	}
+	// &__cell_tags {
+	// 	max-width: 200px;
+	// }
+	&__cell_tag {
+		.tag(@pumpkin);
+		.border-box();
+		vertical-align: bottom;
+	}
+}
+
+/* Updated */
+
+.slider {
+	margin-top: .6rem;
+	border: 2px @pomegrenade solid;
+	height: .6rem;
+	border-radius: 7px;
+
+	&__slider-value {
+		width: 100%;
+		background: @pomegrenade;
+		height: .6rem;	
+	}
+
+
+}
+
+.exemd--diagram {
+
+	&__dot {
+		height: auto !important;
+		.on-mobile({
+			max-width: 100% !important;
+			});
+		.on-desktop({
+			width: auto !important;
+			});
+	}
+	box-shadow: none !important;
+	border: none !important;
+}
+
+
+

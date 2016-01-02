@@ -1,0 +1,184 @@
+
+
+@line-height: 1.2em;
+@margin-right: .5em;
+
+.publications {
+	background-color: white;
+	// background-color: darken(white, 5%);
+	font-family: @font-family;
+	.center-within-container();
+}
+
+.publications__header {
+	.border-box();
+	display: block;
+
+	padding-top: 1em;
+	font-family: @display-family;
+	.smallcapfont(@display-family);
+	border-bottom: 1px fade(darken(@cloud, 50%), 20%) solid;
+	padding-bottom: .2em;
+	font-size: 2em;
+}
+
+.publications__container {
+	.border-box();
+	display: block;
+	padding-top: 3em;
+}
+
+.publication {
+	background-color: #fbfbfb;
+	box-shadow: rgba(0,0,0,0.06) 0 0 10px;
+	border: 1px solid #d8d8d8;
+	margin-bottom: 3em;
+	padding: 1em;
+	line-height: @line-height;
+	// border-bottom: 1px fade(black, 20%) solid;
+}
+
+.publication__title {
+	font-weight: 300;
+	line-height: @line-height;
+	font-size: 1.2em;
+	.on-mobile({
+		font-size: 0.8rem;
+		line-height: 1rem;
+		});
+}
+
+.publication__authors {
+	margin-top: 2em;
+	font-size: .8em;
+	.on-mobile({
+		font-size: 0.6rem;
+		line-height: 1rem;
+	});
+}
+
+.publication__authors__myname {
+	font-weight: 700;
+}
+
+.publication__authors__myname,
+.publication__authors__name {
+	display: inline-block;
+	margin-right: 1em;
+	.on-mobile({
+		margin-right: 0.6em;
+		});
+}
+
+.publication__authors__name {
+	color: fade(black, 50%);
+}
+
+.publication__info {
+	font-size: 1em;
+}
+
+.publication__category {
+	.on-mobile({
+		display: none !important;
+		});
+}
+
+
+.publication__category--conference {
+	.tag(#2ecc71);
+	margin-left: 0;
+	display: inline-block;	
+	margin-right: @margin-right;
+}
+
+.publication__category--journal {
+	.tag(#2980b9);
+	margin-left: 0;
+	display: inline-block;	
+	margin-right: @margin-right;
+}
+
+.publication__category--book {
+	.tag(#8e44ad);
+	margin-left: 0;
+	display: inline-block;	
+	margin-right: @margin-right;
+}
+
+.publication__category--bookchapter {
+	.tag(#c0392b);
+	margin-left: 0;
+	display: inline-block;	
+	margin-right: @margin-right;
+}
+
+.publication__category--workshop {
+	.tag(#7f8c8d);
+	margin-left: 0;
+	display: inline-block;	
+	margin-right: @margin-right;
+}
+
+.publication__category--patent {
+	.tag(#f39c12);
+	margin-left: 0;
+	display: inline-block;	
+	margin-right: @margin-right;
+}
+
+.publication__name {
+	display: inline-block;
+	font-size: .8em;
+	margin-right: @margin-right;
+	padding-right: @margin-right;
+	border-right: 1px fade(black, 20%) solid;
+}
+
+.publication__date
+{
+	display: inline-block;
+	font-size: .8em;
+	margin-right: @margin-right;
+	padding-right: @margin-right;
+	border-right: 1px fade(black, 20%) solid;
+}
+
+.publication__pages {
+	display: inline-block;
+	font-size: .8em;
+	margin-right: @margin-right;
+	padding-right: @margin-right;
+	// border-right: 1px fade(black, 20%) solid;
+	color: lighten(black, 50%) !important;
+}
+
+.publication__href {
+	text-align: right;
+}
+
+.publication__href__doi {
+	display: inline-block;
+
+}
+
+.publication__href__doi__icon {
+	color: lighten(black, 70%);
+	display        : inline-block;
+	min-width      : 1.2em;
+	font-size: 1.2em;
+	text-align     : center;
+	.border-box();
+}
+
+.publication__href__doi__icon-dl {
+	color: #2ecc71;
+	display        : inline-block;
+	min-width      : 1.2em;
+	font-size: 1.2em;
+	text-align     : center;
+	.border-box();
+}
+
+
+

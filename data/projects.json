@@ -1,46 +1,38 @@
 [
-
-	{
-		"name": "exemd",
-		"description": "Execute and preprocess Markdown codeblocks",
-		"image": "img/exemd.jpg",
-		"link": "http://www.vittoriozaccaria.net/exemd/"
-	},
-
-	{
-		"name": "Dyn-CSS",
-		"description": "A CSS extension to dynamically evaluate and modify element properties",
-		"image": "img/dyn-css-image.jpg",
-		"link": "http://www.vittoriozaccaria.net/dyn-css/"
-	},
-
-	{
-		"name": "Sweet Angle",
-		"description": "An easy DSL for Angularjs directives",
-		"image": "img/sweet-angle-image.jpg",
-		"link": "http://www.vittoriozaccaria.net/sweet-angle/"
-	},
-
-	{
-		"name": "Chained",
-		"description": "A library for easier function chaining in Javascript",
-		"image": "img/chained-image.jpg",
-		"link": "http://www.vittoriozaccaria.net/chained/"
-	},
-
-
-	{
-		"name": "Fluent FSM",
-		"description": "The ultimate finite state machine library for Nodejs",
-		"image": "img/fsm-express-project-image.jpg",
-		"link": "http://www.vittoriozaccaria.net/fluent-fsm/"
-	},
-
-	{
-		"name": "Web Make",
-		"description": "Makefile for web apps",
-		"image": "img/webmake-image.jpg",
-		"link": "http://www.vittoriozaccaria.net/wmake"
-	}
-
+  {
+    "link": "http:\/\/www.vittoriozaccaria.net\/exemd\/",
+    "image": "<%= imageurl %>/exemd.jpg",
+    "description": "Execute and preprocess Markdown codeblocks",
+    "name": "exemd"
+  },
+  {
+    "link": "http:\/\/www.vittoriozaccaria.net\/dyn-css\/",
+    "image": "<%= imageurl %>/dyn-css-image.jpg",
+    "description": "A CSS extension to dynamically evaluate and modify element properties",
+    "name": "Dyn-CSS"
+  },
+  {
+    "link": "http:\/\/www.vittoriozaccaria.net\/sweet-angle\/",
+    "image": "<%= imageurl %>/sweet-angle-image.jpg",
+    "description": "An easy DSL for Angularjs directives",
+    "name": "Sweet Angle"
+  },
+  {
+    "link": "http:\/\/www.vittoriozaccaria.net\/chained\/",
+    "image": "<%= imageurl %>/chained-image.jpg",
+    "description": "A library for easier function chaining in Javascript",
+    "name": "Chained"
+  },
+  {
+    "link": "http:\/\/www.vittoriozaccaria.net\/fluent-fsm\/",
+    "image": "<%= imageurl %>/fsm-express-project-image.jpg",
+    "description": "The ultimate finite state machine library for Nodejs",
+    "name": "Fluent FSM"
+  },
+  {
+    "link": "http:\/\/www.vittoriozaccaria.net\/wmake",
+    "image": "<%= imageurl %>/webmake-image.jpg",
+    "description": "Makefile for web apps",
+    "name": "Web Make"
+  }
 ]

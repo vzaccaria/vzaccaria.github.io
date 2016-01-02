@@ -1,0 +1,234 @@
+@post-spacing: 10px;
+
+.post_container {
+  .border-box();
+  display     : block;
+  .center-within-container();
+  padding-top : 3em;
+}
+
+.post_container__post__title {
+  font-family    : @display-family;
+  font-weight    : 300;
+  .var-font-size(1.7em, 2.2em);
+  border-bottom  : 1px fade(darken(@cloud, 50%), 20%) solid;
+  padding-bottom : .2em;
+}
+
+.post_container__post__subtitle {
+  font-family : @font-family;
+  font-weight : 300;
+  font-size   : 1em;
+  line-height : 1.5em;
+  margin-top  : @post-spacing;
+}
+
+
+@margin: .5em;
+
+.post_container__post__date {
+  display: inline-block;
+  border-right   : 2px solid fade(@blue, 10%);
+  padding-right  : @margin;
+    .on-mobile({
+    font-size: 0.9rem;
+    });
+}
+
+.post_container__post__category {
+  .show-desktop-inline-block();
+  padding-left: @margin;
+  border-right   : 2px solid fade(@blue, 10%);
+  padding-right  : @margin;
+}
+
+.post_container__post__tags {
+  .show-desktop-inline-block();
+  .border-box();
+  height: 100%;
+  padding-left: @margin;
+  border-right   : 2px solid fade(@blue, 10%);
+  padding-right  : @margin;
+  vertical-align: bottom;
+}
+
+.post_container__post__tag {
+  .tag(@pumpkin);
+  .border-box();
+  vertical-align: bottom;
+}
+
+.post_container__post__date_value {
+  margin-left: @margin;
+  display: inline-block;
+
+}
+
+.post_container__post__category_value {
+  margin-left: @margin;
+  display: inline-block;
+}
+
+.wrap-pre() {
+ white-space: pre-wrap;       /* css-3 */
+ white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+ white-space: -pre-wrap;      /* Opera 4-6 */
+ white-space: -o-pre-wrap;    /* Opera 7 */
+ word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+.post_text ul {
+  .on-mobile({
+    padding-left: 1rem;
+    });
+}
+
+.post_text ol {
+  .on-mobile({
+    padding-left: 1.5rem;
+    });
+}
+
+
+.post_text p code,
+.post_text ul code,
+.post_text ol code
+{
+  font-family   : @code-font-family !important;
+  border-radius : 5px;
+  color         : darken(@cloud,70%);
+  background-color:   darken(#fbfbfb, 3%);
+  // border        : 1px solid darken(@cloud,50%);
+  // border-radius : 5px;
+  padding       : .2em;
+  padding-left: .4em;
+  padding-right: .4em;
+  .border-box();
+  .wrap-pre();
+
+  & pre {
+    background: #f8f8f8;
+  }
+}
+
+.post_text pre code {
+  border-radius    : 5px;
+  padding          : 1em;
+  background-color : white;
+  box-shadow: rgba(0,0,0,0.06) 0 0 10px;
+  border: 1px solid #d8d8d8;
+  background: #f8f8f8;
+}
+
+.post_text pre > code {
+  // font-size        : 18px;
+  line-height      : 27px;
+  font-family      : @code-font-family;
+  .border-box();
+  .wrap-pre();
+}
+
+.post_text img {
+    display: block;
+    max-width: 80%;
+    height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  box-shadow: rgba(0,0,0,0.06) 0 0 10px;
+  border: 1px solid #d8d8d8;
+}
+
+@hp: .7em;
+@vp: .05em;
+
+@tc: #fbfbfb;
+
+.post_text table {
+  .nice-card();
+  background-color: @tc;
+  font-size: .8em;
+  padding: .5em;
+  margin: auto;
+  & td,
+  & th {
+    padding-left: @hp;
+    padding-right: @hp;
+    padding-top: @vp;
+    padding-bottom: @vp;
+    border: none;
+  }
+  & th {
+    line-height: 2em;
+    color: @belize;
+    text-align: left;
+  }
+  & tbody tr:hover {
+    background-color: darken(@tc, 3%);
+  }
+}
+
+.post_text .footnote {
+  margin: 0;
+  font-size: .8em;
+  padding-top: 1em;
+
+  & sup {
+    color: @pumpkin;
+    margin-right: .5em;
+  }
+  & a {
+    margin-left: 1em;
+  }
+}
+
+.post_text hr {
+  // height: 1.5em;
+  width: 20%;
+  margin-top: 6em;
+  margin-left: 0;
+  // margin-left: 0;
+}
+
+.post_text blockquote {
+  background: darken(white, 5%);
+  margin: 0;
+  padding: 20px;
+  border-radius: 5px;
+  & p {
+    margin: 0;
+  }
+}
+
+.share_buttons__message {
+  display: inline-block;
+  .on-mobile({
+    display: none;
+    })
+}
+.share_buttons__share_reddit,
+.share_buttons__share_twitter,
+.share_buttons__share_github,
+.share_buttons {
+  .border-box();
+  display: inline-block;
+  padding-left: @margin;
+}
+
+.share_buttons__share_reddit {
+  color: @pumpkin;
+}
+
+.share_buttons__share_twitter {
+  color: @belize;
+}
+
+
+
+.post_text {
+  font-family: @font-family;
+  .var-font-size(1rem, 1.2rem);
+  line-height: 1.6;
+  margin-top: 2em;
+  margin-bottom: 10em;
+}
