@@ -1,5 +1,8 @@
 avvisi:
 
+  - title: Lezione dell'8 gennaio 2016
+    text: Si ricorda che la lezione dell'8 Gennaio si svolgera' regolarmente come da programma.
+
   - title: Soluzioni prova 25/11/2015
     text: Link alle soluzioni
     link: <%= dropbox %>/1516-published-infob/esami/1511_it.sol.pdf
