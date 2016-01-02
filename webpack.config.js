@@ -46,7 +46,7 @@ var mainConfig = {
     entry: './src/js/index.jsx',
     output: {
         path: __dirname,
-        filename: '/assets/client.js',
+        filename: 'assets/client.js',
         publicPath: '/'
     },
     node: {
@@ -64,15 +64,6 @@ var mainConfig = {
     plugins: [uglifier, compressor, htmlPlugin]
 }
 
-function getStageConfig(stageConfig) {
-    _.set(stageConfig, "output.path", __dirname);
-    _.set(stageConfig, "output.publicPath", '/website-light');
-    _.set(stageConfig, "resolve.alias.site-config", __dirname + "/data/site-stage.json");
-    _.set(stageConfig, "plugins", [htmlPlugin, uglifier, compressor]);
-    return stageConfig
-}
-
-
 function getDevConfig(devConfig) {
     _.set(devConfig, "output.publicPath", '');
     _.set(devConfig, "resolve.alias.site-config", __dirname + "/data/site-dev.json");
@@ -84,9 +75,8 @@ function getDevConfig(devConfig) {
 
 
 var production = _.get(process.env, "PROD", false);
-var stage = _.get(process.env, "STAGE", false);
 
-if (!production && !stage) {
+if (!production) {
     module.exports = getDevConfig(mainConfig);
     console.log("**DEVELOPMENT BUILD**");
     console.log(JSON.stringify(module.exports, 0, 4));
@@ -94,10 +84,6 @@ if (!production && !stage) {
     if (production) {
         module.exports = mainConfig
         console.log("**PRODUCTION BUILD**");
-        console.log(JSON.stringify(module.exports, 0, 4));
-    } else {
-        module.exports = getStageConfig(mainConfig);
-        console.log("**STAGE BUILD**");
         console.log(JSON.stringify(module.exports, 0, 4));
     }
 }
