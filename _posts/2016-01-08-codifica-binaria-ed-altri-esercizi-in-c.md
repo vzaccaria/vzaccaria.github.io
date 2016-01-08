@@ -154,7 +154,7 @@ int num_users;                  /* Numero di utenti in `database`*/
 Si riscriva la definizione del tipo `photo_t` estendendola in modo
 tale che includa anche le informazioni relative al numero di gradimenti (anche detti *like*) che ciascuna foto ha ricevuto, insieme al titolo e la data (giorno, mese, anno) di pubblicazione della foto.
 
-    ``` c
+``` c
     typedef struct {
         char link[40];
         int num_likes;
@@ -167,10 +167,10 @@ tale che includa anche le informazioni relative al numero di gradimenti (anche d
         int mese;
         int anno;
     } data;
-    ```
+```
 
 ## Domanda 2
-Si supponga che `database` e `num_users` siano stati Definendo le aggiuntive variabili necessarie, scrivere una di codice in linguaggio C che per ciascun utente stampi a video il titolo della sua foto che ha ricevuto il massimo numero di like riportando il nome dell'utente, il titolo della foto e il numero di like che questa ha ricevuto.
+Si supponga che `database` e `num_users` siano stati gia' popolati. Definendo le aggiuntive variabili necessarie, scrivere una di codice in linguaggio C che per ciascun utente stampi a video il titolo della sua foto che ha ricevuto il massimo numero di like riportando il nome dell'utente, il titolo della foto e il numero di like che questa ha ricevuto.
 
 ``` c
 int i, j, max, posizione;
