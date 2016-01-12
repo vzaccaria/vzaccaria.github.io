@@ -7,6 +7,16 @@ category : infob
 tags : ['virgola fissa', 'virgola mobile', 'algebra di boole']
 ---
 
+**Update**: oggi ho commesso un errore nella codifica di 0.25 in **complemento a due**. Sono effettivamente necessarie **due sole** cifre frazionarie.
+
+La formula per interpretare numeri del genere sarebbe:
+
+$$ b_1 \cdot (-2^{-1}) + b_2\cdot2^{-2}$$
+
+dove risulta chiaro che per $b_1 = 0$ e $b_2 = 1$ otteniamo 0.25.
+
+---
+
 Slides sull'[algebra di Boole](https://dl.dropboxusercontent.com/u/5867765/1516-published-infob/le_algebra_logica.pdf).
 
 Esercizi visti oggi a lezione:
