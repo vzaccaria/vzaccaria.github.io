@@ -52,6 +52,10 @@ let subTitle = (postData) => {
     );
 }
 
+function capitaliseFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 export default class BlogPage extends React.Component {
 
     constructor() {
@@ -102,7 +106,7 @@ export default class BlogPage extends React.Component {
             let c = _.partial(_b, 'post_container');
             return (
                 <div className={c()} >
-                    <div className={c('post__title')}> {this.state.postData.title} </div>
+                    <div className={c('post__title')}> {capitaliseFirstLetter(this.state.postData.title)} </div>
                     {subTitle(this.state.postData)}
                     <div className="post_text">
                         <div dangerouslySetInnerHTML={{ __html: this.state.postData.markup}}/>

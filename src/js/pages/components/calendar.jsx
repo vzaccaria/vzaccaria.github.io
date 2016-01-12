@@ -15,6 +15,9 @@ const debug = require('../../react-utils/debug')(__filename);
 /* Uniform date constructor for comparisons */
 let _d = (d) => d.format('DD-MM-YYYY');
 
+function capitaliseFirstLetter(string) {
+ return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 export default class Calendar extends React.Component {
 
@@ -103,7 +106,7 @@ export default class Calendar extends React.Component {
 
         if(day.title) {
             return (
-            <Tooltip key={day.index} placement="top" overlay={day.title}>
+            <Tooltip key={day.index} placement="top" overlay={capitaliseFirstLetter(day.title)}>
                 <div style={style} className={classes.join(' ')} onClick={gotoDay(day)}>
                     {number}
                 </div>
