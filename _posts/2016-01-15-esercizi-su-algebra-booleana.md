@@ -40,24 +40,32 @@ ottenuta dalla prima formula sostituendo la variabile A con (`h > 0`), la variab
 
 Si risponda, giustificando le risposte, alle seguenti domande:
 
-a.    L'espressione è  vera o falsa quando (`k = 1`) e (`h = 11`)?
+1. L'espressione è  vera o falsa quando (`k = 1`) e (`h = 11`)?
+   
+   Dalle ipotesi abbiamo che:
 
-        ! ( (h > 0) || ! (h < 2) ) && ( ( ! (k < -3) || (h < 2) ) || (k < -3) )
-        ! ( (11 > 0) || ! (11 < 2) ) && ( ( ! (1 < -3) || (11 < 2) ) || (1 < -3) )
-        ! ( Vero || Vero) && ( ( Vero || Falso ) || Falso )
-        ! Vero && ( Vero || Falso )
-        Falso
+           ! ( (h > 0) || ! (h < 2) ) && ( ( ! (k < -3) || (h < 2) ) || (k < -3) )
+        =  ! ( (11 > 0) || ! (11 < 2) ) && ( ( ! (1 < -3) || (11 < 2) ) || (1 < -3) )
+        =  ! ( Vero || Vero) && ( ( Vero || Falso ) || Falso )
+        =  ! Vero && ( Vero || Falso )
+        =  Falso
+    
+   L'espressione e' falsa 
 
 
-b.    Se (`k < -4`), per quali valori di `h` l'espressione è falsa?
+2. Se (`k < -4`), per quali valori di `h` l'espressione è falsa?
+   
+   Dalle ipotesi abbiamo che:
 
-        ! ( (h > 0) || ! (h < 2) ) && ( ( ! Vero || (h < 2) ) || Vero )
-        ! ( (h > 0) || ! (h < 2) ) && ( ( Falso || (h < 2) ) || Vero )
-        ! ( (h > 0) || ! (h < 2) ) && Vero
-
-    quindi `! ( (h > 0) || ! (h < 2) )` deve essere Falso
-
-    quindi `(h > 0) || ! (h < 2)` deve essere Vero, ovvero per `h>0`
+          ! ( (h > 0) || ! (h < 2) ) && ( ( ! Vero || (h < 2) ) || Vero )
+        = ! ( (h > 0) || ! (h < 2) ) && ( ( Falso || (h < 2) ) || Vero )
+        = ! ( (h > 0) || ! (h < 2) ) && Vero
+   
+   quindi `! ( (h > 0) || ! (h < 2) )` deve essere Falso
+   
+   quindi `(h > 0) || ! (h < 2)` deve essere Vero, 
+   
+   quindi `h>0` deve essere Vero
 
 # Tabelle della verita'
 
