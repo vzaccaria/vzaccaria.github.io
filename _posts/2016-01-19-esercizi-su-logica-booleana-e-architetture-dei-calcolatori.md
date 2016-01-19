@@ -15,7 +15,7 @@ Si consideri la seguente espressione booleana:
 
     NOT (A AND NOT B) AND (NOT B OR C)
 
-Si compili la seguente tabella della verit√† (in cui 0 rappresenta il valore logico FALSO, 1 il valore VERO):
+Si compili la seguente tabella della verita' (in cui 0 rappresenta il valore logico FALSO, 1 il valore VERO):
 
 |  A |  B |  C | E1: A AND NOT B | NOT E1 | E2: (NOT B OR C) | Finale |
 |----|----|----|-----------------|--------| ---------------- |--------|
@@ -39,7 +39,7 @@ ottenuta dalla prima formula sostituendo la variabile A con `x>3`, la variabile 
 
 		Per (A = 0) (B = 1) (C = 1) l'espressione e' vera.
 
-* Se y>5, per quali valori di x l'espressione e' vera?
+* Se `y>5`, per quali valori di `x` l'espressione e' vera?
 
 		Se (A = 0) (B = 1) (C = 1) oppure (A = 1) (B = 1) (C = 1) e' vera allora
 		(B = 1) (C = 1) e' vera quindi,
