@@ -46,4 +46,5 @@ ottenuta dalla prima formula sostituendo la variabile A con `x>3`, la variabile 
 		y>5 e Finale=1    ↔
 		B=1 e Finale=1    ↔
 		B=1 e C=1
-       L'espressione è quindi vera per x<2
+
+     L'espressione è quindi vera per x<2
