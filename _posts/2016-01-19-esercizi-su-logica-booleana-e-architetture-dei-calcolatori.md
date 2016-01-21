@@ -37,10 +37,13 @@ ottenuta dalla prima formula sostituendo la variabile A con `x>3`, la variabile 
 
 * L'espressione è vera o falsa quando `x=1` e `y=7`?
 
-		Per (A = 0) (B = 1) (C = 1) l'espressione e' vera.
+		x=1 e y=7            ↔ 
+		A=0 e B=1 e C=1      ↔
+		l'espressione è vera (guardando la tabella).
 
 * Se `y>5`, per quali valori di `x` l'espressione e' vera?
 
-		Se (A = 0) (B = 1) (C = 1) oppure (A = 1) (B = 1) (C = 1) e' vera allora
-		(B = 1) (C = 1) e' vera quindi,
-		per (y > 5) e (x < 2) e' vera.
+		y>5 e Finale=1    ↔
+		B=1 e Finale=1    ↔
+		B=1 e C=1
+       L'espressione è quindi vera per x<2
