@@ -112,6 +112,13 @@ function renderInfo(name, data) {
         </div>);
 }
 
+
+let renderMJ = () => {
+    MathJax.Hub.Config({tex2jax:{inlineMath:[['$','$'],['\\(','\\)']]}});
+    MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+}
+
+
 export default class Teaching extends React.Component {
 
     constructor() {
@@ -126,6 +133,10 @@ export default class Teaching extends React.Component {
             this.setState({valid, data});
             return null;
         })
+    }
+
+    componentDidUpdate() {
+        renderMJ();
     }
 
     render() {
