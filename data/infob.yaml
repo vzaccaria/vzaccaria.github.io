@@ -3,7 +3,7 @@ avvisi:
   - text: |
     "Vi ricordo che coloro che hanno passato le prove in itinere non devono, di regola, 
     fare un esame orale a meno che non ci sia qualche dubbio da sciogliere da parte mia.
-    La regola per la sufficienza e' la seguente $$p_1 + p_2 \geq 18 \textrm{AND} p_1 \geq 8 \textrm{AND} p_2 \geq 8$$ 
+    La regola per la sufficienza e' la seguente $$p_1 + p_2 \\geq 18 \\textrm{AND} p_1 \\geq 8 \\textrm{AND} p_2 \\geq 8$$ 
     dove $p_1,p_2$ sono da intendersi i voti della prima e seconda prova rispettivamente."
   
   - title: Note sull'appello ordinario
