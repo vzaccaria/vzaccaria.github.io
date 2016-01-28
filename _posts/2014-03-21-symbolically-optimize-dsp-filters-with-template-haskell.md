@@ -10,7 +10,7 @@ description : Template Haskell is a powerful tool to do general and domain speci
 
 
 
-*Note: This is part 3 of small tutorial on Template Haskell I wrote on my blog; the tutorial is composed of [part1](http://www.vittoriozaccaria.net/blog/2014/02/24/towards-template-programming-with-haskell.html), [part 2](http://www.vittoriozaccaria.net/blog/2014/03/12/implementing-a-simple-dsp-filter-library-with-template-haskell.html) and [part 3](http://www.vittoriozaccaria.net/blog/2014/03/21/symbolically-optimize-dsp-filters-with-template-haskell.html)*.
+*Note: This is part 3 of small tutorial on Template Haskell I wrote on my blog; the tutorial is composed of [part1](http://www.vittoriozaccaria.net/#/blog/2014/02/24/towards-template-programming-with-haskell.html), [part 2](http://www.vittoriozaccaria.net/#/blog/2014/03/12/implementing-a-simple-dsp-filter-library-with-template-haskell.html) and [part 3](http://www.vittoriozaccaria.net/#/blog/2014/03/21/symbolically-optimize-dsp-filters-with-template-haskell.html)*.
 
 In the previous part of this tutorial, we introduced an FIR filter generator  in Template Haskell. The filter generator produces a syntactic representation of FIR Filters in the Haskell Language. An example application is the following:
 
