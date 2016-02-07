@@ -8,7 +8,7 @@ tags : ['']
 ---
 
 
-* I voti elencati sotto sono quelli __finali__, ovvero comprensivi della prima e seconda prova in itinere.
+I voti elencati sotto sono quelli __finali__, ovvero comprensivi della prima e seconda prova in itinere.
 
 * Le condizioni per passare l'esame sono:
 
