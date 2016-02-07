@@ -10,10 +10,10 @@ tags : ['']
 
 I voti elencati sotto sono quelli __finali__, ovvero comprensivi della prima e seconda prova in itinere.
 
-* Le condizioni per passare l'esame sono:
+Le condizioni per passare l'esame sono:
 
-     * almeno **18 punti totali** (prima + seconda prova).
-     * **almeno 8** punti in ciascuna prova.
+* almeno **18 punti totali** (prima + seconda prova).
+* **almeno 8** punti in ciascuna prova.
 
 I voti sufficienti verranno automaticamente registrati martedi' 9 Febbraio alle ore 12:00, quindi:
 
