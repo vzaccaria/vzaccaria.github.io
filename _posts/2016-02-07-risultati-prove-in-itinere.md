@@ -19,7 +19,7 @@ I voti sufficienti verranno automaticamente registrati martedi' 9 Febbraio alle 
 
  * Coloro che **non accettano** il voto (sufficiente) nella seguente tabella, sono pregati di avvisarmi __immediatamente__ via mail.
 
- * Coloro che **accettano** il voto sufficiente sono pregati di **dis-iscriversi** dall'appello del 19 Febbraio.
+ * Coloro che **accettano** il voto sufficiente sono pregati di **dis-iscriversi** dall'appello del 18 Febbraio.
 
 Ecco finalmente i voti:
 
