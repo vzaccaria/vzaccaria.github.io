@@ -17,10 +17,10 @@ Scrivere una porzione di codice che chieda all’utente di inserire da tastiera 
 
 ### Soluzione
 ```c
-    int n;
-    do {
-        scanf("%d",&n);
-    } while (n<=0 || n>100 || n%2 == 1);
+int n;
+do {
+    scanf("%d",&n);
+} while (n<=0 || n>100 || n%2 == 1);
 ```
 
 ## Domanda 2
@@ -32,19 +32,20 @@ verifichi se l’array inserito è a somma costante e stampi a video un messaggi
 ```c
     int i,n,somma,cost=1,a[100];
 
-    for (i=0; i<n; i++)
+    for (i=0; i<n; i++) {
         scanf("%d",&a[i]);
-    	somma = a[0]+a[n-1];
-       for (i=1; i<n/2; i++) {
-         if (a[i]+a[n-i-1] != somma) {
-            cost = 0;
-            break;
+        somma = a[0]+a[n-1];
+        for (i=1; i<n/2; i++) {
+            if (a[i]+a[n-i-1] != somma) {
+                cost = 0;
+                break;
+            }
         }
     }
     if (cost==1)
         printf("Array a somma costante\n");
     else
-       ß printf("Array non a somma costante\n");
+        printf("Array non a somma costante\n");
     return 0;
 ```
 
@@ -129,7 +130,7 @@ Si determini la codifica del valore 48.15 in virgola fissa:
 
 ```
  0 1 1 0 0 0 0     0 0 1 0 0 1 1 0 0 1 1 0 0 1 1 0 0 1 1 0 0
-┗━┻━┻━┻━┻━┻━┻━┛ , ┗━┻━┻━┻━┻━┻━┻━┻━┻━┻━┻━┻━┻━┻━┻━┻━┻━┻━┻━┻━┻━┛
+
      (7 bit)                       (20 bit)
   parte intera                parte frazionaria
 ```
@@ -142,7 +143,7 @@ Si determini la codifica in virgola mobile di 48.15:
 
 ```
  0  1 0 0 0 0 1 0 0     1 0 0 0 0 0 0 1 0 0 1 1 0 0 1 1 0 0 1 1 0 0 1
-┗━┛┗━┻━┻━┻━┻━┻━┻━┻━┛ , ┗━┻━┻━┻━┻━┻━┻━┻━┻━┻━┻━┻━┻━┻━┻━┻━┻━┻━┻━┻━┻━┻━┻━┛
+
  S        E                                     M
 ```
 
