@@ -8,18 +8,18 @@ tags : ['']
 ---
 
 
-* I voti elencati sotto sono quelli __finali__, ovvero comprensivi della prima e seconda prova in itinere.
+I voti elencati sotto sono quelli __finali__, ovvero comprensivi della prima e seconda prova in itinere.
 
-* Le condizioni per passare l'esame sono:
+Le condizioni per passare l'esame sono:
 
-     * almeno **18 punti totali** (prima + seconda prova).
-     * **almeno 8** punti in ciascuna prova.
+* almeno **18 punti totali** (prima + seconda prova).
+* **almeno 8** punti in ciascuna prova.
 
 I voti sufficienti verranno automaticamente registrati martedi' 9 Febbraio alle ore 12:00, quindi:
 
  * Coloro che **non accettano** il voto (sufficiente) nella seguente tabella, sono pregati di avvisarmi __immediatamente__ via mail.
 
- * Coloro che **accettano** il voto sufficiente sono pregati di **dis-iscriversi** dall'appello del 19 Febbraio.
+ * Coloro che **accettano** il voto sufficiente sono pregati di **dis-iscriversi** dall'appello del 18 Febbraio.
 
 Ecco finalmente i voti:
 
