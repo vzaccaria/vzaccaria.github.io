@@ -30,23 +30,23 @@ verifichi se l’array inserito è a somma costante e stampi a video un messaggi
 ### Soluzione
 
 ```c
-    int i,n,somma,cost=1,a[100];
+int i,n,somma,cost=1,a[100];
 
-    for (i=0; i<n; i++) {
-        scanf("%d",&a[i]);
-        somma = a[0]+a[n-1];
-        for (i=1; i<n/2; i++) {
-            if (a[i]+a[n-i-1] != somma) {
-                cost = 0;
-                break;
-            }
+for (i=0; i<n; i++) {
+    scanf("%d",&a[i]);
+    somma = a[0]+a[n-1];
+    for (i=1; i<n/2; i++) {
+        if (a[i]+a[n-i-1] != somma) {
+            cost = 0;
+            break;
         }
     }
-    if (cost==1)
-        printf("Array a somma costante\n");
-    else
-        printf("Array non a somma costante\n");
-    return 0;
+}
+if (cost==1)
+    printf("Array a somma costante\n");
+else
+    printf("Array non a somma costante\n");
+return 0;
 ```
 
 # Esercizio 2
@@ -91,12 +91,13 @@ Scrivere un frammento di codice in C che, ipotizzando che la variabile `db` sia 
 int i,j,k,n;
 
 k = 0;
-for (i=0; i<100; i++)
-{
+for (i=0; i<100; i++) {
     n=0;
-    for (j=0; j<db[i].npiani; j++)
-        if (db[i].piani[j].dati > 2)
+    for (j=0; j<db[i].npiani; j++) {
+        if (db[i].piani[j].dati > 2) {
             n++;
+        }
+    }
     if (n>=3) {
         sel[k] = db[i];
         k++;
@@ -111,9 +112,11 @@ Scrivere un frammento di codice C che stampi a video la percentuale degli operat
 
 ```c
 n=0;
-for (i=0; i<k; i++)
-    if (strcmp(sel[i].paese,"Italia")==0)
+for (i=0; i<k; i++) {
+    if (strcmp(sel[i].paese,"Italia")==0) {
         n++;
+    }
+}
 
 printf("La percentuale degli operatori italiani è: %f\n",(n*100.0)/k);
 ```
