@@ -9,9 +9,10 @@
 
     summary: "I leverage my love of learning and mastery of computer engineering to transform ideas to products. In my industrial and academic experience I discovered that team coordination and leadership are at least as important as technical competence for a successful project outcome. I feel that these abilities have become natural to me and that is why I want to step up to the next level."
 
-    websiteSummary: "I am an assistant professor at Politecnico di Milano and I have worked
+    websiteSummary: 
+"I am an assistant professor at Politecnico di Milano and I have worked
 in processor architecture research and development for one of the top
-semiconductor companies in the world. Although my background is rooted in modeling and simulation of digital
+semiconductor companies in the world. \n Although my background is rooted in modeling and simulation of digital
 systems, I've expanded my interests to **parallel** and **asynchronous
 programming**, **domain specific languages** and automatic tools for the
 web. I also have a thing for **data visualization**, **infographics**
