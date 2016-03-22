@@ -2,42 +2,38 @@ import React from 'react';
 import _ from 'lodash';
 import ReactMarkdown from 'react-markdown';
 import { getTables } from 'mdtable2json';
+let { tmpl, fetchAsset } = require('../stores/fetcher');
+let $m = require('moment')
 
 // Debug..
 const debug = require('../react-utils/debug')(__filename);
 
 
-var positions = require('raw!../../../data/career.md');
-positions = getTables(positions)[0].json
 
-var education = require('raw!../../../data/education.md');
-education = getTables(education)[0].json
+//     - { from: '2015-07-10' , to: '2016-07-10' , role: principal investigator , type: grant from industrial partner , institution:  STMicroelectronics , project:  Strumenti di Progettazione e Verifica per Circuiti Crit
 
-var grants = require('raw!../../../data/grants.md');
-grants = getTables(grants)[0].json
-
-var intro = require('raw!../../../data/intro.md');
-
+                    //{(!_.isUndefined(p.to)) ? $m(p.to).format('YYYY') : 'Now'}
 function renderPosition(p, i) {
+    let position = p.positionLong ? p.positionLong : p.position
     return (
         <div key={i} className="position">
             <div className="position__column1" >
                 <div className="position__date">
-                    {p.to}
+                   {p.endDate ? $m(p.endDate).format("YYYY") : 'now'}
                 </div>
                 <div className="position__date">
-                    {p.from}
+                    {$m(p.startDate).format("YYYY")}
                 </div>
             </div>
             <div className="position__column2" >
                 <div className="position__name">
-{p.title}
+                    {position}
                 </div>
                 <div className="position__institution">
-                    {p.institution}
+                    {p.company}
                 </div>
                 <div className="position__department">
-                    {p.department}
+                    - {p.address}
                 </div>
             </div>
         </div>
@@ -45,25 +41,26 @@ function renderPosition(p, i) {
 }
 
 function renderDiploma(p, i) {
+    console.log(p)
     return (
         <div key={i} className="diploma">
             <div className="diploma__column1" >
                 <div className="diploma__name">
-                    {p.name}
+                    {p.studyType}
                 </div>
                 <div className="diploma__date">
-                    {p.data}
+                    {$m(p.endDate).format("YYYY")}
                 </div>
             </div>
             <div className="diploma__column2" >
                 <div className="diploma__topic">
-                    {p.topic}
+                    {p.area}
                 </div>
                 <div className="diploma__institution">
                     {p.institution}
                 </div>
                 <div className="diploma__department">
-                    {p.department}
+                    - {p.department}
                 </div>
             </div>
         </div>
@@ -75,10 +72,10 @@ function renderGrant(p, i) {
         <div key={i} className="grant">
             <div className="grant__column1" >
                 <div className="grant__date">
-                    {p.to}
+                    {$m(p.to).format("YYYY")}
                 </div>
                 <div className="grant__date">
-                    {p.from}
+                    {$m(p.from).format("YYYY")}
                 </div>
             </div>
             <div className="grant__column2" >
@@ -86,7 +83,7 @@ function renderGrant(p, i) {
                     {p.role}
                 </div>
                 <div className="grant__name">
-                    {p.title}
+                    {p.project}
                 </div>
                 <div className="grant__institution">
                     {p.institution} - {p.type}
@@ -100,7 +97,8 @@ function renderGrant(p, i) {
 }
 
 
-function renderGrantBlock() {
+function renderGrantBlock($) {
+    const grants = _.filter($.grants, (g) => g.highlight);
     return (
         <div className="grants">
             <div className="grants__title"> Grants </div>
@@ -112,51 +110,70 @@ function renderGrantBlock() {
 }
 
 
-function renderEducationBlock() {
+function renderEducationBlock($) {
     return (
         <div className="education education_size_small">
             <div className="education__title"> Education </div>
             <div className="diploma-list">
-                {_.map(education, renderDiploma)}
+                {_.map($.education, renderDiploma)}
             </div>
         </div>
     );
 }
 
 
-function renderCareerBlock() {
+function renderCareerBlock($) {
+    let workSorted = _.sortBy($.work, (x) => -1 * $m(x.startDate).unix());
     return (
         <div className="career career_size_small">
             <div className="career__title"> Career </div>
             <div className="career-list">
-                {positions.map(renderPosition)}
+                {workSorted.map(renderPosition)}
             </div>
         </div>
     );
 }
 
 
-let bioPage = React.createClass({
+class bioPage extends React.Component {
+
+    constructor() {
+        super();
+        this.state = { valid: false }
+    }
+
+    componentDidMount() {
+        fetchAsset('data/cv-jr.yaml', { yaml: true }).then((data) => {
+            const valid = true;
+            this.setState({valid, data});
+            return null;
+        })
+    }
+
     render() {
-        debug("Render biopage");
-        return (
-            <div className="bio-container">
-                <div className="bio">
-                    <div className="bio__title"> Bio </div>
-                    <img className="bio__picture" src={require("file?name=assets/[name].[ext]!../../img/profile_pic_1_res.jpg")}/>
-                    <div className="bio-text bio-text--size-medium">
-                        <div className="bio-text__title"> Vittorio Zaccaria </div>
-                        <div className="bio-text__position"> Assistant Professor </div>
-                        <div className="bio-text__description">
-                            <ReactMarkdown source={intro} />
+        if(this.state.valid) {
+            const $ = this.state.data
+            return (
+                <div className="bio-container">
+                    <div className="bio">
+                        <div className="bio__title"> Bio </div>
+                        <img className="bio__picture" src={require("file?name=assets/[name].[ext]!../../img/profile_pic_1_res.jpg")}/>
+                        <div className="bio-text bio-text--size-medium">
+                            <div className="bio-text__title">{$.basics.name}</div>
+                            <div className="bio-text__position">{$.basics.label}</div>
+                            <div className="bio-text__description">
+                                <ReactMarkdown source={$.basics.websiteSummary} />
+                            </div>
                         </div>
                     </div>
-                </div>
-                {renderGrantBlock()}
-                {renderCareerBlock()}
-                {renderEducationBlock()}
-            </div>);
+                    {renderGrantBlock($)}
+                    {renderCareerBlock($)}
+                    {renderEducationBlock($)}
+                </div>);
+        } else {
+            return <div></div>;
+        }
     }
-});
+}
 
 module.exports = { bioPage }
