@@ -71,6 +71,7 @@
       area: "Computer engineering"
       studyType: "Master"
       topic: "Java agents for a distributed file system."
+      department: "DEI"
       dichiara: Di essere in possesso del titolo di studio di Laurea in Ingegneria Informatica, conseguito il 8 giugno 1998 presso il Politecnico di Milano con votazione 96/100.
 
     -
@@ -79,6 +80,7 @@
       institution: "Politecnico di Milano, Italy"
       area: "Computer engineering"
       studyType: "Ph.D"
+      department: "DEI"
       topic: "Power consumption estimation and optimization of VLIW processors. Sponsored by STMicroelectronics."
       dichiara: Di essere in possesso del titolo di studio di Dottorato di Ricerca in Ingegneria Informatica e Automatica rilasciato il 15 novembre 2002 dal Politecnico di Milano.
 
