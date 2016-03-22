@@ -226,11 +226,10 @@
 
   grants:
     - { from: '2015-07-10' , to: '2016-07-10' , role: principal investigator , type: grant from industrial partner , institution:  STMicroelectronics , project:  Strumenti di Progettazione e Verifica per Circuiti Crittografici, highlight: true }
-    - { from: 2007 , to: 2008 , type: Research Grant         ,  institution: Politecnico di Milano ,
+    - { from: 2007-11-01 , to: 2009-10-31 , type: Research Grant         ,  institution: Politecnico di Milano ,
       project: "Multi-Objective Design Space Exploration of Multi-Processor SOC Architectures for Embedded Multimedia Applications" }
     - { from: 2001-12-16 , to: 2003-03-16 , role: Post Doc, type: Post-Doc Grant         , institution: Politecnico di Milano  , project: "Power estimation and exploration of the architectural space at the system level for systems-on-chip", highlight: true }
-    - { from: 1999 , to: 2002 , type: Ph.D. Fellowship       , institution: STMicroelectronics     , project: "Methodologies for Power Estimation for VLIW Machines" }
-    - { from: 2002 , to: 2002 , type: Young Researcher Grant , institution: Italian Government     , project: "Methodologies for Power Estimation and Optimization in Embedded Processor Systems" }
+    - { from: 1999-03-01 , to: 2001-12-31 , type: Ph.D. Fellowship       , institution: STMicroelectronics     , project: "Methodologies for Power Estimation for VLIW Machines" }
 
   committeesAndTalks:
     - { name: ADAPT (co-located with HIPEAC 2014), year: 2014 , type: conference/workshop organization ,    ruolo: TPC member }
