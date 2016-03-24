@@ -98,7 +98,7 @@ function renderGrant(p, i) {
 
 
 function renderGrantBlock($) {
-    const grants = _.filter($.grants, (g) => g.highlight);
+    const grants = _.filter($.research.grants, (g) => g.highlight);
     return (
         <div className="grants">
             <div className="grants__title"> Grants </div>
