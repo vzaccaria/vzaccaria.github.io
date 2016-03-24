@@ -106,7 +106,6 @@
         - Specified and developed the ReSPIR optimization algorithm for processor/SoC optimization. It enables efficient IP reuse in the context of virtual platforms (10x reduction in time, less than 1 percent error w.r.t. ideal).
         - Succesfully brought a team of 5 people to prototype a new type of video-surveillance system in the context of the 2PARMA FP7 European Project.
         - Led a team of 3 engineers to prototype a research software tool for processor customization. Prototypes were delivered on-time and within budget of several european FP7 projects.
-
       dichiara: "Di prestare servizio come ricercatore a tempo indeterminato dal 1 marzo 2011 presso il Dipartimento di Elettronica e Informazione del Politecnico di Milano, e di avere prestato servizio come ricercatore a tempo determinato dal 1 novembre 2009 a fine Febbraio 2011 presso il Dipartimento di Elettronica e Informazione del Politecnico di Milano."
 
     -
@@ -317,6 +316,7 @@
         - "Notions of device driver programming"
         - "Notions of system bring up"
         - "Notions of CPU scheduling algorithms"
+        
  specializations:
     - Computer aided design of digital circuits.
     - Multi-processor design space exploration.
