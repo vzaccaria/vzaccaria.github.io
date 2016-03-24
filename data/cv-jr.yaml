@@ -156,7 +156,18 @@
       since2011:
         citations: 771
         hindex: 15
-
+        
+    achievements:
+        - I've successfully created and tuned performance prediction models to obtain less than 10% error versus ISS simulations, dramatically reducing analysis time.
+        - I am one of the authors of the the ReSPIR optimization algorithm (10x reduction in time, less than 1% error w.r.t. ideal).
+        - I've led teams of 3 engineers to prototype research tools for processor customization. Prototypes were delivered on-time and within budget of several european FP7 projects.
+        - I've worked as research and development engineer for STMicroelectronics, one of the top semiconductor industries in the world
+        - I've pioneered the field of Power Modeling of VLIW Cores (10% error RTL vs Gate-level).
+        - I've introduced an effective methodology to minimize the effort of design of experiments for NoC power models (10x reduction in characterization time, 33% error).
+        - I've developed architectural and instruction-set extensions for industrial VLIW processors successfully validated through real-world prototypes.
+        - I've developed functional models for new streaming architectures, successfully supporting virtual prototyping of software defined radios.
+        - I am author of over 40 scientific papers about analysis and customization of computer architectures.
+        - I am co-author of the book Power Estimation and Optimization Methodologies for VLIW-based Embedded Systems, Springer 2003.
 
     awards:
         -
@@ -216,6 +227,14 @@
           yearEnd: 2010
           coordinator: Cristina Silvano
           name: "Multi-objective design space exploration of multi-processor SoC architectures for embedded multimedia applications"
+    
+    currentGoals:
+      short: |
+        I love studying and innovating all aspects of software and hardware development for mobile applications.
+        Here are just a few of the directions that I am investigating in this area:
+
+        * **Design patterns and languages for asynchronous, many-core systems**.
+        * **Domain specific languages and multi-stage programming**.
 
 
     students:
@@ -264,6 +283,23 @@
         - { name: DATE - Track A8 (Multi-Core Platforms)                            , year: 2008 , type: conference/workshop organization ,    ruolo: TPC member }
 
   teaching:
+    currentGoals: |
+      The teaching goals derive from the past industrial and academic
+      experience and span the interaction of architecture, compiler and
+      operating system towards the design of embedded applications. In this
+      context several course topics can be devised ranging from the analysis
+      and design of parallel architectures up to advanced compilation
+      techniques, for extracting parallelism from a given application, and
+      embedded operating systems for parallel processors. Several subtopics
+      may play a significant role such as hardware/software co-design and
+      parallel programming techniques. An overview of these topics can be
+      introduced in undergraduate courses while an in-depth analysis and study
+      of the state of the art would be introduced at the graduate level.
+
+      A strong effort towards the implementation of supporting software tools
+      is planned. Those tools would enable students to gain an in-depth,
+      practical experience on the course topics.
+
     courses:
       - { aaInit: 2014 , aaEnd: 2015 , courseName: Informatica B                   , position: Titolare           , titolare: Vittorio Zaccaria  , level: laurea triennale in Ingegneria Meccanica ed Energetica , institution: Politecnico di Milano , crediti: 7}
       - { aaInit: 2015 , aaEnd: 2016 , courseName: Informatica B                   , position: Titolare           , titolare: Vittorio Zaccaria  , level: laurea triennale in Ingegneria Meccanica ed Energetica , institution: Politecnico di Milano , crediti: 7}
