@@ -283,6 +283,23 @@
         - { name: DATE - Track A8 (Multi-Core Platforms)                            , year: 2008 , type: conference/workshop organization ,    ruolo: TPC member }
 
   teaching:
+    currentGoals: |
+      The teaching goals derive from the past industrial and academic
+      experience and span the interaction of architecture, compiler and
+      operating system towards the design of embedded applications. In this
+      context several course topics can be devised ranging from the analysis
+      and design of parallel architectures up to advanced compilation
+      techniques, for extracting parallelism from a given application, and
+      embedded operating systems for parallel processors. Several subtopics
+      may play a significant role such as hardware/software co-design and
+      parallel programming techniques. An overview of these topics can be
+      introduced in undergraduate courses while an in-depth analysis and study
+      of the state of the art would be introduced at the graduate level.
+
+      A strong effort towards the implementation of supporting software tools
+      is planned. Those tools would enable students to gain an in-depth,
+      practical experience on the course topics.
+
     courses:
       - { aaInit: 2014 , aaEnd: 2015 , courseName: Informatica B                   , position: Titolare           , titolare: Vittorio Zaccaria  , level: laurea triennale in Ingegneria Meccanica ed Energetica , institution: Politecnico di Milano , crediti: 7}
       - { aaInit: 2015 , aaEnd: 2016 , courseName: Informatica B                   , position: Titolare           , titolare: Vittorio Zaccaria  , level: laurea triennale in Ingegneria Meccanica ed Energetica , institution: Politecnico di Milano , crediti: 7}
