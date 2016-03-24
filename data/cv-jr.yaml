@@ -262,49 +262,30 @@
     - { name: DATE                                                              , year: 2001 , type: journal peer review              ,    ruolo: reviewer }
     - { name: DATE - Track A8 (Multi-Core Platforms)                            , year: 2009 , type: conference/workshop organization ,    ruolo: TPC member }
     - { name: DATE - Track A8 (Multi-Core Platforms)                            , year: 2008 , type: conference/workshop organization ,    ruolo: TPC member }
-
-  courses:
-    - { aaInit: 2015 , aaEnd: 2016 , courseName: Informatica B                                    , position: Titolare           , titolare: Vittorio Zaccaria  , level: laurea triennale in Ingegneria Meccanica ed Energetica , institution: Politecnico di Milano , crediti: 7}
-
-    - { aaInit: 2014 , aaEnd: 2015 , courseName: Informatica B                                    , position: Titolare           , titolare: Vittorio Zaccaria  , level: laurea triennale in Ingegneria Meccanica ed Energetica , institution: Politecnico di Milano , crediti: 7}
-
-    - { aaInit: 2013 , aaEnd: 2014 , courseName: Informatica B                                    , position: Titolare           , titolare: Vittorio Zaccaria  , level: laurea triennale in Ingegneria Meccanica ed Energetica , institution: Politecnico di Milano , crediti: 7}
-
-    - { aaInit: 2012 , aaEnd: 2013 , courseName: Informatica B                                    , position: Titolare           , titolare: Vittorio Zaccaria  , level: laurea triennale in Ingegneria Meccanica ed Energetica , institution: Politecnico di Milano , crediti: 7}
-
-    - { aaInit: 2011 , aaEnd: 2012 , courseName: Informatica B                                    , position: Titolare           , titolare: Vittorio Zaccaria  , level: laurea triennale in Ingegneria Meccanica ed Energetica , institution: Politecnico di Milano , crediti: 7}
-
-    - { aaInit: 2010 , aaEnd: 2011 , courseName: Informatica B                                    , position: Titolare           , titolare: Vittorio Zaccaria  , level: laurea triennale in Ingegneria Meccanica ed Energetica , institution: Politecnico di Milano , crediti: 7}
-
-    - { aaInit: 2001 , aaEnd: 2001 , courseName: Architectures                                    , position: Teaching assistant , titolare: Mariagiovanna Sami , level: Master of Engineering of Embedded Systems              , institution: Advanced Learning Institute - Lugano }
-
-    - { aaInit: 2002 , aaEnd: 2002 , courseName: Architectures                                    , position: Teaching assistant , titolare: Mariagiovanna Sami , level: Master of Engineering of Embedded Systems              , institution: Advanced Learning Institute - Lugano }
-
-    - { aaInit: 1999 , aaEnd: 2000 , courseName: Advanced Computer Architectures                  , position: Teaching assistant , titolare: Donatella Sciuto   , level: Master of Science in Electrical Engineering            , institution: University of Illinois at Chicago and Politecnico di Milano }
-
-    - { aaInit: 2000 , aaEnd: 2001 , courseName: Advanced Computer Architectures                  , position: Teaching assistant , titolare: Donatella Sciuto   , level: Master of Science in Electrical Engineering            , institution: University of Illinois at Chicago and Politecnico di Milano }
-
-    - { aaInit: 2001 , aaEnd: 2002 , courseName: Advanced Computer Architectures                  , position: Teaching assistant , titolare: Donatella Sciuto   , level: Master of Science in Electrical Engineering            , institution: University of Illinois at Chicago and Politecnico di Milano }
-
-    - { aaInit: 2009 , aaEnd: 2010 , courseName: Informatica B                                    , position: Teaching assistant , titolare: Danilo Ardagna     , level: Laurea di primo livello in Ingegneria Elettrica        , institution: Politecnico di Milano }
-
-    - { aaInit: 2009 , aaEnd: 2010 , courseName: Architectures for Multimedia Systems             , position: Teaching assistant , titolare: Cristina Silvano   , level: Laurea specialistica in Ingegneria Informatica         , institution: Politecnico di Milano }
-
-    - { aaInit: 2009 , aaEnd: 2010 , courseName: Architettura dei Calcolatori e Sistemi Operativi , position: Teaching assistant , titolare: Cristina Silvano   , level: Laurea di primo livello in Ingegneria Informatica      , institution: Politecnico di Milano }
-
-    - { aaInit: 2008 , aaEnd: 2009 , courseName: Architettura dei Calcolatori e Sistemi Operativi , position: Teaching assistant , titolare: Cristina Silvano   , level: Laurea di primo livello in Ingegneria Informatica      , institution: Politecnico di Milano }
-
-    - { aaInit: 2013 , aaEnd: 2014 , courseName: Architettura dei Calcolatori e Sistemi Operativi , position: Teaching assistant , titolare: Roberto Negrini, level: Laurea di primo livello in Ingegneria Informatica      , institution: Politecnico di Milano }
-
-    - { aaInit: 2014 , aaEnd: 2015 , courseName: Architettura dei Calcolatori e Sistemi Operativi , position: Teaching assistant , titolare: Roberto Negrini, level: Laurea di primo livello in Ingegneria Informatica      , institution: Politecnico di Milano }
-
-    - { aaInit: 2007 , aaEnd: 2008 , courseName: Metodologie di progetto hardware e software      , position: Teaching assistant , titolare: Cristina Silvano   , level: Laurea specialistica in Ingegneria Informatica         , institution: Politecnico di Milano }
-
-    - { aaInit: 2000 , aaEnd: 2001 , courseName: Sistemi Operativi 1                              , position: Teaching assistant , titolare: William Fornaciari , level: Laurea quinquennale in Ingegneria Informatica          , institution: Politecnico di Milano }
-
-    - { aaInit: 2001 , aaEnd: 2002 , courseName: Calcolatori Elettronici                          , position: Teaching assistant , titolare: Mariagiovanna Sami , level: Laurea quinquennale in Ingegneria Informatica          , institution: Politecnico di Milano }
-
-    - { aaInit: 2003 , aaEnd: 2003 , courseName: Calcolatori Elettronici                          , position: Teaching assistant , titolare: Anna Antola        , level: Laurea quinquennale in Ingegneria Informatica          , institution: Politecnico di Milano }
+  
+  teaching:
+    courses:
+      - { aaInit: 2014 , aaEnd: 2015 , courseName: Informatica B                                    , position: Titolare           , titolare: Vittorio Zaccaria  , level: laurea triennale in Ingegneria Meccanica ed Energetica , institution: Politecnico di Milano , crediti: 7}
+      - { aaInit: 2015 , aaEnd: 2016 , courseName: Informatica B                                    , position: Titolare           , titolare: Vittorio Zaccaria  , level: laurea triennale in Ingegneria Meccanica ed Energetica , institution: Politecnico di Milano , crediti: 7}
+      - { aaInit: 2013 , aaEnd: 2014 , courseName: Informatica B                                    , position: Titolare           , titolare: Vittorio Zaccaria  , level: laurea triennale in Ingegneria Meccanica ed Energetica , institution: Politecnico di Milano , crediti: 7}
+      - { aaInit: 2012 , aaEnd: 2013 , courseName: Informatica B                                    , position: Titolare           , titolare: Vittorio Zaccaria  , level: laurea triennale in Ingegneria Meccanica ed Energetica , institution: Politecnico di Milano , crediti: 7}
+      - { aaInit: 2011 , aaEnd: 2012 , courseName: Informatica B                                    , position: Titolare           , titolare: Vittorio Zaccaria  , level: laurea triennale in Ingegneria Meccanica ed Energetica , institution: Politecnico di Milano , crediti: 7}
+      - { aaInit: 2010 , aaEnd: 2011 , courseName: Informatica B                                    , position: Titolare           , titolare: Vittorio Zaccaria  , level: laurea triennale in Ingegneria Meccanica ed Energetica , institution: Politecnico di Milano , crediti: 7}
+      - { aaInit: 2001 , aaEnd: 2001 , courseName: Architectures                                    , position: Teaching assistant , titolare: Mariagiovanna Sami , level: Master of Engineering of Embedded Systems              , institution: Advanced Learning Institute - Lugano }
+      - { aaInit: 2002 , aaEnd: 2002 , courseName: Architectures                                    , position: Teaching assistant , titolare: Mariagiovanna Sami , level: Master of Engineering of Embedded Systems              , institution: Advanced Learning Institute - Lugano }
+      - { aaInit: 1999 , aaEnd: 2000 , courseName: Advanced Computer Architectures                  , position: Teaching assistant , titolare: Donatella Sciuto   , level: Master of Science in Electrical Engineering            , institution: University of Illinois at Chicago and Politecnico di Milano }
+      - { aaInit: 2000 , aaEnd: 2001 , courseName: Advanced Computer Architectures                  , position: Teaching assistant , titolare: Donatella Sciuto   , level: Master of Science in Electrical Engineering            , institution: University of Illinois at Chicago and Politecnico di Milano }
+      - { aaInit: 2001 , aaEnd: 2002 , courseName: Advanced Computer Architectures                  , position: Teaching assistant , titolare: Donatella Sciuto   , level: Master of Science in Electrical Engineering            , institution: University of Illinois at Chicago and Politecnico di Milano }
+      - { aaInit: 2009 , aaEnd: 2010 , courseName: Informatica B                                    , position: Teaching assistant , titolare: Danilo Ardagna     , level: Laurea di primo livello in Ingegneria Elettrica        , institution: Politecnico di Milano }
+      - { aaInit: 2009 , aaEnd: 2010 , courseName: Architectures for Multimedia Systems             , position: Teaching assistant , titolare: Cristina Silvano   , level: Laurea specialistica in Ingegneria Informatica         , institution: Politecnico di Milano }
+      - { aaInit: 2009 , aaEnd: 2010 , courseName: Architettura dei Calcolatori e Sistemi Operativi , position: Teaching assistant , titolare: Cristina Silvano   , level: Laurea di primo livello in Ingegneria Informatica      , institution: Politecnico di Milano }
+      - { aaInit: 2008 , aaEnd: 2009 , courseName: Architettura dei Calcolatori e Sistemi Operativi , position: Teaching assistant , titolare: Cristina Silvano   , level: Laurea di primo livello in Ingegneria Informatica      , institution: Politecnico di Milano }
+      - { aaInit: 2013 , aaEnd: 2014 , courseName: Architettura dei Calcolatori e Sistemi Operativi , position: Teaching assistant , titolare: Roberto Negrini, level: Laurea di primo livello in Ingegneria Informatica      , institution: Politecnico di Milano }
+      - { aaInit: 2014 , aaEnd: 2015 , courseName: Architettura dei Calcolatori e Sistemi Operativi , position: Teaching assistant , titolare: Roberto Negrini, level: Laurea di primo livello in Ingegneria Informatica      , institution: Politecnico di Milano }
+      - { aaInit: 2007 , aaEnd: 2008 , courseName: Metodologie di progetto hardware e software      , position: Teaching assistant , titolare: Cristina Silvano   , level: Laurea specialistica in Ingegneria Informatica         , institution: Politecnico di Milano }
+      - { aaInit: 2000 , aaEnd: 2001 , courseName: Sistemi Operativi 1                              , position: Teaching assistant , titolare: William Fornaciari , level: Laurea quinquennale in Ingegneria Informatica          , institution: Politecnico di Milano }
+      - { aaInit: 2001 , aaEnd: 2002 , courseName: Calcolatori Elettronici                          , position: Teaching assistant , titolare: Mariagiovanna Sami , level: Laurea quinquennale in Ingegneria Informatica          , institution: Politecnico di Milano }
+      - { aaInit: 2003 , aaEnd: 2003 , courseName: Calcolatori Elettronici                          , position: Teaching assistant , titolare: Anna Antola        , level: Laurea quinquennale in Ingegneria Informatica          , institution: Politecnico di Milano }
 
 
   students:
@@ -325,16 +306,12 @@
 
   europeanProjects:
     - { type: FP7, yearInit: 2010, yearEnd: 2012, coordinator: Cristina Silvano, name: "PARallel PAradigms and Run-time MAnagement techniques for Many-core Architectures", highlights: [ "development team leader for an advanced production-grade language and interpreter supporting design space exploration", "integration activities of design space exploration tools within the context of the project itself." ] }
-
     - { type: FP7, yearInit: 2008, yearEnd: 2010, coordinator: Cristina Silvano, name: "Multi-objective design space exploration of multi-processor SoC architectures for embedded multimedia applications" }
 
   projects:
     - Multicube Explorer — an architectural exploration framework retargetable to different processor-based architectures and exploration algorithms. The tool contains also advanced algorithms for DoE generation and response surface modeling. It is scheduled to go open-source in January 2009 — open-source.
-
     - xSTreamC compiler and nSTream simulator — a development toolchain for applications based on the stream oriented programming model. The toolchain has been released open-source in October 2008 — open-source.
-
     - ST200-ISS — a production-grade instruction set simulator for the ST200 VLIW processor family (functional and timing behavior models). Kernel, device components, cache-coherency, secure-storage, co-hosting — proprietary.
-
     - Tools for run-time power estimation of STBus proprietary bus technology (C/SystemC). These tools are currently part of the internal STBus product work-flow — proprietary.
 
   citations:
