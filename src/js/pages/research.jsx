@@ -33,51 +33,70 @@ import { getTables } from 'mdtable2json';
 import { Publication } from './components/publication.jsx'
 
 import { processData } from '../react-utils/normalize-pubs'
+let { tmpl, fetchAsset } = require('../stores/fetcher');
 
 import { _b } from '../react-utils/react-bem'
 
 // Debug..
 const debug = require('../react-utils/debug')(__filename);
 
-var current_research      = require('raw!../../../data/current_research.md');
-var research_achievements = require('raw!../../../data/research_achievements.md');
 var biblioJson            = _.map(require('../../../data/biblio.json'), processData);
 
-let researchPage = React.createClass({
+class researchPage extends React.Component {
+
+    constructor() {
+        super();
+        this.state = { valid: false }
+    }
+
+    componentDidMount() {
+        fetchAsset('data/cv-jr.yaml', { yaml: true }).then((data) => {
+            const valid = true;
+            this.setState({valid, data});
+            return null;
+        })
+    }
+
     render() {
 
         let p = _.partial(_b, 'publications');
         let s = _.partial(_b, 'statement');
 
-        return (
-            <div className={p()}>
+        if(this.state.valid) {
+            let research_achievements = _.map(this.state.data.research.achievements, (r) => `* ${r}`).join('\n')
+            return (
+                <div className={p()}>
 
-                <div className={s()}>
-                    <div className={s('title')}>
-                        Current research
+                    <div className={s()}>
+                        <div className={s('title')}>
+                            Current research
+                        </div>
+                        <div className={s('summary')}>
+                            <ReactMarkdown source={this.state.data.research.currentGoals.short}> </ReactMarkdown>
+                        </div>
                     </div>
-                    <div className={s('summary')}>
-                        <ReactMarkdown source={current_research}> </ReactMarkdown>
-                    </div>
-                </div>
 
-                <div className={s()}>
-                    <div className={s('title')}>
-                        Past research and achievements
+                    <div className={s()}>
+                        <div className={s('title')}>
+                            Past research and achievements
+                        </div>
+                        <div className={s('summary')}>
+                            <ReactMarkdown source={research_achievements}>
+                            </ReactMarkdown>
+                        </div>
                     </div>
-                    <div className={s('summary')}>
-                        <ReactMarkdown source={research_achievements}>
-                        </ReactMarkdown>
-                    </div>
-                </div>
 
-                <div className={p('header')}>
-                    Publications
+                    <div className={p('header')}>
+                        Publications
+                    </div>
+                    <div className={p('container')}> {_.map(biblioJson, (it, k) => {return (<Publication data={it} key={k}> </Publication>);})} </div>
                 </div>
-                <div className={p('container')}> {_.map(biblioJson, (it, k) => {return (<Publication data={it} key={k}> </Publication>);})} </div>
-            </div>
-        );
-    }});
+            );
+        } else {
+            return <div />
+        }
+    }
+}
 
 
 module.exports = { researchPage }
