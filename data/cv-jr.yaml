@@ -105,7 +105,6 @@
         - Appointed as Principal Investigator for an industrial collaboration grant from STMicroelectronics related to the design cryptographic hardware using functional programming languages.
         - Specified and developed the ReSPIR optimization algorithm for processor/SoC optimization. It enables efficient IP reuse in the context of virtual platforms (10x reduction in time, less than 1 percent error w.r.t. ideal).
         - Succesfully brought a team of 5 people to prototype a new type of video-surveillance system in the context of the 2PARMA FP7 European Project.
-
         - Led a team of 3 engineers to prototype a research software tool for processor customization. Prototypes were delivered on-time and within budget of several european FP7 projects.
 
       dichiara: "Di prestare servizio come ricercatore a tempo indeterminato dal 1 marzo 2011 presso il Dipartimento di Elettronica e Informazione del Politecnico di Milano, e di avere prestato servizio come ricercatore a tempo determinato dal 1 novembre 2009 a fine Febbraio 2011 presso il Dipartimento di Elettronica e Informazione del Politecnico di Milano."
@@ -146,74 +145,7 @@
         - "Introduced advanced techniques for managing design of experiments and response surface methods in automatic design space exploration for multi-processors."
         - "Extended classical design space exploration to tackle the problem of process-variability-aware design of multi-processors."
 
-  specializations:
-    - Computer aided design of digital circuits.
-    - Multi-processor design space exploration.
-    - Low-power and high-performance design.
-    - Parallel processor architectures.
-    - Advanced parallel programming paradigms.
-    - Compilation and simulation methodologies for multi-processor-based systems.
-
-  skills:
-    -
-      name: "General software design"
-      keywords:
-        - "version control (SVN/GIT)"
-        - "semantic versioning"
-        - "agile development"
-        - "test driven design"
-        - "DSL and fluent interface design"
-        - "web services"
-        - "representational state transfer interfaces"
-        - "shared memory multi-processing"
-        - "message passing multiprocessing"
-        - "dataflow programming"
-        - "object oriented programming"
-        - "asynchronous programming"
-        - "functional programming"
-        - "dependent type programming"
-
-    -
-      name: "General hardware design"
-      keywords:
-        - "processor-platform and IP selection and customization"
-        - "benchmarking and application customization"
-        - "strategic and emergent R\\&D directions for platform development"
-        - "functional programming languages for hardware design"
-
-    -
-      name: "Artificial languages"
-      keywords:
-        - "C"
-        - "C++"
-        - "Javascript"
-        - "Coffeescript"
-        - "Python"
-        - "Haskell"
-        - "Java - JVM Based Languages such as Groovy"
-        - "Ruby"
-        - "JSON"
-        - "RISC assembly"
-        - "ST200 Assembly"
-    -
-      name: "Processor architecture design"
-      keywords:
-        - "instruction set simulation"
-        - "event-driven simulation"
-        - "virtual platforms"
-        - "cache simulation"
-        - "Instruction-level power modeling"
-    -
-      name: "Embedded Systems Design"
-      keywords:
-        - "Interrupt programming"
-        - "Supervisor-mode programming"
-        - "Co-hosting"
-        - "Virtual Memory"
-        - "Linux internals"
-        - "Notions of device driver programming"
-        - "Notions of system bring up"
-        - "Notions of CPU scheduling algorithms"
+  
   awards:
     -
       date: 2002-08-31
@@ -324,3 +256,72 @@
     since2011:
       citation: 771
       hindex: 15
+      
+ skills:
+    -
+      name: "General software design"
+      keywords:
+        - "version control (SVN/GIT)"
+        - "semantic versioning"
+        - "agile development"
+        - "test driven design"
+        - "DSL and fluent interface design"
+        - "web services"
+        - "representational state transfer interfaces"
+        - "shared memory multi-processing"
+        - "message passing multiprocessing"
+        - "dataflow programming"
+        - "object oriented programming"
+        - "asynchronous programming"
+        - "functional programming"
+        - "dependent type programming"
+
+    -
+      name: "General hardware design"
+      keywords:
+        - "processor-platform and IP selection and customization"
+        - "benchmarking and application customization"
+        - "strategic and emergent R\\&D directions for platform development"
+        - "functional programming languages for hardware design"
+
+    -
+      name: "Artificial languages"
+      keywords:
+        - "C"
+        - "C++"
+        - "Javascript"
+        - "Coffeescript"
+        - "Python"
+        - "Haskell"
+        - "Java - JVM Based Languages such as Groovy"
+        - "Ruby"
+        - "JSON"
+        - "RISC assembly"
+        - "ST200 Assembly"
+    -
+      name: "Processor architecture design"
+      keywords:
+        - "instruction set simulation"
+        - "event-driven simulation"
+        - "virtual platforms"
+        - "cache simulation"
+        - "Instruction-level power modeling"
+    -
+      name: "Embedded Systems Design"
+      keywords:
+        - "Interrupt programming"
+        - "Supervisor-mode programming"
+        - "Co-hosting"
+        - "Virtual Memory"
+        - "Linux internals"
+        - "Notions of device driver programming"
+        - "Notions of system bring up"
+        - "Notions of CPU scheduling algorithms"
+ specializations:
+    - Computer aided design of digital circuits.
+    - Multi-processor design space exploration.
+    - Low-power and high-performance design.
+    - Parallel processor architectures.
+    - Advanced parallel programming paradigms.
+    - Compilation and simulation methodologies for multi-processor-based systems.
+  
