@@ -5,7 +5,7 @@ import { fetchPost } from '../stores/fetcher'
 import hjs from 'highlight.js'
 import jq from 'jquery'
 import moment from 'moment'
-import ShareButton from './components/ShareButton'
+import ShareButton from './components/shareButton'
 import ReactDisqusThread from 'react-disqus-thread';
 
 import { sourceurl } from 'site-config';
