@@ -15,12 +15,25 @@ var Publication = React.createClass({
         let h = _.partial(_b, 'publication__href');
 
         let renderAuthor = (a, i) => {
-                if(a.name  === 'V. Zaccaria') {
-                    return <div key={i} className={b('authors__myname')}>{a.name}</div>
-                } else {
-                    return <div key={i} className={b('authors__name')}>{a.name}</div>
-                }
+            if(a.name  === 'V. Zaccaria') {
+                return <div key={i} className={b('authors__myname')}>{a.name}</div>
+            } else {
+                return <div key={i} className={b('authors__name')}>{a.name}</div>
+            }
         };
+
+        let downloadButton = <div />;
+        if(!_.isUndefined(this.props.data.url)) {
+            downloadButton = (
+                <div className={h()}>
+                    <a href={this.props.data.url}>
+                        <div className={h('doi')}>
+                            <i className={`${h('doi__icon-dl')} fa fa-download`} >
+                            </i>
+                        </div>
+                    </a>
+                </div>);
+        }
 
         return (
             <div className={b()}>
@@ -41,13 +54,7 @@ var Publication = React.createClass({
                     <div className={b('pages')}>
                         {this.props.data.pages}
                     </div>
-                    <div className={h()}>
-                        <div className={h('doi')}>
-                            <i className={h('doi__icon-dl')} >
-                            </i>
-                        </div>
-                    </div>
-
+                    {downloadButton}
                 </div>
             </div>
         );
