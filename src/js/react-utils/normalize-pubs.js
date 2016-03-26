@@ -62,7 +62,7 @@ function processData(p) {
             p.booktitle = p.institution;
             break;
         case 'patent':
-            p.booktitle = `${p.address} ${p.number}`;
+            p.booktitle = `${p.address} ${p.patentNumber}`;
             break;
         case 'talk':
             p.booktitle = `${p.address}`;
@@ -73,15 +73,7 @@ function processData(p) {
         p.pages = '-';
     }
 
-    if (_.isUndefined(p['bdsk-url-1'])) {
-        p.link = {
-            url: 'vittorio.zaccaria@polimi.it'
-        }
-    } else {
-        p.link = {
-            url: p['bdsk-url-1']
-        }
-    }
+    p.link = p.url
 
     if (!_.isUndefined(p.booktitle)) {
         var s = p.booktitle
@@ -94,6 +86,12 @@ function processData(p) {
             p.smartbooktitle = s
         }
     }
+
+    p.author = _.map(p.authors, (n) => {
+        return {
+            name: n
+        }
+    });
     return p;
 }
 

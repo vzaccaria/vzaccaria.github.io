@@ -40,7 +40,8 @@ import { _b } from '../react-utils/react-bem'
 // Debug..
 const debug = require('../react-utils/debug')(__filename);
 
-var biblioJson            = _.map(require('../../../data/biblio.json'), processData);
+var biblioJson = _.map(require('../../../data/bibliov2.json').records, processData);
+biblioJson = _.sortBy(biblioJson, (x) => x.timestamp * (-1))
 
 class researchPage extends React.Component {
 
