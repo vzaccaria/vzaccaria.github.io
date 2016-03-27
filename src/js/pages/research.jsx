@@ -41,7 +41,7 @@ import { _b } from '../react-utils/react-bem'
 const debug = require('../react-utils/debug')(__filename);
 
 var biblioJson = _.map(require('../../../data/bibliov2.json').records, processData);
-biblioJson = _.sortBy(biblioJson, (x) => x.timestamp * (-1))
+biblioJson = _.sortBy(biblioJson, (x) => x.timestamp * (-1));
 
 class researchPage extends React.Component {
 
@@ -64,7 +64,8 @@ class researchPage extends React.Component {
         let s = _.partial(_b, 'statement');
 
         if(this.state.valid) {
-            let research_achievements = _.map(this.state.data.research.achievements, (r) => `* ${r}`).join('\n')
+            let research_achievements = _.flatten(_.pluck(this.state.data.work, 'highlights'));
+            research_achievements = _.map(research_achievements, (r) => `* ${r}`).join('\n');
             return (
                 <div className={p()}>
 

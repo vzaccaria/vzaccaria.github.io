@@ -1,12 +1,12 @@
 all: dev-static
 
-start-server:
+start-server: data/bibliov2.json
 	./node_modules/.bin/webpack-dev-server --progress --colors --watch-poll 1000 --watch-aggregate-timeout 300
 
 stop-server:
 	killall webpack-dev-server
 
-production-build:
+production-build: data/bibliov2.json
 	PROD=1 ./node_modules/.bin/webpack --progress --colors
 
 production-deploy: production-build
