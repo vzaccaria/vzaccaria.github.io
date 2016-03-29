@@ -3,16 +3,29 @@ import React from 'react';
 import _ from 'lodash'
 import { _bem } from '../react-utils/react-bem'
 import ReactMarkdown from 'react-markdown';
+let { fetchAsset } = require('../stores/fetcher');
 
 // Debug..
 const debug = require('../react-utils/debug')(__filename);
 
 
-var videosData = require('../../../data/videos.json');
 
 
 
-let videosPage = React.createClass({
+class videosPage extends React.Component {
+
+    constructor() {
+        super();
+        this.state = { valid: false }
+    }
+
+    componentDidMount() {
+        fetchAsset('data/cv-jr.yaml', { yaml: true }).then((data) => {
+            const valid = true;
+            this.setState({valid, data});
+            return null;
+        })
+    }
 
     renderVideo(p, k) {
         let bem= _.partial(_bem, 'video');
@@ -27,19 +40,24 @@ let videosPage = React.createClass({
                     </div>
                 </div>
             </div>);
-    },
+    }
+
     render() {
+        if(this.state.valid) {
         let bem= _.partial(_bem, 'videos-page');
         return (
             <div {...bem()} >
                 <div {...bem('title')} > Institutional videos </div>
                 <div {...bem('video-list')}>
-                    {_.map(videosData, this.renderVideo)}
+                    {_.map(this.state.data.research.videos, this.renderVideo)}
                 </div>
             </div>);
+        } else {
+            return <div />
+            }
     }
 
-});
+}
 
 
 module.exports = { videosPage }
