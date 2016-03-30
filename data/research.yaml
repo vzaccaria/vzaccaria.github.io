@@ -3,48 +3,35 @@
 - from: 1999
   to: 2004
   title: Power estimation of microprocessors
-  problems: ?
+  goals: ?
   achievements:
-    - developed an analytical model that takes into
-      account software-level parameters (such as instruction ordering,
-      pipeline stall probability and instruction cache miss probability) and
-      micro-architectural-level ones (such as pipeline stage power
-      per instruction)
 
-    - validated the model on an industrial VLIW processor jointly
-      designed by HPLabs and STMicroelectronics.
+    - developed an analytical model that takes into account software-level parameters (instruction ordering, pipeline stall probability and instruction cache miss probability) and micro-architectural-level ones (pipeline stage power per instruction)
+
+    - validated the model on an industrial VLIW processor jointly designed by HPLabs and STMicroelectronics
 
 - from: 1999
   to: 2010
   title: Power optimization of microprocessors
-  problems: ?
+  goals: ?
   achievements:
 
-    -   defined a register file write inhibition scheme that exploits
-        the forwarding paths in VLIW processors.
+    -   defined a register file write inhibition scheme that exploits the forwarding paths in VLIW processors
 
-    -   designed a dynamic power management policy for general
-        purpose operating systems.
+    -   designed a dynamic power management policy for general purpose operating systems
 
-    -   designed a method for the exploration of the architectural
-        parameters of the memory sub-systems, from the energy-delay joint perspective.
+    -   designed a method for the exploration of the architectural parameters of the memory sub-systems, from the energy-delay joint perspective
 
-    -   developed Multicube Explorer, a tool for experimenting with multi-objective
-        exploration.
+    -   developed Multicube Explorer, a tool for experimenting with multi-objective exploration
 
 - from: 2004
   to: 2008
-  title: Parallel systems
+  title: Task Level Parallelism
   achievements:
 
-  -   Specification, validation and architectural exploration for
-      embedded shared-memory multi-processor systems.* This task has been
-      carried out at several levels of abstraction by developing software
-      tools and models for performance estimation of a cache coherent
-      processor system. Moreover he studied and created new run-time and
-      operating system components including co-hosted infrastructures. The
-      ST200-ISS simulator is one of the research tools developed in
-      support of this activity.
+  -   Specified, validated embedded shared-memory multi-processor systems. This task has been carried out at several levels of abstraction by developing software tools and models for performance estimation of a cache coherent processor system
+
+  -   Designed run-time and operating system components including embedded co-hosting technology for . The ST200-ISS simulator is one of the research tools developed in support of this activity
 
   -   Development of stream programming languages and architectures*.
       During this activity, he studied and created a parallel programming
