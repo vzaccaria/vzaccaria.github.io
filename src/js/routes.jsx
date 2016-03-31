@@ -27,7 +27,6 @@ let Routes = React.createClass({
                         <IndexRoute component={bioPage} />
                         <Route path="/research" component={researchPage}> </Route>
                         <Route path="/teaching" component={TeachingPage}> </Route>
-                        <Route path="/projects" component={projectsPage}> </Route>
                         <Route path="/videos" component={videosPage}> </Route>
                         <Route path="/address" component={AddressPage}> </Route>
 
