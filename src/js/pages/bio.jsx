@@ -1,4 +1,5 @@
 import React from 'react';
+import { statefulComponent } from './components/stateful'
 import _ from 'lodash';
 import ReactMarkdown from 'react-markdown';
 import { getTables } from 'mdtable2json';
@@ -135,20 +136,7 @@ function renderCareerBlock($) {
 }
 
 
-class bioPage extends React.Component {
-
-    constructor() {
-        super();
-        this.state = { valid: false }
-    }
-
-    componentDidMount() {
-        fetchAsset('data/cv-jr.yaml', { yaml: true }).then((data) => {
-            const valid = true;
-            this.setState({valid, data});
-            return null;
-        })
-    }
+class bioPage extends statefulComponent {
 
     render() {
         if(this.state.valid) {
