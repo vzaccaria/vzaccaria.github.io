@@ -2,7 +2,7 @@ import React from 'react';
 
 import _ from 'lodash'
 import { statefulComponent } from './stateful'
-import { SidebarBottomButton, SidebarBottom } from './sidebarBottom'
+import { SidebarBottomButton, SidebarBottom, SidebarBottomBuiltWith } from './sidebarBottom'
 import { SidebarLinkItem, SidebarLinkList } from './sidebarLinkItem'
 
 const debug = require('../../react-utils/debug')(__filename);
@@ -29,6 +29,7 @@ export default class Sidebar extends statefulComponent {
                     </SidebarLinkList>
                     <SidebarBottom>
                         {_.map($.basics.social, (it) => <SidebarBottomButton link={it.url} icon={it.icon} />)}
+                        <SidebarBottomBuiltWith />
                     </SidebarBottom>
                 </div>
             );
