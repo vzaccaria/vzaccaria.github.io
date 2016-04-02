@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { statefulComponent } from './components/stateful'
 import _ from 'lodash'
 import { _bem } from '../react-utils/react-bem'
 import ReactMarkdown from 'react-markdown';
@@ -12,20 +12,7 @@ const debug = require('../react-utils/debug')(__filename);
 
 
 
-class videosPage extends React.Component {
-
-    constructor() {
-        super();
-        this.state = { valid: false }
-    }
-
-    componentDidMount() {
-        fetchAsset('data/cv-jr.yaml', { yaml: true }).then((data) => {
-            const valid = true;
-            this.setState({valid, data});
-            return null;
-        })
-    }
+class videosPage extends statefulComponent {
 
     renderVideo(p, k) {
         let bem= _.partial(_bem, 'video');

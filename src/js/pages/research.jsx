@@ -31,6 +31,7 @@ import _ from 'lodash';
 import ReactMarkdown from 'react-markdown';
 import { getTables } from 'mdtable2json';
 import { Publication } from './components/publication.jsx'
+import { statefulComponent } from './components/stateful'
 
 import { processData } from '../react-utils/normalize-pubs'
 let { tmpl, fetchAsset } = require('../stores/fetcher');
@@ -43,20 +44,7 @@ const debug = require('../react-utils/debug')(__filename);
 var biblioJson = _.map(require('../../../data/bibliov2.json').records, processData);
 biblioJson = _.sortBy(biblioJson, (x) => x.timestamp * (-1));
 
-class researchPage extends React.Component {
-
-    constructor() {
-        super();
-        this.state = { valid: false }
-    }
-
-    componentDidMount() {
-        fetchAsset('data/cv-jr.yaml', { yaml: true }).then((data) => {
-            const valid = true;
-            this.setState({valid, data});
-            return null;
-        })
-    }
+class researchPage extends statefulComponent {
 
     render() {
 
