@@ -50,10 +50,3 @@ temi:
     - key: Raccolta temi esame passati
       value: http://home.dei.polimi.it/loiacono/uploads/Teaching/InfoB/tde.zip
 
-address:
-  - { key: "Name"     , value: "Vittorio Zaccaria" }
-  - { key: "Ufficio"  , value: "Dept. of Electronics, Information and Bioeng. Politecnico di Milano" }
-  - { key: "Street"   , value: "Via Ponzio 34/5" }
-  - { key: "City"     , value: "Milano, 20133 (IT)" }
-  - { key: "Telephone", value: "+39 02 2399 3642" }
-  - { key: "Email"    , value: "vittorio.zaccaria@polimi.it" }
