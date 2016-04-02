@@ -60,12 +60,19 @@
       phone: ***REMOVED***
       email: vittorio.zaccaria@gmail.com
 
-    profiles:
+    social:
       - network: Twitter
-        username:
-        url:
+        icon: fa-twitter-square
+        url: https://twitter.com/_vzaccaria_
 
+      - network: LinkedIn
+        icon: fa-linkedin-square
+        url: https://www.linkedin.com/in/vzaccaria
 
+      - network: Github
+        icon: fa-github-square
+        url: https://github.com/vzaccaria
+  
   languages:
     -
       language: "Italian"
