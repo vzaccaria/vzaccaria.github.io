@@ -28,8 +28,8 @@ export default class Sidebar extends statefulComponent {
                         <SidebarLinkItem icon='fa-map-marker'     name= 'Address'  link="#/address" />
                     </SidebarLinkList>
                     <SidebarBottom>
-                        {_.map($.basics.social, (it) => <SidebarBottomButton link={it.url} icon={it.icon} />)}
                         <SidebarBottomBuiltWith />
+                        {_.map($.basics.social, (it) => <SidebarBottomButton link={it.url} icon={it.icon} />)}
                     </SidebarBottom>
                 </div>
             );
