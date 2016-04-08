@@ -1,101 +1,114 @@
 ---
 
+- from: 2014
+  title: Techniques supporting teaching to a massive amount of students
+  description: |
+    In 2014 I've realized that my computer science class
+    was undergoing a major challenge. The number of students was becoming
+    huge and resource assignment from my university (in terms of teaching
+    assistants funded by the university) was on a decreasing trend.
+    In fact, the ratio between qualified teaching
+    assistants (those who have a degree in computer engineering) and
+    students had fallen below 1/100, making it hard to bring students to
+    complete even the simplest hands-on lab.
+
+    I've always had the ambition to not leave anyone behind so I gradually started
+    to study the current MOOC technologies to see whether they could be used
+    to keep the students on track.
+
+    I am currently creating the first online course that is meant to complement the
+    face to face lectures that I give. The course can be edited collaboratively
+    by teachers (on Github) through a YAML based format that I've designed;
+    it can then be imported into an EDX server to be used by the students who
+    can then submit their homework to an automatic grader that I wrote
+    using containerization.
+
+  achievements:
+    - developed a YAML-based format to author course contents
+    - used containerization technology to build automatic graders
+
+- from: 2014
+  title: Front-end development and mobile apps
+  description: |
+    I've been always interested in ways to model complex program
+    behavior such as synchronous programming.
+
 - from: 1999
-  to: 2004
-  title: Power estimation of microprocessors
-  goals: ?
+  title: Power estimation and optimization of processor-based systems
+  description: |
+    Since 1999 I've been ... etc...
+
   achievements:
 
-    - developed an analytical model that takes into account software-level parameters (instruction ordering, pipeline stall probability and instruction cache miss probability) and micro-architectural-level ones (pipeline stage power per instruction)
+    -   developed an analytical model that takes into account
+        software-level parameters (instruction ordering, pipeline stall
+        probability and instruction cache miss probability) and
+        micro-architectural-level ones (pipeline stage power per
+        instruction)
 
-    - validated the model on an industrial VLIW processor jointly designed by HPLabs and STMicroelectronics
+    -   validated the model on an industrial VLIW processor jointly
+        designed by HPLabs and STMicroelectronics
 
-- from: 1999
-  to: 2010
-  title: Power optimization of microprocessors
-  goals: ?
-  achievements:
-
-    -   defined a register file write inhibition scheme that exploits the forwarding paths in VLIW processors
+    -   defined a register file write inhibition scheme that exploits
+        the forwarding paths in VLIW processors
 
     -   designed a dynamic power management policy for general purpose operating systems
 
-    -   designed a method for the exploration of the architectural parameters of the memory sub-systems, from the energy-delay joint perspective
+    -   designed a method for the exploration of the architectural
+        parameters of the memory sub-systems, from the energy-delay joint perspective
 
-    -   developed Multicube Explorer, a tool for experimenting with multi-objective exploration
+    -   developed Multicube Explorer, a tool for experimenting with
+        multi-objective exploration
+
+    -   developed accurate performance and power modeling characterization of
+        applications with emphasis on parallel processors architectures and
+        network-on-chips.
+
+    -   developed optimal tuning of the memory hierarchy, processor parallelism (intra
+        and inter-task) and processor interconnection network
+
+    -   developed optimal software task mapping and scheduling onto the target
+        processor units and optimal communication scheduling
+
+    -   designed run-time design space exploration for trading-off quality-of-service
+        with actual power constraints
+
+    -   robust optimization with respect to several levels of uncertainties
+        such as workload variability, model estimation accuracy and
+        manufacturing process variability
+
+    -   specified and implemented power characterization and
+        high-level power estimation  work-flows for the STBus Network
+        on Chip.  The STBus is a high-performance, low-latency on chip
+        parameterizable network supported by production grade
+        specification and synthesis tools
+
 
 - from: 2004
   to: 2008
   title: Task Level Parallelism
+  description: |
+    Starting from 2004 I've been...
+
   achievements:
 
-  -   Specified, validated embedded shared-memory multi-processor systems. This task has been carried out at several levels of abstraction by developing software tools and models for performance estimation of a cache coherent processor system
+  -   Specified and validated embedded shared-memory multi-processor
+      systems.
 
-  -   Designed run-time and operating system components including embedded co-hosting technology for . The ST200-ISS simulator is one of the research tools developed in support of this activity
+  -   Designed run-time and operating system components including
+      embedded co-hosting technology for the ST230 microprocessor
 
-  -   Development of stream programming languages and architectures*.
-      During this activity, he studied and created a parallel programming
-      framework for industrial multi-processor architectures. The activity
-      involved the specification and implementation of an advanced
-      parallel language and compiler suitable for developing
-      streaming-based programs for the embedded and cluster-based
-      multi-processor domain. Several prototypes applications such as
-      software radio systems have been developed and currently drive the
-      industrial evolution of this project. The industrial xSTreamC
-      compiler and the nSTream simulator (T2) are the tools developed in
-      support of this activity. The tool has been released in the public
-      domain in September 2008.
+  -   Studied and created a parallel programming framework for
+      industrial multi-processor architectures
 
 - from: 2004
   to: 2007
-  title: Secure systems
+  title: Secure storage extensions
+  description: |
+    While at STMicroelectronics..
+
   achievements:
-  - In this activity, he has been responsible for the specification and
-    implementation of secure storage extensions for embedded processors. He
-    developed software tools and methodologies that are currently used by
-    industrial research and production groups for supporting next generation
-    processors. As a side task, he has also been involved in the study and
-    implementation of performance and power models for cryptographic
-    applications as well as novel cryptographic power attack techniques
-    based on cache-miss induction.
-
-- from: 2004
-  to: 2007
-  title: Networks on Chip
-  achievements:
-  - In this activity he has led the specification, planning and
-    implementation of the power characterization and high-level power
-    estimation work-flows for the STBus Network on Chip. The STBus is a
-    high-performance, low-latency on chip parameterizable network supported
-    by production grade specification and synthesis tools.
-
-- from: 2007
-  to: 2015
-  title: Design space exploration
-  achievements:
-  - Platform-based design represents the most widely used approach to design
-    System-On-Chip (SoC) applications. In this scenario, Design Space
-    Exploration (DSE) allows to find the best trade-offs in terms of the
-    selected figures of merit (e.g. energy consumption, task throughput and
-    area occupation) by efficiently tuning, either at design time or at
-    run-time, the system hardware and software parameters. This research is
-    aimed at defining system models and innovative DSE methodologies to
-
-  - Accurate performance and power modeling characterization of
-    applications with emphasis on parallel processors architectures and
-    network-on-chips.
-
-  - Optimal tuning of the memory hierarchy, processor parallelism (intra
-    and inter-task) and processor interconnection network.
-
-  - Optimal software task mapping and scheduling onto the target
-    processor units and optimal communication scheduling.
-
-  - Run-time design space exploration for trading-off quality-of-service
-    with actual power constraints.
-
-  - Robust optimization with respect to several levels of uncertainties
-    such as workload variability, model estimation accuracy and
-    manufacturing process variability.
-
-  - Power-conscious micro-architectural optimizations.
+  -   Specified secure storage extensions for embedded processors
+  -   Developed secure co-hosting solutions for industrial applications
+  -   Involved in the study and implementation of novel cryptographic
+      power attack techniques based on cache-miss induction
