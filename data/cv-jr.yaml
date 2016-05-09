@@ -354,8 +354,8 @@
           using containerization technology.
 
         achievements:
-          - developed a YAML-based format to author course contents
-          - used containerization technology to build an automatic graders
+          - Developed a YAML-based format to author course contents.
+          - Used containerization technology to build an automatic graders.
 
 
       - from: 2014
@@ -386,48 +386,48 @@
 
         achievements:
 
-          -   developed an analytical model that takes into account
+          -   Developed an analytical model that takes into account
               software-level parameters (instruction ordering, pipeline stall
               probability and instruction cache miss probability) and
               micro-architectural-level ones (pipeline stage power per
-              instruction)
+              instruction).
 
-          -   validated the model on an industrial VLIW processor jointly
-              designed by HPLabs and STMicroelectronics
+          -   Validated the model on an industrial VLIW processor jointly
+              designed by HPLabs and STMicroelectronics.
 
-          -   defined a register file write inhibition scheme that exploits
-              the forwarding paths in VLIW processors
+          -   Defined a register file write inhibition scheme that exploits
+              the forwarding paths in VLIW processors.
 
-          -   designed a dynamic power management policy for general purpose operating systems
+          -   Designed a dynamic power management policy for general purpose operating systems.
 
-          -   designed a method for the exploration of the architectural
-              parameters of the memory sub-systems, from the energy-delay joint perspective
+          -   Designed a method for the exploration of the architectural
+              parameters of the memory sub-systems, from the energy-delay joint perspective.
 
-          -   developed Multicube Explorer, a tool for experimenting with
-              multi-objective exploration
+          -   Developed Multicube Explorer, a tool for experimenting with
+              multi-objective exploration.
 
-          -   developed accurate performance and power modeling characterization of
+          -   Developed accurate performance and power modeling characterization of
               applications with emphasis on parallel processors architectures and
               network-on-chips.
 
-          -   developed optimal tuning of the memory hierarchy, processor parallelism (intra
-              and inter-task) and processor interconnection network
+          -   Developed optimal tuning of the memory hierarchy, processor parallelism (intra
+              and inter-task) and processor interconnection network.
 
-          -   developed optimal software task mapping and scheduling onto the target
-              processor units and optimal communication scheduling
+          -   Developed optimal software task mapping and scheduling onto the target
+              processor units and optimal communication scheduling.
 
-          -   designed run-time design space exploration for trading-off quality-of-service
-              with actual power constraints
+          -   Designed run-time design space exploration for trading-off quality-of-service
+              with actual power constraints.
 
-          -   robust optimization with respect to several levels of uncertainties
+          -   Robust optimization with respect to several levels of uncertainties
               such as workload variability, model estimation accuracy and
-              manufacturing process variability
+              manufacturing process variability.
 
-          -   specified and implemented power characterization and
+          -   Specified and implemented power characterization and
               high-level power estimation  work-flows for the STBus Network
               on Chip.  The STBus is a high-performance, low-latency on chip
               parameterizable network supported by production grade
-              specification and synthesis tools
+              specification and synthesis tools.
 
 
       - from: 2004
@@ -447,17 +447,17 @@
             systems.
 
         -   Designed run-time and operating system components including
-            embedded co-hosting technology for the ST230 microprocessor
+            embedded co-hosting technology for the ST230 microprocessor.
 
         -   Studied and created a parallel programming framework for
-            industrial multi-processor architectures
+            industrial multi-processor architectures.
 
-        -   Specified secure storage extensions for embedded processors
+        -   Specified secure storage extensions for embedded processors.
 
-        -   Developed secure co-hosting solutions for industrial applications
+        -   Developed secure co-hosting solutions for industrial applications.
 
         -   Involved in the study and implementation of novel cryptographic
-            power attack techniques based on cache-miss induction
+            power attack techniques based on cache-miss induction.
 
   teaching:
     currentGoals: |
