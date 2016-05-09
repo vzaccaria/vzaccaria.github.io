@@ -92,7 +92,11 @@
       studyType: "Master"
       topic: "Java agents for a distributed file system."
       department: "DEI"
-      dichiara: Di essere in possesso del titolo di studio di Laurea in Ingegneria Informatica, conseguito il 8 giugno 1998 presso il Politecnico di Milano con votazione 96/100.
+
+      dichiara: |
+        Di essere in possesso del titolo di studio di Laurea in Ingegneria
+        Informatica, conseguito il 8 giugno 1998 presso il Politecnico di Milano
+        con votazione 96/100.
 
     -
       startDate: '1998-09-01'
@@ -101,8 +105,15 @@
       area: "Computer engineering"
       studyType: "Ph.D"
       department: "DEI"
-      topic: "Power consumption estimation and optimization of VLIW processors. Sponsored by STMicroelectronics."
-      dichiara: Di essere in possesso del titolo di studio di Dottorato di Ricerca in Ingegneria Informatica e Automatica rilasciato il 15 novembre 2002 dal Politecnico di Milano.
+
+      topic: |
+        "Power consumption estimation and optimization of VLIW processors.
+        Sponsored by STMicroelectronics."
+
+      dichiara: |
+        Di essere in possesso del titolo di studio di Dottorato di Ricerca in
+        Ingegneria Informatica e Automatica rilasciato il 15 novembre 2002 dal
+        Politecnico di Milano.
 
 
   currentWork:
@@ -118,11 +129,30 @@
       company: "Politecnico di Milano"
       address: "Milan, Italy"
       highlights:
-        - Appointed as Principal Investigator for an industrial collaboration grant from STMicroelectronics related to the design cryptographic hardware using functional programming languages.
-        - Specified and developed the ReSPIR optimization algorithm for processor/SoC optimization. It enables efficient IP reuse in the context of virtual platforms (10x reduction in time, less than 1 percent error w.r.t. ideal).
-        - Succesfully brought a team of 5 people to prototype a new type of video-surveillance system in the context of the 2PARMA FP7 European Project.
-        - Led a team of 3 engineers to prototype a research software tool for processor customization. Prototypes were delivered on-time and within budget of several european FP7 projects.
-      dichiara: "Di prestare servizio come ricercatore a tempo indeterminato dal 1 marzo 2011 presso il Dipartimento di Elettronica e Informazione del Politecnico di Milano, e di avere prestato servizio come ricercatore a tempo determinato dal 1 novembre 2009 a fine Febbraio 2011 presso il Dipartimento di Elettronica e Informazione del Politecnico di Milano."
+
+        - Appointed as Principal Investigator for an industrial collaboration
+          grant from STMicroelectronics related to the design cryptographic
+          hardware using functional programming languages.
+
+        - Specified and developed the ReSPIR optimization algorithm for
+          processor/SoC optimization. It enables efficient IP reuse in the
+          context of virtual platforms (10x reduction in time, less than 1
+          percent error w.r.t. ideal).
+
+        - Succesfully brought a team of 5 people to prototype a new type of
+          video-surveillance system in the context of the 2PARMA FP7 European
+          Project.
+
+        - Led a team of 3 engineers to prototype a research software tool for
+          processor customization. Prototypes were delivered on-time and within
+          budget of several european FP7 projects.
+
+      dichiara: |
+        "Di prestare servizio come ricercatore a tempo indeterminato dal 1 marzo
+        2011 presso il Dipartimento di Elettronica e Informazione del Politecnico
+        di Milano, e di avere prestato servizio come ricercatore a tempo
+        determinato dal 1 novembre 2009 a fine Febbraio 2011 presso il
+        Dipartimento di Elettronica e Informazione del Politecnico di Milano."
 
     -
       startDate: 2004-05-01
@@ -132,11 +162,26 @@
       company: "STMicroelectronics"
       address: "Lugano, Switzerland"
       highlights:
-        - "Specified, prototyped and validated several ST200 processor architectural extensions. Vertical validation of the extensions from the ISA up to the application-layer/OS."
-        - "Enabled secure co-hosting of more operating systems by means of secure storage extensions of the ST200 architecture."
-        - "Collaborated to the specification, validation (by means of functional and timing simulation) and architectural exploration for symmetric multi-processing based on ST200."
-        - "Architectural specification and design of multi-threaded architectures based on stream-programming paradigms."
-      dichiara: "Di avere prestato il seguente servizio: Research and Development Engineer presso l’Advanced Architecture Research group, AST-STMicroelectronics, Lugano (Svizzera), dal 1 maggio 2004 fino al 27 marzo 2007."
+
+        - "Specified, prototyped and validated several ST200 processor
+          architectural extensions. Vertical validation of the extensions from
+          the ISA up to the application-layer/OS."
+
+        - "Enabled secure co-hosting of more operating systems by means of
+          secure storage extensions of the ST200 architecture."
+
+        - "Collaborated to the specification, validation (by means of functional
+          and timing simulation) and architectural exploration for symmetric
+          multi-processing based on ST200."
+
+        - "Architectural specification and design of multi-threaded
+          architectures based on stream-programming paradigms."
+
+      dichiara: |
+        "Di avere prestato il seguente servizio: Research and
+        Development Engineer presso l’Advanced Architecture Research group,
+        AST-STMicroelectronics, Lugano (Svizzera), dal 1 maggio 2004 fino al 27
+        marzo 2007."
 
 
     -
@@ -146,9 +191,18 @@
       company: "STMicroelectronics"
       address: "Milan, Italy"
       highlights:
-        - "Pioneered the field of Power Modeling of VLIW Cores (10 percent error RTL vs Gate-level)."
-        - "Introduced an effective methodology to minimize the effort of design of experiments for NoC power models (10x reduction in characterization time, 33 percent error)."
-      dichiara: "Di avere prestato il seguente servizio: Research Consultant presso il gruppo Low Power System Design, AST-STMicroelectronics, Agrate Brianza (Italia), dal 1 aprile 2003 al 31 marzo 2004."
+
+        - "Pioneered the field of Power Modeling of VLIW Cores (10 percent error
+          RTL vs Gate-level)."
+
+        - "Introduced an effective methodology to minimize the effort of design
+          of experiments for NoC power models (10x reduction in characterization
+          time, 33 percent error)."
+
+      dichiara: |
+        "Di avere prestato il seguente servizio: Research Consultant presso il
+        gruppo Low Power System Design, AST-STMicroelectronics, Agrate Brianza
+        (Italia), dal 1 aprile 2003 al 31 marzo 2004."
 
     -
       startDate: 2007-11-01
@@ -157,8 +211,13 @@
       company: "Politecnico di Milano"
       address: "Milan, Italy"
       highlights:
-        - "Introduced advanced techniques for managing design of experiments and response surface methods in automatic design space exploration for multi-processors."
-        - "Extended classical design space exploration to tackle the problem of process-variability-aware design of multi-processors."
+
+        - "Introduced advanced techniques for managing design of experiments and
+          response surface methods in automatic design space exploration for
+          multi-processors."
+
+        - "Extended classical design space exploration to tackle the problem of
+          process-variability-aware design of multi-processors."
 
   research:
 
@@ -334,24 +393,23 @@
       - from: 2014
         title: Techniques to support teaching to a massive amount of students
         description: |
-          In 2014 I realized that my computer science class was undergoing a major
-          challenge. The number of students was becoming huge and resource assignment
-          from my university (in terms of teaching assistants funded by the
-          university) was on a decreasing trend. In fact, the ratio between qualified
-          teaching assistants (those who have a degree in computer engineering) and
-          students had fallen below 1/100, making it hard to bring students to
-          complete even the simplest hands-on lab.
-
-          I always had the ambition to not leave anyone behind so I gradually
+          In 2014 I realized that my computer science class was undergoing a
+          major challenge. The number of students was becoming huge and resource
+          assignment from my university (in terms of teaching assistants funded
+          by the university) was on a decreasing trend. In fact, the ratio
+          between qualified teaching assistants (those who have a degree in
+          computer engineering) and students had fallen below 1/100, making it
+          hard to bring students to complete even the simplest hands-on lab. I
+          always had the ambition to not leave anyone behind so I gradually
           started to study the current MOOC technologies to see whether they
           could be used to keep the students on track.
 
-          I am currently creating the first online course that is meant to complement
-          the face to face lectures that I give. The course can be edited
-          collaboratively by teachers (on Github) through a YAML based format that I
-          designed; it can then be imported into an EDX server to be used by the
-          students who can submit their homework to an automatic grader that I wrote
-          using containerization technology.
+          Currently, I am creating the first online course that is meant to
+          complement the face to face lectures that I give. The course can be
+          edited collaboratively by teachers (on Github) through a YAML based
+          format that I designed; it can then be imported into an EDX server to
+          be used by the students who can submit their homework to an automatic
+          grader that I wrote using containerization technology.
 
         achievements:
           - Developed a YAML-based format to author course contents.
