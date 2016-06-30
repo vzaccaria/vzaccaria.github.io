@@ -28,7 +28,10 @@
       Troughout the years, I discovered that I love teaching by making
       students passionate about computer engineering. I like matching
       conventional methods for teaching with novel technology such as
-      live-coding and program simulation.
+      live-coding and program simulation. Besides, I
+      am running a teaching experiment, called [Polimi at
+      Home](http://www.pah.polimi.it), where my students can follow on-line
+      tutorials (based on EDX technology) and be automatically graded. 
 
     paperBio: |
       Vittorio Zaccaria received the Laurea degree in Computer Engineering in
@@ -249,11 +252,17 @@
 
     currentGoals:
       short: |
-        I love studying and innovating all aspects of software and hardware development for mobile applications.
-        Here are just a few of the directions that I am investigating in this area:
+        I love studying and innovating all aspects of software and hardware
+        development. Recently (2015) I have started working with
+        STMicroelectronics on using functional programming languages for
+        hardware design. In particular, I am investigating how deeply embedded
+        DSLs can be used to produce a diverse set of artifacts (actual hardware
+        specification, high-level simulators, functional and non-functional
+        property proving).
 
-        * **Design patterns and languages for asynchronous, many-core systems**.
-        * **Domain specific languages and multi-stage programming**.
+        I am also interested into applying functional programming and category
+        theory into the general context of asynchronous systems with a specific
+        emphasis on web technologies. 
 
 
     awards:
@@ -534,21 +543,13 @@
 
   teaching:
     currentGoals: |
-      The teaching goals derive from the past industrial and academic
-      experience and span the interaction of architecture, compiler and
-      operating system towards the design of embedded applications. In this
-      context several course topics can be devised ranging from the analysis
-      and design of parallel architectures up to advanced compilation
-      techniques, for extracting parallelism from a given application, and
-      embedded operating systems for parallel processors. Several subtopics
-      may play a significant role such as hardware/software co-design and
-      parallel programming techniques. An overview of these topics can be
-      introduced in undergraduate courses while an in-depth analysis and study
-      of the state of the art would be introduced at the graduate level.
+      Troughout the years, I discovered that I love teaching by making students
+      passionate about computer engineering. I like matching conventional
+      methods for teaching with novel technology such as MOOcs. In particular, I
+      am running a teaching experiment, called [Polimi at
+      Home](http://www.pah.polimi.it), where regular students can follow on-line
+      tutorials (based on EDX technology) and be automatically graded. 
 
-      A strong effort towards the implementation of supporting software tools
-      is planned. Those tools would enable students to gain an in-depth,
-      practical experience on the course topics.
 
     courses:
       - { aaInit: 2014 , aaEnd: 2015 , courseName: Informatica B                   , position: Titolare           , titolare: Vittorio Zaccaria  , level: laurea triennale in Ingegneria Meccanica ed Energetica , institution: Politecnico di Milano , crediti: 7}
