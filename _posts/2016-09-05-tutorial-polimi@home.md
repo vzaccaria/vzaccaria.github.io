@@ -30,8 +30,9 @@ Studiate il contenuto di tutti i moduli (capitoli, *sequentials* e *verticals*) 
 # Prima connessione
 
 1. Cliccare sul seguente indirizzo: [http://www.pah.polimi.it/](http://www.pah.polimi.it/)
-
-2. Cliccare sul pulsante *sign in* in alto a destra: ![](https://dl.dropboxusercontent.com/u/5867765/images/pah_signin.png)
+2. Cliccare sul pulsante *sign in* in alto a destra: 
+ 
+   ![](https://dl.dropboxusercontent.com/u/5867765/images/pah_signin.png)
  
 3. Cliccare su *Autenticazione Polimi* ![](https://dl.dropboxusercontent.com/u/5867765/images/pah_authpolimi.png)
  
@@ -49,29 +50,26 @@ Studiate il contenuto di tutti i moduli (capitoli, *sequentials* e *verticals*) 
 
 7. Cliccare su *register for 80169*
 
- ![](https://dl.dropboxusercontent.com/u/5867765/images/pah_register.png)
+   ![](https://dl.dropboxusercontent.com/u/5867765/images/pah_register.png)
  
 8. Arriverete alla pagina dei vostri corsi correnti. Cliccate su *view course* per accedere al corso:
 
- ![](https://dl.dropboxusercontent.com/u/5867765/images/pah_viewcourse.png)
+   ![](https://dl.dropboxusercontent.com/u/5867765/images/pah_viewcourse.png)
 
 9. I moduli veri e propri si trovano quindi cliccando su *courseware*:
 
- ![](https://dl.dropboxusercontent.com/u/5867765/images/pah_courseware.png)
+   ![](https://dl.dropboxusercontent.com/u/5867765/images/pah_courseware.png)
 
 # Connessioni successive
 
-1. Cliccare sul seguente indirizzo:
-
- [http://www.pah.polimi.it/](http://www.pah.polimi.it/)
-
+1. Cliccare sul seguente indirizzo: [http://www.pah.polimi.it/](http://www.pah.polimi.it/)
 2. Arriverete alla pagina dei vostri corsi correnti. Cliccate su *view course* per accedere al corso:
 
- ![](https://dl.dropboxusercontent.com/u/5867765/images/pah_viewcourse.png)
+   ![](https://dl.dropboxusercontent.com/u/5867765/images/pah_viewcourse.png)
 
 9. I moduli veri e propri (chiamati *chapters*) si trovano quindi cliccando su *courseware*:
 
- ![](https://dl.dropboxusercontent.com/u/5867765/images/pah_courseware.png)
+   ![](https://dl.dropboxusercontent.com/u/5867765/images/pah_courseware.png)
 
 # Fruizione del corso
 
@@ -99,6 +97,6 @@ Una volta risposto è comunque possibile guardare la soluzione corretta.
 
 # Controllo del vostro progresso
 
-Potete dare un'occhiata al vostro progresso negli esercizi cliccando sul tab *progress*:
+Potete monitorare il vostro progresso negli esercizi cliccando sul tab *progress*:
 
 ![](https://dl.dropboxusercontent.com/u/5867765/images/pah_progress.png)
