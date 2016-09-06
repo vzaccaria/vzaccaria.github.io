@@ -31,28 +31,28 @@ Studiate il contenuto di tutti i moduli (capitoli, *sequentials* e *verticals*) 
 
 1. Cliccare sul seguente indirizzo:
 
- [http://www.pah.polimi.it/](http://www.pah.polimi.it/)
+   [http://www.pah.polimi.it/](http://www.pah.polimi.it/)
 
 
 2. Cliccare sul pulsante *sign in* in alto a destra:
 
- ![](https://dl.dropboxusercontent.com/u/5867765/images/pah_signin.png)
+   ![](https://dl.dropboxusercontent.com/u/5867765/images/pah_signin.png)
  
 3. Cliccare su *Autenticazione Polimi*
 
- ![](https://dl.dropboxusercontent.com/u/5867765/images/pah_authpolimi.png)
+   ![](https://dl.dropboxusercontent.com/u/5867765/images/pah_authpolimi.png)
  
 4. Inserire le vostre credenziali e cliccare *Accedi*
 
- ![](https://dl.dropboxusercontent.com/u/5867765/images/pah_credenziali.png)
+   ![](https://dl.dropboxusercontent.com/u/5867765/images/pah_credenziali.png)
  
 5. Cliccare su *Find courses now*
 
- ![](https://dl.dropboxusercontent.com/u/5867765/images/pah_findcourses.png)
+   ![](https://dl.dropboxusercontent.com/u/5867765/images/pah_findcourses.png)
  
 6. Cliccare su *Introduzione ad un linguaggio di calcolo numerico*
 
- ![](https://dl.dropboxusercontent.com/u/5867765/images/pah_access.png)
+   ![](https://dl.dropboxusercontent.com/u/5867765/images/pah_access.png)
 
 7. Cliccare su *register for 80169*
 
