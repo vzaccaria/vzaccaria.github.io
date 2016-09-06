@@ -13,9 +13,9 @@ Benvenuti! Polimi@Home è un esperimento che sto conducendo per migliorare la di
 
 In questo momento, Polimi@Home consiste in un tutorial online sui fondamenti Matlab/Octave (il primo linguaggio che vedremo in Informatica B). I vantaggi fondamentali per voi sono:
 
-* Potete studiare i vari moduli con i vostri tempi
-* Potete risolvere semplici esercizi di programmazione e quiz che vengono valutati online avendo un feedback immediato sulla vostra preparazione
-* Visto che la sintassi base di Matlab verrà affrontata anche nel tutorial online, avremo la possibilità di dedicare più tempo alle attività di *problem solving* a lezione.
+* studiare i vari moduli con i vostri tempi
+* risolvere semplici esercizi di programmazione e quiz che vengono valutati online avendo un feedback immediato sulla vostra preparazione
+* visto che la sintassi base di Matlab verrà affrontata anche nel tutorial online, avremo la possibilità di dedicare più tempo alle attività di *problem solving* a lezione.
 
 ## Come utilizzarlo
 
