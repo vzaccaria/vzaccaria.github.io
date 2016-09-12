@@ -9,7 +9,7 @@ tags : ['tutorial']
 
 # Cosa è Polimi@Home e perché utilizzarlo
 
-Benvenuti! Polimi@Home è un esperimento che sto conducendo per migliorare la didattica di questo corso, soprattutto per rendere più efficiente lo studio della materia a casa (da qui il nome). 
+Benvenuti! Polimi@Home è una risorsa aggiuntiva rendere più efficiente lo studio della materia a casa (da qui il nome). 
 
 In questo momento, Polimi@Home consiste in un tutorial online sui fondamenti Matlab/Octave (il primo linguaggio che vedremo in Informatica B). I vantaggi fondamentali per voi sono:
 
@@ -19,7 +19,7 @@ In questo momento, Polimi@Home consiste in un tutorial online sui fondamenti Mat
 
 ## Come utilizzarlo
 
-Studiate il contenuto di tutti i moduli (capitoli, *sequentials* e *verticals*) e risolvete gli esercizi. Idealmente, sarebbe meglio che completaste tutto entro il primo laboratorio su Matlab.
+Studiate il contenuto di tutti i moduli (capitoli, *sequentials* e *verticals*) e risolvete gli esercizi. Idealmente, sarebbe meglio che completaste i capitoli fino a "Loops" entro il primo laboratorio su Matlab.
 
 ## Disclaimer 
 
@@ -77,7 +77,7 @@ Il corso è suddiviso in capitoli e sottocapitoli (sequentials) accessibili tram
 
 ![](https://dl.dropboxusercontent.com/u/5867765/images/pah_capseq.png)
 
-La presenza del simbolo di sveglia significa che, in quel sequential, vi sono uno o più esercizi da fare a casa. 
+La presenza del simbolo di sveglia significa che, in quel sequential, vi sono uno o più esercizi. 
 
 Un sequential può avere una o più pagine chiamate *vertical*. E' possibile accedere ai vari vertical tramite i tab in alto alla pagina. Nel sequential "Commenti" abbiamo ad esempio due vertical, uno per la lezione ed uno per gli esercizi:
 
