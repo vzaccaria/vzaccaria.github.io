@@ -28,6 +28,8 @@ links:
   - key: Tutorial su Polimi@Home
     value: <%= dropbox %>/1516-published-infob/programmaInfoB.pdf
   
+  - key: Tutorial su Polimi@Home
+    value: <%= dropbox %>/1516-published-infob/programmaInfoB.pdf
     
 temi:
     - key: Raccolta temi esame A.A. 2008/2009
