@@ -29,7 +29,7 @@ contacts:
     link: <%= dropbox %>/1516-published-infob/programmaInfoB.pdf
 
 links:
-  - key: Turorial su Polimi@Home
+  - key: Tutorial su Polimi@Home
     value: http://www.vittoriozaccaria.net/#/infob/2016/09/05/tutorial-polimi@home.html
     
   - key: Inizio del corso
