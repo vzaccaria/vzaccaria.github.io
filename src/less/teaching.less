@@ -73,11 +73,69 @@
 
 }
 
+.lecture-links {
+
+
+	&__title {
+		.nice-section-title();
+	}
+
+  &__frame {
+		  .border-box();
+      .on-mobile({
+                    width: 9.5em;
+                    height: 7.14em;
+                    margin-left: 0.5em;
+                    margin-right: 0.5em;
+                    margin-top: 1em;
+                    display: inline-block
+                });
+	    .on-desktop({
+                    width: 9.5em;
+                    height: 7.14em;
+                    margin-left: 0.5em;
+                    margin-right: 0.5em;
+                    margin-top: 1em;
+                    display: inline-block;
+                 });
+      vertical-align: middle; 
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: rgba(0,0,0,0.06) 0 0 10px;
+      border: 1px solid #d8d8d8;
+	    text-align: center;
+  }
+
+  &__linktext {
+		  .border-box();
+    	.smallcapfont(@font-family);
+      width: 100%;
+      height: auto;
+      color: black;
+      .on-mobile({
+                    font-size: 12px;
+      });
+      .on-desktop({
+                    font-size: 12px; 
+      });
+      padding-top: 4em;
+      text-decoration: none;
+      display: inline-block;
+  }
+  &__img{
+      width: 100%;
+      height: 100%;
+      overflow-y: hidden;
+  }
+
+}
+
 
 .lecture-messages {
 
 	&__title {
-		.nice-section-title();
+		  .nice-section-title();
+      line-height: 1em !important;
 	}
 
 	&__messages {
