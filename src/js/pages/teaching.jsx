@@ -28,7 +28,7 @@
 
 import React from 'react';
 import _ from 'lodash';
-import Calendar from './components/calendar'
+import Calendar from './components/calendar';
 
 const debug = require('../react-utils/debug')(__filename);
 
@@ -41,7 +41,7 @@ function renderContacts(contacts) {
                 <div key={key} className="contacts__detail">
                     <div className="contacts__key"> {it.key} </div>
                     <div className="contacts__value"> <a href={tmpl(it.link)}>{it.value}</a> </div>
-                </div>)
+                </div>);
         } else {
             return (
                 <div key={key} className="contacts__detail">
@@ -61,8 +61,8 @@ function renderMessages(name, messages) {
         if(x.link)
             return <a href={tmpl(x.link)}> {x.text} </a>;
         else
-            return x.text
-    }
+            return x.text;
+    };
     function renderMessage(it, key) {
         return (
             <div key={key} className='lecture-messages__message'>
@@ -112,6 +112,43 @@ function renderInfo(name, data) {
         </div>);
 }
 
+const renderLinkText = (l) => {
+    return (
+        <a href={tmpl(l.value)} >
+            <div className="lecture-links__frame">
+                <div className="lecture-links__linktext">
+                    {l.key}
+                </div>
+            </div>
+        </a>
+    );
+}
+
+const renderLinkImage = (l) => {
+    return (
+        <div className="lecture-links__frame">
+            <a href={tmpl(l.value)}>
+                <img alt={l.key} className="lecture-links__img" src={l.img}> </img>
+            </a>
+        </div>);
+}
+
+function renderLinks(name, data) {
+    const renderLink = (l) => {
+        return (!_.isUndefined(l.img) ? renderLinkImage(l) : renderLinkText(l));
+    };
+    return (
+        <div className="lecture-links">
+            <div className="lecture-links__title">
+                {name}
+            </div>
+            <div className="lecture-links__list">
+                {_.map(data.links, renderLink)}
+            </div>
+        </div>
+    );
+}
+
 
 let renderMJ = () => {
     MathJax.Hub.Config({tex2jax:{inlineMath:[['$','$'],['\\(','\\)']]}});
@@ -132,7 +169,7 @@ export default class Teaching extends React.Component {
             let data = dta;
             this.setState({valid, data});
             return null;
-        })
+        });
     }
 
     componentDidUpdate() {
@@ -144,9 +181,10 @@ export default class Teaching extends React.Component {
             return (
                 <div className="teaching-page">
                     <div className="teaching-page__title">Informatica B</div>
-                    <div className="teaching-page__year">Anno accademico 2015 - 2016</div>
+                    <div className="teaching-page__year">Anno accademico {this.state.data.info.annoaccademico}</div>
                     {renderContacts(this.state.data.contacts)}
                     {renderMessages('Avvisi importanti', this.state.data.avvisi)}
+                    {renderLinks('Tutorials e slides', this.state.data)}
                     {renderInfo("Informazioni su esame e prove in itinere", this.state.data)}
                     <div className="lecture-material">
                         <div className="lecture-material__title">
@@ -157,7 +195,7 @@ export default class Teaching extends React.Component {
                         </div>
                         <Calendar style={{paddingBottom: '3rem'}} numberOfMonths={6} />
                     </div>
-                </div>)
+                </div>);
         } else {
             return (<div />);
         }
