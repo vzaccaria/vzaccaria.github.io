@@ -25,14 +25,9 @@ contacts:
     link: <%= dropbox %>/1516-published-infob/programmaInfoB.pdf
 
 links:
-  - key: Tutorial su Polimi@Home
-    value: <%= dropbox %>/1516-published-infob/programmaInfoB.pdf
-  
-  - key: Tutorial su Polimi@Home
-    value: <%= dropbox %>/1516-published-infob/programmaInfoB.pdf
-  - key: Immagine
-    value: pippo
-    img: https://dl.dropboxusercontent.com/u/5867765/avatars/avatar-vz.jpg
+  - key: Inizio del corso
+    value: https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/le_inizio.pdf
+    img: https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/le_inizio.png
     
 temi:
     - key: Raccolta temi esame A.A. 2008/2009
