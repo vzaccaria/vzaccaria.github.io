@@ -35,7 +35,7 @@ export default class Calendar extends React.Component {
             });
             let today = moment()
                 this.setState({ valid, data, today });
-        })
+        });
     }
 
     getStartMonth() {
@@ -58,21 +58,21 @@ export default class Calendar extends React.Component {
     }
 
     getPost(day) {
-        let dta = this.state.data[_d(day.dateMoment)]
+        let dta = this.state.data[_d(day.dateMoment)];
         if(!_.isUndefined(dta)) {
             day.title = dta.title;
             day.tags = dta.tags;
             day.link = dta.link;
-            day.classes = [`calendar__category_${dta.category}`]
-            day.style = {cursor: 'pointer'}
+            day.classes = [`calendar__category_${dta.category}`];
+            day.style = {cursor: 'pointer'};
         }
         return day
     }
 
     renderDay(day) {
         let classes = [ 'calendar__day' ];
-        let number = 'NA'
-        let style = {}
+        let number = 'NA';
+        let style = {};
 
         if(!day.notInMonth) {
             day = this.getPost(day);
@@ -97,7 +97,7 @@ export default class Calendar extends React.Component {
                 if(d.link) {
                     window.location.href = `#${d.link}`;
                 }
-            }
+            };
         }
 
         if(day.dateMoment) {
@@ -110,7 +110,7 @@ export default class Calendar extends React.Component {
                 <div style={style} className={classes.join(' ')} onClick={gotoDay(day)}>
                     {number}
                 </div>
-            </Tooltip>)
+            </Tooltip>);
         } else {
             return (
                 <div key={day.index} style={style} className={classes.join(' ')} onClick={gotoDay(day)}>
@@ -122,22 +122,22 @@ export default class Calendar extends React.Component {
     /* cm is the moment corresponding to the beginning of the month */
     renderDaysInMonth(cm) {
         let days = _.range(0, cm.daysInMonth());
-        let daysMup = []
+        let daysMup = [];
         let isSunday = (cd) => cd.day() == 0;
 
         if(!isSunday(cm)) {
             daysMup = _.map(_.range(0, cm.day()), (v, index) => {
                 let notInMonth = true;
-                index = `${index}-n`
+                index = `${index}-n`;
                 return this.renderDay({ notInMonth, index });
-            })
+            });
         }
 
         return daysMup.concat(
             _.map(days, (d, index) => {
                 let dateMoment = moment(cm).add(d, 'days');
                 let notInMonth = false;
-                return this.renderDay({ dateMoment, notInMonth, index})
+                return this.renderDay({ dateMoment, notInMonth, index});
             }));
     }
 
@@ -153,7 +153,7 @@ export default class Calendar extends React.Component {
                 </div>
             );
         } else {
-            return <div></div>
+            return <div></div>;
         }
     }
 }
