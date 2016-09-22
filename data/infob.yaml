@@ -1,13 +1,12 @@
+info:
+  annoaccademico: 2016 - 2017
+  sede: Bovisa
+  
 avvisi:
-  - title: Soluzioni appello del 27 Giugno 2016
+  - title: Soluzioni appello 14 Settembre 2017
     text: Disponibili a questo indirizzo
     link: http://www.vittoriozaccaria.net/#/infob/2016/07/01/soluzioni-appello-del-27-giugno.html
     
-  - title: Soluzioni appello di febbraio
-    text: Disponibili a questo indirizzo
-    link: http://www.vittoriozaccaria.net/#/infob/2016/02/29/soluzioni-appello-del-18-febbraio.html
-    
-
 contacts:
   - key: Docente
     value: Vittorio Zaccaria
@@ -24,6 +23,14 @@ contacts:
     value: Formato pdf
     link: <%= dropbox %>/1516-published-infob/programmaInfoB.pdf
 
+links:
+  - key: Tutorial su Polimi@Home
+    value: http://www.vittoriozaccaria.net/#/infob/2016/09/05/tutorial-polimi@home.html
+    
+  - key: Inizio del corso
+    value: https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/le_inizio.pdf
+    img: https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/le_inizio.png
+    
 temi:
     - key: Raccolta temi esame A.A. 2008/2009
       value: http://home.dei.polimi.it/loiacono/uploads/Teaching/InfoB/AA0809.zip
