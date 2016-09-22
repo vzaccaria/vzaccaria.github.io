@@ -193,7 +193,7 @@ export default class Teaching extends React.Component {
                         <div className="lecture-material__description">
                             <p> Cliccare sui giorni evidenziati in arancione per accedere al materiale corrispondente. </p>
                         </div>
-                        <Calendar style={{paddingBottom: '3rem'}} numberOfMonths={6} />
+                        <Calendar style={{paddingBottom: '3rem'}} startMonth={"September 2016"} numberOfMonths={6} />
                     </div>
                 </div>);
         } else {
