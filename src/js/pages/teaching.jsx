@@ -29,6 +29,7 @@
 import React from 'react';
 import _ from 'lodash';
 import Calendar from './components/calendar';
+import Tooltip from 'rc-tooltip';
 
 const debug = require('../react-utils/debug')(__filename);
 
@@ -135,7 +136,12 @@ const renderLinkImage = (l) => {
 
 function renderLinks(name, data) {
     const renderLink = (l) => {
-        return (!_.isUndefined(l.img) ? renderLinkImage(l) : renderLinkText(l));
+        let theLink = (!_.isUndefined(l.img) ? renderLinkImage(l) : renderLinkText(l));
+        return (
+            <Tooltip key={l.key} placement="top" overlay={l.key}>
+                {theLink}
+            </Tooltip>
+        );
     };
     return (
         <div className="lecture-links">
