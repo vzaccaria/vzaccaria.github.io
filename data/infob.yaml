@@ -24,7 +24,7 @@ contacts:
     value: Cognomi F- Ma (soggetto a cambiamenti)
   - key: Programma
     value: Formato pdf
-    link: <%= dropbox %>/1516-published-infob/programmaInfoB.pdf
+    link: <%= dropbox %>/1617-published-infob/programmaInfoB.pdf
 
 links:
   - key: Tutorial su Polimi@Home
