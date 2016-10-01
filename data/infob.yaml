@@ -31,8 +31,13 @@ links:
     value: http://www.vittoriozaccaria.net/#/infob/2016/09/05/tutorial-polimi@home.html
     
   - key: Inizio del corso
-    value: https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/le_inizio.pdf
-    img: https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/le_inizio.png
+    value: https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/le_inizio_1617.pdf
+    img: https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/le_inizio_1617.png
+    
+  - key: Pensare computazionalmente
+    value: https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/le_compthink_1617.pdf
+    img: https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/le_compthink_1617.png    
+    
     
 temi:
     - key: Raccolta temi esame A.A. 2008/2009
