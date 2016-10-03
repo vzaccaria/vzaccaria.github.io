@@ -27,6 +27,9 @@ contacts:
     link: <%= dropbox %>/1617-published-infob/programmaInfoB.pdf
 
 links:
+  - key: Installazione Matlab
+    value: http://www.software.polimi.it/
+    
   - key: Tutorial su Polimi@Home
     value: http://www.vittoriozaccaria.net/#/infob/2016/09/05/tutorial-polimi@home.html
     
