@@ -3,8 +3,10 @@ info:
   sede: Bovisa
   
 avvisi:
-  - title: Prima lezione del corso
-    text: La prima lezione di Informatica B dell'anno accademico 16/17 si terrà il 4 ottobre alle 13:15
+  - title: Percorso suggerito per arrivare al primo laboratorio (4 Ottobre 2016)
+    text: Completare Polimi@Home almeno fino all'unità "Loops" → 
+          Installare Matlab sul proprio PC (vedi sezione links) → 
+          Completare almeno i primi 3 progetti del file "Laboratorio su Matlab" (vedi sezione links). 
     
   - title: Soluzioni appello 14 Settembre 2016
     text: Disponibili a questo indirizzo
