@@ -3,15 +3,8 @@ info:
   sede: Bovisa
   
 avvisi:
-  - title: Percorso suggerito per arrivare al laboratorio del 18 ottobre
-    text: Completare Polimi@Home almeno fino all'unità "Loops" → 
-          Installare Matlab sul proprio PC (vedi sezione "Tutorials e slides") → 
-          Completare almeno i primi 3 progetti del file "Laboratorio su Matlab" (vedi sezione "Tutorials e slides"). 
-          E stampatevi il "Bigino Matlab" per il laboratorio! 
-    
-  - title: Soluzioni appello 14 Settembre 2016
-    text: Disponibili a questo indirizzo
-    link: http://www.vittoriozaccaria.net/#/infob/2016/09/22/soluzioni-appello-del-14-settembre-2016.html
+  - title: Pubblicato materiale sui pattern di programmazione
+    text: Si veda la sezione tutorials e slide   
     
 contacts:
   - key: Docente
@@ -58,7 +51,9 @@ links:
   - key: Bigino Matlab
     value: https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/cs_matlab.pdf
     
-
+  - key: Semplici pattern di programmazione
+    value: https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/le_princprog_1617.pdf
+    img: https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/le_princprog_1617.png
     
 temi:
     - key: Raccolta temi esame A.A. 2015/2016
