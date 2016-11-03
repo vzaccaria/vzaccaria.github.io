@@ -3,6 +3,9 @@ info:
   sede: Bovisa
   
 avvisi:
+  - title: Pubblicati esercizi aggiuntivi per il laboratorio
+    text: Si veda la sezione tutorials e slide   
+    
   - title: Pubblicato materiale sui pattern di programmazione
     text: Si veda la sezione tutorials e slide   
     
@@ -54,6 +57,9 @@ links:
   - key: Semplici pattern di programmazione
     value: https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/le_princprog_1617.pdf
     img: https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/le_princprog_1617.png
+    
+  - key: Esercizi aggiuntivi labo Matlab
+    value: https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/matlab_tutorial.pdf
     
 temi:
     - key: Raccolta temi esame A.A. 2015/2016
