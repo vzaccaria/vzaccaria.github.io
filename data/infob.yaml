@@ -60,10 +60,11 @@ links:
     
   - key: Esercizi aggiuntivi labo Matlab
     value: https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/matlab_tutorial_extended.pdf
+    tag: Nuovo
 
   - key: Esercizi visti fino ad ora
     value: https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/esercizi-live.pdf
-    tag: live
+    tag: Aggiornato continuamente
 
 temi:
     - key: Raccolta temi esame A.A. 2015/2016
