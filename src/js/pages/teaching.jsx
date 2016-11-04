@@ -114,12 +114,17 @@ function renderInfo(name, data) {
 }
 
 const renderLinkText = (l) => {
+    let tag = (l.tag) ? (
+                <div className="lecture-links__linktag">
+                    {l.tag}
+                </div>) : "";
     return (
         <a href={tmpl(l.value)} >
             <div className="lecture-links__frame">
                 <div className="lecture-links__linktext">
                     {l.key}
                 </div>
+                {tag}
             </div>
         </a>
     );
@@ -192,18 +197,20 @@ export default class Teaching extends React.Component {
                     {renderMessages('Avvisi importanti', this.state.data.avvisi)}
                     {renderLinks('Tutorials e slides', this.state.data)}
                     {renderInfo("Informazioni su esame e prove in itinere", this.state.data)}
-                    <div className="lecture-material">
-                        <div className="lecture-material__title">
-                            Calendario e materiale
-                        </div>
-                        <div className="lecture-material__description">
-                            <p> Cliccare sui giorni evidenziati in arancione per accedere al materiale corrispondente. </p>
-                        </div>
-                        <Calendar style={{paddingBottom: '3rem'}} startMonth={"September 2016"} numberOfMonths={6} />
-                    </div>
                 </div>);
         } else {
             return (<div />);
         }
     }
 }
+
+
+/* <div className="lecture-material">
+ *     <div className="lecture-material__title">
+ *         Calendario e materiale
+ *     </div>
+ *     <div className="lecture-material__description">
+ *         <p> Cliccare sui giorni evidenziati in arancione per accedere al materiale corrispondente. </p>
+ *     </div>
+ *     <Calendar style={{paddingBottom: '3rem'}} startMonth={"September 2016"} numberOfMonths={6} />
+ * </div>*/
