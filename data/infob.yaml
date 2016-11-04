@@ -3,10 +3,10 @@ info:
   sede: Bovisa
   
 avvisi:
-  - title: Pubblicati esercizi aggiuntivi per il laboratorio
-    text: Si veda la sezione tutorials e slide   
+  - title: 4 Nov. 2016 - Aggiunto link esercizi visti a lezione.
+    text: Documento aggiornato continuamente - Si veda la sezione tutorials e slide   
     
-  - title: Pubblicato materiale sui pattern di programmazione
+  - title: 4 Nov. 2016 - Pubblicati esercizi aggiuntivi per il laboratorio
     text: Si veda la sezione tutorials e slide   
     
 contacts:
@@ -64,7 +64,7 @@ links:
 
   - key: Esercizi visti fino ad ora
     value: https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/esercizi-live.pdf
-    tag: Aggiornato continuamente
+    tag: Aggiornato
 
 temi:
     - key: Raccolta temi esame A.A. 2015/2016
