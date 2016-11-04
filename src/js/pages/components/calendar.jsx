@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 import moment from 'moment';
-import { fetchIndex } from '../../stores/fetcher'
+import { fetchIndex } from '../../stores/fetcher';
 import Tooltip from 'rc-tooltip';
 
 import '../../../css/tooltip.css';
@@ -16,14 +16,14 @@ const debug = require('../../react-utils/debug')(__filename);
 let _d = (d) => d.format('DD-MM-YYYY');
 
 function capitaliseFirstLetter(string) {
- return string.charAt(0).toUpperCase() + string.slice(1);
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 export default class Calendar extends React.Component {
 
     constructor() {
         super();
-        this.state = { valid: false }
+        this.state = { valid: false };
     }
 
     componentDidMount() {
@@ -31,17 +31,17 @@ export default class Calendar extends React.Component {
             let valid = true;
             let data = _.indexBy(index, (it) => {
                 // can create a moment from an ISO date (xmlschema)
-                return _d(moment(it.date))
+                return _d(moment(it.date));
             });
-            let today = moment()
-                this.setState({ valid, data, today });
+            let today = moment();
+            this.setState({ valid, data, today });
         });
     }
 
     getStartMonth() {
         let format = _.get(this.props, "format", "MMMM YYYY");
         let startMonth = _.get(this.props, "startMonth", "September 2015");
-        return moment(startMonth, format)
+        return moment(startMonth, format);
     }
 
     getNumberOfMonths() {
@@ -106,11 +106,11 @@ export default class Calendar extends React.Component {
 
         if(day.title) {
             return (
-            <Tooltip key={day.index} placement="top" overlay={capitaliseFirstLetter(day.title)}>
-                <div style={style} className={classes.join(' ')} onClick={gotoDay(day)}>
-                    {number}
-                </div>
-            </Tooltip>);
+                <Tooltip key={day.index} placement="top" overlay={capitaliseFirstLetter(day.title)}>
+                    <div style={style} className={classes.join(' ')} onClick={gotoDay(day)}>
+                        {number}
+                    </div>
+                </Tooltip>);
         } else {
             return (
                 <div key={day.index} style={style} className={classes.join(' ')} onClick={gotoDay(day)}>
