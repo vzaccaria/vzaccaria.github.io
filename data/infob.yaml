@@ -67,6 +67,10 @@ links:
     value: https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/matlab_tutorial_extended.pdf
     tag: Nuovo
 
+  - key: Codifica binaria dei numeri interi (naturali e in Z)
+    value: https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/le_codifica_1617.pdf
+    img: https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/le_codifica_1617.png
+
   - key: Esercizi visti fino ad ora
     value: https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/esercizi-live.pdf
     tag: Aggiornato
