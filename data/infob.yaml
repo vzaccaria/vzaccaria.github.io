@@ -3,6 +3,11 @@ info:
   sede: Bovisa
   
 avvisi:
+  - title: 17 Novembre 2016 - In vista della prova in itinere 
+    text: |
+      Si raccomanda di completare, per la prova in itinere, tutto Polimi@Home, 
+      i due tutorial dei laboratori e tutti gli esercizi nel documento aggiornato continuamente.
+    
   - title: Prova in itinere del 23 Novembre 2016
     text: |
       La prova in itinere si terrà il 23 Novembre alle 9:00. Vi ricordo che è *obbligatorio* iscriversi. 
