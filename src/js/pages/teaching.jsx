@@ -30,6 +30,7 @@ import React from 'react';
 import _ from 'lodash';
 import Calendar from './components/calendar';
 import Tooltip from 'rc-tooltip';
+import ReactMarkdown from 'react-markdown';
 
 const debug = require('../react-utils/debug')(__filename);
 
@@ -61,8 +62,13 @@ function renderMessages(name, messages) {
     let _content = (x) => {
         if(x.link)
             return <a href={tmpl(x.link)}> {x.text} </a>;
-        else
-            return x.text;
+        else {
+            if(x.markdown) {
+                return <ReactMarkdown source={x.markdown}> </ReactMarkdown>
+            } else {
+                return x.text;
+            }
+        }
     };
     function renderMessage(it, key) {
         return (
@@ -115,9 +121,9 @@ function renderInfo(name, data) {
 
 const renderLinkText = (l) => {
     let tag = (l.tag) ? (
-                <div className="lecture-links__linktag">
-                    {l.tag}
-                </div>) : "";
+        <div className="lecture-links__linktag">
+            {l.tag}
+        </div>) : "";
     return (
         <a href={tmpl(l.value)} >
             <div className="lecture-links__frame">
