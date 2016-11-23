@@ -3,6 +3,16 @@ info:
   sede: Bovisa
   
 avvisi:
+  - title: 17 Novembre 2016 - In vista della prova in itinere 
+    text: |
+      Si raccomanda di completare, per la prova in itinere, tutto Polimi@Home, 
+      i due tutorial dei laboratori e tutti gli esercizi nel documento aggiornato continuamente.
+    
+  - title: Prova in itinere del 23 Novembre 2016
+    markdown: |
+      La prova in itinere si terrà il 23 Novembre alle 9:00. Vi ricordo che è *obbligatorio* iscriversi. 
+      In maniera analoga, *se pensate di non presentarvi*, è obbligatorio non essere iscritti. 
+      
   - title: 4 Nov. 2016 - Aggiunto link esercizi visti a lezione.
     text: Documento aggiornato continuamente - Si veda la sezione tutorials e slide   
     
@@ -60,7 +70,10 @@ links:
     
   - key: Esercizi aggiuntivi labo Matlab
     value: https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/matlab_tutorial_extended.pdf
-    tag: Nuovo
+
+  - key: Codifica binaria dei numeri interi (naturali e in Z)
+    value: https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/le_codifica_1617.pdf
+    img: https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/le_codifica_1617.png
 
   - key: Esercizi visti fino ad ora
     value: https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/esercizi-live.pdf
