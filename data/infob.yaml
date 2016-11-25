@@ -67,6 +67,14 @@ links:
   - key: Esercizi visti fino ad ora
     value: https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/esercizi-live.pdf
     tag: Aggiornato
+    
+  - key: Installazione Linguaggio C (Code Blocks) per Windows
+    value: http://etabeta2009.altervista.org/Installa-Codeblocks.pdf
+    tag: nuovo
+  
+  - key: Laboratorio su C
+    value: https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/c_tutorial.pdf
+    tag: nuovo
 
 temi:
     - key: Raccolta temi esame A.A. 2015/2016
