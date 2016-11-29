@@ -3,6 +3,10 @@ info:
   sede: Bovisa
   
 avvisi:
+  - title: Aggiornamento 
+    markdown: |
+      Le slides sulla codifica binaria sono state aggiornate con la parte sulla virgola fissa e mobile. Per chi vuole già intraprendere il tutorial sul linguaggio C, è disponibile anche la traccia del laboratorio nella sezione sotto.
+      
   - title: Risultati prova in itinere del 23 Novembre 2016
     markdown: |
       I risultati della prova in itinere sono disponibili [a questo indirizzo](http://www.vittoriozaccaria.net/#/infob/2016/11/29/voti-della-prova-in-itinere-del-23-novembre-2016.html).
