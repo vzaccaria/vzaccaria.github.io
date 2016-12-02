@@ -84,10 +84,18 @@ links:
     value: https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/c_tutorial.pdf
     tag: nuovo
     
-  - key: Architetture e caches
+  - key: Architetture di processori
     value: https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/le_arch_caches.pdf
     img: https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/le_arch_caches.png
 
+  - key: Architetture: Arduino
+    value: https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/le_arduino.pdf
+    img: https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/le_arduino.png
+    
+  - key: Il linguaggio C
+    value: https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/le_linguaggioc.pdf
+    img: https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/le_linguaggioc.png
+    
 temi:
     - key: Raccolta temi esame A.A. 2015/2016
       value: https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/temi_esame_infob_1516.zip
