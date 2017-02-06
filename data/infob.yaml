@@ -3,14 +3,14 @@ info:
   sede: Bovisa
   
 avvisi:
+  - title: Soluzioni della prova in itinere 
+    markdown: |
+      [Link al file pdf con soluzioni](https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/1702_it2.sol.pdf).
+      
   - title: Esiti finali delle prove in itinere 
     markdown: |
       Risultati finali disponibili [a questo indirizzo](http://www.vittoriozaccaria.net/#/infob/2017/02/06/esiti-delle-prove-in-itinere-1617.html)
           
-  - title: Soluzioni prova in itinere del 23 Novembre 2016
-    markdown: |
-      Ecco i link alle soluzioni in pdf, ([Versione A](https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/1611_it1.sol.pdf)) e 
-      ([Versione B](https://dl.dropboxusercontent.com/u/5867765/1617-published-infob/1611_it1.solb.pdf)).
     
 contacts:
   - key: Docente
