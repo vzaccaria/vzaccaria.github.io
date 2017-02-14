@@ -2,6 +2,64 @@
     "records": [
         {
             "authors": [
+                "V. Cassani",
+                "S. Gianelli",
+                "M. Matera",
+                "R. Medana",
+                "E. Quintarelli",
+                "L. Tanca",
+                "V. Zaccaria"
+            ],
+            "title": "On the Role of Context in the Design of Mobile Mashups",
+            "month": "January",
+            "year": "2017",
+            "booktitle": "Rapid Mashup Development Tools: Second International Rapid Mashup Challenge, RMC 2016, Lugano, Switzerland, June 6, 2016, Revised Selected Papers",
+            "pages": "108 to 128",
+            "publisher": "Springer International Publishing",
+            "address": "Cham",
+            "doi": "10.1007/978-3-319-53174-8_7",
+            "isbn": "9783319531731",
+            "justApplied": false,
+            "justAccepted": false,
+            "keyword": [
+                "bookc",
+                "notfoundincineca"
+            ],
+            "type": "bookchapter",
+            "timestamp": 1483225200
+        },
+        {
+            "authors": [
+                "E. Bisi",
+                "F. Melzani",
+                "V. Zaccaria"
+            ],
+            "title": "Symbolic analysis of higher-order side channel countermeasures",
+            "month": "December",
+            "year": "2016",
+            "journal": {
+                "name": "IEEE Transactions on Computers",
+                "id": "IEEETransactionsonComputers"
+            },
+            "volume": "Pre-print",
+            "pages": "1 to 7",
+            "publisher": "IEEE - Piscataway, NJ - USA",
+            "doi": "10.1109/TC.2016.2635650",
+            "issn": "00189340",
+            "url": "http://dx.doi.org/10.1109/TC.2016.2635650",
+            "justApplied": false,
+            "justAccepted": true,
+            "keyword": [
+                "trans",
+                "journal",
+                "accepted",
+                "notfoundincineca"
+            ],
+            "type": "journal",
+            "timestamp": 1480546800
+        },
+        {
+            "authors": [
                 "S. Xydis",
                 "G. Palermo",
                 "V. Zaccaria",
@@ -16,6 +74,7 @@
             },
             "volume": "34",
             "pages": "155 to 159",
+            "publisher": "IEEE - Piscataway, NJ - USA",
             "doi": "10.1109/TCAD.2014.2363392",
             "issn": "02780070",
             "url": "http://dx.doi.org/10.1109/TCAD.2014.2363392",
