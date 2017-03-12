@@ -1,42 +1,40 @@
-import React from 'react';
-import { createHashHistory} from 'history'
+import React from "react";
+import { createHashHistory } from "history";
 
-import { Router, Route, Link, IndexRoute } from 'react-router'
+let { Router, Route } = require("react-router");
+let { bioPage } = require("./pages/bio").default;
+let { researchPage } = require("./pages/research").default;
+let BlogPage = require("./pages/blog").default;
+let BlogIndex = require("./pages/blogIndex").default;
+let TeachingPage = require("./pages/teaching").default;
+let AddressPage = require("./pages/address").default;
+let { videosPage } = require("./pages/videos").default;
 
-import { bioPage } from './pages/bio';
-import { researchPage } from './pages/research';
-import BlogPage from './pages/blog'
-import BlogIndex from './pages/blogIndex';
-import TeachingPage from './pages/teaching';
-import AddressPage from './pages/address';
-import { projectsPage } from './pages/projects';
-import { videosPage } from './pages/videos';
-
-const debug = require('./react-utils/debug')(__filename);
-
-let history = createHashHistory ({
-    queryKey: false
+let history = createHashHistory({
+  queryKey: false
 });
 
-let Routes = React.createClass({
-    render() {
-        return (
-            <div className="site_container" >
-                <Router history={history}>
-                    <Route path="/" >
-                        <IndexRoute component={bioPage} />
-                        <Route path="/research" component={researchPage}> </Route>
-                        <Route path="/teaching" component={TeachingPage}> </Route>
-                        <Route path="/videos" component={videosPage}> </Route>
-                        <Route path="/address" component={AddressPage}> </Route>
+class Routes extends React.Component {
+  render() {
+    return (
+      <div className="site_container">
+        <Router history={history}>
+          <div>
+            <Route exact path="/" component={bioPage} />
+            <Route path="/research" component={researchPage} />
+            <Route path="/teaching" component={TeachingPage} />
+            <Route path="/videos" component={videosPage} />
+            <Route path="/address" component={AddressPage} />
+            <Route exact path="/:category" component={BlogIndex} />
+            <Route
+              path="/:category/:year/:month/:day/:title"
+              component={BlogPage}
+            />
+          </div>
+        </Router>
+      </div>
+    );
+  }
+}
 
-                        <Route path="/:category" component={BlogIndex}> </Route>
-                        <Route path="/:category/:year/:month/:day/:title" component={BlogPage}>
-                        </Route>
-                    </Route>
-                </Router>
-            </div>
-        );}
-});
-
-module.exports = { Routes }
+export default Routes;

@@ -14,4 +14,4 @@ window.$mine = {
     }
 }
 
-module.exports = getDebug
+export default getDebug;
