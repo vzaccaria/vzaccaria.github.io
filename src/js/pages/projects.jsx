@@ -26,48 +26,39 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
-import React from 'react';
+import React from "react";
 
-import _ from 'lodash'
-import { _bem } from '../react-utils/react-bem'
-import { tmpl } from '../stores/fetcher'
+import _ from "lodash";
+let { _b, _bem } = require("../react-utils/react-bem").default;
+let { tmpl } = require("../stores/fetcher").default;
 
-// Debug..
-const debug = require('../react-utils/debug')(__filename);
-
-
-var projectsData = require('../../../data/projects.json');
-
-
+var projectsData = require("../../../data/projects.json");
 
 let projectsPage = React.createClass({
-
-    renderProject(p, k) {
-        let bem= _.partial(_bem, 'project');
-        let handler = () => {
-            window.location.href = p.link
-            }
-        return (
-            <div key={k} {...bem()} style={{cursor: 'pointer'}} onClick={handler}>
-                <img {...bem('image')} src={`${tmpl(p.image)}`} />
-                <div {...bem('name')}> {p.name} </div>
-                <div {...bem('description')}> {p.description} </div>
-            </div>);
-        },
-    render() {
-        let bem= _.partial(_bem, 'projects-page');
-        return (
-            <div {...bem()} >
-                <div {...bem('title')} > Projects </div>
-                <div {...bem('project-list')}>
-                    {_.map(projectsData, this.renderProject)}
-                     </div>
-            </div>);
-    }
-
+  renderProject(p, k) {
+    let bem = _.partial(_bem, "project");
+    let handler = () => {
+      window.location.href = p.link;
+    };
+    return (
+      <div key={k} {...bem()} style={{ cursor: "pointer" }} onClick={handler}>
+        <img {...bem("image")} src={`${tmpl(p.image)}`} />
+        <div {...bem("name")}> {p.name} </div>
+        <div {...bem("description")}> {p.description} </div>
+      </div>
+    );
+  },
+  render() {
+    let bem = _.partial(_bem, "projects-page");
+    return (
+      <div {...bem()}>
+        <div {...bem("title")}> Projects </div>
+        <div {...bem("project-list")}>
+          {_.map(projectsData, this.renderProject)}
+        </div>
+      </div>
+    );
+  }
 });
 
-
-
-
-module.exports = { projectsPage }
+export default { projectsPage };

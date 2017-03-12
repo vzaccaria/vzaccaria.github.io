@@ -1,8 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
 
-// Debug..
-const debug = require('../../react-utils/debug')(__filename);
 
 export default class ShareButton extends React.Component {
 

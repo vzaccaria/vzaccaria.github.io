@@ -1,7 +1,8 @@
-var webpack = require('webpack')
-var _ = require('lodash')
+/* eslint-env node */
+var webpack = require('webpack');
+var _ = require('lodash');
 var CompressionPlugin = require("compression-webpack-plugin");
-var HtmlWebpackPlugin = require('html-webpack-plugin')
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 
@@ -18,7 +19,7 @@ var compressor = new CompressionPlugin({
     regExp: /\.js$|\.html$/,
     threshold: 10240,
     minRatio: 0.8
-})
+});
 
 function getLoaders() {
     return [{
@@ -31,7 +32,7 @@ function getLoaders() {
     }, {
         test: /\.json/,
         loader: 'json-loader'
-    }]
+    }];
 }
 
 var htmlPlugin = new HtmlWebpackPlugin({
@@ -62,7 +63,7 @@ var mainConfig = {
         }
     },
     plugins: [uglifier, compressor, htmlPlugin]
-}
+};
 
 function getDevConfig(devConfig) {
     _.set(devConfig, "output.publicPath", '');
@@ -82,7 +83,7 @@ if (!production) {
     console.log(JSON.stringify(module.exports, 0, 4));
 } else {
     if (production) {
-        module.exports = mainConfig
+        module.exports = mainConfig;
         console.log("**PRODUCTION BUILD**");
         console.log(JSON.stringify(module.exports, 0, 4));
     }

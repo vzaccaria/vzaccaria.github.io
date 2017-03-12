@@ -1,14 +1,11 @@
 import React from 'react';
 import _ from 'lodash';
 import moment from 'moment';
-import { fetchIndex } from '../../stores/fetcher';
+let { fetchIndex } = require('../../stores/fetcher').default;
 import Tooltip from 'rc-tooltip';
 
 import '../../../css/tooltip.css';
 
-
-// Debug..
-const debug = require('../../react-utils/debug')(__filename);
 
 
 
