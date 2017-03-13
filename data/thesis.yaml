@@ -18,8 +18,8 @@ topics:
 
     type: thesis/stage
     institution: STMicroelectronics
-    address: Agrate Brianza
-    published: 
+    address: Agrate Brianza, Italy
+    published: March, 2017
     image:
     length:
     available: yes
@@ -56,7 +56,8 @@ topics:
 
     type: thesis/stage
     institution: STMicroelectronics
-    address: Agrate Brianza
+    address: Agrate Brianza, Italy
+    published: March, 2017
     skills:
       - microprocessor architectures
       - algorithms
@@ -92,7 +93,8 @@ topics:
 
     type: thesis/stage
     institution: STMicroelectronics
-    address: Agrate Brianza
+    address: Agrate Brianza, Italy
+    published: March, 2017
     skills:
       - microprocessor architectures
       - algorithms
