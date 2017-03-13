@@ -63,6 +63,7 @@ topics:
     institution: STMicroelectronics
     address: Agrate Brianza, Italy
     published: March, 2017
+    available: yes
     skills:
       - microprocessor architectures
       - algorithms
@@ -100,6 +101,7 @@ topics:
     institution: STMicroelectronics
     address: Agrate Brianza, Italy
     published: March, 2017
+    available: yes
     skills:
       - microprocessor architectures
       - algorithms
