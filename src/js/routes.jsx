@@ -9,7 +9,7 @@ let BlogIndex = require("./pages/blogIndex").default;
 let TeachingPage = require("./pages/teaching").default;
 let AddressPage = require("./pages/address").default;
 let { videosPage } = require("./pages/videos").default;
-let ThesisPage = require('./pages/thesis').default;
+let { ThesisIndex, ThesisPage }= require('./pages/thesis').default;
 
 let history = createHashHistory({
   queryKey: false
@@ -26,7 +26,8 @@ class Routes extends React.Component {
             <Route path="/teaching" component={TeachingPage} />
             <Route path="/videos" component={videosPage} />
             <Route path="/address" component={AddressPage} />
-            <Route path="/thesis" component={ThesisPage} />
+            <Route exact path="/thesis" component={ThesisIndex} />
+            <Route path="/thesis/:id" component={ThesisPage} />
             <Route exact path="/:category" component={BlogIndex} />
             <Route
               path="/:category/:year/:month/:day/:title"
