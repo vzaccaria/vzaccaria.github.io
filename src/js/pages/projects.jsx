@@ -27,8 +27,8 @@
 // DEALINGS IN THE SOFTWARE.
 
 import React from "react";
-
 import _ from "lodash";
+
 let { _b, _bem } = require("../react-utils/react-bem").default;
 let { tmpl } = require("../stores/fetcher").default;
 
