@@ -1,46 +1,45 @@
 {
-  "name": "website-light",
-  "version": "1.0.0",
-  "description": "My next website",
-  "main": "index.js",
-  "scripts": {
-    "test": "make production-build",
-    "start": "webpack-dev-server --progress --colors",
-    "build": "webpack --progress --colors"
-  },
-  "repository": {
-    "type": "git",
-    "url": "no"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "bluebird": "3.5.0",
-    "debug": "2.6.2",
-    "highlight.js": "9.10.0",
-    "history": "4.6.0",
-    "jquery": "3.1.1",
-    "less": "2.7.2",
-    "less-loader": "3.0.0",
-    "loader-utils": "1.0.3",
-    "lodash": "4.17.4",
-    "mdtable2json": "0.1.0",
-    "moment": "2.17.1",
-    "raw-loader": "0.5.1",
-    "rc-tooltip": "3.4.2",
-    "react": "15.4.2",
-    "react-disqus-thread": "0.4.0",
-    "react-dom": "15.4.2",
-    "react-markdown": "2.4.5",
-    "react-router": "4.0.0",
-    "scriptjs": "2.5.8",
-    "superagent": "3.5.0",
-    "uid": "0.0.2",
-    "url-loader": "0.5.8"
-  },
-  "devDependencies": {
-    "neutrino": "4.3.1",
-    "neutrino-preset-react": "4.2.3",
-    "neutrino-preset-web": "4.2.3"
-  }
+    "name": "website-light",
+    "version": "1.0.0",
+    "description": "My next website",
+    "main": "index.js",
+    "scripts": {
+        "start": "./node_modules/.bin/neutrino start --presets neutrino-preset-web neutrino-preset-react",
+        "build": "./node_modules/.bin/neutrino build --presets neutrino-preset-web neutrino-preset-react"
+    },
+    "repository": {
+        "type": "git",
+        "url": "no"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "bluebird": "3.5.0",
+        "debug": "2.6.2",
+        "highlight.js": "9.10.0",
+        "history": "4.6.0",
+        "jquery": "3.1.1",
+        "less": "2.7.2",
+        "less-loader": "3.0.0",
+        "loader-utils": "1.0.3",
+        "lodash": "4.17.4",
+        "mdtable2json": "0.1.0",
+        "moment": "2.17.1",
+        "raw-loader": "0.5.1",
+        "rc-tooltip": "3.4.2",
+        "react": "15.4.2",
+        "react-disqus-thread": "0.4.0",
+        "react-dom": "15.4.2",
+        "react-markdown": "2.4.5",
+        "react-router": "4.0.0",
+        "scriptjs": "2.5.8",
+        "superagent": "3.5.0",
+        "uid": "0.0.2",
+        "url-loader": "0.5.8"
+    },
+    "devDependencies": {
+        "neutrino": "4.3.1",
+        "neutrino-preset-react": "4.2.3",
+        "neutrino-preset-web": "4.2.3"
+    }
 }
