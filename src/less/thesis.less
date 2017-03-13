@@ -8,6 +8,11 @@
 	    .nice-section-title();
   };
 
+  &__text {
+      font-family: @normal-font;
+      margin-top: 2em;
+  }
+
   &__list {
 	    margin-top: 2em;
   }
@@ -117,14 +122,13 @@
 }
 
 .thesispost_container__post__category {
-  .show-desktop-inline-block();
-  padding-left: @margin;
-  border-right   : 2px solid fade(@blue, 10%);
+    display: inline-block;
+  padding-left: 0;
   padding-right  : @margin;
 }
 
 .thesispost_container__post__tags {
-  .show-desktop-inline-block();
+    display: inline-block;
   .border-box();
   height: 100%;
   padding-left: @margin;
