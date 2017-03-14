@@ -129,7 +129,7 @@ export default class BlogPage extends React.Component {
             />
           </div>
           <div className={c("comments")}>
-              {/* <ReactDisqusThread shortname="vittoriozaccaria" /> */}
+              <ReactDisqusThread shortname="vittoriozaccaria" />
           </div>
         </div>
       );
