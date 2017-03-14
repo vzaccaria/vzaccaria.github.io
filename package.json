@@ -41,5 +41,12 @@
         "neutrino": "4.3.1",
         "neutrino-preset-react": "4.2.3",
         "neutrino-preset-web": "4.2.3"
+    },
+    "config": {
+        "presets": [
+            "neutrino-preset-web",
+            "neutrino-preset-react",
+            "override.js"
+        ]
     }
 }

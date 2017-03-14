@@ -2,6 +2,7 @@ import React from "react";
 import _ from "lodash";
 import ReactMarkdown from "react-markdown";
 let ShareButton = require("./components/shareButton").default;
+import ReactDisqusThread from "react-disqus-thread";
 
 /* let { _b, _bem } = require("../react-utils/react-bem").default;*/
 let { fetchAsset } = require("../stores/fetcher").default;
@@ -154,6 +155,7 @@ class ThesisPage extends React.Component {
           <div className="thesispost_text">
             <ReactMarkdown source={thesis.description} />
           </div>
+         <ReactDisqusThread shortname="vittoriozaccaria" />
         </div>
       );
     } else {
