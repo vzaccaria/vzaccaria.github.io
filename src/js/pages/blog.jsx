@@ -1,6 +1,6 @@
 import React from "react";
 import _ from "lodash";
-import hjs from "highlight.js";
+import hjs from "../react-utils/hsjs.js";
 import jq from "jquery";
 import moment from "moment";
 import ReactDisqusThread from "react-disqus-thread";
