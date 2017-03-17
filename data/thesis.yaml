@@ -1,3 +1,8 @@
+header: |
+  These are some of the thesis projects that I am available to supervise. Some of them are pure 
+  academic research while others are industry sponsored projects that include a stage. 
+  Feel free to contact me (or the listed contacts) for any information.
+         
 topics:
   - name: RISCV open source microprocessor enhancement
     description: |
@@ -18,8 +23,8 @@ topics:
 
     type: thesis/stage
     institution: STMicroelectronics
-    address: Agrate Brianza
-    published: 
+    address: Agrate Brianza, Italy
+    published: March, 2017
     image:
     length:
     available: yes
@@ -56,7 +61,9 @@ topics:
 
     type: thesis/stage
     institution: STMicroelectronics
-    address: Agrate Brianza
+    address: Agrate Brianza, Italy
+    published: March, 2017
+    available: yes
     skills:
       - microprocessor architectures
       - algorithms
@@ -92,7 +99,9 @@ topics:
 
     type: thesis/stage
     institution: STMicroelectronics
-    address: Agrate Brianza
+    address: Agrate Brianza, Italy
+    published: March, 2017
+    available: yes
     skills:
       - microprocessor architectures
       - algorithms
