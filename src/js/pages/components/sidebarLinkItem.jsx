@@ -1,8 +1,5 @@
 import React from 'react';
 
-// Debug..
-const debug = require('../../react-utils/debug')(__filename);
-
 class SidebarLinkList extends React.Component {
     render() {
         return (
@@ -27,4 +24,4 @@ class SidebarLinkItem extends React.Component {
     }
 }
 
-module.exports = { SidebarLinkItem, SidebarLinkList }
+export default { SidebarLinkItem, SidebarLinkList }

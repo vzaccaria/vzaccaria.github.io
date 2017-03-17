@@ -1,40 +1,66 @@
-import React from 'react';
+import React from "react";
 
-import _ from 'lodash'
-import { statefulComponent } from './stateful'
-import { SidebarBottomButton, SidebarBottom, SidebarBottomBuiltWith } from './sidebarBottom'
-import { SidebarLinkItem, SidebarLinkList } from './sidebarLinkItem'
+import _ from "lodash";
+let { statefulComponent } = require("./stateful").default;
 
-const debug = require('../../react-utils/debug')(__filename);
-
-
+let { SidebarBottomButton, SidebarBottom, SidebarBottomBuiltWith } = require(
+  "./sidebarBottom"
+).default;
+let { SidebarLinkItem, SidebarLinkList } = require("./sidebarLinkItem").default;
 
 export default class Sidebar extends statefulComponent {
-    render() {
-        if(this.state.valid) {
-            let $ = this.state.data;
-            return (
-                <div className="sidebar">
-                    <img className="sidebar__picture" src={$.basics.picture} />
-                    <div className="sidebar__name">{$.basics.name}</div>
-                    <div className="sidebar__address">{$.currentWork.company}</div>
-                    <SidebarLinkList>
-                        <SidebarLinkItem icon='fa-home'           name= 'Home'     link="#/" />
-                        <SidebarLinkItem icon='fa-flask'          name= 'Research' link="#/research" />
-                        <SidebarLinkItem icon='fa-quote-left'     name= 'Blog'     link="#/blog" />
-                        <SidebarLinkItem icon='fa-graduation-cap' name= 'Teaching' link="#/teaching" />
-                        <SidebarLinkItem icon='fa-user'           name= 'CV'       link="https://dl.dropboxusercontent.com/u/5867765/docs/cv.pdf" />
-                        <SidebarLinkItem icon='fa-youtube-play'   name= 'Videos'   link="#/videos" />
-                        <SidebarLinkItem icon='fa-map-marker'     name= 'Address'  link="#/address" />
-                    </SidebarLinkList>
-                    <SidebarBottom>
-                        <SidebarBottomBuiltWith />
-                        {_.map($.basics.social, (it) => <SidebarBottomButton link={it.url} icon={it.icon} />)}
-                    </SidebarBottom>
-                </div>
-            );
-        } else {
-            return <div />
-        }
+  render() {
+    if (this.state.valid) {
+      let $ = this.state.data;
+      return (
+        <div className="sidebar">
+          <img className="sidebar__picture" src={$.basics.picture} />
+          <div className="sidebar__name">{$.basics.name}</div>
+          <div className="sidebar__address">{$.currentWork.company}</div>
+          <SidebarLinkList>
+            <SidebarLinkItem icon="fa-home" name="Home" link="#/" />
+            <SidebarLinkItem
+              icon="fa-flask"
+              name="Research"
+              link="#/research"
+            />
+            <SidebarLinkItem icon="fa-quote-left" name="Blog" link="#/blog" />
+            <SidebarLinkItem
+              icon="fa-graduation-cap"
+              name="Stages/Thesis"
+              link="#/thesis"
+            />
+            <SidebarLinkItem
+              icon="fa-book"
+              name="Teaching"
+              link="#/teaching"
+            />
+            <SidebarLinkItem
+              icon="fa-user"
+              name="CV"
+              link="https://dl.dropboxusercontent.com/u/5867765/docs/cv.pdf"
+            />
+            <SidebarLinkItem
+              icon="fa-youtube-play"
+              name="Videos"
+              link="#/videos"
+            />
+            <SidebarLinkItem
+              icon="fa-map-marker"
+              name="Address"
+              link="#/address"
+            />
+          </SidebarLinkList>
+          <SidebarBottom>
+            <SidebarBottomBuiltWith />
+            {_.map($.basics.social, it => (
+              <SidebarBottomButton link={it.url} icon={it.icon} key={it.url} />
+            ))}
+          </SidebarBottom>
+        </div>
+      );
+    } else {
+      return <div />;
     }
+  }
 }

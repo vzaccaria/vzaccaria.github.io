@@ -1,50 +1,42 @@
-import React from 'react';
-import { statefulComponent } from './components/stateful'
-import _ from 'lodash'
-import { _bem } from '../react-utils/react-bem'
-import ReactMarkdown from 'react-markdown';
-let { fetchAsset } = require('../stores/fetcher');
+import React from "react";
+import _ from "lodash";
+import ReactMarkdown from "react-markdown";
 
-// Debug..
-const debug = require('../react-utils/debug')(__filename);
-
-
-
-
+let { statefulComponent } = require("./components/stateful").default;
+let { _b, _bem } = require("../react-utils/react-bem").default;
 
 class videosPage extends statefulComponent {
+  renderVideo(p, k) {
+    let bem = _.partial(_bem, "video");
+    return (
+      <div key={k} {...bem()} style={{ cursor: "pointer" }}>
+        <iframe {...bem("iframe")} src={p.link} />
+        <div {...bem("data")}>
+          <div {...bem("title")}> {p.title} </div>
+          <div {...bem("recorded-on")}> {p.recordedOn} </div>
+          <div {...bem("description")}>
+            <ReactMarkdown source={p.description} />
+          </div>
+        </div>
+      </div>
+    );
+  }
 
-    renderVideo(p, k) {
-        let bem= _.partial(_bem, 'video');
-        return (
-            <div key={k} {...bem()} style={{cursor: 'pointer'}} >
-                <iframe {...bem('iframe')} src={p.link} />
-                <div {...bem('data')}>
-                    <div {...bem('title')}> {p.title} </div>
-                    <div {...bem('recorded-on')}> {p.recordedOn} </div>
-                    <div {...bem('description')}>
-                        <ReactMarkdown source={p.description} />
-                    </div>
-                </div>
-            </div>);
+  render() {
+    if (this.state.valid) {
+      let bem = _.partial(_bem, "videos-page");
+      return (
+        <div {...bem()}>
+          <div {...bem("title")}> Institutional videos </div>
+          <div {...bem("video-list")}>
+            {_.map(this.state.data.research.videos, this.renderVideo)}
+          </div>
+        </div>
+      );
+    } else {
+      return <div />;
     }
-
-    render() {
-        if(this.state.valid) {
-        let bem= _.partial(_bem, 'videos-page');
-        return (
-            <div {...bem()} >
-                <div {...bem('title')} > Institutional videos </div>
-                <div {...bem('video-list')}>
-                    {_.map(this.state.data.research.videos, this.renderVideo)}
-                </div>
-            </div>);
-        } else {
-            return <div />
-            }
-    }
-
+  }
 }
 
-
-module.exports = { videosPage }
+export default { videosPage };
