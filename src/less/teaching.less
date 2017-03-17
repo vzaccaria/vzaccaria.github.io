@@ -2,19 +2,19 @@
 .teaching-page {
 	.center-within-container();
 	font-family: @font-family;
+  &__title {
+	    .smallcapfont(@display-family);
+	    font-size: 3em;
+	    line-height: .9em;
+	    padding-top: .5em;
+  }
+
+  &__year {
+	    .smallcapfont(@font-family,  @font-weight:300);
+	    letter-spacing: .04em;
+  }
 }
 
-.teaching-page__title {
-	.smallcapfont(@display-family);
-	font-size: 3em;
-	line-height: .9em;
-	padding-top: .5em;
-}
-
-.teaching-page__year {
-	.smallcapfont(@font-family,  @font-weight:300);
-	letter-spacing: .04em;
-}
 
 @k: 25%;
 @v: 74%;

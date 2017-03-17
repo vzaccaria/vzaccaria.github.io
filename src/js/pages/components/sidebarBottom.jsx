@@ -1,8 +1,5 @@
 import React from 'react';
 
-// Debug..
-const debug = require('../../react-utils/debug')(__filename);
-
 class SidebarBottomButton extends React.Component {
     render() {
         return (
@@ -32,4 +29,4 @@ class SidebarBottom extends React.Component {
     }
 }
 
-module.exports = { SidebarBottomButton, SidebarBottom, SidebarBottomBuiltWith }
+export default { SidebarBottomButton, SidebarBottom, SidebarBottomBuiltWith }
