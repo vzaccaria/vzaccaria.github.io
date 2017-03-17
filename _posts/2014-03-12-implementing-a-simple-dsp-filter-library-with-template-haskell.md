@@ -8,7 +8,7 @@ tags : ["haskell", "digital signal processing"]
 description : Check out how you can write a reusable finite impulse response filter in Template Haskell. Since it allows to manipulate the syntax tree at compile time, you will get constant propagation and other optimizations for free on the structure of your FIR filter.
 ---
 
-*Note: This is part 2 of small tutorial on Template Haskell I wrote on my blog; the tutorial is composed of [part1](http://www.vittoriozaccaria.net/blog/2014/02/24/towards-template-programming-with-haskell.html), [part 2](http://www.vittoriozaccaria.net/blog/2014/03/12/implementing-a-simple-dsp-filter-library-with-template-haskell.html) and [part 3](http://www.vittoriozaccaria.net/blog/2014/03/21/symbolically-optimize-dsp-filters-with-template-haskell.html)*.
+*Note: This is part 2 of small tutorial on Template Haskell I wrote on my blog; the tutorial is composed of [part1](http://www.vittoriozaccaria.net/#/blog/2014/02/24/towards-template-programming-with-haskell.html), [part 2](http://www.vittoriozaccaria.net/#/blog/2014/03/12/implementing-a-simple-dsp-filter-library-with-template-haskell.html) and [part 3](http://www.vittoriozaccaria.net/#/blog/2014/03/21/symbolically-optimize-dsp-filters-with-template-haskell.html)*.
 
 [In a previous post](http://www.vittoriozaccaria.net/blog/2014/02/24/towards-template-programming-with-haskell.html) I've summed up the basic steps to programmatically create a simple Haskell program using [Template Haskell](http://www.haskell.org/haskellwiki/Template_Haskell). 
 
