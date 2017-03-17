@@ -1,5 +1,6 @@
 let util = require("util");
-// let _ = require("lodash");
+
+let CompressionPlugin = require("compression-webpack-plugin");
 
 function showPluginArgs(neutrino, pn) {
   console.log(util.inspect(neutrino.config.plugin(pn).args));
@@ -23,10 +24,21 @@ module.exports = neutrino => {
      https://github.com/mozilla-neutrino/neutrino-dev/blob/master/packages/neutrino-preset-web/index.js
 
      https://github.com/vzaccaria/vzaccaria.github.io/blob/master/webpack.config.js
-    */
+  */
+
+  neutrino.config.plugin("html").args[
+    0
+  ].title = "Vittorio Zaccaria - Home Page";
+  neutrino.config.plugin("html").args[0].favicon = "./favicon.png";
 
   if (process.env.NODE_ENV === "production") {
     /* We separate big dependencies into their own bundle. */
+
+    /* Polyfills go first */
+    neutrino.config.entry("vendor").add("promise-polyfill");
+    neutrino.config.entry("vendor").add("whatwg-fetch");
+
+    /* Then the rest */
 
     neutrino.config.entry("vendor").add("react");
     neutrino.config.entry("vendor").add("react-dom");
@@ -38,7 +50,7 @@ module.exports = neutrino => {
       /* See file-loader (url-loader)
          https://github.com/webpack-contrib/url-loader
          https://github.com/webpack-contrib/file-loader */
-      options.outputPath = "assets/";
+      options.name = "assets/[hash].[ext]";
       return { options };
     });
 
@@ -55,6 +67,16 @@ module.exports = neutrino => {
       [`${__dirname}/assets`],
       { root: __dirname }
     ];
+
+    /* Compress files */
+
+    neutrino.config.plugin("compress").use(CompressionPlugin, {
+      asset: "[path].gz[query]",
+      algorithm: "gzip",
+      regExp: /\.js$|\.html$/,
+      threshold: 10240,
+      minRatio: 0.8
+    });
   }
   return neutrino;
 };

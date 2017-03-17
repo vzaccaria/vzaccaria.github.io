@@ -1,6 +1,6 @@
 import agent from "../react-utils/agent";
 import _ from "lodash";
-let YAML = require("js-yaml/dist/js-yaml.min.js");
+let YAML = require("js-yaml");
 
 let siteData = require("../../data/site.json");
 let {
