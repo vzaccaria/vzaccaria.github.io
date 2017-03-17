@@ -1,101 +1,99 @@
-import _ from 'lodash'
+import _ from "lodash";
 
 function processData(p) {
-    if (_.isUndefined(p.keyword)) {
-        p.keyword = []
+  if (_.isUndefined(p.keyword)) {
+    p.keyword = [];
+  }
+
+  function tkw(k) {
+    switch (k) {
+      case "bookc":
+        return "bookchapter";
+      case "journal":
+        return "journal";
+      case "book":
+        return "book";
+      case "conference":
+        return "conference";
+      case "techreport":
+        return "techreport";
+      case "workshop":
+        return "workshop";
+      case "patent":
+        return "patent";
+      case "talk":
+        return "talk";
+      case "forum":
+        return "talk";
+      case "thesis":
+        return "thesis";
+      default:
+        return undefined;
     }
+  }
 
-    function tkw(k) {
-        switch (k) {
-            case 'bookc':
-                return 'bookchapter';
-            case 'journal':
-                return 'journal';
-            case 'book':
-                return 'book';
-            case 'conference':
-                return 'conference';
-            case 'techreport':
-                return 'techreport';
-            case 'workshop':
-                return 'workshop';
-            case 'patent':
-                return 'patent';
-            case 'talk':
-                return 'talk';
-            case 'forum':
-                return 'talk';
-            case 'thesis':
-                return 'thesis';
-            default:
-                return undefined;
-        }
+  let fkw = _.filter(_.map(p.keyword, tkw), it => {
+    return !_.isUndefined(it);
+  });
+  p.type = _.first(fkw);
+  p.displayAs = p.type;
+
+  switch (p.type) {
+    case "techreport":
+      p.displayAs = "workshop";
+      break;
+    case "talk":
+      p.displayAs = "workshop";
+      break;
+    case "thesis":
+      p.displayAs = "workshop";
+      break;
+
+  }
+
+  switch (p.type) {
+    case "journal":
+      p.booktitle = p.journal.name;
+      break;
+    case "thesis":
+      p.booktitle = p.school;
+      break;
+    case "techreport":
+      p.booktitle = p.institution;
+      break;
+    case "patent":
+      p.booktitle = `${p.address} ${p.patentNumber}`;
+      break;
+    case "talk":
+      p.booktitle = `${p.address}`;
+      break;
+  }
+
+  if (_.isUndefined(p.pages)) {
+    p.pages = "-";
+  }
+
+  p.link = p.url;
+
+  if (!_.isUndefined(p.booktitle)) {
+    var s = p.booktitle;
+    var n = s.indexOf(":");
+    if (n != -1) {
+      s = s.substring(0, n);
+      p.smartbooktitle = s;
+    } else {
+      p.smartbooktitle = s;
     }
+  }
 
-    let fkw = _.filter(_.map(p.keyword, tkw), (it) => {
-        return !_.isUndefined(it);
-    });
-    p.type = _.first(fkw)
-    p.displayAs = p.type
-
-    switch (p.type) {
-        case 'techreport':
-            p.displayAs = 'workshop';
-            break;
-        case 'talk':
-            p.displayAs = 'workshop';
-            break;
-        case 'thesis':
-            p.displayAs = 'workshop';
-            break;
-
-    }
-
-    switch (p.type) {
-        case 'journal':
-            p.booktitle = p.journal.name;
-            break;
-        case 'thesis':
-            p.booktitle = p.school;
-            break;
-        case 'techreport':
-            p.booktitle = p.institution;
-            break;
-        case 'patent':
-            p.booktitle = `${p.address} ${p.patentNumber}`;
-            break;
-        case 'talk':
-            p.booktitle = `${p.address}`;
-            break;
-    }
-
-    if (_.isUndefined(p.pages)) {
-        p.pages = '-';
-    }
-
-    p.link = p.url
-
-    if (!_.isUndefined(p.booktitle)) {
-        var s = p.booktitle
-        var n = s.indexOf(':')
-        if (n != -1) {
-            s = s.substring(0, n)
-            p.smartbooktitle = s
-
-        } else {
-            p.smartbooktitle = s
-        }
-    }
-
-    p.author = _.map(p.authors, (n) => {
-        return {
-            name: n
-        }
-    });
-    return p;
+  p.author = _.map(p.authors, n => {
+    return {
+      name: n
+    };
+  });
+  return p;
 }
 
-
-module.exports = {
-    processData
-}
+export default {
+  processData
+};
