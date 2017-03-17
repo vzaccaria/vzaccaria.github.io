@@ -1,8 +1,6 @@
 import agent from "../react-utils/agent";
-import $b from "bluebird";
 import _ from "lodash";
-const debug = require("../react-utils/debug").default(__filename);
-let YAML = require("js-yaml");
+let YAML = require("js-yaml/dist/js-yaml.min.js");
 
 let siteData = require("../../data/site.json");
 let {
@@ -12,6 +10,7 @@ let {
 
 function fetchAsset(name, opts) {
   return agent("GET", `${baseurl}/${name}`).then(r => {
+    console.log(r);
     if (_.get(opts, "yaml", false)) {
       return YAML.safeLoad(r.text);
     } else {
@@ -21,9 +20,7 @@ function fetchAsset(name, opts) {
 }
 
 function fetchIndex() {
-  return agent("GET", indexurl).then(r => {
-    return r.body;
-  });
+  return agent("GET-JSON", indexurl);
 }
 
 function fetchPostMarkup(

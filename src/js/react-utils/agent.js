@@ -1,17 +1,12 @@
-var Promise = require("bluebird");
-var sa = require("superagent");
-
+/* global fetch */
 function agent(action, url) {
-  return new Promise((resolve, reject) => {
-    sa(action, url).end((err, res) => {
-      if (err) {
-        reject(err);
-      } else {
-        resolve(res);
-      }
-      return null;
+  if (action === "GET") {
+    return fetch(url).then(r => r.text()).then(r => {
+      return { text: r };
     });
-  });
+  } else if(action === "GET-JSON") {
+      return fetch(url).then(r => r.json());
+  }
 }
 
 export default agent;
