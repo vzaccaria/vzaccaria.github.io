@@ -34,9 +34,9 @@ module.exports = neutrino => {
   ].title = "Vittorio Zaccaria - Home Page";
   neutrino.config.plugin("html").args[0].favicon = "./favicon.png";
 
-    neutrino.config.module.rule("compile").loader("babel", ({options}) => {
-        options.presets[0][1].targets.browsers = ['safari 7', 'ios 7'];
-        return {options};
+  neutrino.config.module.rule("compile").loader("babel", ({ options }) => {
+    options.presets[0][1].targets.browsers = ["safari 7", "ios 7"];
+    return { options };
   });
 
   if (process.env.NODE_ENV === "production") {
@@ -77,13 +77,13 @@ module.exports = neutrino => {
 
     /* Compress files */
 
-    neutrino.config.plugin("compress").use(CompressionPlugin, {
-      asset: "[path].gz[query]",
-      algorithm: "gzip",
-      regExp: /\.js$|\.html$/,
-      threshold: 10240,
-      minRatio: 0.8
-    });
+    // neutrino.config.plugin("compress").use(CompressionPlugin, {
+    //   asset: "[path].gz[query]",
+    //   algorithm: "gzip",
+    //   regExp: /\.js$|\.html$/,
+    //   threshold: 10240,
+    //   minRatio: 0.8
+    // });
   }
   return neutrino;
 };
