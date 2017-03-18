@@ -4,6 +4,7 @@
 let util = require("util");
 
 let CompressionPlugin = require("compression-webpack-plugin");
+const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
 
 function showPluginArgs(neutrino, pn) {
   console.log(util.inspect(neutrino.config.plugin(pn).args));
@@ -85,6 +86,13 @@ module.exports = neutrino => {
       regExp: /\.js$|\.html$/,
       threshold: 10240,
       minRatio: 0.8
+    });
+
+    neutrino.config.plugin("minify").use(UglifyJSPlugin, {
+      compress: {
+        warnings: false
+      },
+      sourceMap: true
     });
   }
   return neutrino;
