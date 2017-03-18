@@ -1,3 +1,6 @@
+/* global process */
+/* eslint-env node */
+
 let util = require("util");
 
 let CompressionPlugin = require("compression-webpack-plugin");
@@ -31,6 +34,11 @@ module.exports = neutrino => {
   ].title = "Vittorio Zaccaria - Home Page";
   neutrino.config.plugin("html").args[0].favicon = "./favicon.png";
 
+    neutrino.config.module.rule("compile").loader("babel", ({options}) => {
+        options.presets[0][1].targets.browsers = ['safari 7', 'ios 7'];
+        return {options};
+  });
+
   if (process.env.NODE_ENV === "production") {
     /* We separate big dependencies into their own bundle. */
 
@@ -39,7 +47,6 @@ module.exports = neutrino => {
     neutrino.config.entry("vendor").add("whatwg-fetch");
 
     /* Then the rest */
-
     neutrino.config.entry("vendor").add("react");
     neutrino.config.entry("vendor").add("react-dom");
     neutrino.config.entry("vendor").add("lodash");
