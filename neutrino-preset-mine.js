@@ -75,15 +75,17 @@ module.exports = neutrino => {
       { root: __dirname }
     ];
 
+    neutrino.config.plugins.options.delete("minify");
+
     /* Compress files */
 
-    // neutrino.config.plugin("compress").use(CompressionPlugin, {
-    //   asset: "[path].gz[query]",
-    //   algorithm: "gzip",
-    //   regExp: /\.js$|\.html$/,
-    //   threshold: 10240,
-    //   minRatio: 0.8
-    // });
+    neutrino.config.plugin("compress").use(CompressionPlugin, {
+      asset: "[path].gz[query]",
+      algorithm: "gzip",
+      regExp: /\.js$|\.html$/,
+      threshold: 10240,
+      minRatio: 0.8
+    });
   }
   return neutrino;
 };
