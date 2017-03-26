@@ -21,4 +21,4 @@ require("style-loader!raw-loader!./css/fonts.css");
 require("style-loader!css-loader!less-loader!./less/main.less");
 
 
-render(<div><Sidebar /><Routes /></div>, document.getElementById("root"));
+render(<div><Sidebar /><Routes /></div>, document.getElementById("app"));
