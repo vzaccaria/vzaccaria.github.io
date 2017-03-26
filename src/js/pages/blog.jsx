@@ -1,5 +1,5 @@
 import React from "react";
-import _ from "lodash";
+let _ = require("lodash");
 import hjs from "../react-utils/hsjs.js";
 import jq from "jquery";
 import moment from "moment";
@@ -61,16 +61,15 @@ function capitaliseFirstLetter(string) {
 }
 
 function updateMathJax() {
-        $script( 
-          "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG",
-          () => {
-            MathJax.Hub.Config({
-              tex2jax: { inlineMath: [["$", "$"], ["\\(", "\\)"]] }
-            });
-            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-          }
-        );
-    
+  $script(
+    "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG",
+    () => {
+      MathJax.Hub.Config({
+        tex2jax: { inlineMath: [["$", "$"], ["\\(", "\\)"]] }
+      });
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  );
 }
 
 export default class BlogPage extends React.Component {
@@ -100,7 +99,8 @@ export default class BlogPage extends React.Component {
         postData = getGitHubUrl(postData, props.match.params.title);
         this.setState({ postData, valid });
       })
-      .then(updateMathJax); }
+      .then(updateMathJax);
+  }
 
   componentDidUpdate(props, state, root) {
     debug("component did update");
@@ -129,7 +129,7 @@ export default class BlogPage extends React.Component {
             />
           </div>
           <div className={c("comments")}>
-              <ReactDisqusThread shortname="vittoriozaccaria" />
+            <ReactDisqusThread shortname="vittoriozaccaria" />
           </div>
         </div>
       );

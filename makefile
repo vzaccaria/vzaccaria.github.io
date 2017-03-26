@@ -1,13 +1,11 @@
-all: dev-static
+
+all: production-build
 
 start-server: data/bibliov2.json
-	./node_modules/.bin/webpack-dev-server --progress --colors --watch-poll 1000 --watch-aggregate-timeout 300
-
-stop-server:
-	killall webpack-dev-server
+	yarn start
 
 production-build: data/bibliov2.json
-	PROD=1 ./node_modules/.bin/webpack --progress --colors
+	rm -rf assets && yarn build
 
 production-deploy: production-build
 	git add .
@@ -20,7 +18,6 @@ refresh-biblio:
 
 data/bibliov2.json: data/biblio.bib
 	./node_modules/.bin/vz-biblio2json convert $< > $@
-
 
 clean:
 	rm -rf assets dist

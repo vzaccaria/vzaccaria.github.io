@@ -2,6 +2,7 @@ const webpack = require("webpack");
 const _ = require("lodash");
 const CompressionPlugin = require("compression-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const DashboardPlugin = require("webpack-dashboard/plugin");
 
 const uglifier = new webpack.optimize.UglifyJsPlugin({
   compress: {
@@ -25,6 +26,7 @@ function getLoaders() {
       exclude: /(node_modules|bower_components)/,
       loader: "babel-loader",
       options: {
+        plugins: ["lodash"],
         presets: ["react", "babel-preset-es2015"]
       }
     },
@@ -52,6 +54,9 @@ function getLoaders() {
             publicPath: "assets/img",
             outputPath: "assets/img",
             progressive: true,
+            mozjpeg: {
+              quality: 35
+            },
             optipng: {
               optimizationLevel: 7
             },
@@ -73,8 +78,11 @@ const htmlPlugin = new HtmlWebpackPlugin({
   template: require("html-webpack-template"),
   title: "Vittorio Zaccaria - Home page",
   favicon: __dirname + "/src/sketch/favicon.png",
-  appMountId: "app"
+  appMountId: "app",
+  inject: false
 });
+
+const removeMomentLocales = new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/);
 
 const mainConfig = {
   entry: "./src/index.js",
@@ -90,16 +98,22 @@ const mainConfig = {
     loaders: getLoaders()
   },
   resolve: {
-    extensions: [".js", ".jsx"]
+    extensions: [".js", ".jsx"],
+    alias: {
+        'lodash': `${__dirname}/vendor/lodash.custom.js`
+    }
   },
-  plugins: [uglifier, compressor, htmlPlugin]
+  plugins: [uglifier, compressor, htmlPlugin, removeMomentLocales]
 };
 
 function getDevConfig(devConfig) {
-  _.set(devConfig, "output.publicPath", "");
   _.set(devConfig, "devtool", "source-map");
   _.set(devConfig, "devServer.headers.Access-Control-Allow-Origin", "*");
-  _.set(devConfig, "plugins", [htmlPlugin]);
+  _.set(devConfig, "plugins", [
+    new DashboardPlugin(),
+    htmlPlugin,
+    removeMomentLocales
+  ]);
   return devConfig;
 }
 
