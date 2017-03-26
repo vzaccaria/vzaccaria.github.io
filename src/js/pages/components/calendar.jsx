@@ -1,5 +1,5 @@
 import React from 'react';
-import _ from 'lodash';
+let _ = require("lodash");
 import moment from 'moment';
 let { fetchIndex } = require('../../stores/fetcher').default;
 import Tooltip from 'rc-tooltip';

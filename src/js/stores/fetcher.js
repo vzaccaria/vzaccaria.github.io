@@ -1,5 +1,5 @@
 import agent from "../react-utils/agent";
-import _ from "lodash";
+let _ = require("lodash");
 let YAML = require("js-yaml");
 
 let siteData = require("../../data/site.json");
@@ -10,7 +10,6 @@ let {
 
 function fetchAsset(name, opts) {
   return agent("GET", `${baseurl}/${name}`).then(r => {
-    console.log(r);
     if (_.get(opts, "yaml", false)) {
       return YAML.safeLoad(r.text);
     } else {

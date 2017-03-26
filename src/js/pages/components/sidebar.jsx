@@ -1,6 +1,6 @@
 import React from "react";
 
-import _ from "lodash";
+let _ = require("lodash");
 let { statefulComponent } = require("./stateful").default;
 
 let { SidebarBottomButton, SidebarBottom, SidebarBottomBuiltWith } = require(

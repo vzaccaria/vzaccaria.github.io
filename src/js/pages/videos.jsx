@@ -1,5 +1,5 @@
 import React from "react";
-import _ from "lodash";
+let _ = require("lodash");
 import ReactMarkdown from "react-markdown";
 
 let { statefulComponent } = require("./components/stateful").default;

@@ -1,5 +1,5 @@
 import React from "react";
-import _ from "lodash";
+let _ = require("lodash");
 import { _bem } from "../react-utils/react-bem";
 import MapThis from "./components/mapthis";
 

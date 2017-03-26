@@ -27,10 +27,11 @@
 // DEALINGS IN THE SOFTWARE.
 
 import React from "react";
-import _ from "lodash";
-import Calendar from "./components/calendar";
 import Tooltip from "rc-tooltip";
+import '../../css/tooltip.css';
 import ReactMarkdown from "react-markdown";
+/* import Calendar from "./components/calendar";*/
+let _ = require("lodash");
 
 let $script = require("scriptjs");
 let { tmpl, fetchAsset } = require("../stores/fetcher").default;

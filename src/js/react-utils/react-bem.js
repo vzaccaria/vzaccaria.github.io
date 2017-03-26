@@ -1,4 +1,4 @@
-import _ from "lodash";
+let _ = require("lodash");
 
 let _b = function(bname, ename, mname) {
   if (_.isUndefined(ename)) {
