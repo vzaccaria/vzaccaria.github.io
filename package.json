@@ -1,55 +1,57 @@
 {
-  "name": "website-light",
-  "version": "1.0.0",
-  "description": "My next website",
-  "main": "index.js",
-  "scripts": {
-    "start": "./node_modules/.bin/neutrino start --presets neutrino-preset-web neutrino-preset-react",
-    "build": "./node_modules/.bin/neutrino build --presets neutrino-preset-web neutrino-preset-react"
-  },
-  "repository": {
-    "type": "git",
-    "url": "no"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "bluebird": "3.5.0",
-    "compression-webpack-plugin": "0.3.2",
-    "debug": "2.6.2",
-    "highlight.js": "9.10.0",
-    "history": "4.6.0",
-    "jquery": "3.1.1",
-    "less": "2.7.2",
-    "less-loader": "3.0.0",
-    "loader-utils": "1.0.3",
-    "lodash": "4.17.4",
-    "mdtable2json": "0.1.0",
-    "moment": "2.17.1",
-    "promise-polyfill": "6.0.2",
-    "raw-loader": "0.5.1",
-    "rc-tooltip": "3.4.2",
-    "react": "15.4.2",
-    "react-disqus-thread": "0.4.0",
-    "react-dom": "15.4.2",
-    "react-markdown": "2.4.5",
-    "react-router": "4.0.0",
-    "scriptjs": "2.5.8",
-    "superagent": "3.5.0",
-    "uid": "0.0.2",
-    "url-loader": "0.5.8",
-    "whatwg-fetch": "2.0.3"
-  },
-  "devDependencies": {
-    "neutrino": "4.3.1",
-    "neutrino-preset-react": "4.2.3",
-    "neutrino-preset-web": "4.2.3"
-  },
-  "config": {
-    "presets": [
-      "neutrino-preset-web",
-      "neutrino-preset-react",
-      "override.js"
-    ]
-  }
+    "name": "website-light",
+    "version": "1.0.0",
+    "description": "My next website",
+    "main": "index.js",
+    "scripts": {
+        "start": "./node_modules/.bin/neutrino start --presets neutrino-preset-web neutrino-preset-react",
+        "build": "./node_modules/.bin/neutrino build --presets neutrino-preset-web neutrino-preset-react"
+    },
+    "repository": {
+        "type": "git",
+        "url": "no"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "bluebird": "3.5.0",
+        "compression-webpack-plugin": "0.3.2",
+        "debug": "2.6.2",
+        "highlight.js": "9.10.0",
+        "history": "4.6.0",
+        "jquery": "3.1.1",
+        "less": "2.7.2",
+        "less-loader": "3.0.0",
+        "loader-utils": "1.0.3",
+        "lodash": "4.17.4",
+        "mdtable2json": "0.1.0",
+        "moment": "2.17.1",
+        "neutrino-preset-web": "4.2.3",
+        "promise-polyfill": "6.0.2",
+        "raw-loader": "0.5.1",
+        "rc-tooltip": "3.4.2",
+        "react": "15.4.2",
+        "react-disqus-thread": "0.4.0",
+        "react-dom": "15.4.2",
+        "react-markdown": "2.4.5",
+        "react-router": "4.0.0",
+        "scriptjs": "2.5.8",
+        "source-map-support": "^0.4.13",
+        "superagent": "3.5.0",
+        "uglifyjs-webpack-plugin": "0.3.0",
+        "uid": "0.0.2",
+        "url-loader": "0.5.8",
+        "whatwg-fetch": "2.0.3"
+    },
+    "devDependencies": {
+        "neutrino": "4.3.1",
+        "neutrino-preset-react": "4.2.3"
+    },
+    "config": {
+        "presets": [
+            "neutrino-preset-web",
+            "neutrino-preset-react",
+            "neutrino-preset-mine.js"
+        ]
+    }
 }
