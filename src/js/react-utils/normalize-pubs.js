@@ -1,4 +1,5 @@
-import _ from "lodash";
+
+let _ = require("lodash");
 
 function processData(p) {
   if (_.isUndefined(p.keyword)) {

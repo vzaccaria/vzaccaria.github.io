@@ -1,5 +1,5 @@
 import React from "react";
-import _ from "lodash";
+let _ = require("lodash");
 
 let { _b } = require("../../react-utils/react-bem").default;
 

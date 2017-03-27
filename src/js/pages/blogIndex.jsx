@@ -1,5 +1,5 @@
 import React from "react";
-import _ from "lodash";
+let _ = require("lodash");
 
 let { _b, _bem } = require("../react-utils/react-bem").default;
 let { fetchIndex } = require("../stores/fetcher").default;

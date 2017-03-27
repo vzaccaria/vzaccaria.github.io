@@ -1,7 +1,7 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import { getTables } from "mdtable2json";
-import _ from "lodash";
+let _ = require("lodash");
 
 let { processData } = require("../react-utils/normalize-pubs").default;
 let { statefulComponent } = require("./components/stateful").default;
