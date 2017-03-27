@@ -101,9 +101,7 @@ const mainConfig = {
   resolve: {
     extensions: [".js", ".jsx"],
     alias: {
-      lodash: `${__dirname}/vendor/lodash.custom.js`,
-      react: `react/dist/react.min.js`,
-      "react-dom": `react-dom/dist/react-dom.min.js`
+      lodash: `${__dirname}/vendor/lodash.custom.js`
     }
   },
   plugins: [uglifier, compressor, htmlPlugin, removeMomentLocales]
