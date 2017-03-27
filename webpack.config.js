@@ -26,7 +26,6 @@ function getLoaders() {
       exclude: /(node_modules|bower_components)/,
       loader: "babel-loader",
       options: {
-        plugins: ["lodash"],
         presets: ["react", "babel-preset-es2015"]
       }
     },
