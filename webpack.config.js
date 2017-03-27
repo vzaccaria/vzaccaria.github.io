@@ -102,8 +102,8 @@ const mainConfig = {
     extensions: [".js", ".jsx"],
     alias: {
       lodash: `${__dirname}/vendor/lodash.custom.js`,
-      react: `${__dirname}/vendor/react.min.js`,
-      "react-dom": `${__dirname}/vendor/react-dom.min.js`
+      react: `react/dist/react.min.js`,
+      "react-dom": `react-dom/dist/react-dom.min.js`
     }
   },
   plugins: [uglifier, compressor, htmlPlugin, removeMomentLocales]
