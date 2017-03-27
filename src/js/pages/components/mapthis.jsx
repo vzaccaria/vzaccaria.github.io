@@ -1,6 +1,6 @@
 import React from "react";
-import _ from "lodash";
 import uid from "uid";
+let _ = require("lodash");
 
 var $script = require("scriptjs");
 

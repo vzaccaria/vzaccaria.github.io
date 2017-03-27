@@ -1,5 +1,5 @@
 import React from "react";
-import _ from "lodash";
+let _ = require("lodash");
 
 export default class ShareButton extends React.Component {
   render() {

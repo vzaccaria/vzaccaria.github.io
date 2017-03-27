@@ -1,5 +1,5 @@
 import React from "react";
-import _ from "lodash";
+let _ = require("lodash");
 import ReactMarkdown from "react-markdown";
 let ShareButton = require("./components/shareButton").default;
 import ReactDisqusThread from "react-disqus-thread";
@@ -17,7 +17,6 @@ class ThesisIndex extends React.Component {
     fetchAsset("data/thesis.yaml", { yaml: true }).then(dta => {
       let valid = true;
       let data = dta;
-      console.log(dta);
       this.setState({ valid, data });
       return null;
     });
@@ -25,7 +24,6 @@ class ThesisIndex extends React.Component {
 
   renderThesis(t, i) {
     let handler = () => {
-      console.log("Hei!");
       window.location.href = `#/thesis/${i}`;
     };
 
@@ -85,7 +83,6 @@ class ThesisPage extends React.Component {
     fetchAsset("data/thesis.yaml", { yaml: true }).then(dta => {
       let valid = true;
       let data = dta;
-      console.log(dta);
       this.setState({ valid, data });
       return null;
     });
