@@ -74,11 +74,13 @@ function getLoaders() {
 }
 
 const htmlPlugin = new HtmlWebpackPlugin({
+    /* See here: https://github.com/jaketrent/html-webpack-template#basic-usage for options*/
   template: require("html-webpack-template"),
   title: "Vittorio Zaccaria - Home page",
   favicon: __dirname + "/src/sketch/favicon.png",
   appMountId: "app",
-  inject: false
+    inject: false,
+    mobile: true
 });
 
 const removeMomentLocales = new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/);
@@ -99,7 +101,9 @@ const mainConfig = {
   resolve: {
     extensions: [".js", ".jsx"],
     alias: {
-        'lodash': `${__dirname}/vendor/lodash.custom.js`
+      lodash: `${__dirname}/vendor/lodash.custom.js`,
+      react: `${__dirname}/vendor/react.min.js`,
+      "react-dom": `${__dirname}/vendor/react-dom.min.js`
     }
   },
   plugins: [uglifier, compressor, htmlPlugin, removeMomentLocales]
