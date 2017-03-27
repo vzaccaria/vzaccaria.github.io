@@ -4,6 +4,9 @@ all: production-build
 start-server: data/bibliov2.json
 	yarn start
 
+start-dashboard:
+	yarn start-dashboard
+
 production-build: data/bibliov2.json
 	rm -rf assets && yarn build
 
