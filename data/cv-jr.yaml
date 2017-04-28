@@ -280,6 +280,14 @@
           summary: "for creating a valuable opportunity for product commercialization of research results."
 
     grants:
+        - from: 2017-03-29
+          to: 2018-03-29
+          role: principal investigator
+          type: grant from industrial partner
+          institution:  STMicroelectronics
+          project:  Metodologia e Strumenti per la Valutazione di Circuiti Crittografici.
+          highlight: true
+
         - from: 2015-07-10
           to: 2016-07-10
           role: principal investigator
@@ -552,6 +560,8 @@
 
 
     courses:
+      - { aaInit: 2016 , aaEnd: 2017 , courseName: Hypermedia Applications (Web and multimedia)                   , position: Teaching assistant           , titolare: Franca Garzotto  , level: laurea magistrale in Ingegneria Informatica , institution: Politecnico di Milano , crediti: 5}
+      - { aaInit: 2016 , aaEnd: 2017 , courseName: Informatica B                   , position: Titolare           , titolare: Vittorio Zaccaria  , level: laurea triennale in Ingegneria Meccanica ed Energetica , institution: Politecnico di Milano , crediti: 7}
       - { aaInit: 2014 , aaEnd: 2015 , courseName: Informatica B                   , position: Titolare           , titolare: Vittorio Zaccaria  , level: laurea triennale in Ingegneria Meccanica ed Energetica , institution: Politecnico di Milano , crediti: 7}
       - { aaInit: 2015 , aaEnd: 2016 , courseName: Informatica B                   , position: Titolare           , titolare: Vittorio Zaccaria  , level: laurea triennale in Ingegneria Meccanica ed Energetica , institution: Politecnico di Milano , crediti: 7}
       - { aaInit: 2013 , aaEnd: 2014 , courseName: Informatica B                   , position: Titolare           , titolare: Vittorio Zaccaria  , level: laurea triennale in Ingegneria Meccanica ed Energetica , institution: Politecnico di Milano , crediti: 7}
