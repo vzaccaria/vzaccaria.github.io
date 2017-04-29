@@ -240,14 +240,14 @@
   research:
 
     citations:
-      date: 2016-02-26
+      date: 2017-04-29
       source: Google Scholar profile
       all:
-        citations: 1332
-        highest: 100
-        hindex: 20
-      since2011:
-        citations: 771
+        citations: 1502
+        highest: 114
+        hindex: 21
+      since2012:
+        citations: 756
         hindex: 15
 
     currentGoals:
