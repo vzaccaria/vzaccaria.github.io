@@ -19,6 +19,7 @@
             "address": "Cham",
             "doi": "10.1007/978-3-319-53174-8_7",
             "isbn": "9783319531731",
+            "url": "http://dx.doi.org/10.1007/978-3-319-53174-8_7",
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
@@ -35,14 +36,14 @@
                 "V. Zaccaria"
             ],
             "title": "Symbolic analysis of higher-order side channel countermeasures",
-            "month": "December",
-            "year": "2016",
+            "month": "June",
+            "year": "2017",
             "journal": {
                 "name": "IEEE Transactions on Computers",
                 "id": "IEEETransactionsonComputers"
             },
-            "volume": "Pre-print",
-            "pages": "1 to 7",
+            "volume": "66",
+            "pages": "1099 to 1105",
             "publisher": "IEEE - Piscataway, NJ - USA",
             "doi": "10.1109/TC.2016.2635650",
             "issn": "00189340",
@@ -56,7 +57,7 @@
                 "notfoundincineca"
             ],
             "type": "journal",
-            "timestamp": 1480546800
+            "timestamp": 1496268000
         },
         {
             "authors": [

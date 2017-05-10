@@ -50,6 +50,7 @@
         "style-loader": "0.16.0",
         "uid": "0.0.2",
         "url-loader": "0.5.8",
+        "vz-biblio2json": "0.4.6",
         "webpack": "2.3.2",
         "webpack-dashboard": "0.3.0",
         "webpack-dev-server": "2.4.2",
