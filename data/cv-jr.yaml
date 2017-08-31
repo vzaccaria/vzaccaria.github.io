@@ -172,11 +172,11 @@
           budget of several european FP7 projects.
 
       dichiara: |
-        "Di prestare servizio come ricercatore a tempo indeterminato dal 1 marzo
+        Di prestare servizio come ricercatore a tempo indeterminato dal 1 marzo
         2011 presso il Dipartimento di Elettronica e Informazione del Politecnico
         di Milano, e di avere prestato servizio come ricercatore a tempo
         determinato dal 1 novembre 2009 a fine Febbraio 2011 presso il
-        Dipartimento di Elettronica e Informazione del Politecnico di Milano."
+        Dipartimento di Elettronica e Informazione del Politecnico di Milano.
 
     -
       startDate: 2004-05-01
@@ -202,10 +202,10 @@
           architectures based on stream-programming paradigms."
 
       dichiara: |
-        "Di avere prestato il seguente servizio: Research and
+        Di avere prestato il seguente servizio: Research and
         Development Engineer presso l’Advanced Architecture Research group,
         AST-STMicroelectronics, Lugano (Svizzera), dal 1 maggio 2004 fino al 27
-        marzo 2007."
+        marzo 2007.
 
 
     -
@@ -224,9 +224,9 @@
           time, 33 percent error)."
 
       dichiara: |
-        "Di avere prestato il seguente servizio: Research Consultant presso il
+        Di avere prestato il seguente servizio: Research Consultant presso il
         gruppo Low Power System Design, AST-STMicroelectronics, Agrate Brianza
-        (Italia), dal 1 aprile 2003 al 31 marzo 2004."
+        (Italia), dal 1 aprile 2003 al 31 marzo 2004.
 
     -
       startDate: 2007-11-01
@@ -373,8 +373,8 @@
         - { name: NoCArch                                                           , year: 2010 , type: conference/workshop organization ,    ruolo: TPC member }
         - { name: NoCArch                                                           , year: 2012 , type: conference/workshop organization ,    ruolo: TPC member }
 
-        - { name: IEEE Transactions on Computer Aided Design of Integrated Circuits , year: 2001 , type: journal peer review              ,    ruolo: reviewer }
-        - { name: IEEE Transactions on Very Large Scale of Integration Circuits     , year: 2001 , type: journal peer review              ,    ruolo: reviewer }
+        - { name: IEEE Transactions on Computer Aided Design of Integrated Circuits , year:  , type: journal peer review              ,    ruolo: reviewer }
+        - { name: IEEE Transactions on Very Large Scale of Integration Circuits     , year:  , type: journal peer review              ,    ruolo: reviewer }
         - { name: IC-SAMOS                                                          , year: 2007 , type: conference/workshop organization ,    ruolo: reviewer }
         - { name: SASP                                                              , year: 2007 , type: conference/workshop organization ,    ruolo: reviewer }
         - { name: Journal of Low Power Electronics - JOLPE                          , year: 2009 , type: journal peer review              ,    ruolo: reviewer }
