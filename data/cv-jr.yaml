@@ -373,8 +373,8 @@
         - { name: NoCArch                                                           , year: 2010 , type: conference/workshop organization ,    ruolo: TPC member }
         - { name: NoCArch                                                           , year: 2012 , type: conference/workshop organization ,    ruolo: TPC member }
 
-        - { name: IEEE Transactions on Computer Aided Design of Integrated Circuits , year: 2001 , type: journal peer review              ,    ruolo: reviewer }
-        - { name: IEEE Transactions on Very Large Scale of Integration Circuits     , year: 2001 , type: journal peer review              ,    ruolo: reviewer }
+        - { name: IEEE Transactions on Computer Aided Design of Integrated Circuits , year:  , type: journal peer review              ,    ruolo: reviewer }
+        - { name: IEEE Transactions on Very Large Scale of Integration Circuits     , year:  , type: journal peer review              ,    ruolo: reviewer }
         - { name: IC-SAMOS                                                          , year: 2007 , type: conference/workshop organization ,    ruolo: reviewer }
         - { name: SASP                                                              , year: 2007 , type: conference/workshop organization ,    ruolo: reviewer }
         - { name: Journal of Low Power Electronics - JOLPE                          , year: 2009 , type: journal peer review              ,    ruolo: reviewer }
