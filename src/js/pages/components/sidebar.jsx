@@ -3,9 +3,11 @@ import React from "react";
 let _ = require("lodash");
 let { statefulComponent } = require("./stateful").default;
 
-let { SidebarBottomButton, SidebarBottom, SidebarBottomBuiltWith } = require(
-  "./sidebarBottom"
-).default;
+let {
+  SidebarBottomButton,
+  SidebarBottom,
+  SidebarBottomBuiltWith
+} = require("./sidebarBottom").default;
 let { SidebarLinkItem, SidebarLinkList } = require("./sidebarLinkItem").default;
 
 export default class Sidebar extends statefulComponent {
@@ -14,9 +16,16 @@ export default class Sidebar extends statefulComponent {
       let $ = this.state.data;
       return (
         <div className="sidebar">
-          <img className="sidebar__picture" src={require("../../../img/avatar-vz.jpg")} />
-          <div className="sidebar__name">{$.basics.name}</div>
-          <div className="sidebar__address">{$.currentWork.company}</div>
+          <img
+            className="sidebar__picture"
+            src={require("../../../img/avatar-vz.jpg")}
+          />
+          <div className="sidebar__name">
+            {$.basics.name}
+          </div>
+          <div className="sidebar__address">
+            {$.currentWork.company}
+          </div>
           <SidebarLinkList>
             <SidebarLinkItem icon="fa-home" name="Home" link="#/" />
             <SidebarLinkItem
@@ -31,14 +40,9 @@ export default class Sidebar extends statefulComponent {
               link="#/thesis"
             />
             <SidebarLinkItem
-              icon="fa-book"
-              name="Teaching"
-              link="#/teaching"
-            />
-            <SidebarLinkItem
               icon="fa-user"
               name="CV"
-              link="https://dl.dropboxusercontent.com/u/5867765/docs/cv.pdf"
+              link="https://www.dropbox.com/s/gh4x3viv3qvqzpg/cv.pdf?dl=0"
             />
             <SidebarLinkItem
               icon="fa-youtube-play"
@@ -53,9 +57,9 @@ export default class Sidebar extends statefulComponent {
           </SidebarLinkList>
           <SidebarBottom>
             <SidebarBottomBuiltWith />
-            {_.map($.basics.social, it => (
+            {_.map($.basics.social, it =>
               <SidebarBottomButton link={it.url} icon={it.icon} key={it.url} />
-            ))}
+            )}
           </SidebarBottom>
         </div>
       );
