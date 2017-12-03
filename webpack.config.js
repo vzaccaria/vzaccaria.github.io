@@ -52,9 +52,9 @@ function getLoaders() {
           query: {
             publicPath: "assets/img",
             outputPath: "assets/img",
-            progressive: true,
             mozjpeg: {
-              quality: 35
+              quality: 35,
+              progressive: true
             },
             optipng: {
               optimizationLevel: 7
@@ -74,13 +74,13 @@ function getLoaders() {
 }
 
 const htmlPlugin = new HtmlWebpackPlugin({
-    /* See here: https://github.com/jaketrent/html-webpack-template#basic-usage for options*/
+  /* See here: https://github.com/jaketrent/html-webpack-template#basic-usage for options*/
   template: require("html-webpack-template"),
   title: "Vittorio Zaccaria - Home page",
   favicon: __dirname + "/src/sketch/favicon.png",
   appMountId: "app",
-    inject: false,
-    mobile: true
+  inject: false,
+  mobile: true
 });
 
 const removeMomentLocales = new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/);

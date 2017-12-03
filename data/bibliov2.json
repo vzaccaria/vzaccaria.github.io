@@ -2,6 +2,36 @@
     "records": [
         {
             "authors": [
+                "E. Bisi",
+                "F. Melzani",
+                "V. Zaccaria"
+            ],
+            "title": "Symbolic analysis of higher-order side channel countermeasures",
+            "month": "June",
+            "year": "2017",
+            "journal": {
+                "name": "IEEE Transactions on Computers",
+                "id": "IEEETransactionsonComputers"
+            },
+            "volume": "66",
+            "pages": "1099 to 1105",
+            "publisher": "IEEE - Piscataway, NJ - USA",
+            "doi": "10.1109/TC.2016.2635650",
+            "issn": "00189340",
+            "url": "http://dx.doi.org/10.1109/TC.2016.2635650",
+            "justApplied": false,
+            "justAccepted": false,
+            "keyword": [
+                "pa2017",
+                "trans",
+                "journal",
+                "notfoundincineca"
+            ],
+            "type": "journal",
+            "timestamp": 1496268000
+        },
+        {
+            "authors": [
                 "V. Cassani",
                 "S. Gianelli",
                 "M. Matera",
@@ -32,33 +62,32 @@
         },
         {
             "authors": [
-                "E. Bisi",
+                "V. Zaccaria",
                 "F. Melzani",
-                "V. Zaccaria"
+                "G. Bertoni"
             ],
-            "title": "Symbolic analysis of higher-order side channel countermeasures",
+            "title": "Spectral features of higher-order side-channel countermeasures",
             "month": "June",
-            "year": "2017",
+            "year": "2018",
             "journal": {
                 "name": "IEEE Transactions on Computers",
                 "id": "IEEETransactionsonComputers"
             },
-            "volume": "66",
-            "pages": "1099 to 1105",
+            "pages": "PP",
             "publisher": "IEEE - Piscataway, NJ - USA",
-            "doi": "10.1109/TC.2016.2635650",
+            "doi": "10.1109/TC.2017.2772231",
             "issn": "00189340",
             "url": "http://dx.doi.org/10.1109/TC.2016.2635650",
             "justApplied": false,
-            "justAccepted": false,
+            "justAccepted": true,
             "keyword": [
-                "pa2017",
                 "trans",
                 "journal",
-                "notfoundincineca"
+                "notfoundincineca",
+                "accepted"
             ],
             "type": "journal",
-            "timestamp": 1496268000
+            "timestamp": 1527804000
         },
         {
             "authors": [
