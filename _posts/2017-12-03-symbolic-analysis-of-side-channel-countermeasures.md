@@ -1,6 +1,11 @@
 ---
 category: blog
 date: '2017-12-03'
+description: |
+    Cryptography’s current research trends show that there is an increasing
+    concern about identifying if a side-channel countermeasure is vulnerable
+    to higher-order attacks. In this post, I'll recap the major findings of
+    a paper I've co-authored with two colleagues.
 layout: post
 tags:
 -
@@ -22,59 +27,56 @@ countermeasure (Boolean masking or some parts of a *threshold
 implementation*) is effective up to the desired order. Our overarching
 goal was (and is) to promote the implied statistical reasoning behind
 the countermeasure into a symbolical one, eventually extending ordinary
-computer aided design of integrated circuits. I'll recap in this post the major findings.
+computer aided design of integrated circuits. I'll recap in this post
+the major findings.
 
 ## Background
 
-A *side-channel attack* corresponds to a set of
-queries to a *physical observable* whose aim is to identify the value of
-a master key/sub-key $K$ of the primitive. 
-Cryptographic primitives may expose, through a side-channel, one or many
-intermediate *sensitive variables* $S$ that
-are deterministic functions of both the master key $K$ and the
-public input $P$. To safeguard against a possible vulnerability, a customary
+A *side-channel attack* corresponds to a set of queries to a *physical
+observable* whose aim is to identify the value of a master key/sub-key
+$K$ of the primitive. Cryptographic primitives may expose, through a
+side-channel, one or many intermediate *sensitive variables* $S$ that
+are deterministic functions of both the master key $K$ and the public
+input $P$. To safeguard against a possible vulnerability, a customary
 solution is to prevent a *sensitive value* $S$ to become *visible*, by
-processing the following value instead:
-$$V = S \oplus M_1 \oplus \cdots \oplus M_d \, ,$$ where $\oplus$ is the
-bitwise XOR and $M_1, \ldots, M_d$ are random uniformly distributed values
-called *masks*. However, this does not rule out the case where some
-$S$ can be derived from observations of a (data dependent)
-leakage: $$L = \psi(V) + N \, .$$
-
-where $\psi$ is a mapping from the Boolean space, often defined to be the Hamming
-weight function.
+processing the following value instead: \[ V = S \oplus M\_1
+\oplus \cdots \oplus M\_d , ,\]
+where $\oplus$ is the bitwise XOR and $M_1, \ldots, M_d$ are random
+uniformly distributed values called *masks*. However, this does not rule
+out the case where some $S$ can be derived from observations of a (data
+dependent) leakage: \[ L = \psi(V) + N \]
+where $\psi$ is a mapping from the Boolean space, often defined to be
+the Hamming weight function.
 
 ## Original findings
 
-We now focus on a specific but very common case where
-the components of the leakage vector
-$L = (L_i)_{i=1}^l$ are of the form
-$$\label{eq:leakageModel} L_i = \sum_{j=1}^v c_{i,j}V_j + N_i \qquad
-\forall i=1,\dots,l \, ,$$ where $c_{i,j}$’s are real coefficients.
-Moreover, we assume that visible variables are
-related to masks and sensitive variables by the following matrix
-expression in $\mathbb{F}_2$: $${V} =
-C \cdot
-\begin{bmatrix} {M} \\ {S} \end{bmatrix} =
-\begin{bmatrix} B & A \end{bmatrix} \cdot
-\begin{bmatrix} {M} \\ {S}
-\end{bmatrix} = B{M} \oplus A{S} \, .$$  
-In the paper, we have shown that $S$ is vulnerable to a correlation attack on $L$ 
-if there exists a constant
-row vector ${\epsilon}=(\epsilon_i)_{i=1}^v\in\mathbb{F}_2^v$ such
-that the product
-$${\epsilon} {V} = \bigoplus_{i=1}^v \epsilon_i V_i$$ cancels out
-any mask contribution (i.e. ${\epsilon} B={0}$). In particular, a vulnerability 
-can be found if and only if the reduced
-row echelon form $C_R$ has a sensitive pivot column.
+We now focus on a specific but very common case where the components of
+the leakage vector $L = (L_i)_{i=1}^l$ are of the form
+\[ L_i = \sum_{j=1}^v c_{i,j} V_j + N_i \qquad
+\forall i=1,\dots,l \, \] where $c_{i,j}$ are real coefficients.
+
+Moreover, we assume that visible variables are related to masks and
+sensitive variables by the following matrix expression in
+$\mathbb{F}_2$:
+
+\[{V} = C \cdot \begin{bmatrix} {M} \\ {S} \end{bmatrix} = \begin{bmatrix} B & A \end{bmatrix} \cdot \begin{bmatrix} {M} \\ {S} \end{bmatrix} = B{M} \oplus A{S} \, .\]
+
+In the paper, we have shown that $S$ is vulnerable to a correlation
+attack on $L$ if there exists a constant row vector
+${\epsilon}=(\epsilon_i)_{i=1}^v\in\mathbb{F}_2^v$ such that the product
+$${\epsilon} {V} = \bigoplus_{i=1}^v \epsilon_i V_i$$ cancels out any
+mask contribution (i.e. ${\epsilon} B={0}$). In particular, a
+vulnerability can be found if and only if the reduced row echelon form
+$C_R$ has a sensitive pivot column.
 
 ## Example
-Consider the following visible variables
-$(V_1,V_2,V_3,V_4) = {V}$: $$\begin{aligned}
+
+Consider the following visible variables $(V_1,V_2,V_3,V_4) = {V}$:
+$$\begin{aligned}
 V_1 &= S_1 \oplus M_1 \, , \\
 V_2 &= S_2 \oplus M_2 \, , \\
 V_3 &= S_1 \oplus S_2 \oplus M_1 \oplus M_2 \, , \\
-V_4 &= M_1 \oplus M_2 \, .\end{aligned}$$ 
+V_4 &= M_1 \oplus M_2 \, .\end{aligned}$$
 
 which corresponds to the following visible matrix $C$:
 
@@ -96,7 +98,7 @@ echelon form of $C$ is $$C_R =
 0 & 0 & 0 & 0 \\
 \end{array} \right] \, .
 \label{eq:leakageMatrix2}$$ We can see that the column of $S_1$ is a
-pivot column and thus $S_1$ is vulnerabile. 
+pivot column and thus $S_1$ is vulnerabile.
 
 This post will be available at [this
 address](http://www.vittoriozaccaria.net/#/blog/2017/12/03/symbolic-analysis-of-side-channel-countermeasures.html)
