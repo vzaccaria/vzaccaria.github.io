@@ -1,11 +1,7 @@
 ---
 category: blog
 date: '2017-12-03'
-description: |
-    Cryptography’s current research trends show that there is an increasing
-    concern about identifying if a side-channel countermeasure is vulnerable
-    to higher-order attacks. In this post, I'll recap the major findings of
-    a paper I've co-authored with two colleagues.
+description: Cryptography’s current research trends show that there is an increasing concern about identifying if a side-channel countermeasure is vulnerable to higher-order attacks. In this post, I'll recap the major findings of a paper I've co-authored with two colleagues.
 layout: post
 tags:
 -
@@ -109,7 +105,7 @@ C =
 where the vertical line divides the
 submatrix $B$, corresponding to the masks $M_1,M_2$, from the submatrix
 $A$, corresponding to the sensitive variables $S_1,S_2$. The reduced row
-echelon form of $C$ is 
+echelon form of $C$ is
 
 <div>
 \begin{equation}
