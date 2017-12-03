@@ -56,13 +56,21 @@ Moreover, we assume that visible variables are related to masks and
 sensitive variables by the following matrix expression in
 $\mathbb{F}_2$:
 
-\[{V} = C \cdot \begin{bmatrix} {M} \\ {S} \end{bmatrix} = \begin{bmatrix} B & A \end{bmatrix} \cdot \begin{bmatrix} {M} \\ {S} \end{bmatrix} = B{M} \oplus A{S} \, .\]
+<div>
+\begin{equation}
+{V} = C \cdot \begin{bmatrix} {M} \\ {S} \end{bmatrix} = \begin{bmatrix} B & A \end{bmatrix} \cdot \begin{bmatrix} {M} \\ {S} \end{bmatrix} = B{M} \oplus A{S}
+\end{equation}
+</div>
 
 In the paper, we have shown that $S$ is vulnerable to a correlation
 attack on $L$ if there exists a constant row vector
 ${\epsilon}=(\epsilon_i)_{i=1}^v\in\mathbb{F}_2^v$ such that the product
 
-\[{\epsilon} {V} = \bigoplus_{i=1}^v \epsilon_i V_i\]
+<div>
+\begin{equation}
+{\epsilon} {V} = \bigoplus_{i=1}^v \epsilon_i V_i
+\end{equation}
+</div>
 
 cancels out any
 mask contribution (i.e. ${\epsilon} B={0}$). In particular, a
@@ -72,32 +80,50 @@ $C_R$ has a sensitive pivot column.
 ## Example
 
 Consider the following visible variables $(V_1,V_2,V_3,V_4) = {V}$:
-$$\begin{aligned}
+
+<div>
+\begin{equation}
+\begin{aligned}
 V_1 &= S_1 \oplus M_1 \, , \\
 V_2 &= S_2 \oplus M_2 \, , \\
 V_3 &= S_1 \oplus S_2 \oplus M_1 \oplus M_2 \, , \\
-V_4 &= M_1 \oplus M_2 \, .\end{aligned}$$
+V_4 &= M_1 \oplus M_2 \, .\end{aligned}
+\end{equation}
+</div>
+
 
 which corresponds to the following visible matrix $C$:
 
-$$C =
+<div>
+\begin{equation}
+C =
 \left[ \begin{array}{cc|cc}
 1 & 0 & 1 & 0\\
 0 & 1 & 0 & 1 \\
 1 & 1 & 1 & 1 \\
 1 & 1 & 0 & 0 \\
 \end{array} \right] \, ,
-$$ where the vertical line divides the
+\end{equation}
+</div>
+
+where the vertical line divides the
 submatrix $B$, corresponding to the masks $M_1,M_2$, from the submatrix
 $A$, corresponding to the sensitive variables $S_1,S_2$. The reduced row
-echelon form of $C$ is $$C_R =
+echelon form of $C$ is 
+
+<div>
+\begin{equation}
+C_R =
 \left[ \begin{array}{cc|cc}
 1 & 0 & 0 & 1\\
 0 & 1 & 0 & 1 \\
 0 & 0 & 1 & 1 \\
 0 & 0 & 0 & 0 \\
 \end{array} \right] \, .
-\label{eq:leakageMatrix2}$$ We can see that the column of $S_1$ is a
+\end{equation}
+</div>
+
+We can see that the column of $S_1$ is a
 pivot column and thus $S_1$ is vulnerabile.
 
 This post will be available at [this
