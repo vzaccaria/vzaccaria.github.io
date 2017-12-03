@@ -39,21 +39,18 @@ side-channel, one or many intermediate *sensitive variables* $S$ that
 are deterministic functions of both the master key $K$ and the public
 input $P$. To safeguard against a possible vulnerability, a customary
 solution is to prevent a *sensitive value* $S$ to become *visible*, by
-processing the following value instead: \[ V = S \oplus M\_1
-\oplus \cdots \oplus M\_d , ,\]
+processing the following value instead $V = S \oplus M_1 \oplus \cdots \oplus M_d$,
 where $\oplus$ is the bitwise XOR and $M_1, \ldots, M_d$ are random
 uniformly distributed values called *masks*. However, this does not rule
 out the case where some $S$ can be derived from observations of a (data
-dependent) leakage: \[ L = \psi(V) + N \]
+dependent) leakage: $ L = \psi(V) + N $
 where $\psi$ is a mapping from the Boolean space, often defined to be
 the Hamming weight function.
 
 ## Original findings
 
 We now focus on a specific but very common case where the components of
-the leakage vector $L = (L_i)_{i=1}^l$ are of the form
-\[ L_i = \sum_{j=1}^v c_{i,j} V_j + N_i \qquad
-\forall i=1,\dots,l \, \] where $c_{i,j}$ are real coefficients.
+the leakage vector $L = (L_i)_{i=1}^l$ are of the form $L_i = \sum_{j=1}^v c_{i,j} V_j + N_i \qquad \forall i=1,\dots,l$ where $c_{i,j}$ are real coefficients.
 
 Moreover, we assume that visible variables are related to masks and
 sensitive variables by the following matrix expression in
@@ -64,7 +61,10 @@ $\mathbb{F}_2$:
 In the paper, we have shown that $S$ is vulnerable to a correlation
 attack on $L$ if there exists a constant row vector
 ${\epsilon}=(\epsilon_i)_{i=1}^v\in\mathbb{F}_2^v$ such that the product
-$${\epsilon} {V} = \bigoplus_{i=1}^v \epsilon_i V_i$$ cancels out any
+
+\[{\epsilon} {V} = \bigoplus_{i=1}^v \epsilon_i V_i\]
+
+cancels out any
 mask contribution (i.e. ${\epsilon} B={0}$). In particular, a
 vulnerability can be found if and only if the reduced row echelon form
 $C_R$ has a sensitive pivot column.
@@ -87,7 +87,7 @@ $$C =
 1 & 1 & 1 & 1 \\
 1 & 1 & 0 & 0 \\
 \end{array} \right] \, ,
-\label{eq:leakageMatrix1}$$ where the vertical line divides the
+$$ where the vertical line divides the
 submatrix $B$, corresponding to the masks $M_1,M_2$, from the submatrix
 $A$, corresponding to the sensitive variables $S_1,S_2$. The reduced row
 echelon form of $C$ is $$C_R =
