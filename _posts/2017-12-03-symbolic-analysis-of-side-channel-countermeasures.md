@@ -46,7 +46,8 @@ the Hamming weight function.
 ## Original findings
 
 We now focus on a specific but very common case where the components of
-the leakage vector $L = (L_i)_{i=1}^l$ are of the form $L_i = \sum_{j=1}^v c_{i,j} V_j + N_i \qquad \forall i=1,\dots,l$ where $c_{i,j}$ are real coefficients.
+the leakage vector $L$ are of the form $L_i = \sum_{j=1}^v c_{i,j} V_j + N_i \qquad \forall i=1,\dots,l$
+where $c_{i,j}$ are real coefficients.
 
 Moreover, we assume that visible variables are related to masks and
 sensitive variables by the following matrix expression in
