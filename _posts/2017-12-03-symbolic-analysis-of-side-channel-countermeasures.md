@@ -46,9 +46,7 @@ the Hamming weight function.
 ## Original findings
 
 We now focus on a specific but very common case where the components of
-the leakage vector $L$ are of the form $L_i = \sum_{j=1}^v c_{i,j} V_j + N_i \qquad \forall i=1,\dots,l$
-where $c_{i,j}$ are real coefficients.
-
+the leakage vector $L$ are of the form $L_i = \sum_{j=1}^v c_{i,j} V_j + N_i$.
 Moreover, we assume that visible variables are related to masks and
 sensitive variables by the following matrix expression in
 $\mathbb{F}_2$:
@@ -71,8 +69,8 @@ ${\epsilon}=(\epsilon_i)_{i=1}^v\in\mathbb{F}_2^v$ such that the product
 
 cancels out any
 mask contribution (i.e. ${\epsilon} B={0}$). In particular, a
-vulnerability can be found if and only if the reduced row echelon form
-$C_R$ has a sensitive pivot column.
+vulnerability can be found if and only if the reduced row echelon form of $C$ (i.e.,
+$C_R$) has a sensitive pivot column.
 
 ## Example
 
@@ -123,5 +121,3 @@ C_R =
 We can see that the column of $S_1$ is a
 pivot column and thus $S_1$ is vulnerabile.
 
-This post will be available at [this
-address](http://www.vittoriozaccaria.net/#/blog/2017/12/03/symbolic-analysis-of-side-channel-countermeasures.html)
