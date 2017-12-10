@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Introduction to Javascript for Mobile Web Development</title>
+<meta name="author" content="(Vittorio Zaccaria)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/moon.css" id="theme"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-light.min.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'http://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Introduction to Javascript for Mobile Web Development</h1><h2 class="author">Vittorio Zaccaria</h2><h2 class="date">vittorio.zaccaria@polimi.it - Politecnico di Milano</h2><p class="date">Created: 2017-12-10 Sun 21:06</p>
+</section>
+
+<style media="screen">
+.reveal {
+  background-color: white;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3 {
+  font-size: 2.5em;
+  color: #888;
+}
+
+.reveal ul,
+.reveal p {
+  display: block;
+  text-align: left;
+  color: #222;
+  margin-left: 0px;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  }
+
+.reveal li {
+  margin-bottom: 1rem;
+}
+
+.reveal blockquote {
+    margin: 0px;
+    box-shadow: none;
+    border-left: solid #ddd;
+    font-size: 1.5rem;
+    width: 100%;
+}
+.reveal blockquote p {
+    margin: 0px;
+}
+.reveal h1.title{
+ font-size:1.5em;
+ text-align: left;
+  color: #222;
+
+}
+.reveal h2.author {
+ font-size:1.1em;
+ text-align: left;
+ color: #777;
+ letter-spacing: 1px;
+}
+
+.reveal h2.date {
+ font-size:0.6em;
+ text-align: left;
+ color: #999;
+ letter-spacing: 1px;
+}
+
+.reveal h3,
+.reveal th {
+ text-align: left;
+ margin-bottom: 1em;
+ font-size: 3rem;
+}
+.reveal th {
+ font-family: 'League Gothic';
+}
+.reveal td {
+ color: #333;
+ font-size: 1.8rem;
+}
+
+.reveal p.date {
+ font-size:0.5em;
+ text-align: left;
+}
+
+.reveal pre {
+ font-size: 1.5rem;
+ border: none;
+ box-shadow: none;
+ margin-top: 1.5em;
+ margin-bottom: 1.5em;
+}
+
+.reveal code {
+ font-family: "Hasklig";
+}
+
+.reveal pre code {
+  background: white;
+  color: black;
+}
+
+.reveal {
+  font-family: "Lato";
+}
+
+</style>
+
+<section>
+<section id="slide-org2caf879">
+<h2 id="org2caf879">Overview</h2>
+<div class="outline-text-2" id="text-org2caf879">
+</div></section>
+<section id="slide-o1">
+<h3 id="o1"><a id="org21e72dc"></a>Who am I</h3>
+<ul>
+<li>I am an assistant professor at Politecnico di Milano and I have worked in
+processor architecture research and development for one of the top semiconductor
+companies in the world.</li>
+
+<li>Part of my interests include parallel and asynchronous programming, domain
+specific languages and <b>javascript</b>.</li>
+
+</ul>
+
+</section>
+<section id="slide-o2">
+<h3 id="o2"><a id="org7d34c89"></a>Goal of this tutorial</h3>
+<ul>
+<li>Review of the fundamentals of Javascript</li>
+<li>We'll use JSBin to run our examples. Head over <a href="http://jsbin.com/">to jsbin.com</a> to create an
+account and store your work.</li>
+
+</ul>
+</section>
+<section id="slide-o3">
+<h3 id="o3"><a id="orgcdcd254"></a>How do we run Javascript?</h3>
+<p>
+Javascript runs in your browser and interacts with HTML, CSS, and
+the browser's console.
+</p>
+
+<p>
+ <a class="vz-link" href="http://jsbin.com/hubujiw">hubujiw</a><a class="jsbin-embed" href="http://jsbin.com/hubujiw/embed?js,console&height=15rem">Demo</a><script src="http://static.jsbin.com/js/embed.js"></script>
+</p>
+
+<blockquote nil>
+<p>
+For the first demos we'll embed JSBin in this presentation, but you can
+download the complete HTML page from jsbin.com.
+</p>
+</blockquote>
+
+</section>
+</section>
+<section>
+<section id="slide-org65bb9f8">
+<h2 id="org65bb9f8">Javascript as a programming language</h2>
+<div class="outline-text-2" id="text-org65bb9f8">
+</div></section>
+<section id="slide-j1">
+<h3 id="j1"><a id="org5eb898e"></a>Not only in the browser</h3>
+<ul>
+<li>Server side with <a href="https://nodejs.org/en/about/">Node.js</a></li>
+<li>In native, mobile apps through <a href="https://developer.apple.com/documentation/javascriptcore">Javascriptcore</a></li>
+
+</ul>
+
+</section>
+<section id="slide-j2">
+<h3 id="j2"><a id="orgfc94df1"></a>Event loop</h3>
+<ul>
+<li>A JavaScript runtime contains a message queue, which is a list of
+<i>functions</i> to be processed.</li>
+
+<li><p>
+Processing happens in a so called <i>event loop</i>:
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="js" >while (queue.waitForMessage()) {
+   queue.processNextMessage();
+}
+</code></pre>
+</div>
+
+<blockquote nil>
+<p>
+Messages are actually functions.
+</p>
+</blockquote></li>
+
+</ul>
+
+</section>
+<section id="slide-j3">
+<h3 id="j3"><a id="orgb818601"></a>Run-to-completion</h3>
+<ul>
+<li>Each message is processed completely before any other message is processed</li>
+
+<li>Whenever a function runs, it cannot be pre-empted and will run entirely before
+any other code runs</li>
+
+</ul>
+
+</section>
+<section id="slide-j4">
+<h3 id="j4"><a id="org6e9230d"></a>When messages are added (examples)</h3>
+<ul>
+<li>When you click on a graphic element, a listener function is
+added.</li>
+
+<li>When an IO event (e.g., network) happens, a registered <i>callback</i> is added.</li>
+
+</ul>
+
+<blockquote nil>
+<p>
+A <i>callback</i> is a common term in the Javascript world and it essentially is an
+event-listener
+</p>
+</blockquote>
+
+</section>
+<section id="slide-j5">
+<h3 id="j5"><a id="org0ff9a6f"></a>Javascript never blocks</h3>
+<ul>
+<li>Handling I/O is typically performed via events and callbacks</li>
+
+<li>If your application is waiting for an external request to be executed it can
+still process other things like user input.</li>
+
+</ul>
+
+</section>
+<section id="slide-j6">
+<h3 id="j6"><a id="orge2abd2f"></a>The three-step ladder to Javascript enlightment</h3>
+<ul>
+<li>Fundamentals and recent additions</li>
+<li>Higher order functions</li>
+<li>Asynchronous programming</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org9b40b3a">
+<h2 id="org9b40b3a">The fundamentals</h2>
+<div class="outline-text-2" id="text-org9b40b3a">
+</div></section>
+<section id="slide-f1">
+<h3 id="f1"><a id="org5392325"></a>Variables</h3>
+<ul>
+<li>A variable is a memory location with a <i>name</i> and a <i>value</i></li>
+
+<li>You introduce variable with the keywords <code>var</code>, <code>let</code>, <code>const</code>.</li>
+
+<li>You (re-)assign a value with the <code>=</code> operator.</li>
+
+</ul>
+
+</section>
+<section id="slide-f2">
+<h3 id="f2"><a id="orgfac145a"></a>Variable scope</h3>
+<p>
+ <a class="vz-link" href="http://jsbin.com/qenaras/4">qenaras/4</a><a class="jsbin-embed" href="http://jsbin.com/qenaras/4/embed?js,console&height=15rem">Demo</a><script src="http://static.jsbin.com/js/embed.js"></script>
+</p>
+
+</section>
+<section id="slide-f3">
+<h3 id="f3"><a id="orgc115710"></a>Variables</h3>
+<p>
+<code>const</code> creates <i>immutable</i> objects
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="js" >const foo = 'abc';
+foo = 'def'; // TypeError
+</code></pre>
+</div>
+
+</section>
+<section id="slide-f4">
+<h3 id="f4"><a id="orga9ff0d9"></a>Javascript types</h3>
+<ul>
+<li><b>Primitive</b> types: booleans, numbers, strings, <code>null</code>, and <code>undefined</code></li>
+
+<li><b>Objects</b>: all other values (including lists).</li>
+
+</ul>
+
+</section>
+<section id="slide-f5">
+<h3 id="f5"><a id="org066f5dc"></a>Javascript types</h3>
+<p>
+ <a class="vz-link" href="http://jsbin.com/zuqihep/11">zuqihep/11</a><a class="jsbin-embed" href="http://jsbin.com/zuqihep/11/embed?js,console&height=15rem">Demo</a><script src="http://static.jsbin.com/js/embed.js"></script>
+</p>
+
+</section>
+<section id="slide-f8">
+<h3 id="f8"><a id="org43486eb"></a>Javascript logic predicates</h3>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Operator</th>
+<th scope="col" class="org-left">Meaning</th>
+<th scope="col" class="org-left">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>&amp;&amp;</code></td>
+<td class="org-left">Logic and</td>
+<td class="org-left">shortcircuit (*)</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>¦¦</code></td>
+<td class="org-left">Logic or</td>
+<td class="org-left">shortcircuit (*)</td>
+</tr>
+
+<tr>
+<td class="org-left">!</td>
+<td class="org-left">Logic not</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&gt;,&gt;=,&lt;,&lt;=</td>
+<td class="org-left">Ordering</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">==</td>
+<td class="org-left">Lenient equality</td>
+<td class="org-left">Too loose, avoid!</td>
+</tr>
+
+<tr>
+<td class="org-left">= = =</td>
+<td class="org-left">Strict equality</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+(*) Short circuiting means the following never invoke <code>foo</code>:
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="js" >false && foo()
+true  || foo()
+</code></pre>
+</div>
+
+</section>
+<section id="slide-f9">
+<h3 id="f9"><a id="org3b79294"></a>Javascript strings</h3>
+<p>
+ <a class="vz-link" href="http://jsbin.com/noputor/2">noputor/2</a><a class="jsbin-embed" href="http://jsbin.com/noputor/2/embed?js,console&height=15rem">Demo</a><script src="http://static.jsbin.com/js/embed.js"></script>
+</p>
+
+</section>
+<section id="slide-f10">
+<h3 id="f10"><a id="orge0c0b4e"></a>Control constructs</h3>
+<p>
+ <a class="vz-link" href="http://jsbin.com/xotunaz/5">xotunaz/5</a><a class="jsbin-embed" href="http://jsbin.com/xotunaz/5/embed?js,console&height=15rem">Demo</a><script src="http://static.jsbin.com/js/embed.js"></script>
+</p>
+
+</section>
+<section id="slide-f12">
+<h3 id="f12"><a id="orge0f940f"></a>Functions and anonymous functions</h3>
+<p>
+ <a class="vz-link" href="http://jsbin.com/beqazaz/3">beqazaz/3</a><a class="jsbin-embed" href="http://jsbin.com/beqazaz/3/embed?js,console&height=15rem">Demo</a><script src="http://static.jsbin.com/js/embed.js"></script>
+</p>
+
+</section>
+<section id="slide-f13">
+<h3 id="f13"><a id="orgac8ebf8"></a>Prototypes</h3>
+<ul>
+<li>All JavaScript objects inherit the properties and methods from their prototype.</li>
+
+<li>Objects created using an object literal, or with <code>new Object()</code>, inherit from a
+prototype called <code>Object.prototype</code></li>
+
+<li>Objects created with <code>new Date()</code> inherit the <code>Date.prototype</code>.</li>
+
+</ul>
+
+</section>
+<section id="slide-f14">
+<h3 id="f14"><a id="orgc7215cf"></a>Constructing objects the old way - prototypes</h3>
+<p>
+Using a function definition:
+</p>
+<div class="org-src-container">
+
+<pre><code class="js" >let Person = function(first, last, age, eyecolor) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eyecolor;
+}
+
+let myFather = new Person("John", "Doe", 50, "blue");
+
+let myMother = new Person("Sally", "Rally", 48, "green");
+</code></pre>
+</div>
+
+</section>
+<section id="slide-f15">
+<h3 id="f15"><a id="org5933689"></a>Constructing objects the new way - classes</h3>
+<p>
+ <a class="vz-link" href="http://jsbin.com/tofeket/2">tofeket/2</a><a class="jsbin-embed" href="http://jsbin.com/tofeket/2/embed?js,console&height=15rem">Demo</a><script src="http://static.jsbin.com/js/embed.js"></script>
+</p>
+
+<p>
+A class body can only contain methods, but not data properties.
+</p>
+
+</section>
+<section id="slide-orgcccd506">
+<h3 id="orgcccd506">Hands-on problem</h3>
+<ul>
+<li>Expand <code>colorPoint</code> with a function <code>draw</code> to draw it into a canvas (use the
+<code>drawPoint</code> auxiliary function).</li>
+
+<li><p>
+Write a function that draws all the points contained in the array <code>points</code>
+</p>
+
+<p>
+ <a class="vz-link" href="http://jsbin.com/bosiduy/8">bosiduy/8</a><a class="jsbin-embed" href="http://jsbin.com/bosiduy/8/embed?js,console,output&height=15rem">Demo</a><script src="http://static.jsbin.com/js/embed.js"></script>
+</p></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org0b914da">
+<h2 id="org0b914da">Higher order functions</h2>
+<div class="outline-text-2" id="text-org0b914da">
+</div></section>
+<section id="slide-h1">
+<h3 id="h1"><a id="org5249c7d"></a>What are they?</h3>
+<ul>
+<li><p>
+Functions are first class. You can pass them into other functions as
+parameters:
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="javascript" >let applyMaybe = (f, x) => (x) ? f(x) : x
+</code></pre>
+</div></li>
+<li><p>
+You can return a function
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="js" >let add = (x) => (a) =>  a + x;
+</code></pre>
+</div></li>
+
+<li>Pervasive in all Javascript code</li>
+
+</ul>
+
+</section>
+<section id="slide-h2">
+<h3 id="h2"><a id="org49ff34e"></a>Callbacks</h3>
+<p>
+ <a class="vz-link" href="http://jsbin.com/wowupit/23">wowupit/23</a><a class="jsbin-embed" href="http://jsbin.com/wowupit/23/embed?js,console,output&height=15rem">Demo</a><script src="http://static.jsbin.com/js/embed.js"></script>
+</p>
+
+</section>
+<section id="slide-h4">
+<h3 id="h4"><a id="orgc1a7239"></a>Maps, folds and closures</h3>
+<ul>
+<li>Good for writing <b>more rubust code</b>
+<ul>
+<li>Declarative programming style (no more loops!)</li>
+<li>Immutable variables (more intuitive code)</li>
+
+</ul></li>
+
+<li>Inherit good programming practice from <b>functional programming</b></li>
+
+</ul>
+
+</section>
+<section id="slide-h5">
+<h3 id="h5"><a id="org93ced65"></a>Maps, folds and closures</h3>
+<ul>
+<li><p>
+a map operation transforms all the elements of an array through a function:
+</p>
+
+<p>
+\[map: [a] \rightarrow (a \rightarrow b) \rightarrow [b]\]
+</p></li>
+
+<li><p>
+a reduce operation folds all the elements of an array through a function
+</p>
+
+<p>
+\[reduce: [a] \rightarrow (b \rightarrow a \rightarrow b) \rightarrow b \rightarrow b\]
+</p></li>
+
+</ul>
+
+</section>
+<section id="slide-h6">
+<h3 id="h6"><a id="orga76b1f7"></a>Maps, folds and closures</h3>
+<p>
+ <a class="vz-link" href="http://jsbin.com/jaxuwat/4">jaxuwat/4</a><a class="jsbin-embed" href="http://jsbin.com/jaxuwat/4/embed?js,console&height=15rem">Demo</a><script src="http://static.jsbin.com/js/embed.js"></script>
+</p>
+
+</section>
+<section id="slide-org37bdb56">
+<h3 id="org37bdb56">Hands-on problem</h3>
+<ul>
+<li>Remember <code>colorPoint?</code></li>
+
+<li><p>
+Draw all <code>points</code> with a <code>map</code>.
+</p>
+
+<p>
+ <a class="vz-link" href="http://jsbin.com/bosiduy/8">bosiduy/8</a><a class="jsbin-embed" href="http://jsbin.com/bosiduy/8/embed?js,console,output&height=15rem">Demo</a><script src="http://static.jsbin.com/js/embed.js"></script>
+</p></li>
+
+</ul>
+
+</section>
+<section id="slide-h7">
+<h3 id="h7"><a id="org259a3aa"></a>Closures</h3>
+<p>
+ <a class="vz-link" href="http://jsbin.com/jaxuwat/11">jaxuwat/11</a><a class="jsbin-embed" href="http://jsbin.com/jaxuwat/11/embed?js,console&height=15rem">Demo</a><script src="http://static.jsbin.com/js/embed.js"></script>
+</p>
+
+</section>
+<section id="slide-h8">
+<h3 id="h8"><a id="orgd114cfe"></a>Currying</h3>
+<p>
+ <a class="vz-link" href="http://jsbin.com/jaxuwat/12">jaxuwat/12</a><a class="jsbin-embed" href="http://jsbin.com/jaxuwat/12/embed?js,console&height=15rem">Demo</a><script src="http://static.jsbin.com/js/embed.js"></script>
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org527dd0e">
+<h2 id="org527dd0e">Dynamic HTML</h2>
+<div class="outline-text-2" id="text-org527dd0e">
+</div></section>
+<section id="slide-i1">
+<h3 id="i1"><a id="org7f68ef6"></a>Introduction</h3>
+<ul>
+<li>Dynamic HTML means modifying the DOM through a Javascript expression that
+depends on dynamic data.</li>
+
+<li>It is probably the most important problem addressed today by modern
+frameworks (React, etc..).</li>
+
+</ul>
+
+</section>
+<section id="slide-i2">
+<h3 id="i2"><a id="orgfb2f8c8"></a>Poor man's dynamic HTML</h3>
+<ul>
+<li>As in the following days you are going to see the most advanced approaches,
+today we'll start from the basics.</li>
+
+<li><p>
+One way to do it is with <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML">insertAdjacentHTML</a>
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="js" >// <div id="one">one</div>
+var d1 = document.getElementById('one');
+d1.insertAdjacentHTML('afterend', '<div id="two">two</div>');
+
+// At this point, the new structure is:
+// <div id="one">one</div><div id="two">two</div>
+</code></pre>
+</div></li>
+
+</ul>
+
+</section>
+<section id="slide-i3">
+<h3 id="i3"><a id="org2574837"></a>You can even use <code>innerHTML</code></h3>
+<p>
+ <a class="vz-link" href="http://jsbin.com/fificoj/1">fificoj/1</a><a class="jsbin-embed" href="http://jsbin.com/fificoj/1/embed?html,js,output&height=15rem">Demo</a><script src="http://static.jsbin.com/js/embed.js"></script>
+</p>
+
+</section>
+<section id="slide-i4">
+<h3 id="i4"><a id="org1bcce6a"></a>Other ways to do it</h3>
+<ul>
+<li>JQuery</li>
+<li>React</li>
+<li>Angular</li>
+<li>D3js</li>
+
+</ul>
+
+</section>
+<section id="slide-s1">
+<h3 id="s1"><a id="org5baf1e2"></a>Hands-on Problem</h3>
+<p>
+Combine the callback example and the dynamic HTML example to
+create a function <code>renderPost(id)</code> to render the specified post
+i.e., title, body
+</p>
+
+</section>
+<section id="slide-s2">
+<h3 id="s2"><a id="orgfdf2ad8"></a>Hands-on Problem</h3>
+<p>
+Modify the previous function to print the name of the post creator after
+the title (hint: you'll need another request!)
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org0dcdd3e">
+<h2 id="org0dcdd3e">Asynchronous Javascript</h2>
+<div class="outline-text-2" id="text-org0dcdd3e">
+</div></section>
+<section id="slide-a1">
+<h3 id="a1"><a id="orgebf389e"></a>What is that and why it is important</h3>
+<ul>
+<li>Rendering a page may mean several (concurrent) requests. Imagine fetching
+the comments in the previous hands on.</li>
+
+<li>There is a need for an easier way to compose these calls and synchronize
+code over these calls. One of the most used methods is called <b>promise</b>.</li>
+
+</ul>
+
+</section>
+<section id="slide-a2">
+<h3 id="a2"><a id="org90d5e07"></a>Promises</h3>
+<ul>
+<li>A promise is an object that is created by specific functions (typically
+these functions request something on the network).</li>
+
+<li><p>
+Even before the request is finished, we can concatenate other functions to
+be executed when the data is ready through the <code>then</code> method.
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="js" >let p = a_request_function(...);
+p.then(function(result) {
+// do something with the result
+})
+</code></pre>
+</div></li>
+
+</ul>
+
+</section>
+<section id="slide-a3">
+<h3 id="a3"><a id="org1242ab7"></a>Promises</h3>
+<ul>
+<li><p>
+The concatenated function can return a promise as well:
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="js" >a_request_function(...)
+  .then(function(r1) {
+  return another_request_function(r1);
+}).then(function(r2) {
+  ...
+})
+</code></pre>
+</div></li>
+
+<li><p>
+We can wait for more promises in parallel:
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="js" >let p1 = a_request_function(...);
+let p2 = another_request_function(...);
+Promise.all([p1,p2]).then(([r1,r2]) => ...);
+</code></pre>
+</div></li>
+
+</ul>
+
+</section>
+<section id="slide-a4">
+<h3 id="a4"><a id="orgacf819d"></a>Promises</h3>
+<ul>
+<li><p>
+One particular example is the <code>fetch</code> function (which is a standardized ajax call)
+</p>
+
+<p>
+ <a class="vz-link" href="http://jsbin.com/ruxuveh/5">ruxuveh/5</a><a class="jsbin-embed" href="http://jsbin.com/ruxuveh/5/embed?js,console&height=15rem">Demo</a><script src="http://static.jsbin.com/js/embed.js"></script>
+</p></li>
+
+</ul>
+
+</section>
+<section id="slide-s3">
+<h3 id="s3"><a id="orgecf7d9c"></a>Hands-on problem</h3>
+<p>
+Modify the previous solution to print the name of the post creator after
+the title and the all the comments associated with that post.
+</p>
+
+</section>
+<section id="slide-a5">
+<h3 id="a5"><a id="orgf149481"></a>Newer style / Async and await</h3>
+<p>
+ <a class="vz-link" href="http://jsbin.com/conocag/7">conocag/7</a><a class="jsbin-embed" href="http://jsbin.com/conocag/7/embed?js,console&height=15rem">Demo</a><script src="http://static.jsbin.com/js/embed.js"></script>
+</p>
+</section>
+</section>
+</div>
+</div>
+<script src="http://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
+<script src="http://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }]
+});
+</script>
+</body>
+</html>
