@@ -15,7 +15,7 @@ to higher-order attacks.
 In a [recent work published this year on IEEE Trans. on
 Computers](http://dx.doi.org/10.1109/TC.2016.2635650), me and my
 co-authors, Elia Bisi (U. Warwick) and Filippo Melzani (Security
-Patterns), just introduced a new mathematical tool to assess the higher
+Pattern), just introduced a new mathematical tool to assess the higher
 order vulnerability of a hardware cryptographic circuit.
 
 The method empowers the circuit designer to detect if the chosen
