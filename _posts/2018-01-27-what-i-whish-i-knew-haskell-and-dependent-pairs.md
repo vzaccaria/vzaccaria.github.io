@@ -51,7 +51,7 @@ intended behavior of programs. The way I see it is that they can reduce
 the combinatorial space of cases to consider when building a function.
 For example,
 
-``` {.haskell}
+```haskell
 f :: BoolPair -> ...
 ```
 
@@ -74,7 +74,7 @@ $$\sum_{x:Bool}(\textrm{if~} x
 GADTs, [singletons](https://hackage.haskell.org/package/singletons) and
 a type family:
 
-``` {.haskell}
+```haskell
 {-# LANGUAGE DataKinds #-}
 {-# LANGUAGE GADTs #-}
 {-# LANGUAGE PolyKinds #-}
@@ -108,7 +108,7 @@ In practice:
 
 A possible usage that type-checks is the following:
 
-``` {.haskell}
+```.haskell
 f :: BoolPair -> String
 f (STrue :*: n) = show n
 f (SFalse :*: s) = s
@@ -116,7 +116,7 @@ f (SFalse :*: s) = s
 
 while if you try to build, for example:
 
-``` {.haskell}
+```haskell
 f' :: BoolPair -> String
 f' (STrue :*: s) = s
 ```
@@ -128,7 +128,7 @@ generic version of pairs that works with a generic `t!=B` and a generic
 recently introduced sigma
 types](https://github.com/goldfirere/singletons/issues/256):
 
-``` {.haskell}
+```.haskell
 data Sigma (s :: Type) :: (s ~> Type) -> Type where
   (:&:) :: Sing (fst :: s) -> t @@ fst -> Sigma s t
 ```
