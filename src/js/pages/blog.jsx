@@ -81,7 +81,7 @@ export default class BlogPage extends React.Component {
   componentDidMount(root) {
     hjs.configure({
       useBR: false,
-      languages: ["c", "matlab", "cpp"]
+      languages: ["c", "matlab", "cpp", "haskell"]
     });
     fetchPost(this.props.match.params.category, this.props.match.params)
       .then(postData => {
