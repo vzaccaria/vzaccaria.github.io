@@ -1,7 +1,6 @@
 ---
-title: what I whish I knew: Haskell and dependent pairs
+title: what I whish I knew.. Haskell and dependent pairs
 date: 2018-01-27
-
 layout: post
 category : blog
 tags : ['haskell']
