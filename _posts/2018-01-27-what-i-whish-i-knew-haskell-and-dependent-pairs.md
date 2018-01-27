@@ -103,7 +103,7 @@ In practice:
     for which one has to provide suitable value constructors (spoiler,
     the most important are already provided in the
     [singletons](https://hackage.haskell.org/package/singletons-2.4.1/docs/Data-Promotion-Prelude.html) library).
--   `B x` transforms the same label through the type function function
+-   `B x` transforms the same label through the type function 
     $B(x)$ (here we use a type family to define it).
 
 A possible usage that type-checks is the following:
@@ -172,4 +172,4 @@ quantified predicates.
     represented by type $A \times B$ which is inhabited, as I can form
     at least one pair of them.
 
-This post will be available at [this address](http://www.vittoriozaccaria.net/#/blog/2018/01/27/what-i-whish-i-knew:-haskell-and-dependent-pairs.html)
+
