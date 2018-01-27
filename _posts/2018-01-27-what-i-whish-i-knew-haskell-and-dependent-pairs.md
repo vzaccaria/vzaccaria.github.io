@@ -33,7 +33,7 @@ $$(a,b): \sum_{x:A} B_x$$
 One might try to emulate, in Haskell, such a dependent pair out of a
 `Either` (assume $A=$ `Bool` and $B_{True}=$ `Int` and $B_{False}=$ `String`):
 
-``` {.haskell}
+```.haskell
 data BoolPair = Either (Bool, Int) (Bool, String)
 ```
 
