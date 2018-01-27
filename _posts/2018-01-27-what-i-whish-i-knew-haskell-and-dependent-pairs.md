@@ -99,7 +99,7 @@ In practice:
 -   `x` is special type variable; its kind is `Bool` and here we are
     using it to enumerate $A$, i.e., as a label that mimicks each
     inhabitant $a_i \in A$ for which we have to define a singleton.
--   `Sing x` transforms each label $x$ into a singleton type $\{ x \}$
+-   `Sing x` transforms each label $x$ into a singleton type {$x$} 
     for which one has to provide suitable value constructors (spoiler,
     the most important are already provided in the
     [singletons](https://hackage.haskell.org/package/singletons-2.4.1/docs/Data-Promotion-Prelude.html) library).
