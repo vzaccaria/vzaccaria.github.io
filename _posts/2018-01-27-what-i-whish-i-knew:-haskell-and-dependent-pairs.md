@@ -3,7 +3,7 @@ title: what I whish I knew: Haskell and dependent pairs
 date: 2018-01-27
 
 layout: post
-category : infob
+category : blog
 tags : ['haskell']
 ---
 
@@ -12,7 +12,7 @@ This is a more of a personal memo about dependent typing (and Haskell) than anyt
 Dependent types
 ===============
 
-When we say that a term $b$ has a dependent type $B$, we are actually 
+When we say that a term $b$ has a dependent type $B$, we are actually
 saying that its type depends on the value of another term $a$, i.e.,
 $b: B_a$. Since the simplest case in which we can use a dependent type
 involves two terms, we talk about a **dependent pair**.
@@ -172,4 +172,4 @@ quantified predicates.
     represented by type $A \times B$ which is inhabited, as I can form
     at least one pair of them.
 
-This post will be available at [this address](http://www.vittoriozaccaria.net/#/infob/2018/01/27/what-i-whish-i-knew:-haskell-and-dependent-pairs.html)
+This post will be available at [this address](http://www.vittoriozaccaria.net/#/blog/2018/01/27/what-i-whish-i-knew:-haskell-and-dependent-pairs.html)
