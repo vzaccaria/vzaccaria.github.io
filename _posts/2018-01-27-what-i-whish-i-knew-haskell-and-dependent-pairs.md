@@ -33,7 +33,7 @@ $$(a,b): \sum_{x:A} B_x$$
 One might try to emulate, in Haskell, such a dependent pair out of a
 `Either` (assume $A=$ `Bool` and $B_{True}=$ `Int` and $B_{False}=$ `String`):
 
-```.haskell
+```haskell
 data BoolPair = Either (Bool, Int) (Bool, String)
 ```
 
@@ -108,7 +108,7 @@ In practice:
 
 A possible usage that type-checks is the following:
 
-```.haskell
+```haskell
 f :: BoolPair -> String
 f (STrue :*: n) = show n
 f (SFalse :*: s) = s
@@ -128,7 +128,7 @@ generic version of pairs that works with a generic `t!=B` and a generic
 recently introduced sigma
 types](https://github.com/goldfirere/singletons/issues/256):
 
-```.haskell
+```haskell
 data Sigma (s :: Type) :: (s ~> Type) -> Type where
   (:&:) :: Sing (fst :: s) -> t @@ fst -> Sigma s t
 ```
