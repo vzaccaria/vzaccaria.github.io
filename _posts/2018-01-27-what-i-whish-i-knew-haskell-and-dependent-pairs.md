@@ -163,7 +163,7 @@ Which explains why dependent pairs are used to express existentially
 quantified predicates.
 
 
-[^1]: $a_i$ is an inhabitant of $A$ while $\{a_i\}$ is a subtype of $A$
+[^1]: $a_i$ is an inhabitant of $A$ while {$a_i$} is a subtype of $A$
     that includes only the value $a_i$ (i.e., a singleton).
 
 [^2]: If $A$ is a collection of witnesses of proposition $\mathcal{A}$
