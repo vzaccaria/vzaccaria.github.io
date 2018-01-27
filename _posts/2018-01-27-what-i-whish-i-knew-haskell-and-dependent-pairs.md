@@ -114,14 +114,14 @@ f (STrue :*: n) = show n
 f (SFalse :*: s) = s
 ```
 
-while if you try to build, for example:
+while the following:
 
 ```haskell
 f' :: BoolPair -> String
 f' (STrue :*: s) = s
 ```
 
-That would give a type-error, because the singleton value `STrue`
+would give a type-error, because the singleton value `STrue`
 requires an integer for the second value of the pair. What about a
 generic version of pairs that works with a generic `t!=B` and a generic
 `s!='Bool`? Look no further than the singletons library which [has
