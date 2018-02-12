@@ -345,7 +345,7 @@
     students:
         - { name: Stefano Gianelli and Valerio Cassani , year: 2016, title: Progettazione di mashup per dispositivi mobili: un metodo basato sulla modellazione di contesto }
         - { name: Stefano Lucchi and Davide Fava,        year: 2017, title: Mash-up based service and data integration in the CAMUS framework }
-        - { name: Lorenzo Delledonne                   , year: 2018, title: A methodology based on functional languages for the design of hardware cryptographic primitives resistant to side-channel attacks }
+        - { name: Lorenzo Delledonne                   , year: 2017, title: A methodology based on functional languages for the design of hardware cryptographic primitives resistant to side-channel attacks }
         - { name: Simone Borgio and Davide Bosisio     , title: OpenStreamC - a development framework for streaming applications }
         - { name: Zhong Yi Hu                          , title: Power modeling of Networks-on-chip }
         - { name: Fabrizio Lucini                      , title: Specification and design of a prefetch unit for translating code at run-time }
@@ -378,8 +378,8 @@
         - { name: NoCArch                                                           , year: 2010 , type: conference/workshop organization ,    ruolo: TPC member }
         - { name: NoCArch                                                           , year: 2012 , type: conference/workshop organization ,    ruolo: TPC member }
 
-        - { name: IEEE Transactions on Computer Aided Design of Integrated Circuits , year:  , type: journal peer review              ,    ruolo: reviewer }
-        - { name: IEEE Transactions on Very Large Scale of Integration Circuits     , year:  , type: journal peer review              ,    ruolo: reviewer }
+        - { name: IEEE Transactions on Computer Aided Design of Integrated Circuits , type: journal peer review              ,    ruolo: reviewer }
+        - { name: IEEE Transactions on Very Large Scale of Integration Circuits     , type: journal peer review              ,    ruolo: reviewer }
         - { name: IC-SAMOS                                                          , year: 2007 , type: conference/workshop organization ,    ruolo: reviewer }
         - { name: SASP                                                              , year: 2007 , type: conference/workshop organization ,    ruolo: reviewer }
         - { name: Journal of Low Power Electronics - JOLPE                          , year: 2009 , type: journal peer review              ,    ruolo: reviewer }
