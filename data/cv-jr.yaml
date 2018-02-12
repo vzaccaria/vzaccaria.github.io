@@ -10,15 +10,15 @@
     summary: |
       I am an assistant professor at Politecnico di Milano and I have worked
       in processor architecture research and development for one of the top
-      semiconductor companies in the world. My background is rooted in modeling 
-      and simulation of digital systems although I have expanded my interests 
-      to functional programming and domain specific languages. 
-      Recently (2016) I've helped introduce some novel theoretical results 
-      in the field of cryptography and (in 2015 and 2017) I've been awarded 
+      semiconductor companies in the world. My background is rooted in modeling
+      and simulation of digital systems although I have expanded my interests
+      to functional programming and domain specific languages.
+      Recently (2016) I've helped introduce some novel theoretical results
+      in the field of cryptography and (in 2015 and 2017) I've been awarded
       with several grants from industrial partners for devising a reliable
-      design methodology for cryptographic circuits.      
- 
-      
+      design methodology for cryptographic circuits.
+
+
     websiteSummary: |
       I am an assistant professor at Politecnico di Milano and I have worked
       in processor architecture research and development for one of the top
@@ -37,7 +37,7 @@
       live-coding and program simulation. Besides, I
       am running a teaching experiment, called [Polimi at
       Home](http://www.pah.polimi.it), where my students can follow on-line
-      tutorials (based on EDX technology) and be automatically graded. 
+      tutorials (based on EDX technology) and be automatically graded.
 
     paperBio: |
       Vittorio Zaccaria received the Laurea degree in Computer Engineering in
@@ -61,8 +61,8 @@
       postalCode: "20133"
       city: Milano (MI)
       countryCode: Italy
-    
-    office: 
+
+    office:
       department: 'Dept. of Electronics, Information and Bioeng. Politecnico di Milano'
       address: Via Ponzio 34/5
       postalCode: 20133
@@ -96,7 +96,7 @@
       - network: Github
         icon: fa-github-square
         url: https://github.com/vzaccaria
-  
+
   languages:
     -
       language: "Italian"
@@ -268,7 +268,7 @@
 
         I am also interested into applying functional programming and category
         theory into the general context of asynchronous systems with a specific
-        emphasis on web technologies. 
+        emphasis on web technologies.
 
 
     awards:
@@ -288,17 +288,19 @@
     grants:
         - from: 2017-03-29
           to: 2018-03-29
-          role: principal investigator
-          type: grant from industrial partner
+          role: Principal investigator
+          type: Grant from industrial partner
           institution:  STMicroelectronics
           project:  Metodologia e Strumenti per la Valutazione di Circuiti Crittografici
+          funding: { amount: 30000, unit: EUR }
           highlight: true
 
         - from: 2015-07-10
           to: 2016-07-10
-          role: principal investigator
-          type: grant from industrial partner
+          role: Principal investigator
+          type: Grant from industrial partner
           institution:  STMicroelectronics
+          funding: { amount: 30000, unit: EUR }
           project:  Strumenti di Progettazione e Verifica per Circuiti Crittografici
           highlight: true
 
@@ -478,7 +480,7 @@
         description: |
           Since 1999, I have been interested into estimating and optimizing
           the power consumption of microprocessors and microprocessor-based
-          systems. 
+          systems.
 
         achievements:
 
@@ -562,7 +564,7 @@
       methods for teaching with novel technology such as MOOcs. In particular, I
       am running a teaching experiment, called [Polimi at
       Home](http://www.pah.polimi.it), where regular students can follow on-line
-      tutorials (based on EDX technology) and be automatically graded. 
+      tutorials (based on EDX technology) and be automatically graded.
 
 
     courses:
