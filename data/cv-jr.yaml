@@ -343,6 +343,7 @@
 
 
     students:
+        - { name: Lorenzo Delledonne     , title: A methodology based on functional languages for the design of hardware cryptographic primitives resistant to side-channel attacks }
         - { name: Simone Borgio and Davide Bosisio     , title: OpenStreamC - a development framework for streaming applications }
         - { name: Zhong Yi Hu                          , title: Power modeling of Networks-on-chip }
         - { name: Fabrizio Lucini                      , title: Specification and design of a prefetch unit for translating code at run-time }
