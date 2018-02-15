@@ -592,10 +592,10 @@
 
       - { aaInit: 2011 , aaEnd: 2012 , position: Titolare     , crediti: 7 , ore: 39 , courseName: Informatica B                                    ,  titolare: Vittorio Zaccaria  , level: Laurea di primo livello in Ingegneria Meccanica ed Energetica , institution: Politecnico di Milano }
 
-      - { aaInit: 2010 , aaEnd: 2011 , position: Esercitatore , crediti: N , ore: 24 , courseName: IEIM                                             ,  titolare: Gianluca Palermo.  , level: Laurea di primo livello in Ingegneria Biomedica, institution: Politecnico di Milano }
+      - { aaInit: 2010 , aaEnd: 2011 , position: Esercitatore , crediti: N , ore: 24 , courseName: Informatica ed Elementi di Informatica Medica,  titolare: Gianluca Palermo.  , level: Laurea di primo livello in Ingegneria Biomedica, institution: Politecnico di Milano }
       - { aaInit: 2010 , aaEnd: 2011 , position: Titolare     , crediti: 7 , ore: 39 , courseName: Informatica B                                    ,  titolare: Vittorio Zaccaria  , level: Laurea di primo livello in Ingegneria Meccanica ed Energetica , institution: Politecnico di Milano }
 
-      - { aaInit: 2009 , aaEnd: 2010 , position: Esercitatore , crediti: N , ore: 17 , courseName: IEIM                                             ,  titolare: Gianluca Palermo.  , level: Laurea di primo livello in Ingegneria Biomedica, institution: Politecnico di Milano }
+      - { aaInit: 2009 , aaEnd: 2010 , position: Esercitatore , crediti: N , ore: 17 , courseName: Informatica ed Elementi di Informatica Medica   ,  titolare: Gianluca Palermo.  , level: Laurea di primo livello in Ingegneria Biomedica, institution: Politecnico di Milano }
       - { aaInit: 2009 , aaEnd: 2010 , position: Esercitatore , crediti: N , ore: 20 , courseName: Architectures for Multimedia Systems             ,  titolare: Cristina Silvano   , level: Laurea specialistica in Ingegneria Informatica                , institution: Politecnico di Milano }
       - { aaInit: 2009 , aaEnd: 2010 , position: Esercitatore , crediti: N , ore: 11 , courseName: Informatica B                                    ,  titolare: Danilo Ardagna     , level: Laurea di primo livello in Ingegneria Elettrica               , institution: Politecnico di Milano }
       - { aaInit: 2009 , aaEnd: 2010 , position: Esercitatore , crediti: N , ore: 38 , courseName: Architettura dei Calcolatori e Sistemi Operativi ,  titolare: Cristina Silvano   , level: Laurea di primo livello in Ingegneria Informatica             , institution: Politecnico di Milano }
