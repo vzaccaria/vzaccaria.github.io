@@ -27,7 +27,7 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">Introduction to Javascript for Mobile Web Development</h1><h2 class="author">Vittorio Zaccaria</h2><h2 class="date">vittorio.zaccaria@polimi.it - Politecnico di Milano</h2><p class="date">Created: 2017-12-11 Mon 09:34</p>
+<section id="sec-title-slide"><h1 class="title">Introduction to Javascript for Mobile Web Development</h1><h2 class="author">Vittorio Zaccaria</h2><h2 class="date">vittorio.zaccaria@polimi.it - Politecnico di Milano</h2><p class="date">Created: 2018-02-15 Thu 18:27</p>
 </section>
 
 <style type="text/less">
@@ -36,6 +36,20 @@
 @accent-color: #eb811a;
 @text-color: #222;
 @ftext-color: lighten(@text-color, 30%);
+
+.define-code-style() {
+    & code {
+        font-family: "Menlo";
+        font-size: 1.7rem;
+        line-height: 130%;
+
+        background: @code-color;
+        color: black;
+        border-radius: 0.2rem;
+
+        padding: 0.4rem;
+    }
+}
 
 .reveal {
   background-color: @background-color;
@@ -66,11 +80,16 @@
   color: @accent-color;
   }
 
+  // internal slide title
+  h3 {
+    color: @accent-color;
+  }
+
   ul, p {
     text-align: left;
     display: block;
     color: @text-color;
-    margin-left: 0px;
+    margin-top: 2rem;
     margin-bottom: 2rem;
     font-size: 2rem;
     &.date {
@@ -105,23 +124,21 @@
   }
 
   pre {
-    font-size: 1.5rem;
+    font-size: 1rem;
     border: none;
+    color: black;
     box-shadow: none;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
     margin-top: 1.5em;
     margin-bottom: 1.5em;
-    code {
-      font-family: "Hasklig";
-      background: @code-color;
-      color: black;
-    }
+    font-family: "Menlo";
+    .define-code-style();
   }
-  code {
-    font-family: "Hasklig";
-    background: @code-color;
-    border-radius: 0.2rem;
-    font-size: 1.5rem;
-  }
+
+  .define-code-style();
+
 
   .vz-link {
     padding-bottom: 0.5rem;
@@ -138,14 +155,16 @@
 }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.js"></script>
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Inconsolata" />
 
 <section>
-<section id="slide-org28cfe8c">
-<h2 id="org28cfe8c">Overview</h2>
-<div class="outline-text-2" id="text-org28cfe8c">
-</div></section>
+<section id="slide-org8a0f807">
+<h2 id="org8a0f807">Overview</h2>
+<div class="outline-text-2" id="text-org8a0f807">
+</div>
+</section>
 <section id="slide-o1">
-<h3 id="o1"><a id="org84708a3"></a>Who am I</h3>
+<h3 id="o1">Who am I</h3>
 <ul>
 <li>I am an assistant professor at Politecnico di Milano and I have worked in
 processor architecture research and development for one of the top semiconductor
@@ -158,7 +177,7 @@ specific languages and <b>javascript</b>.</li>
 
 </section>
 <section id="slide-o2">
-<h3 id="o2"><a id="orgef7ac4f"></a>Goal of this tutorial</h3>
+<h3 id="o2">Goal of this tutorial</h3>
 <ul>
 <li>Review of the fundamentals of Javascript</li>
 <li>We'll use JSBin to run our examples. Head over <a href="http://jsbin.com/">to jsbin.com</a> to create an
@@ -167,7 +186,7 @@ account and store your work.</li>
 </ul>
 </section>
 <section id="slide-o3">
-<h3 id="o3"><a id="org94f59ce"></a>How do we run Javascript?</h3>
+<h3 id="o3">How do we run Javascript?</h3>
 <ul>
 <li>Javascript runs in your browser and interacts with HTML, CSS, and the
 browser's console.</li>
@@ -191,12 +210,13 @@ click it to jump into the appropriate online IDE on <code>jsbin.com</code>.
 </section>
 </section>
 <section>
-<section id="slide-orgead980a">
-<h2 id="orgead980a">Javascript as a programming language</h2>
-<div class="outline-text-2" id="text-orgead980a">
-</div></section>
+<section id="slide-org1bcc87b">
+<h2 id="org1bcc87b">Javascript as a programming language</h2>
+<div class="outline-text-2" id="text-org1bcc87b">
+</div>
+</section>
 <section id="slide-j1">
-<h3 id="j1"><a id="org2439f2e"></a>Not only in the browser</h3>
+<h3 id="j1">Not only in the browser</h3>
 <ul>
 <li>Server side with <a href="https://nodejs.org/en/about/">Node.js</a></li>
 <li>In native, mobile apps through <a href="https://developer.apple.com/documentation/javascriptcore">Javascriptcore</a></li>
@@ -205,7 +225,7 @@ click it to jump into the appropriate online IDE on <code>jsbin.com</code>.
 
 </section>
 <section id="slide-j2">
-<h3 id="j2"><a id="org0d5728e"></a>Event loop</h3>
+<h3 id="j2">Event loop</h3>
 <ul>
 <li>A JavaScript runtime contains a message queue, which is a list of
 <i>functions</i> to be processed.</li>
@@ -232,7 +252,7 @@ Messages are actually functions.
 
 </section>
 <section id="slide-j3">
-<h3 id="j3"><a id="org72df44e"></a>Run-to-completion</h3>
+<h3 id="j3">Run-to-completion</h3>
 <ul>
 <li>Each message is processed completely before any other message is processed</li>
 
@@ -243,7 +263,7 @@ any other code runs</li>
 
 </section>
 <section id="slide-j4">
-<h3 id="j4"><a id="org516c0f1"></a>When messages are added (examples)</h3>
+<h3 id="j4">When messages are added (examples)</h3>
 <ul>
 <li>When you click on a graphic element, a listener function is
 added.</li>
@@ -261,7 +281,7 @@ event-listener
 
 </section>
 <section id="slide-j5">
-<h3 id="j5"><a id="orgc7c5bf6"></a>Javascript never blocks</h3>
+<h3 id="j5">Javascript never blocks</h3>
 <ul>
 <li>Handling I/O is typically performed via events and callbacks</li>
 
@@ -272,7 +292,7 @@ still process other things like user input.</li>
 
 </section>
 <section id="slide-j6">
-<h3 id="j6"><a id="org3229f53"></a>The three-step ladder to Javascript enlightment</h3>
+<h3 id="j6">The three-step ladder to Javascript enlightment</h3>
 <ul>
 <li>Fundamentals and recent additions</li>
 <li>Higher order functions</li>
@@ -283,12 +303,13 @@ still process other things like user input.</li>
 </section>
 </section>
 <section>
-<section id="slide-org37a9571">
-<h2 id="org37a9571">The fundamentals</h2>
-<div class="outline-text-2" id="text-org37a9571">
-</div></section>
+<section id="slide-org44d9091">
+<h2 id="org44d9091">The fundamentals</h2>
+<div class="outline-text-2" id="text-org44d9091">
+</div>
+</section>
 <section id="slide-f1">
-<h3 id="f1"><a id="org71e7597"></a>Variables</h3>
+<h3 id="f1">Variables</h3>
 <ul>
 <li>A variable is a memory location with a <i>name</i> and a <i>value</i></li>
 
@@ -315,7 +336,7 @@ foo = 'def'; // TypeError
 
 </section>
 <section id="slide-f4">
-<h3 id="f4"><a id="orge0841da"></a>Javascript types</h3>
+<h3 id="f4">Javascript types</h3>
 <p>
  <a class="vz-link" href="https://jsbin.com/zuqihep/11/edit?js,console">zuqihep/11</a>
 </p>
@@ -331,7 +352,7 @@ foo = 'def'; // TypeError
 
 </section>
 <section id="slide-f8">
-<h3 id="f8"><a id="org7621ebc"></a>Javascript logic predicates</h3>
+<h3 id="f8">Javascript logic predicates</h3>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -401,7 +422,7 @@ true  || foo()
 
 </section>
 <section id="slide-f9">
-<h3 id="f9"><a id="org7b890c4"></a>Javascript strings</h3>
+<h3 id="f9">Javascript strings</h3>
 <p>
  <a class="vz-link" href="https://jsbin.com/noputor/2/edit?js,console">noputor/2</a>
 </p>
@@ -416,7 +437,7 @@ true  || foo()
 
 </section>
 <section id="slide-f10">
-<h3 id="f10"><a id="org370af5a"></a>Loop constructs</h3>
+<h3 id="f10">Loop constructs</h3>
 <p>
  <a class="vz-link" href="https://jsbin.com/xotunaz/5/edit?js,console">xotunaz/5</a>
 </p>
@@ -433,7 +454,7 @@ true  || foo()
 
 </section>
 <section id="slide-f12">
-<h3 id="f12"><a id="org901e041"></a>Functions</h3>
+<h3 id="f12">Functions</h3>
 <p>
  <a class="vz-link" href="https://jsbin.com/beqazaz/3/edit?js,console">beqazaz/3</a>
 </p>
@@ -449,7 +470,7 @@ true  || foo()
 
 </section>
 <section id="slide-f13">
-<h3 id="f13"><a id="orge214f50"></a>Constructing objects the old way - prototypes</h3>
+<h3 id="f13">Constructing objects the old way - prototypes</h3>
 <ul>
 <li>Object literals are not the only way for building objects.</li>
 
@@ -464,7 +485,7 @@ prototype called <code>Object.prototype</code></li>
 
 </section>
 <section id="slide-f14">
-<h3 id="f14"><a id="org688b4ca"></a>Constructing objects the old way - prototypes</h3>
+<h3 id="f14">Constructing objects the old way - prototypes</h3>
 <p>
 Using a function definition:
 </p>
@@ -485,7 +506,7 @@ let myMother = new Person("Sally", "Rally", 48, "green");
 
 </section>
 <section id="slide-f15">
-<h3 id="f15"><a id="orgb86ec95"></a>Constructing objects the new way - classes</h3>
+<h3 id="f15">Constructing objects the new way - classes</h3>
 <p>
  <a class="vz-link" href="https://jsbin.com/tofeket/2/edit?js,console">tofeket/2</a>
 </p>
@@ -496,8 +517,8 @@ course.
 </p>
 
 </section>
-<section id="slide-orgccea50d">
-<h3 id="orgccea50d">Hands-on problem</h3>
+<section id="slide-org499a362">
+<h3 id="org499a362">Hands-on problem</h3>
 <ul>
 <li>Expand <code>colorPoint</code> with a function <code>draw</code> to draw it into a canvas (use the
 <code>drawPoint</code> auxiliary function).</li>
@@ -515,12 +536,13 @@ Write a function that draws all the points contained in the array <code>points</
 </section>
 </section>
 <section>
-<section id="slide-org7c47e9b">
-<h2 id="org7c47e9b">Higher order functions</h2>
-<div class="outline-text-2" id="text-org7c47e9b">
-</div></section>
+<section id="slide-org71b514c">
+<h2 id="org71b514c">Higher order functions</h2>
+<div class="outline-text-2" id="text-org71b514c">
+</div>
+</section>
 <section id="slide-h1">
-<h3 id="h1"><a id="org8255fce"></a>What are they?</h3>
+<h3 id="h1">What are they?</h3>
 <ul>
 <li><p>
 Functions are first class. You can pass them into other functions as
@@ -548,14 +570,14 @@ You can return a function
 
 </section>
 <section id="slide-h2">
-<h3 id="h2"><a id="orgcad854f"></a>Callbacks</h3>
+<h3 id="h2">Callbacks</h3>
 <p>
  <a class="vz-link" href="https://jsbin.com/wowupit/23/edit?js,console,output">wowupit/23</a>
 </p>
 
 </section>
 <section id="slide-h4">
-<h3 id="h4"><a id="org25d137a"></a>Maps, folds and closures</h3>
+<h3 id="h4">Maps, folds and closures</h3>
 <ul>
 <li>Good for writing <b>more rubust code</b>
 <ul>
@@ -570,7 +592,7 @@ You can return a function
 
 </section>
 <section id="slide-h5">
-<h3 id="h5"><a id="orgb843951"></a>Maps, folds and closures</h3>
+<h3 id="h5">Maps, folds and closures</h3>
 <ul>
 <li><p>
 a map operation transforms all the elements of an array through a function:
@@ -592,14 +614,14 @@ a reduce operation folds all the elements of an array through a function
 
 </section>
 <section id="slide-h6">
-<h3 id="h6"><a id="org153c1e9"></a>Maps, folds and closures</h3>
+<h3 id="h6">Maps, folds and closures</h3>
 <p>
  <a class="vz-link" href="https://jsbin.com/jaxuwat/4/edit?js,console">jaxuwat/4</a>
 </p>
 
 </section>
-<section id="slide-org516ab7f">
-<h3 id="org516ab7f">Hands-on problem</h3>
+<section id="slide-orgb88ab4b">
+<h3 id="orgb88ab4b">Hands-on problem</h3>
 <ul>
 <li>Remember <code>colorPoint?</code></li>
 
@@ -615,14 +637,14 @@ Draw all <code>points</code> with a <code>map</code>.
 
 </section>
 <section id="slide-h7">
-<h3 id="h7"><a id="org134311c"></a>Closures</h3>
+<h3 id="h7">Closures</h3>
 <p>
  <a class="vz-link" href="https://jsbin.com/jaxuwat/11/edit?js,console">jaxuwat/11</a>
 </p>
 
 </section>
 <section id="slide-h8">
-<h3 id="h8"><a id="org534c93c"></a>Currying</h3>
+<h3 id="h8">Currying</h3>
 <p>
  <a class="vz-link" href="https://jsbin.com/jaxuwat/12/edit?js,console">jaxuwat/12</a>
 </p>
@@ -630,12 +652,13 @@ Draw all <code>points</code> with a <code>map</code>.
 </section>
 </section>
 <section>
-<section id="slide-org784b0e4">
-<h2 id="org784b0e4">Dynamic HTML</h2>
-<div class="outline-text-2" id="text-org784b0e4">
-</div></section>
+<section id="slide-org5531845">
+<h2 id="org5531845">Dynamic HTML</h2>
+<div class="outline-text-2" id="text-org5531845">
+</div>
+</section>
 <section id="slide-i1">
-<h3 id="i1"><a id="org0c64b70"></a>Introduction</h3>
+<h3 id="i1">Introduction</h3>
 <ul>
 <li>Dynamic HTML means modifying the DOM through a Javascript expression that
 depends on dynamic data.</li>
@@ -647,7 +670,7 @@ frameworks (React, etc..).</li>
 
 </section>
 <section id="slide-i2">
-<h3 id="i2"><a id="org9ee3dbf"></a>Poor man's dynamic HTML</h3>
+<h3 id="i2">Poor man's dynamic HTML</h3>
 <ul>
 <li>As in the following days you are going to see the most advanced approaches,
 today we'll start from the basics.</li>
@@ -671,14 +694,14 @@ d1.insertAdjacentHTML('afterend', '<div id="two">two</div>');
 
 </section>
 <section id="slide-i3">
-<h3 id="i3"><a id="orge16b7b0"></a>You can even use <code>innerHTML</code></h3>
+<h3 id="i3">You can even use <code>innerHTML</code></h3>
 <p>
  <a class="vz-link" href="https://jsbin.com/fificoj/1/edit?html,js,output">fificoj/1</a>
 </p>
 
 </section>
 <section id="slide-i4">
-<h3 id="i4"><a id="orga040e1c"></a>Other ways to do it</h3>
+<h3 id="i4">Other ways to do it</h3>
 <ul>
 <li>JQuery</li>
 <li>React</li>
@@ -689,7 +712,7 @@ d1.insertAdjacentHTML('afterend', '<div id="two">two</div>');
 
 </section>
 <section id="slide-s1">
-<h3 id="s1"><a id="orgcb32e51"></a>Hands-on Problem</h3>
+<h3 id="s1">Hands-on Problem</h3>
 <p>
 Combine the callback example and the dynamic HTML example to
 create a function <code>renderPost(id)</code> to render the specified post
@@ -698,7 +721,7 @@ i.e., title, body
 
 </section>
 <section id="slide-s2">
-<h3 id="s2"><a id="org1d06472"></a>Hands-on Problem</h3>
+<h3 id="s2">Hands-on Problem</h3>
 <p>
 Modify the previous function to print the name of the post creator after
 the title (hint: you'll need another request!)
@@ -707,12 +730,13 @@ the title (hint: you'll need another request!)
 </section>
 </section>
 <section>
-<section id="slide-org470ca74">
-<h2 id="org470ca74">Asynchronous Javascript</h2>
-<div class="outline-text-2" id="text-org470ca74">
-</div></section>
+<section id="slide-org9a2ae1e">
+<h2 id="org9a2ae1e">Asynchronous Javascript</h2>
+<div class="outline-text-2" id="text-org9a2ae1e">
+</div>
+</section>
 <section id="slide-a1">
-<h3 id="a1"><a id="orgdd19062"></a>What is that and why it is important</h3>
+<h3 id="a1">What is that and why it is important</h3>
 <ul>
 <li>Rendering a page may mean several (concurrent) requests. Imagine fetching
 the comments in the previous hands on.</li>
@@ -724,7 +748,7 @@ code over these calls. One of the most used methods is called <b>promise</b>.</l
 
 </section>
 <section id="slide-a2">
-<h3 id="a2"><a id="org66709b6"></a>Promises</h3>
+<h3 id="a2">Promises</h3>
 <ul>
 <li>A promise is an object that is created by specific functions (typically
 these functions request something on the network).</li>
@@ -747,7 +771,7 @@ p.then(function(result) {
 
 </section>
 <section id="slide-a3">
-<h3 id="a3"><a id="orgaa45926"></a>Promises</h3>
+<h3 id="a3">Promises</h3>
 <ul>
 <li><p>
 The concatenated function can return a promise as well:
@@ -780,7 +804,7 @@ Promise.all([p1,p2]).then(([r1,r2]) => ...);
 
 </section>
 <section id="slide-a4">
-<h3 id="a4"><a id="org7a57eb7"></a>Promises</h3>
+<h3 id="a4">Promises</h3>
 <ul>
 <li><p>
 One particular example is the <code>fetch</code> function (which is a standardized ajax call)
@@ -794,7 +818,7 @@ One particular example is the <code>fetch</code> function (which is a standardiz
 
 </section>
 <section id="slide-s3">
-<h3 id="s3"><a id="org7c10e8f"></a>Hands-on problem</h3>
+<h3 id="s3">Hands-on problem</h3>
 <p>
 Modify the previous solution to print the name of the post creator after
 the title and the all the comments associated with that post.
@@ -802,7 +826,7 @@ the title and the all the comments associated with that post.
 
 </section>
 <section id="slide-a5">
-<h3 id="a5"><a id="org7561812"></a>Newer style / Async and await</h3>
+<h3 id="a5">Newer style / Async and await</h3>
 <p>
  <a class="vz-link" href="https://jsbin.com/conocag/7/edit?js,console">conocag/7</a>
 </p>
@@ -828,7 +852,7 @@ keyboard: true,
 overview: true,
 
 theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
 transitionSpeed: 'default',
 multiplex: {
     secret: '', // null if client
