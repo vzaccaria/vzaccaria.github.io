@@ -2,6 +2,35 @@
     "records": [
         {
             "authors": [
+                "V. Zaccaria",
+                "F. Melzani",
+                "G. Bertoni"
+            ],
+            "title": "Spectral features of higher-order side-channel countermeasures",
+            "month": "June",
+            "year": "2018",
+            "journal": {
+                "name": "IEEE Transactions on Computers",
+                "id": "IEEETransactionsonComputers"
+            },
+            "pages": "PP",
+            "publisher": "IEEE - Piscataway, NJ - USA",
+            "doi": "10.1109/TC.2017.2772231",
+            "issn": "00189340",
+            "url": "http://dx.doi.org/10.1109/TC.2016.2635650",
+            "justApplied": false,
+            "justAccepted": true,
+            "keyword": [
+                "trans",
+                "journal",
+                "notfoundincineca",
+                "accepted"
+            ],
+            "type": "journal",
+            "timestamp": 1527804000
+        },
+        {
+            "authors": [
                 "E. Bisi",
                 "F. Melzani",
                 "V. Zaccaria"
@@ -59,35 +88,6 @@
             ],
             "type": "bookchapter",
             "timestamp": 1483225200
-        },
-        {
-            "authors": [
-                "V. Zaccaria",
-                "F. Melzani",
-                "G. Bertoni"
-            ],
-            "title": "Spectral features of higher-order side-channel countermeasures",
-            "month": "June",
-            "year": "2018",
-            "journal": {
-                "name": "IEEE Transactions on Computers",
-                "id": "IEEETransactionsonComputers"
-            },
-            "pages": "PP",
-            "publisher": "IEEE - Piscataway, NJ - USA",
-            "doi": "10.1109/TC.2017.2772231",
-            "issn": "00189340",
-            "url": "http://dx.doi.org/10.1109/TC.2016.2635650",
-            "justApplied": false,
-            "justAccepted": true,
-            "keyword": [
-                "trans",
-                "journal",
-                "notfoundincineca",
-                "accepted"
-            ],
-            "type": "journal",
-            "timestamp": 1527804000
         },
         {
             "authors": [

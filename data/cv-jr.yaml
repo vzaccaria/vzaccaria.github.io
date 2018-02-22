@@ -246,15 +246,15 @@
   research:
 
     citations:
-      date: 2017-04-29
+      date: 2018-02-22
       source: Google Scholar profile
       all:
-        citations: 1502
-        highest: 114
-        hindex: 21
+        citations: 1663
+        highest: 117
+        hindex: 22
       since2012:
         citations: 756
-        hindex: 15
+        hindex: 16
 
     currentGoals:
       short: |
