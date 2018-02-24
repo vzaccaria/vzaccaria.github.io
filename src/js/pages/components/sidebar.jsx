@@ -43,7 +43,7 @@ export default class Sidebar extends statefulComponent {
             <SidebarLinkItem
               icon="fa-user"
               name="CV"
-              link="https://www.dropbox.com/s/z6xi289k89w36ru/cv.pdf?dl=0"
+              link="/deposit/cv.pdf"
             />
             <SidebarLinkItem
               icon="fa-youtube-play"

@@ -17,7 +17,7 @@
             "publisher": "IEEE - Piscataway, NJ - USA",
             "doi": "10.1109/TC.2017.2772231",
             "issn": "00189340",
-            "url": "http://dx.doi.org/10.1109/TC.2016.2635650",
+            "url": "http://dx.doi.org/10.1109/TC.2017.2772231",
             "justApplied": false,
             "justAccepted": true,
             "keyword": [
@@ -485,9 +485,9 @@
             "volume": "13",
             "pages": "20:1 to 20:27",
             "publisher": "ACM New York, NY - USA",
-            "doi": "10.1145/2520000.2514647",
+            "doi": "10.1145/2514641.2514647",
             "issn": "15399087",
-            "url": "http://dx.doi.org/10.1145/2520000.2514647",
+            "url": "https://doi.org/10.1145/2514641.2514647",
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
