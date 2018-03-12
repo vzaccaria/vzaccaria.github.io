@@ -7,13 +7,14 @@
                 "G. Bertoni"
             ],
             "title": "Spectral features of higher-order side-channel countermeasures",
-            "month": "June",
+            "month": "April",
             "year": "2018",
             "journal": {
                 "name": "IEEE Transactions on Computers",
                 "id": "IEEETransactionsonComputers"
             },
-            "pages": "PP",
+            "volume": "67",
+            "pages": "596 to 603",
             "publisher": "IEEE - Piscataway, NJ - USA",
             "doi": "10.1109/TC.2017.2772231",
             "issn": "00189340",
@@ -27,7 +28,7 @@
                 "accepted"
             ],
             "type": "journal",
-            "timestamp": 1527804000
+            "timestamp": 1522533600
         },
         {
             "authors": [
@@ -251,7 +252,7 @@
             "address": "Porto, Portugal",
             "doi": "10.1109/FPL.2013.6645523",
             "isbn": "9781479900046",
-            "url": "http://dl.acm.org/citation.cfm?id=2485450",
+            "url": "https://doi.org/10.1109/FPL.2013.6645523",
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
