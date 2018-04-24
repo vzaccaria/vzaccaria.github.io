@@ -6,9 +6,9 @@ header: |
 topics:
   - name: Side-channel attacks over the internet of things
     description: |
-      This thesis will be done in collaboration with Security Pattern.
+      This thesis will be done in collaboration with [Security Pattern](https://www.securitypattern.com).
 
-      IoT is increasingly implemented using devices that might store sensitive
+      *Context*: IoT is increasingly implemented using devices that might store sensitive
       information but otherwise work in an hostile environment. One of the most
       effective class of attacks that can be used to steal such sensitive
       information is implemented through a side-channel. A side-channel attack
@@ -16,13 +16,13 @@ topics:
       implementation to exfiltrate sensitive data. Main examples are timing
       attacks, power analysis, electromagnetic analysis and fault injection.
 
-      This thesis proposal aims at improving and extending the current
+      *Main goals*: This thesis proposal aims at improving and extending the current
       hardware/software tools to implement an attack. The goal is to provide IoT
       designers with a easy to use device and software to find any vulnerability
       of the system under design. The candidate will work with and extend a
-      ChipWhisperer board and its software.
+      [ChipWhisperer](https://newae.com/tools/chipwhisperer/) board and its software.
 
-      Expected outcomes:
+      *Expected outcomes*:
 
       - Implement a hw/sw wrapper such that the board and its software could be
         used to attack a generic device (e.g., an ARM device, or an hardware
@@ -32,7 +32,7 @@ topics:
         attached to an arbitrary/more capable measurement device.
 
 
-      Bibliography:
+      *Bibliography*:
 
       - S. Mangard, E. Oswald, and T. Popp, Power Analysis Attacks:
         Revealing the Secrets of Smart Cards, 1st Edition. Berlin,
