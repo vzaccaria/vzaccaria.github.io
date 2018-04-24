@@ -4,113 +4,61 @@ header: |
   Feel free to contact me (or the listed contacts) for any information.
          
 topics:
-  - name: RISCV open source microprocessor enhancement
+  - name: Side-channel attacks over the internet of things
     description: |
-      This research project is configured with the following design activities
+      This thesis will be done in collaboration with Security Pattern.
 
-      - Evaluation of the RISCV microprocessor designed in the University of
-        Berkeley, nowadays considered one of the most promising open source
-        microprocessor.
+      IoT is increasingly implemented using devices that might store sensitive
+      information but otherwise work in an hostile environment. One of the most
+      effective class of attacks that can be used to steal such sensitive
+      information is implemented through a side-channel. A side-channel attack
+      exploits a physical, measurable property of an otherwise secure
+      implementation to exfiltrate sensitive data. Main examples are timing
+      attacks, power analysis, electromagnetic analysis and fault injection.
 
-      - Extension of its basic instruction set (ISA) with a new group of digital
-        signal processing and computer vision instructions to address new emerging
-        IOT radios and deep learning applications.
+      This thesis proposal aims at improving and extending the current
+      hardware/software tools to implement an attack. The goal is to provide IoT
+      designers with a easy to use device and software to find any vulnerability
+      of the system under design. The candidate will work with and extend a
+      ChipWhisperer board and its software.
 
-      The analysis of the new RISCV ISA will be performed at instruction
-      abstraction level, the Chisel language could be one of the adopted solutions.
-      The project can then be carried on in the hardware design phase if the
-      candidate owns adequate skills and motivations.
+      Expected outcomes:
+
+      - Implement a hw/sw wrapper such that the board and its software could be
+        used to attack a generic device (e.g., an ARM device, or an hardware
+        implementation of AES)
+
+      - Implement a hw/sw wrapper such that the board and its software could be
+        attached to an arbitrary/more capable measurement device.
+
+
+      Bibliography:
+
+      - S. Mangard, E. Oswald, and T. Popp, Power Analysis Attacks:
+        Revealing the Secrets of Smart Cards, 1st Edition. Berlin,
+        Germany: Springer Publishing Company, Oct. 2010.
+
+      - V. Zaccaria, F. Melzani, and G. Bertoni,
+        “Spectral Features of Higher-Order Side-Channel Countermeasures,”
+        IEEE Transactions on Computers, vol. 67, no. 4, pp. 596–603, Apr. 2018.
 
     type: thesis/stage
-    institution: STMicroelectronics
-    address: Agrate Brianza, Italy
-    published: March, 2017
+    institution: Security Pattern
+    address:
+    published: April 2018
     image:
     length:
     available: yes
     skills:
-      - microprocessor architectures
-      - algorithms
-      - knowledge for benchmarking
-      - RTL coding
-      - synthesis flow
+      - minimal knowledge of electronics
+      - IoT
+      - Linux
+      - Security
+
     contacts:
-      - name: Fabio De Ambroggi
-        address: fabio.deambroggi@st.com
-      - name: Elio Guidetti
-        address: elio.guidetti@st.com
+      - name: Guido Bertoni
+        address: g.bertoni@securitypattern.com
+      - name: Filippo Melzani
+        address: f.melzani@securitypattern.com
 
-  - name: Design of the next generation of STRED6 microprocessor-DSP 
-    description: |
-      The consolidated trend in the digital design is described by the use of
-      high performance and energy efficient microprocessors, used in single or
-      multiple configurations, where the associated firmware defines the target
-      system-on-chip functionality.
-
-      The STRED processor family is one of the key STMicroelectronics IP used in
-      this set of advanced products. The new emerging applications require big
-      changes in terms of performance in order to support advanced software
-      defined radios and deep learning algorithms for computer vision.
-
-      The activity will be concentrated in the instruction set (ISA) upgrades
-      and micro-architecture adjustment (pipeline).
-
-      The analysis of the new STRED6 ISA will be performed at instruction
-      abstraction level. The project can then be completed with the hardware
-      design.
-
-    type: thesis/stage
-    institution: STMicroelectronics
-    address: Agrate Brianza, Italy
-    published: March, 2017
-    available: yes
-    skills:
-      - microprocessor architectures
-      - algorithms
-      - deep learning architectures
-      - RTL coding
-      - synthesis flow
-    contacts:
-      - name: Fabio De Ambroggi
-        address: fabio.deambroggi@st.com
-      - name: Elio Guidetti
-        address: elio.guidetti@st.com
-
-  - name: Definition of the next STREDL microprocessor for sensor processing
-    description: |
-      Every sensor is more and more associated to a close elaboration unit with
-      the task to filter the data before the transmission to the next collection
-      unit or the Cloud.
-
-      The next frontier is the adoption of neural network architectures, tightly
-      coupled with the sensor, able to perform a first detection level of the
-      retrieved information.
-
-      The STREDL microprocessor is one of the key STMicroelectronics IP planned
-      to be used in the sensor domain.
-
-      Interacting with ST Deep Neural Network group the candidate should study
-      and isolate the most promising net architectures for low power
-      applications, suggest instruction set upgrades and micro-architecture
-      adjustment.
-
-      The analysis of the new STREDL ISA will be performed at instruction
-      abstraction level. The project can then be completed with the hardware design.
-
-    type: thesis/stage
-    institution: STMicroelectronics
-    address: Agrate Brianza, Italy
-    published: March, 2017
-    available: yes
-    skills:
-      - microprocessor architectures
-      - algorithms
-      - deep learning architectures
-      - RTL coding
-      - synthesis flow
-    contacts:
-      - name: Fabio De Ambroggi
-        address: fabio.deambroggi@st.com
-      - name: Elio Guidetti
-        address: elio.guidetti@st.com
 
