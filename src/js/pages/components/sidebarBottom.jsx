@@ -17,7 +17,7 @@ class SidebarBottomButton extends React.Component {
 class SidebarBottomBuiltWith extends React.Component {
   render() {
     return (
-      <div className="sidebar__bottom_builtwith__container">
+      <div className="sidebar__bottom__builtwith__container">
         <a
           className="sidebar__bottom__builtwith__text"
           href="https://facebook.github.io/react/"
