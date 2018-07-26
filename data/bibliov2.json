@@ -2,6 +2,30 @@
     "records": [
         {
             "authors": [
+                "F. Daniel",
+                "M. Matera",
+                "E. Quintarelli",
+                "L. Tanca",
+                "V. Zaccaria"
+            ],
+            "title": "Context-Aware Access to Heterogeneous Resources Through On-the-Fly Mashups",
+            "month": "June",
+            "year": "2018",
+            "booktitle": "Advanced Information Systems Engineering - 30th International Conference, CAiSE 2018, Tallinn, Estonia, June 11-15, 2018, Proceedings",
+            "pages": "119 to 134",
+            "address": "Tallinn, Estonia",
+            "doi": "10.1007/978-3-319-91563-0_8",
+            "url": "https://doi.org/10.1007/978-3-319-91563-0_8",
+            "justApplied": false,
+            "justAccepted": false,
+            "keyword": [
+                "conference"
+            ],
+            "type": "conference",
+            "timestamp": 1527804000
+        },
+        {
+            "authors": [
                 "V. Zaccaria",
                 "F. Melzani",
                 "G. Bertoni"
@@ -20,12 +44,12 @@
             "issn": "00189340",
             "url": "http://dx.doi.org/10.1109/TC.2017.2772231",
             "justApplied": false,
-            "justAccepted": true,
+            "justAccepted": false,
             "keyword": [
+                "pa2018",
                 "trans",
                 "journal",
-                "notfoundincineca",
-                "accepted"
+                "notfoundincineca"
             ],
             "type": "journal",
             "timestamp": 1522533600
@@ -52,7 +76,7 @@
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
-                "pa2017",
+                "pa2018",
                 "trans",
                 "journal",
                 "notfoundincineca"
@@ -83,7 +107,6 @@
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
-                "pa2017",
                 "bookc",
                 "notfoundincineca"
             ],
@@ -113,7 +136,7 @@
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
-                "pa2017",
+                "pa2018",
                 "trans",
                 "journal"
             ],
@@ -385,7 +408,7 @@
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
-                "pa2017",
+                "pa2018",
                 "journal",
                 "notfoundincineca"
             ],
@@ -492,7 +515,7 @@
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
-                "pa2017",
+                "pa2018",
                 "journal",
                 "notfoundincineca",
                 "trans"
@@ -676,7 +699,7 @@
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
-                "pa2017",
+                "pa2018",
                 "cineca",
                 "trans",
                 "journal"
@@ -1122,7 +1145,7 @@
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
-                "pa2017",
+                "pa2018",
                 "cineca",
                 "journal",
                 "trans"
@@ -1244,7 +1267,7 @@
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
-                "pa2017",
+                "pa2018",
                 "cineca",
                 "conference"
             ],
@@ -1379,7 +1402,7 @@
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
-                "pa2017",
+                "pa2018",
                 "cineca",
                 "trans",
                 "journal"
@@ -1767,7 +1790,7 @@
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
-                "pa2017",
+                "pa2018",
                 "cineca",
                 "conference"
             ],
@@ -2211,7 +2234,7 @@
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
-                "pa2017",
+                "pa2018",
                 "cineca",
                 "trans",
                 "journal"
@@ -2297,7 +2320,7 @@
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
-                "pa2017",
+                "pa2018",
                 "cineca",
                 "trans",
                 "journal"
