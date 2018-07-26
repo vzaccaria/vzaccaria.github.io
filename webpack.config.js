@@ -6,6 +6,10 @@ const DashboardPlugin = require("webpack-dashboard/plugin");
 const { DateTime } = require("luxon");
 
 const reactproduction = new webpack.DefinePlugin({
+  "process.env.NODE_ENV": JSON.stringify("production")
+});
+
+const builddate = new webpack.DefinePlugin({
   "process.env.NODE_ENV": JSON.stringify("production"),
   __BUILDDATE__: JSON.stringify(
     DateTime.local().toFormat("MMMM dd, yyyy HH:mm")
@@ -113,6 +117,7 @@ const mainConfig = {
   },
   plugins: [
     reactproduction,
+    builddate,
     uglifier,
     compressor,
     htmlPlugin,
@@ -125,6 +130,7 @@ function getDevConfig(devConfig) {
   _.set(devConfig, "devServer.headers.Access-Control-Allow-Origin", "*");
   _.set(devConfig, "plugins", [
     new DashboardPlugin(),
+    builddate,
     htmlPlugin,
     removeMomentLocales
   ]);
