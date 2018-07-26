@@ -3,9 +3,13 @@ const _ = require("lodash");
 const CompressionPlugin = require("compression-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const DashboardPlugin = require("webpack-dashboard/plugin");
+const { DateTime } = require("luxon");
 
 const reactproduction = new webpack.DefinePlugin({
-  "process.env.NODE_ENV": JSON.stringify("production")
+  "process.env.NODE_ENV": JSON.stringify("production"),
+  __BUILDDATE__: JSON.stringify(
+    DateTime.local().toFormat("MMMM dd, yyyy HH:mm")
+  )
 });
 
 const uglifier = new webpack.optimize.UglifyJsPlugin({

@@ -14,6 +14,7 @@ class SidebarBottomBuiltWith extends React.Component {
     render() {
         return (<a className="sidebar__bottom__builtwith__container" href="https://facebook.github.io/react/">
                 <div className="sidebar__bottom__builtwith__text" >Built with React</div>
+                <div className="sidebar__bottom__builtwith__text" >on {__BUILDDATE__}</div>
         </a>
         );
     }
