@@ -17,14 +17,12 @@ class SidebarBottomButton extends React.Component {
 class SidebarBottomBuiltWith extends React.Component {
   render() {
     return (
-      <div>
+      <div className="sidebar__bottom_builtwith__container">
         <a
-          className="sidebar__bottom__builtwith__container"
+          className="sidebar__bottom__builtwith__text"
           href="https://facebook.github.io/react/"
         >
-          <div className="sidebar__bottom__builtwith__text">
             Built with React
-          </div>
         </a>
         <div className="sidebar__bottom__builtwith__text__date">
           on {__BUILDDATE__}
