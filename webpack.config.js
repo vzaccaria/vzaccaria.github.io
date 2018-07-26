@@ -4,11 +4,14 @@ const CompressionPlugin = require("compression-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const DashboardPlugin = require("webpack-dashboard/plugin");
 
+const reactproduction = new webpack.DefinePlugin({
+  "process.env.NODE_ENV": JSON.stringify("production")
+});
+
 const uglifier = new webpack.optimize.UglifyJsPlugin({
   compress: {
     warnings: false
-  },
-  sourceMap: true
+  }
 });
 
 const compressor = new CompressionPlugin({
@@ -104,7 +107,13 @@ const mainConfig = {
       lodash: `${__dirname}/vendor/lodash.custom.js`
     }
   },
-  plugins: [uglifier, compressor, htmlPlugin, removeMomentLocales]
+  plugins: [
+    reactproduction,
+    uglifier,
+    compressor,
+    htmlPlugin,
+    removeMomentLocales
+  ]
 };
 
 function getDevConfig(devConfig) {
