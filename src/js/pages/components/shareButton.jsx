@@ -18,7 +18,7 @@ export default class ShareButton extends React.Component {
         let thisurl = encodeURIComponent(window.location.href);
         let title = encodeURIComponent(document.title);
         handler = () => {
-          window.location = `http://www.reddit.com/submit?url=${thisurl}&title=${title}`;
+          window.location = `https://www.reddit.com/submit?url=${thisurl}&title=${title}`;
         };
       } else {
         if (social === "github") {
