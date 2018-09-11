@@ -6,7 +6,7 @@ let { bioPage } = require("./pages/bio").default;
 let { researchPage } = require("./pages/research").default;
 let BlogPage = require("./pages/blog").default;
 let BlogIndex = require("./pages/blogIndex").default;
-let TeachingPage = require("./pages/teaching").default;
+let SlidesPage = require("./pages/slides").default;
 let AddressPage = require("./pages/address").default;
 let { videosPage } = require("./pages/videos").default;
 let { ThesisIndex, ThesisPage }= require('./pages/thesis').default;
@@ -23,7 +23,7 @@ class Routes extends React.Component {
           <div>
             <Route exact path="/" component={bioPage} />
             <Route path="/research" component={researchPage} />
-            <Route path="/teaching" component={TeachingPage} />
+            <Route path="/teaching" component={SlidesPage} />
             <Route path="/videos" component={videosPage} />
             <Route path="/address" component={AddressPage} />
             <Route exact path="/thesis" component={ThesisIndex} />
