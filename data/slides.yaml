@@ -1,0 +1,26 @@
+- id: InfoB1819
+  name: Informatica B
+  institution: Politecnico di Milano
+  description: Slides aggiornate. Sono le stesse che si trovano su Beep.
+  dates: 2018 - 2019
+  slides:
+
+  - key: Installazione Matlab
+    value: http://www.software.polimi.it/software-download/studenti/matlab/
+    
+
+- id: TCPS1819
+  name: Technologies for connected product and systems
+  institution: Politecnico di Milano
+  dates: 2018 - 2019
+  slides:
+
+- id: Cefriel17
+  name: Introduction to Javascript
+  institution: Cefriel
+  dates: December 2017
+  slides:
+
+  - key: Introduction to Javascript
+    hslide: course.html
+

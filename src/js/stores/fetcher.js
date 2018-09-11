@@ -3,13 +3,10 @@ let _ = require("lodash");
 let YAML = require("js-yaml");
 
 let siteData = require("../../data/site.json");
-let {
-  indexurl,
-  baseurl
-} = siteData;
+let { indexurl } = siteData;
 
 function fetchAsset(name, opts) {
-  return agent("GET", `${baseurl}/${name}`).then(r => {
+  return agent("GET", `/${name}`).then(r => {
     if (_.get(opts, "yaml", false)) {
       return YAML.safeLoad(r.text);
     } else {
@@ -22,27 +19,11 @@ function fetchIndex() {
   return agent("GET-JSON", indexurl);
 }
 
-function fetchPostMarkup(
-  category,
-  {
-    year,
-    month,
-    day,
-    title
-  }
-) {
+function fetchPostMarkup(category, { year, month, day, title }) {
   return fetchAsset(`${category}/${year}/${month}/${day}/${title}`);
 }
 
-function fetchPost(
-  category,
-  {
-    year,
-    month,
-    day,
-    title
-  }
-) {
+function fetchPost(category, { year, month, day, title }) {
   return fetchIndex().then(postList => {
     let link = `/${category}/${year}/${month}/${day}/${title}`;
     // debug(link);

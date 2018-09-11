@@ -1,3 +1,37 @@
+.slides-page {
+	  .center-within-container();
+	  font-family: @font-family;
+    margin-top: 3rem;
+    &__title {
+	      .smallcapfont(@display-family);
+	      font-size: 2em;
+	      line-height: .9em;
+	      padding-top: 2em;  
+        margin-bottom: 0.2rem;
+    }
+
+    &__year {
+	      .smallcapfont(@font-family,  @font-weight:300);
+		    color: lighten(black, 60%);
+	      letter-spacing: .04em;
+        display: inline;
+        padding-right: 0.5rem;
+		    color: lighten(black, 30%);
+    }
+
+    &__institution {
+		    color: lighten(black, 30%);
+        display: inline;
+        padding-left: 0.5rem;
+    } 
+
+    &__description{
+		    color: lighten(black, 50%); 
+        margin-top: 1rem;
+    }
+
+}
+
 
 .teaching-page {
 	.center-within-container();
