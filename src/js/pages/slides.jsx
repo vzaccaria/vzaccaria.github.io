@@ -27,7 +27,7 @@ const renderLinkImage = (l, root) => {
         <img
           alt={l.key}
           className="lecture-links__img"
-          src={`deposit/slides/${root}/${l.img}`}
+          src={`/deposit/slides/${root}/${l.img}`}
         />
       </a>
     </div>
