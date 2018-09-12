@@ -1,3 +1,10 @@
+- id: Conferences
+  name: Conference slides
+  dates: 2018 -
+  slides: 
+  
+  - key: Darth's Saber FDTC 2018
+    slide: fdtc2018
 
 - id: TCPS1819
   name: Technologies for connected product and systems
