@@ -10,10 +10,13 @@ start-dashboard:
 production-build: data/bibliov2.json
 	rm -rf assets && yarn build
 
-production-deploy: production-build
+deploy: 
 	git add .
 	git commit -m "New core asset deploy"
 	hub push --all
+
+production-deploy: production-build
+	make deploy
 
 refresh-biblio:
 	rm -f data/bibliov2.json
