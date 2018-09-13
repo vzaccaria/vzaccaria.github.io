@@ -1,3 +1,12 @@
+- id: Conferences
+  name: Conference slides
+  dates: 2018 - now
+  institution: Various venues
+  description: Slides supporting talks I've given
+  slides: 
+  
+  - key: Darth's Saber, A Key Exfiltration Attack for Symmetric Ciphers Using Laser Light / FDTC 2018
+    slide: fdtc2018
 
 - id: TCPS1819
   name: Technologies for connected product and systems
