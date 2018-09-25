@@ -23,6 +23,15 @@
 
   - key: Installazione Matlab
     value: http://www.software.polimi.it/software-download/studenti/matlab/
+
+  - key: 0 - Informazioni sul corso
+    slide: le_inizio.slides.draft
+
+  - key: 1 - Introduzione alla scienza della informazione
+    slide: le_introduzione.slides.draft
+
+  - key: Guida - Installazione ambiente di sviluppo CodeBlocks per linguaggio C
+    slide: guida_installazione_codeblocks
     
 - id: Hyp1718
   name: Hypermedia
