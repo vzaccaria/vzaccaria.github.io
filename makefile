@@ -13,7 +13,7 @@ production-build: data/bibliov2.json
 deploy: 
 	git add .
 	git commit -m "New core asset deploy"
-	hub push --all
+	git push --all
 
 production-deploy: production-build
 	make deploy
