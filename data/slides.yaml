@@ -13,8 +13,15 @@
   institution: Politecnico di Milano
   dates: 2018 - 2019
   slides:
+
   - key: Course introduction
     hslide: lecture0_course_intro.html
+
+  - key: Recap and tools
+    hslide: lecture1_recap_and_tools.html
+
+  - key: Building products, principled programming
+    hslide: lecture2_building_products__principled_programming.html
 
 - id: InfoB1819
   name: Informatica B
