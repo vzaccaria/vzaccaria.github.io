@@ -1,0 +1,19 @@
+  \begin{tikzpicture}[->,>=stealth']   
+    \matrix (m) [matrix of nodes, row sep=1em, column sep=0.6em, nodes={minimum
+      width=0em, minimum height=0em, anchor=center, text centered },
+    fblock/.style={rectangle, draw=black, minimum width=2em, minimum height =
+      3em, anchor=center, text centered } ]{
+      \node(p) {$p$}; & &                  &                 & &                         & &  \node(v) [minimum width=1.5em] {}; & &\\
+                      & &                  & \node(s) {$\oplus$}; & &\node(g) [fblock] {$g$}; & & \node(o) [fblock] {$\Omega$};            & &\node(e) {correct?}; \\
+                      & &  \node(k) {$k$}; &                 & &                         & &                                     & &\\
+                      & &                  &                 & &                         & &                                     & &\\
+                    };
+                    \draw[{Circle[]-}] (p) -| (s);
+                    \draw[{Circle[]-}] (k) -| (s);
+                    \draw[] (s) edge (g);
+                    \draw[] (k) -| (o);
+                    \draw[] (p) -| (o);
+                    \draw[] (o) edge (e);
+                    \draw[] (g) edge (o);
+                    \node[dotted, draw=black, fit=(k) (v)] {};
+  \end{tikzpicture}

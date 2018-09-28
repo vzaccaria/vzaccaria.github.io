@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>General course introduction and logistics</title>
+<meta name="author" content="(Vittorio Zaccaria)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/theme/moon.css" id="theme"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-light.min.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">General course introduction and logistics</h1><h2 class="author">Vittorio Zaccaria</h2><h2 class="date"><a href="mailto:vittorio.zaccaria@polimi.it">mailto:vittorio.zaccaria@polimi.it</a> - DEIB: Politecnico di Milano</h2><p class="date">Created: 2018-09-28 Fri 17:39</p>
+</section>
+<style type="text/less">   
+@background-color: #fafafa;
+@code-color: darken(@background-color, 5%); 
+@accent-color: #eb811a;  
+@text-color: #222;
+@ftext-color: lighten(@text-color, 30%);
+
+.define-code-style() {
+    & code {
+        font-family: "Menlo";
+        font-size: 1.3rem;
+        line-height: 130%;
+
+        background: @code-color;
+        &.b {
+            background: @background-color;
+            width: 100%; height: auto;
+        }
+        color: black;
+        border-radius: 0.2rem;
+
+        padding: 0.4rem;
+    }
+}
+
+.reveal {
+  background-color: @background-color;
+    
+  h1, h2, h3 {
+    font-family: 'Lato';
+    text-align: left;
+    font-size: 1.6rem;
+    color: @ftext-color;
+
+    &.title {
+      padding-bottom: 3rem;
+      border-bottom: solid @accent-color;
+      b {
+        font-size:1.2em;
+      }
+      color: @text-color;
+    }
+
+    &.author {
+    font-size:0.6em;
+    color: @ftext-color;
+    letter-spacing: 1px;
+    text-transform: none;
+    }
+
+    &.date {
+    font-size:0.5em;
+    color: @ftext-color;  
+    letter-spacing: 1px;  
+    }
+  }
+  h2 {
+  color: @accent-color;
+  }
+
+  // internal slide title
+  h3 {
+    color: @accent-color;
+  }
+
+  .slide-header, .slide-footer {
+     font-size: 1rem; 
+     text-align: left;
+  } 
+  .slide-footer {
+   margin-top: 5rem;
+  }   
+
+  .math { 
+    color: @text-color;
+  }
+
+  
+  section.has-dark-background {
+       p {
+       color: white; 
+       }
+  }
+
+  ul, ol, p {
+    text-align: left;
+    display: block;
+    color: @text-color;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 1.6rem;  
+    li {
+      padding-left: 1rem;
+    }
+    b {
+      color: @accent-color;
+    }
+    &.date {
+    font-size:0.5em;
+    }
+  }
+
+  li {  
+    margin-bottom: 1rem;
+  }  
+   
+  th {
+    margin-bottom: 1em;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: black;
+  }
+
+  td {
+    color: @text-color;
+    font-size: 1rem;
+  }
+
+  blockquote {
+    margin: 0px;
+    box-shadow: none;
+    border-left: solid #ddd;
+    width: 100%;
+    & p {
+      font-size: 0.7em;
+      margin: 0px;
+    }
+  }
+
+  pre {
+    font-size: 1rem;
+    border: none;
+    color: black;
+    box-shadow: none;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    font-family: "Menlo";
+    .define-code-style();
+  }
+
+  .define-code-style();
+
+
+  .vz-link {
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    font-size: 1rem;
+    text-decoration: underline;
+    &::before {
+      content: "https://jsbin.com/"
+    }
+    &::after{
+      content: "/edit"
+    }
+  }
+
+  .center {
+    display: block;
+    margin: 0 auto !important;
+  }
+
+  .column {
+    box-sizing: border-box;
+    padding: 1rem;
+  }
+
+  .example {
+    background: darken(white,5%);
+    padding: 1rem;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    & code.b {
+      background-color: darken(white,5%);
+    }
+    & p {
+      font-size: 1.3rem;
+    }
+  }
+
+  .figure {
+      p {
+        font-size: 1.2rem; 
+        margin-top: 0.2rem;
+        margin-bottom: 0.2rem;
+        padding: none;
+      }
+      img {
+        border: none;
+        box-shadow: none !important;
+      }
+      .figure-number {
+        font-size: 1.2rem;
+        font-weight: bold !important;
+      }
+  }
+
+}
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.8.1/less.min.js"></script>
+
+
+<section>
+<section id="slide-org9b44a1c">
+<h2 id="org9b44a1c">Technologies for connected product and systems</h2>
+<div class="outline-text-2" id="text-org9b44a1c">
+</div>
+</section>
+<section id="slide-a3">
+<h3 id="a3">Goals of TCPS</h3>
+<ul>
+<li>Understand and choose the <b>hardware platform</b> needed to build a product prototype.</li>
+<li><b>Devise and implement a program</b> for that platform by using a range 
+of programming methods.</li>
+
+</ul>
+
+</section>
+<section id="slide-a0">
+<h3 id="a0">Organization of lectures</h3>
+<p>
+TCPS lectures/labs will be scattered around as follows:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">Week</th>
+<th scope="col" class="org-left">Day</th>
+<th scope="col" class="org-left">Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">3</td>
+<td class="org-left">Oct. 3</td>
+<td class="org-left">Recap about hwardware and software development. <br/> Makecode platform. <b>Hands-on work.</b></td>
+</tr>
+
+<tr>
+<td class="org-right">4</td>
+<td class="org-left">Oct. 10</td>
+<td class="org-left">Concurrent and reactive programming. <b><b>Hands-on work</b></b></td>
+</tr>
+
+<tr>
+<td class="org-right">8</td>
+<td class="org-left">Nov. 7</td>
+<td class="org-left">Low-level programming (serial and infrared ports). <b>Hands-on work</b></td>
+</tr>
+
+<tr>
+<td class="org-right">9</td>
+<td class="org-left">Nov. 14</td>
+<td class="org-left">Connecting to the internet. <b>Tutoring</b></td>
+</tr>
+
+<tr>
+<td class="org-right">10</td>
+<td class="org-left">Nov. 21</td>
+<td class="org-left"><b>Tutoring</b></td>
+</tr>
+
+<tr>
+<td class="org-right">11</td>
+<td class="org-left">Nov. 28</td>
+<td class="org-left"><b>Tutoring</b></td>
+</tr>
+</tbody>
+</table>
+
+
+</section>
+<section id="slide-a1">
+<h3 id="a1">Prerequisites</h3>
+<ul>
+<li>Rudimentary knowledge of the (Arduino) hardware platform</li>
+<li>Rudimentary knowledge of the (Arduino) software development process</li>
+
+</ul>
+
+</section>
+<section id="slide-a2">
+<h3 id="a2">How you will be evaluated</h3>
+<p>
+<b>Group work</b>. Hanson to be delivered through BEEP, will account for 5% of the PDS
+grade to be assigned by Week 8.
+</p>
+
+<p>
+<b>Individual work.</b> As part of the whole project delivery at the end. Will be
+averaged with Prof. Ajovalasit and Prof. Ciancia at the end.
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgca48c73">
+<h2 id="orgca48c73">Technicalities</h2>
+<div class="outline-text-2" id="text-orgca48c73">
+</div>
+</section>
+<section id="slide-t0">
+<h3 id="t0">Contacting me</h3>
+<ul>
+<li><b>Office</b>: Dept. of Electronics, Information and Bioeng. Politecnico di Milano</li>
+<li><b>Address</b>: Via Ponzio 34/5, Milano (MI)</li>
+<li><b>Telephone</b>: +39 02 2399 3642</li>
+<li><b>Email</b>: vittorio.zaccaria@polimi.it</li>
+
+</ul>
+</section>
+<section id="slide-t1">
+<h3 id="t1">Boards</h3>
+
+<div class="figure">
+<p><img src="https://cdn-shop.adafruit.com/970x728/3333-01.jpg" alt="3333-01.jpg" width="400px" class="center" />
+</p>
+</div>
+
+<ul>
+<li>This year we'll be using an Adafruit Circuit Playground Express as an example board.</li>
+<li>You can borrow one of ten boards from XYZ</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/head.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }]
+});
+</script>
+</body>
+</html>

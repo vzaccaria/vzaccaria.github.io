@@ -13,6 +13,8 @@
   institution: Politecnico di Milano
   dates: 2018 - 2019
   slides:
+    - key: Course introduction
+      hslide: lecture0_course_intro.html
 
 - id: InfoB1819
   name: Informatica B
