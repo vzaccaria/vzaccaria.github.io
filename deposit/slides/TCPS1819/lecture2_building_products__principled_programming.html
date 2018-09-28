@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Building products - Principles of imperative programming</title>
+<meta name="author" content="(Vittorio Zaccaria)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/theme/moon.css" id="theme"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-light.min.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Building products - Principles of imperative programming</h1><h2 class="author">Vittorio Zaccaria</h2><h2 class="date">vittorio.zaccaria@polimi.it - Politecnico di Milano</h2><p class="date">Created: 2018-09-28 Fri 17:39</p>
+</section>
+<style type="text/less">   
+@background-color: #fafafa;
+@code-color: darken(@background-color, 5%); 
+@accent-color: #eb811a;  
+@text-color: #222;
+@ftext-color: lighten(@text-color, 30%);
+
+.define-code-style() {
+    & code {
+        font-family: "Menlo";
+        font-size: 1.3rem;
+        line-height: 130%;
+
+        background: @code-color;
+        &.b {
+            background: @background-color;
+            width: 100%; height: auto;
+        }
+        color: black;
+        border-radius: 0.2rem;
+
+        padding: 0.4rem;
+    }
+}
+
+.reveal {
+  background-color: @background-color;
+    
+  h1, h2, h3 {
+    font-family: 'Lato';
+    text-align: left;
+    font-size: 1.6rem;
+    color: @ftext-color;
+
+    &.title {
+      padding-bottom: 3rem;
+      border-bottom: solid @accent-color;
+      b {
+        font-size:1.2em;
+      }
+      color: @text-color;
+    }
+
+    &.author {
+    font-size:0.6em;
+    color: @ftext-color;
+    letter-spacing: 1px;
+    text-transform: none;
+    }
+
+    &.date {
+    font-size:0.5em;
+    color: @ftext-color;  
+    letter-spacing: 1px;  
+    }
+  }
+  h2 {
+  color: @accent-color;
+  }
+
+  // internal slide title
+  h3 {
+    color: @accent-color;
+  }
+
+  .slide-header, .slide-footer {
+     font-size: 1rem; 
+     text-align: left;
+  } 
+  .slide-footer {
+   margin-top: 5rem;
+  }   
+
+  .math { 
+    color: @text-color;
+  }
+
+  
+  section.has-dark-background {
+       p {
+       color: white; 
+       }
+  }
+
+  ul, ol, p {
+    text-align: left;
+    display: block;
+    color: @text-color;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 1.6rem;  
+    li {
+      padding-left: 1rem;
+    }
+    b {
+      color: @accent-color;
+    }
+    &.date {
+    font-size:0.5em;
+    }
+  }
+
+  li {  
+    margin-bottom: 1rem;
+  }  
+   
+  th {
+    margin-bottom: 1em;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: black;
+  }
+
+  td {
+    color: @text-color;
+    font-size: 1rem;
+  }
+
+  blockquote {
+    margin: 0px;
+    box-shadow: none;
+    border-left: solid #ddd;
+    width: 100%;
+    & p {
+      font-size: 0.7em;
+      margin: 0px;
+    }
+  }
+
+  pre {
+    font-size: 1rem;
+    border: none;
+    color: black;
+    box-shadow: none;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    font-family: "Menlo";
+    .define-code-style();
+  }
+
+  .define-code-style();
+
+
+  .vz-link {
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    font-size: 1rem;
+    text-decoration: underline;
+    &::before {
+      content: "https://jsbin.com/"
+    }
+    &::after{
+      content: "/edit"
+    }
+  }
+
+  .center {
+    display: block;
+    margin: 0 auto !important;
+  }
+
+  .column {
+    box-sizing: border-box;
+    padding: 1rem;
+  }
+
+  .example {
+    background: darken(white,5%);
+    padding: 1rem;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    & code.b {
+      background-color: darken(white,5%);
+    }
+    & p {
+      font-size: 1.3rem;
+    }
+  }
+
+  .figure {
+      p {
+        font-size: 1.2rem; 
+        margin-top: 0.2rem;
+        margin-bottom: 0.2rem;
+        padding: none;
+      }
+      img {
+        border: none;
+        box-shadow: none !important;
+      }
+      .figure-number {
+        font-size: 1.2rem;
+        font-weight: bold !important;
+      }
+  }
+
+}
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.8.1/less.min.js"></script>
+
+<section>
+<section id="slide-p0">
+<h2 id="p0">Our first imperative program / demo time</h2>
+<p>
+In this part, we will tinker with actions, input and output in the simulator and
+the board to show:
+</p>
+
+<ul>
+<li>sequence of instructions as block concatenations</li>
+<li>inputs and outputs
+<ul>
+<li>sensors (light, sound, touch)</li>
+<li>actuators (light, sound, inputs and outputs)</li>
+
+</ul></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orga833985">
+<h2 id="orga833985">Structuring programs</h2>
+<div class="outline-text-2" id="text-orga833985">
+</div>
+</section>
+<section id="slide-cm1">
+<h3 id="cm1">What is the infinite loop</h3>
+<ul>
+<li>A way to tell our board to infinitely repeat a sequence of actions.</li>
+
+<li><p>
+We saw this in our introductory lecture, as well as in other Arduino courses.
+</p>
+
+<div class="column center example" style="width:40%">
+<code class="b" >
+<p>
+forever 
+digitalWrite(LED)(HIGH) 
+delay(1000);
+digitalWrite(LED)(LOW)
+delay(1000);
+</p>
+</code>
+<p>
+A graphical description of an infinite loop for the Arduino platform.
+</p>
+</div></li>
+
+</ul>
+
+</section>
+<section id="slide-c0">
+<h3 id="c0">Infinite loops</h3>
+<p>
+Let us see how to create the same thing with the CPX.
+</p>
+
+<p>
+ <div style="position:relative;height:0;padding-bottom:70%;overflow:hidden;"> <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://makecode.adafruit.com/#pub:_1vr4M8UhxFrR" frameborder="0" sandbox="allow-popups allow-forms allow-scripts allow-same-origin"></iframe> </div>   
+</p>
+
+</section>
+<section id="slide-c1">
+<h3 id="c1">Semaphore loop</h3>
+<p>
+ <div style="position:relative;height:0;padding-bottom:70%;overflow:hidden;"> <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://makecode.adafruit.com/#pub:_V8AFWrCPE6o6" frameborder="0" sandbox="allow-popups allow-forms allow-scripts allow-same-origin"></iframe> </div> 
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org32c7e9d">
+<h2 id="org32c7e9d">Hands-on time</h2>
+<div class="outline-text-2" id="text-org32c7e9d">
+</div>
+</section>
+<section id="slide-h0">
+<h3 id="h0">Make it run</h3>
+<ul>
+<li>Now follow <a href="https://learn.adafruit.com/adafruit-circuit-playground-express/downloading-and-flashing">these steps to download</a> the program into the board borrowed by your group.</li>
+
+<li>Make sure you understand how to make your program run on the board and then..</li>
+
+<li>Start with the hands-on specification sheet the tutor gave you at the
+beginning of the lecture. Time to start hacking!</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/head.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }]
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Recap of basic concepts and tools</title>
+<meta name="author" content="(Vittorio Zaccaria)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/theme/moon.css" id="theme"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-light.min.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Recap of basic concepts and tools</h1><h2 class="author">Vittorio Zaccaria</h2><h2 class="date">vittorio.zaccaria@polimi.it - Politecnico di Milano</h2><p class="date">Created: 2018-09-28 Fri 17:39</p>
+</section>
+<style type="text/less">   
+@background-color: #fafafa;
+@code-color: darken(@background-color, 5%); 
+@accent-color: #eb811a;  
+@text-color: #222;
+@ftext-color: lighten(@text-color, 30%);
+
+.define-code-style() {
+    & code {
+        font-family: "Menlo";
+        font-size: 1.3rem;
+        line-height: 130%;
+
+        background: @code-color;
+        &.b {
+            background: @background-color;
+            width: 100%; height: auto;
+        }
+        color: black;
+        border-radius: 0.2rem;
+
+        padding: 0.4rem;
+    }
+}
+
+.reveal {
+  background-color: @background-color;
+    
+  h1, h2, h3 {
+    font-family: 'Lato';
+    text-align: left;
+    font-size: 1.6rem;
+    color: @ftext-color;
+
+    &.title {
+      padding-bottom: 3rem;
+      border-bottom: solid @accent-color;
+      b {
+        font-size:1.2em;
+      }
+      color: @text-color;
+    }
+
+    &.author {
+    font-size:0.6em;
+    color: @ftext-color;
+    letter-spacing: 1px;
+    text-transform: none;
+    }
+
+    &.date {
+    font-size:0.5em;
+    color: @ftext-color;  
+    letter-spacing: 1px;  
+    }
+  }
+  h2 {
+  color: @accent-color;
+  }
+
+  // internal slide title
+  h3 {
+    color: @accent-color;
+  }
+
+  .slide-header, .slide-footer {
+     font-size: 1rem; 
+     text-align: left;
+  } 
+  .slide-footer {
+   margin-top: 5rem;
+  }   
+
+  .math { 
+    color: @text-color;
+  }
+
+  
+  section.has-dark-background {
+       p {
+       color: white; 
+       }
+  }
+
+  ul, ol, p {
+    text-align: left;
+    display: block;
+    color: @text-color;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 1.6rem;  
+    li {
+      padding-left: 1rem;
+    }
+    b {
+      color: @accent-color;
+    }
+    &.date {
+    font-size:0.5em;
+    }
+  }
+
+  li {  
+    margin-bottom: 1rem;
+  }  
+   
+  th {
+    margin-bottom: 1em;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: black;
+  }
+
+  td {
+    color: @text-color;
+    font-size: 1rem;
+  }
+
+  blockquote {
+    margin: 0px;
+    box-shadow: none;
+    border-left: solid #ddd;
+    width: 100%;
+    & p {
+      font-size: 0.7em;
+      margin: 0px;
+    }
+  }
+
+  pre {
+    font-size: 1rem;
+    border: none;
+    color: black;
+    box-shadow: none;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    font-family: "Menlo";
+    .define-code-style();
+  }
+
+  .define-code-style();
+
+
+  .vz-link {
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    font-size: 1rem;
+    text-decoration: underline;
+    &::before {
+      content: "https://jsbin.com/"
+    }
+    &::after{
+      content: "/edit"
+    }
+  }
+
+  .center {
+    display: block;
+    margin: 0 auto !important;
+  }
+
+  .column {
+    box-sizing: border-box;
+    padding: 1rem;
+  }
+
+  .example {
+    background: darken(white,5%);
+    padding: 1rem;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    & code.b {
+      background-color: darken(white,5%);
+    }
+    & p {
+      font-size: 1.3rem;
+    }
+  }
+
+  .figure {
+      p {
+        font-size: 1.2rem; 
+        margin-top: 0.2rem;
+        margin-bottom: 0.2rem;
+        padding: none;
+      }
+      img {
+        border: none;
+        box-shadow: none !important;
+      }
+      .figure-number {
+        font-size: 1.2rem;
+        font-weight: bold !important;
+      }
+  }
+
+}
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.8.1/less.min.js"></script>
+
+<section>
+<section id="slide-orgca5e481">
+<h2 id="orgca5e481">Introduction</h2>
+<div class="outline-text-2" id="text-orgca5e481">
+</div>
+</section>
+<section id="slide-i0">
+<h3 id="i0">Bird's eye view of the lecture</h3>
+<ul>
+<li>A <b>computer</b> is an electronic device that elaborates (<b>transforms</b>) information.</li>
+
+<li>The recipe with which it transforms data is called <b>an algorithm</b> and is
+composed of a sequence of instructions.</li>
+
+<li>Data comes in from input devices (e.g. <b>sensors</b>) and transformed data is sent
+to output devices (e.g., <b>actuators</b>, <b>lights</b>, <b>screens</b> and so on).</li>
+
+</ul>
+
+</section>
+<section id="slide-i1">
+<h3 id="i1">The computer with which we'll deal in this module</h3>
+<div class="column" style="float:left; width:50%">
+<ul>
+<li>This is the board we will use in this course, it is called Adafruit Circuit Playground express and it is arduino compatible.</li>
+
+</ul>
+</div>
+
+<div class="column" style="float:left; width:49%">
+
+<div class="figure">
+<p><img src="https://cdn-learn.adafruit.com/assets/assets/000/033/898/medium640/circuit_playground_plainboard.jpg" alt="circuit_playground_plainboard.jpg" />
+</p>
+<p><span class="figure-number">Figure 1: </span>Yes, this is a computer</p>
+</div>
+</div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org23cdaa5">
+<h2 id="org23cdaa5">Programmable boards for product development, an example</h2>
+<div class="outline-text-2" id="text-org23cdaa5">
+</div>
+</section>
+<section id="slide-b1">
+<h3 id="b1">The board</h3>
+<div class="column" style="float:left; width:50%">
+<ul>
+<li>ARM Cortex M0</li>
+<li>Programmable through USB</li>
+<li>Plenty of built-in sensors and actuators
+<ul>
+<li>motion, light and temp sensors</li>
+<li>speaker and microphone</li>
+<li>RGB leds</li>
+
+</ul></li>
+
+</ul>
+</div>
+
+<div class="column" style="float:left; width:49%">
+
+<div class="figure">
+<p><img src="https://cdn-learn.adafruit.com/assets/assets/000/046/973/large1024/circuit_playground_express-labeled.jpg" alt="circuit_playground_express-labeled.jpg" width="100%" />
+</p>
+<p><span class="figure-number">Figure 2: </span>A bird's eye view of the platform</p>
+</div>
+</div>
+
+
+</section>
+<section id="slide-b2">
+<h3 id="b2">The CPU</h3>
+<div class="column" style="float:left; width:49%">
+
+<div class="figure">
+<p><img src="https://cdn-learn.adafruit.com/assets/assets/000/033/906/medium640/circuit_playground_atmega.jpg" alt="circuit_playground_atmega.jpg" />
+</p>
+<p><span class="figure-number">Figure 3: </span>The CPU (Central Processing Unit). Kinda like the processor that runs in your computer but much much much simpler and smaller</p>
+</div>
+</div>
+
+
+<div class="column" style="float:left; width:49%">
+
+<div class="figure">
+<p><img src="./images/keynote_image_2.png" alt="keynote_image_2.png" />
+</p>
+<p><span class="figure-number">Figure 4: </span>The processor is connected with the outside world through sensors and actuators. Persistent memory is used to store programs while volatile memory is used to store temporary values</p>
+</div>
+</div>
+
+
+</section>
+<section id="slide-b3">
+<h3 id="b3">Connectors</h3>
+<div class="column" style="float:left; width:49%">
+
+<div class="figure">
+<p><img src="https://cdn-learn.adafruit.com/assets/assets/000/047/170/medium640/circuit_playground_usb.jpg" alt="circuit_playground_usb.jpg" width="100%" />
+</p>
+<p><span class="figure-number">Figure 5: </span>USB. Micro-B USB connector for power and/or USB communication (bootloader, serial, HID, etc). Use with any computer with a standard data/sync cable.</p>
+</div>
+</div>
+
+
+<div class="column" style="float:left; width:49%">
+
+<div class="figure">
+<p><img src="https://cdn-learn.adafruit.com/assets/assets/000/047/169/medium640/circuit_playground_jst.jpg" alt="circuit_playground_jst.jpg" width="100%" />
+</p>
+<p><span class="figure-number">Figure 6: </span>Battery connector. Use with the 3xAAA battery packs with a JST connector on the end (CPX kit)</p>
+</div>
+</div>
+
+
+</section>
+<section id="slide-b4">
+<h3 id="b4">Leds</h3>
+<p width="500px" align="auto" class="center">
+ <video autoplay controls muted loop src="https://cdn-shop.adafruit.com/product-videos/1200x900/3333-05.mp4" class='center' width='70%'></video>
+</p>
+
+<p>
+Ten LEDs surrounding the outer edge of the boards are all full color, RGB LEDs, each one can be set to any color in the rainbow..
+</p>
+</section>
+<section id="slide-b5">
+<h3 id="b5">Sensors</h3>
+<div class="column" style="float:left; width:32%">
+
+<div class="figure">
+<p><img src="https://cdn-learn.adafruit.com/assets/assets/000/047/158/medium640/circuit_playground_lightsensor.jpg" alt="circuit_playground_lightsensor.jpg" width="100%" />
+</p>
+<p><span class="figure-number">Figure 7: </span>Light sensor. This can be used to detect ambient light, with similar spectral response to the human eye.</p>
+</div>
+</div>
+
+
+<div class="column" style="float:left; width:32%">
+
+<div class="figure">
+<p><img src="https://cdn-learn.adafruit.com/assets/assets/000/047/160/medium640/circuit_playground_temp.jpg" alt="circuit_playground_temp.jpg" width="100%" />
+</p>
+<p><span class="figure-number">Figure 8: </span>Temperature sensor</p>
+</div>
+</div>
+
+
+<div class="column" style="float:left; width:32%">
+
+<div class="figure">
+<p><img src="https://cdn-learn.adafruit.com/assets/assets/000/047/161/medium640/circuit_playground_mic.jpg" alt="circuit_playground_mic.jpg" width="100%" />
+</p>
+<p><span class="figure-number">Figure 9: </span>Microphone</p>
+</div>
+</div>
+
+
+</section>
+<section id="slide-b6">
+<h3 id="b6">Sensors</h3>
+<div class="column" style="float:left; width:49%">
+
+<div class="figure">
+<p><img src="https://cdn-learn.adafruit.com/assets/assets/000/047/162/medium640/circuit_playground_adxl.jpg" alt="circuit_playground_adxl.jpg" width="100%" />
+</p>
+<p><span class="figure-number">Figure 10: </span>Motion sensor. Detect tilt, gravity, motion and taps.</p>
+</div>
+</div>
+
+
+<div class="column" style="float:left; width:49%">
+
+<div class="figure">
+<p><img src="https://cdn-learn.adafruit.com/assets/assets/000/047/167/medium640/circuit_playground_captouch.jpg" alt="circuit_playground_captouch.jpg" width="100%" />
+</p>
+<p><span class="figure-number">Figure 11: </span>Capacitive touch. Sense human touch without additional components.</p>
+</div>
+</div>
+
+
+</section>
+<section id="slide-b7">
+<h3 id="b7">Communication and buttons</h3>
+<div class="column" style="float:left; width:49%">
+
+<div class="figure">
+<p><img src="https://cdn-learn.adafruit.com/assets/assets/000/047/182/medium640/circuit_playground_ir.jpg" alt="circuit_playground_ir.jpg" />
+</p>
+<p><span class="figure-number">Figure 12: </span>Infrared communication (send and receive)</p>
+</div>
+</div>
+
+
+<div class="column" style="float:left; width:49%">
+
+<div class="figure">
+<p><img src="https://cdn-learn.adafruit.com/assets/assets/000/047/172/medium640/circuit_playground_pushbutton.jpg" alt="circuit_playground_pushbutton.jpg" />
+</p>
+<p><span class="figure-number">Figure 13: </span>Two general purpose buttons</p>
+</div>
+</div>
+
+
+</section>
+<section id="slide-b8">
+<h3 id="b8">Pinout - powering your external devices</h3>
+<div class="column" style="float:left; width:49%">
+
+<div class="figure">
+<p><img src="https://cdn-learn.adafruit.com/assets/assets/000/047/194/medium800/circuit_playground_powerpads.jpg" alt="circuit_playground_powerpads.jpg" />
+</p>
+<p><span class="figure-number">Figure 14: </span>There are 6 power pads available, equally spaced around the perimeter</p>
+</div>
+</div>
+
+
+<div class="column" style="float:left; width:50%">
+<ul>
+<li><b>GND</b> pins - there are 3 x Ground pads.</li>
+<li><b>3.3V</b> pins - Up to 300mA max for your usage</li>
+<li><b>Vout</b> - You can draw as much current as your USB port / Battery can provide.</li>
+
+</ul>
+</div>
+
+</section>
+<section id="slide-b9">
+<h3 id="b9">Pinout - Communicating with external devices</h3>
+<div class="column" style="float:left; width:49%">
+
+<div class="figure">
+<p><img src="https://cdn-learn.adafruit.com/assets/assets/000/047/195/medium640/circuit_playground_iopads.jpg" alt="circuit_playground_iopads.jpg" />
+</p>
+<p><span class="figure-number">Figure 15: </span>All the GPIO pads can be used as digital inputs, digital outputs, for LEDs, buttons and switches.</p>
+</div>
+</div>
+
+
+<div class="column" style="float:left; width:50%">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Pin(s)</th>
+<th scope="col" class="org-left">In</th>
+<th scope="col" class="org-left">Out</th>
+<th scope="col" class="org-left">DAC</th>
+<th scope="col" class="org-left">PWM</th>
+<th scope="col" class="org-left">I2C</th>
+<th scope="col" class="org-left">Touch</th>
+<th scope="col" class="org-left">Serial</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">A0</td>
+<td class="org-left">D/A</td>
+<td class="org-left">D/A</td>
+<td class="org-left">✔︎</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">A1-A3</td>
+<td class="org-left">D/A</td>
+<td class="org-left">D</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">✔︎</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">✔︎</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">A4</td>
+<td class="org-left">D/A</td>
+<td class="org-left">D</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">SCL</td>
+<td class="org-left">✔︎</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">A5</td>
+<td class="org-left">D/A</td>
+<td class="org-left">D</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">SDA</td>
+<td class="org-left">✔︎</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">A6</td>
+<td class="org-left">D/A</td>
+<td class="org-left">D</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">✔︎</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">✔︎</td>
+<td class="org-left">Rx</td>
+</tr>
+
+<tr>
+<td class="org-left">A7</td>
+<td class="org-left">D/A</td>
+<td class="org-left">D</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">✔︎</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">✔︎</td>
+<td class="org-left">Tx</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgbd3c5ce">
+<h2 id="orgbd3c5ce">Programs</h2>
+<div class="outline-text-2" id="text-orgbd3c5ce">
+</div>
+</section>
+<section id="slide-p0">
+<h3 id="p0">Instructions</h3>
+<div class="column" style="float:left; width:49%">
+<p>
+Arduino code block
+</p>
+<div class="org-src-container">
+
+<pre><code class="c" >
+void loop() {
+  digitalWrite(LED_BUILTIN, HIGH);   
+  delay(1000);                       
+  digitalWrite(LED_BUILTIN, LOW);    
+  delay(1000);                       
+}
+</code></pre>
+</div>
+</div>
+
+<div class="column" style="float:left; width:width">
+<p>
+Equivalent scratch code block 
+</p>
+<code class="b" style="width:49%">
+<p>
+forever 
+digitalWrite(LED)(HIGH) 
+delay(1000);
+digitalWrite(LED)(LOW)
+delay(1000);
+</p>
+</code>
+</div>
+
+</section>
+<section id="slide-p1">
+<h3 id="p1">Memory and variables</h3>
+<div class="column" style="float:left; width:49%">
+<ul>
+<li>Most schools have lockers for students to keep their books in.</li>
+<li><b>Variables are a</b> <b>lot like lockers</b>: variables are places in which computers keep things.</li>
+<li>Computers need containers in which to keep numbers, text, and other
+information so that later they can make decisions.</li>
+
+</ul>
+</div>
+
+<div class="column example" style="float:left; width:49%">
+<p>
+Example of variables:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Variable Name</th>
+<th scope="col" class="org-left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Cats</td>
+<td class="org-left">2</td>
+</tr>
+
+<tr>
+<td class="org-left">Dogs</td>
+<td class="org-left">5</td>
+</tr>
+
+<tr>
+<td class="org-left">Greeting</td>
+<td class="org-left">“hello!”</td>
+</tr>
+
+<tr>
+<td class="org-left">HousePosition</td>
+<td class="org-left">(12, 4, -36)</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</section>
+<section id="slide-p2">
+<h3 id="p2">Inputs and outputs</h3>
+<p>
+Almost everything in this board can be thought of as input/output! Free up your creativity!
+</p>
+<p width="600px" class="center">
+ <iframe width="560" height="315" class="center" src="https://www.youtube.com/embed/UibfAZb1Xwo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</p>
+
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgb4ce676">
+<h2 id="orgb4ce676">Programming tools</h2>
+</section>
+<section id="slide-p2">
+<h3 id="p2">Microsoft MakeCode</h3>
+<p>
+ <div style="position:relative;height:0;padding-bottom:70%;overflow:hidden;"> <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://makecode.adafruit.com/#pub:_1vr4M8UhxFrR" frameborder="0" sandbox="allow-popups allow-forms allow-scripts allow-same-origin"></iframe> </div> 
+</p>
+
+</section>
+<section id="slide-p3">
+<h3 id="p3">Circuit Python</h3>
+<div class="column" style="float:left; width:49%">
+
+<ul>
+<li>You will be able to use Python as-well through CircuitPython</li>
+
+<li>It requires uploading the CircuitPython package into the CPE</li>
+
+<li>See <a href="https://learn.adafruit.com/circuit-playground-express-piano-in-the-key-of-lime/overview">here to see how to make a digital piano with Python</a>!</li>
+
+</ul>
+
+</div>
+
+
+<div class="column example" style="float:left; width:49%">
+
+<div class="figure">
+<p><img src="https://cdn-learn.adafruit.com/assets/assets/000/056/552/medium640/circuitpython_MuEditorOpen.png" alt="circuitpython_MuEditorOpen.png" />
+</p>
+<p><span class="figure-number">Figure 16: </span>The Mu editor for circuit python dev.</p>
+</div>
+</div>
+
+
+</section>
+<section id="slide-p4">
+<h3 id="p4">Arduino C-based tools</h3>
+<p>
+You can use the Arduino IDE as well. Just <a href="https://learn.adafruit.com/adafruit-circuit-playground-express/set-up-arduino-ide">follow this guide</a>.
+</p>
+
+<div class="column example center" style="width:79%">
+
+<div class="figure">
+<p><img src="https://cdn-learn.adafruit.com/assets/assets/000/047/235/medium640/circuit_playground_boardsel.png" alt="circuit_playground_boardsel.png" />
+</p>
+<p><span class="figure-number">Figure 17: </span>A snapshot of the Arduino IDE using the Circuit Playground Express</p>
+</div>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/head.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }]
+});
+</script>
+</body>
+</html>
