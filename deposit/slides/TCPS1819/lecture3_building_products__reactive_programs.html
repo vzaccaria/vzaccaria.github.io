@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>General course introduction and logistics</title>
+<title>Building products - Principles of reactive programming</title>
 <meta name="author" content="(Vittorio Zaccaria)"/>
 <style type="text/css">
 .underline { text-decoration: underline; }
@@ -26,7 +26,7 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">General course introduction and logistics</h1><h2 class="author">Vittorio Zaccaria</h2><h2 class="date"><a href="mailto:vittorio.zaccaria@polimi.it">mailto:vittorio.zaccaria@polimi.it</a> - DEIB: Politecnico di Milano</h2><p class="date">Created: 2018-10-02 Tue 14:18</p>
+<section id="sec-title-slide"><h1 class="title">Building products - Principles of reactive programming</h1><h2 class="author">Vittorio Zaccaria</h2><h2 class="date">vittorio.zaccaria@polimi.it - Politecnico di Milano</h2><p class="date">Created: 2018-10-02 Tue 14:18</p>
 </section>
 <style type="text/less">   
 @background-color: #fafafa;
@@ -239,146 +239,61 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </script>
 
-
 <section>
-<section id="slide-org10de146">
-<h2 id="org10de146">Technologies for connected product and systems</h2>
-<div class="outline-text-2" id="text-org10de146">
-</div>
+<section id="slide-p0">
+<h2 id="p0">Reactive programming</h2>
 </section>
-<section id="slide-a3">
-<h3 id="a3">Goals of TCPS</h3>
+<section id="slide-cm1">
+<h3 id="cm1">Non reactive programming</h3>
 <ul>
-<li>Understand and choose the <b>hardware platform</b> needed to build a product prototype.</li>
-<li><b>Devise and implement a program</b> for that platform by using a range 
-of programming methods.</li>
+<li>Assume you want to perform independent actions dependening on different inputs.</li>
 
-</ul>
+<li><p>
+The mechanism we used so far is called <b>polling</b> and consists of repeatedly
+waiting for one event or the other.
+</p>
 
-</section>
-<section id="slide-a0">
-<h3 id="a0">Organization of lectures</h3>
+<div class="column center example" style="width:40%">
+<code class="b" >
 <p>
-TCPS lectures/labs will be each Wednesday at 15:30 (except today) and are
-scattered around as follows:
+forever 
+if &lt;input1 signal arrived&gt; then
+do something
+end
+if &lt;input2 signal arrived&gt; then
+do something else
+end
 </p>
-
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<colgroup>
-<col  class="org-left" />
-
-<col  class="org-left" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-left">Day</th>
-<th scope="col" class="org-left">Topic</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-left">Oct. 3</td>
-<td class="org-left">Recap about hwardware and software development. <br/> Makecode platform. <b>Hands-on work.</b></td>
-</tr>
-
-<tr>
-<td class="org-left">Oct. 10</td>
-<td class="org-left">Concurrent and reactive programming. <b><b>Hands-on work</b></b></td>
-</tr>
-
-<tr>
-<td class="org-left">Oct. 17</td>
-<td class="org-left">Low-level programming (serial and infrared ports). <b>Hands-on work</b></td>
-</tr>
-
-<tr>
-<td class="org-left">Oct. 31</td>
-<td class="org-left"><i>FTS interim Design Pitch and PDS submission</i></td>
-</tr>
-
-<tr>
-<td class="org-left">Nov. 7</td>
-<td class="org-left">Connecting to the internet. <b>Tutoring</b></td>
-</tr>
-
-<tr>
-<td class="org-left">Nov. 14</td>
-<td class="org-left"><b>Tutoring</b></td>
-</tr>
-
-<tr>
-<td class="org-left">Nov. 21</td>
-<td class="org-left"><b>Tutoring</b></td>
-</tr>
-
-<tr>
-<td class="org-left">Nov. 28</td>
-<td class="org-left"><b>Tutoring</b></td>
-</tr>
-
-<tr>
-<td class="org-left">Nov. 28</td>
-<td class="org-left"><b>Tutoring</b></td>
-</tr>
-</tbody>
-</table>
-
-
-</section>
-<section id="slide-a1">
-<h3 id="a1">Prerequisites</h3>
-<ul>
-<li>Rudimentary knowledge of the (Arduino) hardware platform</li>
-<li>Rudimentary knowledge of the (Arduino) software development process</li>
-
-</ul>
-
-</section>
-<section id="slide-a2">
-<h3 id="a2">How you will be evaluated</h3>
+</code>
 <p>
-<b>Group work</b>. Hanson to be delivered through BEEP, will account for 5% of the PDS
-grade to be assigned by Week 7 (October 31st).
+Depiction of a polling mechanism
 </p>
+</div></li>
 
+<li>Low efficiency, might introduce timing issues and might complicate the program.</li>
+
+</ul>
+
+</section>
+<section id="slide-cm2">
+<h3 id="cm2">Non reactive programming</h3>
 <p>
-<b>Individual work.</b> As part of the whole project delivery at the end. Will be
-averaged with Prof. Ajovalasit and Prof. Ciancia at the end.
+ <div style="position:relative;height:0;padding-bottom:70%;overflow:hidden;"> <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://makecode.adafruit.com/#pub:_X85JXxVpjXVu" frameborder="0" sandbox="allow-popups allow-forms allow-scripts allow-same-origin"></iframe> </div> 
 </p>
 
 </section>
-</section>
-<section>
-<section id="slide-orgc3e5d04">
-<h2 id="orgc3e5d04">Technicalities</h2>
-<div class="outline-text-2" id="text-orgc3e5d04">
-</div>
-</section>
-<section id="slide-t0">
-<h3 id="t0">Contacting me</h3>
-<ul>
-<li><b>Office</b>: Dept. of Electronics, Information and Bioeng. Politecnico di Milano</li>
-<li><b>Address</b>: Via Ponzio 34/5, Milano (MI)</li>
-<li><b>Telephone</b>: +39 02 2399 3642</li>
-<li><b>Email</b>: vittorio.zaccaria@polimi.it</li>
-
-</ul>
-</section>
-<section id="slide-t1">
-<h3 id="t1">Boards</h3>
-
-<div class="figure">
-<p><img src="https://cdn-shop.adafruit.com/970x728/3333-01.jpg" alt="3333-01.jpg" width="400px" class="center" />
+<section id="slide-cm3">
+<h3 id="cm3">How to do reactive programming in Makecode</h3>
+<p>
+ <div style="position:relative;height:0;padding-bottom:70%;overflow:hidden;"> <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://makecode.adafruit.com/#pub:_ELy65AeMcMVy" frameborder="0" sandbox="allow-popups allow-forms allow-scripts allow-same-origin"></iframe> </div> 
 </p>
-</div>
 
-<ul>
-<li>This year we'll be using an Adafruit Circuit Playground Express as an example board.</li>
-<li>Each group can borrow one of ten boards from me during the break, by filling up a <a href="https://www.vittoriozaccaria.net/deposit/slides/TCPS1819/form_borrowing.pdf">form</a>.</li>
-
-</ul>
+</section>
+<section id="slide-cm4">
+<h3 id="cm4">Sharing information with variables</h3>
+<p>
+ <div style="position:relative;height:0;padding-bottom:70%;overflow:hidden;"> <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://makecode.adafruit.com/#pub:_J5iMHo70xMDu" frameborder="0" sandbox="allow-popups allow-forms allow-scripts allow-same-origin"></iframe> </div> 
+</p>
 </section>
 </section>
 </div>
