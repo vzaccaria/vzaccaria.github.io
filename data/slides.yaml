@@ -25,6 +25,9 @@
 
   - key: Building products, reactive programs
     hslide: lecture3_building_products__reactive_programs.html
+
+  - key: Building products, low level coding
+    hslide: lecture3_building_products__low_level_coding.html
     
 - id: InfoB1819
   name: Informatica B
