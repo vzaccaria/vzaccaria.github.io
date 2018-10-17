@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>General course introduction and logistics</title>
+<title>Building products - Low level coding</title>
 <meta name="author" content="(Vittorio Zaccaria)"/>
 <style type="text/css">
 .underline { text-decoration: underline; }
@@ -22,11 +22,12 @@
         document.getElementsByTagName( 'head' )[0].appendChild( link );
     }
 </script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </head>
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">General course introduction and logistics</h1><h2 class="author">Vittorio Zaccaria</h2><h2 class="date"><a href="mailto:vittorio.zaccaria@polimi.it">mailto:vittorio.zaccaria@polimi.it</a> - DEIB: Politecnico di Milano</h2><p class="date">Created: 2018-10-17 Wed 10:36</p>
+<section id="sec-title-slide"><h1 class="title">Building products - Low level coding</h1><h2 class="author">Vittorio Zaccaria</h2><h2 class="date">vittorio.zaccaria@polimi.it - Politecnico di Milano</h2><p class="date">Created: 2018-10-17 Wed 10:36</p>
 </section>
 <style type="text/less">   
 @background-color: #fafafa;
@@ -239,146 +240,127 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </script>
 
-
 <section>
-<section id="slide-org01ee5dd">
-<h2 id="org01ee5dd">Technologies for connected product and systems</h2>
-<div class="outline-text-2" id="text-org01ee5dd">
+<section id="slide-org944e68d">
+<h2 id="org944e68d">Post-mortem of previous assignments</h2>
+<div class="outline-text-2" id="text-org944e68d">
 </div>
 </section>
-<section id="slide-a3">
-<h3 id="a3">Goals of TCPS</h3>
+<section id="slide-p1">
+<h3 id="p1">Current grading status</h3>
 <ul>
-<li>Understand and choose the <b>hardware platform</b> needed to build a product prototype.</li>
-<li><b>Devise and implement a program</b> for that platform by using a range 
-of programming methods.</li>
+<li>All assignments received and graded</li>
+<li>All got full grades, except <i>Palazzo et. al</i>. Let's
+talk about this offline.</li>
 
 </ul>
 
 </section>
-<section id="slide-a0">
-<h3 id="a0">Organization of lectures</h3>
+<section id="slide-p0">
+<h3 id="p0">Solutions worth of note</h3>
 <p>
-TCPS lectures/labs will be each Wednesday at 15:30 (except today) and are
-scattered around as follows:
+Kudos to <i>Berra et. al</i> for having defined and used functions, nice!
+ <div style="position:relative;height:0;padding-bottom:70%;overflow:hidden;"> <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://makecode.adafruit.com/#pub:_X435TxYc7YhC" frameborder="0" sandbox="allow-popups allow-forms allow-scripts allow-same-origin"></iframe> </div> 
 </p>
 
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<colgroup>
-<col  class="org-left" />
-
-<col  class="org-left" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-left">Day</th>
-<th scope="col" class="org-left">Topic</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-left">Oct. 3</td>
-<td class="org-left">Recap about hwardware and software development. <br/> Makecode platform. <b>Hands-on work.</b></td>
-</tr>
-
-<tr>
-<td class="org-left">Oct. 10</td>
-<td class="org-left">Concurrent and reactive programming. <b><b>Hands-on work</b></b></td>
-</tr>
-
-<tr>
-<td class="org-left">Oct. 17</td>
-<td class="org-left">Low-level programming (serial and infrared ports). <b>Hands-on work</b></td>
-</tr>
-
-<tr>
-<td class="org-left">Oct. 31</td>
-<td class="org-left"><i>FTS interim Design Pitch and PDS submission</i></td>
-</tr>
-
-<tr>
-<td class="org-left">Nov. 7</td>
-<td class="org-left">Connecting to the internet. <b>Tutoring</b></td>
-</tr>
-
-<tr>
-<td class="org-left">Nov. 14</td>
-<td class="org-left"><b>Tutoring</b></td>
-</tr>
-
-<tr>
-<td class="org-left">Nov. 21</td>
-<td class="org-left"><b>Tutoring</b></td>
-</tr>
-
-<tr>
-<td class="org-left">Nov. 28</td>
-<td class="org-left"><b>Tutoring</b></td>
-</tr>
-
-<tr>
-<td class="org-left">Nov. 28</td>
-<td class="org-left"><b>Tutoring</b></td>
-</tr>
-</tbody>
-</table>
-
+</section>
+<section id="slide-org185c6f1">
+<h3 id="org185c6f1">Managing light</h3>
+<p>
+ <div style="position:relative;height:0;padding-bottom:70%;overflow:hidden;"> <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://makecode.adafruit.com/#pub:_HzuAo18Vp7vH" frameborder="0" sandbox="allow-popups allow-forms allow-scripts allow-same-origin"></iframe> </div> 
+</p>
 
 </section>
-<section id="slide-a1">
-<h3 id="a1">Prerequisites</h3>
+<section id="slide-org785ba48">
+<h3 id="org785ba48">Managing light (2 problems)</h3>
 <ul>
-<li>Rudimentary knowledge of the (Arduino) hardware platform</li>
-<li>Rudimentary knowledge of the (Arduino) software development process</li>
+<li>Sensor' 255 is pretty-much daylight, so you will most likely have an <i>always on</i>
+behavior.</li>
+
+<li>Sensed light does not vary as perceived one, especially with the distance from a lamp.</li>
 
 </ul>
 
-</section>
-<section id="slide-a2">
-<h3 id="a2">How you will be evaluated</h3>
-<p>
-<b>Group work</b>. Hanson to be delivered through BEEP, will account for 5% of the PDS
-grade to be assigned by Week 7 (October 31st).
-</p>
-
-<p>
-<b>Individual work.</b> As part of the whole project delivery at the end. Will be
-averaged with Prof. Ajovalasit and Prof. Ciancia at the end.
-</p>
 
 </section>
-</section>
-<section>
-<section id="slide-org59e042f">
-<h2 id="org59e042f">Technicalities</h2>
-<div class="outline-text-2" id="text-org59e042f">
-</div>
-</section>
-<section id="slide-t0">
-<h3 id="t0">Contacting me</h3>
-<ul>
-<li><b>Office</b>: Dept. of Electronics, Information and Bioeng. Politecnico di Milano</li>
-<li><b>Address</b>: Via Ponzio 34/5, Milano (MI)</li>
-<li><b>Telephone</b>: +39 02 2399 3642</li>
-<li><b>Email</b>: vittorio.zaccaria@polimi.it</li>
-
-</ul>
-</section>
-<section id="slide-t1">
-<h3 id="t1">Boards</h3>
+<section id="slide-p2">
+<h3 id="p2">Managing light (distance)</h3>
 
 <div class="figure">
-<p><img src="https://cdn-shop.adafruit.com/970x728/3333-01.jpg" alt="3333-01.jpg" width="400px" class="center" />
+<p><img src="https://www.intl-lighttech.com/sites/default/files/invsq_deg.jpg" alt="invsq_deg.jpg" width="500px" class="center" />
 </p>
+<p><span class="figure-number">Figure 1: </span>Illuminance varies inversely with respect to lamp distance, see this <a href="https://www.intl-lighttech.com/inverse-square-law-light-calculator">this link</a> .</p>
 </div>
 
 <ul>
-<li>This year we'll be using an Adafruit Circuit Playground Express as an example board.</li>
-<li>Each group can borrow one of ten boards from me during the break, by filling up a <a href="https://www.vittoriozaccaria.net/deposit/slides/TCPS1819/form_borrowing.pdf">form</a>.</li>
+<li>Illuminance is measured in <b>lux</b> (\(1lm/m^2\)) which varies proportionally to
+\[\frac{1}{d^2}\] where \(d\) is the distance from the lamp. Did you notice that
+moving a bit away from the lamp?</li>
+
+<li>The sensor is rated up to 10k lux (daylight) but it is suggested to use it
+only in indoor environments (less 1k lux).</li>
 
 </ul>
+</section>
+</section>
+<section>
+<section id="slide-org3b40a50">
+<h2 id="org3b40a50">Low level programming</h2>
+<div class="outline-text-2" id="text-org3b40a50">
+</div>
+</section>
+<section id="slide-l0">
+<h3 id="l0">Installation of the Arduino environment for the CPX</h3>
+<p>
+<a href="https://learn.adafruit.com/adafruit-circuit-playground-express/set-up-arduino-ide">Follow this guide to setup the arduino environment.</a>
+</p>
+
+<div class="column example center" style="width:79%">
+
+<div class="figure">
+<p><img src="https://cdn-learn.adafruit.com/assets/assets/000/047/235/medium640/circuit_playground_boardsel.png" alt="circuit_playground_boardsel.png" />
+</p>
+<p><span class="figure-number">Figure 2: </span>A snapshot of the Arduino IDE using the Circuit Playground Express</p>
+</div>
+</div>
+
+
+</section>
+<section id="slide-l1">
+<h3 id="l1">Demo n. 1</h3>
+<p>
+A blinking light on the CPX
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="cpp" >#include &ltAdafruit_CircuitPlayground.h&gt
+
+void setup() { CircuitPlayground.begin(); }
+
+void loop() {
+  CircuitPlayground.redLED(HIGH);
+  delay(500);
+  CircuitPlayground.redLED(LOW);
+  delay(500);
+}
+</code></pre>
+</div>
+
+
+</section>
+<section id="slide-org255ae89">
+<h3 id="org255ae89">Demo n. 2</h3>
+<p>
+A mouse is in the house!
+</p>
+
+</section>
+<section id="slide-org0358f7b">
+<h3 id="org0358f7b">Demo n. 3, speech</h3>
+<p>
+<a href="https://github.com/vzaccaria/easy-speak-cpx">Check this link on github</a>
+</p>
 </section>
 </section>
 </div>
