@@ -2,30 +2,6 @@
     "records": [
         {
             "authors": [
-                "F. Daniel",
-                "M. Matera",
-                "E. Quintarelli",
-                "L. Tanca",
-                "V. Zaccaria"
-            ],
-            "title": "Context-Aware Access to Heterogeneous Resources Through On-the-Fly Mashups",
-            "month": "June",
-            "year": "2018",
-            "booktitle": "Advanced Information Systems Engineering - 30th International Conference, CAiSE 2018, Tallinn, Estonia, June 11-15, 2018, Proceedings",
-            "pages": "119 to 134",
-            "address": "Tallinn, Estonia",
-            "doi": "10.1007/978-3-319-91563-0_8",
-            "url": "https://doi.org/10.1007/978-3-319-91563-0_8",
-            "justApplied": false,
-            "justAccepted": false,
-            "keyword": [
-                "conference"
-            ],
-            "type": "conference",
-            "timestamp": 1527804000
-        },
-        {
-            "authors": [
                 "V. Zaccaria",
                 "F. Melzani",
                 "G. Bertoni"
@@ -53,6 +29,64 @@
             ],
             "type": "journal",
             "timestamp": 1522533600
+        },
+        {
+            "authors": [
+                "F. Daniel",
+                "M. Matera",
+                "E. Quintarelli",
+                "L. Tanca",
+                "V. Zaccaria"
+            ],
+            "title": "Context-Aware Access to Heterogeneous Resources Through On-the-Fly Mashups",
+            "month": "June",
+            "year": "2018",
+            "booktitle": "Advanced Information Systems Engineering - 30th International Conference, CAiSE 2018, Tallinn, Estonia, June 11-15, 2018, Proceedings",
+            "pages": "119 to 134",
+            "address": "Tallinn, Estonia",
+            "doi": "10.1007/978-3-319-91563-0_8",
+            "url": "https://doi.org/10.1007/978-3-319-91563-0_8",
+            "justApplied": false,
+            "justAccepted": false,
+            "keyword": [
+                "conference"
+            ],
+            "type": "conference",
+            "timestamp": 1527804000
+        },
+        {
+            "authors": [
+                "L. Delledonne",
+                "V. Zaccaria",
+                "R. Susella",
+                "G. Bertoni",
+                "F. Melzani"
+            ],
+            "title": "CASCA: A Design Automation Approach for Designing Hardware Countermeasures Against Side-Channel Attacks",
+            "month": "November",
+            "year": "2018",
+            "journal": {
+                "identifier": [
+                    {
+                        "type": "issn",
+                        "id": "1084-4309"
+                    }
+                ],
+                "name": "ACM Trans. Des. Autom. Electron. Syst.",
+                "id": "ACMTransDesAutomElectronSyst"
+            },
+            "volume": "23",
+            "pages": "69:1 to 69:17",
+            "doi": "10.1145/3241047",
+            "url": "http://doi.acm.org/10.1145/3241047",
+            "justApplied": false,
+            "justAccepted": false,
+            "keyword": [
+                "trans",
+                "journal"
+            ],
+            "type": "journal",
+            "timestamp": 1541026800
         },
         {
             "authors": [
