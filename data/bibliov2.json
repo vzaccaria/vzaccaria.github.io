@@ -2,6 +2,66 @@
     "records": [
         {
             "authors": [
+                "G. Mariani",
+                "G. Palermo",
+                "V. Zaccaria",
+                "C. Silvano"
+            ],
+            "title": "DeSpErate++: An enhanced design space exploration framework using predictive simulation scheduling",
+            "year": "2015",
+            "journal": {
+                "identifier": [
+                    {
+                        "type": "issn",
+                        "id": "0278-0070"
+                    }
+                ],
+                "name": "IEEE Transactions on Computer Aided Design of Integrated Circuits",
+                "id": "IEEETransactionsonComputerAidedDesignofIntegratedCircuits"
+            },
+            "volume": "34",
+            "pages": "293 to 306",
+            "doi": "10.1109/TCAD.2014.2379634",
+            "url": "http://dx.doi.org/10.1109/TCAD.2014.2379634",
+            "justApplied": false,
+            "justAccepted": false,
+            "keyword": [
+                "tocheck",
+                "trans",
+                "journal"
+            ],
+            "type": "journal",
+            "timestamp": 1420066800
+        },
+        {
+            "authors": [
+                "E. Paone",
+                "F. Robino",
+                "G. Palermo",
+                "V. Zaccaria",
+                "I. Sander",
+                "C. Silvano"
+            ],
+            "title": "Customization of OpenCL Applications for Efficient Task Mapping Under Heterogeneous Platform Constraints",
+            "month": "March",
+            "year": "2015",
+            "booktitle": "Proceedings of DATE 2015: International Conference on Design, Automation and Test in Europe",
+            "pages": "736 to 741",
+            "publisher": "EDA Consortium",
+            "address": "Grenoble, France - FRA",
+            "isbn": "9783981537048",
+            "url": "http://dl.acm.org/citation.cfm?id=2755921",
+            "justApplied": false,
+            "justAccepted": false,
+            "keyword": [
+                "tocheck",
+                "conference"
+            ],
+            "type": "conference",
+            "timestamp": 1425164400
+        },
+        {
+            "authors": [
                 "V. Zaccaria",
                 "F. Melzani",
                 "G. Bertoni"
@@ -83,7 +143,8 @@
             "justAccepted": false,
             "keyword": [
                 "trans",
-                "journal"
+                "journal",
+                "notfoundincineca"
             ],
             "type": "journal",
             "timestamp": 1541026800
@@ -112,8 +173,7 @@
             "keyword": [
                 "pa2018",
                 "trans",
-                "journal",
-                "notfoundincineca"
+                "journal"
             ],
             "type": "journal",
             "timestamp": 1496268000
@@ -129,8 +189,8 @@
                 "V. Zaccaria"
             ],
             "title": "On the Role of Context in the Design of Mobile Mashups",
-            "month": "January",
-            "year": "2017",
+            "month": "June",
+            "year": "2016",
             "booktitle": "Rapid Mashup Development Tools: Second International Rapid Mashup Challenge, RMC 2016, Lugano, Switzerland, June 6, 2016, Revised Selected Papers",
             "pages": "108 to 128",
             "publisher": "Springer International Publishing",
@@ -141,11 +201,10 @@
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
-                "bookc",
-                "notfoundincineca"
+                "bookc"
             ],
             "type": "bookchapter",
-            "timestamp": 1483225200
+            "timestamp": 1464732000
         },
         {
             "authors": [
@@ -198,8 +257,7 @@
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
-                "conference",
-                "notfoundincineca"
+                "conference"
             ],
             "type": "conference",
             "timestamp": 1404165600
@@ -230,8 +288,7 @@
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
-                "conference",
-                "notfoundincineca"
+                "conference"
             ],
             "type": "conference",
             "timestamp": 1406844000
@@ -256,8 +313,7 @@
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
-                "conference",
-                "notfoundincineca"
+                "conference"
             ],
             "type": "conference",
             "timestamp": 1401573600
@@ -285,8 +341,7 @@
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
-                "conference",
-                "notfoundincineca"
+                "conference"
             ],
             "type": "conference",
             "timestamp": 1396303200
@@ -313,8 +368,7 @@
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
-                "conference",
-                "notfoundincineca"
+                "conference"
             ],
             "type": "conference",
             "timestamp": 1377986400
@@ -335,8 +389,7 @@
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
-                "conference",
-                "notfoundincineca"
+                "conference"
             ],
             "type": "conference",
             "timestamp": 1393628400
@@ -408,8 +461,7 @@
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
-                "conference",
-                "notfoundincineca"
+                "conference"
             ],
             "type": "conference",
             "timestamp": 1380578400
@@ -443,8 +495,7 @@
             "justAccepted": false,
             "keyword": [
                 "pa2018",
-                "journal",
-                "notfoundincineca"
+                "journal"
             ],
             "type": "journal",
             "timestamp": 1377986400
@@ -496,7 +547,6 @@
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
-                "notfoundincineca",
                 "conference"
             ],
             "type": "conference",
@@ -520,8 +570,7 @@
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
-                "conference",
-                "notfoundincineca"
+                "conference"
             ],
             "type": "conference",
             "timestamp": 1362092400
@@ -551,7 +600,6 @@
             "keyword": [
                 "pa2018",
                 "journal",
-                "notfoundincineca",
                 "trans"
             ],
             "type": "journal",
