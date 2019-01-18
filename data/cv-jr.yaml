@@ -358,35 +358,35 @@
         - { name: Giovanni Mariani, institution: ALaRI - University of Lugano }
         - { name: Fabrizio Castro , institution: Politecnico di Milano. }
 
+    committees:
 
-    committeesAndTalks:
-        - { name: ADAPT (co-located with HIPEAC 2014), year: 2014 , type: conference/workshop organization ,    ruolo: TPC member }
-        - { name: ADAPT (co-located with HIPEAC 2016), year: 2016 , type: conference/workshop organization ,    ruolo: reviewer }
+      - { name: Micro,                                       year: 2008, start: "dd-mm-yyyy", end: "dd-mm-yyyy", ruolo: Member of local committee, address: Como - Italy }
+      - { name: 2PARMA Workshop (co-located with ARCS 2012), year: 2012, start: "dd-mm-yyyy", end: "dd-mm-yyyy", ruolo: Program Co-Chair,          address: Munich - Germany }
+      - { name: 2PARMA Workshop (co-located with ARCS 2011), year: 2011, start: "dd-mm-yyyy", end: "dd-mm-yyyy", ruolo: TPC member,                address: Como - Italy }
+      - { name: 2PARMA Workshop (co-located with ARCS 2010), year: 2009, start: "dd-mm-yyyy", end: "dd-mm-yyyy", ruolo: TPC member }
+      - { name: NoCArch,                                     year: 2009, start: "dd-mm-yyyy", end: "dd-mm-yyyy", ruolo: TPC member }
+      - { name: NoCArch,                                     year: 2008, start: "dd-mm-yyyy", end: "dd-mm-yyyy", ruolo: TPC member }
+      - { name: NoCArch,                                     year: 2010, start: "dd-mm-yyyy", end: "dd-mm-yyyy", ruolo: TPC member }
+      - { name: NoCArch,                                     year: 2012, start: "dd-mm-yyyy", end: "dd-mm-yyyy", ruolo: TPC member }
+      - { name: DATE,                                        year: 2009, start: "dd-mm-yyyy", end: "dd-mm-yyyy", ruolo: Session Chair,             address: Nice - France }
+      - { name: ADAPT (co-located with HIPEAC 2014),         year: 2014, start: "dd-mm-yyyy", end: "dd-mm-yyyy", ruolo: TPC member }
+      - { name: DATE - Track A8 (Multi-Core Platforms),      year: 2009, start: "dd-mm-yyyy", end: "dd-mm-yyyy", ruolo: TPC member }
+      - { name: DATE - Track A8 (Multi-Core Platforms),      year: 2008, start: "dd-mm-yyyy", end: "dd-mm-yyyy", ruolo: TPC member }
 
-        - { name: ESTIMEDA                                                          , year: 2012 , type: conference/workshop organization ,    ruolo: Keynote Speaker  , address: Tampere - Finland }
-        - { name: Micro                                                             , year: 2008 , type: conference/workshop organization ,    ruolo: Local Committee  , address: Como - Italy }
+    talks:
+      - { name: ESTIMEDA, year: 2012 , ruolo: Keynote speaker  , address: Tampere - Finland, date: "dd-mm-yyyy" }
 
-        - { name: 2PARMA Workshop (co-located with ARCS 2012)                       , year: 2012 , type: conference/workshop organization ,    ruolo: Program Co-Chair , address: Munich - Germany }
-        - { name: 2PARMA Workshop (co-located with ARCS 2011)                       , year: 2011 , type: conference/workshop organization ,    ruolo: TPC member       , address: Como - Italy }
-        - { name: 2PARMA Workshop (co-located with ARCS 2010)                       , year: 2009 , type: conference/workshop organization ,    ruolo: TPC member }
+    peerReview:
 
-        - { name: NoCArch                                                           , year: 2009 , type: conference/workshop organization ,    ruolo: TPC member }
-        - { name: NoCArch                                                           , year: 2008 , type: conference/workshop organization ,    ruolo: TPC member }
-        - { name: NoCArch                                                           , year: 2010 , type: conference/workshop organization ,    ruolo: TPC member }
-        - { name: NoCArch                                                           , year: 2012 , type: conference/workshop organization ,    ruolo: TPC member }
+      - { name: IEEE Transactions on Computer Aided Design of Integrated Circuits, type: journal, ruolo: reviewer, dates: [ ] }
+      - { name: IEEE Transactions on Very Large Scale of Integration Circuits,     type: journal, ruolo: reviewer, dates: [ ] }
+      - { name: IEEE Transactions on Computers,                                    type: journal, ruolo: reviewer, dates: [ ] }
 
-        - { name: IEEE Transactions on Computer Aided Design of Integrated Circuits , type: journal peer review              ,    ruolo: reviewer }
-        - { name: IEEE Transactions on Very Large Scale of Integration Circuits     , type: journal peer review              ,    ruolo: reviewer }
-        - { name: IEEE Transactions on Computers     , type: journal peer review              ,    ruolo: reviewer }
-        - { name: IC-SAMOS                                                          , year: 2007 , type: conference/workshop organization ,    ruolo: reviewer }
-        - { name: SASP                                                              , year: 2007 , type: conference/workshop organization ,    ruolo: reviewer }
-        - { name: Journal of Low Power Electronics - JOLPE                          , year: 2009 , type: journal peer review              ,    ruolo: reviewer }
-
-        - { name: DATE                                                              , year: 2010 , type: conference/workshop organization ,    ruolo: Session Chair    , address: Dresden - Germany }
-        - { name: DATE                                                              , year: 2009 , type: conference/workshop organization ,    ruolo: Session Chair    , address: Nice - France }
-        - { name: DATE                                                              , year: 2001 , type: journal peer review              ,    ruolo: reviewer }
-        - { name: DATE - Track A8 (Multi-Core Platforms)                            , year: 2009 , type: conference/workshop organization ,    ruolo: TPC member }
-        - { name: DATE - Track A8 (Multi-Core Platforms)                            , year: 2008 , type: conference/workshop organization ,    ruolo: TPC member }
+      - { name: ADAPT (co-located with HIPEAC 2016),         year: 2016,    type: conference, ruolo: reviewer }
+      - { name: IC-SAMOS,                                    year: 2007,    type: conference, ruolo: reviewer }
+      - { name: SASP,                                        year: 2007,    type: conference, ruolo: reviewer }
+      - { name: Journal of Low Power Electronics - JOLPE,    year: 2009,    type: journal,    ruolo: reviewer }
+      - { name: DATE,                                        year: 2001,    type: conference, ruolo: reviewer }
 
     videos:
         -
