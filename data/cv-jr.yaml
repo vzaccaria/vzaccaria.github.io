@@ -379,10 +379,12 @@
       - { name: DATE Conference - Track A8 (Multi-Core Platforms), year: 2008, date: "10-03-2008", ruolo: TPC member,                          address: "Munich, Germany", end: "14-03-2008"}
 
     talks:
-      - { name: ESTIMEDA Workshop, year: 2012, ruolo: Keynote speaker, address: Tampere - Finland, date: "dd-mm-yyyy" }
-      - { name: HPSC Conference,   year: 2012, ruolo: Keynote speaker, address: Taipei,            Taiwan, date: "dd-mm-yyyy" }
-      - { name: RMC Challenge,     year: 2016, ruolo: Presenter,       address: "Lugano, Switzerland"}
-      - { name: SASP Symposium,    year: 2008, ruolo: Presenter,       address: "Anaheim, USA" }
+      - { name: ESTIMEDA Workshop, year: 2012, ruolo: Keynote speaker, address: "Tampere, Finland",    date: "dd-mm-yyyy", title: "xyz" }
+      - { name: HPSC Conference,   year: 2012, ruolo: Keynote speaker, address: "Taipei, Taiwan",      date: "dd-mm-yyyy", title: "xyz" }
+      - { name: RMC Challenge,     year: 2016, ruolo: Presenter,       address: "Lugano, Switzerland", date: "dd-mm-yyyy", title: "xyz" }
+      - { name: SASP Symposium,    year: 2008, ruolo: Presenter,       address: "Anaheim, USA",        date: "dd-mm-yyyy", title: "xyz" }
+      - { name: DAC Conference,    year: 2002, ruolo: Presenter,       address: "New Orleans, USA",    date: "dd-mm-yyyy", title: "xyz" }
+      - { name: ISCAS Conference,  year: 2001, ruolo: Presenter,       address: "Sydney, Australia",   date: "dd-mm-yyyy", title: "xyz" }
 
     peerReview:
 
