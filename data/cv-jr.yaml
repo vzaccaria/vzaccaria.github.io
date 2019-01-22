@@ -379,12 +379,15 @@
       - { name: DATE Conference - Track A8 (Multi-Core Platforms), year: 2008, date: "10-03-2008", ruolo: TPC member,                          address: "Munich, Germany", end: "14-03-2008"}
 
     talks:
-      - { name: ESTIMEDA Workshop, year: 2012, ruolo: Keynote speaker, address: "Tampere, Finland",    date: "dd-mm-yyyy", title: "xyz" }
-      - { name: HPSC Conference,   year: 2012, ruolo: Keynote speaker, address: "Taipei, Taiwan",      date: "dd-mm-yyyy", title: "xyz" }
-      - { name: RMC Challenge,     year: 2016, ruolo: Presenter,       address: "Lugano, Switzerland", date: "dd-mm-yyyy", title: "xyz" }
-      - { name: SASP Symposium,    year: 2008, ruolo: Presenter,       address: "Anaheim, USA",        date: "dd-mm-yyyy", title: "xyz" }
-      - { name: DAC Conference,    year: 2002, ruolo: Presenter,       address: "New Orleans, USA",    date: "dd-mm-yyyy", title: "xyz" }
-      - { name: ISCAS Conference,  year: 2001, ruolo: Presenter,       address: "Sydney, Australia",   date: "dd-mm-yyyy", title: "xyz" }
+      - { name: ESTIMEDA Workshop,               year: 2012, ruolo: Keynote speaker, address: "Tampere, Finland",    date: "11-10-2012", title: "Design space exploration and run-time resource management in the embedded multi-core era" }
+      - { name: HPSC Conference,                 year: 2013, ruolo: Keynote speaker, address: "Taipei, Taiwan",      date: "29-03-2013", title: "Principles of Design Space Exploration in the Embedded Multi-core Era" }
+      - { name: Platform 2012 / STHORM Workshop, year: 2013, ruolo: Presenter,       address: "Grenoble, France",    date: "22-03-2013", title: "An Exploration Methodology for a Customizable OpenCL Stereo-Matching Application Targeted to P2012" }
+      - { name: RMC Challenge,                   year: 2016, ruolo: Presenter,       address: "Lugano, Switzerland", date: "06-06-2016", title: "On the Role of Context in the Design of Mobile Mashups" }
+      - { name: SASP Symposium,                  year: 2008, ruolo: Presenter,       address: "Anaheim, USA",        date: "08-09-2008", title: "An efficient design space exploration methodology for on-chip multiprocessors subject to application-specific constraints" }
+      - { name: CODES 2001 Symposium,            year: 2001, ruolo: Presenter,       address: "Copenhagen, Denmark", date: "27-04-2001", title: "A Design Framework to Efficiently Explore Energy-Delay
+Tradeoffs" }
+      - { name: DAC Conference,                  year: 2002, ruolo: Presenter,       address: "New Orleans, USA",    date: "13-06-2002", title: "Energy estimation and optimization of embedded VLIW processors based on instruction clustering" }
+      - { name: ISCAS Conference,                year: 2001, ruolo: Presenter,       address: "Sydney, Australia",   date: "09-05-2001", title: "Fast system-level exploration of memory architectures driven by energy-delay metrics" }
 
     peerReview:
 
