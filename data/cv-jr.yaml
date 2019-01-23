@@ -321,12 +321,66 @@
           institution: STMicroelectronics
           project: "Methodologies for Power Estimation for VLIW Machines"
 
-    europeanProjects:
+    projectParticipations:
+
+		    - name: "Design of embedded mixed-criticality CONTRol systems under consideration of EXtra-functional properties (CONTREX)"
+	        type: "FP7"
+          dateStart: 01-10-2013
+          dateEnd: 30-09-2016
+          consortium:  
+            - Politecnico di Milano - Italy
+            - STMicroelectronics - Italy
+			      - Offis e.V - Germany
+            - GMV Aerospace and Defence SA (GMV, Spain)
+						- Cobra, Switzerland
+						- EUROTECH Group S.p.A., Italy
+						- Intecs SpA, Italy
+						- iXtronics GmbH, Germany
+					  - EDALab s.r.l., Italy
+						- DOCEA Power, France
+						- Politecnico di Torino
+						- University of Cantabria, Spain
+						- KTH (Royal Institute of Technology), Sweden
+            - The European Electronic Chips & Systems design Initiative (ECSI, France)
+						- ST-PoliTo s.c.a.r.l., Italy
+          role: "partecipazione"
+
         - type: FP7
-          yearInit: 2010
-          yearEnd: 2012
+          yearInit: 01-12-2009
+          yearEnd: 31-03-2013
+          name: "CO-design and Power Management in PLatform-based Design Space EXploration (COMPLEX)"
+          consortium:  
+            - Politecnico di Milano - Italy
+            - STMicroelectronics - Italy
+            - STMicroelectronics - China
+			      - Offis e.V - Germany
+						- Thales Communications SA (Thales, France)
+            - GMV Aerospace and Defence SA (GMV, Spain)
+            - Synopsys Belgium NV (SNPS, Belgium)
+            - ChipVision Design Systems AG (CV, Germany)
+            - EDALab srl (EDALab, Italy)
+            - Magillem Design Services SAS (MDS, France)
+            - Politecnico di Milano (PoliMi, Italy)
+            - Universidad de Cantabria (UC, Spain)
+            - Politecnico di Torino (PoliTo, Italy)
+            - Interuniversitair Micro-Electronica Centrum vzw (IMEC, Blegium)
+            - The European Electronic Chips & Systems design Initiative (ECSI, France)
+          role: "partecipazione"
+
+        - type: FP7
+          yearInit: 01-01-2010
+          yearEnd: 31-12-2012
           coordinator: Cristina Silvano
           name: "PARallel PAradigms and Run-time MAnagement techniques for Many-core Architectures"
+          consortium:  
+            - Politecnico di Milano - Italy
+            - STMicroelectronics - Italy
+            - STMicroelectronics - France 
+            - Fraunhofer Institute for Telecommunications Heinrich Hertz Institute (HHI) - Berlin
+            - Institute of Communication and Computer Systems - Greece
+            - Rheinisch-Westfaelische Technische Hochschule Aachen - Germany
+						- Synopsys - Belgium
+          role: "partecipazione"
           highlights:
             - "development team leader for an advanced production-grade language and interpreter supporting design space exploration"
             - "integration activities of design space exploration tools within the context of the project itself."
@@ -334,7 +388,19 @@
         - type: FP7
           yearInit: 2008
           yearEnd: 2010
+          dateStart: 01-01-2008
+          dateEnd: 01-06-2010
           coordinator: Cristina Silvano
+          consortium: 
+            - Politecnico di Milano - Italy
+            - DS2 - Spain
+            - STMicroelectronics - Italy
+            - STMicroelectronics - China
+            - Imec - Belgium
+            - Esteco - Italy
+            - ALaRI - Switzerland
+            - ICT - China
+          role: "partecipazione"
           name: "Multi-objective design space exploration of multi-processor SoC architectures for embedded multimedia applications"
 
 
