@@ -346,8 +346,8 @@
           role: "partecipazione"
 
         - type: FP7
-          yearInit: 01-12-2009
-          yearEnd: 31-03-2013
+          dateStart: 01-12-2009
+          dateEnd: 31-03-2013
           name: "CO-design and Power Management in PLatform-based Design Space EXploration (COMPLEX)"
           consortium:  
             - Politecnico di Milano - Italy
@@ -368,8 +368,8 @@
           role: "partecipazione"
 
         - type: FP7
-          yearInit: 01-01-2010
-          yearEnd: 31-12-2012
+          dateStart: 01-01-2010
+          dateEnd: 31-12-2012
           coordinator: Cristina Silvano
           name: "PARallel PAradigms and Run-time MAnagement techniques for Many-core Architectures"
           consortium:  
@@ -386,8 +386,6 @@
             - "integration activities of design space exploration tools within the context of the project itself."
 
         - type: FP7
-          yearInit: 2008
-          yearEnd: 2010
           dateStart: 01-01-2008
           dateEnd: 01-06-2010
           coordinator: Cristina Silvano
