@@ -390,14 +390,14 @@
           dateEnd: 01-06-2010
           coordinator: Cristina Silvano
           consortium: 
-            - Politecnico di Milano - Italy
-            - DS2 - Spain
-            - STMicroelectronics - Italy
-            - STMicroelectronics - China
-            - Imec - Belgium
-            - Esteco - Italy
-            - ALaRI - Switzerland
-            - ICT - China
+            - { name: Politecnico di Milano, country: Italy}
+            - { name: DS2, country: Spain}
+            - { name: STMicroelectronics, country: Italy }
+            - { name: STMicroelectronics, country: China }
+            - { name: Imec, country: Belgium }
+            - { name: Esteco, country: Italy }
+            - { name: ALaRI, country: Switzerland }
+            - { name: ICT, country: China }
           role: "partecipazione"
           name: "Multi-objective design space exploration of multi-processor SoC architectures for embedded multimedia applications"
 
