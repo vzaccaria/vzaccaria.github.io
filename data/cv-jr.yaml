@@ -328,21 +328,21 @@
           dateStart: 01-10-2013
           dateEnd: 30-09-2016
           consortium:  
-            - Politecnico di Milano - Italy
-            - STMicroelectronics - Italy
-            - Offis e.V - Germany
-            - GMV Aerospace and Defence SA (GMV, Spain)
-            - Cobra, Switzerland
-            - EUROTECH Group S.p.A., Italy
-            - Intecs SpA, Italy
-            - iXtronics GmbH, Germany
-            - EDALab s.r.l., Italy
-            - DOCEA Power, France
-            - Politecnico di Torino
-            - University of Cantabria, Spain
-            - KTH (Royal Institute of Technology), Sweden
-            - The European Electronic Chips & Systems design Initiative (ECSI, France)
-            - ST-PoliTo s.c.a.r.l., Italy
+            - { name: Politecnico di Milano, country: Italy }
+            - { name: STMicroelectronics, country: Italy }
+            - { name: Offis e.V, country: Germany }
+            - { name: GMV Aerospace and Defence SA, country: Spain) }
+            - { name: Cobra, country: Switzerland }
+            - { name: EUROTECH Group S.p.A., country: Italy }
+            - { name: Intecs SpA, country: Italy }
+            - { name: iXtronics GmbH, country: Germany }
+            - { name: EDALab s.r.l., country: Italy }
+            - { name: DOCEA Power, country: France }
+            - { name: Politecnico di Torino, country: Italy }
+            - { name: University of Cantabria, country: Spain }
+            - { name: KTH (Royal Institute of Technology), country: Sweden }
+            - { name: The European Electronic Chips & Systems design Initiative, country: France }
+            - { name: ST-PoliTo s.c.a.r.l., country: Italy }
           role: "partecipazione"
 
         - type: FP7
@@ -350,21 +350,21 @@
           dateEnd: 31-03-2013
           name: "CO-design and Power Management in PLatform-based Design Space EXploration (COMPLEX)"
           consortium:  
-            - Politecnico di Milano - Italy
-            - STMicroelectronics - Italy
-            - STMicroelectronics - China
-            - Offis e.V - Germany
-            - Thales Communications SA (Thales, France)
-            - GMV Aerospace and Defence SA (GMV, Spain)
-            - Synopsys Belgium NV (SNPS, Belgium)
-            - ChipVision Design Systems AG (CV, Germany)
-            - EDALab srl (EDALab, Italy)
-            - Magillem Design Services SAS (MDS, France)
-            - Politecnico di Milano (PoliMi, Italy)
-            - Universidad de Cantabria (UC, Spain)
-            - Politecnico di Torino (PoliTo, Italy)
-            - Interuniversitair Micro-Electronica Centrum vzw (IMEC, Blegium)
-            - The European Electronic Chips & Systems design Initiative (ECSI, France)
+            - { name: Politecnico di Milano, country: Italy }
+            - { name: STMicroelectronics, country: Italy }
+            - { name: STMicroelectronics, country: China }
+            - { name: Offis e.V, country: Germany }
+            - { name: Thales Communications SA, country: France }
+            - { name: GMV Aerospace and Defence SA, country: Spain }
+            - { name: Synopsys Belgium NV, country: Belgium }
+            - { name: ChipVision Design Systems AG , country: Germany }
+            - { name: EDALab srl , country: Italy }
+            - { name: Magillem Design Services SAS , country: France }
+            - { name: Politecnico di Milano , country: Italy }
+            - { name: Universidad de Cantabria , country: Spain }
+            - { name: Politecnico di Torino , country: Italy }
+            - { name: Interuniversitair Micro-Electronica Centrum vzw , country: Blegium }
+            - { name: The European Electronic Chips & Systems design Initiative , country: France }
           role: "partecipazione"
 
         - type: FP7
@@ -373,13 +373,13 @@
           coordinator: Cristina Silvano
           name: "PARallel PAradigms and Run-time MAnagement techniques for Many-core Architectures"
           consortium:  
-            - Politecnico di Milano - Italy
-            - STMicroelectronics - Italy
-            - STMicroelectronics - France 
-            - Fraunhofer Institute for Telecommunications Heinrich Hertz Institute (HHI) - Berlin
-            - Institute of Communication and Computer Systems - Greece
-            - Rheinisch-Westfaelische Technische Hochschule Aachen - Germany
-            - Synopsys - Belgium
+            - { name: Politecnico di Milano, country: Italy }
+            - { name: STMicroelectronics, country: Italy }
+            - { name: STMicroelectronics, country: France  }
+            - { name: Fraunhofer Institute for Telecommunications Heinrich Hertz Institute (HHI), country: Berlin }
+            - { name: Institute of Communication and Computer Systems, country: Greece }
+            - { name: Rheinisch-Westfaelische Technische Hochschule Aachen, country: Germany }
+            - { name: Synopsys, country: Belgium }
           role: "partecipazione"
           highlights:
             - "development team leader for an advanced production-grade language and interpreter supporting design space exploration"
