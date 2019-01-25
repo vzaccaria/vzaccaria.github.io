@@ -336,8 +336,8 @@
 
         - name: "Design of embedded mixed-criticality CONTRol systems under consideration of EXtra-functional properties (CONTREX)" 
           type: "FP7"
-          dateStart: 01-10-2013
-          dateEnd: 30-09-2016
+          dateStart: 2013-10-01 
+          dateEnd:   2016-09-30 
           consortium:  
             - { name: Politecnico di Milano, country: Italy }
             - { name: STMicroelectronics, country: Italy }
@@ -357,8 +357,8 @@
           role: "partecipazione"
 
         - type: FP7
-          dateStart: 01-12-2009
-          dateEnd: 31-03-2013
+          dateStart: 2009-12-01 
+          dateEnd:   2013-03-31 
           name: "CO-design and Power Management in PLatform-based Design Space EXploration (COMPLEX)"
           consortium:  
             - { name: Politecnico di Milano, country: Italy }
@@ -379,8 +379,8 @@
           role: "partecipazione"
 
         - type: FP7
-          dateStart: 01-01-2010
-          dateEnd: 31-12-2012
+          dateStart: 2010-01-01 
+          dateEnd:   2012-12-31 
           coordinator: Cristina Silvano
           name: "PARallel PAradigms and Run-time MAnagement techniques for Many-core Architectures"
           consortium:  
@@ -397,8 +397,8 @@
             - "integration activities of design space exploration tools within the context of the project itself."
 
         - type: FP7
-          dateStart: 01-01-2008
-          dateEnd: 01-06-2010
+          dateStart: 2008-01-01 
+          dateEnd:   2010-06-01 
           coordinator: Cristina Silvano
           consortium: 
             - { name: Politecnico di Milano, country: Italy}
@@ -435,33 +435,33 @@
 
     committees:
 
-        - { name: PARMA-DITAM Workshop,                              year: 2018, date: "23-01-2018", ruolo: membro del TPC,                        address: "Manchester, United Kingdom" }
-        - { name: DITAM Workshop,                                    year: 2013, date: "22-01-2013", ruolo: membro del TPC e web chair,            address: "Berlin, Germany" }
-        - { name: DITAM Workshop,                                    year: 2012, date: "24-12-2012", ruolo: membro del TPC e poster session chair, address: "Paris, France" }
-        - { name: ADAPT Workshop,                                    year: 2016, date: "18-01-2016", ruolo: membro del TPC,                        address: "Prague, Czech Republic" }
-        - { name: ADAPT Workshop,                                    year: 2015, date: "21-01-2015", ruolo: membro del TPC,                        address: "Amsterdam, The Netherlands" }
-        - { name: ADAPT Workshop,                                    year: 2014, date: "22-01-2014", ruolo: membro del TPC,                        address: "Vienna, Austria" }
-        - { name: PARMA Workshop (co-located with ARCS),             year: 2012, date: "29-02-2012", ruolo: program co-chair,                      address: "Munich, Germany" }
-        - { name: PARMA Workshop (co-located with ARCS),             year: 2011, date: "23-02-2011", ruolo: membro del TPC,                        address: "Como, Italy" }
-        - { name: PARMA Workshop (co-located with ARCS),             year: 2010, date: "22-02-2010", ruolo: membro del TPC,                        address: "Hannover, Germany" }
-        - { name: NoCArc Workshop,                                   year: 2012, date: "01-12-2012", ruolo: membro del TPC,                        address: "Vancouver, Canada" }
-        - { name: NoCArc Workshop,                                   year: 2010, date: "04-12-2010", ruolo: membro del TPC,                        address: "Atlanta, USA" }
-        - { name: NoCArc Workshop,                                   year: 2009, date: "12-12-2009", ruolo: membro del TPC,                        address: "New York City, USA"}
-        - { name: NoCArc Workshop,                                   year: 2008, date: "08-11-2008", ruolo: membro del TPC,                        address: "Como, Italy" }
-        - { name: Trust Workshop,                                    year: 2014, date: "12-06-2014", ruolo: membro del TPC,                        address: "Edinburgh, UK" }
-        - { name: Micro Conference,                                  year: 2008, date: "10-11-2008", ruolo: membro del local committee,            address: "Como, Italy",     end: "12-11-2008" }
-        - { name: DATE Conference - Track A8 (Multi-Core Platforms), year: 2009, date: "20-04-2009", ruolo: membro del TPC e session chair,        address: "Nice, France",    end: "24-04-2009"}
-        - { name: DATE Conference - Track A8 (Multi-Core Platforms), year: 2008, date: "10-03-2008", ruolo: membro del TPC,                        address: "Munich, Germany", end: "14-03-2008"}
+        - { name: PARMA-DITAM Workshop,                              year: 2018, date: "2018-01-23", ruolo: membro del TPC,                        address: "Manchester, United Kingdom" }
+        - { name: DITAM Workshop,                                    year: 2013, date: "2013-01-22", ruolo: membro del TPC e web chair,            address: "Berlin, Germany" }
+        - { name: DITAM Workshop,                                    year: 2012, date: "2012-12-24", ruolo: membro del TPC e poster session chair, address: "Paris, France" }
+        - { name: ADAPT Workshop,                                    year: 2016, date: "2016-01-18", ruolo: membro del TPC,                        address: "Prague, Czech Republic" }
+        - { name: ADAPT Workshop,                                    year: 2015, date: "2015-01-21", ruolo: membro del TPC,                        address: "Amsterdam, The Netherlands" }
+        - { name: ADAPT Workshop,                                    year: 2014, date: "2014-01-22", ruolo: membro del TPC,                        address: "Vienna, Austria" }
+        - { name: PARMA Workshop (co-located with ARCS),             year: 2012, date: "2012-02-29", ruolo: program co-chair,                      address: "Munich, Germany" }
+        - { name: PARMA Workshop (co-located with ARCS),             year: 2011, date: "2011-02-23", ruolo: membro del TPC,                        address: "Como, Italy" }
+        - { name: PARMA Workshop (co-located with ARCS),             year: 2010, date: "2010-02-22", ruolo: membro del TPC,                        address: "Hannover, Germany" }
+        - { name: NoCArc Workshop,                                   year: 2012, date: "2012-12-01", ruolo: membro del TPC,                        address: "Vancouver, Canada" }
+        - { name: NoCArc Workshop,                                   year: 2010, date: "2010-12-04", ruolo: membro del TPC,                        address: "Atlanta, USA" }
+        - { name: NoCArc Workshop,                                   year: 2009, date: "2009-12-12", ruolo: membro del TPC,                        address: "New York City, USA"}
+        - { name: NoCArc Workshop,                                   year: 2008, date: "2008-11-08", ruolo: membro del TPC,                        address: "Como, Italy" }
+        - { name: Trust Workshop,                                    year: 2014, date: "2014-06-12", ruolo: membro del TPC,                        address: "Edinburgh, UK" }
+        - { name: Micro Conference,                                  year: 2008, date: "2008-11-10", ruolo: membro del local committee,            address: "Como, Italy",     end: "2008-11-12" }
+        - { name: DATE Conference - Track A8 (Multi-Core Platforms), year: 2009, date: "2009-04-20", ruolo: membro del TPC e session chair,        address: "Nice, France",    end: "2009-04-24"}
+        - { name: DATE Conference - Track A8 (Multi-Core Platforms), year: 2008, date: "2008-03-10", ruolo: membro del TPC,                        address: "Munich, Germany", end: "2008-03-14"}
 
     talks:
-        - { name: ESTIMEDA Workshop,               year: 2012, ruolo: Keynote speaker, address: "Tampere, Finland",    date: "11-10-2012", title: "Design space exploration and run-time resource management in the embedded multi-core era" }
-        - { name: HPSC Conference,                 year: 2013, ruolo: Keynote speaker, address: "Taipei, Taiwan",      date: "29-03-2013", title: "Principles of Design Space Exploration in the Embedded Multi-core Era" }
-        - { name: Platform 2012 / STHORM Workshop, year: 2013, ruolo: relatore,        address: "Grenoble, France",    date: "22-03-2013", title: "An Exploration Methodology for a Customizable OpenCL Stereo-Matching Application Targeted to P2012" }
-        - { name: RMC Challenge,                   year: 2016, ruolo: relatore,        address: "Lugano, Switzerland", date: "06-06-2016", title: "On the Role of Context in the Design of Mobile Mashups" }
-        - { name: SASP Symposium,                  year: 2008, ruolo: relatore,        address: "Anaheim, USA",        date: "08-09-2008", title: "An efficient design space exploration methodology for on-chip multiprocessors subject to application-specific constraints" }
-        - { name: CODES 2001 Symposium,            year: 2001, ruolo: relatore,        address: "Copenhagen, Denmark", date: "27-04-2001", title: "A Design Framework to Efficiently Explore Energy-Delay Tradeoffs" }
-        - { name: DAC Conference,                  year: 2002, ruolo: relatore,        address: "New Orleans, USA",    date: "13-06-2002", title: "Energy estimation and optimization of embedded VLIW processors based on instruction clustering" }
-        - { name: ISCAS Conference,                year: 2001, ruolo: relatore,        address: "Sydney, Australia",   date: "09-05-2001", title: "Fast system-level exploration of memory architectures driven by energy-delay metrics" }
+        - { name: ESTIMEDA Workshop,               year: 2012, ruolo: Keynote speaker, address: "Tampere, Finland",    date: "2012-10-11", title: "Design space exploration and run-time resource management in the embedded multi-core era" }
+        - { name: HPSC Conference,                 year: 2013, ruolo: Keynote speaker, address: "Taipei, Taiwan",      date: "2013-03-29", title: "Principles of Design Space Exploration in the Embedded Multi-core Era" }
+        - { name: Platform 2012 / STHORM Workshop, year: 2013, ruolo: relatore,        address: "Grenoble, France",    date: "2013-03-22", title: "An Exploration Methodology for a Customizable OpenCL Stereo-Matching Application Targeted to P2012" }
+        - { name: RMC Challenge,                   year: 2016, ruolo: relatore,        address: "Lugano, Switzerland", date: "2016-06-06", title: "On the Role of Context in the Design of Mobile Mashups" }
+        - { name: SASP Symposium,                  year: 2008, ruolo: relatore,        address: "Anaheim, USA",        date: "2008-09-08", title: "An efficient design space exploration methodology for on-chip multiprocessors subject to application-specific constraints" }
+        - { name: CODES 2001 Symposium,            year: 2001, ruolo: relatore,        address: "Copenhagen, Denmark", date: "2001-04-27", title: "A Design Framework to Efficiently Explore Energy-Delay Tradeoffs" }
+        - { name: DAC Conference,                  year: 2002, ruolo: relatore,        address: "New Orleans, USA",    date: "2002-06-13", title: "Energy estimation and optimization of embedded VLIW processors based on instruction clustering" }
+        - { name: ISCAS Conference,                year: 2001, ruolo: relatore,        address: "Sydney, Australia",   date: "2001-05-09", title: "Fast system-level exploration of memory architectures driven by energy-delay metrics" }
 
     peerReview:
 
