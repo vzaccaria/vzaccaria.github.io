@@ -288,9 +288,11 @@
           role: Principal investigator
           type: Grant from industrial partner
           institution:  STMicroelectronics
-          project:  Metodologia e Strumenti per la Valutazione di Circuiti Crittografici
+          project:  "Metodologia e Strumenti per la Valutazione di Circuiti Crittografici"
           funding: { amount: 30000, unit: EUR }
           highlight: true
+          ruolo: "Responsabile della ricerca"
+          tipologia: "Ente privato"
 
         - from: 2015-07-10
           to: 2016-07-10
@@ -298,8 +300,10 @@
           type: Grant from industrial partner
           institution:  STMicroelectronics
           funding: { amount: 30000, unit: EUR }
-          project:  Strumenti di Progettazione e Verifica per Circuiti Crittografici
+          project:  "Strumenti di Progettazione e Verifica per Circuiti Crittografici"
           highlight: true
+          ruolo: "Responsabile della ricerca"
+          tipologia: "Ente privato"
 
         - from: 2001-12-16
           to: 2003-03-16
@@ -308,18 +312,25 @@
           institution: Politecnico di Milano
           project: "Power estimation and exploration of the architectural space at the system level for systems-on-chip"
           highlight: true
+          ruolo: "Assegnista post-dottorato"
+          tipologia: "Ente pubblico"
 
         - from: 2007-11-01
           to: 2009-10-31
           type: Research Grant
           institution: Politecnico di Milano
           project: "Multi-Objective Design Space Exploration of Multi-Processor SOC Architectures for Embedded Multimedia Applications"
+          ruolo: "Assegnista di ricerca"
+          tipologia: "Ente pubblico"
+
 
         - from: 1999-03-01
           to: 2001-12-31
           type: Ph.D. Fellowship
           institution: STMicroelectronics
           project: "Methodologies for Power Estimation for VLIW Machines"
+          ruolo: "Borsista ricerca"
+          tipologia: "Ente privato"
 
     projectParticipations:
 
