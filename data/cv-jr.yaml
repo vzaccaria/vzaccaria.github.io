@@ -276,7 +276,7 @@
           sommario: "per l'eccezionale contributo allo stato dell'arte dell'architettura dei processori"
           institution: "Dimitris N. Chorafas Foundation"
           show: true
-          intro: 'dalla '
+          intro: 'dalla'
 
         -
           date: 2010-05-31
@@ -285,7 +285,7 @@
           summario: "come coautore del lavoro 'A Correlation-Based Design Space Exploration Methodology for Multiprocessor Systems-on-Chip' presentato a DAC 2011."
           institution: "HiPEAC (High Performance and Embedded Architecture and Compilation)"
           show: true
-          intro: 'dal progetto '
+          intro: 'dal progetto'
 
         -
           date: 2012-11-16
