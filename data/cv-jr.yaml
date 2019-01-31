@@ -169,7 +169,7 @@
           budget of several european FP7 projects.
 
       dichiara: |
-        Di prestare servizio come ricercatore a tempo indeterminato dal 1 marzo
+        di prestare servizio come ricercatore a tempo indeterminato dal 1 marzo
         2011 presso il Dipartimento di Elettronica e Informazione del Politecnico
         di Milano, e di avere prestato servizio come ricercatore a tempo
         determinato dal 1 novembre 2009 a fine Febbraio 2011 presso il
@@ -199,10 +199,13 @@
           architectures based on stream-programming paradigms."
 
       dichiara: |
-        Di avere prestato il seguente servizio: Research and
-        Development Engineer presso l’Advanced Architecture Research group,
-        AST-STMicroelectronics, Lugano (Svizzera), dal 1 maggio 2004 fino al 27
-        marzo 2007.
+
+        di avere prestato servizio come Research and Development Engineer
+        presso l’Advanced Architecture Research group, AST-STMicroelectronics,
+        Lugano (Svizzera), dal 1 maggio 2004 fino al 27 marzo 2007. In tale
+        periodo si è occupato della ricerca e lo sviluppo di estensioni di
+        processori industriali, co-hosting, esplorazione architetturale e
+        paradigmi di programmazione streaming.
 
 
     -
@@ -221,9 +224,12 @@
           time, 33 percent error)."
 
       dichiara: |
-        Di avere prestato il seguente servizio: Research Consultant presso il
-        gruppo Low Power System Design, AST-STMicroelectronics, Agrate Brianza
-        (Italia), dal 1 aprile 2003 al 31 marzo 2004.
+
+        di avere prestato servizio come Research Consultant presso il gruppo
+        Low Power System Design, AST-STMicroelectronics, Agrate Brianza
+        (Italia), dal 1 aprile 2003 al 31 marzo 2004. In tale periodo si è
+        occupato della ricerca e sviluppo di modelli di consumo di potenza dei
+        processori digitali e networks-on-chip.
 
     -
       startDate: 2007-11-01
@@ -239,6 +245,12 @@
 
         - "Extended classical design space exploration to tackle the problem of
           process-variability-aware design of multi-processors."
+      
+      dichiara: |
+        di avere usufruito di un assegno di ricerca presso il Dipartimento di
+        Elettronica e Informazione del Politecnico di Milano dal 1 novembre
+        2007 al 31 ottobre 2009 per ricerche concernenti l'esplorazione dello
+        spazio architetturale dei multi-processori.
 
   research:
 
