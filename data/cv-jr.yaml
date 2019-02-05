@@ -495,6 +495,34 @@
         - { name: Journal of Low Power Electronics - JOLPE,    year: 2009,    type: journal,    ruolo: reviewer }
         - { name: DATE,                                        year: 2001,    type: conference, ruolo: reviewer }
 
+    patents:
+
+        - title: "Process for translating instructions for an arm-type processor into instructions for a LX-type processor; relative translator device and computer program product"
+          authors: 
+              - Pagni, Andrea 
+              - Lucini, Fabrizio 
+              - Pau, Danilo Pietro 
+              - Borneo, Antonio Maria  
+              - Zaccaria, Vittorio 
+          date: 2007-07-10
+          number: "7243213"
+          type: "US"
+          link: "http://www.patentlens.net/patentlens/patent/US_7243213/en"
+
+        - title: "Processor architecture"
+          authors:
+            - Sami, Mariagiovanna 
+            - Sciuto, Donatella 
+            - Silvano, Cristina 
+            - Zaccaria, Vittorio 
+            - Pau, Danilo 
+            - Zafalon, Roberto 
+          date: 2005-05-03
+          type: "US"
+          number: "6889317"
+          link: "http://www.patentlens.net/patentlens/patent/US_6889317/en"
+          
+
     videos:
         -
             title: "Past and current research"
