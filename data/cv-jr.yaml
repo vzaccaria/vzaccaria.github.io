@@ -499,11 +499,13 @@
 
         - title: "Process for translating instructions for an arm-type processor into instructions for a LX-type processor; relative translator device and computer program product"
           authors: 
-              - Pagni, Andrea 
-              - Lucini, Fabrizio 
-              - Pau, Danilo Pietro 
-              - Borneo, Antonio Maria  
-              - Zaccaria, Vittorio 
+
+              - Andrea Pagni
+              - Fabrizio Lucini   
+              - Danilo Pietro Pau      
+              - Antonio Maria Borneo   
+              - Vittorio Zaccaria 
+
           date: 2007-07-10
           number: "7243213"
           type: "US"
@@ -511,12 +513,12 @@
 
         - title: "Processor architecture"
           authors:
-            - Sami, Mariagiovanna 
-            - Sciuto, Donatella 
-            - Silvano, Cristina 
-            - Zaccaria, Vittorio 
-            - Pau, Danilo 
-            - Zafalon, Roberto 
+            - Mariagiovanna Sami             
+            - Donatella Sciuto   
+            - Cristina Silvano  
+            - Vittorio Zaccaria 
+            - Danilo Pau      
+            - Roberto Zafalon  
           date: 2005-05-03
           type: "US"
           number: "6889317"
