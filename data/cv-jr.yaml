@@ -358,6 +358,7 @@
           type: "FP7"
           dateStart: 2013-10-01 
           dateEnd:   2016-09-30 
+          acronym: "CONTREX"
           consortium:  
             - { name: Politecnico di Milano, country: Italy }
             - { name: STMicroelectronics, country: Italy }
@@ -380,6 +381,7 @@
           dateStart: 2009-12-01 
           dateEnd:   2013-03-31 
           name: "CO-design and Power Management in PLatform-based Design Space EXploration (COMPLEX)"
+          acronym: "COMPLEX"
           consortium:  
             - { name: Politecnico di Milano, country: Italy }
             - { name: STMicroelectronics, country: Italy }
@@ -402,6 +404,7 @@
           dateStart: 2010-01-01 
           dateEnd:   2012-12-31 
           coordinator: Cristina Silvano
+          acronym: "2PARMA"
           name: "PARallel PAradigms and Run-time MAnagement techniques for Many-core Architectures"
           consortium:  
             - { name: Politecnico di Milano, country: Italy }
@@ -420,6 +423,7 @@
           dateStart: 2008-01-01 
           dateEnd:   2010-06-01 
           coordinator: Cristina Silvano
+          acronym: "Multicube"
           consortium: 
             - { name: Politecnico di Milano, country: Italy}
             - { name: DS2, country: Spain}
