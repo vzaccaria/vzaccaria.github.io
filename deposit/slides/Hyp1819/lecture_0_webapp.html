@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Web applications technology/backend</title>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/theme/moon.css" id="theme"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-light.min.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Web applications technology/backend</h1><p class="date">Created: 2019-02-21 Thu 15:11</p>
+</section>
+<script src="reveal-bundle.js"></script>
+
+<section>
+<section id="slide-org06b5742">
+<h2 id="org06b5742">Overview</h2>
+<div class="outline-text-2" id="text-org06b5742">
+</div>
+</section>
+<section id="slide-orgd0aaa11">
+<h3 id="orgd0aaa11">What skills you will learn</h3>
+<p>
+<b>This course is fairly demanding, but is one of the most industry-applicable
+courses you can take.</b> You will learn and improve the following skills:
+</p>
+
+<ul>
+<li>Programming in Javascript</li>
+<li>Building web services using Nodejs framework</li>
+<li>Experience with industry standard Web Services platform (Heroku)</li>
+<li>Development using <b>Git</b></li>
+
+</ul>
+
+
+</section>
+<section id="slide-orga201c4e">
+<h3 id="orga201c4e">Course Project</h3>
+<div class="org-center">
+<div class="minipage">
+<pre class="example">
+         ┌──────────────────┐     Commits     ┌─────────┐
+         │                  │ ◀──────────────●│ Student │
+         │                  │                 └─────────┘
+         │    BitBucket     │     Commits     ┌─────────┐
+         │(where the source │ ◀──────────────●│ Student │
+         │ code is stored)  │                 └─────────┘
+         │                  │                 ┏━━━━━━━━━┓
+         │                  │ ◀──────────────●┃ Student ◀───────── Team admin
+         └──────────────────┘   Commits and   ┗━━━━━━━━━┛
+                   ▲            manages the        │Deploys the application on the
+                   │               team            │hosting service
+                   │                               │
+Should be the 4th  │                               │
+ member into the   │                               ▼
+   private repo    │                     ┌──────────────────┐
+             ┌──────────┐                │      Heroku      │
+             │Instructor│ Will check the │    (where the    │
+             │          │────running ───▶│application runs) │
+             └──────────┘  application   │                  │
+                                         └──────────────────┘
+</pre>
+
+</div>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgf3cee7a">
+<h2 id="orgf3cee7a">Service oriented architectures and the Web</h2>
+<div class="outline-text-2" id="text-orgf3cee7a">
+</div>
+</section>
+<section id="slide-i2">
+<h3 id="i2">Service: definition</h3>
+<ul>
+<li><b>Service</b>: a <i>software functionality</i> that can be <b>reused</b> by different clients for
+different purposes.</li>
+
+</ul>
+
+</section>
+<section id="slide-i1">
+<h3 id="i1">Service oriented architecture</h3>
+<ul>
+<li>Most used way to build a <b>client/server application</b>.</li>
+
+<li><b>Reuse paradigm</b> in disguise, applications are built by <b>integrating existing
+services</b> instead of rewriting them from scratch.</li>
+
+</ul>
+
+</section>
+<section id="slide-i3">
+<h3 id="i3">No SOA</h3>
+
+<div class="figure">
+<p><img src="./tikz/nosoa.png" alt="nosoa.png" />
+</p>
+<p><span class="figure-number">Figure 1: </span>Changing the structure of databases <code>sales</code> and <code>inventory</code> might imply rewriting the clients.</p>
+</div>
+
+</section>
+<section id="slide-i4">
+<h3 id="i4">With SOA</h3>
+
+<div class="figure">
+<p><img src="./tikz/soa.png" alt="soa.png" />
+</p>
+</div>
+
+
+</section>
+<section id="slide-w9">
+<h3 id="w9">Web services</h3>
+
+<div class="figure">
+<p><img src="./tikz/webservice.png" alt="webservice.png" />
+</p>
+</div>
+
+</section>
+<section id="slide-w10">
+<h3 id="w10">Web services</h3>
+
+<div class="figure">
+<p><img src="./tikz/webservice2.png" alt="webservice2.png" />
+</p>
+</div>
+
+</section>
+<section id="slide-w12">
+<h3 id="w12">Activity pattern</h3>
+<div class="org-center">
+<div class="minipage">
+<pre class="example">
+            ┌──────────────────┐         ┌──────────────────┐
+            │     Browser      │         │    Web server    │
+            └─────────┬────────┘         └────────┬─────────┘
+                      │                           │
+                      │                           │
+        Requests Page │       HTTP GET(s)         │
+               Assets ●───────────────────────────▶ ─ ─ ─ ─ ─
+        (HTML/CSS/JS) │                           │          │
+                      │                           │           Reads Files
+                      │                           │          │
+            ─ ─ ─ ─ ─ ◀───────────────────────────● ─ ─ ─ ─ ─
+Renders and│          │                           │ Sends Back HTML/CSS/JS
+     starts           │                           │
+ Javascript│          │                           │
+            ─ ─ ─ ─ ─ ■                           │
+                      ┃                           │
+                Sends ┃     All HTTP Verbs        │
+           HTTP(AJAX) ●───────────────────────────▶ ─ ─ ─ ─ ─
+              request ┃                           │          │Processes
+                      ┃                           │           HTTP
+                      ┃                           │          │request
+            ─ ─ ─ ─ ─ ◀───────────────────────────● ─ ─ ─ ─ ─
+           │          ┃                           │Responds with
+  Rerenders           ┃                           │appropriate
+           │          ┃                           │mediatype
+            ─ ─ ─ ─ ─ ┃                           │
+                      ┃                           │
+                           ... (continues) ...
+
+</pre>
+
+</div>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org37de047">
+<h2 id="org37de047">HTTP-based networking and REST principles</h2>
+<div class="outline-text-2" id="text-org37de047">
+</div>
+</section>
+<section id="slide-w3">
+<h3 id="w3">Anatomy of a web service request</h3>
+<div class="org-center">
+<div class="minipage">
+<pre class="example">
+   ┌──────────────────┐         ┌──────────────────┐
+   │     Browser      │         │    Web server    │
+   └──────────────────┘         └──────────────────┘
+             │                            │
+             │                            ■ opens TCP
+   DNS query ■                            │ socket
+             │                            │ (listen)
+Requests TCP │                            │
+  connection ●───────────────────────────▶│
+             │                            │
+             │                            │ accepts TCP
+             │◀───────────────────────────● connection
+             │                            │
+  Sends HTTP │                            │
+request over ●───────────────────────────▶│
+         TCP │                            │
+             │                            │ Parses request
+             │                            ○
+             │                            │
+             │                            ○ Fetches data
+             │                            │
+             │                            ○
+             │◀───────────────────────────● Sends response
+             ▼                            ▼
+</pre>
+
+</div>
+</div>
+
+</section>
+<section id="slide-w5">
+<h3 id="w5">HTTP resource</h3>
+<p>
+A resource has:
+</p>
+
+<ul>
+<li><p>
+an <b>identifier</b> (<a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">URI</a>), i.e., a unique textual key associated with the resource:
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="text" >scheme:[//host[:port]][/]path[?query][#fragment]
+</code></pre>
+</div></li>
+
+<li>a <b>state</b></li>
+
+<li>a <b>representation</b></li>
+
+</ul>
+
+
+</section>
+<section id="slide-w6">
+<h3 id="w6">HTTP request</h3>
+<div class="org-center">
+<div class="minipage">
+<pre class="example">
+
+HTTP Verb       Resource        Version
+
+    │               │              │
+    │        ┌──────┘      ┌───────┘
+ ┌──┼────────┼─────────────┼─────────────────────────────────────┐
+ │  ▼        ▼             ▼                                     │
+ │ GET /docs/index.html HTTP/1.1          ┌────Media Type        │
+ │ Host: www.nowhere123.com               │                      │
+ │ Accept: image/gif, image/jpeg, */* ◀───┘                      │
+ │ Accept-Encoding: gzip, deflate ◀─────┐                        │
+ │ User-Agent: Mozilla/4.0 (compatible; │SIE 6.0; Windows NT 5.1)│
+ │ (blank line)                         │                        │
+ │  ●                                   │                        │
+ └──┼───────────────────────────────────┼────────────────────────┘
+    │                                   │
+    │                                   └──────Compression
+Optional
+  Body
+
+</pre>
+
+</div>
+</div>
+
+
+
+</section>
+<section id="slide-w7">
+<h3 id="w7">HTTP response</h3>
+<div class="org-center">
+<div class="minipage">
+<pre class="example">
+Version      Status code
+   │              │
+   └─┐     ┌──────┘
+┌────▼─────▼──────────────────────────────────────┐
+│HTTP/1.1 200 OK ◀═══════════════════════════════════Status line
+│Date: Sun, 18 Oct 2009 08:56:53 GMT              │
+│Server: Apache/2.2.14 (Win32)                    │
+│Last-Modified: Sat, 20 Nov 2004 07:16:26 GMT     │
+│ETag: "10000000565a5-2c-3e94b66c2e680"           │
+│Accept-Ranges: bytes                             │
+│Content-Length: 44                               │
+│Connection: close ◀─────────────────────────────────Can also be keep-alive
+│Content-Type: text/html                          │
+│X-Pad: avoid browser bug                         │
+│                                                 │
+│&lt;html&gt;&lt;body&gt;&lt;h1&gt;It works!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;     │  Body
+└─────────────────────────────────────────────────┘
+</pre>
+
+</div>
+</div>
+
+
+
+</section>
+<section id="slide-get">
+<h3 id="get">HTTP verbs: GET</h3>
+<ul>
+<li><b>GOOD</b>: <code>GET /fluffy_kitty.jpg</code></li>
+<li><b>BAD</b>: <code>GET /users/sign_out</code></li>
+
+</ul>
+
+
+</section>
+<section id="slide-post">
+<h3 id="post">HTTP verbs: POST</h3>
+<div class="org-src-container">
+
+<pre><code class="text" >POST /send-message HTTP/1.1
+Host: foo.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 13
+
+message=Hi
+</code></pre>
+</div>
+
+</section>
+<section id="slide-put">
+<h3 id="put">HTTP verbs: PUT</h3>
+<div class="org-src-container">
+
+<pre><code class="text" >PUT /user/1/sign_out HTTP/1.1
+Host: foo.com
+</code></pre>
+</div>
+
+</section>
+<section id="slide-delete">
+<h3 id="delete">HTTP verbs: DELETE</h3>
+<div class="org-src-container">
+
+<pre><code class="text" >DELETE /user/1 HTTP/1.1
+Host: foo.com
+</code></pre>
+</div>
+
+</section>
+<section id="slide-status">
+<h3 id="status">HTTP response status</h3>
+<p>
+The HTTP response status indicates the outcome of the request. Status
+codes fall into one of five categories:
+</p>
+
+<ul>
+<li>1XX - Informational</li>
+<li>2XX - Successful</li>
+<li>3XX - Redirection</li>
+<li>4XX - Client Error</li>
+<li>5XX - Server Error</li>
+
+</ul>
+
+<p>
+Ref: <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">HTTP Status Code Definitions</a>
+</p>
+
+</section>
+<section id="slide-p2">
+<h3 id="p2">What is REST?</h3>
+<ul>
+<li>Stands for <a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm">representational state transfer</a></li>
+
+<li>A web application that uses HTTP verbs <b>appropriately</b> to manipulate a
+resource is said <b>compliant with the REST principle</b>.</li>
+
+</ul>
+
+</section>
+<section id="slide-p4">
+<h3 id="p4">REST vs RPC</h3>
+<ul class="org-ul">
+<li><a id="orgf72877b"></a><span class="todo TODO">TODO</span> Fix this example with something more meaningful<br />
+<ul>
+<li><p>
+RPC
+</p>
+
+<pre class="example">
+│ POST /getAdUnitsByStatement HTTP/1.1
+│ HOST: api.example.com
+│ Content-Type: application/json
+│
+│ {"filter": "WHERE parentId IS NULL LIMIT 500"}
+</pre></li>
+
+</ul>
+
+
+<ul>
+<li><p>
+REST
+</p>
+
+<pre class="example">
+│   single path        query
+│    end-point      parameters
+│       │                │
+│       │                │
+│       ▼                ▼
+│ GET /ads?statement={foo}&amp;limit=500
+│ HOST: api.example.com
+│ Content-type: application/json
+</pre></li>
+
+</ul>
+</li>
+</ul>
+
+</section>
+<section id="slide-orge80a369">
+<h3 id="orge80a369">Richardson maturity model</h3>
+<ul>
+<li><a href="https://martinfowler.com/articles/richardsonMaturityModel.html#level0">Level 0</a>: SOAP or XML-RPC. Single endpoint, functionality described by the
+request.</li>
+<li><a href="https://martinfowler.com/articles/richardsonMaturityModel.html#level1">Level 1:</a> Each resource has its own URI, but requests are just GET and POST</li>
+<li><a href="https://martinfowler.com/articles/richardsonMaturityModel.html#level2">Level 2:</a> Use the full power of HTTP verbs to manipulate resources</li>
+<li><a href="https://martinfowler.com/articles/richardsonMaturityModel.html#level3">Level 3:</a> Hypertext as the engine of application state. Response
+contain hyperlinks to other URIs for performing additional actions. Example: news feeds.</li>
+
+</ul>
+
+
+</section>
+<section id="slide-org20d871c">
+<h3 id="org20d871c">REST services, a very simple example</h3>
+<div class="org-center">
+<div class="minipage">
+<pre class="example">
+┌─────────────────┐
+│  PET            │
+│                 │
+│  Id: Integer    │
+│  Name: String   │
+│  Tag: String    │
+│                 │
+└─────────────────┘
+</pre>
+
+</div>
+</div>
+
+</section>
+<section id="slide-org6f3b5bb">
+<h3 id="org6f3b5bb">What is the URI of a resource?</h3>
+<ul>
+<li><code>/pets</code> - indicates a list of pets</li>
+<li><code>/pets/12</code> - indicates a specific pet (n. 12)</li>
+
+</ul>
+
+</section>
+<section id="slide-whatcanido">
+<h3 id="whatcanido">What can I do to a resource?</h3>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left"><b>Action</b></th>
+<th scope="col" class="org-left"><b>Meaning</b></th>
+<th scope="col" class="org-left"><b>Safe</b></th>
+<th scope="col" class="org-left"><b>Id.</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>GET /pets</code></td>
+<td class="org-left">Retrieves a list of pets</td>
+<td class="org-left">Yes</td>
+<td class="org-left">Yes</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>GET /pets/12</code></td>
+<td class="org-left">Retrieves a specific pet</td>
+<td class="org-left">Yes</td>
+<td class="org-left">Yes</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>POST /pets</code></td>
+<td class="org-left">Creates a new pet</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>PUT /pets/12</code></td>
+<td class="org-left">Updates pet #12</td>
+<td class="org-left">No</td>
+<td class="org-left">Yes</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>PATCH /pets/12</code></td>
+<td class="org-left">Partially updates pet #12</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>DELETE /pets/12</code></td>
+<td class="org-left">Deletes pet #12</td>
+<td class="org-left">No</td>
+<td class="org-left">Yes</td>
+</tr>
+</tbody>
+</table>
+
+
+</section>
+<section id="slide-org3331ed2">
+<h3 id="org3331ed2">Example creation of a pet</h3>
+<div class="org-src-container">
+
+<pre><code class="http" >POST http://my.petstore.com/api/pets HTTP/1.1
+Host: my.petstore.io
+Content-Length: 37
+Content-Type: application/json
+
+{
+  "name": "pippo",
+  "tag": "dog"
+}
+</code></pre>
+</div>
+
+</section>
+<section id="slide-org14a8701">
+<h3 id="org14a8701">JSON or XML?</h3>
+
+<div class="figure">
+<p><img src="./images/201305-xml-vs-json-api.png" alt="201305-xml-vs-json-api.png" />
+</p>
+</div>
+
+</section>
+<section id="slide-orgdb888c4">
+<h3 id="orgdb888c4">What if I have a relationship between resources?</h3>
+<pre class="example">
+┌──────────────┐      ┌────────────────┐    
+│ Pet          │      │ Prize          │    
+│              │      │                │    
+│ Id: Integer  │     ╱│ DateWon: Date  │    
+│ Name: String │───┼──│ Name: String   │    
+│ Tag: String  │     ╲│ Amount: Float  │    
+│              │      │                │    
+└──────────────┘      └────────────────┘    
+</pre>
+
+
+</section>
+<section id="slide-orgb0536ac">
+<h3 id="orgb0536ac">Relationships between resources</h3>
+<div class="small">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left"><b>HTTP Action and Resource URI</b></th>
+<th scope="col" class="org-left"><b>Meaning</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>GET /pets/12/prizes</code></td>
+<td class="org-left">Retrieves list of prizes for pet #12</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>GET /pets/12/prizes/5</code></td>
+<td class="org-left">Retrieves prize #5 for pet #12</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>POST /pets/12/prizes</code></td>
+<td class="org-left">Creates a new prize in pet #12</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>PUT /pets/12/prizes/5</code></td>
+<td class="org-left">Updates prize #5 for pet #12</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>PATCH /pets/12/prizes/5</code></td>
+<td class="org-left">Partially updates prize #5 for pet #12</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>DELETE /pets/12/prizes/5</code></td>
+<td class="org-left">Deletes prize #5 for pet #12</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+</section>
+<section id="slide-orgd066c6c">
+<h3 id="orgd066c6c">Result filtering/sorting and searching</h3>
+<ul>
+<li>filtering pets: <code>GET /pets?tag=dog</code></li>
+
+<li>sorting pets by descending alphabetic order: <code>GET /pets?sort=-name</code></li>
+
+<li>search for keyword: <code>GET /pets?q=miao</code></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org692b743">
+<h2 id="org692b743">Rudiments of server-side programming</h2>
+<div class="outline-text-2" id="text-org692b743">
+</div>
+</section>
+<section id="slide-blocking-io">
+<h3 id="blocking-io">Blocking I/O</h3>
+<ul class="org-ul">
+<li><a id="org3813188"></a><span class="todo TODO">TODO</span> Fix this as it is very obscure<br />
+<div class="org-src-container">
+
+<pre><code class="js" >// blocks the thread until the data is available
+data = socket.read();
+// data is available
+process(data);
+</code></pre>
+</div>
+</li>
+</ul>
+
+</section>
+<section id="slide-blocking-io-in-web-servers">
+<h3 id="blocking-io-in-web-servers">Blocking I/O in Web Servers</h3>
+<div class="org-center">
+<div class="minipage">
+<pre class="example">
+                           Idle times
+            ┌────────┐          │
+            │        │          │
+Connection A│        │          ▼
+ ──────────▶│        ├────▶  ■■■■■■■ handle data  ■■■■■■■■■■ handle data  ■■■■■■■
+            │        │                 from A                  from A
+            │        │
+Connection B│ Server │
+ ──────────▶│        ├────▶  ■■■■■■■■■■■■■■■ handle data  ■■■■   handle data   ■■
+            │        │                         from B              from B
+            │        │                                   ▲
+Connection c│        │                                   │
+ ──────────▶│        ├────▶  ...                         │
+            │        │                                   │
+            └────────┘                                   │
+                                                      THREADS
+
+</pre>
+
+</div>
+</div>
+
+</section>
+<section id="slide-non-blocking-io">
+<h3 id="non-blocking-io">Non-Blocking I/O</h3>
+<ul>
+<li>Most modern operating systems support another mechanism to answer incoming IO requests</li>
+
+<li>It is called <b>non-blocking I/O</b></li>
+
+<li>Managed by a <b>Synchronous event demultiplexer</b> or <b>Event notification interface</b></li>
+
+</ul>
+
+</section>
+<section id="slide-non-blocking-io-in-web-servers">
+<h3 id="non-blocking-io-in-web-servers">Non-Blocking I/O in Web Servers</h3>
+<div class="org-center">
+<div class="minipage">
+<pre class="example">
+            ┌────────┐
+            │        │
+Connection A│        │
+ ──────────▶│        │
+            │        │
+            │        │
+Connection B│ Server │
+ ──────────▶│        ├────▶  ■■■■■■■ handle data  ■■■■ handle data  ■■■■■■■
+            │        │                 from A            from B
+            │        │
+Connection c│        │
+ ──────────▶│        │
+            │        │
+            └────────┘
+</pre>
+
+</div>
+</div>
+
+</section>
+<section id="slide-libuv---non-blocking-engine-for-nodejs">
+<h3 id="libuv---non-blocking-engine-for-nodejs">Non-Blocking Engine</h3>
+<ul>
+<li>Each operating system has its own interface for the Event
+Demultiplexer:
+
+<ul>
+<li><a href="https://kovyrin.net/2006/04/13/epoll-asynchronous-network-programming/">epoll</a> on Linux.</li>
+<li><a href="https://en.wikipedia.org/wiki/Kqueue">kqueue</a> on Mac OS X.</li>
+<li><a href="https://en.wikipedia.org/wiki/Input/output_completion_port">I/O Completion Port API (IOCP)</a> on Windows.</li>
+
+</ul></li>
+
+</ul>
+
+</section>
+<section id="slide-nodejs">
+<h3 id="nodejs">NodeJS</h3>
+<ul>
+<li><a href="https://nodejs.org/en/">Node.js</a> <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>is a platform built on <a href="https://developers.google.com/v8/">Chrome V8</a> JavaScript engine for
+easily building non-blocking IO applications.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org8308374">
+<h2 id="org8308374">Applied server-side programming</h2>
+<div class="outline-text-2" id="text-org8308374">
+</div>
+</section>
+<section id="slide-running-nodejs-programs">
+<h3 id="running-nodejs-programs">Running NodeJS Programs</h3>
+<ul>
+<li><p>
+Using the REPL. Type <code>node</code> in your command line.
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="sh" >$> node
+> console.log('hello nodejs!');
+hello nodejs!
+undefined
+>
+</code></pre>
+</div></li>
+
+</ul>
+
+
+<ul>
+<li><p>
+Create a .js file and type: <code>node file.js</code>
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="sh" >$> node hello.js
+hello nodejs!
+</code></pre>
+</div></li>
+
+</ul>
+
+</section>
+<section id="slide-your-first-js-program">
+<h3 id="your-first-js-program">Your first Javascript program</h3>
+<div class="org-src-container">
+
+<pre><code class="eval-javascript" >1+1   
+</code></pre>
+</div>
+
+
+
+</section>
+<section id="slide-higher-order-functions">
+<h3 id="higher-order-functions">Higher order functions</h3>
+<p>
+This is probably something you've never heard of. Javascript has full-fledged
+higher order functions, i.e., you can use/write a function that does at least
+one of the following:
+</p>
+
+<ul>
+<li>takes one or more functions as arguments (i.e., procedural parameters),</li>
+
+<li>returns a function as its result.</li>
+
+</ul>
+
+</section>
+<section id="slide-hof1">
+<h3 id="hof1">Your first use of a higher order function</h3>
+<p>
+This function schedules the invocation of <code>func()</code> every <code>ms</code> milliseconds:
+</p>
+<div class="org-src-container">
+
+<pre><code class="js" >setInterval(func, ms);
+</code></pre>
+</div>
+
+</section>
+<section id="slide-hof2">
+<h3 id="hof2">Your first use of a higher order function</h3>
+<ul>
+<li>A function without a name is called <a href="https://en.wikibooks.org/wiki/JavaScript/Anonymous_functions">anonymous function</a>.</li>
+<li><p>
+In this case, the anonymous function is also a <a href="https://en.wikibooks.org/wiki/JavaScript/Closures">closure</a>, i.e., it remembers
+the environment in which it has been defined (variable <code>x</code>):
+</p>
+<div class="org-src-container">
+
+<pre><code class="js" >let x = 1;
+setInterval(
+  function() {
+    console.log("Value of x=" + x);
+    x++;
+  },
+  1000
+);
+</code></pre>
+</div></li>
+
+</ul>
+
+</section>
+<section id="slide-hof3">
+<h3 id="hof3">Why higher order functions are important?</h3>
+<ul>
+<li>The majority of APIs you are going to use are <b>asynchronous</b> and accept a
+<b>callback</b> (higher order function) to manage the result (or the error).</li>
+
+<li>Let's see an example of this which is important for this course.</li>
+
+</ul>
+
+</section>
+<section id="slide-your-first-nodejs-very-basic-web-server">
+<h3 id="your-first-nodejs-very-basic-web-server">Your first NodeJS Very Basic Web Server</h3>
+<div class="org-src-container">
+
+<pre><code class="js" >var http = require('http');
+
+http.createServer(function (request, response) {
+    response.writeHead(200, {
+	'Context-Type': 'text/plain',
+    });
+    response.end('Hello World!');
+}).listen(3000);
+
+console.log('Server running at http://localhost:3000');
+
+</code></pre>
+</div>
+
+<p>
+Congratulations, you have your first web server running, using Node's <a href="https://nodejs.org/api/http.html">HTTP</a> API!
+</p>
+
+</section>
+<section id="slide-orgcc8c589">
+<h3 id="orgcc8c589">Things you need to know</h3>
+<ul>
+<li><a href="https://en.wikibooks.org/wiki/JavaScript/Lexical_structure">Javascript - lexical structure</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types">Javascript - variables and types</a>
+<ul>
+<li>Especially: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections">arrays</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">objects</a></li>
+
+</ul></li>
+<li><a href="https://en.wikibooks.org/wiki/JavaScript/Operators">Javascript operators</a> and <a href="https://en.wikibooks.org/wiki/JavaScript/Control_structures">control structures</a></li>
+
+</ul>
+</section>
+<section id="slide-org65a3950">
+<h3 id="org65a3950">Modules</h3>
+<ul>
+<li><b>Libraries of pre-built functions</b> you can download and use in your own program.</li>
+
+<li>The main mechanism to enforce <b>information hiding</b> by keeping private
+all the functions and variables that are not explicitly marked to be
+exported.</li>
+
+<li>Node.js follows the <a href="http://requirejs.org/docs/commonjs.html">CommonJS</a> module system, and the builtin <code>require()</code>
+function is the way to include <b>modules</b> that exist in separate files/folders.</li>
+
+<li>Everything inside a module is private unless it is assigned to the
+<code>module.exports</code> variable.</li>
+
+</ul>
+
+</section>
+<section id="slide-module-system-iii">
+<h3 id="module-system-iii">Module example</h3>
+<p>
+In a file called <code>say.js</code>:
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="js" >module.exports = function (msg) {
+    console.log('Say: ' + mgs);
+}
+</code></pre>
+</div>
+
+<p>
+In a file called <code>app.js</code>:
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="js" >let say = require('./say.js');
+say('hello!');
+</code></pre>
+</div>
+
+<p>
+Execute using: <code>node app.js</code>
+</p>
+
+</section>
+<section id="slide-npm-i">
+<h3 id="npm-i">Node Package Manager</h3>
+<ul>
+<li>A package manager for Javascript Developers.</li>
+<li>Runs through the command line and manages dependencies for an
+application.</li>
+<li>The best way to manage locally installed npm packages is to create a
+<code>package.json</code> file.</li>
+
+</ul>
+
+</section>
+<section id="slide-orgd7d432e">
+<h3 id="orgd7d432e">Node Package Manager</h3>
+<ul>
+<li><p>
+to install dependencies defined in a pacakge.json file
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="sh" >> npm install
+</code></pre>
+</div></li>
+
+<li><p>
+to install lodash and save the dependency in the package.json file
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="sh" >> npm install lodash --save
+</code></pre>
+</div></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org1d7c261">
+<h2 id="org1d7c261">Advanced server-side programming: concurrency&#xa0;&#xa0;&#xa0;<span class="tag"><span class="exclude">exclude</span></span></h2>
+<div class="outline-text-2" id="text-org1d7c261">
+</div>
+</section>
+<section id="slide-org465de0c">
+<h3 id="org465de0c">Synchronous programming</h3>
+<ul>
+<li>Synchronous activities are typically coordinated to achieve a final goal.</li>
+
+<li>The next activity starts when the previous has finished. Even when having multiple executors:</li>
+
+</ul>
+
+<div class="org-center">
+<div class="minipage">
+<pre class="example">
+┌─────────┐            zzz
+│Executor │  ──────┐ ─ ─ ─ ─ ┌────────▶
+└─────────┘        │         │
+                   │         │
+                   │         │
+                   ▼
+                  Rq        Res
+            ┌────────────────────────┐
+            │ Something else working │
+            └────────────────────────┘
+</pre>
+
+</div>
+</div>
+
+</section>
+<section id="slide-orgba8d232">
+<h3 id="orgba8d232">Asynchronous programming</h3>
+<ul>
+<li>Web programming is inherently <b>asynchronous</b>. You fire an operation and continue
+without waiting for it to be finished.</li>
+
+<li>You should however coordinate such activities by specifying what should happen
+that operation finishes.</li>
+
+</ul>
+
+<div class="org-center">
+<div class="minipage">
+<pre class="example">
+                            ┌─┐
+                            │?│
+┌─────────┐                 └─┘
+│Executor │  ──────┐─────────▲────────▶
+└─────────┘        │         │
+                   │         │
+                   │         │
+                   ▼         │
+                  Rq        Res
+            ┌────────────────────────┐
+            │ Something else working │
+            └────────────────────────┘
+</pre>
+
+</div>
+</div>
+
+</section>
+<section id="slide-org86e8652">
+<h3 id="org86e8652">Asynchronous programming</h3>
+<ul>
+<li>Nodejs helps us because its activities (our functions) are always mandated to
+finish.</li>
+
+<li>When other activities finish, callback actions are scheduled to be executed in the next
+cycle of the event loop, even if the corresponding event arrived during the previous activity.</li>
+
+</ul>
+
+<div class="org-center">
+<div class="minipage">
+<pre class="example">
+
+┌─────────┐                         Callback            ┌─────────┐                       Callback
+│  Node   │  ◎─────┐───────●       ◎────────●           │  Node   │  ◎─────┐───────────● ◎────────●
+└─────────┘                        │                    └─────────┘                      │
+                   │                                                       │
+                                   │                                               ┌ ─ ─ ┘
+                   ▼                                                       ▼
+                  Rq               Res                                    Rq       │Res
+              ┌────────────────────────┐                              ┌────────────────────────┐
+              │ Something else working │                              │ Something else working │
+              └────────────────────────┘                              └────────────────────────┘
+</pre>
+
+</div>
+</div>
+
+</section>
+<section id="slide-orgde71d3c">
+<h3 id="orgde71d3c">Callback hell</h3>
+<p>
+<a href="https://strongloop.com/strongblog/node-js-callback-hell-promises-generators/">Pyramid of doom</a>:
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="js" >async1(function () {
+  async2(function () {
+    async3(function () {
+      async4(function () {
+    })
+  })
+})
+</code></pre>
+</div>
+
+<p>
+Questions about composability of code:
+</p>
+
+<ul>
+<li>How much pain would you endure to reorder that sequence if required?</li>
+<li>Is it easy to reason about?</li>
+<li>What could happen if any of the above operations raises an error?</li>
+
+</ul>
+
+</section>
+<section id="slide-orgd1f4f6d">
+<h3 id="orgd1f4f6d">Promises</h3>
+<p>
+A <b>promise</b> is an object with, among the others, two particular methods: <code>then</code> and
+<code>catch</code>. Assume that our previous functions <b>return</b> a promise. You could achieve
+the same effect as before with this code:
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="js" >var ptask1 = async1();
+var ptask2 = ptask1.then(async2);
+var ptask3 = ptask2.then(async3);
+</code></pre>
+</div>
+
+<p>
+So promises provide:
+</p>
+<ul>
+<li>Flattened callbacks</li>
+<li>Return values from asynchronous function</li>
+<li>Throw and Catch exceptions</li>
+
+</ul>
+
+</section>
+<section id="slide-org550d902">
+<h3 id="org550d902">Exceptions and error management</h3>
+<div class="org-src-container">
+
+<pre><code class="js" >var ptask1 = async1();
+var ptask2 = ptask1.then(async2);
+var ptask3 = ptask2.then(async3);
+task3.catch(function(){
+    // Solve your thrown errors from task1, task2, task3 here
+})
+</code></pre>
+</div>
+
+</section>
+<section id="slide-org1548cf0">
+<h3 id="org1548cf0">Chaining</h3>
+<div class="org-src-container">
+
+<pre><code class="js" >// Promise approach with chaining
+async1(function(){..})
+    .then(async2)
+    .then(async3)
+    .catch(function(){
+	// Solve your thrown errors here
+    })
+</code></pre>
+</div>
+
+</section>
+<section id="slide-orga48680f">
+<h3 id="orga48680f">Promise states</h3>
+<p>
+Each promise can be in 3 states: <b>pending</b>, <b>fulfilled</b>, and <b>rejected</b>.
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="js" >asyncWithPromise() // Returns a promise object
+    .then(function(){ // if object's state is fulfilled, go here
+	...
+    })
+    .catch(function(){ // if object's state is rejected, go here
+	...
+    })
+</code></pre>
+</div>
+
+</section>
+<section id="slide-org8343d74">
+<h3 id="org8343d74">How to create a promise</h3>
+<p>
+Immediately resolved:
+</p>
+<div class="org-src-container">
+
+<pre><code class="js" >// an immediately resolved promise
+var p2 = Promise.resolve("foo");
+</code></pre>
+</div>
+
+<p>
+Resolved or rejected on event:
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="js" >let myFirstPromise = new Promise((resolve, reject) => {
+  // We call resolve(...) when what we were doing async succeeded, and reject(...) when it failed.
+  // In this example, we use setTimeout(...) to simulate async code.
+  // In reality, you will probably be using something like XHR or an HTML5 API.
+  setTimeout(function(){
+    resolve("Success!"); // Yay! Everything went well!
+  }, 250);
+});
+</code></pre>
+</div>
+
+</section>
+<section id="slide-orgcf00075">
+<h3 id="orgcf00075">Composing promises (all)</h3>
+<div class="org-src-container">
+
+<pre><code class="js" >var itemUrls = {
+    'http://www.api.com/items/1234',
+    'http://www.api.com/items/4567'
+  },
+  itemPromises = itemUrls.map(fetchJSON);
+
+Promise.all(itemPromises)
+  .then(function(results) {
+     // we only get here if ALL promises fulfill
+     results.forEach(function(item) {
+       // process item
+     });
+  })
+  .catch(function(err) {
+    // Will catch failure of first failed promise
+    console.log("Failed:", err);
+  });
+</code></pre>
+</div>
+
+</section>
+<section id="slide-org1aac1fc">
+<h3 id="org1aac1fc">Composing promises (race)</h3>
+<div class="org-src-container">
+
+<pre><code class="js" >// A Promise that times out after ms milliseconds
+function delay(ms) {
+  return new Promise((resolve, reject) => {
+    setTimeout(resolve, ms);
+  });
+}
+
+// Which ever Promise fulfills first is the result passed to our handler
+Promise.race([
+  fetchJSON('http://www.api.com/profile/currentuser'),
+  delay(5000).then(() => { user: 'guest' })
+])
+.then(function(json) {
+   // this will be 'guest' if fetch takes longer than 5 sec.
+   console.log("user:", json.user);
+})
+.catch(function(err) {
+  console.log("error:", err);
+});
+</code></pre>
+</div>
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/head.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }]
+});
+</script>
+</body>
+</html>
