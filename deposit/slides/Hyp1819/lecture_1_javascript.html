@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Hypermedia/Backend/Introduction to Javascript</title>
+<meta name="author" content="(Vittorio Zaccaria)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/theme/moon.css" id="theme"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-light.min.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Hypermedia/Backend/Introduction to Javascript</h1><h2 class="author">Vittorio Zaccaria</h2><p class="date">Created: 2019-02-25 Mon 15:45</p>
+</section>
+<script src="reveal-bundle.js"></script>
+
+<section>
+<section id="slide-org415b962">
+<h2 id="org415b962">Rudiments of server-side programming</h2>
+<div class="outline-text-2" id="text-org415b962">
+</div>
+</section>
+<section id="slide-blocking-io">
+<h3 id="blocking-io">Blocking I/O</h3>
+<ul class="org-ul">
+<li><a id="org0a7c9a6"></a><span class="todo TODO">TODO</span> Fix this as it is very obscure<br />
+<div class="org-src-container">
+
+<pre><code class="js" >// blocks the thread until the data is available
+data = socket.read();
+// data is available
+process(data);
+</code></pre>
+</div>
+</li>
+</ul>
+
+</section>
+<section id="slide-blocking-io-in-web-servers">
+<h3 id="blocking-io-in-web-servers">Blocking I/O in Web Servers</h3>
+<div class="org-center">
+<div class="minipage">
+<pre class="example">
+                           Idle times
+            ┌────────┐          │
+            │        │          │
+Connection A│        │          ▼
+ ──────────▶│        ├────▶  ■■■■■■■ handle data  ■■■■■■■■■■ handle data  ■■■■■■■
+            │        │                 from A                  from A
+            │        │
+Connection B│ Server │
+ ──────────▶│        ├────▶  ■■■■■■■■■■■■■■■ handle data  ■■■■   handle data   ■■
+            │        │                         from B              from B
+            │        │                                   ▲
+Connection c│        │                                   │
+ ──────────▶│        ├────▶  ...                         │
+            │        │                                   │
+            └────────┘                                   │
+                                                      THREADS
+
+</pre>
+
+</div>
+</div>
+
+</section>
+<section id="slide-non-blocking-io">
+<h3 id="non-blocking-io">Non-Blocking I/O</h3>
+<ul>
+<li>Most modern operating systems support another mechanism to answer incoming IO requests</li>
+
+<li>It is called <b>non-blocking I/O</b></li>
+
+<li>Managed by a <b>Synchronous event demultiplexer</b> or <b>Event notification interface</b></li>
+
+</ul>
+
+</section>
+<section id="slide-non-blocking-io-in-web-servers">
+<h3 id="non-blocking-io-in-web-servers">Non-Blocking I/O in Web Servers</h3>
+<div class="org-center">
+<div class="minipage">
+<pre class="example">
+            ┌────────┐
+            │        │
+Connection A│        │
+ ──────────▶│        │
+            │        │
+            │        │
+Connection B│ Server │
+ ──────────▶│        ├────▶  ■■■■■■■ handle data  ■■■■ handle data  ■■■■■■■
+            │        │                 from A            from B
+            │        │
+Connection c│        │
+ ──────────▶│        │
+            │        │
+            └────────┘
+</pre>
+
+</div>
+</div>
+
+</section>
+<section id="slide-libuv---non-blocking-engine-for-nodejs">
+<h3 id="libuv---non-blocking-engine-for-nodejs">Non-Blocking Engine</h3>
+<ul>
+<li>Each operating system has its own interface for the Event
+Demultiplexer:
+
+<ul>
+<li><a href="https://kovyrin.net/2006/04/13/epoll-asynchronous-network-programming/">epoll</a> on Linux.</li>
+<li><a href="https://en.wikipedia.org/wiki/Kqueue">kqueue</a> on Mac OS X.</li>
+<li><a href="https://en.wikipedia.org/wiki/Input/output_completion_port">I/O Completion Port API (IOCP)</a> on Windows.</li>
+
+</ul></li>
+
+</ul>
+
+</section>
+<section id="slide-nodejs">
+<h3 id="nodejs">NodeJS</h3>
+<ul>
+<li><a href="https://nodejs.org/en/">Node.js</a> <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>is a platform built on <a href="https://developers.google.com/v8/">Chrome V8</a> JavaScript engine for
+easily building non-blocking IO applications.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgb6d83b2">
+<h2 id="orgb6d83b2">Applied server-side programming</h2>
+<div class="outline-text-2" id="text-orgb6d83b2">
+</div>
+</section>
+<section id="slide-running-nodejs-programs">
+<h3 id="running-nodejs-programs">Running NodeJS Programs</h3>
+<ul>
+<li><p>
+Using the REPL. Type <code>node</code> in your command line.
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="sh" >$> node
+> console.log('hello nodejs!');
+hello nodejs!
+undefined
+>
+</code></pre>
+</div></li>
+
+</ul>
+
+
+<ul>
+<li><p>
+Create a .js file and type: <code>node file.js</code>
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="sh" >$> node hello.js
+hello nodejs!
+</code></pre>
+</div></li>
+
+</ul>
+
+</section>
+<section id="slide-your-first-js-program">
+<h3 id="your-first-js-program">Your first Javascript program</h3>
+<div class="org-src-container">
+
+<pre><code class="eval-javascript" >1+1   
+</code></pre>
+</div>
+
+
+
+</section>
+<section id="slide-higher-order-functions">
+<h3 id="higher-order-functions">Higher order functions</h3>
+<p>
+This is probably something you've never heard of. Javascript has full-fledged
+higher order functions, i.e., you can use/write a function that does at least
+one of the following:
+</p>
+
+<ul>
+<li>takes one or more functions as arguments (i.e., procedural parameters),</li>
+
+<li>returns a function as its result.</li>
+
+</ul>
+
+</section>
+<section id="slide-hof1">
+<h3 id="hof1">Your first use of a higher order function</h3>
+<p>
+This function schedules the invocation of <code>func()</code> every <code>ms</code> milliseconds:
+</p>
+<div class="org-src-container">
+
+<pre><code class="js" >setInterval(func, ms);
+</code></pre>
+</div>
+
+</section>
+<section id="slide-hof2">
+<h3 id="hof2">Your first use of a higher order function</h3>
+<ul>
+<li>A function without a name is called <a href="https://en.wikibooks.org/wiki/JavaScript/Anonymous_functions">anonymous function</a>.</li>
+<li><p>
+In this case, the anonymous function is also a <a href="https://en.wikibooks.org/wiki/JavaScript/Closures">closure</a>, i.e., it remembers
+the environment in which it has been defined (variable <code>x</code>):
+</p>
+<div class="org-src-container">
+
+<pre><code class="js" >let x = 1;
+setInterval(
+  function() {
+    console.log("Value of x=" + x);
+    x++;
+  },
+  1000
+);
+</code></pre>
+</div></li>
+
+</ul>
+
+</section>
+<section id="slide-hof3">
+<h3 id="hof3">Why higher order functions are important?</h3>
+<ul>
+<li>The majority of APIs you are going to use are <b>asynchronous</b> and accept a
+<b>callback</b> (higher order function) to manage the result (or the error).</li>
+
+<li>Let's see an example of this which is important for this course.</li>
+
+</ul>
+
+</section>
+<section id="slide-your-first-nodejs-very-basic-web-server">
+<h3 id="your-first-nodejs-very-basic-web-server">Your first NodeJS Very Basic Web Server</h3>
+<div class="org-src-container">
+
+<pre><code class="js" >var http = require('http');
+
+http.createServer(function (request, response) {
+    response.writeHead(200, {
+	'Context-Type': 'text/plain',
+    });
+    response.end('Hello World!');
+}).listen(3000);
+
+console.log('Server running at http://localhost:3000');
+
+</code></pre>
+</div>
+
+<p>
+Congratulations, you have your first web server running, using Node's <a href="https://nodejs.org/api/http.html">HTTP</a> API!
+</p>
+
+</section>
+<section id="slide-orge9dfe5d">
+<h3 id="orge9dfe5d">Things you need to know</h3>
+<ul>
+<li><a href="https://en.wikibooks.org/wiki/JavaScript/Lexical_structure">Javascript - lexical structure</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types">Javascript - variables and types</a>
+<ul>
+<li>Especially: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections">arrays</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">objects</a></li>
+
+</ul></li>
+<li><a href="https://en.wikibooks.org/wiki/JavaScript/Operators">Javascript operators</a> and <a href="https://en.wikibooks.org/wiki/JavaScript/Control_structures">control structures</a></li>
+
+</ul>
+</section>
+<section id="slide-org99b53b2">
+<h3 id="org99b53b2">Modules</h3>
+<ul>
+<li><b>Libraries of pre-built functions</b> you can download and use in your own program.</li>
+
+<li>The main mechanism to enforce <b>information hiding</b> by keeping private
+all the functions and variables that are not explicitly marked to be
+exported.</li>
+
+<li>Node.js follows the <a href="http://requirejs.org/docs/commonjs.html">CommonJS</a> module system, and the builtin <code>require()</code>
+function is the way to include <b>modules</b> that exist in separate files/folders.</li>
+
+<li>Everything inside a module is private unless it is assigned to the
+<code>module.exports</code> variable.</li>
+
+</ul>
+
+</section>
+<section id="slide-module-system-iii">
+<h3 id="module-system-iii">Module example</h3>
+<p>
+In a file called <code>say.js</code>:
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="js" >module.exports = function (msg) {
+    console.log('Say: ' + mgs);
+}
+</code></pre>
+</div>
+
+<p>
+In a file called <code>app.js</code>:
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="js" >let say = require('./say.js');
+say('hello!');
+</code></pre>
+</div>
+
+<p>
+Execute using: <code>node app.js</code>
+</p>
+
+</section>
+<section id="slide-npm-i">
+<h3 id="npm-i">Node Package Manager</h3>
+<ul>
+<li>A package manager for Javascript Developers.</li>
+<li>Runs through the command line and manages dependencies for an
+application.</li>
+<li>The best way to manage locally installed npm packages is to create a
+<code>package.json</code> file.</li>
+
+</ul>
+
+</section>
+<section id="slide-org82287e2">
+<h3 id="org82287e2">Node Package Manager</h3>
+<ul>
+<li><p>
+to install dependencies defined in a pacakge.json file
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="sh" >> npm install
+</code></pre>
+</div></li>
+
+<li><p>
+to install lodash and save the dependency in the package.json file
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="sh" >> npm install lodash --save
+</code></pre>
+</div></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org23f33ae">
+<h2 id="org23f33ae">Advanced Javascript</h2>
+<div class="outline-text-2" id="text-org23f33ae">
+</div>
+</section>
+<section id="slide-org1662b4b">
+<h3 id="org1662b4b">Synchronous programming</h3>
+<ul>
+<li>Synchronous activities are typically coordinated to achieve a final goal.</li>
+
+<li>The next activity starts when the previous has finished. Even when having multiple executors:</li>
+
+</ul>
+
+<div class="org-center">
+<div class="minipage">
+<pre class="example">
+┌─────────┐            zzz
+│Executor │  ──────┐ ─ ─ ─ ─ ┌────────▶
+└─────────┘        │         │
+                   │         │
+                   │         │
+                   ▼
+                  Rq        Res
+            ┌────────────────────────┐
+            │ Something else working │
+            └────────────────────────┘
+</pre>
+
+</div>
+</div>
+
+</section>
+<section id="slide-org343ce22">
+<h3 id="org343ce22">Asynchronous programming</h3>
+<ul>
+<li>Web programming is inherently <b>asynchronous</b>. You fire an operation and continue
+without waiting for it to be finished.</li>
+
+<li>You should however coordinate such activities by specifying what should happen
+that operation finishes.</li>
+
+</ul>
+
+<div class="org-center">
+<div class="minipage">
+<pre class="example">
+                            ┌─┐
+                            │?│
+┌─────────┐                 └─┘
+│Executor │  ──────┐─────────▲────────▶
+└─────────┘        │         │
+                   │         │
+                   │         │
+                   ▼         │
+                  Rq        Res
+            ┌────────────────────────┐
+            │ Something else working │
+            └────────────────────────┘
+</pre>
+
+</div>
+</div>
+
+</section>
+<section id="slide-orgdbdddd5">
+<h3 id="orgdbdddd5">Asynchronous programming</h3>
+<ul>
+<li>Nodejs helps us because its activities (our functions) are always mandated to
+finish.</li>
+
+<li>When other activities finish, callback actions are scheduled to be executed in the next
+cycle of the event loop, even if the corresponding event arrived during the previous activity.</li>
+
+</ul>
+
+<div class="org-center">
+<div class="minipage">
+<pre class="example">
+
+┌─────────┐                         Callback            ┌─────────┐                       Callback
+│  Node   │  ◎─────┐───────●       ◎────────●           │  Node   │  ◎─────┐───────────● ◎────────●
+└─────────┘                        │                    └─────────┘                      │
+                   │                                                       │
+                                   │                                               ┌ ─ ─ ┘
+                   ▼                                                       ▼
+                  Rq               Res                                    Rq       │Res
+              ┌────────────────────────┐                              ┌────────────────────────┐
+              │ Something else working │                              │ Something else working │
+              └────────────────────────┘                              └────────────────────────┘
+</pre>
+
+</div>
+</div>
+
+</section>
+<section id="slide-org4b532ad">
+<h3 id="org4b532ad">Callback hell</h3>
+<p>
+<a href="https://strongloop.com/strongblog/node-js-callback-hell-promises-generators/">Pyramid of doom</a>:
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="js" >async1(function () {
+  async2(function () {
+    async3(function () {
+      async4(function () {
+    })
+  })
+})
+</code></pre>
+</div>
+
+<p>
+Questions about composability of code:
+</p>
+
+<ul>
+<li>How much pain would you endure to reorder that sequence if required?</li>
+<li>Is it easy to reason about?</li>
+<li>What could happen if any of the above operations raises an error?</li>
+
+</ul>
+
+</section>
+<section id="slide-orgf724431">
+<h3 id="orgf724431">Promises</h3>
+<p>
+A <b>promise</b> is an object with, among the others, two particular methods: <code>then</code> and
+<code>catch</code>. Assume that our previous functions <b>return</b> a promise. You could achieve
+the same effect as before with this code:
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="js" >var ptask1 = async1();
+var ptask2 = ptask1.then(async2);
+var ptask3 = ptask2.then(async3);
+</code></pre>
+</div>
+
+<p>
+So promises provide:
+</p>
+<ul>
+<li>Flattened callbacks</li>
+<li>Return values from asynchronous function</li>
+<li>Throw and Catch exceptions</li>
+
+</ul>
+
+</section>
+<section id="slide-org38f5c4b">
+<h3 id="org38f5c4b">Exceptions and error management</h3>
+<div class="org-src-container">
+
+<pre><code class="js" >var ptask1 = async1();
+var ptask2 = ptask1.then(async2);
+var ptask3 = ptask2.then(async3);
+task3.catch(function(){
+    // Solve your thrown errors from task1, task2, task3 here
+})
+</code></pre>
+</div>
+
+</section>
+<section id="slide-orgbd57564">
+<h3 id="orgbd57564">Chaining</h3>
+<div class="org-src-container">
+
+<pre><code class="js" >// Promise approach with chaining
+async1(function(){..})
+    .then(async2)
+    .then(async3)
+    .catch(function(){
+	// Solve your thrown errors here
+    })
+</code></pre>
+</div>
+
+</section>
+<section id="slide-org50276b3">
+<h3 id="org50276b3">Promise states</h3>
+<p>
+Each promise can be in 3 states: <b>pending</b>, <b>fulfilled</b>, and <b>rejected</b>.
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="js" >asyncWithPromise() // Returns a promise object
+    .then(function(){ // if object's state is fulfilled, go here
+	...
+    })
+    .catch(function(){ // if object's state is rejected, go here
+	...
+    })
+</code></pre>
+</div>
+
+</section>
+<section id="slide-org779b89a">
+<h3 id="org779b89a">How to create a promise</h3>
+<p>
+Immediately resolved:
+</p>
+<div class="org-src-container">
+
+<pre><code class="js" >// an immediately resolved promise
+var p2 = Promise.resolve("foo");
+</code></pre>
+</div>
+
+<p>
+Resolved or rejected on event:
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="js" >let myFirstPromise = new Promise((resolve, reject) => {
+  // We call resolve(...) when what we were doing async succeeded, and reject(...) when it failed.
+  // In this example, we use setTimeout(...) to simulate async code.
+  // In reality, you will probably be using something like XHR or an HTML5 API.
+  setTimeout(function(){
+    resolve("Success!"); // Yay! Everything went well!
+  }, 250);
+});
+</code></pre>
+</div>
+
+</section>
+<section id="slide-orgc4fc3a0">
+<h3 id="orgc4fc3a0">Composing promises (all)</h3>
+<div class="org-src-container">
+
+<pre><code class="js" >var itemUrls = {
+    'http://www.api.com/items/1234',
+    'http://www.api.com/items/4567'
+  },
+  itemPromises = itemUrls.map(fetchJSON);
+
+Promise.all(itemPromises)
+  .then(function(results) {
+     // we only get here if ALL promises fulfill
+     results.forEach(function(item) {
+       // process item
+     });
+  })
+  .catch(function(err) {
+    // Will catch failure of first failed promise
+    console.log("Failed:", err);
+  });
+</code></pre>
+</div>
+
+</section>
+<section id="slide-org42069a9">
+<h3 id="org42069a9">Composing promises (race)</h3>
+<div class="org-src-container">
+
+<pre><code class="js" >// A Promise that times out after ms milliseconds
+function delay(ms) {
+  return new Promise((resolve, reject) => {
+    setTimeout(resolve, ms);
+  });
+}
+
+// Which ever Promise fulfills first is the result passed to our handler
+Promise.race([
+  fetchJSON('http://www.api.com/profile/currentuser'),
+  delay(5000).then(() => { user: 'guest' })
+])
+.then(function(json) {
+   // this will be 'guest' if fetch takes longer than 5 sec.
+   console.log("user:", json.user);
+})
+.catch(function(err) {
+  console.log("error:", err);
+});
+</code></pre>
+</div>
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/head.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }]
+});
+</script>
+</body>
+</html>
