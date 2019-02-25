@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Hypermedia/Backend/Introduction to Web Applications</title>
+<meta name="author" content="(Vittorio Zaccaria)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/theme/moon.css" id="theme"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-light.min.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Hypermedia/Backend/Introduction to Web Applications</h1><h2 class="author">Vittorio Zaccaria</h2><p class="date">Created: 2019-02-25 Mon 15:45</p>
+</section>
+<script src="reveal-bundle.js"></script>
+
+<section>
+<section id="slide-org64721a2">
+<h2 id="org64721a2">HTTP-based networking and REST principles</h2>
+<div class="outline-text-2" id="text-org64721a2">
+</div>
+</section>
+<section id="slide-w3">
+<h3 id="w3">Anatomy of a web service request</h3>
+<div class="org-center">
+<div class="minipage">
+<pre class="example">
+   ┌──────────────────┐         ┌──────────────────┐
+   │     Browser      │         │    Web server    │
+   └──────────────────┘         └──────────────────┘
+             │                            │
+             │                            ■ opens TCP
+   DNS query ■                            │ socket
+             │                            │ (listen)
+Requests TCP │                            │
+  connection ●───────────────────────────▶│
+             │                            │
+             │                            │ accepts TCP
+             │◀───────────────────────────● connection
+             │                            │
+  Sends HTTP │                            │
+request over ●───────────────────────────▶│
+         TCP │                            │
+             │                            │ Parses request
+             │                            ○
+             │                            │
+             │                            ○ Fetches data
+             │                            │
+             │                            ○
+             │◀───────────────────────────● Sends response
+             ▼                            ▼
+</pre>
+
+</div>
+</div>
+
+</section>
+<section id="slide-w5">
+<h3 id="w5">HTTP resource</h3>
+<p>
+A resource has:
+</p>
+
+<ul>
+<li><p>
+an <b>identifier</b> (<a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">URI</a>), i.e., a unique textual key associated with the resource:
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="text" >scheme:[//host[:port]][/]path[?query][#fragment]
+</code></pre>
+</div></li>
+
+<li>a <b>state</b></li>
+
+<li>a <b>representation</b></li>
+
+</ul>
+
+
+</section>
+<section id="slide-w6">
+<h3 id="w6">HTTP request</h3>
+<div class="org-center">
+<div class="minipage">
+<pre class="example">
+
+HTTP Verb       Resource        Version
+
+    │               │              │
+    │        ┌──────┘      ┌───────┘
+ ┌──┼────────┼─────────────┼─────────────────────────────────────┐
+ │  ▼        ▼             ▼                                     │
+ │ GET /docs/index.html HTTP/1.1          ┌────Media Type        │
+ │ Host: www.nowhere123.com               │                      │
+ │ Accept: image/gif, image/jpeg, */* ◀───┘                      │
+ │ Accept-Encoding: gzip, deflate ◀─────┐                        │
+ │ User-Agent: Mozilla/4.0 (compatible; │SIE 6.0; Windows NT 5.1)│
+ │ (blank line)                         │                        │
+ │  ●                                   │                        │
+ └──┼───────────────────────────────────┼────────────────────────┘
+    │                                   │
+    │                                   └──────Compression
+Optional
+  Body
+
+</pre>
+
+</div>
+</div>
+
+
+
+</section>
+<section id="slide-w7">
+<h3 id="w7">HTTP response</h3>
+<div class="org-center">
+<div class="minipage">
+<pre class="example">
+Version      Status code
+   │              │
+   └─┐     ┌──────┘
+┌────▼─────▼──────────────────────────────────────┐
+│HTTP/1.1 200 OK ◀═══════════════════════════════════Status line
+│Date: Sun, 18 Oct 2009 08:56:53 GMT              │
+│Server: Apache/2.2.14 (Win32)                    │
+│Last-Modified: Sat, 20 Nov 2004 07:16:26 GMT     │
+│ETag: "10000000565a5-2c-3e94b66c2e680"           │
+│Accept-Ranges: bytes                             │
+│Content-Length: 44                               │
+│Connection: close ◀─────────────────────────────────Can also be keep-alive
+│Content-Type: text/html                          │
+│X-Pad: avoid browser bug                         │
+│                                                 │
+│&lt;html&gt;&lt;body&gt;&lt;h1&gt;It works!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;     │  Body
+└─────────────────────────────────────────────────┘
+</pre>
+
+</div>
+</div>
+
+
+
+</section>
+<section id="slide-get">
+<h3 id="get">HTTP verbs: GET</h3>
+<ul>
+<li><b>GOOD</b>: <code>GET /fluffy_kitty.jpg</code></li>
+<li><b>BAD</b>: <code>GET /users/sign_out</code></li>
+
+</ul>
+
+
+</section>
+<section id="slide-post">
+<h3 id="post">HTTP verbs: POST</h3>
+<div class="org-src-container">
+
+<pre><code class="text" >POST /send-message HTTP/1.1
+Host: foo.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 13
+
+message=Hi
+</code></pre>
+</div>
+
+</section>
+<section id="slide-put">
+<h3 id="put">HTTP verbs: PUT</h3>
+<div class="org-src-container">
+
+<pre><code class="text" >PUT /user/1/sign_out HTTP/1.1
+Host: foo.com
+</code></pre>
+</div>
+
+</section>
+<section id="slide-delete">
+<h3 id="delete">HTTP verbs: DELETE</h3>
+<div class="org-src-container">
+
+<pre><code class="text" >DELETE /user/1 HTTP/1.1
+Host: foo.com
+</code></pre>
+</div>
+
+</section>
+<section id="slide-status">
+<h3 id="status">HTTP response status</h3>
+<p>
+The HTTP response status indicates the outcome of the request. Status
+codes fall into one of five categories:
+</p>
+
+<ul>
+<li>1XX - Informational</li>
+<li>2XX - Successful</li>
+<li>3XX - Redirection</li>
+<li>4XX - Client Error</li>
+<li>5XX - Server Error</li>
+
+</ul>
+
+<p>
+Ref: <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">HTTP Status Code Definitions</a>
+</p>
+
+</section>
+<section id="slide-p2">
+<h3 id="p2">What is REST?</h3>
+<ul>
+<li>Stands for <a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm">representational state transfer</a></li>
+
+<li>A web application that uses HTTP verbs <b>appropriately</b> to manipulate a
+resource is said <b>compliant with the REST principle</b>.</li>
+
+</ul>
+
+</section>
+<section id="slide-p4">
+<h3 id="p4">REST vs RPC</h3>
+<ul class="org-ul">
+<li><a id="orgb8b3d4b"></a><span class="todo TODO">TODO</span> Fix this example with something more meaningful<br />
+<ul>
+<li><p>
+RPC
+</p>
+
+<pre class="example">
+│ POST /getAdUnitsByStatement HTTP/1.1
+│ HOST: api.example.com
+│ Content-Type: application/json
+│
+│ {"filter": "WHERE parentId IS NULL LIMIT 500"}
+</pre></li>
+
+</ul>
+
+
+<ul>
+<li><p>
+REST
+</p>
+
+<pre class="example">
+│   single path        query
+│    end-point      parameters
+│       │                │
+│       │                │
+│       ▼                ▼
+│ GET /ads?statement={foo}&amp;limit=500
+│ HOST: api.example.com
+│ Content-type: application/json
+</pre></li>
+
+</ul>
+</li>
+</ul>
+
+</section>
+<section id="slide-orga7a7f92">
+<h3 id="orga7a7f92">Richardson maturity model</h3>
+<ul>
+<li><a href="https://martinfowler.com/articles/richardsonMaturityModel.html#level0">Level 0</a>: SOAP or XML-RPC. Single endpoint, functionality described by the
+request.</li>
+<li><a href="https://martinfowler.com/articles/richardsonMaturityModel.html#level1">Level 1:</a> Each resource has its own URI, but requests are just GET and POST</li>
+<li><a href="https://martinfowler.com/articles/richardsonMaturityModel.html#level2">Level 2:</a> Use the full power of HTTP verbs to manipulate resources</li>
+<li><a href="https://martinfowler.com/articles/richardsonMaturityModel.html#level3">Level 3:</a> Hypertext as the engine of application state. Response
+contain hyperlinks to other URIs for performing additional actions. Example: news feeds.</li>
+
+</ul>
+
+
+</section>
+<section id="slide-org0b36d09">
+<h3 id="org0b36d09">REST services, a very simple example</h3>
+<div class="org-center">
+<div class="minipage">
+<pre class="example">
+┌─────────────────┐
+│  PET            │
+│                 │
+│  Id: Integer    │
+│  Name: String   │
+│  Tag: String    │
+│                 │
+└─────────────────┘
+</pre>
+
+</div>
+</div>
+
+</section>
+<section id="slide-org8334ef0">
+<h3 id="org8334ef0">What is the URI of a resource?</h3>
+<ul>
+<li><code>/pets</code> - indicates a list of pets</li>
+<li><code>/pets/12</code> - indicates a specific pet (n. 12)</li>
+
+</ul>
+
+</section>
+<section id="slide-whatcanido">
+<h3 id="whatcanido">What can I do to a resource?</h3>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left"><b>Action</b></th>
+<th scope="col" class="org-left"><b>Meaning</b></th>
+<th scope="col" class="org-left"><b>Safe</b></th>
+<th scope="col" class="org-left"><b>Id.</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>GET /pets</code></td>
+<td class="org-left">Retrieves a list of pets</td>
+<td class="org-left">Yes</td>
+<td class="org-left">Yes</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>GET /pets/12</code></td>
+<td class="org-left">Retrieves a specific pet</td>
+<td class="org-left">Yes</td>
+<td class="org-left">Yes</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>POST /pets</code></td>
+<td class="org-left">Creates a new pet</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>PUT /pets/12</code></td>
+<td class="org-left">Updates pet #12</td>
+<td class="org-left">No</td>
+<td class="org-left">Yes</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>PATCH /pets/12</code></td>
+<td class="org-left">Partially updates pet #12</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>DELETE /pets/12</code></td>
+<td class="org-left">Deletes pet #12</td>
+<td class="org-left">No</td>
+<td class="org-left">Yes</td>
+</tr>
+</tbody>
+</table>
+
+
+</section>
+<section id="slide-orge757d5b">
+<h3 id="orge757d5b">Example creation of a pet</h3>
+<div class="org-src-container">
+
+<pre><code class="http" >POST http://my.petstore.com/api/pets HTTP/1.1
+Host: my.petstore.io
+Content-Length: 37
+Content-Type: application/json
+
+{
+  "name": "pippo",
+  "tag": "dog"
+}
+</code></pre>
+</div>
+
+</section>
+<section id="slide-orgb827fc4">
+<h3 id="orgb827fc4">JSON or XML?</h3>
+
+<div class="figure">
+<p><img src="./images/201305-xml-vs-json-api.png" alt="201305-xml-vs-json-api.png" />
+</p>
+</div>
+
+</section>
+<section id="slide-orgca45227">
+<h3 id="orgca45227">What if I have a relationship between resources?</h3>
+<pre class="example">
+┌──────────────┐      ┌────────────────┐    
+│ Pet          │      │ Prize          │    
+│              │      │                │    
+│ Id: Integer  │     ╱│ DateWon: Date  │    
+│ Name: String │───┼──│ Name: String   │    
+│ Tag: String  │     ╲│ Amount: Float  │    
+│              │      │                │    
+└──────────────┘      └────────────────┘    
+</pre>
+
+
+</section>
+<section id="slide-orge132b63">
+<h3 id="orge132b63">Relationships between resources</h3>
+<div class="small">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left"><b>HTTP Action and Resource URI</b></th>
+<th scope="col" class="org-left"><b>Meaning</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>GET /pets/12/prizes</code></td>
+<td class="org-left">Retrieves list of prizes for pet #12</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>GET /pets/12/prizes/5</code></td>
+<td class="org-left">Retrieves prize #5 for pet #12</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>POST /pets/12/prizes</code></td>
+<td class="org-left">Creates a new prize in pet #12</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>PUT /pets/12/prizes/5</code></td>
+<td class="org-left">Updates prize #5 for pet #12</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>PATCH /pets/12/prizes/5</code></td>
+<td class="org-left">Partially updates prize #5 for pet #12</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>DELETE /pets/12/prizes/5</code></td>
+<td class="org-left">Deletes prize #5 for pet #12</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+</section>
+<section id="slide-org5cf3fa1">
+<h3 id="org5cf3fa1">Result filtering/sorting and searching</h3>
+<ul>
+<li>filtering pets: <code>GET /pets?tag=dog</code></li>
+
+<li>sorting pets by descending alphabetic order: <code>GET /pets?sort=-name</code></li>
+
+<li>search for keyword: <code>GET /pets?q=miao</code></li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/head.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }]
+});
+</script>
+</body>
+</html>
