@@ -22,373 +22,532 @@
         document.getElementsByTagName( 'head' )[0].appendChild( link );
     }
 </script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </head>
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">Hypermedia/Backend/Introduction to Javascript</h1><h2 class="author">Vittorio Zaccaria</h2><p class="date">Created: 2019-02-25 Mon 15:45</p>
+<section id="sec-title-slide"><h1 class="title">Hypermedia/Backend/Introduction to Javascript</h1><h2 class="author">Vittorio Zaccaria</h2><p class="date">Created: 2019-03-05 Tue 09:13</p>
 </section>
 <script src="reveal-bundle.js"></script>
 
 <section>
-<section id="slide-org415b962">
-<h2 id="org415b962">Rudiments of server-side programming</h2>
-<div class="outline-text-2" id="text-org415b962">
-</div>
+<section id="slide-orge8d53d3" data-background="#04284a">
+<h2 id="orge8d53d3">The fundamentals</h2>
 </section>
-<section id="slide-blocking-io">
-<h3 id="blocking-io">Blocking I/O</h3>
-<ul class="org-ul">
-<li><a id="org0a7c9a6"></a><span class="todo TODO">TODO</span> Fix this as it is very obscure<br />
-<div class="org-src-container">
-
-<pre><code class="js" >// blocks the thread until the data is available
-data = socket.read();
-// data is available
-process(data);
-</code></pre>
-</div>
-</li>
-</ul>
-
-</section>
-<section id="slide-blocking-io-in-web-servers">
-<h3 id="blocking-io-in-web-servers">Blocking I/O in Web Servers</h3>
-<div class="org-center">
-<div class="minipage">
-<pre class="example">
-                           Idle times
-            ┌────────┐          │
-            │        │          │
-Connection A│        │          ▼
- ──────────▶│        ├────▶  ■■■■■■■ handle data  ■■■■■■■■■■ handle data  ■■■■■■■
-            │        │                 from A                  from A
-            │        │
-Connection B│ Server │
- ──────────▶│        ├────▶  ■■■■■■■■■■■■■■■ handle data  ■■■■   handle data   ■■
-            │        │                         from B              from B
-            │        │                                   ▲
-Connection c│        │                                   │
- ──────────▶│        ├────▶  ...                         │
-            │        │                                   │
-            └────────┘                                   │
-                                                      THREADS
-
-</pre>
-
-</div>
-</div>
-
-</section>
-<section id="slide-non-blocking-io">
-<h3 id="non-blocking-io">Non-Blocking I/O</h3>
+<section id="slide-f1">
+<h3 id="f1">Variables</h3>
 <ul>
-<li>Most modern operating systems support another mechanism to answer incoming IO requests</li>
+<li>A variable is a memory location with a <i>name</i> and a <i>value</i></li>
 
-<li>It is called <b>non-blocking I/O</b></li>
+<li>You introduce variable with the keywords <code>var</code>, <code>let</code>, <code>const</code>.</li>
 
-<li>Managed by a <b>Synchronous event demultiplexer</b> or <b>Event notification interface</b></li>
-
-</ul>
-
-</section>
-<section id="slide-non-blocking-io-in-web-servers">
-<h3 id="non-blocking-io-in-web-servers">Non-Blocking I/O in Web Servers</h3>
-<div class="org-center">
-<div class="minipage">
-<pre class="example">
-            ┌────────┐
-            │        │
-Connection A│        │
- ──────────▶│        │
-            │        │
-            │        │
-Connection B│ Server │
- ──────────▶│        ├────▶  ■■■■■■■ handle data  ■■■■ handle data  ■■■■■■■
-            │        │                 from A            from B
-            │        │
-Connection c│        │
- ──────────▶│        │
-            │        │
-            └────────┘
-</pre>
-
-</div>
-</div>
-
-</section>
-<section id="slide-libuv---non-blocking-engine-for-nodejs">
-<h3 id="libuv---non-blocking-engine-for-nodejs">Non-Blocking Engine</h3>
-<ul>
-<li>Each operating system has its own interface for the Event
-Demultiplexer:
-
-<ul>
-<li><a href="https://kovyrin.net/2006/04/13/epoll-asynchronous-network-programming/">epoll</a> on Linux.</li>
-<li><a href="https://en.wikipedia.org/wiki/Kqueue">kqueue</a> on Mac OS X.</li>
-<li><a href="https://en.wikipedia.org/wiki/Input/output_completion_port">I/O Completion Port API (IOCP)</a> on Windows.</li>
-
-</ul></li>
-
-</ul>
-
-</section>
-<section id="slide-nodejs">
-<h3 id="nodejs">NodeJS</h3>
-<ul>
-<li><a href="https://nodejs.org/en/">Node.js</a> <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>is a platform built on <a href="https://developers.google.com/v8/">Chrome V8</a> JavaScript engine for
-easily building non-blocking IO applications.</li>
-
-</ul>
-
-</section>
-</section>
-<section>
-<section id="slide-orgb6d83b2">
-<h2 id="orgb6d83b2">Applied server-side programming</h2>
-<div class="outline-text-2" id="text-orgb6d83b2">
-</div>
-</section>
-<section id="slide-running-nodejs-programs">
-<h3 id="running-nodejs-programs">Running NodeJS Programs</h3>
-<ul>
 <li><p>
-Using the REPL. Type <code>node</code> in your command line.
+<code>const</code> creates <i>immutable</i> objects
 </p>
 
 <div class="org-src-container">
 
-<pre><code class="sh" >$> node
-> console.log('hello nodejs!');
-hello nodejs!
-undefined
->
-</code></pre>
-</div></li>
-
-</ul>
-
-
-<ul>
-<li><p>
-Create a .js file and type: <code>node file.js</code>
-</p>
-
-<div class="org-src-container">
-
-<pre><code class="sh" >$> node hello.js
-hello nodejs!
+<pre><code class="js" >const foo = 'abc';
+foo = 'def'; // TypeError
 </code></pre>
 </div></li>
 
 </ul>
 
 </section>
-<section id="slide-your-first-js-program">
-<h3 id="your-first-js-program">Your first Javascript program</h3>
-<div class="org-src-container">
-
-<pre><code class="eval-javascript" >1+1   
-</code></pre>
-</div>
-
-
-
-</section>
-<section id="slide-higher-order-functions">
-<h3 id="higher-order-functions">Higher order functions</h3>
-<p>
-This is probably something you've never heard of. Javascript has full-fledged
-higher order functions, i.e., you can use/write a function that does at least
-one of the following:
-</p>
-
+<section id="slide-f2">
+<h3 id="f2">Variables</h3>
 <ul>
-<li>takes one or more functions as arguments (i.e., procedural parameters),</li>
-
-<li>returns a function as its result.</li>
-
-</ul>
-
-</section>
-<section id="slide-hof1">
-<h3 id="hof1">Your first use of a higher order function</h3>
-<p>
-This function schedules the invocation of <code>func()</code> every <code>ms</code> milliseconds:
-</p>
-<div class="org-src-container">
-
-<pre><code class="js" >setInterval(func, ms);
-</code></pre>
-</div>
-
-</section>
-<section id="slide-hof2">
-<h3 id="hof2">Your first use of a higher order function</h3>
-<ul>
-<li>A function without a name is called <a href="https://en.wikibooks.org/wiki/JavaScript/Anonymous_functions">anonymous function</a>.</li>
 <li><p>
-In this case, the anonymous function is also a <a href="https://en.wikibooks.org/wiki/JavaScript/Closures">closure</a>, i.e., it remembers
-the environment in which it has been defined (variable <code>x</code>):
-</p>
-<div class="org-src-container">
-
-<pre><code class="js" >let x = 1;
-setInterval(
-  function() {
-    console.log("Value of x=" + x);
-    x++;
-  },
-  1000
-);
-</code></pre>
-</div></li>
-
-</ul>
-
-</section>
-<section id="slide-hof3">
-<h3 id="hof3">Why higher order functions are important?</h3>
-<ul>
-<li>The majority of APIs you are going to use are <b>asynchronous</b> and accept a
-<b>callback</b> (higher order function) to manage the result (or the error).</li>
-
-<li>Let's see an example of this which is important for this course.</li>
-
-</ul>
-
-</section>
-<section id="slide-your-first-nodejs-very-basic-web-server">
-<h3 id="your-first-nodejs-very-basic-web-server">Your first NodeJS Very Basic Web Server</h3>
-<div class="org-src-container">
-
-<pre><code class="js" >var http = require('http');
-
-http.createServer(function (request, response) {
-    response.writeHead(200, {
-	'Context-Type': 'text/plain',
-    });
-    response.end('Hello World!');
-}).listen(3000);
-
-console.log('Server running at http://localhost:3000');
-
-</code></pre>
-</div>
-
-<p>
-Congratulations, you have your first web server running, using Node's <a href="https://nodejs.org/api/http.html">HTTP</a> API!
-</p>
-
-</section>
-<section id="slide-orge9dfe5d">
-<h3 id="orge9dfe5d">Things you need to know</h3>
-<ul>
-<li><a href="https://en.wikibooks.org/wiki/JavaScript/Lexical_structure">Javascript - lexical structure</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types">Javascript - variables and types</a>
-<ul>
-<li>Especially: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections">arrays</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">objects</a></li>
-
-</ul></li>
-<li><a href="https://en.wikibooks.org/wiki/JavaScript/Operators">Javascript operators</a> and <a href="https://en.wikibooks.org/wiki/JavaScript/Control_structures">control structures</a></li>
-
-</ul>
-</section>
-<section id="slide-org99b53b2">
-<h3 id="org99b53b2">Modules</h3>
-<ul>
-<li><b>Libraries of pre-built functions</b> you can download and use in your own program.</li>
-
-<li>The main mechanism to enforce <b>information hiding</b> by keeping private
-all the functions and variables that are not explicitly marked to be
-exported.</li>
-
-<li>Node.js follows the <a href="http://requirejs.org/docs/commonjs.html">CommonJS</a> module system, and the builtin <code>require()</code>
-function is the way to include <b>modules</b> that exist in separate files/folders.</li>
-
-<li>Everything inside a module is private unless it is assigned to the
-<code>module.exports</code> variable.</li>
-
-</ul>
-
-</section>
-<section id="slide-module-system-iii">
-<h3 id="module-system-iii">Module example</h3>
-<p>
-In a file called <code>say.js</code>:
+<code>var</code> and <code>let</code> differ in scope. Check the demo:
 </p>
 
 <div class="org-src-container">
 
-<pre><code class="js" >module.exports = function (msg) {
-    console.log('Say: ' + mgs);
+<pre><code class="eval-javascript" >if (false) {
+  var tmp = 123;
 }
+console.log(tmp);
+
+/*if (true) {
+  let tmp1 = 123;
+}
+console.log(tmp1); */
 </code></pre>
-</div>
-
-<p>
-In a file called <code>app.js</code>:
-</p>
-
-<div class="org-src-container">
-
-<pre><code class="js" >let say = require('./say.js');
-say('hello!');
-</code></pre>
-</div>
-
-<p>
-Execute using: <code>node app.js</code>
-</p>
-
-</section>
-<section id="slide-npm-i">
-<h3 id="npm-i">Node Package Manager</h3>
-<ul>
-<li>A package manager for Javascript Developers.</li>
-<li>Runs through the command line and manages dependencies for an
-application.</li>
-<li>The best way to manage locally installed npm packages is to create a
-<code>package.json</code> file.</li>
+</div></li>
 
 </ul>
 
 </section>
-<section id="slide-org82287e2">
-<h3 id="org82287e2">Node Package Manager</h3>
+<section id="slide-f4">
+<h3 id="f4">Javascript types</h3>
+<div class="org-src-container">
+
+<pre><code class="eval-javascript" >
+
+// All numbers are floating point
+// console.log(1 === 1.0);
+//
+// Compare primitive types with === (try with ==)
+// let a=3;
+// console.log(a==="3");
+//
+// let a='abc'
+// console.log(a==='abc');
+//
+// Primitive values have properties
+// console.log(a.length);
+//
+// Which can be functions
+// console.log(a.toUpperCase());
+//
+// Can't create own properties on primitive values
+// a.foo = 10
+// console.log(a.foo)
+//
+// // Undefined
+// let foo;
+// console.log(foo);
+//
+// // Logical values
+// if(foo===undefined /* !foo */) {
+//   console.log("foo is undefined");
+// }
+//
+// Plain objects:
+
+// let obj = {
+//   nome: "vittorio",
+//   email: "vittorio.zaccaria@polimi.it"
+// };
+//
+// // Arrays
+//
+// let arr = [ 0, 1, 'string', undefined ];
+//
+//
+// // Regular expressions
+//
+// let regexp = /id_(.*)/;
+// "id_abc".match(regexp);
+// "id_abc".replace(/id/, "identifier")
+//
+// // Comparisons
+//
+// let obj1 = {}
+// let obj2 = {}
+// let obj3 = obj1
+//
+// obj1 === obj2
+// obj1 === obj3
+
+
+</code></pre>
+</div>
+
+
+</section>
+<section id="slide-f8">
+<h3 id="f8">Javascript logic predicates</h3>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Operator</th>
+<th scope="col" class="org-left">Meaning</th>
+<th scope="col" class="org-left">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>&amp;&amp;</code></td>
+<td class="org-left">Logic and</td>
+<td class="org-left">shortcircuit (*)</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>¦¦</code></td>
+<td class="org-left">Logic or</td>
+<td class="org-left">shortcircuit (*)</td>
+</tr>
+
+<tr>
+<td class="org-left">!</td>
+<td class="org-left">Logic not</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&gt;,&gt;=,&lt;,&lt;=</td>
+<td class="org-left">Ordering</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">==</td>
+<td class="org-left">Lenient equality</td>
+<td class="org-left">Too loose, avoid!</td>
+</tr>
+
+<tr>
+<td class="org-left">= = =</td>
+<td class="org-left">Strict equality</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+(*) Short circuiting means the following never invoke <code>foo</code>:
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="js" >false && foo()
+true  || foo()
+</code></pre>
+</div>
+
+</section>
+<section id="slide-f9">
+<h3 id="f9">Javascript strings</h3>
+<div class="org-src-container">
+
+<pre><code class="eval-javascript" >// Normal strings
+
+let mystring = 'Part ' + 1 + " and part " + 2;
+
+// String literals
+let name = 'vittorio';
+let r = `your name is:
+ -&gt; ${name}.
+ Hello ${name}!`;
+</code></pre>
+</div>
+
+</section>
+<section id="slide-f10">
+<h3 id="f10">Loop constructs</h3>
+<div class="org-src-container">
+
+<pre><code class="eval-javascript" >/*
+console.log("for:");
+let a = [ 1,2,3 ];
+for(let i=0; i&lt;a.length; i++) {
+  console.log(a[i]);
+}*/
+
+/*
+console.log("while:");
+let i=2;
+while(i&gt;=0) {
+  console.log(a[i]);
+  i--;
+}*/
+
+
+/*
+a = [ 1,2,-3,4 ];
+try {
+   for(let i=0; i&lt;a.length; i++) {
+    if(a[i] &lt; 0)
+      throw "Negative number!";
+    console.log(a[i]);
+  }
+}
+catch (exception) {
+  console.log(`Exception raised: ${exception}`);
+}
+console.log("Finished");
+*/
+
+</code></pre>
+</div>
+
+</section>
+<section id="slide-f12">
+<h3 id="f12">Functions</h3>
+<div class="org-src-container">
+
+<pre><code class="eval-javascript" >function add(param1, param2) {
+    return param1 + param2;
+}
+
+// console.log(add(1,2));
+
+/* A function is a value */
+
+let myadd = add
+// console.log(myadd(10,20));
+
+/* A function need'nt have a name */
+let f1 = function(x) {
+  return x + 1;
+}
+
+/* Arrow syntax */
+let f2 = (x) =&gt; { return x + 1; };
+
+</code></pre>
+</div>
+
+</section>
+<section id="slide-f13">
+<h3 id="f13">Constructing objects the old way - prototypes</h3>
 <ul>
-<li><p>
-to install dependencies defined in a pacakge.json file
+<li>Object literals are not the only way for building objects.</li>
+
+<li>All JavaScript objects inherit the properties and methods from their <b>prototype</b>.</li>
+
+<li>Objects created using an object literal, or with <code>new Object()</code>, inherit from a
+prototype called <code>Object.prototype</code></li>
+
+<li>Objects created with <code>new Date()</code> inherit the <code>Date.prototype</code>.</li>
+
+</ul>
+
+</section>
+<section id="slide-f14">
+<h3 id="f14">Constructing objects the old way - prototypes</h3>
+<p>
+A prototype is the <code>this</code> object manipulated by a constructor function:
 </p>
 
 <div class="org-src-container">
 
-<pre><code class="sh" >> npm install
+<pre><code class="js" >// Constructor
+let Person = function(first, last, age, eyecolor) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eyecolor;
+}
+
+let myFather = new Person("John", "Doe", 50, "blue");
+
+let myMother = new Person("Sally", "Rally", 48, "green");
 </code></pre>
-</div></li>
+</div>
 
-<li><p>
-to install lodash and save the dependency in the package.json file
-</p>
-
+</section>
+<section id="slide-f15">
+<h3 id="f15">Constructing objects the new way - classes</h3>
 <div class="org-src-container">
 
-<pre><code class="sh" >> npm install lodash --save
+<pre><code class="eval-javascript" >class Point {
+    constructor(x, y) {
+	this.x = x;
+	this.y = y;
+    }
+    toString() {
+	return `(${this.x}, ${this.y})`;
+    }
+}
+
+let p = new Point(1.0, 2.0);
+// console.log(p.toString());
+
+
+class ColorPoint extends Point {
+    constructor(x, y, color) {
+	super(x, y);
+	this.color = color;
+    }
+    toString() {
+	return super.toString() + ' in ' + this.color;
+    }
+}
+
+let cp = new ColorPoint(1.0,1.1,'blue');
+//console.log(cp.toString());
 </code></pre>
-</div></li>
+</div>
+
+</section>
+<section id="slide-orge1c30b5">
+<h3 id="orge1c30b5">Hands-on problem</h3>
+<ul>
+<li>Expand <code>colorPoint</code> with a function <code>draw</code> to draw it into a canvas (use the
+<code>drawPoint</code> auxiliary function).</li>
+
+<li><p>
+Write a function that draws all the points contained in the array <code>points</code>
+</p>
+
+<p>
+ <a class="vz-link" href="https://jsbin.com/bosiduy/8/edit?js,console,output">bosiduy/8</a>
+</p></li>
 
 </ul>
 
 </section>
 </section>
 <section>
-<section id="slide-org23f33ae">
-<h2 id="org23f33ae">Advanced Javascript</h2>
-<div class="outline-text-2" id="text-org23f33ae">
-</div>
+<section id="slide-org86b970f" data-background="#202020">
+<h2 id="org86b970f">Higher order functions</h2>
 </section>
-<section id="slide-org1662b4b">
-<h3 id="org1662b4b">Synchronous programming</h3>
+<section id="slide-h1">
+<h3 id="h1">What are they?</h3>
+<ul>
+<li><p>
+Functions are first class. You can pass them into other functions as
+parameters:
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="javascript" >let applyMaybe = (f, x) => (x) ? f(x) : x
+</code></pre>
+</div></li>
+<li><p>
+You can return a function
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="js" >let add = (x) => (a) =>  a + x;
+</code></pre>
+</div></li>
+
+<li>Pervasive in all Javascript code</li>
+
+</ul>
+
+</section>
+<section id="slide-h2">
+<h3 id="h2">Callbacks</h3>
+<div class="org-src-container">
+
+<pre><code class="eval-javascript" >let a = 0;
+let f = () =&gt; { 
+    a = a + 1;
+    console.log(`counter value is ${a}`);
+}
+let launch = () =&gt; { setInterval(f, 3000); }
+</code></pre>
+</div>
+
+</section>
+<section id="slide-h2">
+<h3 id="h2">Callbacks</h3>
+<div class="org-src-container">
+
+<pre><code class="eval-javascript" >/* Closures */
+let gen = () =&gt; {
+   let a = 0;
+   return () =&gt; console.log(a++);
+}
+
+/* Check the HTML */
+let g = gen();  
+</code></pre>
+</div>
+
+</section>
+<section id="slide-h4">
+<h3 id="h4">Maps, folds and closures</h3>
+<ul>
+<li>Good for writing <b>more rubust code</b>
+<ul>
+<li>Declarative programming style (no more loops!)</li>
+<li>Immutable variables (more intuitive code)</li>
+
+</ul></li>
+
+<li>Inherit good programming practice from <b>functional programming</b></li>
+
+</ul>
+
+</section>
+<section id="slide-h5">
+<h3 id="h5">Maps, folds and closures</h3>
+<ul>
+<li><p>
+a map operation transforms all the elements of an array through a function:
+</p>
+
+<p>
+\[map: [a] \rightarrow (a \rightarrow b) \rightarrow [b]\]
+</p></li>
+
+<li><p>
+a reduce operation folds all the elements of an array through a function
+</p>
+
+<p>
+\[reduce: [a] \rightarrow (b \rightarrow a \rightarrow b) \rightarrow b \rightarrow b\]
+</p></li>
+
+</ul>
+
+</section>
+<section id="slide-h6">
+<h3 id="h6">Maps, folds and closures</h3>
+<div class="org-src-container">
+
+<pre><code class="eval-javascript" >   testMap = () =&gt; {
+  const myArr = [ 'some text', 'more text', 'final text' ];
+  const mappedArr = myArr.map( function(str) {
+    return str.split(' ');
+  });
+  console.log(mappedArr);
+}
+
+testFilter = () =&gt; {
+  const myArr = [ 5, 10, 4, 50, 3 ];
+  const multiplesOfFive = myArr.filter(function(num) {
+    return num % 5 === 0;
+  });
+  console.log(multiplesOfFive);
+}
+
+testReduce = () =&gt; {
+    const myNumbers = [ 1, 2, 5 ];
+    const sum = myNumbers.reduce( function(prev, curr) {
+    return prev + curr;
+    }, 0);
+}
+
+</code></pre>
+</div>
+
+<p>
+ <a class="vz-link" href="https://jsbin.com/jaxuwat/4/edit?js,console">jaxuwat/4</a>
+</p>
+
+</section>
+<section id="slide-h9">
+<h3 id="h9">Hands-on problem</h3>
+<ul>
+<li>Remember <code>colorPoint?</code></li>
+
+<li><p>
+Draw a circle of equi-spaced points without using a <code>for</code> loop.
+</p>
+
+<p>
+ <a class="vz-link" href="https://jsbin.com/bosiduy/8/edit?js,console,output">bosiduy/8</a>
+</p></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org4cdcf2a" data-background="#ffffff">
+<h2 id="org4cdcf2a">Asynchronous Javascript</h2>
+</section>
+<section id="slide-a0">
+<h3 id="a0">Synchronous programming</h3>
 <ul>
 <li>Synchronous activities are typically coordinated to achieve a final goal.</li>
 
@@ -415,8 +574,8 @@ to install lodash and save the dependency in the package.json file
 </div>
 
 </section>
-<section id="slide-org343ce22">
-<h3 id="org343ce22">Asynchronous programming</h3>
+<section id="slide-a1">
+<h3 id="a1">Asynchronous programming</h3>
 <ul>
 <li>Web programming is inherently <b>asynchronous</b>. You fire an operation and continue
 without waiting for it to be finished.</li>
@@ -447,8 +606,8 @@ that operation finishes.</li>
 </div>
 
 </section>
-<section id="slide-orgdbdddd5">
-<h3 id="orgdbdddd5">Asynchronous programming</h3>
+<section id="slide-a2">
+<h3 id="a2">Asynchronous programming</h3>
 <ul>
 <li>Nodejs helps us because its activities (our functions) are always mandated to
 finish.</li>
@@ -478,8 +637,8 @@ cycle of the event loop, even if the corresponding event arrived during the prev
 </div>
 
 </section>
-<section id="slide-org4b532ad">
-<h3 id="org4b532ad">Callback hell</h3>
+<section id="slide-a3">
+<h3 id="a3">Callback hell</h3>
 <p>
 <a href="https://strongloop.com/strongblog/node-js-callback-hell-promises-generators/">Pyramid of doom</a>:
 </p>
@@ -508,161 +667,152 @@ Questions about composability of code:
 </ul>
 
 </section>
-<section id="slide-orgf724431">
-<h3 id="orgf724431">Promises</h3>
-<p>
-A <b>promise</b> is an object with, among the others, two particular methods: <code>then</code> and
-<code>catch</code>. Assume that our previous functions <b>return</b> a promise. You could achieve
-the same effect as before with this code:
+<section id="slide-a4">
+<h3 id="a4">Promises</h3>
+<ul>
+<li>A promise is an object that is created by specific functions (typically
+these functions request something on the network).</li>
+
+<li><p>
+Even before the request is finished, we can concatenate other functions to
+be executed when the data is ready through the <code>then</code> method.
 </p>
 
 <div class="org-src-container">
 
-<pre><code class="js" >var ptask1 = async1();
-var ptask2 = ptask1.then(async2);
-var ptask3 = ptask2.then(async3);
+<pre><code class="js" >let p = a_request_function(...);
+p.then(function(result) {
+// do something with the result
+})
 </code></pre>
-</div>
-
-<p>
-So promises provide:
-</p>
-<ul>
-<li>Flattened callbacks</li>
-<li>Return values from asynchronous function</li>
-<li>Throw and Catch exceptions</li>
+</div></li>
 
 </ul>
 
 </section>
-<section id="slide-org38f5c4b">
-<h3 id="org38f5c4b">Exceptions and error management</h3>
+<section id="slide-a5">
+<h3 id="a5">Promises</h3>
+<ul>
+<li><p>
+The concatenated function can return a promise as well:
+</p>
+
 <div class="org-src-container">
 
-<pre><code class="js" >var ptask1 = async1();
-var ptask2 = ptask1.then(async2);
-var ptask3 = ptask2.then(async3);
-task3.catch(function(){
-    // Solve your thrown errors from task1, task2, task3 here
+<pre><code class="js" >a_request_function(...)
+  .then(function(r1) {
+  return another_request_function(r1);
+}).then(function(r2) {
+  ...
 })
 </code></pre>
-</div>
+</div></li>
 
-</section>
-<section id="slide-orgbd57564">
-<h3 id="orgbd57564">Chaining</h3>
-<div class="org-src-container">
-
-<pre><code class="js" >// Promise approach with chaining
-async1(function(){..})
-    .then(async2)
-    .then(async3)
-    .catch(function(){
-	// Solve your thrown errors here
-    })
-</code></pre>
-</div>
-
-</section>
-<section id="slide-org50276b3">
-<h3 id="org50276b3">Promise states</h3>
-<p>
-Each promise can be in 3 states: <b>pending</b>, <b>fulfilled</b>, and <b>rejected</b>.
+<li><p>
+We can wait for more promises in parallel:
 </p>
 
 <div class="org-src-container">
 
-<pre><code class="js" >asyncWithPromise() // Returns a promise object
-    .then(function(){ // if object's state is fulfilled, go here
-	...
-    })
-    .catch(function(){ // if object's state is rejected, go here
-	...
-    })
+<pre><code class="js" >let p1 = a_request_function(...);
+let p2 = another_request_function(...);
+Promise.all([p1,p2]).then(([r1,r2]) => ...);
 </code></pre>
-</div>
+</div></li>
+
+</ul>
 
 </section>
-<section id="slide-org779b89a">
-<h3 id="org779b89a">How to create a promise</h3>
-<p>
-Immediately resolved:
-</p>
+<section id="slide-a6">
+<h3 id="a6">Promises</h3>
 <div class="org-src-container">
 
-<pre><code class="js" >// an immediately resolved promise
-var p2 = Promise.resolve("foo");
-</code></pre>
-</div>
-
-<p>
-Resolved or rejected on event:
-</p>
-
-<div class="org-src-container">
-
-<pre><code class="js" >let myFirstPromise = new Promise((resolve, reject) => {
-  // We call resolve(...) when what we were doing async succeeded, and reject(...) when it failed.
-  // In this example, we use setTimeout(...) to simulate async code.
-  // In reality, you will probably be using something like XHR or an HTML5 API.
-  setTimeout(function(){
-    resolve("Success!"); // Yay! Everything went well!
-  }, 250);
-});
-</code></pre>
-</div>
-
-</section>
-<section id="slide-orgc4fc3a0">
-<h3 id="orgc4fc3a0">Composing promises (all)</h3>
-<div class="org-src-container">
-
-<pre><code class="js" >var itemUrls = {
-    'http://www.api.com/items/1234',
-    'http://www.api.com/items/4567'
-  },
-  itemPromises = itemUrls.map(fetchJSON);
-
-Promise.all(itemPromises)
-  .then(function(results) {
-     // we only get here if ALL promises fulfill
-     results.forEach(function(item) {
-       // process item
-     });
-  })
-  .catch(function(err) {
-    // Will catch failure of first failed promise
-    console.log("Failed:", err);
-  });
-</code></pre>
-</div>
-
-</section>
-<section id="slide-org42069a9">
-<h3 id="org42069a9">Composing promises (race)</h3>
-<div class="org-src-container">
-
-<pre><code class="js" >// A Promise that times out after ms milliseconds
-function delay(ms) {
-  return new Promise((resolve, reject) => {
-    setTimeout(resolve, ms);
-  });
+<pre><code class="eval-javascript" >   renderPostData = ({post, user}) =&gt; {
+    console.log(`The post '${post.title}' has been written by ${user.name} - ${user.email}`);
 }
 
-// Which ever Promise fulfills first is the result passed to our handler
-Promise.race([
-  fetchJSON('http://www.api.com/profile/currentuser'),
-  delay(5000).then(() => { user: 'guest' })
-])
-.then(function(json) {
-   // this will be 'guest' if fetch takes longer than 5 sec.
-   console.log("user:", json.user);
-})
-.catch(function(err) {
-  console.log("error:", err);
-});
+getUserName = (userId) =&gt; {
+  return fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
+    .then((d) =&gt; d.json());
+}
+
+getPostData = (id) =&gt; {
+  return fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+  .then((d) =&gt; d.json())
+}
+
+getPostDataAndUserName = (id) =&gt; {
+    return getPostData(id).then( p =&gt; {
+      return getUserName(p.userId).then((u) =&gt; {
+	 return { post: p, user: u };
+      })
+    })
+}
+
 </code></pre>
 </div>
+
+</section>
+<section id="slide-a7">
+<h3 id="a7">Hands-on problem</h3>
+<p>
+Modify the previous solution to print the name of the post creator after
+the title and all the comments associated with that post.
+</p>
+
+<p>
+For the comments, use the <code>comments</code> endpoint with a query parameter <code>?postId=n</code>
+</p>
+
+</section>
+<section id="slide-a8">
+<h3 id="a8">Newer style / Async and await</h3>
+<div class="org-src-container">
+
+<pre><code class="eval-javascript" >
+renderPostData = ({post, user}) =&gt; {
+    console.log(`The post '${post.title}' has been written by ${user.name} - ${user.email}`);
+}
+
+getUserName = (userId) =&gt; {
+  return fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
+    .then((d) =&gt; d.json());
+}
+
+getPostData = (id) =&gt; {
+  return fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+  .then((d) =&gt; d.json())
+}
+
+async function getPostDataAndUserName(id) {
+  p = await getPostData(id);
+  u = await getUserName(p.userId);
+  return { post: p, user: u };
+};
+
+renderPost = (id) =&gt; {
+  getPostDataAndUserName(id).then(renderPostData);
+};
+
+
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orga4bf024">
+<h2 id="orga4bf024">Further reading</h2>
+<ul>
+<li><a href="https://en.wikibooks.org/wiki/JavaScript/Lexical_structure">Javascript - lexical structure</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types">Javascript - variables and types</a>
+<ul>
+<li>Especially: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections">arrays</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">objects</a></li>
+
+</ul></li>
+<li><a href="https://en.wikibooks.org/wiki/JavaScript/Operators">Javascript operators</a> and <a href="https://en.wikibooks.org/wiki/JavaScript/Control_structures">control structures</a></li>
+
+</ul>
 </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/head.min.js"></script>
