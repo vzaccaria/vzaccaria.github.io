@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Hypermedia/Backend/Introduction to Web Applications</title>
+<title>Hypermedia/Backend/Implementing your Nodejs API</title>
 <meta name="author" content="(Vittorio Zaccaria)"/>
 <style type="text/css">
 .underline { text-decoration: underline; }
@@ -26,471 +26,428 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">Hypermedia/Backend/Introduction to Web Applications</h1><h2 class="author">Vittorio Zaccaria</h2><p class="date">Created: 2019-02-25 Mon 15:45</p>
+<section id="sec-title-slide"><h1 class="title">Hypermedia/Backend/Implementing your Nodejs API</h1><h2 class="author">Vittorio Zaccaria</h2><p class="date">Created: 2019-03-05 Tue 09:13</p>
 </section>
 <script src="reveal-bundle.js"></script>
 
 <section>
-<section id="slide-org64721a2">
-<h2 id="org64721a2">HTTP-based networking and REST principles</h2>
-<div class="outline-text-2" id="text-org64721a2">
-</div>
+<section id="slide-io">
+<h2 id="io">Principles of server I/O</h2>
 </section>
-<section id="slide-w3">
-<h3 id="w3">Anatomy of a web service request</h3>
+<section id="slide-blocking-io">
+<h3 id="blocking-io">Blocking I/O</h3>
+<p>
+A server waits on a socket for the requests. In principle this could be done with 
+a blocking call:
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="js" >// blocks the thread until the data is available
+data = socket.read();
+// data is available
+process(data);
+</code></pre>
+</div>
+
+</section>
+<section id="slide-blocking-io-in-web-servers">
+<h3 id="blocking-io-in-web-servers">Blocking I/O in Web Servers</h3>
+<p>
+Serving multiple requests is then enabled by OS multi-threading:
+</p>
+
 <div class="org-center">
 <div class="minipage">
 <pre class="example">
-   ┌──────────────────┐         ┌──────────────────┐
-   │     Browser      │         │    Web server    │
-   └──────────────────┘         └──────────────────┘
-             │                            │
-             │                            ■ opens TCP
-   DNS query ■                            │ socket
-             │                            │ (listen)
-Requests TCP │                            │
-  connection ●───────────────────────────▶│
-             │                            │
-             │                            │ accepts TCP
-             │◀───────────────────────────● connection
-             │                            │
-  Sends HTTP │                            │
-request over ●───────────────────────────▶│
-         TCP │                            │
-             │                            │ Parses request
-             │                            ○
-             │                            │
-             │                            ○ Fetches data
-             │                            │
-             │                            ○
-             │◀───────────────────────────● Sends response
-             ▼                            ▼
+                           Idle times
+            ┌────────┐          │
+            │        │          │
+Connection A│        │          ▼
+ ──────────▶│        ├────▶  ■■■■■■■ handle data  ■■■■■■■■■■ handle data  ■■■■■■■
+            │        │                 from A                  from A
+            │        │
+Connection B│ Server │
+ ──────────▶│        ├────▶  ■■■■■■■■■■■■■■■ handle data  ■■■■   handle data   ■■
+            │        │                         from B              from B
+            │        │                                   ▲
+Connection c│        │                                   │
+ ──────────▶│        ├────▶  ...                         │
+            │        │                                   │
+            └────────┘                                   │
+                                                      THREADS
+
 </pre>
 
 </div>
 </div>
 
 </section>
-<section id="slide-w5">
-<h3 id="w5">HTTP resource</h3>
-<p>
-A resource has:
-</p>
+<section id="slide-non-blocking-io">
+<h3 id="non-blocking-io">Non-Blocking I/O</h3>
+<ul>
+<li>Most modern operating systems support an <b>alternative mechanism</b> to answer
+incoming IO requests without incurring in thread switching overhead.</li>
+
+<li>It is called <b>non-blocking I/O</b></li>
+
+<li>Managed by a <b>Synchronous event demultiplexer</b> or <b>Event notification interface</b></li>
+
+</ul>
+</section>
+<section id="slide-non-blocking-io-in-web-servers">
+<h3 id="non-blocking-io-in-web-servers">Non-Blocking I/O in Web Servers</h3>
+<div class="org-center">
+<div class="minipage">
+<pre class="example">
+            ┌────────┐
+            │        │
+Connection A│        │
+ ──────────▶│        │
+            │        │
+            │        │
+Connection B│ Server │
+ ──────────▶│        ├────▶  ■■■■■■■ handle data  ■■■■ handle data  ■■■■■■■
+            │        │                 from A            from B
+            │        │
+Connection c│        │
+ ──────────▶│        │
+            │        │
+            └────────┘
+</pre>
+
+</div>
+</div>
+
+</section>
+<section id="slide-libuv---non-blocking-engine-for-nodejs">
+<h3 id="libuv---non-blocking-engine-for-nodejs">Non-Blocking Engine</h3>
+<ul>
+<li>Each operating system has its own interface for the Event
+Demultiplexer:
 
 <ul>
+<li><a href="https://kovyrin.net/2006/04/13/epoll-asynchronous-network-programming/">epoll</a> on Linux.</li>
+<li><a href="https://en.wikipedia.org/wiki/Kqueue">kqueue</a> on Mac OS X.</li>
+<li><a href="https://en.wikipedia.org/wiki/Input/output_completion_port">I/O Completion Port API (IOCP)</a> on Windows.</li>
+
+</ul></li>
+
+</ul>
+
+</section>
+<section id="slide-nodejs">
+<h3 id="nodejs">NodeJS</h3>
+<ul>
+<li><a href="https://nodejs.org/en/">Node.js</a> is a platform built on <a href="https://developers.google.com/v8/">Chrome V8</a> JavaScript engine for
+easily building non-blocking IO applications.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-intro-nodejs">
+<h2 id="intro-nodejs">Introduction to Nodejs</h2>
+</section>
+<section id="slide-running-nodejs-programs">
+<h3 id="running-nodejs-programs">Running NodeJS Programs</h3>
+<ul>
 <li><p>
-an <b>identifier</b> (<a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">URI</a>), i.e., a unique textual key associated with the resource:
+Using the REPL. Type <code>node</code> in your command line.
 </p>
 
 <div class="org-src-container">
 
-<pre><code class="text" >scheme:[//host[:port]][/]path[?query][#fragment]
+<pre><code class="sh" >$> node
+> console.log('hello nodejs!');
+hello nodejs!
+undefined
+>
 </code></pre>
 </div></li>
 
-<li>a <b>state</b></li>
-
-<li>a <b>representation</b></li>
-
-</ul>
-
-
-</section>
-<section id="slide-w6">
-<h3 id="w6">HTTP request</h3>
-<div class="org-center">
-<div class="minipage">
-<pre class="example">
-
-HTTP Verb       Resource        Version
-
-    │               │              │
-    │        ┌──────┘      ┌───────┘
- ┌──┼────────┼─────────────┼─────────────────────────────────────┐
- │  ▼        ▼             ▼                                     │
- │ GET /docs/index.html HTTP/1.1          ┌────Media Type        │
- │ Host: www.nowhere123.com               │                      │
- │ Accept: image/gif, image/jpeg, */* ◀───┘                      │
- │ Accept-Encoding: gzip, deflate ◀─────┐                        │
- │ User-Agent: Mozilla/4.0 (compatible; │SIE 6.0; Windows NT 5.1)│
- │ (blank line)                         │                        │
- │  ●                                   │                        │
- └──┼───────────────────────────────────┼────────────────────────┘
-    │                                   │
-    │                                   └──────Compression
-Optional
-  Body
-
-</pre>
-
-</div>
-</div>
-
-
-
-</section>
-<section id="slide-w7">
-<h3 id="w7">HTTP response</h3>
-<div class="org-center">
-<div class="minipage">
-<pre class="example">
-Version      Status code
-   │              │
-   └─┐     ┌──────┘
-┌────▼─────▼──────────────────────────────────────┐
-│HTTP/1.1 200 OK ◀═══════════════════════════════════Status line
-│Date: Sun, 18 Oct 2009 08:56:53 GMT              │
-│Server: Apache/2.2.14 (Win32)                    │
-│Last-Modified: Sat, 20 Nov 2004 07:16:26 GMT     │
-│ETag: "10000000565a5-2c-3e94b66c2e680"           │
-│Accept-Ranges: bytes                             │
-│Content-Length: 44                               │
-│Connection: close ◀─────────────────────────────────Can also be keep-alive
-│Content-Type: text/html                          │
-│X-Pad: avoid browser bug                         │
-│                                                 │
-│&lt;html&gt;&lt;body&gt;&lt;h1&gt;It works!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;     │  Body
-└─────────────────────────────────────────────────┘
-</pre>
-
-</div>
-</div>
-
-
-
-</section>
-<section id="slide-get">
-<h3 id="get">HTTP verbs: GET</h3>
-<ul>
-<li><b>GOOD</b>: <code>GET /fluffy_kitty.jpg</code></li>
-<li><b>BAD</b>: <code>GET /users/sign_out</code></li>
-
-</ul>
-
-
-</section>
-<section id="slide-post">
-<h3 id="post">HTTP verbs: POST</h3>
-<div class="org-src-container">
-
-<pre><code class="text" >POST /send-message HTTP/1.1
-Host: foo.com
-Content-Type: application/x-www-form-urlencoded
-Content-Length: 13
-
-message=Hi
-</code></pre>
-</div>
-
-</section>
-<section id="slide-put">
-<h3 id="put">HTTP verbs: PUT</h3>
-<div class="org-src-container">
-
-<pre><code class="text" >PUT /user/1/sign_out HTTP/1.1
-Host: foo.com
-</code></pre>
-</div>
-
-</section>
-<section id="slide-delete">
-<h3 id="delete">HTTP verbs: DELETE</h3>
-<div class="org-src-container">
-
-<pre><code class="text" >DELETE /user/1 HTTP/1.1
-Host: foo.com
-</code></pre>
-</div>
-
-</section>
-<section id="slide-status">
-<h3 id="status">HTTP response status</h3>
-<p>
-The HTTP response status indicates the outcome of the request. Status
-codes fall into one of five categories:
-</p>
-
-<ul>
-<li>1XX - Informational</li>
-<li>2XX - Successful</li>
-<li>3XX - Redirection</li>
-<li>4XX - Client Error</li>
-<li>5XX - Server Error</li>
-
-</ul>
-
-<p>
-Ref: <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">HTTP Status Code Definitions</a>
-</p>
-
-</section>
-<section id="slide-p2">
-<h3 id="p2">What is REST?</h3>
-<ul>
-<li>Stands for <a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm">representational state transfer</a></li>
-
-<li>A web application that uses HTTP verbs <b>appropriately</b> to manipulate a
-resource is said <b>compliant with the REST principle</b>.</li>
-
-</ul>
-
-</section>
-<section id="slide-p4">
-<h3 id="p4">REST vs RPC</h3>
-<ul class="org-ul">
-<li><a id="orgb8b3d4b"></a><span class="todo TODO">TODO</span> Fix this example with something more meaningful<br />
-<ul>
-<li><p>
-RPC
-</p>
-
-<pre class="example">
-│ POST /getAdUnitsByStatement HTTP/1.1
-│ HOST: api.example.com
-│ Content-Type: application/json
-│
-│ {"filter": "WHERE parentId IS NULL LIMIT 500"}
-</pre></li>
-
 </ul>
 
 
 <ul>
 <li><p>
-REST
+Create a .js file and type: <code>node file.js</code>
 </p>
 
-<pre class="example">
-│   single path        query
-│    end-point      parameters
-│       │                │
-│       │                │
-│       ▼                ▼
-│ GET /ads?statement={foo}&amp;limit=500
-│ HOST: api.example.com
-│ Content-type: application/json
-</pre></li>
-
-</ul>
-</li>
-</ul>
-
-</section>
-<section id="slide-orga7a7f92">
-<h3 id="orga7a7f92">Richardson maturity model</h3>
-<ul>
-<li><a href="https://martinfowler.com/articles/richardsonMaturityModel.html#level0">Level 0</a>: SOAP or XML-RPC. Single endpoint, functionality described by the
-request.</li>
-<li><a href="https://martinfowler.com/articles/richardsonMaturityModel.html#level1">Level 1:</a> Each resource has its own URI, but requests are just GET and POST</li>
-<li><a href="https://martinfowler.com/articles/richardsonMaturityModel.html#level2">Level 2:</a> Use the full power of HTTP verbs to manipulate resources</li>
-<li><a href="https://martinfowler.com/articles/richardsonMaturityModel.html#level3">Level 3:</a> Hypertext as the engine of application state. Response
-contain hyperlinks to other URIs for performing additional actions. Example: news feeds.</li>
-
-</ul>
-
-
-</section>
-<section id="slide-org0b36d09">
-<h3 id="org0b36d09">REST services, a very simple example</h3>
-<div class="org-center">
-<div class="minipage">
-<pre class="example">
-┌─────────────────┐
-│  PET            │
-│                 │
-│  Id: Integer    │
-│  Name: String   │
-│  Tag: String    │
-│                 │
-└─────────────────┘
-</pre>
-
-</div>
-</div>
-
-</section>
-<section id="slide-org8334ef0">
-<h3 id="org8334ef0">What is the URI of a resource?</h3>
-<ul>
-<li><code>/pets</code> - indicates a list of pets</li>
-<li><code>/pets/12</code> - indicates a specific pet (n. 12)</li>
-
-</ul>
-
-</section>
-<section id="slide-whatcanido">
-<h3 id="whatcanido">What can I do to a resource?</h3>
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<colgroup>
-<col  class="org-left" />
-
-<col  class="org-left" />
-
-<col  class="org-left" />
-
-<col  class="org-left" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-left"><b>Action</b></th>
-<th scope="col" class="org-left"><b>Meaning</b></th>
-<th scope="col" class="org-left"><b>Safe</b></th>
-<th scope="col" class="org-left"><b>Id.</b></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-left"><code>GET /pets</code></td>
-<td class="org-left">Retrieves a list of pets</td>
-<td class="org-left">Yes</td>
-<td class="org-left">Yes</td>
-</tr>
-
-<tr>
-<td class="org-left"><code>GET /pets/12</code></td>
-<td class="org-left">Retrieves a specific pet</td>
-<td class="org-left">Yes</td>
-<td class="org-left">Yes</td>
-</tr>
-
-<tr>
-<td class="org-left"><code>POST /pets</code></td>
-<td class="org-left">Creates a new pet</td>
-<td class="org-left">No</td>
-<td class="org-left">No</td>
-</tr>
-
-<tr>
-<td class="org-left"><code>PUT /pets/12</code></td>
-<td class="org-left">Updates pet #12</td>
-<td class="org-left">No</td>
-<td class="org-left">Yes</td>
-</tr>
-
-<tr>
-<td class="org-left"><code>PATCH /pets/12</code></td>
-<td class="org-left">Partially updates pet #12</td>
-<td class="org-left">No</td>
-<td class="org-left">No</td>
-</tr>
-
-<tr>
-<td class="org-left"><code>DELETE /pets/12</code></td>
-<td class="org-left">Deletes pet #12</td>
-<td class="org-left">No</td>
-<td class="org-left">Yes</td>
-</tr>
-</tbody>
-</table>
-
-
-</section>
-<section id="slide-orge757d5b">
-<h3 id="orge757d5b">Example creation of a pet</h3>
 <div class="org-src-container">
 
-<pre><code class="http" >POST http://my.petstore.com/api/pets HTTP/1.1
-Host: my.petstore.io
-Content-Length: 37
-Content-Type: application/json
+<pre><code class="sh" >$> node hello.js
+hello nodejs!
+</code></pre>
+</div></li>
 
-{
-  "name": "pippo",
-  "tag": "dog"
+</ul>
+
+</section>
+<section id="slide-your-first-nodejs-very-basic-web-server">
+<h3 id="your-first-nodejs-very-basic-web-server">Your first NodeJS Very Basic Web Server</h3>
+<div class="org-src-container">
+
+<pre><code class="js" >var http = require('http');
+
+http.createServer(function (request, response) {
+    response.writeHead(200, {
+	'Context-Type': 'text/plain',
+    });
+    response.end('Hello World!');
+}).listen(3000);
+
+console.log('Server running at http://localhost:3000');
+
+</code></pre>
+</div>
+
+<p>
+Congratulations, you have your first web server running, using Node's <a href="https://nodejs.org/api/http.html">HTTP</a> API!
+</p>
+
+</section>
+<section id="slide-modules">
+<h3 id="modules">Modules</h3>
+<ul>
+<li><b>Libraries of pre-built functions</b> you can download and use in your own program.</li>
+
+<li>The main mechanism to enforce <b>information hiding</b> by keeping private
+all the functions and variables that are not explicitly marked to be
+exported.</li>
+
+<li>Node.js follows the <a href="http://requirejs.org/docs/commonjs.html">CommonJS</a> module system, and the builtin <code>require()</code>
+function is the way to include <b>modules</b> that exist in separate files/folders.</li>
+
+<li>Everything inside a module is private unless it is assigned to the
+<code>module.exports</code> variable.</li>
+
+</ul>
+
+</section>
+<section id="slide-module-system-iii">
+<h3 id="module-system-iii">Module example</h3>
+<p>
+In a file called <code>say.js</code>:
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="js" >module.exports = function (msg) {
+    console.log('Say: ' + mgs);
 }
 </code></pre>
 </div>
 
-</section>
-<section id="slide-orgb827fc4">
-<h3 id="orgb827fc4">JSON or XML?</h3>
-
-<div class="figure">
-<p><img src="./images/201305-xml-vs-json-api.png" alt="201305-xml-vs-json-api.png" />
+<p>
+In a file called <code>app.js</code>:
 </p>
+
+<div class="org-src-container">
+
+<pre><code class="js" >let say = require('./say.js');
+say('hello!');
+</code></pre>
 </div>
 
-</section>
-<section id="slide-orgca45227">
-<h3 id="orgca45227">What if I have a relationship between resources?</h3>
-<pre class="example">
-┌──────────────┐      ┌────────────────┐    
-│ Pet          │      │ Prize          │    
-│              │      │                │    
-│ Id: Integer  │     ╱│ DateWon: Date  │    
-│ Name: String │───┼──│ Name: String   │    
-│ Tag: String  │     ╲│ Amount: Float  │    
-│              │      │                │    
-└──────────────┘      └────────────────┘    
-</pre>
-
+<p>
+Execute using: <code>node app.js</code>
+</p>
 
 </section>
-<section id="slide-orge132b63">
-<h3 id="orge132b63">Relationships between resources</h3>
-<div class="small">
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<colgroup>
-<col  class="org-left" />
-
-<col  class="org-left" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-left"><b>HTTP Action and Resource URI</b></th>
-<th scope="col" class="org-left"><b>Meaning</b></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-left"><code>GET /pets/12/prizes</code></td>
-<td class="org-left">Retrieves list of prizes for pet #12</td>
-</tr>
-
-<tr>
-<td class="org-left"><code>GET /pets/12/prizes/5</code></td>
-<td class="org-left">Retrieves prize #5 for pet #12</td>
-</tr>
-
-<tr>
-<td class="org-left"><code>POST /pets/12/prizes</code></td>
-<td class="org-left">Creates a new prize in pet #12</td>
-</tr>
-
-<tr>
-<td class="org-left"><code>PUT /pets/12/prizes/5</code></td>
-<td class="org-left">Updates prize #5 for pet #12</td>
-</tr>
-
-<tr>
-<td class="org-left"><code>PATCH /pets/12/prizes/5</code></td>
-<td class="org-left">Partially updates prize #5 for pet #12</td>
-</tr>
-
-<tr>
-<td class="org-left"><code>DELETE /pets/12/prizes/5</code></td>
-<td class="org-left">Deletes prize #5 for pet #12</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-
-</section>
-<section id="slide-org5cf3fa1">
-<h3 id="org5cf3fa1">Result filtering/sorting and searching</h3>
+<section id="slide-npm-i">
+<h3 id="npm-i">Node Package Manager</h3>
 <ul>
-<li>filtering pets: <code>GET /pets?tag=dog</code></li>
-
-<li>sorting pets by descending alphabetic order: <code>GET /pets?sort=-name</code></li>
-
-<li>search for keyword: <code>GET /pets?q=miao</code></li>
+<li>A package manager for Javascript Developers.</li>
+<li>Runs through the command line and manages dependencies for an
+application.</li>
+<li>The best way to manage locally installed npm packages is to create a
+<code>package.json</code> file.</li>
 
 </ul>
+
+</section>
+<section id="slide-npm-ii">
+<h3 id="npm-ii">Node Package Manager</h3>
+<ul>
+<li><p>
+to install dependencies defined in a pacakge.json file
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="sh" >> npm install
+</code></pre>
+</div></li>
+
+<li><p>
+to install lodash and save the dependency in the package.json file
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="sh" >> npm install lodash --save
+</code></pre>
+</div></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-api-intro">
+<h2 id="api-intro">Defining an API and creating a server</h2>
+</section>
+<section id="slide-api-0-intro" data-background="./images/section_restapi.svg">
+<h3 id="api-0-intro"></h3>
+</section>
+<section id="slide-api-0">
+<h3 id="api-0">Defining the API</h3>
+<div class="org-src-container">
+
+<pre><code class="yaml" >swagger: '2.0'
+info:
+  description: &gt;-
+    This is a simple bookstore server with a book inventory, users and a shopping cart.
+  version: 1.0.0
+  title: Simple Bookstore
+  contact:
+    email: vittorio.zaccaria@polimi.it
+  license:
+    name: Apache-2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+host: none.yet.io
+basePath: /v2
+tags:
+  - name: book
+    description: Available book
+  - name: cart
+    description: Access to the cart
+  - name: user
+    description: Operations about user
+schemes:
+  - http
+paths:
+  /books:
+    get:
+      summary: Books available in the inventory
+      tags:
+	- book
+      description: 'List of books available in the inventory'
+      produces:
+	- application/json
+      parameters:
+	- name: offset
+	  in: query
+	  description: Pagination offset. Default is 0.
+	  type: integer
+	- name: limit
+	  in: query
+	  description: &gt;-
+	    Maximum number of items per page. Default is 20 and cannot exceed
+	    500.
+	  type: integer
+      responses:
+	'200':
+	  description: A collection of Books
+	  schema:
+	    type: array
+	    items:
+	      $ref: '#/definitions/Book'
+	'404':
+	  description: Unexpected error
+  /books/{bookId}:
+    get:
+      summary: Find book by ID
+      tags:
+	- book
+      description: Returns a book
+      operationId: getBookById
+      produces:
+	- application/json
+      parameters:
+	- name: bookId
+	  in: path
+	  description: ID of book to return
+	  required: true
+	  type: integer
+	  format: int64
+      responses:
+	'200':
+	  description: successful operation
+	  schema:
+	    $ref: '#/definitions/Book'
+	'400':
+	  description: Invalid ID supplied
+	'404':
+	  description: Book not found
+definitions:
+  Book:
+    title: Book
+    description: A book for sale in the store
+    type: object
+    required:
+      - title
+      - author
+      - price
+    properties:
+      id:
+	type: integer
+	format: int64
+      title:
+	type: string
+	example: Il deserto dei tartari
+      author:
+	type: string
+	example: Dino Buzzati
+      price:
+	$ref: '#/definitions/Amount'
+      status:
+	type: string
+	description: book availability in the inventory
+	enum:
+	  - available
+	  - out of stock
+  Amount:
+    type: object
+    description: &gt;
+       Price
+    properties:
+      value:
+	format: double
+	type: number
+	minimum: 0.01
+	maximum: 1000000000000000
+      currency:
+	$ref: '#/definitions/Currency'
+    required:
+      - value
+      - currency
+  Currency:
+    type: string
+    pattern: '^[A-Z]{3,3}$'
+    description: &gt;
+      some description
+    example: eur
+externalDocs:
+  description: Find out more about Swagger
+  url: 'http://swagger.io'
+
+</code></pre>
+</div>
+
+</section>
+<section id="slide-api-1-intro" data-background="./images/section_js.svg">
+<h3 id="api-1-intro"></h3>
+</section>
+<section id="slide-api-1">
+<h3 id="api-1">Demo D2.0 - generating the server</h3>
+</section>
+<section id="slide-api-2-intro" data-background="./images/section_assets.svg">
+<h3 id="api-2-intro"></h3>
+</section>
+<section id="slide-api-2">
+<h3 id="api-2">Demo D2.1 - adding static assets</h3>
 </section>
 </section>
 </div>

@@ -26,18 +26,13 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">Hypermedia/Backend/Introduction to Web Applications</h1><h2 class="author">Vittorio Zaccaria</h2><p class="date">Created: 2019-02-25 Mon 15:45</p>
+<section id="sec-title-slide"><h1 class="title">Hypermedia/Backend/Introduction to Web Applications</h1><h2 class="author">Vittorio Zaccaria</h2><p class="date">Created: 2019-03-05 Tue 09:13</p>
 </section>
 <script src="reveal-bundle.js"></script>
 
 <section>
-<section id="slide-orgda06caa">
-<h2 id="orgda06caa">Overview</h2>
-<div class="outline-text-2" id="text-orgda06caa">
-</div>
-</section>
-<section id="slide-org95e2cb2">
-<h3 id="org95e2cb2">What skills you will learn</h3>
+<section id="slide-org9a9d83c" data-background="">
+<h2 id="org9a9d83c">Overview</h2>
 <p>
 <b>This course is fairly demanding, but is one of the most industry-applicable
 courses you can take.</b> You will learn and improve the following skills:
@@ -51,10 +46,35 @@ courses you can take.</b> You will learn and improve the following skills:
 
 </ul>
 
+</section>
+<section id="slide-o1">
+<h3 id="o1">Who am I</h3>
+<ul>
+<li>I am an assistant professor at Politecnico di Milano and I have worked in
+processor architecture research and development for one of the top semiconductor
+companies in the world.</li>
+
+<li>Part of my interests include parallel and asynchronous programming, domain
+specific languages and <b>javascript</b>.</li>
+
+</ul>
 
 </section>
-<section id="slide-org84fd6f5">
-<h3 id="org84fd6f5">Project (Backend part)</h3>
+</section>
+<section>
+<section id="slide-orgcebc397" data-background="#173f5f">
+<h2 id="orgcebc397">The project</h2>
+</section>
+<section id="slide-p0">
+<h3 id="p0">Project guidelines and grading</h3>
+<p>
+The <b>backend</b> part of your project is described (with a complete grading rubric)
+at <a href="./docs/project-manual.pdf">at this address</a>. We'll cover all the points in the following weeks.
+</p>
+
+</section>
+<section id="slide-p1">
+<h3 id="p1">Project team - suggested organization</h3>
 <div class="org-center">
 <div class="minipage">
 <pre class="example">
@@ -73,8 +93,8 @@ courses you can take.</b> You will learn and improve the following skills:
 Should be the 4th  │                               │
  member into the   │                               ▼
    private repo    │                     ┌──────────────────┐
-             ┌──────────┐                │      Heroku      │
-             │Instructor│ Will check the │    (where the    │
+             ┌──────────┐                │ Heroku (or other)│
+             │Instructor│ Will check the │  (where the      │
              │          │────running ───▶│application runs) │
              └──────────┘  application   │                  │
                                          └──────────────────┘
@@ -83,35 +103,24 @@ Should be the 4th  │                               │
 </div>
 </div>
 
-
 </section>
 </section>
 <section>
-<section id="slide-orgd3e8000">
-<h2 id="orgd3e8000">Service oriented architectures and the Web</h2>
-<div class="outline-text-2" id="text-orgd3e8000">
-</div>
-</section>
-<section id="slide-org3738e79">
-<h3 id="org3738e79">Question</h3>
+<section id="slide-w0" data-background="#173f5f">
+<h2 id="w0">Web applications and web services</h2>
 <p>
-Can you give a definition of Web Application?
+Can you give a definition of <b>service</b>?
 </p>
 
 </section>
-<section id="slide-i2">
-<h3 id="i2">Service: definition</h3>
+<section id="slide-w1">
+<h3 id="w1">Service</h3>
 <ul>
 <li><b>Service</b>: a <i>software functionality</i> that can be <b>reused</b> by different clients for
 different purposes.</li>
 
-</ul>
-
-</section>
-<section id="slide-i1">
-<h3 id="i1">Service oriented architecture</h3>
-<ul>
-<li>Most used way to build a <b>client/server application</b>.</li>
+<li>A <b>service oriented architecture</b> is the most used way to build a
+<b>client/server application</b>.</li>
 
 <li><b>Reuse paradigm</b> in disguise, applications are built by <b>integrating existing
 services</b> instead of rewriting them from scratch.</li>
@@ -119,47 +128,52 @@ services</b> instead of rewriting them from scratch.</li>
 </ul>
 
 </section>
-<section id="slide-i3">
-<h3 id="i3">No SOA</h3>
+<section id="slide-w2">
+<h3 id="w2">Without a service oriented architecture</h3>
+
+<div class="figure">
+<p><object type="image/svg+xml" data="./images/the_origins_nosoa.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object> 
+</p>
+<p><span class="figure-number">Figure 1: </span>Changing the structure of the database means changing how the user interact with it. Each client potentially replicates queries already done by others.</p>
+</div>
+
+</section>
+<section id="slide-w3">
+<h3 id="w3">With a service oriented architecture</h3>
 
 <div class="figure">
 <p><object type="image/svg+xml" data="./images/the_origins.svg" class="org-svg">
 Sorry, your browser does not support SVG.</object> 
 </p>
-<p><span class="figure-number">Figure 1: </span>Changing the structure of databases <code>sales</code> and <code>inventory</code> might imply rewriting the clients.</p>
+<p><span class="figure-number">Figure 2: </span>Changing the structure of the database means rewriting only the remote application server.  Clients are unimpacted by the change.</p>
 </div>
 
 </section>
-<section id="slide-i4">
-<h3 id="i4">With SOA</h3>
+<section id="slide-w4">
+<h3 id="w4">Web services</h3>
 
 <div class="figure">
-<p><img src="./tikz/soa.png" alt="soa.png" />
+<p><object type="image/svg+xml" data="./images/web_based_soa.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object> 
 </p>
+<p><span class="figure-number">Figure 3: </span>A <b>service</b> that is exposed on the web  and can be used through HTTP. REST is a particular way to interact with it.</p>
 </div>
 
-
 </section>
-<section id="slide-w9">
-<h3 id="w9">Web services</h3>
+<section id="slide-w5">
+<h3 id="w5">Web services</h3>
 
 <div class="figure">
-<p><img src="./tikz/webservice.png" alt="webservice.png" />
+<p><object type="image/svg+xml" data="./images/fat_client.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object> 
 </p>
+<p><span class="figure-number">Figure 4: </span>Browser must know how to render the application. You'll need static assets for this.</p>
 </div>
 
 </section>
-<section id="slide-w10">
-<h3 id="w10">Web services</h3>
-
-<div class="figure">
-<p><img src="./tikz/webservice2.png" alt="webservice2.png" />
-</p>
-</div>
-
-</section>
-<section id="slide-w12">
-<h3 id="w12">Activity pattern</h3>
+<section id="slide-w6">
+<h3 id="w6">Activity pattern</h3>
 <div class="org-center">
 <div class="minipage">
 <pre class="example">
@@ -196,6 +210,371 @@ Renders and│          │                           │ Sends Back HTML/CSS/JS
 
 </div>
 </div>
+
+
+
+</section>
+</section>
+<section>
+<section id="slide-h0" data-background="#173f5f">
+<h2 id="h0">HTTP-based networking</h2>
+</section>
+<section id="slide-h1">
+<h3 id="h1">Anatomy of a web service request</h3>
+<div class="org-center">
+<div class="minipage">
+<pre class="example">
+   ┌──────────────────┐         ┌──────────────────┐
+   │     Browser      │         │    Web server    │
+   └──────────────────┘         └──────────────────┘
+             │                            │
+             │                            ■ opens TCP
+   DNS query ■                            │ socket
+             │                            │ (listen)
+Requests TCP │                            │
+  connection ●───────────────────────────▶│
+             │                            │
+             │                            │ accepts TCP
+             │◀───────────────────────────● connection
+             │                            │
+  Sends HTTP │                            │
+request over ●───────────────────────────▶│
+         TCP │                            │
+             │                            │ Parses request
+             │                            ○
+             │                            │
+             │                            ○ Fetches data
+             │                            │
+             │                            ○
+             │◀───────────────────────────● Sends response
+             ▼                            ▼
+</pre>
+
+</div>
+</div>
+
+</section>
+<section id="slide-h2">
+<h3 id="h2">HTTP resource</h3>
+<p>
+A resource has:
+</p>
+
+<ul>
+<li><p>
+an <b>identifier</b> (<a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">URI</a>), i.e., a unique textual key associated with the resource:
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="text" >scheme:[//host[:port]][/]path[?query][#fragment]
+</code></pre>
+</div></li>
+
+<li>a <b>state</b></li>
+
+<li>a <b>representation</b></li>
+
+</ul>
+
+</section>
+<section id="slide-r6">
+<h3 id="r6">HTTP verbs: what can I do with a resource?</h3>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left"><b>Action</b></th>
+<th scope="col" class="org-left"><b>Meaning</b></th>
+<th scope="col" class="org-left"><b>Safe</b></th>
+<th scope="col" class="org-left"><b>Id.</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>GET pets</code></td>
+<td class="org-left">Retrieves a list of pets</td>
+<td class="org-left">Yes</td>
+<td class="org-left">Yes</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>GET /pets/12</code></td>
+<td class="org-left">Retrieves a specific pet</td>
+<td class="org-left">Yes</td>
+<td class="org-left">Yes</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>POST /pets</code></td>
+<td class="org-left">Creates a new pet</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>PUT /pets/12</code></td>
+<td class="org-left">Updates pet #12</td>
+<td class="org-left">No</td>
+<td class="org-left">Yes</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>PATCH /pets/12</code></td>
+<td class="org-left">Partially updates pet #12</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>DELETE /pets/12</code></td>
+<td class="org-left">Deletes pet #12</td>
+<td class="org-left">No</td>
+<td class="org-left">Yes</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Assume our resource is the data associated with a pet.
+</p>
+
+</section>
+<section id="slide-h3">
+<h3 id="h3">HTTP request</h3>
+<div class="org-center">
+<div class="minipage">
+<pre class="example">
+
+HTTP Verb       Resource        Version
+
+    │               │              │
+    │        ┌──────┘      ┌───────┘
+ ┌──┼────────┼─────────────┼─────────────────────────────────────┐
+ │  ▼        ▼             ▼                                     │
+ │ GET /docs/index.html HTTP/1.1          ┌────Media Type        │
+ │ Host: www.nowhere123.com               │                      │
+ │ Accept: image/gif, image/jpeg, */* ◀───┘                      │
+ │ Accept-Encoding: gzip, deflate ◀─────┐                        │
+ │ User-Agent: Mozilla/4.0 (compatible; │SIE 6.0; Windows NT 5.1)│
+ │ (blank line)                         │                        │
+ │  ●                                   │                        │
+ └──┼───────────────────────────────────┼────────────────────────┘
+    │                                   │
+    │                                   └──────Compression
+Optional
+  Body
+
+</pre>
+
+</div>
+</div>
+
+</section>
+<section id="slide-h4">
+<h3 id="h4">HTTP response</h3>
+<div class="org-center">
+<div class="minipage">
+<pre class="example">
+Version      Status code
+   │              │
+   └─┐     ┌──────┘
+┌────▼─────▼──────────────────────────────────────┐
+│HTTP/1.1 200 OK ◀═══════════════════════════════════Status line
+│Date: Sun, 18 Oct 2009 08:56:53 GMT              │
+│Server: Apache/2.2.14 (Win32)                    │
+│Last-Modified: Sat, 20 Nov 2004 07:16:26 GMT     │
+│ETag: "10000000565a5-2c-3e94b66c2e680"           │
+│Accept-Ranges: bytes                             │
+│Content-Length: 44                               │
+│Connection: close ◀─────────────────────────────────Can also be keep-alive
+│Content-Type: text/html                          │
+│X-Pad: avoid browser bug                         │
+│                                                 │
+│&lt;html&gt;&lt;body&gt;&lt;h1&gt;It works!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;     │  Body
+└─────────────────────────────────────────────────┘
+</pre>
+
+</div>
+</div>
+
+</section>
+<section id="slide-h9">
+<h3 id="h9">HTTP response status</h3>
+<p>
+The HTTP response status indicates the outcome of the request. Status
+codes fall into one of five categories:
+</p>
+
+<ul>
+<li>1XX - Informational</li>
+<li>2XX - Successful</li>
+<li>3XX - Redirection</li>
+<li>4XX - Client Error</li>
+<li>5XX - Server Error</li>
+
+</ul>
+
+<p>
+Ref: <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">HTTP Status Code Definitions</a>
+</p>
+
+</section>
+<section id="slide-d0">
+<h3 id="d0">Demo D0.0 - using curl to interact with an HTTP service</h3>
+</section>
+<section id="slide-d0b">
+<h3 id="d0b">Demo D0.0bis - using the browser to interact with the HTTP service</h3>
+<p>
+We are going to use the Javascript interpreter of the browser and the standard
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch">fetch API</a>.
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="js" >fetch('http://api.dataatwork.org/v1/jobs?limit=2')
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(myJson) {
+    console.log(JSON.stringify(myJson));
+  });
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-r00" data-background="#173f5f">
+<h2 id="r00">Specifying an API</h2>
+</section>
+<section id="slide-r0" data-background="./images/section_restapi.svg" data-background-size="100%">
+<h3 id="r0"></h3>
+
+</section>
+<section id="slide-r1">
+<h3 id="r1">What is REST?</h3>
+<ul>
+<li>Stands for <a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm">representational state transfer</a>. It has evolved with time; today
+it means any simple, URL-accessible resource-based service.</li>
+
+<li>A web application that uses HTTP verbs <b>appropriately</b> to manipulate a
+resource is said <b>compliant with the REST principle</b>.</li>
+
+</ul>
+
+</section>
+<section id="slide-r3">
+<h3 id="r3">Richardson maturity model</h3>
+<ul>
+<li><a href="https://martinfowler.com/articles/richardsonMaturityModel.html#level0">Level 0</a>: SOAP or XML-RPC. Single endpoint, functionality described by the
+request.</li>
+<li><a href="https://martinfowler.com/articles/richardsonMaturityModel.html#level1">Level 1:</a> Each resource has its own URI, but requests are just GET and POST</li>
+<li><a href="https://martinfowler.com/articles/richardsonMaturityModel.html#level2">Level 2:</a> Use the full power of HTTP verbs to manipulate resources</li>
+<li><a href="https://martinfowler.com/articles/richardsonMaturityModel.html#level3">Level 3:</a> Hypertext as the engine of application state. Response
+contain hyperlinks to other URIs for performing additional actions. Example: news feeds.</li>
+
+</ul>
+
+</section>
+<section id="slide-r4">
+<h3 id="r4">Swagger/OpenAPI</h3>
+<ul>
+<li><b>OpenAPI</b> is the new name for Swagger specification, we'll use both names</li>
+
+<li>An OpenAPI file allows you to describe your entire API</li>
+
+<li>We are going to see its structure now</li>
+
+<li>For examples, check<a href="https://apis.guru/browse-apis/"> API gurus</a></li>
+
+</ul>
+
+</section>
+<section id="slide-r5">
+<h3 id="r5">Demo D0.1 - documenting an API with OpenAPI</h3>
+<p>
+<a href="http://api.dataatwork.org/v1/spec/skills-api.json">Skills API specification</a>
+</p>
+
+</section>
+<section id="slide-r6">
+<h3 id="r6">A word about models</h3>
+<p>
+The global components/schemas section lets you define common data structures
+used in your API.
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="yaml" >components:
+  schemas:
+    User:
+      properties:
+	id:
+	  type: integer
+	name:
+	  type: string
+      # Both properties are required
+      required:  
+	- id
+	- name
+</code></pre>
+</div>
+
+</section>
+<section id="slide-r7">
+<h3 id="r7">A word about models</h3>
+<p>
+You then make a reference to it when defining the endpoints
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="yaml" >/users:
+    post:
+      summary: Creates a new user.
+      requestBody:
+	required: true
+	content:
+	  application/json:
+	    schema:
+	      $ref: '#/components/schemas/User'
+      responses:
+	'201':
+	  description: Created
+</code></pre>
+</div>
+
+
+</section>
+<section id="slide-r8">
+<h3 id="r8">Demo D0.2 - generate testable API docs with SwaggerHub</h3>
+
+</section>
+</section>
+<section>
+<section id="slide-orgb921032">
+<h2 id="orgb921032">Handson time</h2>
+<div class="outline-text-2" id="text-orgb921032">
+</div>
+</section>
+<section id="slide-org6008b95">
+<h3 id="org6008b95">API for a store of items</h3>
+<ul>
+<li>Devise an OpenAPI spec for users, items, and carts</li>
+
+</ul>
 </section>
 </section>
 </div>
