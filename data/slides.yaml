@@ -1,3 +1,12 @@
+- id: Hyp1819
+  name: Hypermedia Applications / Backend
+  institution: Politecnico di Milano
+  dates: March 2019
+  slides:
+
+  - key: Introduction to Web Applications
+    hslide: lecture_0_webapp.html
+
 - id: Conferences
   name: Conference slides
   dates: 2018 - now
