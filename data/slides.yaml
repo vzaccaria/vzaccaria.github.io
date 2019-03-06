@@ -7,6 +7,9 @@
   - key: Introduction to Web Applications
     hslide: lecture_0_webapp.html
 
+  - key: Introduction to Javascript
+    hslide: lecture_1_javascript.html
+    
 - id: Conferences
   name: Conference slides
   dates: 2018 - now
