@@ -10,6 +10,9 @@
   - key: Introduction to Javascript
     hslide: lecture_1_javascript.html
     
+  - key: Rest OpenAPI
+    hslide: lecture_2_rest_openapi.html
+    
 - id: Conferences
   name: Conference slides
   dates: 2018 - now
