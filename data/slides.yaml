@@ -51,9 +51,7 @@
   dates: 2018 - 2019
   slides:
 
-  - key: Installazione Matlab
-    value: http://www.software.polimi.it/software-download/studenti/matlab/
-
+  
   - key: 0 - Informazioni sul corso
     slide: le_inizio.slides.draft
 
@@ -66,9 +64,30 @@
   - key: 3 - La codifica binaria dei numeri
     slide: le_codifica.slides.draft
 
+  - key: 4 - Logica proposizionale e algebra Booleana
+    slide: le_logica_booleana.slides.draft
+
+  - key: 5 - Architettura dei calcolatori
+    slide: le_arch_caches.slides
+  
+  - key: 6 - Matlab (completo)
+    slide: le_matlab.slides
+  
+  - key: 7 - Introduzione ai sistemi operativi
+    slide: le_intro_os.slides
+    
+  - key: Esercizi fatti a lezione - aggiornato continuamente
+    slide: esercizi-live
+
+  - key: Programma dettagliato
+    slide: InfoBProg
+    
   - key: Guida - Installazione ambiente di sviluppo CodeBlocks per linguaggio C
     slide: guida_installazione_codeblocks
-    
+  
+  - key: Guida - Installazione Matlab
+    value: http://www.software.polimi.it/software-download/studenti/matlab/
+
 - id: Hyp1718
   name: Hypermedia
   institution: Politecnico di Milano
