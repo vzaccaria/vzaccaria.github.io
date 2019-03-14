@@ -13,6 +13,9 @@
   - key: Rest OpenAPI
     hslide: lecture_2_rest_openapi.html
     
+  - key: Session and state
+    hslide: lecture_3_session_state.html
+    
 - id: Conferences
   name: Conference slides
   dates: 2018 - now
