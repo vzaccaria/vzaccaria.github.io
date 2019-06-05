@@ -2,6 +2,30 @@
     "records": [
         {
             "authors": [
+                "F. Daniel",
+                "M. Matera",
+                "V. Zaccaria",
+                "A. Dell'orto"
+            ],
+            "title": "Toward Truly Personal Chatbots: On the Development of Custom Conversational Assistants",
+            "year": "2018",
+            "booktitle": "Proceedings of the 1st International Workshop on Software Engineering for Cognitive Services",
+            "pages": "31 to 36",
+            "publisher": "ACM",
+            "address": "New York, NY, USA",
+            "doi": "10.1145/3195555.3195563",
+            "isbn": "9781450357401",
+            "url": "http://doi.acm.org/10.1145/3195555.3195563",
+            "justApplied": false,
+            "justAccepted": false,
+            "keyword": [
+                "conference"
+            ],
+            "type": "conference",
+            "timestamp": 1514761200
+        },
+        {
+            "authors": [
                 "G. Mariani",
                 "G. Palermo",
                 "V. Zaccaria",
@@ -27,8 +51,10 @@
             "justAccepted": false,
             "keyword": [
                 "tocheck",
+                "asn2018-12",
                 "trans",
-                "journal"
+                "journal",
+                "asn2018-5"
             ],
             "type": "journal",
             "timestamp": 1420066800
@@ -83,9 +109,10 @@
             "justAccepted": false,
             "keyword": [
                 "pa2018",
+                "asn2018-12",
                 "trans",
                 "journal",
-                "notfoundincineca"
+                "asn2018-5"
             ],
             "type": "journal",
             "timestamp": 1522533600
@@ -132,8 +159,8 @@
                         "id": "1084-4309"
                     }
                 ],
-                "name": "ACM Trans. Des. Autom. Electron. Syst.",
-                "id": "ACMTransDesAutomElectronSyst"
+                "name": "ACM Transactions on Design Automation of Electronic Systems (TODAES)",
+                "id": "ACMTransactionsonDesignAutomationofElectronicSystems(TODAES)"
             },
             "volume": "23",
             "pages": "69:1 to 69:17",
@@ -142,9 +169,10 @@
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
+                "asn2018-12",
                 "trans",
                 "journal",
-                "notfoundincineca"
+                "asn2018-5"
             ],
             "type": "journal",
             "timestamp": 1541026800
@@ -172,8 +200,10 @@
             "justAccepted": false,
             "keyword": [
                 "pa2018",
+                "asn2018-12",
                 "trans",
-                "journal"
+                "journal",
+                "asn2018-5"
             ],
             "type": "journal",
             "timestamp": 1496268000
@@ -230,8 +260,10 @@
             "justAccepted": false,
             "keyword": [
                 "pa2018",
+                "asn2018-12",
                 "trans",
-                "journal"
+                "journal",
+                "asn2018-5"
             ],
             "type": "journal",
             "timestamp": 1420066800
@@ -495,6 +527,7 @@
             "justAccepted": false,
             "keyword": [
                 "pa2018",
+                "asn2018-12",
                 "journal"
             ],
             "type": "journal",
@@ -599,6 +632,7 @@
             "justAccepted": false,
             "keyword": [
                 "pa2018",
+                "asn2018-12",
                 "journal",
                 "trans"
             ],
@@ -782,6 +816,7 @@
             "justAccepted": false,
             "keyword": [
                 "pa2018",
+                "asn2018-12",
                 "cineca",
                 "trans",
                 "journal"
@@ -1228,6 +1263,7 @@
             "justAccepted": false,
             "keyword": [
                 "pa2018",
+                "asn2018-12",
                 "cineca",
                 "journal",
                 "trans"
@@ -1485,6 +1521,7 @@
             "justAccepted": false,
             "keyword": [
                 "pa2018",
+                "asn2018-12",
                 "cineca",
                 "trans",
                 "journal"
@@ -2317,6 +2354,7 @@
             "justAccepted": false,
             "keyword": [
                 "pa2018",
+                "asn2018-12",
                 "cineca",
                 "trans",
                 "journal"
@@ -2403,6 +2441,7 @@
             "justAccepted": false,
             "keyword": [
                 "pa2018",
+                "asn2018-12",
                 "cineca",
                 "trans",
                 "journal"
