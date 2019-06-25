@@ -253,15 +253,18 @@
   research:
 
     citations:
-      date: 2018-02-22
+      date: 2019-06-25
       source: Google Scholar profile
       all:
-        citations: 1663
-        highest: 117
-        hindex: 22
+        citations: 1797
+        highest: 122
+        hindex: 24
       since2012:
         citations: 756
         hindex: 16
+      since2014:
+        citations: 699
+        hindex: 15
 
     currentGoals:
       short: |
@@ -439,6 +442,7 @@
 
 
     students:
+        - { name: Nicola Castaldo, year: 2019, title: A conceptual modeling approach for the rapid development of chatbots for conversational data exploration }
         - { name: Stefano Gianelli and Valerio Cassani , year: 2016, title: Progettazione di mashup per dispositivi mobili un metodo basato sulla modellazione di contesto }
         - { name: Stefano Lucchi and Davide Fava,        year: 2017, title: Mash-up based service and data integration in the CAMUS framework }
         - { name: Lorenzo Delledonne                   , year: 2017, title: A methodology based on functional languages for the design of hardware cryptographic primitives resistant to side-channel attacks }
@@ -453,6 +457,7 @@
         - { name: Andrea Bona                          , title: A design of experiments methodology in a power estimation flow for VLIW processors }
 
     phdStudents:
+        - { name: Maria Chiara Molteni, institution: Università di Milano }
         - { name: Edoardo Paone   , institution: Politecnico di Milano }
         - { name: Giovanni Mariani, institution: ALaRI - University of Lugano }
         - { name: Fabrizio Castro , institution: Politecnico di Milano. }
@@ -710,6 +715,7 @@
 
 
     courses:
+      - { aaInit: 2018 , aaEnd: 2019 , position: Titolare, crediti: 3 , ore: 30 , courseName: Technologies for Connected Products and Systems  ,  titolare: Vittorio Zaccaria  , level: Laurea Magistrale in Digital and Interaction Design, institution: Politecnico di Milano }
       - { aaInit: 2018 , aaEnd: 2019 , position: Esercitatore , crediti: N , ore: 28 , courseName: Informatica B                                    ,  titolare: Vittorio Zaccaria  , level: Laurea di primo livello in Ingegneria Meccanica ed Energetica , institution: Politecnico di Milano }
       - { aaInit: 2018 , aaEnd: 2019 , position: Titolare     , crediti: 7 , ore: 33 , courseName: Informatica B                                    ,  titolare: Vittorio Zaccaria  , level: Laurea di primo livello in Ingegneria Meccanica ed Energetica , institution: Politecnico di Milano }
       - { aaInit: 2017 , aaEnd: 2018 , position: Esercitatore , crediti: N , ore: 20 , courseName: Hypermedia Applications (Web and multimedia)     ,  titolare: Franca Garzotto    , level: Laurea magistrale in Ingegneria Informatica                   , institution: Politecnico di Milano }
