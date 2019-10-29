@@ -464,6 +464,7 @@
 
     committees:
 
+        - { name: PARMA-DITAM Workshop,                              year: 2020, date: "2020-01-21", ruolo: membro del TPC,                        address: "Bologna, Italy" }
         - { name: PARMA-DITAM Workshop,                              year: 2018, date: "2018-01-23", ruolo: membro del TPC,                        address: "Manchester, United Kingdom" }
         - { name: DITAM Workshop,                                    year: 2013, date: "2013-01-22", ruolo: membro del TPC e web chair,            address: "Berlin, Germany" }
         - { name: DITAM Workshop,                                    year: 2012, date: "2012-12-24", ruolo: membro del TPC e poster session chair, address: "Paris, France" }
