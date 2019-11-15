@@ -294,6 +294,7 @@
             - power consumption
             - performance modeling and simulation
         - area: Software
+          keywords:
             - domain specific languages
             - functional programming 
 
