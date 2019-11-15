@@ -279,7 +279,23 @@
         I am also interested into applying functional programming and category
         theory into the general context of asynchronous systems with a specific
         emphasis on web technologies.
-
+        
+      itemized:
+        - area: Cryptography
+          keywords:
+            - side channel attacks and countermeasures
+            - masking
+            - threshold implementations
+            - probing security
+        - area: Hardware
+          keywords:
+            - hardware description languages  
+            - design space exploration
+            - power consumption
+            - performance modeling and simulation
+        - area: Software
+            - domain specific languages
+            - functional programming 
 
     awards:
         -
