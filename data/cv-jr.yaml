@@ -772,7 +772,7 @@
 
       - { aaInit: 2015 , aaEnd: 2016 , position: Titolare     , crediti: 7 , ore: 36 , courseName: Informatica B                                    ,  titolare: Vittorio Zaccaria  , level: Laurea di primo livello in Ingegneria Meccanica ed Energetica , institution: Politecnico di Milano, students: "200+" }
 
-      - { aaInit: 2014 , aaEnd: 2015 , position: Titolare     , crediti: 7 , ore: 39 , courseName: Informatica B                                    ,  titolare: Vittorio Zaccaria  , level: Laurea di primo livello in Ingegneria Meccanica ed Energetica , institution: Politecnico di Milano }
+      - { aaInit: 2014 , aaEnd: 2015 , position: Titolare     , crediti: 7 , ore: 39 , courseName: Informatica B                                    ,  titolare: Vittorio Zaccaria  , level: Laurea di primo livello in Ingegneria Meccanica ed Energetica , institution: Politecnico di Milano, students: "200+"  }
       - { aaInit: 2014 , aaEnd: 2015 , position: Esercitatore , crediti: N , ore: 18 , courseName: Informatica B                                    ,  titolare: Vittorio Zaccaria  , level: Laurea di primo livello in Ingegneria Meccanica ed Energetica , institution: Politecnico di Milano }
       - { aaInit: 2014 , aaEnd: 2015 , position: Esercitatore , crediti: N , ore: 10 , courseName: Architettura dei Calcolatori e Sistemi Operativi ,  titolare: Roberto Negrini    , level: Laurea di primo livello in Ingegneria Informatica             , institution: Politecnico di Milano }
 
