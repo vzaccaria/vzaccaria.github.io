@@ -758,6 +758,7 @@
 
     courses:
       - { aaInit: 2019 , aaEnd: 2020 , position: Titolare     , crediti: 7 , ore: 29 , courseName: Informatica B                                    ,  titolare: Vittorio Zaccaria  , level: Laurea di primo livello in Ingegneria Meccanica ed Energetica , institution: Politecnico di Milano, students: "200+" }
+      - { aaInit: 2019 , aaEnd: 2020 , position: Esercitatore , crediti: N , ore: 26 , courseName: Informatica B                                    ,  titolare: Vittorio Zaccaria  , level: Laurea di primo livello in Ingegneria Meccanica ed Energetica , institution: Politecnico di Milano }
       - { aaInit: 2018 , aaEnd: 2019 , position: Titolare, crediti: 3 , ore: 30 , courseName: Technologies for Connected Products and Systems  ,  titolare: Vittorio Zaccaria  , level: Laurea Magistrale in Digital and Interaction Design, institution: Politecnico di Milano, students: "20+" }
       - { aaInit: 2018 , aaEnd: 2019 , position: Esercitatore , crediti: N , ore: 28 , courseName: Informatica B                                    ,  titolare: Vittorio Zaccaria  , level: Laurea di primo livello in Ingegneria Meccanica ed Energetica , institution: Politecnico di Milano }
       - { aaInit: 2018 , aaEnd: 2019 , position: Titolare     , crediti: 7 , ore: 33 , courseName: Informatica B                                    ,  titolare: Vittorio Zaccaria  , level: Laurea di primo livello in Ingegneria Meccanica ed Energetica , institution: Politecnico di Milano, students: "200+"  }
