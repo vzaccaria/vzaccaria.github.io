@@ -265,7 +265,30 @@
       since2014:
         citations: 699
         hindex: 15
+        
+    productivity:
+       # computed with pubstats.js in curriculum on 2019 11 18
+       total: 97
+       coauthors: 110
+       transactions: 11
+       journals: 19
+       books: 1
+       conferences: 44
+       patents: 2
+    impact: 
+        # copied from above.. at the moment..
+        scholar: 
+          hindex: 24
+          citations: 1797
+          date: 2019-06-25
+          since: 2000-01-01
+        scopus:
+          hindex: ??
+          citations: ??
+          date: ??
+          since: 2000-01-01
 
+       
     currentGoals:
       short: |
         I love studying and innovating all aspects of software and hardware
