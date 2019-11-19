@@ -483,6 +483,7 @@
 
 
     students:
+        - { name: Marco Redaelli, year: 2019, title: '(provisional): A side channel attack methodology', company: 'Security pattern' }
         - { name: Nicola Castaldo, year: 2019, title: A conceptual modeling approach for the rapid development of chatbots for conversational data exploration }
         - { name: Stefano Gianelli and Valerio Cassani , year: 2016, title: Progettazione di mashup per dispositivi mobili un metodo basato sulla modellazione di contesto }
         - { name: Stefano Lucchi and Davide Fava,        year: 2017, title: Mash-up based service and data integration in the CAMUS framework }
@@ -498,10 +499,19 @@
         - { name: Andrea Bona                          , title: A design of experiments methodology in a power estimation flow for VLIW processors }
 
     phdStudents:
-        - { name: Maria Chiara Molteni, institution: Università di Milano }
-        - { name: Edoardo Paone   , institution: Politecnico di Milano }
-        - { name: Giovanni Mariani, institution: ALaRI - University of Lugano }
-        - { name: Fabrizio Castro , institution: Politecnico di Milano. }
+        - { name: Maria Chiara Molteni, institution: Università di Milano, role: "co-advisor" }
+        - { name: Edoardo Paone   , institution: Politecnico di Milano, role: "mentor" }
+        - { name: Giovanni Mariani, institution: ALaRI - University of Lugano, role: "mentor" }
+
+    stages:
+        - { name: Matteo Cairoli, init: 2018-10-01, end: 2018-11-19, company: Kalpa, credits:  5, hours: 256, mand: true }
+        - { name: Lorenzo Sanvito, init: 2018-04-26, end: 2018-07-20, company:Sfelab, credits: 0, hours: 540, mand: false }
+        - { name: Dario Cressoni, init: 2018-05-01, end: 2017-07-24, credits 10, hours: 350, mand: true }
+        - { name: Alessandro Macchi, init: 2017-10-02, end: 2018-01-02, credits: 10, hours: 960, mand: true }
+        - { name: Andrea Masi, init: 2018-03-16, end: 2018-06-16, credits: 10, hours: 350, mand: true }
+        - { name: Dario Messina, init: 2018-10-04, end: 2019-01-04, company: Outsystems, credits: 10, hours: 480, mand: true }
+        - { name: Alessandro Borgonovo, init: 2018-10-01, end: 2019-03-31, company: Ideatech, credits: 10, hours: 960, mand: true }
+        - { name: Panzeri Ruggero, init: 2019-02-27, end: 2019-08-26, company: Solunica, credits: 10, hours: 960, mand: true }
 
     committees:
 
