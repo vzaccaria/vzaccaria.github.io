@@ -606,7 +606,7 @@
         -
             title: "2PARMA Project: a success story"
             recordedOn: "2012, Milan"
-            link: "//www.youtube.com/embed/hyAeoI2qsbg "
+            link: "//www.youtube.com/embed/hyAeoI2qsbg"
             description: "Wrapping up the work done in the 2PARMA project."
 
     history:
@@ -833,7 +833,7 @@
       description: |
         Integration of various technologies from different project partners to create
         a video-analytics application. 
-      link: "https://www.youtube.com/embed/hyAeoI2qsbg "
+      link: "https://www.youtube.com/embed/hyAeoI2qsbg"
       type: closed source
       role: project supervision 
       where: Politecnico di Milano
