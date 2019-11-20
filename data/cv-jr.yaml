@@ -828,6 +828,7 @@
       type: open source
       role: project supervision and development
       where: Politecnico di Milano
+      timeframe: 2016-2018
 
     - name: 2PARMA Use case n. 6 
       description: |
@@ -837,6 +838,7 @@
       type: closed source
       role: project supervision 
       where: Politecnico di Milano
+      timeframe: 2010-2013
 
     - name: Multicube Explorer 
       description: | 
@@ -847,6 +849,7 @@
       type: open source
       where: Politecnico di Milano
       role: project management and development
+      timeframe: 2007-2010
       
     - name: xSTreamC compiler and nSTream simulator 
       description: | 
@@ -856,6 +859,8 @@
       link: "http://xstreamc.sourceforge.net/"
       where: STMicroelectronics
       role: development
+      timeframe: 2004-2007
+
 
     - name: ST200-ISS 
       description: | 
@@ -865,6 +870,7 @@
       type: proprietary
       where: STMicroelectronics
       role: development
+      timeframe: 2004-2007
 
     - name: STBus Power estimation 
       description: |
@@ -874,6 +880,7 @@
       type: proprietary
       where: STMicroelectronics
       role: development
+      timeframe: 2003-2004
 
 
   skills:
