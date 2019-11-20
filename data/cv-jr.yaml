@@ -820,10 +820,60 @@
 
 
   projects:
-    - Multicube Explorer — an architectural exploration framework retargetable to different processor-based architectures and exploration algorithms. The tool contains also advanced algorithms for DoE generation and response surface modeling. It is scheduled to go open-source in January 2009 — open-source.
-    - xSTreamC compiler and nSTream simulator — a development toolchain for applications based on the stream oriented programming model. The toolchain has been released open-source in October 2008 — open-source.
-    - ST200-ISS — a production-grade instruction set simulator for the ST200 VLIW processor family (functional and timing behavior models). Kernel, device components, cache-coherency, secure-storage, co-hosting — proprietary.
-    - Tools for run-time power estimation of STBus proprietary bus technology (C/SystemC). These tools are currently part of the internal STBus product work-flow — proprietary.
+    - name: CASCA
+      description: |
+        A language for designing hardware countermeasures against side channel attacks. 
+        It is based on a final tagless approach for embedding domain specific languages. 
+      link: "https://github.com/vzaccaria/polimi-casca-todaes2018"
+      type: open source
+      role: project supervision and development
+      where: Politecnico di Milano
+
+    - name: 2PARMA Use case n. 6 
+      description: |
+        Integration of various technologies from different project partners to create
+        a video-analytics application. 
+      link: "https//www.youtube.com/embed/hyAeoI2qsbg "
+      type: closed source
+      role: project supervision 
+      where: Politecnico di Milano
+
+    - name: Multicube Explorer 
+      description: | 
+        Architectural exploration framework retargetable to different processor-based 
+        architectures and exploration algorithms. The tool contains also advanced algorithms 
+        for DoE generation and response surface modeling. 
+      link: "http://home.deib.polimi.it/zaccaria/multicube_explorer_v1/Home.html"
+      type: open source
+      where: Politecnico di Milano
+      role: project management and development
+      
+    - name: xSTreamC compiler and nSTream simulator 
+      description: | 
+        Development toolchain for applications based on the stream oriented programming 
+        model.
+      type: open source
+      link: "http://xstreamc.sourceforge.net/"
+      where: STMicroelectronics
+      role: development
+
+    - name: ST200-ISS 
+      description: | 
+        Production-grade instruction set simulator for the ST200 VLIW processor family 
+        (functional and timing behavior models). Kernel, device components, 
+        cache-coherency, secure-storage, co-hosting
+      type: proprietary
+      where: STMicroelectronics
+      role: development
+
+    - name: STBus Power estimation 
+      description: |
+        Tools for run-time power estimation of STBus proprietary bus 
+        technology (C/SystemC). These tools are currently part of the internal STBus 
+        product work-flow
+      type: proprietary
+      where: STMicroelectronics
+      role: development
 
 
   skills:
