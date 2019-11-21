@@ -252,6 +252,163 @@
           2007 al 31 ottobre 2009 per ricerche concernenti l'esplorazione dello
           spazio architetturale dei multi-processori.
 
+    other:
+      projects:
+        - name: CASCA
+          description: |
+            A language for designing hardware countermeasures against side channel attacks. 
+            It is based on a final tagless approach for embedding domain specific languages. 
+          link: "https://github.com/vzaccaria/polimi-casca-todaes2018"
+          type: open source
+          role: project supervision and development
+          where: Politecnico di Milano
+          timeframe: 2016-2018
+
+        - name: 2PARMA Use case n. 6 
+          description: |
+            Integration of various technologies from different project partners to create
+            a video-analytics application. 
+          link: "https://www.youtube.com/embed/hyAeoI2qsbg"
+          type: closed source
+          role: project supervision 
+          where: Politecnico di Milano
+          timeframe: 2010-2013
+
+        - name: Multicube Explorer 
+          description: | 
+            Architectural exploration framework retargetable to different processor-based 
+            architectures and exploration algorithms. The tool contains also advanced algorithms 
+            for DoE generation and response surface modeling. 
+          link: "http://home.deib.polimi.it/zaccaria/multicube_explorer_v1/Home.html"
+          type: open source
+          where: Politecnico di Milano
+          role: project management and development
+          timeframe: 2007-2010
+          
+        - name: xSTreamC compiler and nSTream simulator 
+          description: | 
+            Development toolchain for applications based on the stream oriented programming 
+            model.
+          type: open source
+          link: "http://xstreamc.sourceforge.net/"
+          where: STMicroelectronics
+          role: development
+          timeframe: 2004-2007
+
+
+        - name: ST200-ISS 
+          description: | 
+            Production-grade instruction set simulator for the ST200 VLIW processor family 
+            (functional and timing behavior models). Kernel, device components, 
+            cache-coherency, secure-storage, co-hosting
+          type: proprietary
+          where: STMicroelectronics
+          role: development
+          timeframe: 2004-2007
+
+        - name: STBus Power estimation 
+          description: |
+            Tools for run-time power estimation of STBus proprietary bus 
+            technology (C/SystemC). These tools are currently part of the internal STBus 
+            product work-flow
+          type: proprietary
+          where: STMicroelectronics
+          role: development
+          timeframe: 2003-2004
+
+
+      skills:
+        -
+          name: "General software design"
+          keywords:
+            - "version control (SVN/GIT)"
+            - "semantic versioning"
+            - "agile development"
+            - "test driven design"
+            - "DSL and fluent interface design"
+            - "web services"
+            - "representational state transfer interfaces"
+            - "shared memory multi-processing"
+            - "message passing multiprocessing"
+            - "dataflow programming"
+            - "object oriented programming"
+            - "asynchronous programming"
+            - "functional programming"
+            - "dependent type programming"
+
+        -
+          name: "General hardware design"
+          keywords:
+            - "processor-platform and IP selection and customization"
+            - "benchmarking and application customization"
+            - "strategic and emergent R\\&D directions for platform development"
+            - "functional programming languages for hardware design"
+
+        -
+          name: "Artificial languages"
+          keywords:
+            - "C"
+            - "C++"
+            - "Javascript"
+            - "Coffeescript"
+            - "Python"
+            - "Haskell"
+            - "Java - JVM Based Languages such as Groovy"
+            - "Ruby"
+            - "JSON"
+            - "RISC assembly"
+            - "ST200 Assembly"
+        -
+          name: "Processor architecture design"
+          keywords:
+            - "instruction set simulation"
+            - "event-driven simulation"
+            - "virtual platforms"
+            - "cache simulation"
+            - "Instruction-level power modeling"
+        -
+          name: "Embedded Systems Design"
+          keywords:
+            - "Interrupt programming"
+            - "Supervisor-mode programming"
+            - "Co-hosting"
+            - "Virtual Memory"
+            - "Linux internals"
+            - "Notions of device driver programming"
+            - "Notions of system bring up"
+            - "Notions of CPU scheduling algorithms"
+
+      specializations:
+        - Computer aided design of digital circuits.
+        - Multi-processor design space exploration.
+        - Low-power and high-performance design.
+        - Parallel processor architectures.
+        - Advanced parallel programming paradigms.
+        - Compilation and simulation methodologies for multi-processor-based systems.
+
+      recommendations:
+        - name: Giuseppe Desoli
+          title:
+          institution: STMicroelectronics
+          where:
+          email: 
+        - name: Cristina Silvano
+          title:
+          institution:
+          where:
+          email:
+        - name: Luca Benini
+          title:
+          institution:
+          where:
+          email:
+        - name: Guido Bertoni
+          title:
+          institution:
+          where:
+          email:
+            
+
   research:
 
     citations:
@@ -821,135 +978,3 @@
 
 
 
-  projects:
-    - name: CASCA
-      description: |
-        A language for designing hardware countermeasures against side channel attacks. 
-        It is based on a final tagless approach for embedding domain specific languages. 
-      link: "https://github.com/vzaccaria/polimi-casca-todaes2018"
-      type: open source
-      role: project supervision and development
-      where: Politecnico di Milano
-      timeframe: 2016-2018
-
-    - name: 2PARMA Use case n. 6 
-      description: |
-        Integration of various technologies from different project partners to create
-        a video-analytics application. 
-      link: "https://www.youtube.com/embed/hyAeoI2qsbg"
-      type: closed source
-      role: project supervision 
-      where: Politecnico di Milano
-      timeframe: 2010-2013
-
-    - name: Multicube Explorer 
-      description: | 
-        Architectural exploration framework retargetable to different processor-based 
-        architectures and exploration algorithms. The tool contains also advanced algorithms 
-        for DoE generation and response surface modeling. 
-      link: "http://home.deib.polimi.it/zaccaria/multicube_explorer_v1/Home.html"
-      type: open source
-      where: Politecnico di Milano
-      role: project management and development
-      timeframe: 2007-2010
-      
-    - name: xSTreamC compiler and nSTream simulator 
-      description: | 
-        Development toolchain for applications based on the stream oriented programming 
-        model.
-      type: open source
-      link: "http://xstreamc.sourceforge.net/"
-      where: STMicroelectronics
-      role: development
-      timeframe: 2004-2007
-
-
-    - name: ST200-ISS 
-      description: | 
-        Production-grade instruction set simulator for the ST200 VLIW processor family 
-        (functional and timing behavior models). Kernel, device components, 
-        cache-coherency, secure-storage, co-hosting
-      type: proprietary
-      where: STMicroelectronics
-      role: development
-      timeframe: 2004-2007
-
-    - name: STBus Power estimation 
-      description: |
-        Tools for run-time power estimation of STBus proprietary bus 
-        technology (C/SystemC). These tools are currently part of the internal STBus 
-        product work-flow
-      type: proprietary
-      where: STMicroelectronics
-      role: development
-      timeframe: 2003-2004
-
-
-  skills:
-    -
-      name: "General software design"
-      keywords:
-        - "version control (SVN/GIT)"
-        - "semantic versioning"
-        - "agile development"
-        - "test driven design"
-        - "DSL and fluent interface design"
-        - "web services"
-        - "representational state transfer interfaces"
-        - "shared memory multi-processing"
-        - "message passing multiprocessing"
-        - "dataflow programming"
-        - "object oriented programming"
-        - "asynchronous programming"
-        - "functional programming"
-        - "dependent type programming"
-
-    -
-      name: "General hardware design"
-      keywords:
-        - "processor-platform and IP selection and customization"
-        - "benchmarking and application customization"
-        - "strategic and emergent R\\&D directions for platform development"
-        - "functional programming languages for hardware design"
-
-    -
-      name: "Artificial languages"
-      keywords:
-        - "C"
-        - "C++"
-        - "Javascript"
-        - "Coffeescript"
-        - "Python"
-        - "Haskell"
-        - "Java - JVM Based Languages such as Groovy"
-        - "Ruby"
-        - "JSON"
-        - "RISC assembly"
-        - "ST200 Assembly"
-    -
-      name: "Processor architecture design"
-      keywords:
-        - "instruction set simulation"
-        - "event-driven simulation"
-        - "virtual platforms"
-        - "cache simulation"
-        - "Instruction-level power modeling"
-    -
-      name: "Embedded Systems Design"
-      keywords:
-        - "Interrupt programming"
-        - "Supervisor-mode programming"
-        - "Co-hosting"
-        - "Virtual Memory"
-        - "Linux internals"
-        - "Notions of device driver programming"
-        - "Notions of system bring up"
-        - "Notions of CPU scheduling algorithms"
-
-  specializations:
-    - Computer aided design of digital circuits.
-    - Multi-processor design space exploration.
-    - Low-power and high-performance design.
-    - Parallel processor architectures.
-    - Advanced parallel programming paradigms.
-    - Compilation and simulation methodologies for multi-processor-based systems.
