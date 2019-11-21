@@ -21,7 +21,7 @@ export default class Sidebar extends statefulComponent {
             src={require("../../../img/avatar-vz.jpg")}
           />
           <div className="sidebar__name">{$.basics.name}</div>
-          <div className="sidebar__address">{$.currentWork.company}</div>
+          <div className="sidebar__address">{$.work.current.company}</div>
           <SidebarLinkList>
             <SidebarLinkItem icon="fa-home" name="Home" link="#/" />
             <SidebarLinkItem
@@ -40,11 +40,7 @@ export default class Sidebar extends statefulComponent {
               name="Stages/Thesis"
               link="#/thesis"
             />
-            <SidebarLinkItem
-              icon="fa-user"
-              name="CV"
-              link="/deposit/cv.pdf"
-            />
+            <SidebarLinkItem icon="fa-user" name="CV" link="/deposit/cv.pdf" />
             <SidebarLinkItem
               icon="fa-youtube-play"
               name="Videos"

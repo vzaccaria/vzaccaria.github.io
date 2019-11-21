@@ -137,118 +137,120 @@
         Politecnico di Milano.
 
 
-  currentWork:
-      position: "Assistant Professor"
-      startDate: '2009-11-01'
-      company: "Politecnico di Milano"
-      address: "Milan, Italy"
-
   work:
-    -
-      position: "Assistant Professor"
-      startDate: '2009-11-01'
-      company: "Politecnico di Milano"
-      address: "Milan, Italy"
-      highlights:
+    current:
 
-        - Appointed as Principal Investigator for an industrial collaboration
-          grant from STMicroelectronics related to the design cryptographic
-          hardware using functional programming languages.
+        position: "Assistant Professor"
+        startDate: '2009-11-01'
+        company: "Politecnico di Milano"
+        address: "Milan, Italy"
 
-        - Specified and developed the ReSPIR optimization algorithm for
-          processor/SoC optimization. It enables efficient IP reuse in the
-          context of virtual platforms (10x reduction in time, less than 1
-          percent error w.r.t. ideal).
+    previous:
+      -
+        position: "Assistant Professor"
+        startDate: '2009-11-01'
+        company: "Politecnico di Milano"
+        address: "Milan, Italy"
+        highlights:
 
-        - Succesfully brought a team of 5 people to prototype a new type of
-          video-surveillance system in the context of the 2PARMA FP7 European
-          Project.
+          - Appointed as Principal Investigator for an industrial collaboration
+            grant from STMicroelectronics related to the design cryptographic
+            hardware using functional programming languages.
 
-        - Led a team of 3 engineers to prototype a research software tool for
-          processor customization. Prototypes were delivered on-time and within
-          budget of several european FP7 projects.
+          - Specified and developed the ReSPIR optimization algorithm for
+            processor/SoC optimization. It enables efficient IP reuse in the
+            context of virtual platforms (10x reduction in time, less than 1
+            percent error w.r.t. ideal).
 
-      dichiara: >-
-        di prestare servizio come ricercatore a tempo indeterminato dal 1 marzo
-        2011 presso il Dipartimento di Elettronica e Informazione del Politecnico
-        di Milano, e di avere prestato servizio come ricercatore a tempo
-        determinato dal 1 novembre 2009 a fine Febbraio 2011 presso il
-        Dipartimento di Elettronica e Informazione del Politecnico di Milano.
+          - Succesfully brought a team of 5 people to prototype a new type of
+            video-surveillance system in the context of the 2PARMA FP7 European
+            Project.
 
-    -
-      startDate: 2004-05-01
-      endDate: 2007-03-27
-      position: "R\\&D Engineer"
-      positionLong: "Research and Development Engineer"
-      company: "STMicroelectronics"
-      address: "Lugano, Switzerland"
-      highlights:
+          - Led a team of 3 engineers to prototype a research software tool for
+            processor customization. Prototypes were delivered on-time and within
+            budget of several european FP7 projects.
 
-        - "Specified, prototyped and validated several ST200 processor
-          architectural extensions. Vertical validation of the extensions from
-          the ISA up to the application-layer/OS."
+        dichiara: >-
+          di prestare servizio come ricercatore a tempo indeterminato dal 1 marzo
+          2011 presso il Dipartimento di Elettronica e Informazione del Politecnico
+          di Milano, e di avere prestato servizio come ricercatore a tempo
+          determinato dal 1 novembre 2009 a fine Febbraio 2011 presso il
+          Dipartimento di Elettronica e Informazione del Politecnico di Milano.
 
-        - "Enabled secure co-hosting of more operating systems by means of
-          secure storage extensions of the ST200 architecture."
+      -
+        startDate: 2004-05-01
+        endDate: 2007-03-27
+        position: "R\\&D Engineer"
+        positionLong: "Research and Development Engineer"
+        company: "STMicroelectronics"
+        address: "Lugano, Switzerland"
+        highlights:
 
-        - "Collaborated to the specification, validation (by means of functional
-          and timing simulation) and architectural exploration for symmetric
-          multi-processing based on ST200."
+          - "Specified, prototyped and validated several ST200 processor
+            architectural extensions. Vertical validation of the extensions from
+            the ISA up to the application-layer/OS."
 
-        - "Architectural specification and design of multi-threaded
-          architectures based on stream-programming paradigms."
+          - "Enabled secure co-hosting of more operating systems by means of
+            secure storage extensions of the ST200 architecture."
 
-      dichiara: >-
-        di avere prestato servizio come Research and Development Engineer
-        presso l’Advanced Architecture Research group, AST-STMicroelectronics,
-        Lugano (Svizzera), dal 1 maggio 2004 fino al 27 marzo 2007. In tale
-        periodo si è occupato della ricerca e lo sviluppo di estensioni di
-        processori industriali, co-hosting, esplorazione architetturale e
-        paradigmi di programmazione streaming.
+          - "Collaborated to the specification, validation (by means of functional
+            and timing simulation) and architectural exploration for symmetric
+            multi-processing based on ST200."
+
+          - "Architectural specification and design of multi-threaded
+            architectures based on stream-programming paradigms."
+
+        dichiara: >-
+          di avere prestato servizio come Research and Development Engineer
+          presso l’Advanced Architecture Research group, AST-STMicroelectronics,
+          Lugano (Svizzera), dal 1 maggio 2004 fino al 27 marzo 2007. In tale
+          periodo si è occupato della ricerca e lo sviluppo di estensioni di
+          processori industriali, co-hosting, esplorazione architetturale e
+          paradigmi di programmazione streaming.
 
 
-    -
-      startDate: 2003-04-01
-      endDate: 2004-03-31
-      position: "Research Consultant"
-      company: "STMicroelectronics"
-      address: "Milan, Italy"
-      highlights:
+      -
+        startDate: 2003-04-01
+        endDate: 2004-03-31
+        position: "Research Consultant"
+        company: "STMicroelectronics"
+        address: "Milan, Italy"
+        highlights:
 
-        - "Pioneered the field of Power Modeling of VLIW Cores (10 percent error
-          RTL vs Gate-level)."
+          - "Pioneered the field of Power Modeling of VLIW Cores (10 percent error
+            RTL vs Gate-level)."
 
-        - "Introduced an effective methodology to minimize the effort of design
-          of experiments for NoC power models (10x reduction in characterization
-          time, 33 percent error)."
+          - "Introduced an effective methodology to minimize the effort of design
+            of experiments for NoC power models (10x reduction in characterization
+            time, 33 percent error)."
 
-      dichiara: >-
-        di avere prestato servizio come Research Consultant presso il gruppo
-        Low Power System Design, AST-STMicroelectronics, Agrate Brianza
-        (Italia), dal 1 aprile 2003 al 31 marzo 2004. In tale periodo si è
-        occupato della ricerca e sviluppo di modelli di consumo di potenza dei
-        processori digitali e networks-on-chip.
+        dichiara: >-
+          di avere prestato servizio come Research Consultant presso il gruppo
+          Low Power System Design, AST-STMicroelectronics, Agrate Brianza
+          (Italia), dal 1 aprile 2003 al 31 marzo 2004. In tale periodo si è
+          occupato della ricerca e sviluppo di modelli di consumo di potenza dei
+          processori digitali e networks-on-chip.
 
-    -
-      startDate: 2007-11-01
-      endDate: 2009-10-31
-      position: "Research Associate (assegnista di ricerca)"
-      company: "Politecnico di Milano"
-      address: "Milan, Italy"
-      highlights:
+      -
+        startDate: 2007-11-01
+        endDate: 2009-10-31
+        position: "Research Associate (assegnista di ricerca)"
+        company: "Politecnico di Milano"
+        address: "Milan, Italy"
+        highlights:
 
-        - "Introduced advanced techniques for managing design of experiments and
-          response surface methods in automatic design space exploration for
-          multi-processors."
+          - "Introduced advanced techniques for managing design of experiments and
+            response surface methods in automatic design space exploration for
+            multi-processors."
 
-        - "Extended classical design space exploration to tackle the problem of
-          process-variability-aware design of multi-processors."
-      
-      dichiara: >-
-        di avere usufruito di un assegno di ricerca presso il Dipartimento di
-        Elettronica e Informazione del Politecnico di Milano dal 1 novembre
-        2007 al 31 ottobre 2009 per ricerche concernenti l'esplorazione dello
-        spazio architetturale dei multi-processori.
+          - "Extended classical design space exploration to tackle the problem of
+            process-variability-aware design of multi-processors."
+        
+        dichiara: >-
+          di avere usufruito di un assegno di ricerca presso il Dipartimento di
+          Elettronica e Informazione del Politecnico di Milano dal 1 novembre
+          2007 al 31 ottobre 2009 per ricerche concernenti l'esplorazione dello
+          spazio architetturale dei multi-processori.
 
   research:
 

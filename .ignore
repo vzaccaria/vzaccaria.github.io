@@ -10,4 +10,7 @@ cf2016/*
 .git/*
 _posts/*
 _drafts/*
-data/*
+deposit/*
+vendor/*
+data/biblio.bib
+data/bibliov2.json
