@@ -263,6 +263,17 @@
           role: project supervision and development
           where: Politecnico di Milano
           timeframe: 2016-2018
+        
+        - name: Polimi at Home (PAH)
+          description: |
+            An experiment in MOOC for my students of Informatica B. It allows to learn
+            a Matlab-like language through a set of small lectures and 
+            automatically graded exercises. It uses the EDX stack.
+          link: "http://www.pah.polimi.it/"
+          type: online
+          role: project supervision and development
+          where: Politecnico di Milano
+          timeframe: 2015-2016
 
         - name: 2PARMA Use case n. 6 
           description: |
@@ -388,10 +399,10 @@
 
       recommendations:
         - name: Giuseppe Desoli
-          title:
+          title: Director
           institution: STMicroelectronics
-          where:
-          email: 
+          where: Castelletto --- Milan, Italy
+          email: giuseppe.desoli@st.com
         - name: Cristina Silvano
           title:
           institution:
