@@ -26,41 +26,6 @@
         },
         {
             "authors": [
-                "G. Mariani",
-                "G. Palermo",
-                "V. Zaccaria",
-                "C. Silvano"
-            ],
-            "title": "DeSpErate++: An enhanced design space exploration framework using predictive simulation scheduling",
-            "year": "2015",
-            "journal": {
-                "identifier": [
-                    {
-                        "type": "issn",
-                        "id": "0278-0070"
-                    }
-                ],
-                "name": "IEEE Transactions on Computer Aided Design of Integrated Circuits",
-                "id": "IEEETransactionsonComputerAidedDesignofIntegratedCircuits"
-            },
-            "volume": "34",
-            "pages": "293 to 306",
-            "doi": "10.1109/TCAD.2014.2379634",
-            "url": "http://dx.doi.org/10.1109/TCAD.2014.2379634",
-            "justApplied": false,
-            "justAccepted": false,
-            "keyword": [
-                "tocheck",
-                "asn2018-12",
-                "trans",
-                "journal",
-                "asn2018-5"
-            ],
-            "type": "journal",
-            "timestamp": 1420066800
-        },
-        {
-            "authors": [
                 "E. Paone",
                 "F. Robino",
                 "G. Palermo",
@@ -108,7 +73,7 @@
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
-                "pa2018",
+                "pa2019",
                 "asn2018-12",
                 "trans",
                 "journal",
@@ -199,7 +164,7 @@
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
-                "pa2018",
+                "pa2019",
                 "asn2018-12",
                 "trans",
                 "journal",
@@ -259,7 +224,42 @@
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
-                "pa2018",
+                "pa2019",
+                "asn2018-12",
+                "trans",
+                "journal",
+                "asn2018-5"
+            ],
+            "type": "journal",
+            "timestamp": 1420066800
+        },
+        {
+            "authors": [
+                "G. Mariani",
+                "G. Palermo",
+                "V. Zaccaria",
+                "C. Silvano"
+            ],
+            "title": "DeSpErate++: An enhanced design space exploration framework using predictive simulation scheduling",
+            "year": "2015",
+            "journal": {
+                "identifier": [
+                    {
+                        "type": "issn",
+                        "id": "0278-0070"
+                    }
+                ],
+                "name": "IEEE Transactions on Computer Aided Design of Integrated Circuits",
+                "id": "IEEETransactionsonComputerAidedDesignofIntegratedCircuits"
+            },
+            "volume": "34",
+            "pages": "293 to 306",
+            "doi": "10.1109/TCAD.2014.2379634",
+            "url": "http://dx.doi.org/10.1109/TCAD.2014.2379634",
+            "justApplied": false,
+            "justAccepted": false,
+            "keyword": [
+                "tocheck",
                 "asn2018-12",
                 "trans",
                 "journal",
@@ -526,7 +526,7 @@
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
-                "pa2018",
+                "pa2019",
                 "asn2018-12",
                 "journal"
             ],
@@ -631,7 +631,7 @@
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
-                "pa2018",
+                "pa2019",
                 "asn2018-12",
                 "journal",
                 "trans"
@@ -815,11 +815,12 @@
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
-                "pa2018",
+                "pa2019",
                 "asn2018-12",
                 "cineca",
                 "trans",
-                "journal"
+                "journal",
+                "impactful"
             ],
             "type": "journal",
             "timestamp": 1030831200
@@ -960,7 +961,8 @@
             "justAccepted": false,
             "keyword": [
                 "cineca",
-                "bookc"
+                "bookc",
+                "impactful"
             ],
             "type": "bookchapter",
             "timestamp": 1293836400
@@ -1179,7 +1181,8 @@
             "justAccepted": false,
             "keyword": [
                 "cineca",
-                "bookc"
+                "bookc",
+                "impactful"
             ],
             "type": "bookchapter",
             "timestamp": 1293836400
@@ -1262,7 +1265,7 @@
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
-                "pa2018",
+                "pa2019",
                 "asn2018-12",
                 "cineca",
                 "journal",
@@ -1385,7 +1388,7 @@
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
-                "pa2018",
+                "pa2019",
                 "cineca",
                 "conference"
             ],
@@ -1468,7 +1471,8 @@
             "justAccepted": false,
             "keyword": [
                 "cineca",
-                "conference"
+                "conference",
+                "impactful"
             ],
             "type": "conference",
             "timestamp": 1267398000
@@ -1520,11 +1524,12 @@
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
-                "pa2018",
+                "pa2019",
                 "asn2018-12",
                 "cineca",
                 "trans",
-                "journal"
+                "journal",
+                "impactful"
             ],
             "type": "journal",
             "timestamp": 1259622000
@@ -1858,7 +1863,8 @@
             "justAccepted": false,
             "keyword": [
                 "cineca",
-                "workshop"
+                "workshop",
+                "impactful"
             ],
             "type": "workshop",
             "timestamp": 999295200
@@ -1909,9 +1915,10 @@
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
-                "pa2018",
+                "pa2019",
                 "cineca",
-                "conference"
+                "conference",
+                "impactful"
             ],
             "type": "conference",
             "timestamp": 1022882400
@@ -1962,7 +1969,8 @@
             "justAccepted": false,
             "keyword": [
                 "cineca",
-                "conference"
+                "conference",
+                "impactful"
             ],
             "type": "conference",
             "timestamp": 1112306400
@@ -1987,7 +1995,8 @@
             "justAccepted": false,
             "keyword": [
                 "cineca",
-                "journal"
+                "journal",
+                "impactful"
             ],
             "type": "journal",
             "timestamp": 1104534000
@@ -2090,7 +2099,8 @@
             "justAccepted": false,
             "keyword": [
                 "notfoundincineca",
-                "bookc"
+                "bookc",
+                "impactful"
             ],
             "type": "bookchapter",
             "timestamp": 1072911600
@@ -2353,7 +2363,7 @@
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
-                "pa2018",
+                "pa2019",
                 "asn2018-12",
                 "cineca",
                 "trans",
@@ -2440,7 +2450,7 @@
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
-                "pa2018",
+                "pa2019",
                 "asn2018-12",
                 "cineca",
                 "trans",
