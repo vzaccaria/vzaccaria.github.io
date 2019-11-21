@@ -14,7 +14,7 @@ var biblioJson = _.map(
   processData
 );
 
-biblioJson = _.sortBy(biblioJson, x => x.timestamp * (-1));
+biblioJson = _.sortBy(biblioJson, x => x.timestamp * -1);
 
 class researchPage extends statefulComponent {
   render() {
@@ -23,17 +23,15 @@ class researchPage extends statefulComponent {
 
     if (this.state.valid) {
       let research_achievements = _.flatten(
-           _.map(this.state.data.work, "highlights")
+        _.map(this.state.data.work.previous, "highlights")
       );
-      research_achievements = _.map(research_achievements, r => `* ${r}`)
-        .join("\n");
+      research_achievements = _.map(research_achievements, r => `* ${r}`).join(
+        "\n"
+      );
       return (
         <div className={p()}>
-
           <div className={s()}>
-            <div className={s("title")}>
-              Current research
-            </div>
+            <div className={s("title")}>Current research</div>
             <div className={s("summary")}>
               <ReactMarkdown
                 source={this.state.data.research.currentGoals.short}
@@ -44,20 +42,21 @@ class researchPage extends statefulComponent {
           </div>
 
           <div className={s()}>
-            <div className={s("title")}>
-              Past research and achievements
-            </div>
+            <div className={s("title")}>Past research and achievements</div>
             <div className={s("summary")}>
               <ReactMarkdown source={research_achievements} />
             </div>
           </div>
 
-          <div className={p("header")}>
-            Publications
-          </div>
+          <div className={p("header")}>Publications</div>
           <div className={p("container")}>
-            {" "}{_.map(biblioJson, (it, k) => {
-              return <Publication data={it} key={k}> </Publication>;
+            {" "}
+            {_.map(biblioJson, (it, k) => {
+              return (
+                <Publication data={it} key={k}>
+                  {" "}
+                </Publication>
+              );
             })}{" "}
           </div>
         </div>
