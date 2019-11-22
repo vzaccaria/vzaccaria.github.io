@@ -401,39 +401,44 @@
         - name: Giuseppe Desoli
           title: Director
           institution: STMicroelectronics
-          where: Castelletto --- Milan, Italy
+          where: Castelletto, Milan (Italy)
           email: giuseppe.desoli@st.com
         - name: Cristina Silvano
-          title:
-          institution:
-          where:
-          email:
+          title: Professor
+          institution: Politecnico di Milano
+          where: Milan (Italy)
+          email: cristina.silvano@polimi.it
         - name: Luca Benini
-          title:
-          institution:
-          where:
-          email:
+          title: Professor
+          institution: ETH Zurich
+          where: Zurich (Switzerland)
+          email: lbenini@iis.ee.ethz.ch
         - name: Guido Bertoni
-          title:
-          institution:
-          where:
-          email:
+          title: CEO 
+          institution: Security Pattern
+          where: Brescia (Italy)
+          email: g.bertoni@securitypattern.com
+        - name: Roberto Zafalon
+          title: Director
+          institution: STMicroelectronics
+          where: Agrate Brianza (Italy)
+          email: roberto.zafalon@st.com
             
 
   research:
 
     citations:
-      date: 2019-06-25
+      date: 2019-11-22
       source: Google Scholar profile
       all:
-        citations: 1797
+        citations: 1851
         highest: 122
         hindex: 24
       since2012:
         citations: 756
         hindex: 16
       since2014:
-        citations: 699
+        citations: 741
         hindex: 15
         
 
@@ -451,14 +456,14 @@
         # copied from above.. at the moment..
         scholar: 
           hindex: 24
-          citations: 1797
-          date: 2019-06-25
+          citations: 1851
+          date: 2019-11-22
           since: 2000-01-01
         scopus:
-          npubs: ??
-          hindex: ??
-          citations: ??
-          date: ??
+          npubs: 76
+          hindex: 18
+          citations: 979
+          date: 2019-11-22
           since: 2000-01-01
 
        
