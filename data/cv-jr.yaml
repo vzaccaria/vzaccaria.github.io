@@ -444,7 +444,8 @@
 
     productivity:
        # computed with pubstats.js in curriculum on 2019 11 18
-       total: 97
+       # Note, total must be the total of pubs in CV!
+       total: 91
        coauthors: 110
        transactions: 11
        journals: 19
