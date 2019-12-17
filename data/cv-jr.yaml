@@ -696,24 +696,24 @@
 
     committees:
 
-      - { name: PARMA-DITAM Workshop,                              year: 2020, date: "2020-01-21", ruolo: membro del TPC,                        address: "Bologna, Italy", h: true }
-      - { name: PARMA-DITAM Workshop,                              year: 2018, date: "2018-01-23", ruolo: membro del TPC,                        address: "Manchester, United Kingdom", h: true }
-      - { name: DITAM Workshop,                                    year: 2013, date: "2013-01-22", ruolo: membro del TPC e web chair,            address: "Berlin, Germany" }
-      - { name: DITAM Workshop,                                    year: 2012, date: "2012-12-24", ruolo: membro del TPC e poster session chair, address: "Paris, France" }
-      - { name: ADAPT Workshop,                                    year: 2016, date: "2016-01-18", ruolo: membro del TPC,                        address: "Prague, Czech Republic", h: true }
-      - { name: ADAPT Workshop,                                    year: 2015, date: "2015-01-21", ruolo: membro del TPC,                        address: "Amsterdam, The Netherlands" }
-      - { name: ADAPT Workshop,                                    year: 2014, date: "2014-01-22", ruolo: membro del TPC,                        address: "Vienna, Austria" }
-      - { name: PARMA Workshop (co-located with ARCS),             year: 2012, date: "2012-02-29", ruolo: program co-chair,                      address: "Munich, Germany", h: true }
-      - { name: PARMA Workshop (co-located with ARCS),             year: 2011, date: "2011-02-23", ruolo: membro del TPC,                        address: "Como, Italy" }
-      - { name: PARMA Workshop (co-located with ARCS),             year: 2010, date: "2010-02-22", ruolo: membro del TPC,                        address: "Hannover, Germany" }
-      - { name: NoCArc Workshop,                                   year: 2012, date: "2012-12-01", ruolo: membro del TPC,                        address: "Vancouver, Canada" }
-      - { name: NoCArc Workshop,                                   year: 2010, date: "2010-12-04", ruolo: membro del TPC,                        address: "Atlanta, USA" }
-      - { name: NoCArc Workshop,                                   year: 2009, date: "2009-12-12", ruolo: membro del TPC,                        address: "New York City, USA"}
-      - { name: NoCArc Workshop,                                   year: 2008, date: "2008-11-08", ruolo: membro del TPC,                        address: "Como, Italy" }
-      - { name: Trust Workshop,                                    year: 2014, date: "2014-06-12", ruolo: membro del TPC,                        address: "Edinburgh, UK" }
-      - { name: Micro Conference,                                  year: 2008, date: "2008-11-10", ruolo: membro del local committee,            address: "Como, Italy",     end: "2008-11-12", h: true }
-      - { name: DATE Conference - Track A8 (Multi-Core Platforms), year: 2009, date: "2009-04-20", ruolo: membro del TPC e session chair,        address: "Nice, France",    end: "2009-04-24", h: true}
-      - { name: DATE Conference - Track A8 (Multi-Core Platforms), year: 2008, date: "2008-03-10", ruolo: membro del TPC,                        address: "Munich, Germany", end: "2008-03-14", h: true}
+      - { name: PARMA-DITAM Workshop,                              year: 2020, date: "2020-01-21", role: member of TPC,                   ruolo: membro del TPC,                        address: "Bologna, Italy",             h: true }
+      - { name: PARMA-DITAM Workshop,                              year: 2018, date: "2018-01-23", role: member of TPC,                   ruolo: membro del TPC,                        address: "Manchester, United Kingdom", h: true }
+      - { name: DITAM Workshop,                                    year: 2013, date: "2013-01-22", role: member of TPC,                   ruolo: membro del TPC e web chair,            address: "Berlin, Germany" }
+      - { name: DITAM Workshop,                                    year: 2012, date: "2012-12-24", role: member of TPC,                   ruolo: membro del TPC e poster session chair, address: "Paris, France" }
+      - { name: ADAPT Workshop,                                    year: 2016, date: "2016-01-18", role: member of TPC,                   ruolo: membro del TPC,                        address: "Prague, Czech Republic",     h: true }
+      - { name: ADAPT Workshop,                                    year: 2015, date: "2015-01-21", role: member of TPC,                   ruolo: membro del TPC,                        address: "Amsterdam, The Netherlands" }
+      - { name: ADAPT Workshop,                                    year: 2014, date: "2014-01-22", role: member of TPC,                   ruolo: membro del TPC,                        address: "Vienna, Austria" }
+      - { name: PARMA Workshop (co-located with ARCS),             year: 2012, date: "2012-02-29", role: program co-chair,                ruolo: program co-chair,                      address: "Munich, Germany",            h: true }
+      - { name: PARMA Workshop (co-located with ARCS),             year: 2011, date: "2011-02-23", role: member of TPC,                   ruolo: membro del TPC,                        address: "Como, Italy" }
+      - { name: PARMA Workshop (co-located with ARCS),             year: 2010, date: "2010-02-22", role: member of TPC,                   ruolo: membro del TPC,                        address: "Hannover, Germany" }
+      - { name: NoCArc Workshop,                                   year: 2012, date: "2012-12-01", role: member of TPC,                   ruolo: membro del TPC,                        address: "Vancouver, Canada" }
+      - { name: NoCArc Workshop,                                   year: 2010, date: "2010-12-04", role: member of TPC,                   ruolo: membro del TPC,                        address: "Atlanta, USA" }
+      - { name: NoCArc Workshop,                                   year: 2009, date: "2009-12-12", role: member of TPC,                   ruolo: membro del TPC,                        address: "New York City, USA"}
+      - { name: NoCArc Workshop,                                   year: 2008, date: "2008-11-08", role: member of TPC,                   ruolo: membro del TPC,                        address: "Como, Italy" }
+      - { name: Trust Workshop,                                    year: 2014, date: "2014-06-12", role: member of TPC,                   ruolo: membro del TPC,                        address: "Edinburgh, UK" }
+      - { name: Micro Conference,                                  year: 2008, date: "2008-11-10", role: member of local committee,       ruolo: membro del local committee,            address: "Como, Italy",                end: "2008-11-12", h: true }
+      - { name: DATE Conference - Track A8 (Multi-Core Platforms), year: 2009, date: "2009-04-20", role: member of TPC and session chair, ruolo: membro del TPC e session chair,        address: "Nice, France",               end: "2009-04-24", h: true}
+      - { name: DATE Conference - Track A8 (Multi-Core Platforms), year: 2008, date: "2008-03-10", role: member of TPC,                   ruolo: membro del TPC,                        address: "Munich, Germany",            end: "2008-03-14", h: true}
 
     talks:
         - { name: ESTIMEDA Workshop,               year: 2012, ruolo: Keynote speaker, address: "Tampere, Finland",    date: "2012-10-11", title: "Design space exploration and run-time resource management in the embedded multi-core era" }
@@ -950,16 +950,20 @@
     courses:
       - { aaInit: 2019, aaEnd: 2020, position: Titolare,     crediti: 7, ore: 29, courseName: Informatica B,                                    titolare: Vittorio Zaccaria,  level: Laurea di primo livello in Ingegneria Meccanica ed Energetica, institution: Politecnico di Milano, students: "200+", short: "PoliMi - Ing. Mec. e Ener. - 1 Liv" }
       - { aaInit: 2019, aaEnd: 2020, position: Esercitatore, crediti: N, ore: 26, courseName: Informatica B,                                    titolare: Vittorio Zaccaria,  level: Laurea di primo livello in Ingegneria Meccanica ed Energetica, institution: Politecnico di Milano }
+
       - { aaInit: 2018, aaEnd: 2019, position: Esercitatore, crediti: N, ore: 20, courseName: Hypermedia Applications (Web and multimedia),     titolare: Franca Garzotto,    level: Laurea magistrale in Ingegneria Informatica,                   institution: Politecnico di Milano }
       - { aaInit: 2018, aaEnd: 2019, position: Titolare,     crediti: 3, ore: 30, courseName: Technologies for Connected Products and Systems,  titolare: Vittorio Zaccaria,  level: Laurea Magistrale in Digital and Interaction Design,           institution: Politecnico di Milano, students: "20+",  short: "PoliMi - Design - LM" }
-      - { aaInit: 2018, aaEnd: 2019, position: Esercitatore, crediti: N, ore: 28, courseName: Informatica B,                                    titolare: Vittorio Zaccaria,  level: Laurea di primo livello in Ingegneria Meccanica ed Energetica, institution: Politecnico di Milano }
       - { aaInit: 2018, aaEnd: 2019, position: Titolare,     crediti: 7, ore: 33, courseName: Informatica B,                                    titolare: Vittorio Zaccaria,  level: Laurea di primo livello in Ingegneria Meccanica ed Energetica, institution: Politecnico di Milano, students: "200+", short: "PoliMi - Ing. Mec. e Ener. - 1 Liv"  }
+      - { aaInit: 2018, aaEnd: 2019, position: Esercitatore, crediti: N, ore: 28, courseName: Informatica B,                                    titolare: Vittorio Zaccaria,  level: Laurea di primo livello in Ingegneria Meccanica ed Energetica, institution: Politecnico di Milano }
+
       - { aaInit: 2017, aaEnd: 2018, position: Esercitatore, crediti: N, ore: 20, courseName: Hypermedia Applications (Web and multimedia),     titolare: Franca Garzotto,    level: Laurea magistrale in Ingegneria Informatica,                   institution: Politecnico di Milano }
       - { aaInit: 2017, aaEnd: 2018, position: Titolare,     crediti: 7, ore: 36, courseName: Informatica B,                                    titolare: Vittorio Zaccaria,  level: Laurea di primo livello in Ingegneria Meccanica ed Energetica, institution: Politecnico di Milano, students: "200+", short: "PoliMi - Ing. Mec. e Ener. - 1 Liv" }
       - { aaInit: 2017, aaEnd: 2018, position: Esercitatore, crediti: N, ore: 28, courseName: Informatica B,                                    titolare: Vittorio Zaccaria,  level: Laurea di primo livello in Ingegneria Meccanica ed Energetica, institution: Politecnico di Milano }
+
+      - { aaInit: 2016, aaEnd: 2017, position: Esercitatore, crediti: N, ore: 20, courseName: Hypermedia Applications (Web and multimedia),     titolare: Franca Garzotto,    level: Laurea magistrale in Ingegneria Informatica,                   institution: Politecnico di Milano }
       - { aaInit: 2016, aaEnd: 2017, position: Titolare,     crediti: 7, ore: 36, courseName: Informatica B,                                    titolare: Vittorio Zaccaria,  level: Laurea di primo livello in Ingegneria Meccanica ed Energetica, institution: Politecnico di Milano, students: "200+", short: "PoliMi - Ing. Mec. e Ener. - 1 Liv" }
       - { aaInit: 2016, aaEnd: 2017, position: Esercitatore, crediti: N, ore: 28, courseName: Informatica B,                                    titolare: Vittorio Zaccaria,  level: Laurea di primo livello in Ingegneria Meccanica ed Energetica, institution: Politecnico di Milano }
-      - { aaInit: 2016, aaEnd: 2017, position: Esercitatore, crediti: N, ore: 20, courseName: Hypermedia Applications (Web and multimedia),     titolare: Franca Garzotto,    level: Laurea magistrale in Ingegneria Informatica,                   institution: Politecnico di Milano }
+
       - { aaInit: 2015, aaEnd: 2016, position: Titolare,     crediti: 7, ore: 36, courseName: Informatica B,                                    titolare: Vittorio Zaccaria,  level: Laurea di primo livello in Ingegneria Meccanica ed Energetica, institution: Politecnico di Milano, students: "200+", short: "PoliMi - Ing. Mec. e Ener. - 1 Liv" }
       - { aaInit: 2014, aaEnd: 2015, position: Titolare,     crediti: 7, ore: 39, courseName: Informatica B,                                    titolare: Vittorio Zaccaria,  level: Laurea di primo livello in Ingegneria Meccanica ed Energetica, institution: Politecnico di Milano, students: "200+", short: "PoliMi - Ing. Mec. e Ener. - 1 Liv"  }
       - { aaInit: 2014, aaEnd: 2015, position: Esercitatore, crediti: N, ore: 18, courseName: Informatica B,                                    titolare: Vittorio Zaccaria,  level: Laurea di primo livello in Ingegneria Meccanica ed Energetica, institution: Politecnico di Milano }
