@@ -726,22 +726,17 @@
       - { name: ISCAS Conference,                year: 2001, role: speaker,         ruolo: relatore,        address: "Sydney, Australia",   date: "2001-05-09", title: "Fast system-level exploration of memory architectures driven by energy-delay metrics" }
 
     peerReview:
-      note: For publons, download citations from REST API and use jq (updated jan 2020)
-
-      publons:
-        - { "date": "2019-07-10", "name": "IEEE Transactions on Dependable and Secure Computing",      type: journal }
-        - { "date": "2016-08-01", "name": "IEEE Transactions on Computers",                            type: journal }
-        - { "date": "2016-05-19", "name": "Concurrency and Computation: Practice and Experience",      type: journal }
-        - { "date": "2014-11-12", "name": "IEEE Transactions on Emerging Topics in Computing",         type: journal }
-        - { "date": "2013-04-29", "name": "Transactions on Embedded Computing Systems",                type: journal }
-        - { "date": "2011-05-17", "name": "Transactions on Embedded Computing Systems",                type: journal }
-        - { "date": "2011-05-09", "name": "Transactions on Embedded Computing Systems",                type: journal }
-
-      other:
+        - { "date": "2019-07-10", "name": "IEEE Transactions on Dependable and Secure Computing",      type: journal, onpublons: true}
+        - { "date": "2016-08-01", "name": "IEEE Transactions on Computers",                            type: journal, onpublons: true}
+        - { "date": "2016-05-19", "name": "Concurrency and Computation: Practice and Experience",      type: journal, onpublons: true}
+        - { "date": "2014-11-12", "name": "IEEE Transactions on Emerging Topics in Computing",         type: journal, onpublons: true}
+        - { "date": "2013-04-29", "name": "Transactions on Embedded Computing Systems",                type: journal, onpublons: true}
+        - { "date": "2011-05-17", "name": "Transactions on Embedded Computing Systems",                type: journal, onpublons: true}
+        - { "date": "2011-05-09", "name": "Transactions on Embedded Computing Systems",                type: journal, onpublons: true}
         - { "date": "2011-05-11", "name": "IEEE Transactions on Very Large Scale Integration Systems", type: journal }
-        - { "date": "2011-12-31", "name": "Journal of Low Power Electronics JOLPE",                    type: journal    }
+        - { "date": "2011-12-31", "name": "Journal of Low Power Electronics JOLPE",                    type: journal }
         - { "date": "2013-05-01", "name": "Transactions on Parallel and Distributed Systems",          type: journal }
-        - { "date": "2012-01-09", "name": "Design automation conference",                              type: conference}
+        - { "date": "2012-01-09", "name": "Design automation conference",                              type: conference }
 
 
     patents:
