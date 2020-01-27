@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Hypermedia/Backend/Implementing your Nodejs API</title>
+<meta name="author" content="(Vittorio Zaccaria)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/theme/moon.css" id="theme"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-light.min.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Hypermedia/Backend/Implementing your Nodejs API</h1><h2 class="author">Vittorio Zaccaria</h2><p class="date">Created: 2020-01-27 Mon 11:03</p>
+</section>
+<script src="reveal-bundle.js"></script>
+
+<section>
+<section id="slide-io">
+<h2 id="io">Principles of server I/O</h2>
+</section>
+<section id="slide-blocking-io">
+<h3 id="blocking-io">Blocking I/O</h3>
+<p>
+A server waits on a socket for the requests. In principle this could be done with 
+a blocking call:
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="js" >// blocks the thread until the data is available
+data = socket.read();
+// data is available
+process(data);
+</code></pre>
+</div>
+
+</section>
+<section id="slide-blocking-io-in-web-servers">
+<h3 id="blocking-io-in-web-servers">Blocking I/O in Web Servers</h3>
+<p>
+Serving multiple requests is then enabled by OS multi-threading:
+</p>
+
+<div class="org-center">
+<div class="minipage">
+<pre class="example">
+                           Idle times
+            ┌────────┐          │
+            │        │          │
+Connection A│        │          ▼
+ ──────────▶│        ├────▶  ■■■■■■■ handle data  ■■■■■■■■■■ handle data  ■■■■■■■
+            │        │                 from A                  from A
+            │        │
+Connection B│ Server │
+ ──────────▶│        ├────▶  ■■■■■■■■■■■■■■■ handle data  ■■■■   handle data   ■■
+            │        │                         from B              from B
+            │        │                                   ▲
+Connection c│        │                                   │
+ ──────────▶│        ├────▶  ...                         │
+            │        │                                   │
+            └────────┘                                   │
+                                                      THREADS
+
+</pre>
+
+</div>
+</div>
+
+</section>
+<section id="slide-non-blocking-io">
+<h3 id="non-blocking-io">Non-Blocking I/O</h3>
+<ul>
+<li>Most modern operating systems support an <b>alternative mechanism</b> to answer
+incoming IO requests without incurring in thread switching overhead.</li>
+
+<li>It is called <b>non-blocking I/O</b></li>
+
+<li>Managed by a <b>Synchronous event demultiplexer</b> or <b>Event notification interface</b></li>
+
+</ul>
+</section>
+<section id="slide-non-blocking-io-in-web-servers">
+<h3 id="non-blocking-io-in-web-servers">Non-Blocking I/O in Web Servers</h3>
+<div class="org-center">
+<div class="minipage">
+<pre class="example">
+            ┌────────┐
+            │        │
+Connection A│        │
+ ──────────▶│        │
+            │        │
+            │        │
+Connection B│ Server │
+ ──────────▶│        ├────▶  ■■■■■■■ handle data  ■■■■ handle data  ■■■■■■■
+            │        │                 from A            from B
+            │        │
+Connection c│        │
+ ──────────▶│        │
+            │        │
+            └────────┘
+</pre>
+
+</div>
+</div>
+
+</section>
+<section id="slide-libuv---non-blocking-engine-for-nodejs">
+<h3 id="libuv---non-blocking-engine-for-nodejs">Non-Blocking Engine</h3>
+<ul>
+<li>Each operating system has its own interface for the Event
+Demultiplexer:
+
+<ul>
+<li><a href="https://kovyrin.net/2006/04/13/epoll-asynchronous-network-programming/">epoll</a> on Linux.</li>
+<li><a href="https://en.wikipedia.org/wiki/Kqueue">kqueue</a> on Mac OS X.</li>
+<li><a href="https://en.wikipedia.org/wiki/Input/output_completion_port">I/O Completion Port API (IOCP)</a> on Windows.</li>
+
+</ul></li>
+
+</ul>
+
+</section>
+<section id="slide-nodejs">
+<h3 id="nodejs">NodeJS</h3>
+<ul>
+<li><a href="https://nodejs.org/en/">Node.js</a> is a platform built on <a href="https://developers.google.com/v8/">Chrome V8</a> JavaScript engine for
+easily building non-blocking IO applications.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-intro-nodejs">
+<h2 id="intro-nodejs">Introduction to Nodejs</h2>
+</section>
+<section id="slide-running-nodejs-programs">
+<h3 id="running-nodejs-programs">Running NodeJS Programs</h3>
+<ul>
+<li><p>
+Using the REPL. Type <code>node</code> in your command line.
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="sh" >$> node
+> console.log('hello nodejs!');
+hello nodejs!
+undefined
+>
+</code></pre>
+</div></li>
+
+</ul>
+
+
+<ul>
+<li><p>
+Create a .js file and type: <code>node file.js</code>
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="sh" >$> node hello.js
+hello nodejs!
+</code></pre>
+</div></li>
+
+</ul>
+
+</section>
+<section id="slide-your-first-nodejs-very-basic-web-server">
+<h3 id="your-first-nodejs-very-basic-web-server">Your first NodeJS Very Basic Web Server</h3>
+<div class="org-src-container">
+
+<pre><code class="js" >var http = require('http');
+
+http.createServer(function (request, response) {
+    response.writeHead(200, {
+	'Context-Type': 'text/plain',
+    });
+    response.end('Hello World!');
+}).listen(3000);
+
+console.log('Server running at http://localhost:3000');
+
+</code></pre>
+</div>
+
+<p>
+Congratulations, you have your first web server running, using Node's <a href="https://nodejs.org/api/http.html">HTTP</a> API!
+</p>
+
+</section>
+<section id="slide-modules">
+<h3 id="modules">Modules</h3>
+<ul>
+<li><b>Libraries of pre-built functions</b> you can download and use in your own program.</li>
+
+<li>The main mechanism to enforce <b>information hiding</b> by keeping private
+all the functions and variables that are not explicitly marked to be
+exported.</li>
+
+<li>Node.js follows the <a href="http://requirejs.org/docs/commonjs.html">CommonJS</a> module system, and the builtin <code>require()</code>
+function is the way to include <b>modules</b> that exist in separate files/folders.</li>
+
+<li>Everything inside a module is private unless it is assigned to the
+<code>module.exports</code> variable.</li>
+
+</ul>
+
+</section>
+<section id="slide-module-system-iii">
+<h3 id="module-system-iii">Module example</h3>
+<p>
+In a file called <code>say.js</code>:
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="js" >module.exports = function (msg) {
+    console.log('Say: ' + mgs);
+}
+</code></pre>
+</div>
+
+<p>
+In a file called <code>app.js</code>:
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="js" >let say = require('./say.js');
+say('hello!');
+</code></pre>
+</div>
+
+<p>
+Execute using: <code>node app.js</code>
+</p>
+
+</section>
+<section id="slide-npm-i">
+<h3 id="npm-i">Node Package Manager</h3>
+<ul>
+<li>A package manager for Javascript Developers.</li>
+<li>Runs through the command line and manages dependencies for an
+application.</li>
+<li>The best way to manage locally installed npm packages is to create a
+<code>package.json</code> file.</li>
+
+</ul>
+
+</section>
+<section id="slide-npm-ii">
+<h3 id="npm-ii">Node Package Manager</h3>
+<ul>
+<li><p>
+to install dependencies defined in a pacakge.json file
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="sh" >> npm install
+</code></pre>
+</div></li>
+
+<li><p>
+to install lodash and save the dependency in the package.json file
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="sh" >> npm install lodash --save
+</code></pre>
+</div></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-api-intro">
+<h2 id="api-intro">Defining an API and creating a server</h2>
+</section>
+<section id="slide-api-0-intro" data-background="./images/section_restapi.svg">
+<h3 id="api-0-intro"></h3>
+</section>
+<section id="slide-api-0">
+<h3 id="api-0">Defining the API</h3>
+<div class="org-src-container">
+
+<pre><code class="yaml" >swagger: '2.0'
+info:
+  description: &gt;-
+    This is a simple bookstore server with a book inventory, users and a shopping cart.
+  version: 1.0.0
+  title: Simple Bookstore
+  contact:
+    email: vittorio.zaccaria@polimi.it
+  license:
+    name: Apache-2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+host: none.yet.io
+basePath: /v2
+tags:
+  - name: book
+    description: Available book
+  - name: cart
+    description: Access to the cart
+  - name: user
+    description: Operations about user
+schemes:
+  - http
+paths:
+  /books:
+    get:
+      summary: Books available in the inventory
+      tags:
+	- book
+      description: 'List of books available in the inventory'
+      produces:
+	- application/json
+      parameters:
+	- name: offset
+	  in: query
+	  description: Pagination offset. Default is 0.
+	  type: integer
+	- name: limit
+	  in: query
+	  description: &gt;-
+	    Maximum number of items per page. Default is 20 and cannot exceed
+	    500.
+	  type: integer
+      responses:
+	'200':
+	  description: A collection of Books
+	  schema:
+	    type: array
+	    items:
+	      $ref: '#/definitions/Book'
+	'404':
+	  description: Unexpected error
+  /books/{bookId}:
+    get:
+      summary: Find book by ID
+      tags:
+	- book
+      description: Returns a book
+      operationId: getBookById
+      produces:
+	- application/json
+      parameters:
+	- name: bookId
+	  in: path
+	  description: ID of book to return
+	  required: true
+	  type: integer
+	  format: int64
+      responses:
+	'200':
+	  description: successful operation
+	  schema:
+	    $ref: '#/definitions/Book'
+	'400':
+	  description: Invalid ID supplied
+	'404':
+	  description: Book not found
+definitions:
+  Book:
+    title: Book
+    description: A book for sale in the store
+    type: object
+    required:
+      - title
+      - author
+      - price
+    properties:
+      id:
+	type: integer
+	format: int64
+      title:
+	type: string
+	example: Il deserto dei tartari
+      author:
+	type: string
+	example: Dino Buzzati
+      price:
+	$ref: '#/definitions/Amount'
+      status:
+	type: string
+	description: book availability in the inventory
+	enum:
+	  - available
+	  - out of stock
+  Amount:
+    type: object
+    description: &gt;
+       Price
+    properties:
+      value:
+	format: double
+	type: number
+	minimum: 0.01
+	maximum: 1000000000000000
+      currency:
+	$ref: '#/definitions/Currency'
+    required:
+      - value
+      - currency
+  Currency:
+    type: string
+    pattern: '^[A-Z]{3,3}$'
+    description: &gt;
+      some description
+    example: eur
+externalDocs:
+  description: Find out more about Swagger
+  url: 'http://swagger.io'
+
+</code></pre>
+</div>
+
+</section>
+<section id="slide-api-1-intro" data-background="./images/section_js.svg">
+<h3 id="api-1-intro"></h3>
+</section>
+<section id="slide-api-1">
+<h3 id="api-1">Demo D2.0 - generating the server</h3>
+</section>
+<section id="slide-api-2-intro" data-background="./images/section_assets.svg">
+<h3 id="api-2-intro"></h3>
+</section>
+<section id="slide-api-2">
+<h3 id="api-2">Demo D2.1 - adding static assets</h3>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/head.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }]
+});
+</script>
+</body>
+</html>
