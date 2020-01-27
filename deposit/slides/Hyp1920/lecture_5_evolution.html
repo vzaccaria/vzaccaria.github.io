@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Hypermedia/Back end/Today's best practices (2019)</title>
+<meta name="author" content="(Vittorio Zaccaria)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/theme/moon.css" id="theme"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-light.min.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Hypermedia/Back end/Today's best practices (2019)</h1><h2 class="author">Vittorio Zaccaria</h2><p class="date">Created: 2020-01-27 Mon 11:03</p>
+</section>
+<script src="reveal-bundle.js"></script>
+
+<section>
+<section id="slide-a0">
+<h2 id="a0">Building modern applications</h2>
+<p>
+Always strive for
+</p>
+<ul>
+<li>deploy rapidly</li>
+<li>at scale,</li>
+<li>(possibly) without bugs.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-b0">
+<h2 id="b0">Deploying rapidly</h2>
+</section>
+<section id="slide-b1">
+<h3 id="b1">Continuous integration</h3>
+
+<div class="figure">
+<p><img src="http://www.pepgotesting.com/wp-content/uploads/2015/02/CI.png" alt="CI.png" width="700px" class="center" />
+</p>
+<p><span class="figure-number">Figure 1: </span>To <b>prevent integration problems</b>, this practice dictates: merging all developer working copies to a shared mainline several times a day, using build servers, which automatically ran the unit tests. (<a href="http://www.pepgotesting.com/continuous-integration/">source</a>)</p>
+</div>
+
+</section>
+<section id="slide-b2">
+<h3 id="b2">Git workflow</h3>
+
+<div class="figure">
+<p><object type="image/svg+xml" data="./images/gitflow.svg" class="center" width="700px">
+Sorry, your browser does not support SVG.</object>
+</p>
+<p><span class="figure-number">Figure 2: </span>Courtesy of <a href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow">Atlassian</a></p>
+</div>
+
+</section>
+<section id="slide-b3">
+<h3 id="b3">Test driven development</h3>
+
+<div class="figure">
+<p><img src="./images/tdd.png" alt="tdd.png" width="500px" class="center" />
+</p>
+<p><span class="figure-number">Figure 3: </span>It is common opinion that it provides better quality and lower error rate. Ensures future extensions don't break anything.</p>
+</div>
+
+</section>
+<section id="slide-b4">
+<h3 id="b4">GraphQL</h3>
+<p>
+It is an <a href="https://graphql.org/learn/">alternative way</a> to build APIs that are performant and future-proof.
+You get a single endpoint for all you queries.
+</p>
+
+
+<div class="figure">
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*f_XvFD7FvliMM74WHJ0vRQ.png" alt="1*f_XvFD7FvliMM74WHJ0vRQ.png" width="600px" class="center" />
+</p>
+</div>
+
+</section>
+<section id="slide-b4b">
+<h3 id="b4b">GraphQL</h3>
+<p>
+Compared with an actual REST request 
+</p>
+<div class="org-src-container">
+
+<pre><code class="shell" >GET /api/artists/1
+</code></pre>
+</div>
+
+<p>
+with GraphQL you get only what you specify, nothing more, nothing less:
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="shell" >GET /api?query={ artists(id:"1") { track, duration } }
+</code></pre>
+</div>
+
+</section>
+<section id="slide-b5">
+<h3 id="b5">GraphQL</h3>
+<p>
+It is easy to travel relationships within data (the <b>graph</b>). For example, <b>with just one query</b> you
+get also connected data:
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="js" >artists(id: "1") {
+  id
+  name
+  avatarUrl
+  tracks(limit: 2) {
+    name
+    urlSlug
+  }
+}
+</code></pre>
+</div>
+
+<ul>
+<li>You can thus fulfill each client's (mobile, web, native etc..) requirements
+<b>without dedicating a separate API</b> for each client.</li>
+
+<li>You don't need anymore to version API as the <b>client asks the data it really needs</b>.</li>
+
+</ul>
+
+
+</section>
+</section>
+<section>
+<section id="slide-s0">
+<h2 id="s0">At Scale</h2>
+</section>
+<section id="slide-s1">
+<h3 id="s1">CSR vs SSR vs SSG</h3>
+
+<div class="figure">
+<p><img src="https://espeo.eu/wp-content/uploads/2018/12/Screenshot_3.png" alt="Screenshot_3.png" width="600px" class="center" />
+</p>
+<p><span class="figure-number">Figure 5: </span>For SSR, the user can start viewing the page while for CSR he/she has to wait, but throughtput might be much slower.</p>
+</div>
+
+</section>
+<section id="slide-s2">
+<h3 id="s2">Caching</h3>
+<p>
+Use an <a href="https://redis.io/">in-memory database</a> to speed up the app. Database have a throughput limit! 
+An in memory database can act as a read/write buffer for following operations:
+</p>
+
+<ul>
+<li>Read/write server-side data associated with a user session id (e.g., last item
+visited, user id etc.)</li>
+<li>Shopping cart</li>
+<li>Serve static assets from memory instead of files from disk</li>
+<li>Database row caching, access information of user that is logged in</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-m0">
+<h2 id="m0">Possibly without bugs</h2>
+</section>
+<section id="slide-m1">
+<h3 id="m1">Monolithic applications</h3>
+<ul>
+<li>Intimidate developers</li>
+<li>Difficult to understand and modify, resulting in poorer code quality.</li>
+<li>Are an obstacle to frequent deployments as the risk of something going wrong increases with size.</li>
+<li>Require a long term commitment to a technology stack, difficult to evolve or incrementally adopt new technology.</li>
+
+</ul>
+
+</section>
+<section id="slide-m2">
+<h3 id="m2">Microservices</h3>
+
+<div class="figure">
+<p><img src="https://d1.awsstatic.com/Developer%20Marketing/containers/monolith_1-monolith-microservices.70b547e30e30b013051d58a93a6e35e77408a2a8.png" alt="monolith_1-monolith-microservices.70b547e30e30b013051d58a93a6e35e77408a2a8.png" width="600px" class="center" />
+</p>
+</div>
+
+<ul>
+<li>Structure the application as a set of loosely coupled, collaborating (micro-)services.</li>
+<li>Communicate using either synchronous protocols such as HTTP/REST or
+asynchronous protocols such as <a href="https://aws.amazon.com/message-queue/">message queues</a>.</li>
+<li>Deployable independently from one another</li>
+<li>Can have their own database but implementing cross service transactions might be complicated
+due to consistency</li>
+
+</ul>
+
+</section>
+<section id="slide-m3">
+<h3 id="m3">Microservice state / consistency of databases</h3>
+
+<div class="figure">
+<p><img src="https://d1.awsstatic.com/product-marketing/Step%20Functions/sfn_how-it-works.f795601e8338db32506b9abb01e71704f483fc81.png" alt="sfn_how-it-works.f795601e8338db32506b9abb01e71704f483fc81.png" width="600px" class="center" />
+</p>
+<p><span class="figure-number">Figure 7: </span><a href="https://aws.amazon.com/step-functions/">AWS Step Functions</a>, a way to make micro-services coordinate themselves through orchestration.</p>
+</div>
+
+<ul>
+<li>A <a href="https://microservices.io/patterns/data/saga.html">saga</a> is a sequence of local transactions. Each local transaction updates the
+database and either:
+<ul>
+<li>publishes a message or event to trigger the next local transaction in the saga (<i>coreographed</i> coordination).</li>
+<li>the coordinator tells the next transaction to execute (<i>orchestrated</i> coordination).</li>
+
+</ul></li>
+
+<li>If a <b>local transaction fails</b> because it violates a business rule then the
+saga executes a series of compensating transactions that undo the changes that
+were made by the preceding local transactions.</li>
+
+</ul>
+
+</section>
+<section id="slide-m4">
+<h3 id="m4">Microservices state / can we do without db? event sourcing and CQRS</h3>
+
+<div class="figure">
+<p><img src="https://lh4.googleusercontent.com/proxy/8y_VL6XXArX1axgj63T6wZk886uc74_3zNqRJyEWTZ9GOUARCrhwTI4hq6H5gaqE=s0-d?x.jpg" alt="8y_VL6XXArX1axgj63T6wZk886uc74_3zNqRJyEWTZ9GOUARCrhwTI4hq6H5gaqE=s0-d?x.jpg" width="400px" class="center" />
+</p>
+<p><span class="figure-number">Figure 8: </span>The event store is a list of events from which the state is reconstructed</p>
+</div>
+
+<ul>
+<li>Some data can be recovered from the history of operations in an event store
+instead from a database</li>
+<li>To make querying easier, data can be materialzied into views into a read-only data store (CQRS)</li>
+
+</ul>
+
+</section>
+<section id="slide-m5">
+<h3 id="m5"><a href="https://martinfowler.com/articles/serverless.html"><b>Serverless</b></a> architecture</h3>
+
+<div class="figure">
+<p><img src="https://d1.awsstatic.com/product-marketing/Lambda/Diagrams/product-page-diagram_Lambda-WebApplications%202.c7f8cf38e12cb1daae9965ca048e10d676094dc1.png" alt="product-page-diagram_Lambda-WebApplications%202.c7f8cf38e12cb1daae9965ca048e10d676094dc1.png" width="800px" class="center" />
+</p>
+<p><span class="figure-number">Figure 9: </span>(<a href="https://aws.amazon.com/it/serverless/">AWS</a>) un esempio di applicazione costruita con componenti serverless.</p>
+</div>
+
+<ul>
+<li>Services have become stateless compute containers that are
+event-triggered, ephemeral (may only last for one invocation), and fully
+managed by a third party.</li>
+
+<li>No central arbiter, there is a preference for choreography over orchestration.</li>
+
+<li>Also in this case there is a tendency to use messaging queues to connect services.</li>
+
+</ul>
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/head.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }]
+});
+</script>
+</body>
+</html>
