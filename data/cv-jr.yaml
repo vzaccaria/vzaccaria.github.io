@@ -144,6 +144,7 @@
         startDate: '2009-11-01'
         company: "Politecnico di Milano"
         address: "Milan, Italy"
+        posizione: "Ricercatore"
 
     previous:
       -
@@ -151,6 +152,7 @@
         startDate: '2009-11-01'
         company: "Politecnico di Milano"
         address: "Milan, Italy"
+        posizione: "RTD (fino al novembre 2011) poi RTI"
         highlights:
 
           - Appointed as Principal Investigator for an industrial collaboration
@@ -184,6 +186,7 @@
         positionLong: "Research and Development Engineer"
         company: "STMicroelectronics"
         address: "Lugano, Switzerland"
+        posizione: "Ingegnere di ricerca e sviluppo"
         highlights:
 
           - "Specified, prototyped and validated several ST200 processor
@@ -215,6 +218,7 @@
         position: "Research Consultant"
         company: "STMicroelectronics"
         address: "Milan, Italy"
+        posizione: "Consulente ricerca e sviluppo"
         highlights:
 
           - "Pioneered the field of Power Modeling of VLIW Cores (10 percent error
@@ -237,6 +241,7 @@
         position: "Research Associate (assegnista di ricerca)"
         company: "Politecnico di Milano"
         address: "Milan, Italy"
+        posizione: "Assegnista di ricerca"
         highlights:
 
           - "Introduced advanced techniques for managing design of experiments and
