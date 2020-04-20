@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Hypermedia/Backend/Introduction to Web Applications</title>
+<meta name="author" content="(Vittorio Zaccaria)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="file:///Users/zaccaria/node_modules/reveal.js/css/reveal.css"/>
+
+<link rel="stylesheet" href="file:///Users/zaccaria/node_modules/reveal.js/css/theme/moon.css" id="theme"/>
+
+<link rel="stylesheet" href="file:///Users/zaccaria/node_modules/highlightjs/styles/solarized-light.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'file:///Users/zaccaria/node_modules/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Hypermedia/Backend/Introduction to Web Applications</h1><h2 class="author">Vittorio Zaccaria</h2><h2 class="date">Politecnico di Milano <br> Hypermedia Applications (Web and Multimedia) - 2018/2019</h2>
+</section>
+<script src="reveal-bundle.js"></script>
+
+<section>
+<section id="slide-org1647d3f">
+<h2 id="org1647d3f">Handouts</h2>
+
+
+
+</section>
+<section id="slide-id0">
+<h3 id="id0">Introduction</h3>
+<p>
+During these lectures, you will learn how to <b>build and deploy</b> your web
+application in the real world. We will actually build the <b>server</b> of your web
+application; to do that, we will
+</p>
+
+<ul>
+<li>improve (or learn from scratch) our <b>Javascript</b> skills</li>
+<li>experience with industrial platforms (such as <b>Heroku</b>) and specification languages (<b>OpenAPI</b>)</li>
+<li>develop using <b>Git</b></li>
+
+</ul>
+
+
+</section>
+<section id="slide-id1">
+<h3 id="id1">A service</h3>
+<blockquote nil>
+<p>
+A <b>service</b> is a <i>software functionality</i> that can be <b>reused</b> by different clients for
+different purposes
+</p>
+</blockquote>
+
+
+</section>
+<section id="slide-id2">
+<h3 id="id2">No SOA</h3>
+
+<div class="figure">
+<p><object type="image/svg+xml" data="./images/the_origins_nosoa.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object> 
+</p>
+<p><span class="figure-number">Figure 1: </span>Changing the structure of the database means changing how the user interact with it. Each client potentially replicates queries already done by others.</p>
+</div>
+
+
+</section>
+<section id="slide-id3">
+<h3 id="id3">With SOA</h3>
+
+<div class="figure">
+<p><object type="image/svg+xml" data="./images/the_origins.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object> 
+</p>
+<p><span class="figure-number">Figure 2: </span>Changing the structure of the database means rewriting only the remote application server.  Clients are unimpacted by the change.</p>
+</div>
+
+
+</section>
+<section id="slide-id4">
+<h3 id="id4">Web Application Layer</h3>
+<div class="org-center">
+<div class="minipage">
+<pre class="example">
+            ┌──────────────────┐         ┌──────────────────┐
+            │     Browser      │         │    Web server    │
+            └─────────┬────────┘         └────────┬─────────┘
+                      │                           │
+                      │                           │
+        Requests Page │       HTTP GET(s)         │
+               Assets ●───────────────────────────▶ ─ ─ ─ ─ ─
+        (HTML/CSS/JS) │                           │          │
+                      │                           │           Reads Files
+                      │                           │          │
+            ─ ─ ─ ─ ─ ◀───────────────────────────● ─ ─ ─ ─ ─
+Renders and│          │                           │ Sends Back HTML/CSS/JS
+     starts           │                           │
+ Javascript│          │                           │
+            ─ ─ ─ ─ ─ ■                           │
+                      ┃                           │
+                Sends ┃     All HTTP Verbs        │
+           HTTP(AJAX) ●───────────────────────────▶ ─ ─ ─ ─ ─
+              request ┃                           │          │Processes
+                      ┃                           │           HTTP
+                      ┃                           │          │request
+            ─ ─ ─ ─ ─ ◀───────────────────────────● ─ ─ ─ ─ ─
+           │          ┃                           │Responds with
+  Rerenders           ┃                           │appropriate
+           │          ┃                           │mediatype
+            ─ ─ ─ ─ ─ ┃                           │
+                      ┃                           │
+                           ... (continues) ...
+
+</pre>
+
+</div>
+</div>
+
+
+</section>
+<section id="slide-id5">
+<h3 id="id5">Architecture of a web application</h3>
+
+<div class="figure">
+<p><object type="image/svg+xml" data="./images/fat_client.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object> 
+</p>
+<p><span class="figure-number">Figure 3: </span>The architecture of a web application</p>
+</div>
+
+
+</section>
+<section id="slide-id6">
+<h3 id="id6">Richardson maturity model</h3>
+<ul>
+<li><a href="https://martinfowler.com/articles/richardsonMaturityModel.html#level0">Level 0</a>: SOAP or XML-RPC. Single endpoint, functionality described by the
+request.</li>
+<li><a href="https://martinfowler.com/articles/richardsonMaturityModel.html#level1">Level 1:</a> Each resource has its own URI, but requests are just GET and POST</li>
+<li><a href="https://martinfowler.com/articles/richardsonMaturityModel.html#level2">Level 2:</a> Use the full power of HTTP verbs to manipulate resources</li>
+<li><a href="https://martinfowler.com/articles/richardsonMaturityModel.html#level3">Level 3:</a> Hypertext as the engine of application state. Response
+contain hyperlinks to other URIs for performing additional actions. Example: news feeds.</li>
+
+</ul>
+
+
+</section>
+<section id="slide-id7">
+<h3 id="id7">Resource manipulation</h3>
+<div class="org-center">
+<div class="minipage">
+<pre class="example">
+   ┌──────────────────┐         ┌──────────────────┐
+   │     Browser      │         │    Web server    │
+   └──────────────────┘         └──────────────────┘
+             │                            │
+             │                            ■ opens TCP
+   DNS query ■                            │ socket
+             │                            │ (listen)
+Requests TCP │                            │
+  connection ●───────────────────────────▶│
+             │                            │
+             │                            │ accepts TCP
+             │◀───────────────────────────● connection
+             │                            │
+  Sends HTTP │                            │
+request over ●───────────────────────────▶│
+         TCP │                            │
+             │                            │ Parses request
+             │                            ○
+             │                            │
+             │                            ○ Fetches data
+             │                            │
+             │                            ○
+             │◀───────────────────────────● Sends response
+             ▼                            ▼
+</pre>
+
+</div>
+</div>
+
+
+</section>
+<section id="slide-id8">
+<h3 id="id8">Resource identification</h3>
+<ul>
+<li><p>
+an <b>identifier</b> (<a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">URI</a>), i.e., a unique textual key associated with the resource:
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="text" >scheme:[//host[:port]][/]path[?query][#fragment]
+</code></pre>
+</div></li>
+
+<li>a <b>state</b> with a suitable <b>representation</b>, i.e., a textual description of the
+actual state of the resource (JSON, XML and so on.).</li>
+
+</ul>
+
+
+</section>
+<section id="slide-id9">
+<h3 id="id9"></h3>
+<p>
+The <code>path</code> component is important as it allows to structure hierarchically the
+application objects; for example <code>/pets</code> might mean a collection of pets, while
+<code>/pets/43</code> might mean the pet #43 of that specific collection.
+</p>
+
+
+</section>
+<section id="slide-id10">
+<h3 id="id10"></h3>
+<p>
+Also the <code>query</code> parameter is important, as it allows to specify an optional
+constraint on the referenced resource; for example <code>/pets?from=3&amp;to=10</code> could mean
+only pets whose id's are from #3 to #10.
+</p>
+
+
+</section>
+<section id="slide-id11">
+<h3 id="id11">Requests</h3>
+<div class="org-center">
+<div class="minipage">
+<pre class="example">
+
+HTTP Verb       Resource        Version
+
+    │               │              │
+    │        ┌──────┘      ┌───────┘
+ ┌──┼────────┼─────────────┼─────────────────────────────────────┐
+ │  ▼        ▼             ▼                                     │
+ │ GET /docs/index.html HTTP/1.1          ┌────Media Type        │
+ │ Host: www.nowhere123.com               │                      │
+ │ Accept: image/gif, image/jpeg, */* ◀───┘                      │
+ │ Accept-Encoding: gzip, deflate ◀─────┐                        │
+ │ User-Agent: Mozilla/4.0 (compatible; │SIE 6.0; Windows NT 5.1)│
+ │ (blank line)                         │                        │
+ │  ●                                   │                        │
+ └──┼───────────────────────────────────┼────────────────────────┘
+    │                                   │
+    │                                   └──────Compression
+Optional
+  Body
+
+</pre>
+
+</div>
+</div>
+
+
+</section>
+<section id="slide-id12">
+<h3 id="id12">Example pet store app</h3>
+<p>
+For example, a web site that manages a pet store could have the following
+set of verb meanings:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left"><b>Action</b></th>
+<th scope="col" class="org-left"><b>Meaning</b></th>
+<th scope="col" class="org-left"><b>Safe</b></th>
+<th scope="col" class="org-left"><b>Id.</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>GET pets</code></td>
+<td class="org-left">Retrieves a list of pets</td>
+<td class="org-left">Yes</td>
+<td class="org-left">Yes</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>GET /pets/12</code></td>
+<td class="org-left">Retrieves a specific pet</td>
+<td class="org-left">Yes</td>
+<td class="org-left">Yes</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>POST /pets</code></td>
+<td class="org-left">Creates a new pet</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>PUT /pets/12</code></td>
+<td class="org-left">Updates pet #12</td>
+<td class="org-left">No</td>
+<td class="org-left">Yes</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>PATCH /pets/12</code></td>
+<td class="org-left">Partially updates pet #12</td>
+<td class="org-left">No</td>
+<td class="org-left">No</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>DELETE /pets/12</code></td>
+<td class="org-left">Deletes pet #12</td>
+<td class="org-left">No</td>
+<td class="org-left">Yes</td>
+</tr>
+</tbody>
+</table>
+
+
+</section>
+<section id="slide-id13">
+<h3 id="id13">demo time</h3>
+<p>
+Here you will interact with a realistic API through <code>curl</code> and <code>jq</code>. 
+The remote API is described at this address:
+</p>
+
+<p>
+<a href="https://github.com/workforce-data-initiative/skills-api/wiki/API-Overview#introduction">https://github.com/workforce-data-initiative/skills-api/wiki/API-Overview#introduction</a>
+</p>
+
+
+</section>
+<section id="slide-id14">
+<h3 id="id14">API specs</h3>
+<p>
+A web API specification is a document which formally defines the resources 
+exposed by the API and all allowed operations. Its main purpose is to allow 
+modular programming of a client/server application. 
+</p>
+
+
+</section>
+<section id="slide-id15">
+<h3 id="id15">Hands-on</h3>
+<p>
+To see how an API specification is done, have a look at the OpenAPI specification
+of the <a href="http://api.dataatwork.org/v1/spec/skills-api.json">Skills API</a>; copy and paste it up in the Swagger Editor.
+</p>
+</section>
+</section>
+</div>
+</div>
+<script src="file:///Users/zaccaria/node_modules/reveal.js/lib/js/head.min.js"></script>
+<script src="file:///Users/zaccaria/node_modules/reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'file:///Users/zaccaria/node_modules/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }]
+});
+</script>
+</body>
+</html>
