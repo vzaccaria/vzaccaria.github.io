@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Hypermedia/Backend/Introduction to Web Applications</title>
+<meta name="author" content="(Vittorio Zaccaria)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/theme/moon.css" id="theme"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-light.min.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Hypermedia/Backend/Introduction to Web Applications</h1><h2 class="author">Vittorio Zaccaria</h2><h2 class="date">Politecnico di Milano <br> Hypermedia Applications (Web and Multimedia) - 2018/2019</h2>
+</section>
+<script src="reveal-bundle.js"></script>
+
+<section>
+<section id="slide-org3d4b439">
+<h2 id="org3d4b439">Handouts</h2>
+
+
+
+</section>
+<section id="slide-id0">
+<h3 id="id0">How to implement an API</h3>
+<p>
+In this section we will see how to generate a stub of the backend code by using
+the OpenAPI specification and how to add data and authenticated sessions
+management. The final server is available at <a href="https://github.com/vzaccaria/hyp-example-nodejs-server">this Github address</a>. Here are
+the steps with which it has been built.
+</p>
+
+
+</section>
+<section id="slide-id1">
+<h3 id="id1">Handson / generating the server stub</h3>
+<p>
+Once you've populated the <a href="http://editor.swagger.io/">swagger editor</a> interface with your spec, 
+click on the <code>generate server</code> link; choose then <code>nodejs-server</code> and unzip into 
+a local directory the file. 
+</p>
+
+
+</section>
+<section id="slide-id2">
+<h3 id="id2">Handson Installing dependencies</h3>
+<p>
+Go into that directory and install the needed dependencies:
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="shell" >npm install .
+npm install serve-static
+</code></pre>
+</div>
+
+
+</section>
+<section id="slide-id3">
+<h3 id="id3">Serving static assets</h3>
+<div class="org-src-container">
+
+<pre><code class="js" >let serveStatic = require('serve-static');
+
+/* after the last app.use */
+app.use(serveStatic(__dirname)  + "/www");
+</code></pre>
+</div>
+
+
+</section>
+<section id="slide-id4">
+<h3 id="id4">The presentation layer</h3>
+<div class="org-src-container">
+
+<pre><code class="html" ><!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Book store</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <h1>Our first server is running!</h1>
+    <ul></ul>
+  </body>
+  <script>
+    var myList = document.querySelector("ul");
+    fetch("v2/books")
+      .then(function(response) {
+	if (!response.ok) {
+	  throw new Error("HTTP error, status = " + response.status);
+	}
+	return response.json();
+      })
+      .then(function(json) {
+	for (var i = 0; i < json.length; i++) {
+	  var listItem = document.createElement("li");
+	  let { title, author, price } = json[i];
+	  listItem.innerHTML = `${title} - ${author} - ${price.value} (${
+	    price.currency
+	  })`;
+	  myList.appendChild(listItem);
+	}
+      });
+  </script>
+</html>
+</code></pre>
+</div>
+
+
+</section>
+<section id="slide-id5">
+<h3 id="id5"></h3>
+<p>
+Now you can start the server with:
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="sh" >node index.js
+</code></pre>
+</div>
+
+<p>
+And access it on <code>localhost:8080</code>. You should see a page that has been populated with the
+example data we have used in the specification of the API. Good!
+</p>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/head.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }]
+});
+</script>
+</body>
+</html>
