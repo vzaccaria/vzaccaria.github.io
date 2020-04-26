@@ -1,7 +1,6 @@
 ---
 title: what I whish I knew.. Haskell and dependent pairs
 date: 2018-01-27
-layout: post
 category : blog
 tags : ['haskell']
 description: This is a more of a personal memo about dependent typing (and Haskell) than anything else. I expect to write more about this subject as I move forward to other subjects in type theory.
