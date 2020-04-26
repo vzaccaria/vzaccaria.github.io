@@ -6,7 +6,7 @@ tags : ['haskell']
 description: This is a more of a personal memo about dependent typing (and Haskell) than anything else. I expect to write more about this subject as I move forward to other subjects in type theory.
 ---
 
-This is a more of a personal memo about dependent typing (and Haskell) than anything else. I expect to write more about this subject as I move forward to other subjects in type theory.
+This is a more of a personal memo about dependent typing (and Haskell) than anything else. I expect to write more about this subject as I move forward to other similar subjects.
 
 Dependent types
 ===============
