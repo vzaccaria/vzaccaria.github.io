@@ -26,19 +26,15 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">Hypermedia/Backend/Introduction to Web Applications</h1><h2 class="author">Vittorio Zaccaria</h2><h2 class="date">Politecnico di Milano <br> Hypermedia Applications (Web and Multimedia) - 2018/2019</h2>
+<section id="sec-title-slide"><h1 class="title">Hypermedia/Backend/Introduction to Web Applications</h1><h2 class="author">Vittorio Zaccaria</h2><h2 class="date">Politecnico di Milano <br> Hypermedia Applications (Web and Multimedia) - 2019/2020</h2>
 </section>
 <script src="reveal-bundle.js"></script>
 
+
+
 <section>
-<section id="slide-org22c5014">
-<h2 id="org22c5014">Handouts</h2>
-
-
-
-</section>
 <section id="slide-id0">
-<h3 id="id0">Introduction</h3>
+<h2 id="id0">Introduction</h2>
 <p>
 During these lectures, you will learn how to <b>build and deploy</b> your web
 application in the real world. We will actually build the <b>server</b> of your web
@@ -54,8 +50,10 @@ application; to do that, we will
 
 
 </section>
+</section>
+<section>
 <section id="slide-id1">
-<h3 id="id1">A service</h3>
+<h2 id="id1">A service</h2>
 <blockquote nil>
 <p>
 A <b>service</b> is a <i>software functionality</i> that can be <b>reused</b> by different clients for
@@ -65,8 +63,10 @@ different purposes
 
 
 </section>
+</section>
+<section>
 <section id="slide-id2">
-<h3 id="id2">No SOA</h3>
+<h2 id="id2">No SOA</h2>
 
 <div class="figure">
 <p><object type="image/svg+xml" data="./images/the_origins_nosoa.svg" class="org-svg">
@@ -77,8 +77,10 @@ Sorry, your browser does not support SVG.</object>
 
 
 </section>
+</section>
+<section>
 <section id="slide-id3">
-<h3 id="id3">With SOA</h3>
+<h2 id="id3">With SOA</h2>
 
 <div class="figure">
 <p><object type="image/svg+xml" data="./images/the_origins.svg" class="org-svg">
@@ -89,8 +91,10 @@ Sorry, your browser does not support SVG.</object>
 
 
 </section>
+</section>
+<section>
 <section id="slide-id4">
-<h3 id="id4">Web Application Layer</h3>
+<h2 id="id4">Web Application Layer</h2>
 <div class="org-center">
 <div class="minipage">
 <pre class="example">
@@ -130,8 +134,10 @@ Renders and│          │                           │ Sends Back HTML/CSS/JS
 
 
 </section>
+</section>
+<section>
 <section id="slide-id5">
-<h3 id="id5">Architecture of a web application</h3>
+<h2 id="id5">Architecture of a web application</h2>
 
 <div class="figure">
 <p><object type="image/svg+xml" data="./images/fat_client.svg" class="org-svg">
@@ -142,8 +148,10 @@ Sorry, your browser does not support SVG.</object>
 
 
 </section>
+</section>
+<section>
 <section id="slide-id6">
-<h3 id="id6">Richardson maturity model</h3>
+<h2 id="id6">Richardson maturity model</h2>
 <ul>
 <li><a href="https://martinfowler.com/articles/richardsonMaturityModel.html#level0">Level 0</a>: SOAP or XML-RPC. Single endpoint, functionality described by the
 request.</li>
@@ -156,8 +164,10 @@ contain hyperlinks to other URIs for performing additional actions. Example: new
 
 
 </section>
+</section>
+<section>
 <section id="slide-id7">
-<h3 id="id7">Resource manipulation</h3>
+<h2 id="id7">Resource manipulation</h2>
 <div class="org-center">
 <div class="minipage">
 <pre class="example">
@@ -192,8 +202,10 @@ request over ●─────────────────────�
 
 
 </section>
+</section>
+<section>
 <section id="slide-id8">
-<h3 id="id8">Resource identification</h3>
+<h2 id="id8">Resource identification</h2>
 <ul>
 <li><p>
 an <b>identifier</b> (<a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">URI</a>), i.e., a unique textual key associated with the resource:
@@ -212,8 +224,10 @@ actual state of the resource (JSON, XML and so on.).</li>
 
 
 </section>
+</section>
+<section>
 <section id="slide-id9">
-<h3 id="id9"></h3>
+<h2 id="id9"></h2>
 <p>
 The <code>path</code> component is important as it allows to structure hierarchically the
 application objects; for example <code>/pets</code> might mean a collection of pets, while
@@ -222,8 +236,10 @@ application objects; for example <code>/pets</code> might mean a collection of p
 
 
 </section>
+</section>
+<section>
 <section id="slide-id10">
-<h3 id="id10"></h3>
+<h2 id="id10"></h2>
 <p>
 Also the <code>query</code> parameter is important, as it allows to specify an optional
 constraint on the referenced resource; for example <code>/pets?from=3&amp;to=10</code> could mean
@@ -232,8 +248,10 @@ only pets whose id's are from #3 to #10.
 
 
 </section>
+</section>
+<section>
 <section id="slide-id11">
-<h3 id="id11">Requests</h3>
+<h2 id="id11">Requests</h2>
 <div class="org-center">
 <div class="minipage">
 <pre class="example">
@@ -264,8 +282,10 @@ Optional
 
 
 </section>
+</section>
+<section>
 <section id="slide-id12">
-<h3 id="id12">Example pet store app</h3>
+<h2 id="id12">Example pet store app</h2>
 <p>
 For example, a web site that manages a pet store could have the following
 set of verb meanings:
@@ -338,8 +358,10 @@ set of verb meanings:
 
 
 </section>
+</section>
+<section>
 <section id="slide-id13">
-<h3 id="id13">demo time</h3>
+<h2 id="id13">demo time</h2>
 <p>
 Here you will interact with a realistic API through <code>curl</code> and <code>jq</code>. 
 The remote API is described at this address:
@@ -347,25 +369,6 @@ The remote API is described at this address:
 
 <p>
 <a href="https://github.com/workforce-data-initiative/skills-api/wiki/API-Overview#introduction">https://github.com/workforce-data-initiative/skills-api/wiki/API-Overview#introduction</a>
-</p>
-
-
-</section>
-<section id="slide-id14">
-<h3 id="id14">API specs</h3>
-<p>
-A web API specification is a document which formally defines the resources 
-exposed by the API and all allowed operations. Its main purpose is to allow 
-modular programming of a client/server application. 
-</p>
-
-
-</section>
-<section id="slide-id15">
-<h3 id="id15">Hands-on</h3>
-<p>
-To see how an API specification is done, have a look at the OpenAPI specification
-of the <a href="http://api.dataatwork.org/v1/spec/skills-api.json">Skills API</a>; copy and paste it up in the Swagger Editor.
 </p>
 </section>
 </section>
