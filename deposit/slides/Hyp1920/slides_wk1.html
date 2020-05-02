@@ -26,30 +26,86 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">Hypermedia/Backend/Introduction to Web Applications</h1><h2 class="author">Vittorio Zaccaria</h2><h2 class="date">Politecnico di Milano <br> Hypermedia Applications (Web and Multimedia) - 2018/2019</h2>
+<section id="sec-title-slide"><h1 class="title">Hypermedia/Backend/Introduction to Web Applications</h1><h2 class="author">Vittorio Zaccaria</h2><h2 class="date">Politecnico di Milano <br> Hypermedia Applications (Web and Multimedia) - 2019/2020</h2>
 </section>
 <script src="reveal-bundle.js"></script>
 
-<section>
-<section id="slide-org3d4b439">
-<h2 id="org3d4b439">Handouts</h2>
 
+
+<section>
+<section id="slide-id0">
+<h2 id="id0">Recap accessing a REST API</h2>
+</section>
+<section id="slide-id1">
+<h3 id="id1">Recap accessing a REST API</h3>
+<div class="org-src-container">
+
+<pre><code class="shell" >curl -X GET "http://api.dataatwork.org/v1/jobs" -v | jq .
+curl -X GET "http://api.dataatwork.org/v1/jobs" | jq .
+curl -X GET "http://api.dataatwork.org/v1/jobs?limit=2" | jq .
+curl -X GET "http://api.dataatwork.org/v1/jobs/26bc4486dfd0f60b3bb0d8d64e001800/related_jobs" | jq .
+curl -X GET "http://api.dataatwork.org/v1/jobs/26bc4486dfd0f60b3bb0d8d64e001800/related_skills" | jq .
+</code></pre>
+</div>
 
 
 </section>
-<section id="slide-id0">
-<h3 id="id0">How to implement an API</h3>
+<section id="slide-id2">
+<h3 id="id2">Accessing an API from the browser</h3>
 <p>
-In this section we will see how to generate a stub of the backend code by using
-the OpenAPI specification and how to add data and authenticated sessions
-management. The final server is available at <a href="https://github.com/vzaccaria/hyp-example-nodejs-server">this Github address</a>. Here are
-the steps with which it has been built.
+How to do it? Let's see
 </p>
 
 
 </section>
-<section id="slide-id1">
-<h3 id="id1">Handson / generating the server stub</h3>
+</section>
+<section>
+<section id="slide-id3">
+<h2 id="id3">Writing an API spec</h2>
+</section>
+<section id="slide-id4">
+<h3 id="id4">API specs</h3>
+<p>
+A web API specification is a document which formally defines the resources 
+exposed by the API and all allowed operations. Its main purpose is to allow 
+modular programming of a client/server application. 
+</p>
+
+<p>
+Our server will provide an API that adheres to an <a href="https://swagger.io/docs/specification/2-0/basic-structure/">OpenAPI</a> specification. API
+specifications can be written in YAML or JSON. 
+</p>
+
+
+</section>
+<section id="slide-id5">
+<h3 id="id5">Hands-on</h3>
+<p>
+To see how an API specification is done, have a look at the OpenAPI specification
+of the <a href="http://api.dataatwork.org/v1/spec/skills-api.json">Skills API</a>; copy and paste it up in the Swagger Editor.
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-id6">
+<h2 id="id6">Implementing the backend server</h2>
+</section>
+<section id="slide-id7">
+<h3 id="id7">The structure of our app</h3>
+
+<div class="figure">
+<p><object type="image/svg+xml" data="./dac/soa.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object> 
+</p>
+<p><span class="figure-number">Figure 1: </span>The structure is simple; a web API with its router controllers and some services to access the database</p>
+</div>
+
+
+</section>
+<section id="slide-id8">
+<h3 id="id8">Handson / generating the application server skeleton</h3>
 <p>
 Once you've populated the <a href="http://editor.swagger.io/">swagger editor</a> interface with your spec, 
 click on the <code>generate server</code> link; choose then <code>nodejs-server</code> and unzip into 
@@ -58,23 +114,13 @@ a local directory the file.
 
 
 </section>
-<section id="slide-id2">
-<h3 id="id2">Handson Installing dependencies</h3>
-<p>
-Go into that directory and install the needed dependencies:
-</p>
-
-<div class="org-src-container">
-
-<pre><code class="shell" >npm install .
-npm install serve-static
-</code></pre>
-</div>
-
-
 </section>
-<section id="slide-id3">
-<h3 id="id3">Serving static assets</h3>
+<section>
+<section id="slide-id9">
+<h2 id="id9">Serving static assets</h2>
+</section>
+<section id="slide-id10">
+<h3 id="id10">Serving static assets</h3>
 <div class="org-src-container">
 
 <pre><code class="js" >let serveStatic = require('serve-static');
@@ -86,8 +132,8 @@ app.use(serveStatic(__dirname)  + "/www");
 
 
 </section>
-<section id="slide-id4">
-<h3 id="id4">The presentation layer</h3>
+<section id="slide-id11">
+<h3 id="id11">Example static asset</h3>
 <div class="org-src-container">
 
 <pre><code class="html" ><!DOCTYPE html>
@@ -135,22 +181,42 @@ app.use(serveStatic(__dirname)  + "/www");
 
 
 </section>
-<section id="slide-id5">
-<h3 id="id5"></h3>
+</section>
+<section>
+<section id="slide-id12">
+<h2 id="id12">Service and data layer implementation</h2>
+</section>
+<section id="slide-id13">
+<h3 id="id13">Installing needed dependencies</h3>
 <p>
-Now you can start the server with:
+First of all we'll need to install a few Nodejs libraries and make sure
+that we have a working installation of Postgres:
 </p>
 
 <div class="org-src-container">
 
-<pre><code class="sh" >node index.js
+<pre><code class="shell" >npm install knex -SE
+npm install pg
 </code></pre>
 </div>
 
 <p>
-And access it on <code>localhost:8080</code>. You should see a page that has been populated with the
-example data we have used in the specification of the API. Good!
+And extend the service modules.
 </p>
+
+
+</section>
+<section id="slide-id14">
+<h3 id="id14"></h3>
+<p>
+Then to run the server, remember to setup the <code>DATABASE_URL</code> environment variable.
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="shell" >DATABASE_URL=localhost node index.js
+</code></pre>
+</div>
 </section>
 </section>
 </div>
