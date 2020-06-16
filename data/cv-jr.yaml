@@ -667,6 +667,7 @@
 
 
     students:
+        - { name: Alessandro Elio Cantini, year: 2019, title: 'Progetto e valutazione di una rete neurale eseguita su un sistema embedded a bassa potenza', company: 'STMicroelectronics' }
         - { name: Marco Redaelli, year: 2019, title: '(provisional): A side channel attack methodology', company: 'Security pattern' }
         - { name: Nicola Castaldo, year: 2019, title: A conceptual modeling approach for the rapid development of chatbots for conversational data exploration }
         - { name: Stefano Gianelli and Valerio Cassani , year: 2016, title: Progettazione di mashup per dispositivi mobili un metodo basato sulla modellazione di contesto }
