@@ -2,6 +2,24 @@
     "records": [
         {
             "authors": [
+                "V. Zaccaria"
+            ],
+            "title": "An F-algebra for analysing information leaks in the presence of glitches",
+            "month": "June",
+            "year": "2020",
+            "institution": "IACR",
+            "publisher": "IACR",
+            "justApplied": false,
+            "justAccepted": false,
+            "reportNumber": "681",
+            "keyword": [
+                "techreport"
+            ],
+            "type": "techreport",
+            "timestamp": 1590962400
+        },
+        {
+            "authors": [
                 "V. Zaccaria",
                 "M. Molteni",
                 "F. Melzani",
