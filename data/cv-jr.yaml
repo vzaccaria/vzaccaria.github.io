@@ -1,14 +1,14 @@
 ---
   basics:
     name: Vittorio Zaccaria
-    label: Assistant professor
+    label: Associate professor
     picture: https://dl.dropboxusercontent.com/u/5867765/avatars/avatar-vz.jpg
     phone: +39 02 2399 3642
     email: vittorio.zaccaria@polimi.it
     website: www.vittoriozaccaria.net
 
     summary: |
-      I am an assistant professor at Politecnico di Milano and I have worked
+      I am an associate professor at Politecnico di Milano and I have worked
       in processor architecture research and development for one of the top
       semiconductor companies in the world. My background is rooted in modeling
       and simulation of digital systems although I have expanded my interests
@@ -20,7 +20,7 @@
 
 
     websiteSummary: |
-      I am an assistant professor at Politecnico di Milano and I have worked
+      I am an associate professor at Politecnico di Milano and I have worked
       in processor architecture research and development for one of the top
       semiconductor companies in the world.
 
@@ -39,7 +39,7 @@
     paperBio: |
       Vittorio Zaccaria received the Laurea degree in Computer Engineering in
       1998 and the Ph. D. degree in Computer Engineering in 2002 at the
-      Politecnico di Milano, Italy. He is currently assistant professor at the
+      Politecnico di Milano, Italy. He is currently associate professor at the
       Politecnico di Milano where he currently investigates novel techniques for
       computer aided design of digital circuits. From 2003 until 2007, he held
       various positions in the Advanced System Technology group at
@@ -140,16 +140,28 @@
   work:
     current:
 
-        position: "Assistant Professor"
-        startDate: '2009-11-01'
+        position: "Associate Professor"
+        startDate: 2020-07-06
         company: "Politecnico di Milano"
         address: "Milan, Italy"
-        posizione: "Ricercatore a tempo indeterminato"
+        posizione: "Professore Associato"
 
     previous:
       -
+        position: "Associate Professor"
+        startDate: 2020-07-06 
+        company: "Politecnico di Milano"
+        address: "Milan, Italy"
+        posizione: "Professore Associato"
+
+        dichiara: >-
+          di prestare servizio come professore associato dal 6 luglio 2020
+          presso il Dipartimento di Elettronica e Informazione del Politecnico
+          di Milano.
+      -
         position: "Assistant Professor"
         startDate: '2009-11-01'
+        endDate: 2020-07-05
         company: "Politecnico di Milano"
         address: "Milan, Italy"
         posizione: "RTD (fino al novembre 2011) poi RTI"
@@ -173,8 +185,8 @@
             budget of several european FP7 projects.
 
         dichiara: >-
-          di prestare servizio come ricercatore a tempo indeterminato dal 1 marzo
-          2011 presso il Dipartimento di Elettronica e Informazione del Politecnico
+          di aver prestato servizio come ricercatore a tempo indeterminato dal 1 marzo
+          2011 al 5 Luglio 2020 presso il Dipartimento di Elettronica e Informazione del Politecnico
           di Milano, e di avere prestato servizio come ricercatore a tempo
           determinato dal 1 novembre 2009 a fine Febbraio 2011 presso il
           Dipartimento di Elettronica e Informazione del Politecnico di Milano.
