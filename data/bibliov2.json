@@ -44,7 +44,7 @@
             "month": "June",
             "year": "2020",
             "institution": "IACR",
-            "publisher": "IACR",
+            "publisher": "IACR - Cryptology ePrint Archive",
             "url": "https://eprint.iacr.org/2020/681",
             "justApplied": false,
             "justAccepted": false,
@@ -322,6 +322,7 @@
                 "V. Zaccaria"
             ],
             "title": "On the spectral features of robust probing security",
+            "month": "August",
             "year": "2020",
             "journal": {
                 "identifier": [
@@ -344,7 +345,7 @@
                 "journal"
             ],
             "type": "journal",
-            "timestamp": 1577833200
+            "timestamp": 1596232800
         },
         {
             "authors": [
