@@ -2,6 +2,42 @@
     "records": [
         {
             "authors": [
+                "G. Mariani",
+                "G. Palermo",
+                "V. Zaccaria",
+                "C. Silvano"
+            ],
+            "title": "DeSpErate++: An enhanced design space exploration framework using predictive simulation scheduling",
+            "year": "2015",
+            "journal": {
+                "identifier": [
+                    {
+                        "type": "issn",
+                        "id": "0278-0070"
+                    }
+                ],
+                "name": "IEEE Transactions on Computer Aided Design of Integrated Circuits",
+                "id": "IEEETransactionsonComputerAidedDesignofIntegratedCircuits"
+            },
+            "volume": "34",
+            "pages": "293 to 306",
+            "publisher": "IEEE - Piscataway, NJ - USA",
+            "doi": "10.1109/TCAD.2014.2379634",
+            "url": "http://dx.doi.org/10.1109/TCAD.2014.2379634",
+            "justApplied": false,
+            "justAccepted": false,
+            "keyword": [
+                "tocheck",
+                "asn2018-12",
+                "trans",
+                "journal",
+                "asn2018-5"
+            ],
+            "type": "journal",
+            "timestamp": 1420066800
+        },
+        {
+            "authors": [
                 "V. Zaccaria"
             ],
             "title": "An F-algebra for analysing information leaks in the presence of glitches",
@@ -9,6 +45,7 @@
             "year": "2020",
             "institution": "IACR",
             "publisher": "IACR",
+            "url": "https://eprint.iacr.org/2020/681",
             "justApplied": false,
             "justAccepted": false,
             "reportNumber": "681",
@@ -281,39 +318,33 @@
         },
         {
             "authors": [
-                "G. Mariani",
-                "G. Palermo",
-                "V. Zaccaria",
-                "C. Silvano"
+                "M. Molteni",
+                "V. Zaccaria"
             ],
-            "title": "DeSpErate++: An enhanced design space exploration framework using predictive simulation scheduling",
-            "year": "2015",
+            "title": "On the spectral features of robust probing security",
+            "year": "2020",
             "journal": {
                 "identifier": [
                     {
                         "type": "issn",
-                        "id": "0278-0070"
+                        "id": "2569-2925"
                     }
                 ],
-                "name": "IEEE Transactions on Computer Aided Design of Integrated Circuits",
-                "id": "IEEETransactionsonComputerAidedDesignofIntegratedCircuits"
+                "name": "IACR Transactions on Cryptographic Hardware and Embedded Systems",
+                "id": "IACRTransactionsonCryptographicHardwareandEmbeddedSystems"
             },
-            "volume": "34",
-            "pages": "293 to 306",
-            "publisher": "IEEE - Piscataway, NJ - USA",
-            "doi": "10.1109/TCAD.2014.2379634",
+            "volume": "2020",
+            "pages": "24 to 48",
+            "publisher": "IACR",
+            "doi": "10.13154/tches.v2020.i4.24-48",
             "url": "http://dx.doi.org/10.1109/TCAD.2014.2379634",
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
-                "tocheck",
-                "asn2018-12",
-                "trans",
-                "journal",
-                "asn2018-5"
+                "journal"
             ],
             "type": "journal",
-            "timestamp": 1420066800
+            "timestamp": 1577833200
         },
         {
             "authors": [
