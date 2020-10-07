@@ -38,7 +38,7 @@ export default class Sidebar extends statefulComponent {
             <SidebarLinkItem
               icon="fa-graduation-cap"
               name="Stages/Thesis"
-              link="#/thesis"
+              link="https://www.notion.so/Available-theses-and-projects-21b6c6e12860461a97c562c1532bb61f"
             />
             <SidebarLinkItem icon="fa-user" name="CV" link="/deposit/cv.pdf" />
             <SidebarLinkItem
