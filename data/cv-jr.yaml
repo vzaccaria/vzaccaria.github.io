@@ -719,7 +719,7 @@
         - { name: Panzeri Ruggero, init: 2019-02-27, end: 2019-08-26, company: Solunica, credits: 10, hours: 960, mand: true }
 
     committees:
-
+      - { name: COSADE,                                            year: 2021, date: "2021-10-20", role: member of TPC,                   ruolo: membro del TPC,                        address: "Lugano, Switzerland",        h: true }
       - { name: PARMA-DITAM Workshop,                              year: 2020, date: "2020-01-21", role: member of TPC,                   ruolo: membro del TPC,                        address: "Bologna, Italy",             h: true }
       - { name: PARMA-DITAM Workshop,                              year: 2018, date: "2018-01-23", role: member of TPC,                   ruolo: membro del TPC,                        address: "Manchester, United Kingdom", h: true }
       - { name: DITAM Workshop,                                    year: 2013, date: "2013-01-22", role: member of TPC,                   ruolo: membro del TPC e web chair,            address: "Berlin, Germany" }
@@ -750,6 +750,7 @@
       - { name: ISCAS Conference,                year: 2001, role: speaker,         ruolo: relatore,        address: "Sydney, Australia",   date: "2001-05-09", title: "Fast system-level exploration of memory architectures driven by energy-delay metrics" }
 
     peerReview:
+        - { "date": "2020-11-03", "name": "IEEE Transactions on Computers",                            type: journal, onpublons: true}
         - { "date": "2019-07-10", "name": "IEEE Transactions on Dependable and Secure Computing",      type: journal, onpublons: true}
         - { "date": "2016-08-01", "name": "IEEE Transactions on Computers",                            type: journal, onpublons: true}
         - { "date": "2016-05-19", "name": "Concurrency and Computation: Practice and Experience",      type: journal, onpublons: true}
