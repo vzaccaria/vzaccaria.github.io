@@ -718,8 +718,12 @@
         - { name: Alessandro Borgonovo, init: 2018-10-01, end: 2019-03-31, company: Ideatech, credits: 10, hours: 960, mand: true }
         - { name: Panzeri Ruggero, init: 2019-02-27, end: 2019-08-26, company: Solunica, credits: 10, hours: 960, mand: true }
 
+    # Legenda, 
+    # - h: stands for highlight in resume.pdf.
+    # - n: dont show in "titoli" (vz-asn-titoli) because event in the future
     committees:
-      - { name: COSADE,                                            year: 2021, date: "2021-10-20", role: member of TPC,                   ruolo: membro del TPC,                        address: "Lugano, Switzerland",        h: true }
+      - { name: COSADE,                                            year: 2021, date: "2021-10-20", role: member of TPC,                   ruolo: membro del TPC,                        address: "Lugano, Switzerland",        h: true, n: true }
+      - { name: PARMA-DITAM Workshop,                              year: 2021, date: "2021-01-19", role: member of TPC,                   ruolo: membro del TPC,                        address: "Budapest, Hungary",          h: true, n: true }
       - { name: PARMA-DITAM Workshop,                              year: 2020, date: "2020-01-21", role: member of TPC,                   ruolo: membro del TPC,                        address: "Bologna, Italy",             h: true }
       - { name: PARMA-DITAM Workshop,                              year: 2018, date: "2018-01-23", role: member of TPC,                   ruolo: membro del TPC,                        address: "Manchester, United Kingdom", h: true }
       - { name: DITAM Workshop,                                    year: 2013, date: "2013-01-22", role: member of TPC,                   ruolo: membro del TPC e web chair,            address: "Berlin, Germany" }
