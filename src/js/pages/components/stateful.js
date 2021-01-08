@@ -9,6 +9,7 @@ class statefulComponent extends React.Component {
 
   componentDidMount() {
     fetchAsset("data/cv-jr.yaml", { yaml: true }).then(data => {
+      console.log(data);
       const valid = true;
       this.setState({ valid, data });
       return null;
