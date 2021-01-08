@@ -23,7 +23,7 @@ class researchPage extends statefulComponent {
 
     if (this.state.valid) {
       let research_achievements = _.flatten(
-        _.map(this.state.data.work.previous, "highlights")
+        _.filter(_.map(this.state.data.work.previous, "highlights"))
       );
       research_achievements = _.map(research_achievements, r => `* ${r}`).join(
         "\n"
