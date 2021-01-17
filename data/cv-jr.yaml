@@ -439,12 +439,12 @@
             - "Notions of CPU scheduling algorithms"
 
       specializations:
-        - Computer aided design of digital circuits.
-        - Multi-processor design space exploration.
-        - Low-power and high-performance design.
-        - Parallel processor architectures.
-        - Advanced parallel programming paradigms.
-        - Compilation and simulation methodologies for multi-processor-based systems.
+        - computer aided design of digital circuits
+        - multi-processor design space exploration
+        - low-power and high-performance design
+        - parallel processor architectures
+        - advanced parallel programming paradigms
+        - compilation and simulation methodologies for multi-processor-based systems
 
       recommendations:
         - name: Giuseppe Desoli
@@ -682,7 +682,7 @@
             - { name: Politecnico di Milano, country: Italy }
             - { name: STMicroelectronics, country: Italy }
             - { name: STMicroelectronics, country: France  }
-            - { name: Fraunhofer Institute for Telecommunications Heinrich Hertz Institute (HHI), country: Berlin }
+            - { name: Fraunhofer Institute for Telecommunications Heinrich Hertz Institute (HHI), country: Germany }
             - { name: Institute of Communication and Computer Systems, country: Greece }
             - { name: Rheinisch-Westfaelische Technische Hochschule Aachen, country: Germany }
             - { name: Synopsys, country: Belgium }
