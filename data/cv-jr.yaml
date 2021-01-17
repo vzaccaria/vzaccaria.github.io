@@ -477,37 +477,41 @@
   research:
 
     citations:
-      date: 2019-11-22
+      date: 2021-01-17
       source: Google Scholar profile
       all:
-        citations: 1851
-        highest: 122
-        hindex: 24
+        citations: 2203
+        highest: 137
+        hindex: 26
       since2012:
         citations: 756
         hindex: 16
       since2014:
         citations: 741
         hindex: 15
+      since2016:
+        citations: 689
+        hindex: 16
         
 
     productivity:
        # computed with pubstats.js in curriculum on 2019 11 18
        # Note, total must be the total of pubs in CV!
+       # So disregard the one counted with pubstats
        total: 91
-       coauthors: 110
-       transactions: 11
-       journals: 19
+       coauthors: 112
+       transactions: 12
+       journals: 20
        books: 1
-       conferences: 44
+       conferences: 45
        patents: 2
    
     impact: 
         # copied from above.. at the moment..
         scholar: 
-          hindex: 24
-          citations: 1851
-          date: 2019-11-22
+          hindex: 26
+          citations: 2203
+          date: 2021-01-17
           since: 2000-01-01
         scopus:
           npubs: 76
