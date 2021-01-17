@@ -7,7 +7,7 @@
     email: vittorio.zaccaria@polimi.it
     website: www.vittoriozaccaria.net
 
-    summary: |
+    coverPageSummary: |
       I am an associate professor at Politecnico di Milano and I have worked
       in processor architecture research and development for one of the top
       semiconductor companies in the world. My background is rooted in modeling
@@ -37,19 +37,6 @@
 
 
     paperBio: |
-      Vittorio Zaccaria received the Laurea degree in Computer Engineering in
-      1998 and the Ph. D. degree in Computer Engineering in 2002 at the
-      Politecnico di Milano, Italy. He is currently associate professor at the
-      Politecnico di Milano where he currently investigates novel techniques for
-      computer aided design of digital circuits. From 2003 until 2007, he held
-      various positions in the Advanced System Technology group at
-      STMicroelectronics where he was involved in the architectural
-      specification and design of multi-threaded processors with particular
-      emphasis on emerging stream-programming paradigms. He has also been
-      involved in the development of tools and methodologies for designing
-      low-power industrial networks on chip (NoC). He has published a book, over
-      80 papers in international journals and conference proceedings and he
-      holds two US patents.
 
     shortBio: |
       Vittorio Zaccaria is an associate professor at Politecnico di Milano where he
@@ -57,6 +44,44 @@
       circuits with emphasis on cryptography. He has published a book, over 80 papers
       in international journals and conference proceedings and he holds two US
       patents.
+
+    mur:
+      lessThan2000c: 
+        ita: | 
+          Ha conseguito la Laurea in Ingegneria Informatica nel 1998 e il
+          titolo di Dottore di Ricerca in Ingegneria Informatica nel 2002 presso
+          il Politecnico di Milano, Italia. Dal marzo 2011 è Assistant Professor
+          (tenure-track) presso il Dipartimento di Elettronica e Informazione,
+          Politecnico di Milano, dove sta curando la ricerca e lo sviluppo di
+          strumenti di esplorazione dello spazio di progettazione per sistemi
+          embedded. Dal 2003 al 2007 ha ricoperto varie posizioni nel gruppo
+          Advanced System Technology di STMicroelectronics. Egli è stato
+          coinvolto nella specifica architettura e design di processori
+          paralleli, con particolare attenzione su architetture streaming
+          emergenti. Egli è stato anche coinvolto nello sviluppo di strumenti e
+          metodologie per la progettazione di network a bassa potenza su chip
+          (NOC). Ha pubblicato un libro, oltre 30 pubblicazioni su riviste
+          internazionali e atti di conferenze e ha ottenuto due brevetti europei
+          e due americani. Attualmente è team leader per Multicube Explorer e
+          MOST, strumenti avanzati per l'esplorazione e ottimizzazione degli
+          spazi discreti. I suoi attuali interessi di ricerca spaziano
+          programmazione parallela e architetture di processori paralleli,
+          elaborazione del segnale digitale, il design del sistema operativo,
+          ottimizzazione discreta di system-on-chip architettures.
+
+        eng: |
+          Vittorio Zaccaria received the Laurea degree in Computer Engineering in
+          1998 and the Ph. D. degree in Computer Engineering in 2002 at the
+          Politecnico di Milano, Italy. He is currently associate professor at the
+          Politecnico di Milano where he currently investigates novel techniques for
+          computer aided design of digital circuits. From 2003 until 2007, he held
+          various positions in the Advanced System Technology group at
+          STMicroelectronics where he was involved in the architectural
+          specification and design of multi-threaded processors with particular
+          emphasis on emerging stream-programming paradigms. He has also been
+          involved in the development of tools and methodologies for designing
+          low-power industrial networks on chip (NoC). 
+        
 
     location:
       address: "Politecnico di Milano - Piazza Leonardo da Vinci, 32"
