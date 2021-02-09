@@ -18,7 +18,7 @@ export default class Sidebar extends statefulComponent {
         <div className="sidebar">
           <img
             className="sidebar__picture"
-            src={require("../../../img/avatar-vz.jpg")}
+            src={require("../../../img/avatar-vz-2021.jpg")}
           />
           <div className="sidebar__name">{$.basics.name}</div>
           <div className="sidebar__address">{$.work.current.company}</div>
