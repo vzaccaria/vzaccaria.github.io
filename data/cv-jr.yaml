@@ -784,7 +784,12 @@
       - { name: DAC Conference,                  year: 2002, role: speaker,         ruolo: relatore,        address: "New Orleans, USA",     date: "2002-06-13", title: "Energy estimation and optimization of embedded VLIW processors based on instruction clustering" }
       - { name: ISCAS Conference,                year: 2001, role: speaker,         ruolo: relatore,        address: "Sydney, Australia",    date: "2001-05-09", title: "Fast system-level exploration of memory architectures driven by energy-delay metrics" }
 
+    boards: 
+      - { name: "Electronics", type: journal, start: 2021-02-09, end: 2023-02-09, role: "editorial board member", section: "Computer Science & Engineering Section", publisher: MDPI }
+    
+
     peerReview:
+        - { "date": "2021-02-01", "name": "Design Automation for Embedded Systems",                    type: journal, onpublons: true}
         - { "date": "2020-11-03", "name": "IEEE Transactions on Computers",                            type: journal, onpublons: true}
         - { "date": "2019-07-10", "name": "IEEE Transactions on Dependable and Secure Computing",      type: journal, onpublons: true}
         - { "date": "2016-08-01", "name": "IEEE Transactions on Computers",                            type: journal, onpublons: true}
