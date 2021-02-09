@@ -439,6 +439,7 @@
             - "Notions of CPU scheduling algorithms"
 
       specializations:
+        - side channel attacks (cryptography)
         - computer aided design of digital circuits
         - multi-processor design space exploration
         - low-power and high-performance design
