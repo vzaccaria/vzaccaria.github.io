@@ -169,7 +169,7 @@ Which gives as result:
     \x_0 -> (x_0 GHC.List.!! 1) GHC.List.!! 1
 
 <a href=""> 
-    <img class="center" src="http://www.vittoriozaccaria.net/deposit/not-bad.jpg"></img>
+    <img class="center" src="http://www.vittoriozaccaria.net/deposit/posts/images/not-bad.jpg"></img>
 </a>
 
 Domain specific optimization
@@ -277,7 +277,7 @@ Which gives as result:
 I.e., the input signal delayed by two.
 
 <a href=""> 
-    <img class="center" src="http://www.vittoriozaccaria.net/deposit/yeah.jpg"></img>
+    <img class="center" src="http://www.vittoriozaccaria.net/deposit/posts/images/yeah.jpg"></img>
 </a>
 
 

@@ -30,7 +30,7 @@ Above all, being able to *implement* and *measure*, the teacher could apply [lea
 
 I've realizied a first initial User Journey Map to sketch out how the new web environment (green boxes) could be integrated into the class. You can download the pdf [from this link](http://www.vittoriozaccaria.net/deposit/UX%20-%20UI%20templates.pdf). 
 
-![](http://www.vittoriozaccaria.net/deposit/ux.png)
+![](http://www.vittoriozaccaria.net/deposit/posts/images/ux.png)
  
 
 Thoughts?
