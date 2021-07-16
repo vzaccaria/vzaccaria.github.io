@@ -17,7 +17,7 @@ let history = createHashHistory({
 
 let goAOS = () => { 
         console.log("Forcing redirect");
-        window.location.href = 'https://www.notion.so/Advanced-Operating-Systems-A-A-2021-2022-Polimi-f77b9fb8c9ea43ea953f40c35b84593a'; return null; }
+        window.location.href = 'https://vzaccaria.notion.site/Advanced-Operating-Systems-A-A-2021-2022-Polimi-f77b9fb8c9ea43ea953f40c35b84593a'; return null; }
 
 class Routes extends React.Component {
   render() {
