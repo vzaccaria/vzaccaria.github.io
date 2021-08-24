@@ -40,7 +40,7 @@ The options `--permit-arguments` and `-w` allow to, respectively, send
 additional arguments to the `zsh` command (more on this later) and also to
 interactively send keystrokes to `zsh` when you open the page. **These options
 represent obviously a security risk if your machine can be reached from the
-internet**; Mine isn't so I did'nt setup any kind of additional measures such as
+internet**; mine isn't so I did'nt setup any kind of additional measures such as
 those suggested on the Gotty's
 [Github page](https://github.com/yudai/gotty#security-options).
 
