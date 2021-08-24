@@ -11,8 +11,8 @@ description:
 ---
 
 > Note: the following tip uses [Gotty](https://github.com/yudai/gotty) in a
-> fairly unsecure way. You can improve the security by following the guidelines
-> available on its
+> fairly insecure way (no username or password). You can improve the security by
+> following the guidelines available on its
 > [Github page](https://github.com/yudai/gotty#security-options)
 
 Notion is my current go-to app for collecting work and personal life notes.
@@ -30,7 +30,7 @@ speed on my Macbook Pro running Chrome is pretty decent even compared with
 I sometimes use).
 
 I run Gotty in the background to launch a Zsh shell whenever one connects to
-http://localhost:3005
+`http://localhost:3005`
 
 ```bash
 gotty --permit-arguments -p 3005 -w zsh
@@ -38,10 +38,14 @@ gotty --permit-arguments -p 3005 -w zsh
 
 The options `--permit-arguments` and `-w` allow to, respectively, send
 additional arguments to the `zsh` command (more on this later) and also to
-interactively send keystrokes to `zsh` when you open the page.
+interactively send keystrokes to `zsh` when you open the page. **These options
+represent obviously a security risk if your machine can be reached from the
+internet**; Mine isn't so I did'nt setup any kind of additional measures such as
+those suggested on the Gotty's
+[Github page](https://github.com/yudai/gotty#security-options).
 
-At this point, whenever you connect to http://localhost:3005 a new tab is opened
-with a fully functioning terminal.
+At this point, whenever you connect to `http://localhost:3005` a new tab is
+opened with a fully functioning terminal.
 
 I am an avid Tmux user, so I want to open a new Tmux session whenever a click on
 a Gotty link. To do this, you can forge a little more complex url and pass
