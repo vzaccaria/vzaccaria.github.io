@@ -32,8 +32,8 @@ export default class Sidebar extends statefulComponent {
             <SidebarLinkItem icon="fa-quote-left" name="Blog" link="#/blog" />
             <SidebarLinkItem
               icon="fa-bullhorn"
-              name="Teaching"
-              link="#/teaching"
+              name="Teaching / AOS"
+              link="#/r/aos"
             />
             <SidebarLinkItem
               icon="fa-graduation-cap"
