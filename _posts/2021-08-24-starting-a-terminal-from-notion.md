@@ -17,7 +17,7 @@ description:
 
 Notion is my current go-to app for collecting work and personal life notes.
 Given the abundance of cloud-based collaborative tools (Google docs etc) it also
-became my organised jumping pad to whatever set of documents I was working at
+became my organised jumping pad to whatever set of documents I am working at
 the moment.
 
 One thing that I was missing was the possibility to take action on my local
@@ -40,7 +40,7 @@ The options `--permit-arguments` and `-w` allow to, respectively, send
 additional arguments to the `zsh` command (more on this later) and also to
 interactively send keystrokes to `zsh` when you open the page. **These options
 represent obviously a security risk if your machine can be reached from the
-internet**; Mine isn't so I did'nt setup any kind of additional measures such as
+internet**; mine isn't so I did'nt setup any kind of additional measures such as
 those suggested on the Gotty's
 [Github page](https://github.com/yudai/gotty#security-options).
 
@@ -56,7 +56,7 @@ http://localhost:3005/?arg=-c&arg=(tmux%20new-session%20-c%20%2FUsers%2Fguest%20
 ```
 
 Since creating such kind of URLs can be cumbersome, I resorted to a small shell
-function that, using `jq`, can forge an URL for opening a Tmux session in a
+function that, using [jq](https://stedolan.github.io/jq/), can forge an URL for opening a Tmux session in a
 specific `directory`and launching a `command` in it:
 
 ```bash
