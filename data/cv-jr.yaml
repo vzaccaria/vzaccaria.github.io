@@ -30,6 +30,7 @@ basics:
     edge of digital circuits, cryptography and probability theory. If you
     are inclined to work on these topics feel free to get in touch for a
     possible collaboration or a thesis.
+  officialDeptPage: "He received the Laurea degree in Computer Engineering\nin 1998 and the Ph. D. degree in Computer Engineering in 2002 at the\nPolitecnico di Milano, Italy. He is currently associate Professor at the\nDipartimento di Elettronica e Informazione, Politecnico di Milano where he\ncurrently investigates novel techniques for computer aided design of digital\ncircuits with emphasis on cryptography. From 2003 until 2007, he held various positions\nin the Advanced System Technology group at STMicroelectronics where he was\ninvolved in the architectural specification and design of multi-threaded\nprocessors with particular emphasis on emerging stream-programming\nparadigms. He has also been involved in the development of tools and\nmethodologies for designing low-power industrial networks on chip (NoC). \nHe has published a book, over 80 papers in either international journals \nor conference proceedings and he holds two US\npatents. He has also been appointed as Principal Investigator for industrial \ncollaboration grants from STMicroelectronics related to the design cryptographic \nhardware using functional programming languages. \n"
   paperBio: ""
   shortBio: |
     Vittorio Zaccaria is an associate professor at Politecnico di Milano where he
@@ -561,6 +562,8 @@ research:
   # - h: stands for highlight in resume.pdf.
   # - n: dont show in "titoli" (vz-asn-titoli) because event in the future
   committees:
+    - {name: PARMA-DITAM Workshop, year: 2021, date: "2022-01-19", role: member of TPC, ruolo: membro del TPC, address: "Budapest, Hungary and Virtual", h: true, n: true}
+    - {name: COMPSAC (SEPT), year: 2021, date: "2021-07-12", role: member of TPC, ruolo: membro del TPC, address: "Virtual", h: true, n: true}
     - {name: COSADE, year: 2021, date: "2021-10-20", role: member of TPC, ruolo: membro del TPC, address: "Lugano, Switzerland", h: true, n: true}
     - {name: PARMA-DITAM Workshop, year: 2021, date: "2021-01-19", role: member of TPC, ruolo: membro del TPC, address: "Budapest, Hungary", h: true, n: true}
     - {name: PARMA-DITAM Workshop, year: 2020, date: "2020-01-21", role: member of TPC, ruolo: membro del TPC, address: "Bologna, Italy", h: true}
@@ -594,6 +597,7 @@ research:
   boards:
     - {name: "Electronics", type: journal, start: 2021-02-09, end: 2023-02-09, role: "editorial board member", section: "Computer Science & Engineering Section", publisher: MDPI}
   peerReview:
+    - {"date": "2021-08-30", "name": "IEEE Embedded Systems Letters", type: journal, onpublons: true}
     - {"date": "2021-02-01", "name": "Design Automation for Embedded Systems", type: journal, onpublons: true}
     - {"date": "2020-11-03", "name": "IEEE Transactions on Computers", type: journal, onpublons: true}
     - {"date": "2019-07-10", "name": "IEEE Transactions on Dependable and Secure Computing", type: journal, onpublons: true}

@@ -2,6 +2,36 @@
     "records": [
         {
             "authors": [
+                "M. Molteni",
+                "P. Juergen",
+                "V. Zaccaria"
+            ],
+            "title": "On robust strong‐non‐interferent low‐latency multiplications",
+            "year": "2021",
+            "journal": {
+                "identifier": [
+                    {
+                        "type": "issn",
+                        "id": "1751-8717"
+                    }
+                ],
+                "name": "IET Information Security",
+                "id": "IETInformationSecurity"
+            },
+            "pages": "1 to 6",
+            "publisher": "John Wiley and Sons Ltd on behalf of The Institution of Engineering and Technology",
+            "doi": "10.1049/ise2.12048",
+            "url": "https://doi.org/10.1049/ise2.12048",
+            "justApplied": false,
+            "justAccepted": false,
+            "keyword": [
+                "journal"
+            ],
+            "type": "journal",
+            "timestamp": 1609455600
+        },
+        {
+            "authors": [
                 "G. Mariani",
                 "G. Palermo",
                 "V. Zaccaria",
