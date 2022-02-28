@@ -32,6 +32,35 @@
         },
         {
             "authors": [
+                "M. Molteni",
+                "V. Zaccaria"
+            ],
+            "title": "A relation calculus for reasoning about t-probing security",
+            "year": "2022",
+            "journal": {
+                "identifier": [
+                    {
+                        "type": "issn",
+                        "id": "2190-8508"
+                    }
+                ],
+                "name": "Journal of Cryptographic Engineering",
+                "id": "JournalofCryptographicEngineering"
+            },
+            "pages": "1 to 14",
+            "publisher": "Springer, Berlin, Heidelberg",
+            "doi": "10.1007/s13389-022-00286-x",
+            "url": "https://doi.org/10.1049/ise2.12048",
+            "justApplied": false,
+            "justAccepted": false,
+            "keyword": [
+                "journal"
+            ],
+            "type": "journal",
+            "timestamp": 1640991600
+        },
+        {
+            "authors": [
                 "G. Mariani",
                 "G. Palermo",
                 "V. Zaccaria",
