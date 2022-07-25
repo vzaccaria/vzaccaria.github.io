@@ -22,7 +22,7 @@ refresh-biblio:
 	rm -f data/bibliov2.json
 	make data/bibliov2.json
 
-data/bibliov2.json: data/biblio.bib
+data/bibliov2.json: /Users/zaccaria/development/github/org-institutional/curriculum/data/biblio.bib
 	./node_modules/.bin/vz-biblio2json convert $< > $@
 
 clean:

@@ -3,6 +3,29 @@
         {
             "authors": [
                 "M. Molteni",
+                "V. Zaccaria",
+                "V. Ciriani"
+            ],
+            "title": "ADD-based Spectral Analysis of Probing Security",
+            "month": "March",
+            "year": "2022",
+            "booktitle": "Proceedings of DATE 2022: International Conference on Design, Automation and Test in Europe",
+            "pages": "987 to 992",
+            "publisher": "IEEE",
+            "address": "Antwerp, Belgium",
+            "doi": "10.23919/DATE54114.2022.9774700\nissn = 1558-1101",
+            "url": "https://ieeexplore.ieee.org/document/9774700",
+            "justApplied": false,
+            "justAccepted": false,
+            "keyword": [
+                "conference"
+            ],
+            "type": "conference",
+            "timestamp": 1646089200
+        },
+        {
+            "authors": [
+                "M. Molteni",
                 "P. Juergen",
                 "V. Zaccaria"
             ],
@@ -18,7 +41,8 @@
                 "name": "IET Information Security",
                 "id": "IETInformationSecurity"
             },
-            "pages": "1 to 6",
+            "volume": "16(2)",
+            "pages": "127 to 132",
             "publisher": "John Wiley and Sons Ltd on behalf of The Institution of Engineering and Technology",
             "doi": "10.1049/ise2.12048",
             "url": "https://doi.org/10.1049/ise2.12048",
@@ -47,6 +71,7 @@
                 "name": "Journal of Cryptographic Engineering",
                 "id": "JournalofCryptographicEngineering"
             },
+            "volume": "12",
             "pages": "1 to 14",
             "publisher": "Springer, Berlin, Heidelberg",
             "doi": "10.1007/s13389-022-00286-x",
@@ -86,7 +111,6 @@
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
-                "tocheck",
                 "asn2018-12",
                 "trans",
                 "journal",
@@ -183,7 +207,6 @@
             "justApplied": false,
             "justAccepted": false,
             "keyword": [
-                "tocheck",
                 "conference"
             ],
             "type": "conference",
@@ -392,7 +415,7 @@
                 "name": "IACR Transactions on Cryptographic Hardware and Embedded Systems",
                 "id": "IACRTransactionsonCryptographicHardwareandEmbeddedSystems"
             },
-            "volume": "2020",
+            "volume": "2020(4)",
             "pages": "24 to 48",
             "publisher": "IACR",
             "doi": "10.13154/tches.v2020.i4.24-48",

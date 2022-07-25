@@ -15,9 +15,12 @@ let history = createHashHistory({
   queryKey: false
 });
 
+let aos2122 = "https://vzaccaria.notion.site/Advanced-Operating-Systems-A-A-2021-2022-Polimi-f77b9fb8c9ea43ea953f40c35b84593a"
+let aos2223 = "https://vzaccaria.notion.site/Advanced-Operating-Systems-A-A-2022-2023-Polimi-2bb28d40797f46edb1f23848eca05a59"
+
 let goAOS = () => { 
         console.log("Forcing redirect");
-        window.location.href = 'https://vzaccaria.notion.site/Advanced-Operating-Systems-A-A-2021-2022-Polimi-f77b9fb8c9ea43ea953f40c35b84593a'; return null; }
+        window.location.href = aos2223; return null; }
 
 class Routes extends React.Component {
   render() {
