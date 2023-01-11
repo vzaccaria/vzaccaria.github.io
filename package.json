@@ -23,7 +23,7 @@
         "babel-preset-react": "6.23.0",
         "compression-webpack-plugin": "0.3.2",
         "css-loader": "0.27.3",
-        "debug": "2.6.2",
+        "debug": "3.1.0",
         "file-loader": "0.10.1",
         "highlight.js": "9.10.0",
         "history": "4.6.0",
